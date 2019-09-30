@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Forms</title>
+</head>
+<body>
+    <form action="index.php" method="get">
+    <table>
+        <thead>
+                <th colspan="4">Questionnaire</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1.</td>
+                <td>
+                    <label>Enter your login:</label><br>
+                    <input type="text" name="username" placeholder="worzewolf" autofocus required>
+                </td>
+                <td>17.</td>
+                <td>
+                    <label>Your favourite color:</label><br>
+                    <input type="color" name="favouritecolor">
+                </td>
+            </tr>
+            <tr>
+                <td>2.</td>
+                <td>
+                    <label>Enter your password:</label><br>
+                    <input type="password" name="password" required>
+                </td>
+                <td>18.</td>
+                <td>
+                    <label>How early you wake up:</label><br>
+                    <input type="time">
+                </td>
+            </tr>
+            <tr>
+                <td>3.</td>
+                <td>
+                    <label>Enter your email:</label><br>
+                    <input type="email" name="email" multiple required>
+                </td>
+                <td>19.</td>
+                <td>
+                    <label>Your favourite month:</label><br>
+                    <input type="month">
+                </td>
+            </tr>
+            <tr>
+                <td>4.</td>
+                <td>
+                    
+                    <input id="sex" type="radio" name="radio" value="male" checked> 
+                    <label for="male">Male</label><br>
+                    <input id="sex" type="radio" name="radio" value="female"> 
+                    <label for="male">Female</label><br>
+                    <input id="sex" type="radio" name="radio" value="other"> 
+                    <label for="male">Other</label>
+                </td>
+                <td>20.</td>
+                <td>
+                    <label>Add your image:</label><input type="file">
+                </td>
+                
+            </tr>
+            <tr>
+                <td>5.</td>
+                <td>
+                    <label>Enter your name:</label>
+                    <input type="text" name="firstname" placeholder="Ivan">
+                </td>
+                <td>21.</td>
+                <td><label>Audio:</label>
+                    <audio id="palyer" controls="">
+                        <source src="" type="audio/mpegURL" />
+                    </audio>
+                </td>
+            </tr>
+            <tr>
+                <td>6.</td>
+                <td>
+                    <label>Enter your surname:</label>
+                    <input type="text" name="secondname" placeholder="Havryliuk">
+                </td>
+                <td>22.</td>
+                <td>
+                    <label>Your webpage:</label>
+                    <input type="url" name="homepage" placeholder="https://www.google.com/">
+                </td>
+                
+            </tr>
+            <tr>
+                <td>7.</td>
+                <td>
+                    <label>Enter your age:</label>
+                        <input type="number" name="age" maxlength="2" placeholder="24">
+                </td>
+                <td>23</td>
+                <td>
+                    <label>Test your temperance:</label>
+                    <button type="button" onclick="alert('You did not pass!')">Do not click!</button>
+                </td>
+            </tr>
+            <tr>
+                <td>8.</td>
+                <td>
+                    <label>Enter your Date of birth:</label>
+                    <input type="date" name="bday">
+                </td>
+                <td>24.</td>
+                <td>
+                    <label>If you need you may search:</label>
+                    <input type="search">
+                </td>
+            </tr>
+            <tr>
+                <td>16.</td>
+                <td>
+                    <label>Video:</label>
+                    <video controls width="300" height="200" preload="none">
+                        <source src="www.youtube.com/embed/nhFqVx_7Ru4" type="video/webm">
+                    </video>
+                </td>
+                <td>25.</td>
+                <td>
+                    <label>Write a short story about you:</label>
+                    <textarea name="message" rows="12" cols="30" placeholder="Something about you..."></textarea>
+                </td>
+                
+            </tr>
+            <tr>
+                <td>10.</td>
+                <td>
+                    <label>Select your zodiac:</label>
+                    <select name="zodiac">
+                        <option value="Aquarius" selected>Aquarius</option>
+                        <option value="Pisces">Pisces</option>
+                        <option value="Aries">Aries</option>
+                        <option value="Taurus">Taurus</option>
+                        <option value="Gemini">Gemini</option>
+                        <option value="Cancer">Cancer</option>
+                        <option value="Leo">Leo</option>
+                        <option value="Virgo">Virgo</option>
+                        <option value="Libra">Libra</option>
+                        <option value="Scorpio">Scorpio</option>
+                        <option value="Sagittarius">Sagittarius</option>
+                        <option value="Capricorn">Capricorn</option>
+                    </select>
+                </td>
+            <tr>
+                <td>11.</td>
+                <td>
+                    <label>How loud you listen to music:</label>
+                    <input type="range" name="points" min="0" max="100">
+                </td>
+            </tr>
+            <tr>
+                <td>12.</td>
+                <td>
+                    <label>Your favourite browser:</label>
+                    <input list="browsers" name="browser" placeholder="Chrome">
+                    <datalist id="browsers">
+                        <option value="Internet Explorer">
+                        <option value="Firefox">
+                        <option value="Chrome" >
+                        <option value="Opera">
+                        <option value="Safari">
+                    </datalist>
+                </td>
+            </tr>
+            <tr>
+                <td>13.</td>
+                <td>
+                    <label>Mark languages you know:</label><br>
+                    <input type="checkbox" value="en" id="en" ><label for="en">English</label><br>
+                    <input type="checkbox" value="ua" id="ua" checked><label for="ua">Ukrainian</label><br>
+                    <input type="checkbox" value="ru" id="ru"><label for="ru">Russian</label><br>
+                </td>
+            </tr>
+            <tr>
+                <td>14.</td>
+                <td>
+                    <label>Your avarage mark at school(1-5):</label>
+                    <input type="number" name="quantity" min="1" max="5">
+                </td>
+            </tr>
+            <tr>
+                <td>15.</td>
+                <td>
+                    <label>Your avagare rate at university:</label>
+                    <input type="number" name="quantity" min="0" max="100" step="10" value="60">
+                </td>
+            </tr>
+            <tr>
+                <td>16.</td>
+                <td>
+                    <label>Enter your phone number:</label>
+                    <input type="tel" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{2}-[0-9]{3}" placeholder="096-22-33-223" required>
+                </td>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="submit"></td>
+                <td></td>
+                <td><input type="reset" value="reset"></td>
+            </tr>
+            
+        </tbody>
+    </table>
+    </form>
+</body>
+</html>
