@@ -1,77 +1,8 @@
-body {
-    background: rgb(209, 193, 193);
-}
-
-ul, li {
-    margin: 0;
-    padding: 0;
-}
-
-input:required {
+input[required] {
     border: 1px solid rgb(230, 88, 88);
 }
 
-input:required::placeholder {
+input[required]::placeholder {
     color:green;
 }
-
-.menu {
-    display: flex;
-    height: 150px;
-    margin-left: 30px;
-}
-
-.menu li {
-    list-style: none;
-}
-
-.menu li a {
-    text-decoration: none;
-    color: rgb(170, 5, 82);
-    font-size: 18px;
-}
-
-.tit1 {
-    margin-right: 40px;
-    width: 100px;
-    text-align: center;
-}
-
-.tit1 li {
-    display: none;
-}
-
-.tit1 li a {
-    color: rgb(102, 104, 24);
-}
-
-.tit1:hover li {
-    display: block;
-}
-
-.tit1::before {
-    content: " ";
-    width: 10px;
-    height: 10px;
-    display: block;
-    background: red;
-    border-radius: 50%;
-    position: relative;
-    top: 15px;
-    left: 5px;
- }
-
- .tit1 li>a:hover::before, .tit1 li>a:hover::after{
-    content: "*";
-    color: aqua;
-    margin-right: 5px;
-    margin-left: 5px;
-}
-
-.tit1 li>a:hover {
-    color: rgb(22, 6, 236);
-}
-
-
-
 
