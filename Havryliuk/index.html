@@ -4,10 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Forms</title>
+    <title>Forms+menu</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <form action="index.php" method="get">
+        <nav class="nav">
+                <ul>
+                    <li class="drop"><a href="#">menu 1</a>
+                        <ul>
+                            <li><a href="#">submenu 1</a></li>
+                            <li><a href="#">submenu 1</a></li>
+                            <li><a href="#">submenu 1</a></li>
+                            <li><a href="#">submenu 1</a></li>
+                            <li><a href="#">submenu 1</a></li>
+                        </ul>
+                    </li>
+                    <li class="drop"><a href="#">menu 2</a>
+                        <ul>
+                            <li><a href="#">submenu 2</a></li>
+                            <li><a href="#">submenu 2</a></li>
+                            <li><a href="#">submenu 2</a></li>
+                            <li><a href="#">submenu 2</a></li>
+                            <li><a href="#">submenu 2</a></li>
+                        </ul>
+                    </li>
+                    <li class="drop"><a href="#">menu 3</a>
+                        <ul>
+                            <li><a href="#">submenu 3</a></li>
+                            <li><a href="#">submenu 3</a></li>
+                            <li><a href="#">submenu 3</a></li>
+                            <li><a href="#">submenu 3</a></li>
+                            <li><a href="#">submenu 3</a></li>
+                        </ul>
+                    </li>
+                </ul>
+        </nav>
+        <br>
+    <form action="index.php" method="post">
     <table>
         <thead>
                 <th colspan="4">Questionnaire</th>
@@ -17,125 +50,123 @@
                 <td>1.</td>
                 <td>
                     <label>Enter your login:</label><br>
-                    <input type="text" name="username" placeholder="worzewolf" autofocus required>
+                    <input class="box" type="text" name="username" placeholder="worzewolf" autofocus required tabindex="1">
                 </td>
-                <td>17.</td>
+                <td>14.</td>
                 <td>
                     <label>Your favourite color:</label><br>
-                    <input type="color" name="favouritecolor">
+                    <input type="color" name="favouritecolor" tabindex="14">
                 </td>
             </tr>
             <tr>
                 <td>2.</td>
                 <td>
                     <label>Enter your password:</label><br>
-                    <input type="password" name="password" required>
+                    <input type="password" name="password" required tabindex="2">
                 </td>
-                <td>18.</td>
+                <td>15.</td>
                 <td>
                     <label>How early you wake up:</label><br>
-                    <input type="time">
+                    <input type="time" value="time" required tabindex="15">
                 </td>
             </tr>
             <tr>
                 <td>3.</td>
                 <td>
                     <label>Enter your email:</label><br>
-                    <input type="email" name="email" multiple required>
+                    <input type="email" name="email" multiple required tabindex="3">
                 </td>
-                <td>19.</td>
+                <td>16.</td>
                 <td>
                     <label>Your favourite month:</label><br>
-                    <input type="month">
+                    <input type="month" required tabindex="16">
                 </td>
             </tr>
             <tr>
                 <td>4.</td>
                 <td>
-                    
-                    <input id="sex" type="radio" name="radio" value="male" checked> 
+                    <label>Your sex:</label><br>
+                    <input id="sex" type="radio" name="radio" value="male" checked tabindex="4"> 
                     <label for="male">Male</label><br>
                     <input id="sex" type="radio" name="radio" value="female"> 
                     <label for="male">Female</label><br>
                     <input id="sex" type="radio" name="radio" value="other"> 
                     <label for="male">Other</label>
                 </td>
-                <td>20.</td>
+                <td>17.</td>
                 <td>
-                    <label>Add your image:</label><input type="file">
+                    <label>Add your image:</label><br><input type="file"tabindex="17">
                 </td>
                 
             </tr>
             <tr>
                 <td>5.</td>
                 <td>
-                    <label>Enter your name:</label>
-                    <input type="text" name="firstname" placeholder="Ivan">
+                    <label>Enter your name:</label><br>
+                    <input type="text" name="firstname" placeholder="Ivan" requiredtabindex="5" tabindex="5">
                 </td>
-                <td>21.</td>
-                <td><label>Audio:</label>
-                    <audio id="palyer" controls="">
-                        <source src="" type="audio/mpegURL" />
+                <td>18.</td>
+                <td><label>Listen to audio and relax:</label><br>
+                    <audio id="palyer" controls>
+                            <source src="ima/music.mp3" type="audio/mpeg" tabindex="18"/>
                     </audio>
                 </td>
             </tr>
             <tr>
                 <td>6.</td>
                 <td>
-                    <label>Enter your surname:</label>
-                    <input type="text" name="secondname" placeholder="Havryliuk">
+                    <label>Enter your surname:</label><br>
+                    <input type="text" value="text" name="secondname" placeholder="Havryliuk" required tabindex="6">
                 </td>
-                <td>22.</td>
+                <td>19.</td>
                 <td>
-                    <label>Your webpage:</label>
-                    <input type="url" name="homepage" placeholder="https://www.google.com/">
+                    <label>Your webpage:</label><br>
+                    <input type="url" name="homepage" placeholder="https://www.google.com/" required tabindex="19">
                 </td>
                 
             </tr>
             <tr>
                 <td>7.</td>
                 <td>
-                    <label>Enter your age:</label>
-                        <input type="number" name="age" maxlength="2" placeholder="24">
+                    <label>Enter your age:</label><br>
+                        <input type="number" name="age" maxlength="2" placeholder="24" required tabindex="7">
                 </td>
-                <td>23</td>
+                <td>20</td>
                 <td>
-                    <label>Test your temperance:</label>
-                    <button type="button" onclick="alert('You did not pass!')">Do not click!</button>
+                    <label>Test your temperance:</label><br>
+                    <input type="image" name="image" class='image' src="ima/whatsapp-logo.svg" width="50" tabindex="20">
                 </td>
             </tr>
             <tr>
                 <td>8.</td>
                 <td>
-                    <label>Enter your Date of birth:</label>
-                    <input type="date" name="bday">
+                    <label>Enter your Date of birth:</label><br>
+                    <input type="date" value="date" name="bday" required tabindex="8">
                 </td>
-                <td>24.</td>
+                <td>21.</td>
                 <td>
-                    <label>If you need you may search:</label>
-                    <input type="search">
+                    <label>If you need you may search:</label><br>
+                    <input type="search" tabindex="21">
                 </td>
             </tr>
             <tr>
-                <td>16.</td>
+                <td>9.</td>
                 <td>
-                    <label>Video:</label>
-                    <video controls width="300" height="200" preload="none">
-                        <source src="www.youtube.com/embed/nhFqVx_7Ru4" type="video/webm">
-                    </video>
+                    <label>Watch video for a break:</label><br>
+                            <iframe width="300" height="200" src="https://www.youtube.com/embed/cE5f4GtejtI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </td>
-                <td>25.</td>
+                <td>22.</td>
                 <td>
-                    <label>Write a short story about you:</label>
-                    <textarea name="message" rows="12" cols="30" placeholder="Something about you..."></textarea>
+                    <label>Write a short story about you:</label><br>
+                    <textarea name="message" rows="13" cols="37" placeholder="Something about you..." tabindex="22"></textarea>
                 </td>
                 
             </tr>
             <tr>
                 <td>10.</td>
                 <td>
-                    <label>Select your zodiac:</label>
-                    <select name="zodiac">
+                    <label>Select your zodiac:</label><br>
+                    <select name="zodiac" tabindex="10">
                         <option value="Aquarius" selected>Aquarius</option>
                         <option value="Pisces">Pisces</option>
                         <option value="Aries">Aries</option>
@@ -150,18 +181,28 @@
                         <option value="Capricorn">Capricorn</option>
                     </select>
                 </td>
+                <td>23.</td>
+                <td>
+                    <label>Your avarage mark at school(1-5):</label><br>
+                    <input type="number" name="quantity" min="1" max="5" required tabindex="23">
+                </td>
             <tr>
                 <td>11.</td>
                 <td>
-                    <label>How loud you listen to music:</label>
-                    <input type="range" name="points" min="0" max="100">
+                    <label>How loud you listen to music:</label><br>
+                    <input type="range" value="range" name="points" min="0" max="100" tabindex="11">
+                </td>
+                <td>24.</td>
+                <td>
+                    <label>Your avagare rate at university:</label><br>
+                    <input type="number" value="number" name="quantity" min="0" max="100" step="10" placeholder="60" required tabindex="24">
                 </td>
             </tr>
             <tr>
                 <td>12.</td>
                 <td>
-                    <label>Your favourite browser:</label>
-                    <input list="browsers" name="browser" placeholder="Chrome">
+                    <label>Your favourite browser:</label><br>
+                    <input list="browsers" name="browser" placeholder="Chrome" required tabindex="12">
                     <datalist id="browsers">
                         <option value="Internet Explorer">
                         <option value="Firefox">
@@ -170,41 +211,31 @@
                         <option value="Safari">
                     </datalist>
                 </td>
+                <td>25.</td>
+                <td>
+                    <label>Enter your phone number:</label><br>
+                    <input type="tel" name="phone" required pattern="[0-9]{3}-[0-9]{2}-[0-9]{2}-[0-9]{3}" placeholder="096-22-33-223" required tabindex="25">
+                </td>
             </tr>
             <tr>
                 <td>13.</td>
                 <td>
                     <label>Mark languages you know:</label><br>
                     <input type="checkbox" value="en" id="en" ><label for="en">English</label><br>
-                    <input type="checkbox" value="ua" id="ua" checked><label for="ua">Ukrainian</label><br>
+                    <input type="checkbox" value="ua" id="ua" checked tabindex="13"><label for="ua">Ukrainian</label><br>
                     <input type="checkbox" value="ru" id="ru"><label for="ru">Russian</label><br>
                 </td>
-            </tr>
-            <tr>
-                <td>14.</td>
+                <td>26.</td>
                 <td>
-                    <label>Your avarage mark at school(1-5):</label>
-                    <input type="number" name="quantity" min="1" max="5">
+                    <label>You wont ever get to this field:</label><br>
+                    <input type="text" value="text" disabled>
                 </td>
-            </tr>
-            <tr>
-                <td>15.</td>
-                <td>
-                    <label>Your avagare rate at university:</label>
-                    <input type="number" name="quantity" min="0" max="100" step="10" value="60">
-                </td>
-            </tr>
-            <tr>
-                <td>16.</td>
-                <td>
-                    <label>Enter your phone number:</label>
-                    <input type="tel" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{2}-[0-9]{3}" placeholder="096-22-33-223" required>
-                </td>
+            </tr>  
             <tr>
                 <td></td>
-                <td><input type="submit" value="submit"></td>
+                <td><input type="submit" value="submit" class="submit" tabindex="26"/></td>
                 <td></td>
-                <td><input type="reset" value="reset"></td>
+                <td><input type="reset" value="reset" class="reset"/></td>
             </tr>
             
         </tbody>
