@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+nav{
+    position: absolute;
+}
+nav>ul>li {
+    display: inline-block;
+    float: left;
+    width: 110px;
+    margin: 25px;
+    border: solid 2px black;
+}
+
+a {
+    text-decoration: none;
+    color: whitesmoke;
+    display: block;
+    width: 100%;
+}
+
+.drop ul li {
+    display: none;
+    border: 1px solid black;
+}
+
+.drop:hover ul li {
+    display: block;
+}
+
+.drop:hover+li p {
+    color: white;
+}
+
+.drop:first-child {
+    background-color: orchid;
+}
+
+.drop:nth-child(2) {
+    background-color: blueviolet;
+}
+
+.drop:last-child {
+    background-color: darkblue;
+}
+
+.drop:hover li:nth-child(n+1) {
+    background-color: green;
+}
+
+.drop:hover li:nth-child(2n) {
+    background-color: orangered;
+}
+
+.drop:hover li:nth-child(3n) {
+    background-color: burlywood;
+}
+
+.drop:hover li:nth-child(1n):hover {
+    background-color: black;
+}
+
+.drop:hover li a:hover {
+    color: orange;
+}
+
+.drop ul li:nth-child(-n+6) a::before {
+    content: "★ "
+}
+
+.drop:first-child ul li:nth-child(-n+6) a::before {
+    content: "☢ "
+}
+
+.drop:last-child ul li:nth-child(-n+6) a::before {
+    content: "☞ "
+}
+
+.drop:nth-child(n)>a::after {
+    content: " ►"
+}
+.drop:nth-child(n)>a:hover::after {
+    content: " ▼"
+}
+
+table{
+    margin-top: 50px;
+}
+th{
+    padding:15px;
+}
+
+input:invalid {
+    background-color: #ffdddd;
+    border:solid 1px red;
+}
+input:valid:not(.submit .image) {
+    background-color: #ddffdd;
+    border:solid 1px green;
+}
+
+
