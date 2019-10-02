@@ -2,10 +2,80 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
     <title>Title</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<table border="1" align="center" cellpadding="5" width="50%">
+<header class="header">
+    <nav class="menu">
+        <ul class="menu-wrapper">
+            <li class="point-bottom">
+                <div class="link-wrapper">
+                    <a href="#">Home</a>
+                </div>
+                <ul>
+                    <li>Point</li>
+                    <li>Point</li>
+                    <li>Point</li>
+                    <li>Point</li>
+                    <li>Point</li>
+                </ul>
+            </li>
+            <li class="point-bottom">
+                <div class="link-wrapper">
+                    <a href="#">About</a>
+                </div>
+                <ul>
+                    <li>Point</li>
+                    <li>Point</li>
+                    <li>Point</li>
+                    <li>Point</li>
+                    <li>Point</li>
+                </ul>
+            </li>
+            <li class="point-bottom">
+                <div class="link-wrapper">
+                    <a href="#">Contacts</a>
+                </div>
+                <ul>
+                    <li>Point</li>
+                    <li>Point</li>
+                    <li>Point</li>
+                    <li>Point</li>
+                    <li>Point</li>
+                </ul>
+            </li>
+            <li class="point-bottom">
+                <div class="link-wrapper">
+                    <a href="#">Settings</a>
+                </div>
+                <ul>
+                    <li>Point</li>
+                    <li>Point</li>
+                    <li>Point</li>
+                    <li>Point</li>
+                    <li>Point</li>
+                </ul>
+            </li>
+            <li class="point-bottom">
+                <div class="link-wrapper">
+                    <a href="#">My profile</a>
+                </div>
+                <ul>
+                    <li>Point</li>
+                    <li>Point</li>
+                    <li>Point</li>
+                    <li>Point</li>
+                    <li>Point</li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<table class="mine-table" border="1" align="center" cellpadding="5" width="50%">
     <caption><h1>Aнкета</h1></caption>
     <form action="./php/results.php" method="post">
 
@@ -333,27 +403,27 @@
                 </table>
             </td>
             <td>
-               <table>
-                   <h3>Багтрекінг</h3>
-                   <tr>
-                       <td>
-                           <input type="radio" name="bug" id="knowBug" value="Знаю що це таке"/>
-                           <label for="knowBug">Знаю що це таке.</label>
-                       </td>
-                   </tr>
-                   <tr>
-                       <td>
-                           <input type="radio" name="bug" id="workBug" value="Працюю з Багтрекинг"/>
-                           <label for="workBug">Працюю з Багтрекинг.</label>
-                       </td>
-                   </tr>
-                   <tr>
-                       <td>
-                           <input type="radio" name="bug" id="perfectKnowBug" value="Знаю досконально"/>
-                           <label for="perfectKnowBug">Знаю досконально.</label>
-                       </td>
-                   </tr>
-               </table>
+                <table>
+                    <h3>Багтрекінг</h3>
+                    <tr>
+                        <td>
+                            <input type="radio" name="bug" id="knowBug" value="Знаю що це таке"/>
+                            <label for="knowBug">Знаю що це таке.</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="radio" name="bug" id="workBug" value="Працюю з Багтрекинг"/>
+                            <label for="workBug">Працюю з Багтрекинг.</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="radio" name="bug" id="perfectKnowBug" value="Знаю досконально"/>
+                            <label for="perfectKnowBug">Знаю досконально.</label>
+                        </td>
+                    </tr>
+                </table>
             </td>
         </tr>
         <tr>
@@ -369,7 +439,8 @@
                 <label for="yourBestWork">
                     <h3>Кращі проекти.</h3>
                 </label>
-                <textarea type="text" name="yourBestWork" id="yourBestWork" cols="110" rows="6" maxlength="500"></textarea>
+                <textarea type="text" name="yourBestWork" id="yourBestWork" cols="110" rows="6"
+                          maxlength="500"></textarea>
             </td>
         </tr>
         <tr>
