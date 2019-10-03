@@ -1,113 +1,137 @@
-form{
+form {
     clear: both;
 }
-a{
+
+a {
     color: black;
     text-decoration: none;
-    display: block;
 }
-nav ul li{
+
+nav ul li {
     float: left;
     margin: 5px;
     display: block;
 }
-nav ul li ul li{
-    float: none;
-    position: relative;
+
+nav ul li ul {
+    width: 95px;
 }
-.nav ul ul{
+
+.nav ul li ul {
     visibility: hidden;
     position: absolute;
 }
-.nav ul li:hover ul{
+
+.nav ul li:hover ul {
     visibility: visible;
 }
-.nav ul:first-child>li{
+
+.nav ul li:first-child {
     background-color: red;
     width: 80px;
 }
-.nav ul:first-child li+li{
+
+.nav ul>li+li {
     background-color: darkblue;
 }
-.nav ul:first-child li~li~li{
+
+.nav ul li:last-child {
     background-color: gold;
 }
-.nav>ul>li>a{
+
+.nav>ul>li>a {
     color: white;
 }
-.nav ul:first-child li+li{
-    background-color: darkblue;
-}
-.nav ul:first-child li~li~li{
-    background-color: gold;
-}
-.nav ul li ul li:first-child ,li{
+
+.nav ul li ul li:first-child,
+li {
     margin-top: 0;
 }
-.nav ul li ul li:hover ,li{
+
+.nav ul li ul li:hover,
+li {
     margin: 0;
 }
-.nav ul li ul li:hover>a{
+
+.nav ul li ul li:hover>a {
     color: #ffffff;
 }
-.nav ul li:nth-child(3n+1) li:nth-child(5n+1){
+
+.nav ul li:nth-child(3n+1) li:nth-child(5n+1) {
     background: cadetblue;
 }
-.nav ul li:nth-child(4n+1) li:nth-child(5n+2){
+
+.nav ul li:nth-child(4n+1) li:nth-child(5n+2) {
     background: rebeccapurple;
 }
-.nav ul li:nth-child(5n+1) li:nth-child(5n+3){
+
+.nav ul li:nth-child(5n+1) li:nth-child(5n+3) {
     background: yellowgreen;
 }
-.nav ul li:nth-child(6n+1) li:nth-child(5n+4){
+
+.nav ul li:nth-child(6n+1) li:nth-child(5n+4) {
     background: lightcoral;
 }
-.nav ul li:nth-child(7n+1) li:nth-child(5n+5){
+
+.nav ul li:nth-child(7n+1) li:nth-child(5n+5) {
     background: coral;
 }
-.nav ul li:nth-child(2n+2) li:nth-child(5n+1){
+
+.nav ul li:nth-child(2n+2) li:nth-child(5n+1) {
     background: cadetblue;
 }
-.nav ul li:nth-child(3n+2) li:nth-child(5n+2){
+
+.nav ul li:nth-child(3n+2) li:nth-child(5n+2) {
     background: saddlebrown;
 }
-.nav ul li:nth-child(4n+2) li:nth-child(5n+3){
+
+.nav ul li:nth-child(4n+2) li:nth-child(5n+3) {
     background: deeppink;
 }
-.nav ul li:nth-child(5n+2) li:nth-child(5n+4){
+
+.nav ul li:nth-child(5n+2) li:nth-child(5n+4) {
     background: lightcoral;
 }
-.nav ul li:nth-child(6n+2) li:nth-child(5n+5){
+
+.nav ul li:nth-child(6n+2) li:nth-child(5n+5) {
     background: gold;
 }
-.nav ul li:nth-child(2n+3) li:nth-child(5n+1){
+
+.nav ul li:nth-child(2n+3) li:nth-child(5n+1) {
     background: violet;
 }
-.nav ul li:nth-child(3n+3) li:nth-child(5n+2){
+
+.nav ul li:nth-child(3n+3) li:nth-child(5n+2) {
     background: crimson;
 }
-.nav ul li:nth-child(4n+3) li:nth-child(5n+3){
+
+.nav ul li:nth-child(4n+3) li:nth-child(5n+3) {
     background: brown;
 }
-.nav ul li:nth-child(5n+3) li:nth-child(5n+4){
+
+.nav ul li:nth-child(5n+3) li:nth-child(5n+4) {
     background: gray;
 }
-.nav ul li:nth-child(6n+3) li:nth-child(5n+5){
+
+.nav ul li:nth-child(6n+3) li:nth-child(5n+5) {
     background: darkolivegreen;
 }
-.nav ul li ul li a:only-child{
+
+.nav ul li ul li a:only-child {
     text-decoration: line-through;
 }
-.nav ul li ul:nth-child(3n+2){
+
+.nav ul li ul:nth-child(3n+2) {
     background: white;
 }
-nav ul li:active{
+
+nav ul li:active {
     background-color: red !important;
 }
-a::before{
 
-}
-.nav ul:first-child>li::before{
+a::before {}
+
+.nav ul:first-child>li::before {
     content: " ";
     width: 0;
     height: 0;
@@ -119,7 +143,8 @@ a::before{
     top: 3px;
     margin: 0px 5px 0px 5px;
 }
-.nav ul:first-child>li:hover::before{
+
+.nav ul:first-child>li:hover::before {
     content: " ";
     width: 0;
     height: 0;
@@ -131,7 +156,8 @@ a::before{
     top: 3px;
     margin: 0px 5px 0px 5px;
 }
-.nav ul li ul li a:hover::after{
+
+.nav ul li ul li a:hover::after {
     content: " ";
     width: 0;
     height: 0;
@@ -140,24 +166,30 @@ a::before{
     position: relative;
     float: right;
 }
-input,textarea{
+
+input,
+textarea {
     margin: 5px 0 5px 0;
 }
-input:optional{
+
+input:optional {
     background-color: limegreen;
     color: white;
     border: green;
     border-radius: 10px;
     padding: 5px;
 }
-input:required{
-    background-color: #ff7171;;
+
+input:required {
+    background-color: #ff7171;
+    ;
     color: white;
     border: red;
     border-radius: 10px;
     padding: 5px;
 }
-textarea{
+
+textarea {
     background-color: lightskyblue;
     color: white;
     font-size: 14px;
@@ -165,9 +197,11 @@ textarea{
     border-radius: 10px;
     border: 1px solid cornflowerblue;
 }
-td{
+
+td {
     padding: 5px;
 }
-input:checkedP{
+
+input:checked {
     color: #ff7171;
 }
