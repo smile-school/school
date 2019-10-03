@@ -4,385 +4,433 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Title</title>
+    <title>Find car</title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
-<body><div align="center">
-    <h1>Форма поиска авто</h1>
-</div>
-    <form action="#" name="car_search" id="car_search" method="post" target="_self">
-        <table border="1" width="80%" align="center" cellpadding="15" cellspacing="0">
-            <caption><h2>Form caption</h2></caption>
-            <colgroup>
-                <col width="20%">
-                <col width="20%">
-                <col width="20%">
-                <col width="20%">
-                <col width="20%">
-            </colgroup>
-            <thead>
-            <tr align="center"><td colspan="5"><h3>Выберите нужные поля</h3></td></tr>
-            </thead>
-            <tfoot>
-            <tr align="center">
-                <td colspan="5" bgcolor="#4682B4">
-                    <input type="reset" value="Сбросить все фильтры">
-                </td>
-            </tr>
-            <tr align="center">
-                <td colspan="5" bgcolor="#4682B4">
-                    <input type="submit" form="car_search" value="Найти">
-                </td>
-            </tr>
-            </tfoot>
-            <tbody>
-            <tr>
-                <th colspan="5" bgcolor="#A9A9A9">Данные пользователя</th>
-            </tr>
-            <tr bgcolor="#F5F5DC">
-                <td>
-                    <label for="user_name">Имя
-                        <sup>*</sup>
-                    </label>
-                </td>
-                <td colspan="4">
-                    <input type="text" name="user_name" id="user_name" tabindex="1" required value="">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="user_email">E-mail
-                        <sup>*</sup>
-                    </label>
-                </td>
-                <td colspan="4">
-                    <input type="email" name="user_email" id="user_email" tabindex="2" required value="">
-                </td>
-            </tr>
-            <tr bgcolor="#F5F5DC">
-                <td>
-                    <label for="user_telephone">Номер телефона</label>
-                </td>
-                <td colspan="4">
-                    <input type="tel" name="user_telephone" id="user_telephone" tabindex="3" value="">
-                </td>
-            </tr>
-            <tr>
-                <th colspan="5" bgcolor="#A9A9A9">Общие характеристики авто</th>
-            </tr>
-            <tr bgcolor="#F5F5DC">
-                <td>
-                    <label for="type_car">Тип транспорта</label>
-                </td>
-                <td colspan="4">
-                    <select name="type_car" id="type_car" tabindex="4">
-                        <option value="car" selected>Легковые</option>
-                        <option value="truck">Грузовики</option>
-                        <option value="moto">Мото</option>
-                        <option value="bus">Автобусы</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="country">Страна производитель</label>
-                </td>
-                <td colspan="4">
-                    <select name="country" id="country" tabindex="5">
-                        <option value="all">Выберите страну</option>
-                        <option value="ger" selected>Германия</option>
-                        <option value="usa">США</option>
-                        <option value="fr">Франция</option>
-                        <option value="jap">Япония</option>
-                        <option value="kor">Корея</option>
-                    </select>
-                </td>
-            </tr>
-            <tr bgcolor="#F5F5DC">
-                <td>
-                    <label for="brand_car">Марка, </label>
-                    <label for="model_car">модель</label>
-                </td>
-                <td>
-                    <select name="brand_car" id="brand_car" tabindex="6">
-                        <option value="audi">Audi</option>
-                        <option value="bmw">BMW</option>
-                        <option value="ford" selected>Ford</option>
-                        <option value="kia">Kia</option>
-                        <option value="mazda">Mazda</option>
-                    </select>
-                </td>
-                <td colspan="3">
-                    <select name="model_car" id="model_car" tabindex="7">
-                        <option value="mod1">Model 1</option>
-                        <option value="mod2" selected>Model 2</option>
-                        <option value="mod3">Model 3</option>
-                        <option value="mod4">Model 4</option>
-                        <option value="mod5">Model 5</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Год выпуска,
-                    <label for="at_year-from"> от </label>
-                    и
-                    <label for="at_year-to"> до</label>
-                </td>
-                <td>
-                    <input type="number" name="at_year-from" id="at_year-from" min="1980" max="2019"
-                           step="1" placeholder="От" tabindex="8" value="">
-                </td>
-                <td colspan="3">
-                    <input type="number" name="at_year-to" id="at_year-to" min="1980" max="2019"
-                           step="1" placeholder="До" tabindex="9" value="">
-                </td>
-            </tr>
-            <tr bgcolor="#F5F5DC">
-                <td>
-                    Стоимость,
-                    <label for="at_price-from"> от </label>
-                    и
-                    <label for="at_price-to"> до</label>
-                </td>
-                <td>
-                    <input type="number" name="at_price-from" id="at_price-from"
-                           placeholder="От" min="0" tabindex="10" value="">
-                </td>
-                <td>
-                    <input type="number" name="at_price-to" id="at_price-to"
-                           placeholder="До" min="0" tabindex="11" value="">
-                </td>
-                <td colspan="2">
-                    <select name="currency" id="currency" tabindex="12">
-                        <option value="USD">&#36; доллар</option>
-                        <option value="EUR">&euro; евро</option>
-                        <option value="UAH" selected>&#8372; гривна</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="region">Регион</label></td>
-                <td colspan="4">
-                    <select name="region" id="region" multiple size="15" tabindex="13">
-                        <option value="all" selected>Все области</option>
-                        <optgroup label="Центральная Украина">
-                            <option value="Kyi">Киевская</option>
-                            <option value="Vin">Винницкая</option>
-                            <option value="Zhy">Житомирская</option>
-                            <option value="Pol">Полтавская</option>
-                        </optgroup>
-                        <optgroup label="Западная Украина">
-                            <option value="Lv">Львовская</option>
-                            <option value="Vl">Волынская</option>
-                            <option value="Zkp">Закарпатская</option>
-                            <option value="Rv">Ривненская</option>
-                        </optgroup>
-                        <optgroup label="Восточная Украина">
-                            <option value="Dn">Днепропетровская</option>
-                            <option value="Kha">Харьковская</option>
-                            <option value="Dn">Донецкая</option>
-                            <option value="Zap">Запорожская</option>
-                        </optgroup>
-                        <optgroup label="Южная Украина">
-                            <option value="Khe">Херсонская</option>
-                            <option value="Myk">Николаевская</option>
-                            <option value="Od">Одесская</option>
-                            <option value="RKr">Республика Крым</option>
-                        </optgroup>
-                    </select>
-                </td>
-            </tr>
-            <tr bgcolor="#F5F5DC">
-                <td rowspan="3">Состояние</td>
-                <td colspan="2">Нерастаможенные</td>
-                <td>
-                    <label>
-                        <input type="radio" name="illegal" value="illegal_true" tabindex="14"> Показать
-                    </label>
-                </td>
-                <td>
-                    <label>
-                        <input type="radio" name="illegal" value="illegal_false" checked tabindex="15"> Скрыть
-                    </label>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">Битые (После ДТП)</td>
-                <td>
-                    <label>
-                        <input type="radio" name="broken" value="broken_true" tabindex="16"> Показать
-                    </label>
-                </td>
-                <td>
-                    <label>
-                        <input type="radio" name="broken" value="broken_false" checked tabindex="17"> Скрыть
-                    </label>
-                </td>
-            </tr>
-            <tr bgcolor="#F5F5DC">
-                <td colspan="2">В кредите</td>
-                <td>
-                    <label>
-                        <input type="radio" name="on_credit" value="on_credit_true" tabindex="18"> Показать
-                    </label>
-                </td>
-                <td>
-                    <label>
-                        <input type="radio" name="on_credit" value="on_credit_false" checked tabindex="18"> Скрыть
-                    </label>
-                </td>
-            </tr>
-            <tr>
-                <th colspan="5" bgcolor="#A9A9A9">Технические характеристики авто</th>
-            </tr>
-            <tr bgcolor="#F5F5DC">
-                <td>
-                    Топливо
-                </td>
-                <td>
-                    <label>
-                        <input type="checkbox" name="fuel_petrol" id="fuel_petrol"
-                               value="petrol" checked tabindex="19"> Бензин
-                    </label>
-                </td>
-                <td>
-                    <label>
-                        <input type="checkbox" name="diesel" id="fuel_diesel"
-                               value="diesel" tabindex="20"> Дизель
-                    </label>
-                </td>
-                <td>
-                    <label>
-                        <input type="checkbox" name="gas" id="fuel_gas"
-                               value="gas" tabindex="21"> Газ
-                    </label>
-                </td>
-                <td>
-                    <label>
-                        <input type="checkbox" name="electro" id="fuel_electro"
-                               value="electro" tabindex="22"> Электро
-                    </label>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <abbr title="Коробка переключения передач">КПП</abbr>
-                </td>
-                <td>
-                    <label>
-                        <input type="checkbox" name="manual_transmis" id="manual_transmis"
-                               value="manual" checked tabindex="23"> Ручная / Механика
-                    </label>
-                </td>
-                <td>
-                    <label>
-                        <input type="checkbox" name="automatic_transmis" id="automatic_transmis"
-                               value="automatic" tabindex="24"> Автомат
-                    </label>
-                </td>
-                <td colspan="2">
-                    <label>
-                        <input type="checkbox" name="tiptronic" id="tiptronic"
-                               value="tiptronic" tabindex="25"> Типтроник
-                    </label>
-                </td>
-            </tr>
-            <tr bgcolor="#F5F5DC">
-                <td>Тип привода</td>
-                <td>
-                    <label>
-                        <input type="checkbox" name="all-wheel_drive" id="all-wheel_drive"
-                               value="all-wheel" tabindex="26"> Полный
-                    </label>
-                </td>
-                <td>
-                    <label>
-                        <input type="checkbox" name="front-wheel_drive" id="front-wheel_drive"
-                               value="front-wheel" checked tabindex="27"> Передний
-                    </label>
-                </td>
-                <td colspan="2">
-                    <label>
-                        <input type="checkbox" name="rear-wheel_drive" id="rear-wheel_drive"
-                               value="rear-wheel" tabindex="28"> Задний
-                    </label>
-                </td>
-            </tr>
-            <tr>
-                <td>Объем,
-                    <label for="at_capacity-from"> от </label>
-                    и
-                    <label for="at_capacity-to"> до</label>,
-                    <i>л</i>
-                </td>
-                <td>
-                    <input type="number" name="at_capacity-from" id="at_capacity-from"
-                           placeholder="От" min="0" max="10" tabindex="29" value="">
-                </td>
-                <td colspan="3">
-                    <input type="number" name="at_capacity-to" id="at_capacity-to"
-                           placeholder="До" min="0" max="10" tabindex="30" value="">
-                </td>
-            </tr>
-            <tr bgcolor="#F5F5DC">
-                <td>Расход топлива,
-                    <label for="at_fuel-from"> от </label>
-                    и
-                    <label for="at_fuel-to"> до</label>,
-                    <i> л. / 100 км</i>
-                </td>
-                <td>
-                    <input type="number" name="at_fuel-from" id="at_fuel-from"
-                           placeholder="От" min="0" tabindex="31" value="">
-                </td>
-                <td>
-                    <input type="number" name="at_fuel-to" id="at_fuel-to"
-                           placeholder="До" min="0" tabindex="32" value="">
-                </td>
-                <td colspan="2">
-                    <select name="gas" id="" title="" tabindex="33">
-                        <option value="city" selected>Город</option>
-                        <option value="route">Шоссе</option>
-                        <option value="combine">Смешанный</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>Пробег,
-                    <label for="at_mileage-from"> от </label>
-                    и
-                    <label for="at_mileage-to"> до</label>,
-                    <i> тыс. км</i>
-                </td>
-                <td>
-                    <input type="number" name="at_mileage-from" id="at_mileage-from"
-                           placeholder="От" min="0" tabindex="33" value="">
-                </td>
-                <td colspan="3">
-                    <input type="number" name="at_mileage-to" id="at_mileage-to"
-                           placeholder="До" min="0" tabindex="34" value="">
-                </td>
-            </tr>
-            <tr bgcolor="#F5F5DC">
-                <td>
-                    <label for="car_color">Цвет</label>
-                </td>
-                <td colspan="4">
-                    <input type="color" name="car_color" id="car_color" value="#FFFFFF" tabindex="35">
-                </td>
-            </tr>
-            <tr>
-                <th colspan="5" bgcolor="#A9A9A9">Вы ищете:</th>
-            </tr>
-            <tr align="center" bgcolor="#F5F5DC">
-                <td colspan="5">
+<body>
+    <header class="page_header">
+        <div class="page_wrapper">
+            <nav class="navigation">
+                <ul class="menu">
+                    <li>
+                        <a href="#">menu link 1</a>
+                    </li>
+                    <li>
+                        <p>submenu 1</p>
+                        <ul>
+                            <li>
+                                <a href="#">submenu link 1</a>
+                            </li>
+                            <li>
+                                <a href="#">submenu link 2</a>
+                            </li>
+                            <li>
+                                <a href="#">submenu link 3</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p>submenu 2</p>
+                        <ul>
+                            <li>
+                                <a href="#">submenu link 4</a>
+                            </li>
+                            <li>
+                                <a href="#">submenu link 5</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">menu link 2</a>
+                    </li>
+                    <li>
+                        <a href="#">menu link 3</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div align="center">
+            <h1>Форма поиска авто</h1>
+        </div>
+
+        <form action="#" name="car_search" id="car_search" method="post" target="_self">
+            <table border="1" width="80%" align="center" cellpadding="15" cellspacing="0">
+                <caption><h2>Form caption</h2></caption>
+                <colgroup>
+                    <col width="20%">
+                    <col width="20%">
+                    <col width="20%">
+                    <col width="20%">
+                    <col width="20%">
+                </colgroup>
+                <thead>
+                <tr align="center"><td colspan="5"><h3>Выберите нужные поля</h3></td></tr>
+                </thead>
+                <tfoot>
+                <tr align="center">
+                    <td colspan="5" bgcolor="#4682B4">
+                        <input type="reset" value="Сбросить все фильтры">
+                    </td>
+                </tr>
+                <tr align="center">
+                    <td colspan="5" bgcolor="#4682B4">
+                        <input type="submit" form="car_search" value="Найти">
+                    </td>
+                </tr>
+                </tfoot>
+                <tbody>
+                <tr>
+                    <th colspan="5" bgcolor="#A9A9A9">Данные пользователя</th>
+                </tr>
+                <tr bgcolor="#F5F5DC">
+                    <td>
+                        <label for="user_name">Имя
+                            <sup>*</sup>
+                        </label>
+                    </td>
+                    <td colspan="4">
+                        <input type="text" name="user_name" id="user_name" tabindex="1" required value="">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="user_email">E-mail
+                            <sup>*</sup>
+                        </label>
+                    </td>
+                    <td colspan="4">
+                        <input type="email" name="user_email" id="user_email" tabindex="2" required value="">
+                    </td>
+                </tr>
+                <tr bgcolor="#F5F5DC">
+                    <td>
+                        <label for="user_telephone">Номер телефона</label>
+                    </td>
+                    <td colspan="4">
+                        <input type="tel" name="user_telephone" id="user_telephone" tabindex="3" value="">
+                    </td>
+                </tr>
+                <tr>
+                    <th colspan="5" bgcolor="#A9A9A9">Общие характеристики авто</th>
+                </tr>
+                <tr bgcolor="#F5F5DC">
+                    <td>
+                        <label for="type_car">Тип транспорта</label>
+                    </td>
+                    <td colspan="4">
+                        <select name="type_car" id="type_car" tabindex="4">
+                            <option value="car" selected>Легковые</option>
+                            <option value="truck">Грузовики</option>
+                            <option value="moto">Мото</option>
+                            <option value="bus">Автобусы</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="country">Страна производитель</label>
+                    </td>
+                    <td colspan="4">
+                        <select name="country" id="country" tabindex="5">
+                            <option value="all">Выберите страну</option>
+                            <option value="ger" selected>Германия</option>
+                            <option value="usa">США</option>
+                            <option value="fr">Франция</option>
+                            <option value="jap">Япония</option>
+                            <option value="kor">Корея</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr bgcolor="#F5F5DC">
+                    <td>
+                        <label for="brand_car">Марка, </label>
+                        <label for="model_car">модель</label>
+                    </td>
+                    <td>
+                        <select name="brand_car" id="brand_car" tabindex="6">
+                            <option value="audi">Audi</option>
+                            <option value="bmw">BMW</option>
+                            <option value="ford" selected>Ford</option>
+                            <option value="kia">Kia</option>
+                            <option value="mazda">Mazda</option>
+                        </select>
+                    </td>
+                    <td colspan="3">
+                        <select name="model_car" id="model_car" tabindex="7">
+                            <option value="mod1">Model 1</option>
+                            <option value="mod2" selected>Model 2</option>
+                            <option value="mod3">Model 3</option>
+                            <option value="mod4">Model 4</option>
+                            <option value="mod5">Model 5</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Год выпуска,
+                        <label for="at_year-from"> от </label>
+                        и
+                        <label for="at_year-to"> до</label>
+                    </td>
+                    <td>
+                        <input type="number" name="at_year-from" id="at_year-from" min="1980" max="2019"
+                               step="1" placeholder="От" tabindex="8" value="">
+                    </td>
+                    <td colspan="3">
+                        <input type="number" name="at_year-to" id="at_year-to" min="1980" max="2019"
+                               step="1" placeholder="До" tabindex="9" value="">
+                    </td>
+                </tr>
+                <tr bgcolor="#F5F5DC">
+                    <td>
+                        Стоимость,
+                        <label for="at_price-from"> от </label>
+                        и
+                        <label for="at_price-to"> до</label>
+                    </td>
+                    <td>
+                        <input type="number" name="at_price-from" id="at_price-from"
+                               placeholder="От" min="0" tabindex="10" value="">
+                    </td>
+                    <td>
+                        <input type="number" name="at_price-to" id="at_price-to"
+                               placeholder="До" min="0" tabindex="11" value="">
+                    </td>
+                    <td colspan="2">
+                        <select name="currency" id="currency" tabindex="12">
+                            <option value="USD">&#36; доллар</option>
+                            <option value="EUR">&euro; евро</option>
+                            <option value="UAH" selected>&#8372; гривна</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="region">Регион</label></td>
+                    <td colspan="4">
+                        <select name="region" id="region" multiple size="15" tabindex="13">
+                            <option value="all" selected>Все области</option>
+                            <optgroup label="Центральная Украина">
+                                <option value="Kyi">Киевская</option>
+                                <option value="Vin">Винницкая</option>
+                                <option value="Zhy">Житомирская</option>
+                                <option value="Pol">Полтавская</option>
+                            </optgroup>
+                            <optgroup label="Западная Украина">
+                                <option value="Lv">Львовская</option>
+                                <option value="Vl">Волынская</option>
+                                <option value="Zkp">Закарпатская</option>
+                                <option value="Rv">Ривненская</option>
+                            </optgroup>
+                            <optgroup label="Восточная Украина">
+                                <option value="Dn">Днепропетровская</option>
+                                <option value="Kha">Харьковская</option>
+                                <option value="Dn">Донецкая</option>
+                                <option value="Zap">Запорожская</option>
+                            </optgroup>
+                            <optgroup label="Южная Украина">
+                                <option value="Khe">Херсонская</option>
+                                <option value="Myk">Николаевская</option>
+                                <option value="Od">Одесская</option>
+                                <option value="RKr">Республика Крым</option>
+                            </optgroup>
+                        </select>
+                    </td>
+                </tr>
+                <tr bgcolor="#F5F5DC">
+                    <td rowspan="3">Состояние</td>
+                    <td colspan="2">Нерастаможенные</td>
+                    <td>
+                        <label>
+                            <input type="radio" name="illegal" value="illegal_true" tabindex="14"> Показать
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" name="illegal" value="illegal_false" checked tabindex="15"> Скрыть
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">Битые (После ДТП)</td>
+                    <td>
+                        <label>
+                            <input type="radio" name="broken" value="broken_true" tabindex="16"> Показать
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" name="broken" value="broken_false" checked tabindex="17"> Скрыть
+                        </label>
+                    </td>
+                </tr>
+                <tr bgcolor="#F5F5DC">
+                    <td colspan="2">В кредите</td>
+                    <td>
+                        <label>
+                            <input type="radio" name="on_credit" value="on_credit_true" tabindex="18"> Показать
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" name="on_credit" value="on_credit_false" checked tabindex="18"> Скрыть
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <th colspan="5" bgcolor="#A9A9A9">Технические характеристики авто</th>
+                </tr>
+                <tr bgcolor="#F5F5DC">
+                    <td>
+                        Топливо
+                    </td>
+                    <td>
+                        <label>
+                            <input type="checkbox" name="fuel_petrol" id="fuel_petrol"
+                                   value="petrol" checked tabindex="19"> Бензин
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="checkbox" name="diesel" id="fuel_diesel"
+                                   value="diesel" tabindex="20"> Дизель
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="checkbox" name="gas" id="fuel_gas"
+                                   value="gas" tabindex="21"> Газ
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="checkbox" name="electro" id="fuel_electro"
+                                   value="electro" tabindex="22"> Электро
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <abbr title="Коробка переключения передач">КПП</abbr>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="checkbox" name="manual_transmis" id="manual_transmis"
+                                   value="manual" checked tabindex="23"> Ручная / Механика
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="checkbox" name="automatic_transmis" id="automatic_transmis"
+                                   value="automatic" tabindex="24"> Автомат
+                        </label>
+                    </td>
+                    <td colspan="2">
+                        <label>
+                            <input type="checkbox" name="tiptronic" id="tiptronic"
+                                   value="tiptronic" tabindex="25"> Типтроник
+                        </label>
+                    </td>
+                </tr>
+                <tr bgcolor="#F5F5DC">
+                    <td>Тип привода</td>
+                    <td>
+                        <label>
+                            <input type="checkbox" name="all-wheel_drive" id="all-wheel_drive"
+                                   value="all-wheel" tabindex="26"> Полный
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="checkbox" name="front-wheel_drive" id="front-wheel_drive"
+                                   value="front-wheel" checked tabindex="27"> Передний
+                        </label>
+                    </td>
+                    <td colspan="2">
+                        <label>
+                            <input type="checkbox" name="rear-wheel_drive" id="rear-wheel_drive"
+                                   value="rear-wheel" tabindex="28"> Задний
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Объем,
+                        <label for="at_capacity-from"> от </label>
+                        и
+                        <label for="at_capacity-to"> до</label>,
+                        <i>л</i>
+                    </td>
+                    <td>
+                        <input type="number" name="at_capacity-from" id="at_capacity-from"
+                               placeholder="От" min="0" max="10" tabindex="29" value="">
+                    </td>
+                    <td colspan="3">
+                        <input type="number" name="at_capacity-to" id="at_capacity-to"
+                               placeholder="До" min="0" max="10" tabindex="30" value="">
+                    </td>
+                </tr>
+                <tr bgcolor="#F5F5DC">
+                    <td>Расход топлива,
+                        <label for="at_fuel-from"> от </label>
+                        и
+                        <label for="at_fuel-to"> до</label>,
+                        <i> л. / 100 км</i>
+                    </td>
+                    <td>
+                        <input type="number" name="at_fuel-from" id="at_fuel-from"
+                               placeholder="От" min="0" tabindex="31" value="">
+                    </td>
+                    <td>
+                        <input type="number" name="at_fuel-to" id="at_fuel-to"
+                               placeholder="До" min="0" tabindex="32" value="">
+                    </td>
+                    <td colspan="2">
+                        <select name="gas" id="" title="" tabindex="33">
+                            <option value="city" selected>Город</option>
+                            <option value="route">Шоссе</option>
+                            <option value="combine">Смешанный</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Пробег,
+                        <label for="at_mileage-from"> от </label>
+                        и
+                        <label for="at_mileage-to"> до</label>,
+                        <i> тыс. км</i>
+                    </td>
+                    <td>
+                        <input type="number" name="at_mileage-from" id="at_mileage-from"
+                               placeholder="От" min="0" tabindex="33" value="">
+                    </td>
+                    <td colspan="3">
+                        <input type="number" name="at_mileage-to" id="at_mileage-to"
+                               placeholder="До" min="0" tabindex="34" value="">
+                    </td>
+                </tr>
+                <tr bgcolor="#F5F5DC">
+                    <td>
+                        <label for="car_color">Цвет</label>
+                    </td>
+                    <td colspan="4">
+                        <input type="color" name="car_color" id="car_color" value="#FFFFFF" tabindex="35">
+                    </td>
+                </tr>
+                <tr>
+                    <th colspan="5" bgcolor="#A9A9A9">Вы ищете:</th>
+                </tr>
+                <tr align="center" bgcolor="#F5F5DC">
+                    <td colspan="5">
                             <textarea name="filters" id="filters" cols="150" rows="10" readonly
                                       placeholder="js script показывает выбранные фильтры"></textarea>
-                </td>
-            </tr>
-            </tbody>
-        </table>
-    </form>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </form>
+    </main>
+    <footer></footer>
 </body>
 </html>
