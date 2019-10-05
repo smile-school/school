@@ -1,0 +1,202 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.topnav {
+    width: 100%;
+    min-height: 200px;
+}
+.topnav ul li ul li:not(:first-child) {
+    margin-top: 10px;
+}
+.topmenu {
+    margin-top: 20px;
+    padding-left: 30%;
+}
+.topmenu .down:not(:first-child) {
+    margin-left: 130px;
+}
+.topmenu li {
+    display: inline-block;
+    position: relative;
+}
+.topmenu > ul, li {
+    list-style-type: none;
+}
+.topmenu > li a {
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.topmenu > li a:active {
+    color: red;
+}
+.down a {
+    color: black;
+}
+.down ul {
+    display: flex;
+    flex-direction: column;
+}
+.down ul a:last-child {
+    color: gray;
+}
+.topnav ul li ul li:first-child:hover {
+    background-color: blue;
+}
+.twoo ul li:nth-child(2n):not(:nth-last-child(-n+2)):hover {
+    background-color: yellow;
+}
+.twoo ul li:nth-child(3n):hover {
+    background-color: gray;
+}
+.twoo ul li:last-child:hover {
+    background-color: aqua;
+}
+.one ul li:not(:nth-last-child(-n+2)):hover {
+    background-color: antiquewhite;
+}
+.one ul li:nth-last-child(-n + 2):not(:last-child):hover {
+    background-color: brown;
+}
+.one ul li:last-child:hover {
+    background-color: blueviolet;
+}
+.free ul li:nth-child(2n):not(:last-child):hover {
+    background-color: burlywood;
+}
+.free ul li:nth-child(3n):hover {
+    background-color: black;
+}
+.free ul li:last-of-type:hover {
+    background-color: coral;
+}
+.one ul li:not(:nth-last-child(-n+3))::after {
+    content: "\270F";
+    font-size: 18px;
+    padding-left: 5px;
+    color: black;
+}
+
+.one ul li:not(:nth-last-child(-n+3))::before {
+    content: "\272B";
+    font-size: 18px;
+    padding-right: 5px;
+    color: darkslategray;
+}
+.one ul li:nth-last-child(1)::before {
+    content: "\272C";
+    font-size: 18px;
+    padding-right: 5px;
+    color: brown;
+}
+.one ul li:nth-last-child(1)::after {
+    content: "\274C";
+    padding-left: 5px;
+    font-size: 18px;
+    color: brown;
+}
+.one ul li:nth-child(2n):not(:nth-last-child(-n+2)):after {
+    content: "\265C";
+    padding-left: 5px;
+    font-size: 18px;
+    color: brown;
+}
+.one ul li:nth-child(2n):not(:nth-last-child(-n+2)):after {
+    content: "\265C";
+    padding-left: 5px;
+    font-size: 18px;
+    color: brown;
+}
+.one ul li:nth-child(2n):not(:nth-last-child(-n+2))::before {
+    content: "\262C";
+    padding-right: 5px;
+    font-size: 18px;
+    color: brown;
+}
+.one ul li:nth-child(3n)::after {
+    content: "\262C";
+    padding-left: 5px;
+    font-size: 18px;
+    color: gray;
+}
+.one ul li:nth-child(3n)::before {
+    content: "\262C";
+    padding-right: 5px;
+    font-size: 18px;
+    color: gray;
+}
+.twoo ul li::before {
+    content: "\162F";
+    padding-right: 5px;
+    font-size: 18px;
+    color: brown;
+}
+.twoo ul li::after {
+    content: "\162F";
+    padding-left: 5px;
+    font-size: 18px;
+    color: brown;
+}
+.free ul li::after {
+    content: "\262F";
+    font-size: 18px;
+    padding-left: 5px;
+    color: gold;
+}
+
+.free ul li::before {
+    content: "\262F";
+    padding-right: 5px;
+    font-size: 18px;
+    color: darkkhaki;
+}
+.topnav ul li ul {
+    padding-top: 10px;
+    position: absolute;
+    display: none;
+}
+.topnav ul li:hover ul {
+    display: block;
+}
+
+input:default {
+    box-shadow: 0 0 2px 1px coral;
+}
+input:required{
+    box-shadow:0 0 2px 1px gray;
+}
+input:focus{
+    background-color: peachpuff;
+    color: gold;
+}
+input:invalid{
+    box-shadow: 1px 1px 1px 2px red;
+}
+input:valid{
+    box-shadow: 1px 1px 1px 2px green;
+}
+input:optional{
+    background-color: #ededed;
+}
+tbody tr th label{
+    color: gray;
+}
+tbody tr th {
+    color: brown;
+}
+tbody textarea{
+    box-shadow: 1px 2px 0 0 red;
+}
+thead > tr th {
+    color: #8919;
+    text-transform: uppercase;
+}
+tbody tr input[type=submit]{
+    color: gold;
+    background-color: black;
+}
+tbody tr input[type=reset]{
+    color: red;
+    background-color: black;
+}
