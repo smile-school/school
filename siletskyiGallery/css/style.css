@@ -1,0 +1,115 @@
+.wrapper::after{
+    content: "";
+    clear: both;
+    display: block;
+}
+.wrapper {
+    width: 800px;
+    margin: 0 auto;
+}
+.wrapper a {
+    display: block;
+    width: calc(33.33% - 10px);
+    float: left;
+    margin-bottom: 5px;
+    position: relative;
+}
+.wrapper a:not(:nth-child(3n)){
+    margin-right: 5px;
+}
+.wrapper a img {
+    width: 100%;
+    display: block;
+}
+.wrapper a:hover::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: block;
+    opacity: 0.75;
+    background: black;
+}
+.wrapper a:hover::after{
+    transform: translate(-50%, -50%) scale(1);
+}
+.wrapper a::after{
+    content: "";
+    background-repeat: no-repeat;
+    background-image: url("../ima/eye.svg");
+    background-position: center;
+    background-size: contain;
+    display: block;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    z-index: 1;
+    transition: all .5s ease-in;
+}
+.modal-wrapper {
+    width: 500px;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.modal-wrapper div{
+    display: none;
+}
+.modal-wrapper div:target {
+    display: block;
+}
+.modal-wrapper img {
+    position: relative;
+    width: 500px;
+    box-shadow: 0 0 0 9999px rgba(0, 0, 0, .9);
+    outline: 1px solid white;
+}
+.modal-wrapper .close {
+    display: block;
+    width: 15px;
+    height: 16px;
+    text-decoration: none;
+    background: black;
+    color: white;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.modal-wrapper .close:hover{
+    width: 25px;
+    height: 26px;
+    font-size: 22px;
+    background: white;
+    color: black;
+}
+.modal-wrapper .next-btn, .modal-wrapper .prev-btn{
+    display: block;
+    width: 25px;
+    height: 40px;
+    background: black;
+    position: absolute;
+    top: 50%;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 35px;
+}
+.modal-wrapper .next-btn {
+    right: 0;
+    transform: translate(-50%, -50%);
+}
+.modal-wrapper .prev-btn {
+    left: 0;
+    transform: translate(50%, -50%);
+}
+
+
