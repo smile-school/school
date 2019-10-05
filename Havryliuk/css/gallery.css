@@ -64,50 +64,64 @@ a{
 }
 .modal-wrapper img {
     display: block;
-    width: 500px;
-}
-.popup{
-    width: 500px;
-    position: absolute;
 }
 .popup:target {
-    transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -50%) scale(3);
     display: block;
+    position: absolute;
     left: 50%;
     top: 50%;
     transition: all .3s ease;
     visibility: visible;
+    opacity: 1;
     box-shadow: 0 0 0 9999px rgba(0,0,0,0.7);
 }
 .popup .close{
     display: block;
     top: 0;
-    right: 0;
+    left: calc(100% - 10px);
     background: white;
-    width: 25px;
-    height: 25px;
+    width: 10px;
+    height: 10px;
     position: absolute;
     text-align: center;
     color: black;
-    font-size: 20px;
+    font-size: 7px;
 }
 .popup a:hover{
-    color: red;
+    color: white;
 }
-.iback,
-.iforward{
+.iback::before{
+    content: "";
+    display: block;
     position: absolute;
     top: 50%;
-    transform: translate(0,-50%);
-    line-height: 40px;
-    height: 40px;
-    width: 40px;
-    text-align: center;
-    color: black;
-    background-color: white;
-    font-size: 30px;
-    opacity: .5;
+}
+.iforward::after{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+}
+.iforward:hover::after{
+    color: aqua;
+}
+.iback{
+    position: absolute;
+    float: left;
+    height: 70%;
+    padding-top: 27%;
+    color: red;
 }
 .iforward{
-    right: 0;
+    position: absolute;
+    float: right;
+    left: calc(100% - 13px);
+    height: 70%;
+    margin-top: 6%;
+    padding-top: 21%;
+    color: red;
+}
+.iforward:target{
+    transition: unset;
 }
