@@ -8,105 +8,108 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-        <nav class="nav">
+    <nav class="nav">
+        <ul>
+            <li class="drop one"><a href="#">menu 1</a>
                 <ul>
-                    <li class="drop"><a href="#">menu 1</a>
-                        <ul>
-                            <li><a href="#">submenu 1</a></li>
-                            <li><a href="#">submenu 1</a></li>
-                            <li><a href="#">submenu 1</a></li>
-                            <li><a href="#">submenu 1</a></li>
-                            <li><a href="#">submenu 1</a></li>
-                        </ul>
-                    </li>
-                    <li class="drop"><a href="#">menu 2</a>
-                        <ul>
-                            <li><a href="#">submenu 2</a></li>
-                            <li><a href="#">submenu 2</a></li>
-                            <li><a href="#">submenu 2</a></li>
-                            <li><a href="#">submenu 2</a></li>
-                            <li><a href="#">submenu 2</a></li>
-                        </ul>
-                    </li>
-                    <li class="drop"><a href="#">menu 3</a>
-                        <ul>
-                            <li><a href="#">submenu 3</a></li>
-                            <li><a href="#">submenu 3</a></li>
-                            <li><a href="#">submenu 3</a></li>
-                            <li><a href="#">submenu 3</a></li>
-                            <li><a href="#">submenu 3</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="#">submenu 1</a></li>
+                    <li><a href="#">submenu 1</a></li>
+                    <li><a href="#">submenu 1</a></li>
+                    <li><a href="#">submenu 1</a></li>
+                    <li><a href="#">submenu 1</a></li>
                 </ul>
-        </nav>
+            </li>
+            <li class="drop two"><a href="#">menu 2</a>
+                <ul>
+                    <li><a href="#">submenu 2</a></li>
+                    <li><a href="#">submenu 2</a></li>
+                    <li><a href="#">submenu 2</a></li>
+                    <li><a href="#">submenu 2</a></li>
+                    <li><a href="#">submenu 2</a></li>
+                </ul>
+            </li>
+            <li class="drop three"><a href="#">menu 3</a>
+                <ul>
+                    <li><a href="#">submenu 3</a></li>
+                    <li><a href="#">submenu 3</a></li>
+                    <li><a href="#">submenu 3</a></li>
+                    <li><a href="#">submenu 3</a></li>
+                    <li><a href="#">submenu 3</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
         <br>
     <form action="index.php" method="post">
     <table>
         <thead>
+            <tr>
                 <th colspan="4">Questionnaire</th>
+            </tr>
         </thead>
         <tbody>
             <tr>
                 <td>1.</td>
                 <td>
-                    <label>Enter your login:</label><br>
-                    <input class="box" type="text" name="username" placeholder="worzewolf" autofocus required tabindex="1">
+                    <label for="username">Enter your login:</label><br>
+                    <input class="box" type="text" name="username" placeholder="worzewolf" id="username" autofocus required tabindex="1">
                 </td>
                 <td>14.</td>
                 <td>
-                    <label>Your favourite color:</label><br>
-                    <input type="color" name="favouritecolor" tabindex="14">
+                    <label for="favouritecolor">Your favourite color:</label><br>
+                    <input type="color" name="favouritecolor" id="favouritecolor" tabindex="14">
                 </td>
             </tr>
             <tr>
                 <td>2.</td>
                 <td>
-                    <label>Enter your password:</label><br>
-                    <input type="password" name="password" required tabindex="2">
+                    <label for="password">Enter your password:</label><br>
+                    <input type="password" name="password" id="password" required tabindex="2">
                 </td>
                 <td>15.</td>
                 <td>
-                    <label>How early you wake up:</label><br>
-                    <input type="time" value="time" required tabindex="15">
+                    <label for="time">How early you wake up:</label><br>
+                    <input type="time" value="time" id="time" required tabindex="15">
                 </td>
             </tr>
             <tr>
                 <td>3.</td>
                 <td>
-                    <label>Enter your email:</label><br>
-                    <input type="email" name="email" multiple required tabindex="3">
+                    <label for="email">Enter your email:</label><br>
+                    <input type="email" name="email" id="email" multiple required tabindex="3">
                 </td>
                 <td>16.</td>
                 <td>
-                    <label>Your favourite month:</label><br>
-                    <input type="month" required tabindex="16">
+                    <label for="month">Your favourite month:</label><br>
+                    <input type="month" name="month" id="month" required tabindex="16">
                 </td>
             </tr>
             <tr>
                 <td>4.</td>
                 <td>
-                    <label>Your sex:</label><br>
-                    <input id="sex" type="radio" name="radio" value="male" checked tabindex="4"> 
+                    <span>Your sex:</span><br>
+                    <input id="male" type="radio" name="radio" value="male" checked tabindex="4"> 
                     <label for="male">Male</label><br>
-                    <input id="sex" type="radio" name="radio" value="female"> 
-                    <label for="male">Female</label><br>
-                    <input id="sex" type="radio" name="radio" value="other"> 
-                    <label for="male">Other</label>
+                    <input id="female" type="radio" name="radio" value="female"> 
+                    <label for="female">Female</label><br>
+                    <input id="other" type="radio" name="radio" value="other"> 
+                    <label for="other">Other</label>
                 </td>
                 <td>17.</td>
                 <td>
-                    <label>Add your image:</label><br><input type="file"tabindex="17">
+                    <label for="file">Add your image:</label><br>
+                    <input type="file" name="file" id="file" tabindex="17">
                 </td>
             </tr>
             <tr>
                 <td>5.</td>
                 <td>
-                    <label>Enter your name:</label><br>
-                    <input type="text" name="firstname" placeholder="Ivan" requiredtabindex="5" tabindex="5">
+                    <label for="firstname">Enter your name:</label><br>
+                    <input type="text" name="firstname" id="firstname" placeholder="Ivan" required tabindex="5">
                 </td>
                 <td>18.</td>
-                <td><label>Listen to audio and relax:</label><br>
-                    <audio id="palyer" controls>
+                <td><label for="player">Listen to audio and relax:</label><br>
+                    <audio id="palyer" name="player" controls>
                             <source src="ima/music.mp3" type="audio/mpeg" tabindex="18"/>
                     </audio>
                 </td>
@@ -114,57 +117,57 @@
             <tr>
                 <td>6.</td>
                 <td>
-                    <label>Enter your surname:</label><br>
-                    <input type="text" value="text" name="secondname" placeholder="Havryliuk" required tabindex="6">
+                    <label for="secondname">Enter your surname:</label><br>
+                    <input type="text" value="text" name="secondname" id="secondname" placeholder="Havryliuk" required tabindex="6">
                 </td>
                 <td>19.</td>
                 <td>
-                    <label>Your webpage:</label><br>
-                    <input type="url" name="homepage" placeholder="https://www.google.com/" required tabindex="19">
+                    <label for="homepage">Your webpage:</label><br>
+                    <input type="url" name="homepage" id="homepage" placeholder="https://www.google.com/" required tabindex="19">
                 </td>
             </tr>
             <tr>
                 <td>7.</td>
                 <td>
-                    <label>Enter your age:</label><br>
-                        <input type="number" name="age" maxlength="2" placeholder="24" required tabindex="7">
+                    <label for="age">Enter your age:</label><br>
+                        <input type="number" name="age" id="age" maxlength="2" placeholder="24" required tabindex="7">
                 </td>
                 <td>20</td>
                 <td>
-                    <label>Test your temperance:</label><br>
+                    <label for="image">Test your temperance:</label><br>
                     <input type="image" name="image" class='image' src="ima/whatsapp-logo.svg" width="50" tabindex="20">
                 </td>
             </tr>
             <tr>
                 <td>8.</td>
                 <td>
-                    <label>Enter your Date of birth:</label><br>
-                    <input type="date" value="date" name="bday" required tabindex="8">
+                    <label for="date">Enter your Date of birth:</label><br>
+                    <input type="date" value="date" name="date" id="date" required tabindex="8">
                 </td>
                 <td>21.</td>
                 <td>
-                    <label>If you need you may search:</label><br>
-                    <input type="search" tabindex="21">
+                    <label for="search">If you need you may search:</label><br>
+                    <input type="search" name="search" id="search" tabindex="21">
                 </td>
             </tr>
             <tr>
                 <td>9.</td>
                 <td>
-                    <label>Watch video for a break:</label><br>
+                    <span>Watch video for a break:</span><br>
                             <iframe width="300" height="200" src="https://www.youtube.com/embed/cE5f4GtejtI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </td>
                 <td>22.</td>
                 <td>
-                    <label>Write a short story about you:</label><br>
-                    <textarea name="message" rows="13" cols="37" placeholder="Something about you..." tabindex="22"></textarea>
+                    <label for="message">Write a short story about you:</label><br>
+                    <textarea name="message" id="message" rows="13" cols="37" placeholder="Something about you..." tabindex="22"></textarea>
                 </td>
                 
             </tr>
             <tr>
                 <td>10.</td>
                 <td>
-                    <label>Select your zodiac:</label><br>
-                    <select name="zodiac" tabindex="10">
+                    <label for="zodiac">Select your zodiac:</label><br>
+                    <select name="zodiac" id="zodiac" tabindex="10">
                         <option value="Aquarius" selected>Aquarius</option>
                         <option value="Pisces">Pisces</option>
                         <option value="Aries">Aries</option>
@@ -181,26 +184,26 @@
                 </td>
                 <td>23.</td>
                 <td>
-                    <label>Your avarage mark at school(1-5):</label><br>
-                    <input type="number" name="quantity" min="1" max="5" required tabindex="23">
+                    <label for="quantity">Your avarage mark at school(1-5):</label><br>
+                    <input type="number" name="quantity" id="quantity" min="1" max="5" required tabindex="23">
                 </td>
             <tr>
                 <td>11.</td>
                 <td>
-                    <label>How loud you listen to music:</label><br>
-                    <input type="range" value="range" name="points" min="0" max="100" tabindex="11">
+                    <label for="range">How loud you listen to music:</label><br>
+                    <input type="range" value="range" name="range" id="range" min="0" max="100" tabindex="11">
                 </td>
                 <td>24.</td>
                 <td>
-                    <label>Your avagare rate at university:</label><br>
-                    <input type="number" value="number" name="quantity" min="0" max="100" step="10" placeholder="60" required tabindex="24">
+                    <label for="number">Your avagare rate at university:</label><br>
+                    <input type="number" value="number" name="number" id="number" min="0" max="100" step="10" placeholder="60" required tabindex="24">
                 </td>
             </tr>
             <tr>
                 <td>12.</td>
                 <td>
-                    <label>Your favourite browser:</label><br>
-                    <input list="browsers" name="browser" placeholder="Chrome" required tabindex="12">
+                    <label for="browser">Your favourite browser:</label><br>
+                    <input list="browsers" name="browser" id="browser" placeholder="Chrome" required tabindex="12">
                     <datalist id="browsers">
                         <option value="Internet Explorer">
                         <option value="Firefox">
@@ -211,22 +214,22 @@
                 </td>
                 <td>25.</td>
                 <td>
-                    <label>Enter your phone number:</label><br>
-                    <input type="tel" name="phone" required pattern="[0-9]{3}-[0-9]{2}-[0-9]{2}-[0-9]{3}" placeholder="096-22-33-223" required tabindex="25">
+                    <label for="tel">Enter your phone number:</label><br>
+                    <input type="tel" name="tel" id="tel" value="380" pattern="[0-9]{3}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{3}" placeholder="380-96-22-33-223" required tabindex="25">
                 </td>
             </tr>
             <tr>
                 <td>13.</td>
                 <td>
-                    <label>Mark languages you know:</label><br>
-                    <input type="checkbox" value="en" id="en" ><label for="en">English</label><br>
-                    <input type="checkbox" value="ua" id="ua" checked tabindex="13"><label for="ua">Ukrainian</label><br>
-                    <input type="checkbox" value="ru" id="ru"><label for="ru">Russian</label><br>
+                    <span>Mark languages you know:</span><br>
+                    <input type="checkbox" value="en" name="en" id="en" ><label for="en">English</label><br>
+                    <input type="checkbox" value="ua" name="ua" id="ua" checked tabindex="13"><label for="ua">Ukrainian</label><br>
+                    <input type="checkbox" value="ru" name="ru" id="ru"><label for="ru">Russian</label><br>
                 </td>
                 <td>26.</td>
                 <td>
-                    <label>You wont ever get to this field:</label><br>
-                    <input type="text" value="text" disabled>
+                    <label for="disabled">You wont ever get to this field:</label><br>
+                    <input type="text" value="text" name="disabled" id="disabled" disabled>
                 </td>
             </tr>  
             <tr>
