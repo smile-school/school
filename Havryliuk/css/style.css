@@ -18,11 +18,11 @@ a {
     display: inline-block;
     width: 100%;
 }
-.drop>ul {
+.drop ul {
     display: none;
     border: 1px solid black;
 }
-.drop:hover>ul {
+.drop:hover ul {
     display: block;
 }
 .drop:hover+li p {
@@ -55,17 +55,20 @@ a {
 .three:hover li:nth-child(2n) {
     background-color: rgb(133, 172, 126);
 }
-.drop li a:hover{
+.drop:hover li:nth-child(n):hover a:hover{
     background-color: black;
     color: orange;
 }
-.drop ul li:nth-child(3n) a::before {
+.drop:hover li:nth-child(n):hover a:hover::after{
+transform: rotate(180deg);
+}
+.drop ul li:nth-child(-n+6) a::before {
     content: "★ "
 }
 .drop:first-child ul li:nth-child(-n+6) a::before {
     content: "☢ "
 }
-.drop:last-child ul li:nth-child(n+2) a::before {
+.drop:last-child ul li:nth-child(-n+6) a::before {
     content: "☞ "
 }
 .drop:nth-child(n) a::after {
@@ -76,10 +79,6 @@ a {
     content: "▷";
     transform: rotate(90deg);
     float: right;
-}
-.drop li a:nth-child(n):hover::after {
-    content: "▷";
-    transform: rotate(180deg);
 }
 table{
     margin-top: 50px;
