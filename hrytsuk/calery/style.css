@@ -1,0 +1,124 @@
+.wraper{
+    margin: 0 auto;
+    width: 1000px;
+}
+.wraper::after{
+    content: "";
+    display: block;
+    clear:both ;
+    height: 0;
+}
+.wraper a{
+    float: left;
+    width: calc(33.3% - 30px);
+    margin-bottom: 10px;
+    position: relative;
+}
+.wraper a:not(:nth-child(3n)){
+    margin-right: 15px;
+}
+.wraper a > img {
+    width: 100%;
+    display: block;
+}
+
+.wraper a::after{
+    content: "";
+    position: absolute;
+    background-color: black;
+    top:0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+}
+
+.wraper a:hover::after{
+    opacity: 0.5;
+}
+.wraper a::before{
+    content: "";
+    display: block;
+    position: absolute;
+    width:25px;
+    height: 25px;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%,-50%) scale(0);
+    background-image: url("./ima/eye.svg");
+    background-size: contain;
+    background-position: center;
+    z-index: 100;
+    transition: all .3s ease-in-out;
+}
+.wraper a:hover::before{
+    opacity: 1;
+    transform: translate(-50%,-50%) scale(1);
+}
+.modal-wraper div{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    transition: all .5s ease-in-out;
+    z-index: 200;
+}
+.modal-wraper div img{
+    display: block;
+    width: 100%;
+}
+.modal-wraper div:target{
+    transform: translate(-50%,-50%) scale(2);
+    box-shadow: 3px 0 0 300px rgba(0,0,0,0.75);
+}
+.modal-wraper div  a[href="#"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 300;
+    width: 9px;
+    height: 14px;
+    background: #ddd7d7;
+    color: black;
+    text-decoration: none;
+}
+.modal-wraper div a[href="#"]::after{
+    content: "\2613";
+    position: absolute;
+}
+.modal-wraper div a[href="#"]:hover{
+    color: brown;
+}
+.modal-wraper div a{
+    text-decoration: none;
+}
+.modal-wraper div .forward, .bac{
+    position: absolute;
+    top: 50%;
+    color: black;
+    background: #bbb;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    font-size: 18px;
+    opacity: 0.2;
+    text-align: center;
+    font-weight: bold;
+}
+.modal-wraper div .forward{
+    left: calc(100% + 15px);
+}
+.modal-wraper div .bac{
+     right: calc(100% + 15px);
+ }
+.modal-wraper div .forward:hover{
+    color: white;
+    opacity: 0.8;
+}
+.modal-wraper div .bac:hover{
+    color: white;
+    opacity: 0.8;
+}
+
+
+
