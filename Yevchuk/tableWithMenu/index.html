@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+    <nav class="navbar">
+        <ul class="list">
+            <li class="section1">
+                <a href="#">section</a>
+                <ul>
+                    <li><a href="#">point1</a>
+                        <ul>
+                            <li><a href="#">next level point1</a></li>
+                            <li><a href="#">next level point2</a></li>
+                            <li><a href="#">next level point3</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">point2</a></li>
+                    <li><a href="#">point3</a></li>
+                    <li><a href="#">point4</a>
+                        <ul>
+                            <li><a href="#">next level point4</a></li>
+                            <li><a href="#">next level point5</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">point5</a></li>
+                </ul>
+            </li>
+            <li class="section2">
+                <a href="#">section</a>
+                <ul>
+                    <li><a href="#">point1</a></li>
+                    <li><a href="#">point2</a></li>
+                    <li><a href="#">point3</a>
+                        <ul>
+                            <li><a href="#">next level point1</a></li>
+                            <li><a href="#">next level point2</a></li>
+                            <li><a href="#">next level point3</a></li>
+                            <li><a href="#">next level point4</a></li>
+                            <li><a href="#">next level point5</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">point4</a></li>
+                    <li><a href="#">point5</a></li>
+                </ul>
+            </li>
+            <li class="section3">
+                <a href="#">section</a>
+                <ul>
+                    <li><a href="#">point1</a></li>
+                    <li><a href="#">point2</a></li>
+                    <li><a href="#">point3</a></li>
+                    <li><a href="#">point4</a></li>
+                    <li><a href="#">point5</a>
+                        <ul>
+                            <li><a href="#">next level point1</a></li>
+                            <li><a href="#">next level point2</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</header>
+<table>
+    <tbody>
+    <tr>
+        <td width="600">
+            <form action="" method="post" enctype="multipart/form-data">
+                <table>
+                    <thead>
+                    <strong>
+                        Questionnaire
+                    </strong>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td colspan="2">
+                            <fieldset>
+                                <legend>Input your name</legend>
+                                <input type="text" name="name" placeholder="your name" required>
+                            </fieldset>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <fieldset>
+                                <legend>Input your surname</legend>
+                                <input type="text" name="surname" placeholder="your surname" required>
+                            </fieldset>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <fieldset>
+                                <legend>Input your age</legend>
+                                <input type="number" min="6" max="100" name="age" placeholder="your age " required>
+                            </fieldset>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <fieldset>
+                                <legend>Input your email</legend>
+                                <input type="email" name="email" placeholder="your email" required>
+                            </fieldset>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <fieldset>
+                                <legend>Input your phone number</legend>
+                                <input type="tel" name="phone" placeholder="only numbers" size="10"
+                                       pattern="[0]{1}[0-9]{2} [0-9]{3} [0-9]{4}" required>
+                                <small>Format: 023 456 7890</small>
+                            </fieldset>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <fieldset>
+                                <legend>Сhoose your avatar</legend>
+                                <input type="file" name="avatar">
+                            </fieldset>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <fieldset>
+                                <legend>Any password</legend>
+                                <input type="password" name="pass" required>
+                            </fieldset>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <fieldset>
+                                <legend>Any color</legend>
+                                <input type="color" name="color">
+                            </fieldset>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <fieldset>
+                                <legend>Date of birth</legend>
+                                <input type="date" name="birth" required>
+                            </fieldset>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <fieldset>
+                                <legend>you time</legend>
+                                <input type="time" name="time">
+                            </fieldset>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <fieldset>
+                                <legend>write anything about you</legend>
+                                <textarea name="description" cols="30" rows="10" required></textarea>
+                            </fieldset>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <fieldset>
+                                <legend>you gender</legend>
+                                <input type="radio" name="gender" value="male">male<br/>
+                                <input type="radio" name="gender" value="female">female<br/>
+                                <input type="radio" name="gender" value="another">another<br/>
+                            </fieldset>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <fieldset>
+                                <legend>some numbers</legend>
+                                <input type="checkbox" name="ten" value="10">10<br/>
+                                <input type="checkbox" name="one" value="1">1<br/>
+                                <input type="checkbox" name="six" value="6">6<br/>
+                                <input type="checkbox" name="five" value="5">5<br/>
+                                <input type="checkbox" name="four" value="4">4<br/>
+                                <input type="checkbox" name="seven" value="7">7<br/>
+                            </fieldset>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <fieldset>
+                                <legend>music</legend>
+                                <select>
+                                    <option>rock</option>
+                                    <option>jazz</option>
+                                    <option>pop</option>
+                                    <option>rap</option>
+                                    <option>metal</option>
+                                    <option>folk</option>
+                                </select>
+                            </fieldset>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="300">
+                            <input type="reset" name="reset" value="reset">
+                        </td>
+                        <td width="300">
+                            <input type="submit" name="submit" value="submit">
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </form>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
