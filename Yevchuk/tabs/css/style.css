@@ -51,7 +51,7 @@ body {
 }
 
 .container > p {
-    opacity: 0;
+    display: none;
     position: absolute;
     top: 0;
     left: 0;
@@ -61,14 +61,17 @@ body {
     background: #ffffff;
     border: 3px solid cadetblue;
     border-radius: 0 10px 10px 10px;
-    transition: opacity .5s ease-in-out;
+}
+
+.wrapper input:checked ~ .container > p {
+    border: 3px solid darkslategray;
 }
 
 .wrapper input:first-child:checked ~ .container > p:first-child,
 .wrapper input:nth-of-type(2):checked ~ .container > p:nth-child(2),
 .wrapper input:last-of-type:checked ~ .container > p:last-child {
-    border: 3px solid darkslategray;
-    opacity: 100;
+    border: 2px solid darkslategray;
+    display: block;
 }
 
 .accordion {
