@@ -4,10 +4,16 @@ body{
 }
 
 .wraper{
-    width: 70%;
+    width: 80%;
     margin: 150px auto ;
     min-height: 300px;
-
+}
+.wraper::after{
+    content: "";
+    display: block;
+    width: 80%;
+    height: 3px;
+    background-color: brown;
 }
 input{
     display: none;
@@ -41,7 +47,7 @@ input[id=tabs-2]:checked ~ .content .tabs-2{
 .wraper label:hover{
     background-color: #216363;
 }
-.wraper label h2{
+.wraper label{
     font-size: 16px;
 }
 .content{
@@ -53,15 +59,18 @@ input[id=tabs-2]:checked ~ .content .tabs-2{
     top: 0;
     left: 0;
     display: none;
-    width: 100%;
-    min-height: 150px;
+    width: 80%;
+    min-height: 200px;
     background-color: white;
     padding: 40px 60px;
     border-radius: 0 5px 5px 5px;
     transition: 8s ease-out;
     border-top: 5px solid brown;
 }
-
+.tabs-1 h2{
+    color: brown;
+    border-bottom: 1px solid brown;
+}
 .tabs-1 ul{
     height: 0;
 }
