@@ -25,18 +25,108 @@ footer .pusk{
     background-size: 100%;
     margin: 10px 0 5px 10px;
 }
-footer input[type='radio']{
+footer input[type='checkbox']{
     display: none;
 }
 .pusk-window{
     position: absolute;
-    bottom: 30px;
+    bottom: 40px;
     left: 0;
-    width: 200px;
-    height: 300px;
+    width: 400px;
+    height: 500px;
     background: black;
     display: none;
 }
-footer input[type='radio']:checked ~ .pusk-window{
+.pusk-window ul li{
+    color: white;
+    list-style-type: none;
+    line-height: 45px;
+    padding: 10px;
+}
+.pusk-window ul li::before{
+    content: '';
+    background: url("../img/white-profile-icon-3.jpg.png") no-repeat;
+    width: 100px;
+    position: absolute;
+    height: 100px;
+    left: 0;
+    background-size: 40px;
+}
+.pusk-window ul li:nth-child(2)::before{
+    background: url("../img/firefox.png") no-repeat;
+    background-size: 45px;
+}
+.pusk-window ul li:nth-child(3)::before{
+    background: url("../img/avocode.png") no-repeat;
+    background-size: 35px;
+    left: 5px;
+}
+.pusk-window ul li:nth-child(4)::before{
+    background: url("../img/chrome-512.png") no-repeat;
+    background-size: 35px;
+    left: 5px;
+}
+.pusk-window ul li:nth-child(5)::before{
+    background: url("../img/photoshop.png") no-repeat;
+    background-size: 35px;
+    left: 5px;
+}
+.pusk-window ul li:nth-child(6)::before{
+    background: url("../img/php.png") no-repeat;
+    background-size: 35px;
+    left: 5px;
+}
+.pusk-window ul li:hover{
+    background-color: lightgray;
+    color: black;
+}
+footer input:checked ~ .pusk-window{
+    display: block;
+}
+footer input[type='search']{
+    position: absolute;
+    left: 50px;
+    height: 100%;
+    border-radius: 0;
+    border: none;
+}
+.icons input[type='checkbox']{
+    display: none;
+}
+.icons label{
+    background: url("../img/cmd.png") no-repeat;
+    background-size: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 70px;
+    background-size: 120px;
+}
+.icons  p{
+    position: absolute;
+    top: 60px;
+    left: 42px;
+    width: 100px;
+}
+.windows .cmd-window{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 300px;
+    background: black;
+    transform: translate(-50%,-50%);
+    color: white;
+    padding: 10px;
+    display: none;
+}
+.windows .navbar{
+    position: relative;
+}
+.icons input[type='checkbox']{
+    display: none;
+}
+.icons input[type='checkbox']:checked ~ textarea{
     display: block;
 }
