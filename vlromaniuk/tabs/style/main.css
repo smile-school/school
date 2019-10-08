@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+body{
+    font-family: 'Roboto', sans-serif;
+}
+.tabs {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.tab, .title {
+    display: inline-block;
+}
+
+.tab input[type="radio"] {
+    display: none;
+}
+
+.title {
+    background: darkslateblue;
+    padding: 5px 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color: white;
+}
+
+.content {
+    position: absolute;
+    border-radius: 10px;
+    border-top-left-radius: 0;
+    background: darkorchid;
+    padding: 10px;
+    left: 0;
+    width: calc(100% - 20px);
+    display: none;
+    z-index: 2;
+    color: white;
+}
+
+.tab :checked + .title {
+    position: relative;
+    background: darkorchid;
+    top: 1px;
+    z-index: 1;
+}
+
+.tab :checked ~ .content {
+    display: block;
+}
+
+.content input {
+    width: 260px;
+}
+
+input[type='submit'] {
+    width: auto;
+    margin-top: 5px;
+    background: white;
+    padding: 5px 23px;
+    border: none;
+    border-radius: 5px;
+}
+.checkbox input[type="checkbox"] {
+    display: none;
+}
+.acordion{
+    position: absolute;
+    top: 300px;
+}
+.checkbox label{
+    background: darkorchid;
+    color: white;
+    padding: 10px;
+    width: 300px;
+    display: block;
+}
+.checkbox section{
+    overflow: hidden;
+}
+.checkbox input[type="checkbox"] ~ section{
+    width: 600px;
+    display: block;
+    padding: 10px;
+    border: 1px solid darkorchid;
+    display: none;
+}
+.checkbox input[type='checkbox']:checked ~ section{
+    display: block;
+}
+.checkbox:first-child section{
+    height: 500px;
+    background: url("../img/1.png") no-repeat top left, url("../img/3.png") no-repeat top right,  url("../img/2.png") no-repeat top center,  url("../img/4.png") no-repeat center left,  url("../img/5.png") no-repeat center center,  url("../img/6.png") no-repeat center right,  url("../img/1.png") no-repeat bottom left,  url("../img/2.png") no-repeat center bottom,  url("../img/3.png") no-repeat bottom right;
+    background-color: darkorchid;
+}
