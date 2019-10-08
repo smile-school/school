@@ -9,6 +9,18 @@ input:required{
     background: lightpink;
     border: 1px solid lightcoral;
 }
+option:checked{
+    background-color: slategrey;
+}
+input:checked + span{
+    font-weight: bold;
+}
+input[type="radio"][value$="_true"]:checked + span{
+    color:green;
+}
+input[type="radio"][value$="_false"]:checked + span{
+    color: red;
+}
 ul{
     list-style: none;
     margin: 0;
@@ -20,10 +32,6 @@ a{
 li p{
     margin: 0;
     padding: 0;
-}
-
-.menu{
-
 }
 .menu > li {
     display: inline-block;
@@ -39,9 +47,8 @@ li p{
     display: block;
     padding: 10px 20px;
     color: white;
-    outline: none;
 }
-ul ul{
+.menu ul{
     position: absolute;
     display: none;
     top: 100%;
@@ -52,8 +59,11 @@ ul ul{
 .menu > li:hover ul{
     display: block;
 }
-li > ul li{
-    background: dodgerblue;
+li > ul li:nth-child(odd){
+    background: #22838b;
+}
+li > ul li:nth-child(even){
+    background: #314d8b;
 }
 li > ul li > a{
     display: block;
@@ -62,4 +72,25 @@ li > ul li > a{
 }
 a:hover, p:hover, .menu > li> a:hover{
     color: aqua;
+}
+.menu ul li + li:hover{
+    text-decoration: underline;
+}
+.menu ul li:first-child:hover{
+    text-decoration-line: overline;
+}
+.menu > li > a::first-letter{
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.menu ul li:hover{
+    outline: 2px solid red;
+}
+.menu > li:nth-child(3) ul li:nth-child(3) ~ li{
+    pointer-events: none;
+    cursor: default;
+    text-decoration: none;
+}
+.menu > li:nth-child(3) ul li:nth-child(3) ~ li a{
+    color: #1d4545;
 }
