@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+div.wrapper {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+div.wrapper::after {
+    display: block;
+    content: '';
+    clear: both;
+}
+
+div.wrapper > a {
+    display: block;
+    width: calc(33.33% - 10px);
+    float: left;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+div.wrapper a:not(:nth-child(3n)) {
+    margin-right: 15px;
+}
+
+div.wrapper a::before {
+    display: block;
+    content: '';
+    position: absolute;
+    background-color: black;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    transition: all 500ms ease;
+}
+
+div.wrapper a::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    transform: translate(-50%, -50%) scale(0);
+    background-image: url("../img/eye.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: block;
+    opacity: 0;
+    transition: all 1000ms ease;
+}
+
+div.wrapper a:hover::before,
+div.wrapper a:hover::after {
+    opacity: 0.8;
+    display: block;
+
+}
+
+div.wrapper a:hover::after {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+div.wrapper > a img {
+    width: 100%;
+    display: block;
+}
+
+.blind{
+    visibility: hidden;
+    transform: scale(0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0, 0.5);
+    transition: all 500ms ease-out;
+}
+.blind .show-img{
+    width: 40%;
+    position: relative;
+}
+.blind .show-img .links,
+.blind .show-img .links, img{
+    display: block;
+    width: 100%;
+}
+.blind .show-img .bottom{
+    position: absolute;
+    opacity: 0.7;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 70%;
+    border-radius: 3px;
+    border: 1px solid black;
+}
+.blind .show-img .close{
+    top: 0;
+    right: 0;
+    background-image: url("../img/close-button.png");
+}
+.blind .show-img .next,
+.blind .show-img .prev{
+    top: 50%;
+    transform: translateY(-50%);
+}
+.blind .show-img .next{
+    right: 0;
+    background-image: url("../img/right-chevron.png");
+}
+.blind .show-img .prev{
+    left: 0;
+    background-image: url("../img/left-chevron.png");
+}
+
+.blind:target{
+    visibility: visible;
+    transform: scale(1);
+}
