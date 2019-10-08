@@ -80,12 +80,6 @@
 .modalWrapper > div img {
     width: 0;
     height: 0;
-    transition: height .5s, width .5s;
-}
-
-.modalWrapper > div:target img {
-    width: 30%;
-    height: 45%;
     position: absolute;
     margin: auto;
     top: 0;
@@ -93,6 +87,12 @@
     bottom: 0;
     right: 0;
     box-shadow: 0 0 400px 900px rgba(0, 0, 0, 0.75);
+    transition: height .5s, width .5s;
+}
+
+.modalWrapper > div:target img {
+    width: 30%;
+    height: 45%;
 }
 
 .modalWrapper > div:target a:first-child {
@@ -120,10 +120,6 @@
 
 .modalWrapper > a {
     visibility: hidden;
-}
-
-.modalWrapper > div:target ~ a {
-    visibility: visible;
     position: absolute;
     text-decoration: none;
     z-index: 5;
@@ -131,6 +127,11 @@
     top: 27%;
     width: 35px;
     height: 35px;
+}
+
+.modalWrapper > div:target ~ a {
+    visibility: visible;
+
 }
 
 .modalWrapper > a span {
