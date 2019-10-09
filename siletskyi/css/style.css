@@ -7,17 +7,83 @@ ul, li {
     padding: 0;
 }
 
-input:required {
-    border: 1px solid rgb(230, 88, 88);
+             /*table*/
+
+.wrapper-table td {
+    background: olivedrab;
 }
 
-input:required::placeholder {
-    color:green;
+.wrapper-table td:hover {
+    background: sienna;
 }
+
+.wrapper-table fieldset {
+    color: gold;
+}
+
+.wrapper-table input:required {
+    border: 1px solid rgb(230, 88, 88);
+    background: #4EC6DE;
+}
+
+.wrapper-table input:required:hover::placeholder {
+    color: darkblue;
+    font-weight: bold;
+}
+
+.wrapper-table input:required:hover {
+    border-radius: 10px;
+    background: coral;
+}
+
+.wrapper-table input:required::placeholder {
+    color: crimson;
+}
+
+.wrapper-table textarea {
+    background: darksalmon;
+    color: gold;
+    text-align: center;
+    padding: 10px;
+}
+
+.wrapper-table textarea:hover {
+    background: navy;
+    color: white;
+    font-weight: bold;
+    outline: 2px solid beige;
+}
+
+.wrapper-table tfoot input {
+    background: darkorchid;
+    color: white;
+    border: 1px solid darkred;
+    border-radius: 5px;
+}
+
+.wrapper-table tfoot input:hover{
+    background: #4EC6DE;
+    color: darkred;
+    border-radius: 15px;
+}
+
+.wrapper-table input:checked + label {
+    background: red;
+    border: 1px solid white;
+    border-radius: 5px;
+    color: darksalmon;
+}
+
+.wrapper-table input:checked + label:hover {
+    background: #4EC6DE;
+    color: red;
+}
+
+              /*menu*/
 
 .menu {
     display: flex;
-    height: 150px;
+    height: 200px;
     margin-left: 30px;
 }
 
@@ -31,25 +97,36 @@ input:required::placeholder {
     font-size: 18px;
 }
 
-.tit1 {
+.menu .tit1 {
     margin-right: 40px;
     width: 100px;
     text-align: center;
 }
 
-.tit1 li {
+.menu .tit1 > a {
+    background: chartreuse;
+    padding: 0 5px;
+    border: 1px dashed green;
+    border-radius: 5px;
+}
+
+.menu .tit1 li {
     display: none;
 }
 
-.tit1 li a {
-    color: rgb(102, 104, 24);
+.menu .tit1 li a {
+    color: burlywood;
+    background: brown;
+    border: 1px solid red;
+    border-radius: 15px;
+    padding: 0 5px;
 }
 
-.tit1:hover li {
+.menu .tit1:hover li {
     display: block;
 }
 
-.tit1::before {
+.menu .tit1::before {
     content: " ";
     width: 10px;
     height: 10px;
@@ -59,19 +136,24 @@ input:required::placeholder {
     position: relative;
     top: 15px;
     left: 5px;
- }
+}
 
- .tit1 li>a:hover::before, .tit1 li>a:hover::after{
+.menu .tit1 > a:hover {
+    background: green;
+    color: #4EC6DE;
+    border: 1px solid white;
+}
+
+.menu .tit1 li > a:hover::before, .menu .tit1 li > a:hover::after{
     content: "*";
     color: aqua;
     margin-right: 5px;
     margin-left: 5px;
 }
 
-.tit1 li>a:hover {
-    color: rgb(22, 6, 236);
+.menu .tit1 li > a:hover {
+    background: blue;
+    color: #eeeeee;
 }
-
-
 
 
