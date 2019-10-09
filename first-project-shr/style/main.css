@@ -6,6 +6,81 @@
 .wrapper{
     display: block;
     margin: 0 auto;
-    max-width: 1630px;
+    max-width: 1600px;
     padding: 0 15px;
+}
+.main .block_content {
+    display: flex;
+}
+
+.main .block_content .block_bg {
+    width: 66.66%;
+    background: url("../ima/main_1.png") no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main .block_content .block_bg:nth-child(2){
+    background: url("../ima/main_3.png") no-repeat;
+    background-size: cover;
+}
+
+.main .block_content .block_text_img {
+    width: 33.33%;
+}
+
+.main .block_content .block_text {
+    text-align: center;
+    padding: 70px 68px 64px;
+}
+
+.main .block_content .block_text hr {
+    border: none;
+    width: 50px;
+    height: 1px;
+    background-color: #d7d7d7;
+    margin-top: 40px;
+}
+
+.main .block_content .block_text h3 {
+    color: #353738;
+    font-family: "Lato", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3.6px;
+    margin-top: 31px;
+}
+
+.main .block_content .block_text p {
+    color: #848789;
+    font-family: "Lato", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 30px;
+    margin-top: 26px;
+    text-align: justify;
+}
+
+.main .block_content .block_img img {
+    display: block;
+    width: 100%;
+}
+
+.main .block_content .block_img {
+    position: relative;
+}
+
+.main .block_content .block_img::before {
+    content: "";
+    display: block;
+    width: 15px;
+    height: 15px;
+    background: white;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
 }
