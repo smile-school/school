@@ -1,11 +1,114 @@
-@import "font.css";
 @import "normalise.css";
 @import "reset.css";
 @import "all.css";
+@import "font.css";
 
-.wrapper{
+.wrapper {
     display: block;
     margin: 0 auto;
-    max-width: 1630px;
+    max-width: 1600px;
     padding: 0 15px;
+}
+
+.news {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.news i {
+    margin-top: 124px;
+    font-size: 32px;
+    color: #56c7ee;
+}
+
+.news .description {
+    margin-top: 35px;
+}
+
+.news .description span {
+    font-weight: 700;
+}
+
+.news .content {
+    width: 1036px;
+    color: #848789;
+    font-size: 24px;
+    font-style: italic;
+    line-height: 1.2;
+    text-align: center;
+    margin-top: 27px;
+    margin-bottom: 104px;
+}
+
+.news-nav {
+    display: flex;
+    justify-content: center;
+}
+
+.news-nav input {
+    margin: 9px;
+    transform: scale(0.55);
+    margin-bottom: 68px;
+}
+
+footer .galery {
+    display: flex;
+    flex: none;
+}
+.width-align{
+    width: calc(50%);
+    position: relative;
+}
+.width-align > img {
+    width: calc(100%);
+}
+.full-width{
+    position: relative;
+}
+.full-width > img {
+    width: calc(100%);
+}
+
+.first {
+    display: flex;
+    flex-wrap: wrap;
+    width: 33.33%;
+}
+
+.second {
+    display: flex;
+    width: 33.33%;
+}
+
+.three {
+    display: flex;
+    flex-wrap: wrap;
+    width: 33.33%;
+}
+
+.galery div div img {
+    display: block;
+}
+
+.galery>div>div:hover::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #64c29e;
+    opacity: .8;
+}
+.galery>div>div:hover::after{
+    content: '';
+    background: url("../ima/footer_galery_logo.png") no-repeat;
+    background-size: 100%;
+    position: absolute;
+    width: 98px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 54px;
 }
