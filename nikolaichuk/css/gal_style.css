@@ -1,7 +1,6 @@
 .gal-wrapper {
     margin: 0 auto;
     width: 1000px;
-    border: 1px solid red;
 }
 
 .gal-wrapper a {
@@ -26,7 +25,7 @@
     opacity: .3;
 }
 
-.gal-wrapper:after {
+.gal-wrapper::after {
     content: "";
     display: block;
     clear: both;
@@ -55,14 +54,16 @@
 }
 
 .gal-modal div:not(.modal-shadow) {
-    display: none;
+    /*display: none;*/
+    visibility: hidden;
+    opacity: 0;
     width: 450px;
-    border: 1px solid rgb(255, 255, 0);
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 20;
+    transition: opacity 1s ease-in;
 }
 
 .gal-modal div img {
@@ -72,6 +73,8 @@
 
 .gal-modal div:target {
     display: block;
+    visibility: visible;
+    opacity: 1;
 }
 
 .gal-modal div:target ~ .modal-shadow {
@@ -82,36 +85,35 @@
     position: absolute;
     width: 32px;
     height: 30px;
-    top: 0;
-    right: 0;
     background: white;
     font-size: 22px;
+    font-weight: bold;
     text-align: center;
     text-decoration: none;
 }
-.gal-modal div:not(.modal-shadow):after,
-.gal-modal div:not(.modal-shadow):before{
-    position: absolute;
-    width: 32px;
-    height: 30px;
-    top: 50%;
-    transform: translate(0, -50%);
-    background: white;
-    font-size: 22px;
-    text-align: center;
-    font-weight: bold;
+
+.gal-modal div > a:link,
+.gal-modal div > a:visited{
+    color: #0d110e;
 }
 
-.gal-modal div:not(.modal-shadow):after{
-    content: ">";
+.gal-modal div > a:first-of-type{
+    top: 0;
     right: 0;
 }
 
-.gal-modal div:not(.modal-shadow):before{
-    content: "<";
+.gal-modal div > a + a{
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.gal-modal div > a:nth-of-type(2){
     left: 0;
 }
 
+.gal-modal div > a:last-child{
+    right: 0;
+}
 
 .modal-shadow {
     display: none;
@@ -124,4 +126,14 @@
     opacity: .7;
 }
 
-
+.back-link{
+    margin: 0 auto;
+    text-align: center;
+}
+.back-link a{
+    display: block;
+    padding-bottom: 50px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+}
