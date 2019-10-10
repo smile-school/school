@@ -1,0 +1,26 @@
+<?php
+include_once 'Product.php';
+$block = new Product();
+//var_dump($block->getData()[0]);
+    //var_dump('Hello World');
+    //$name = 'Hello world';
+    //var_dump($name);
+//var_dump($block->getData()[0]['img']);
+?>
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div class="product-list">
+        <?php foreach ($block->getData() as $products): ?>
+        <?php var_dump($products['img']); ?>
+        <br/>
+        <br/>
+        <?php endforeach; ?>
+    </div>
+</body>
+</html>
