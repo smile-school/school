@@ -15,7 +15,7 @@
     position: relative;
 }
 .header_image{
-    background: url("../ima/header_bg.png");
+    background: url("../ima/header_bg.png") no-repeat;
     width: 100%;
     height: inherit;
     position: relative;
@@ -60,6 +60,93 @@
     position: absolute;
     padding-left: 31px;
 }
+.menu_burger{
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+    height: 40px;
+    /*width: 54px;*/
+    /*float: right;*/
+    background: black;
+    color: white;
+}
+#check_menu{
+    display: none;
+}
+#check_menu:checked~.main_menu{
+    max-height: 800px;
+    font-size: 16px;
+}
+
+#check_menu:checked .menu_burger{
+    width: 100%;
+    float: inherit;
+}
+#check_menu:checked~.first{
+    display: none;
+}
+#check_menu:checked~.second{
+    transform: rotate(45deg);
+}
+#check_menu:checked~.third{
+    transform: rotate(-45deg);
+}
+#check_menu:checked~.fourth{
+    display: none;
+}
+.check_menu{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    cursor: pointer;
+    line-height: 40px;
+}
+.burger_line{
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    width: 35px;
+    height: 2px;
+    background: white;
+    transition: .5s all;
+}
+.second,.third{
+    top: 18px;
+}
+.fourth{
+    top: 28px;
+}
+.main_menu{
+    max-height: 0;
+    display: block;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    font-size: 0;
+    overflow: hidden;
+    transform: translateY(100%);
+    transition: .5s all;
+}
+.main_menu a{
+    width: 100%;
+    display: block;
+    padding: 90px 0 90px 0;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    background: black;
+    outline-offset: 1px solid rgba(255, 255, 255, .3);
+}
+.main_menu a:hover{
+    color: green;
+    font-size: 20px;
+}
+
 .header_article{
     width: 100%;
     position: relative;
