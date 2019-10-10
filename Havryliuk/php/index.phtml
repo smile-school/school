@@ -1,0 +1,60 @@
+<?php
+include_once "Product.php";
+include_once "products.json";
+$block = new Product();
+$name = 'product list';
+var_dump($block->getData()[0]['img']);
+
+?>
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .product-item{
+            display: block;
+            border: 1px solid black;
+            float: left;
+            width: 500px;
+            height: 400px;
+            margin: 5px;
+            padding: 5px;
+        }
+        h5{
+            text-decoration: line-through;
+            color: red;
+        }
+        h3{
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div class="product-list">
+    <?php if($name): ?>
+    <h2><?= $name; ?></h2>
+    <?php endif; ?>
+    <?php foreach ($block->getData() as $products): ?>
+<!--        --><?php //var_dump($products); ?>
+       <div class="product-item">
+           <img src="<?php echo $products['img'] ?>" alt=""><br>
+           <h2><a href="#"><?php echo $products['title']; ?></a> </h2>
+           <?php for ($i=0; $i<$products['rating']; $i++): ?>
+           +&nbsp;
+           <?php endfor; ?>
+
+           <h5>Old price: <?php echo $products['price']['oldPrice']; ?></h5>
+           <h3>Final price: <?= $products['price']['finalPrice']; ?></h3>
+
+       </div>
+
+    <?php endforeach; ?>
+</div>
+</body>
+</html>
