@@ -1,0 +1,47 @@
+<?php
+
+    include_once "Product.php";
+    $block = New Product();
+
+?>
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .oldprice{
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body>
+<div class="product_list">
+    <?php foreach ($block->getData() as $products): ?>
+    <?php var_dump($products); ?>
+
+    <div class="product-item">
+        <img src="<?=$products["img"] ?>" alt="src">
+      <h3><?= $products["title"]; ?></h3>
+        <?php if($products["price"]["finalPrice"] < $products["price"]["oldPrice"]):?>
+        <h3><?= $products["price"]["finalPrice"];?></h3>
+            <h3 class="oldprice"><?= $products["price"]["oldPrice"];?></h3>
+        <?php else: ?>
+        <h3><?= $products["price"]["finalPrice"];?></h3>
+
+        <h3><?php   $lets =$products["price"]["finalPrice"];
+                    $lets2 =$products["price"]["oldPrice"];
+
+        echo 100 * ($lets/$lets2) - 100;?></h3>
+        <h3></h3>
+    </div>
+    <?php endif; ?>
+
+    <?php endforeach; ?>
+</div>
+</body>
+</html>
