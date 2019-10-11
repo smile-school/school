@@ -3,6 +3,44 @@
 @import "reset.css";
 @import "all.css";
 
+/* For mobile phones: */
+[class*="col-"] {
+    width: 100%;
+}
+    /* For desktop: */
+@media only screen and (min-width: 1200px) {
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+}
+* {
+    box-sizing: border-box;
+}
+@media (min-width:1201px){
+    .menu_burger{
+        display: none;
+    }
+    .menu_desktop{
+        display: block;
+    }
+}
+@media only screen and (min-width: 320px) and (max-width: 1200px){
+    .menu_burger{
+        display: block;
+    }
+    .menu_desktop{
+        display: none;
+    }
+}
 .wrapper{
     display: block;
     margin: 0 auto;
@@ -16,22 +54,38 @@
 }
 .header_image{
     background: url("../ima/header_bg.png") no-repeat;
+    background-size: 100% 100%;
     width: 100%;
     height: inherit;
     position: relative;
 }
 .header_image>.header_logo{
     position: absolute;
-    top: 35px;
+    top: 45px;
     left: calc(50% - 42.5px);
 }
+.header_logo img{
+    animation: header_logo 5s linear infinite;
+  animation-play-state: running;
+  transform: scale(1, 1)
+}
+ @keyframes header_logo {
+    0%{
+        transform: scale(1, 1)
+    }
+    50%{
+        transform: scale(-1, 1)
+    }
+   100% {
+        transform: scale(1, 1)
+   }
+ }
 .menu_desktop{
-    position: absolute;
-    float: left;
     text-transform: uppercase;
     height: 10px;
-    top: 68px;
-    padding-left: calc(32.33% - 42.5px);
+    margin: 0 auto;
+    width: 40%;
+    padding-top: 80px;
 }
 .menu_desktop a{
     text-decoration: none;
@@ -47,11 +101,8 @@
 .menu_desktop li{
     float: left;
 }
-.menu_desktop li:nth-child(n){
-    margin-right: 63px;
-}
-.menu_desktop li:nth-child(2n){
-    margin-right: 221px;
+.menu_desktop li:nth-child(n):not(:first-child):not(:nth-child(2)){
+    text-align: right; 
 }
 .menu_desktop li:nth-child(2n+1)::after{
     content: ".";
@@ -65,8 +116,6 @@
     position: relative;
     text-align: center;
     height: 40px;
-    /*width: 54px;*/
-    /*float: right;*/
     background: black;
     color: white;
 }
@@ -76,8 +125,8 @@
 #check_menu:checked~.main_menu{
     max-height: 800px;
     font-size: 16px;
+    opacity: .7;
 }
-
 #check_menu:checked .menu_burger{
     width: 100%;
     float: inherit;
@@ -145,8 +194,8 @@
 .main_menu a:hover{
     color: green;
     font-size: 20px;
+    font-weight: bold;
 }
-
 .header_article{
     width: 100%;
     position: relative;
@@ -160,6 +209,15 @@
     left: calc(50% - 26px);
     top: 117px;
 }
+.header_article .vehicle .spin img{
+    animation: spin 3s linear infinite;
+    animation-play-state: infinite;
+ }
+ @keyframes spin {
+   100% {
+     transform: rotate(1turn);
+   }
+ }
 .header_article h2{
     color: #353738;
     font-size: 18px;
@@ -174,6 +232,6 @@
     font-size: 18px;
     font-weight: 400;
     line-height: 34px;
-    text-align: center;
-    padding: 35px 200px;
+    text-align: justify;
+    padding: 3% 10% 10%;
 }
