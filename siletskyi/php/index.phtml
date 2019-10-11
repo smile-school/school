@@ -1,0 +1,57 @@
+<?php
+    include_once "Product.php";
+    $block = new Product();
+    $name = 'Product_list';
+    $fullName = 'ggg';
+//    var_dump($block->getData()[0]['img']);
+//    var_dump($block->getData()[0]['img']);
+//    var_dump('hello world');
+//    $name = 'hello world';
+//    $fullName = 'fff';
+//    var_dump($name . ' ' . $fullName);
+?>
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="product_list">
+        <?php if ($name): ?>
+            <h2><?= $name; ?></h2>
+        <?php endif;?>
+        <div class="product_wrapper">
+            <?php foreach ($block->getData() as $products):  ?>
+                <div class="product_item">
+                    <img src="<?php echo $products['img'] ?>" alt="">
+                    <h3><?php echo $products['title'] ?></h3>
+                    <span>Rating: </span><br>
+                    <?php for ($i=0; $i<$products['rating']; $i++):?>
+                        <span>+&nbsp</span>
+                    <?php endfor; ?><br>
+                    <div class="price_wrapper">
+                        <?php if ($products['price']['finalPrice'] == $products['price']['oldPrice']):?>
+                            <p class="price">Price: <?= $products['price']['finalPrice']?> uah</p>
+                        <?php else:?>
+                            <?php
+                            $sale = ($products['price']['oldPrice'] - $products['price']['finalPrice']);
+                            $sale = $sale / ($products['price']['oldPrice'] / 100);
+                            ?>
+                            <span>Sale: <?= round($sale);?>%</span><br>
+                            <span>Price: <?= $products['price']['finalPrice'] ?> uah</span><br>
+                            <span>Old price: <?= $products['price']['oldPrice'] ?> uah</span>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+
+</body>
+</html>
