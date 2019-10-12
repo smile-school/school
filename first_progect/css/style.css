@@ -136,9 +136,9 @@ header.header {
 
 .wrapper .text-wrapper::after {
     position: absolute;
-    top: 117px;
+    top: 30%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -53%);
     display: block;
     content: '';
     width: 52px;
@@ -512,26 +512,103 @@ header.header {
 
 
 /*---Media---*/
-@media screen and (max-width: 1200px) {
-    div.wrapper {
-        /*padding: 0;*/
-    }
-}
-
 @media screen and (max-width: 992px) {
-
+    div.wrapper{
+        padding: 0 10px;
+    }
+    .wrapper .text-wrapper{
+        padding: 130px 10px 80px;
+    }
+    .wrapper .text-wrapper::after{
+        top: 20%;
+    }
+    .wrapper .text-wrapper article.text{
+        font-size: 16px;
+    }
+    .work-wrapper .row-wrapper .about-bicycle{
+        padding-top: 100px;
+    }
+    .work-wrapper .row-wrapper .about-bicycle:before{
+        top: 6%;
+    }
+    .work-wrapper .row-wrapper .about-bicycle:after{
+        bottom: 40%;
+    }
+    .work-wrapper .row-wrapper .about-bicycle article.about{
+        padding: 0 10px 60px;
+    }
+    .social-wrapper .content-slider .news article.text{
+        font-size: 20px;
+    }
+    .social-wrapper .content-slider .news{
+        padding: 130px 10px 120px;
+    }
+    .social-wrapper .content-slider .news:before{
+        top: 23%;
+    }
 }
 
 @media screen and (max-width: 767px) {
-    .header .menu-wrapper {
-        display: none;
+    div.wrapper{
+        padding: 0 5px;
     }
-
     .header .hamburger-wrap .menu-label {
         display: flex;
     }
 
     .header .hamburger-wrap .label {
         display: block;
+    }
+
+    .header .menu-wrapper {
+        display: none;
+    }
+    .wrapper .text-wrapper{
+        padding: 100px 10px 50px;
+    }
+    .wrapper .text-wrapper::after{
+        top: 15%;
+    }
+    .work-wrapper .row-wrapper .about-bicycle article.about,
+    .work-wrapper .about-bicycle .decorate-wrapper article.additional{
+        line-height: 23px;
+    }
+    .work-wrapper .row-wrapper .about-bicycle{
+        padding-top: 85px;
+    }
+
+    .social-wrapper .content-slider .news article.text{
+        font-size: 18px;
+    }
+    .social-wrapper .content-slider .news{
+        padding: 110px 10px 90px;
+    }
+
+    .read-bottoms {
+        display: block;
+    }
+    .read-bottoms .image-container:nth-child(2){
+        flex-direction: column;
+        width: 25%;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+    }
+    .read-bottoms .image-container .image.vertical {
+        width: 100%;
+    }
+    .read-bottoms .image-container:nth-child(2n+1){
+        left: 0;
+        right: 75%;
+        width: 75%;
+    }
+    .read-bottoms .image-container:first-child{
+        top: 0;
+        bottom: 50%;
+    }
+    .read-bottoms .image-container:last-child{
+        top: 50%;
+        bottom: 0;
     }
 }
