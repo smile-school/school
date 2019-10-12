@@ -2,6 +2,7 @@
 @import "reset.css";
 @import "all.css";
 @import "font.css";
+@import "form.css";
 
 .wrapper {
     display: block;
@@ -114,12 +115,13 @@ footer .galery {
 }
 .footer-form input[type='checkbox']{
     display: none;
+    transition: all 1s linear;
 }
 .footer-form{
     background-color: #282f35;
     padding: 95px;
 }
-.footer-form label{
+.footer-form>label{
     font-weight: 700;
     text-transform: uppercase;
     color: white;
@@ -128,6 +130,25 @@ footer .galery {
     width: 210px;
     border: 1px solid rgba(255, 255, 255, 0.5);
     margin: 0 auto;
+}
+.footer-form form input, textarea{
+width: 100%;
+}
+.footer-form form{
+display: flex;
+justify-content: center;
+flex-direction: column;
+}
+.footer-form form label{
+    margin: 5px 0 5px 0;
+    display: block;
+}
+.footer-form form{
+display: none;
+}
+.footer-form input[type='checkbox']:checked ~ form{
+    display: block;
+
 }
 footer .subscribe{
     padding: 110px;
