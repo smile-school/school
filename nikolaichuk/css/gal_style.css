@@ -43,27 +43,22 @@
     top: 50%;
     transform: scale(0) translate(-50%, -50%);
     transform-origin: 0 0;
-    opacity: 0;
     z-index: 10;
-    transition: all .5s linear, opacity .4s linear;
+    transition: all .5s linear;
 }
 
 .gal-wrapper a:hover::before {
     transform: scale(1) translate(-50%, -50%);
-    opacity: 1;
 }
 
 .gal-modal div:not(.modal-shadow) {
-    /*display: none;*/
     visibility: hidden;
-    opacity: 0;
     width: 450px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 20;
-    transition: opacity 1s ease-in;
 }
 
 .gal-modal div img {
@@ -74,7 +69,6 @@
 .gal-modal div:target {
     display: block;
     visibility: visible;
-    opacity: 1;
 }
 
 .gal-modal div:target ~ .modal-shadow {

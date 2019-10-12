@@ -1,7 +1,6 @@
 <?php
 include_once "Product.php";
 $block = new Product();
-var_dump($block->getData()[0]['img']);
 ?>
 
 <!DOCTYPE html>
@@ -14,42 +13,6 @@ var_dump($block->getData()[0]['img']);
     <title>php</title>
 </head>
 <body>
-<div>
-    <?php foreach ($block->getData() as $products):?>
-    <?php var_dump($products);?>
-    <div>
-        <img src="<?php echo $products["img"] ?>" alt="<?php echo $products["title"]?>"/>
-        <h2>
-            <?php echo $products['title'];?>
-        </h2>
-        <?php for($i=0; $i<$products['rating']; $i++):?>
-        +&nbsp;
-        <?php endfor;?>
-        <div class="price-wrapper">
-            <?php if($products['price']['finalPrice'] == $products['price']['oldPrice']):?>
-            <p style="font-weight: bold">
-                <?= $products['price']["finalPrice"]?>
-            </p>
-            <?php else: ?>
-            <p style="text-decoration: line-through">
-                Old Price: <?= $products['price']['oldPrice'];?>
-            </p>
-            <p style="font-weight: bold">
-                Final Price: <?= $products["price"]['finalPrice'];?>
-            </p>
-            <?php
-                $sale = $products["price"]["oldPrice"] - $products["price"]["finalPrice"];
-                $sale = $sale / ($products["price"]["oldPrice"] / 100);
-                ?>
-            <p style="color: red; font-weight: bold">
-                Sale: <?= round($sale);?>
-            </p>
-            <?php endif?>
-        </div>
-    </div>
-    <?php endforeach;?>
-</div>
-
 <div class="products-list">
     <?php for ($i = 0; $i < $block->getCountProduct(); $i++): ?>
     <div class="product-item">
