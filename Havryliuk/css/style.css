@@ -55,12 +55,9 @@ a {
 .three:hover li:nth-child(2n) {
     background-color: rgb(133, 172, 126);
 }
-.drop:hover li:nth-child(n):hover a:hover{
+.drop li a:hover{
     background-color: black;
     color: orange;
-}
-.drop:hover li:nth-child(n):hover a:hover::after{
-transform: rotate(180deg);
 }
 .drop ul li:nth-child(3n) a::before {
     content: "★ "
@@ -79,6 +76,10 @@ transform: rotate(180deg);
     content: "▷";
     transform: rotate(90deg);
     float: right;
+}
+.drop li a:nth-child(n):hover::after {
+    content: "▷";
+    transform: rotate(180deg);
 }
 table{
     margin-top: 50px;
