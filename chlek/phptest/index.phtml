@@ -1,0 +1,51 @@
+<?php
+include_once './php/Product.php';
+$block = new Product();
+
+var_dump($block->getCountProduct());
+/*var_dump($block->getImage());*/
+//var_dump('Hello World');
+//$name = 'Hello world';
+//var_dump($name);
+//var_dump($block->getData()[0]['img']);
+?>
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="wrapper">
+    <?php foreach ($block->getData() as $products): ?>
+        <div class="card-wrap">
+            <img src="<?= $products['img'] ?>" alt="photo" class="photo">
+            <p class="title"><?= $products['title'] ?></p>
+            <div class="rating-wrap">
+                <span class="rating">Rating:</span>
+                <?php for ($i = 0; $i < $products['rating'] / 10; $i++): ?>
+                    <?= '<i class="icon-star-empty"></i>' ?>
+                <?php endfor; ?>
+            </div>
+            <div class="price-wrap">
+                <span class="text">Old price:</span>
+                <span class="price"><?= $products['price']['oldPrice'] . ' UAH' ?></span>
+                <?php if ($products['price']['oldPrice'] > $products['price']['finalPrice']): ?>
+                    <span class="text">Final price:</span>
+                    <span class="price"><?= $products['price']['finalPrice'] . ' UAH' ?></span>
+                    <span class="text">discount:</span>
+                    <span class="price discount"><?php
+                        $discount = 0;
+                        $discount = $products['price']['oldPrice'] - $products['price']['finalPrice'];
+                        echo $discount;
+                        ?></span>
+                <?php endif; ?>
+            </div>
+            <a href="#" class="bottom">buy now</a>
+        </div>
+    <?php endforeach; ?>
+</div>
+</body>
+</html>

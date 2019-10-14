@@ -4,7 +4,7 @@ class Product
 {
     public function getData()
     {
-        $json = file_get_contents('products.json');
+        $json = file_get_contents('./php/products.json');
         $data = json_decode($json, true);
 
         return $data;
@@ -42,5 +42,8 @@ class Product
     {
         $data = $this->getData();
         return $data[$id]['url'];
+    }
+    public function getDiscount(){
+
     }
 }

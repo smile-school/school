@@ -37,13 +37,13 @@ $names = [
 <table width="800" border="1" align="center" cellpadding="5">
     <caption><h1>Ваші дані</h1></caption>
     <tbody>
-    <?php
-    foreach ($_POST as $key => $value) {
+ <?php
+/*    foreach ($_POST as $key => $value) {
         if ($value) {
             echo('<tr><td><h3>' . $names[$key] . ': ' . $_POST[$key] . '.</h3></td></tr>');
         }
     }
-    ?>
+    */?>
     </tbody>
 </table>
 </body>
