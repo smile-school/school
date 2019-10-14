@@ -192,7 +192,7 @@ footer .subscribe{
 }
 footer .subscribe .logo{
     display: flex;
-    justify-content: center;
+    justify-content: center ;
 }
 footer .subscribe span{
     font-size: 24px;
@@ -216,6 +216,7 @@ footer .footer{
 footer .footer div{
     margin: 0 auto;
     display: flex;
+    width: 80%;
     justify-content: space-between;
 }
 footer .footer div .contact{
@@ -268,20 +269,78 @@ footer .footer div .powered span{
     font-size: 14px;
     font-style: italic;
 }
-@media screen and (min-width: 1200px) {
+@media screen and (max-width: 1200px) {
     .wrapper{
-        width: 1160px;
-        padding: 0;
+        width: 100%;
     }
 }
 @media screen and (max-width: 992px) {
     .wrapper{
-        width: 900px;
+        width: 100%;
         padding: 0;
     }
 }
-
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 767px){
+    .wrapper{
+        width: 100%;
+        padding: 0;
+    }
+    .slides i{
+        font-size: 48px;
+        margin-top: 60px;
+    }
+    .slides .description{
+        font-size: 16px;
+    }
+    .slides .content{
+        font-size: 16px;
+        width: 90%;
+    }
+    .news .controls label{
+        margin-top: 40px;
+        margin-bottom: 30px;
+    }
+    footer .galery{
+        flex-direction: column;
+    }
+    footer .galery>div{
+        width: 100%;
+    }
+    .footer-form{
+        padding: 25px;
+    }
+    .footer-form > label{
+        display: block;
+        padding: 10px 15px;
+    }
+    footer .subscribe{
+        padding: 55px 0;
+    }
+    footer .subscribe span{
+        font-size: 20px;
+    }
+    footer .subscribe input[type="email"]{
+        width: 190px;
+    }
+    footer .subscribe input[type='submit']{
+        padding: 10px 20px;
+    }
+    footer .footer div{
+        flex-direction: column;
+    }
+    footer .footer{
+        padding: 0;
+    }
+    .contact p{
+        text-align: center;
+        font-size: 14px;
+        margin: 30px 0;
+    }
+    footer .footer div .powered{
+        margin: 30px 0;
+    }
+}
+@media screen and (max-width: 320px) {
     .wrapper{
         width: 300px;
         padding: 0;
