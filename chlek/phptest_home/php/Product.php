@@ -43,4 +43,8 @@ class Product
         $data = $this->getData();
         return $data[$id]['url'];
     }
+    public function getDiscount($id){
+        $data = $this->getData();
+        return $data[$id]['price']['oldPrice'] - $data[$id]['price']['finalPrice'];
+    }
 }
