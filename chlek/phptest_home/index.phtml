@@ -2,7 +2,6 @@
 include_once './php/Product.php';
 $block = new Product();
 /*var_dump($block->getData());*/
-
 /*var_dump($block->getCountProduct());*/
 /*var_dump($block->getImage());*/
 //var_dump('Hello World');
@@ -33,7 +32,7 @@ $block = new Product();
             <div class="price-wrap">
                 <span class="text">Old price:</span>
                 <span class="price"><?= $block->getPrice($key)['oldPrice'] . ' UAH' ?></span>
-                <?php if ($products['price']['oldPrice'] > $products['price']['finalPrice']): ?>
+                <?php if ($block->getPrice($key)['oldPrice'] > $block->getPrice($key)['finalPrice']): ?>
                     <span class="text">Final price:</span>
                     <span class="price"><?= $block->getPrice($key)['finalPrice'] . ' UAH' ?></span>
                     <span class="text">discount:</span>
