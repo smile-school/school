@@ -73,7 +73,9 @@ li > ul li > a{
     padding: 10px 20px;
     color: white;
 }
-a:hover, p:hover, .menu > li> a:hover{
+.menu a:hover,
+.menu p:hover,
+.menu > li> a:hover{
     color: aqua;
 }
 .menu ul li + li:hover{
@@ -96,4 +98,49 @@ a:hover, p:hover, .menu > li> a:hover{
 }
 .menu > li:nth-child(3) ul li:nth-child(3) ~ li a{
     color: #1d4545;
+}
+.accordion{
+    margin: 10px auto;
+    width: 400px;
+    padding: 10px;
+}
+.accordion input[type="checkbox"]{
+    display: none;
+}
+.accordion label{
+    display: block;
+    border: 1px solid #737471;
+    padding: 10px;
+    border-radius: 5px;
+    width: calc(100% - 22px);
+    color: white;
+    background: #8f908d;
+    margin: 5px 0;
+    cursor: pointer;
+}
+.accordion div{
+    overflow: hidden;
+    height: 0px;
+    position: relative;
+    transition: height 0.3s ease-in-out;
+}
+.accordion div p{
+    padding: 10px 20px;
+    margin: 0;
+}
+.accordion label:hover{
+    background: #babbb8;
+    color: black;
+    font-weight: bold;
+}
+.accordion input[type="checkbox"]:checked + label{
+    background: #92bbbb;
+    color: black;
+    font-weight: bold;
+}
+.accordion input[type="checkbox"]:checked + label + div{
+    height: 80px;
+    transition: height 0.5s ease-in-out;
+    border: 1px solid #8f908d;
+    border-radius: 5px;
 }
