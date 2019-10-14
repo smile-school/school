@@ -1,12 +1,8 @@
 <?php
 include_once "Product.php";
-include_once "products.json";
 $block = new Product();
-$name = 'product list';
-var_dump($block->getData()[0]['img']);
-
+$name = 'Products list';
 ?>
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -14,46 +10,53 @@ var_dump($block->getData()[0]['img']);
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <style>
-        .product-item{
-            display: block;
-            border: 1px solid black;
-            float: left;
-            width: 500px;
-            height: 400px;
-            margin: 5px;
-            padding: 5px;
-        }
-        h5{
-            text-decoration: line-through;
-            color: red;
-        }
-        h3{
-            color: green;
-            font-weight: bold;
-        }
-    </style>
+    <title>Product list</title>
+    <link rel="stylesheet" href="css/phtml.css">
 </head>
 <body>
 <div class="product-list">
     <?php if($name): ?>
-    <h2><?= $name; ?></h2>
+    <h1><?= $name; ?></h1>
     <?php endif; ?>
     <?php foreach ($block->getData() as $products): ?>
-<!--        --><?php //var_dump($products); ?>
+    <div class="product-gallery">
        <div class="product-item">
-           <img src="<?php echo $products['img'] ?>" alt=""><br>
-           <h2><a href="#"><?php echo $products['title']; ?></a> </h2>
-           <?php for ($i=0; $i<$products['rating']; $i++): ?>
-           +&nbsp;
-           <?php endfor; ?>
-
-           <h5>Old price: <?php echo $products['price']['oldPrice']; ?></h5>
-           <h3>Final price: <?= $products['price']['finalPrice']; ?></h3>
-
+           <img src="<?= $products['img'] ?>" alt="" class="gal">
+           <p class="item-title"><a href="#"><?= $products['title']; ?></a></p>
+           <div class="action">
+               <?php if ($products['actions']['bestsellers'] == true): ?>
+                   <p class="action">Category: bestsellers</p>
+               <?php endif; ?>
+               <?php if ($products['actions']['eco'] == true): ?>
+                   <p class="action">Category: eco</p>
+               <?php endif; ?>
+               <?php if ($products['actions']['new'] == true): ?>
+                   <p class="action">Category: new</p>
+               <?php endif; ?>
+           </div>
+           <div class="stars">
+               <?php for ($i=0; $i<$products['rating']; $i++): ?>
+                   <span style="color: gold">✩</span>
+               <?php endfor; ?>
+               <?php for ($i=0; $i<5-$products['rating']; $i++): ?>
+                   <span>✩</span>
+               <?php endfor; ?>
+           </div>
+            <div class="price order">
+                <?php if ($products['price']['finalPrice'] == $products['price']['oldPrice']):?>
+                    <p class="finalprice"><?= $products['price']['finalPrice']; ?> USD</p>
+                <?php else: ?>
+                    <p class="oldprice"><?= $products['price']['oldPrice']; ?></p>
+                    <div class="discount"><p>-<?= round(100 - ($products['price']['finalPrice'] / $products['price']['oldPrice'] * 100)); ?>%</p></div>
+                    <p class="finalprice"><?= $products['price']['finalPrice']; ?> USD</p>
+                <?php endif; ?>
+            </div>
+           <form class="order-now">
+               <label for="submit" class="order"><a href="<?=$products['url'];?>"></a></label>
+               <input type="submit" name="Order" value="Order" id="order">
+           </form>
        </div>
-
+    </div>
     <?php endforeach; ?>
 </div>
 </body>
