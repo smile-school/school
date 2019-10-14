@@ -43,4 +43,14 @@ class Product
         $data = $this->getData();
         return $data[$id]['url'];
     }
+    public function postRating($id)
+    {
+        $data = $this->getData();
+        for ($i=0; $i < $data[$id]['rating']; $i++){
+            echo "<span>*&nbsp</span>";
+        }
+        return $data[$id]['prating'];
+    }
 }
+
+

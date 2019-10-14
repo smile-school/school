@@ -34,12 +34,9 @@ $name = 'Product_list';
                     <?php endif; ?>
                 </div>
                 <h3><?php echo $products['title'] ?></h3>
-                <?php for ($i=0; $i<$products['rating']; $i++):?>
-                    <span style="color: gold">*&nbsp</span>
-                <?php endfor; ?>
-                <?php for ($i=0; $i < 10 - $products['rating']; $i++):?>
-                    <span>*&nbsp</span>
-                <?php endfor; ?>
+                <?php
+                $block->postRating(0);
+                ?>
                 <div class="cart-info">
                 <div class="price_wrapper">
                     <?php if ($products['price']['finalPrice'] == $products['price']['oldPrice']):?>
