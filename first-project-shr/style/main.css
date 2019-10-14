@@ -2,8 +2,6 @@
 @import "normalise.css";
 @import "reset.css";
 @import "all.css";
-@import "font.css";
-@import "form.css";
 
 [class*="col-"] {
     width: 100%;
@@ -42,6 +40,218 @@
     }
 }
 .wrapper{
+    display: block;
+    margin: 0 auto;
+    max-width: 1600px;
+    padding: 0 15px;
+}
+.header{
+    width: 100%;
+    height: 800px;
+    position: relative;
+}
+.header_image{
+    background: url("../ima/header_bg.png") no-repeat center center;
+    height: inherit;
+    position: relative;
+}
+.header_image>.header_logo{
+    position: absolute;
+    top: 45px;
+    left: calc(50% - 42.5px);
+}
+.header_logo img{
+    animation: header_logo 5s linear infinite;
+    animation-play-state: running;
+    transform: scale(1, 1)
+}
+@keyframes header_logo {
+    0%{
+        transform: scale(1, 1)
+    }
+    50%{
+        transform: scale(-1, 1)
+    }
+    100% {
+        transform: scale(1, 1)
+    }
+}
+.menu_desktop{
+    text-transform: uppercase;
+    height: 10px;
+    margin: 0 auto;
+    width: 40%;
+    padding-top: 80px;
+}
+.menu_desktop a{
+    text-decoration: none;
+    color: #4d4959;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2.6px;
+}
+.menu_desktop a:hover{
+    color: #64c29e;
+}
+.menu_desktop li{
+    float: left;
+}
+.menu_desktop li:nth-child(n):not(:first-child):not(:nth-child(2)){
+    text-align: right;
+}
+.menu_desktop li:nth-child(2n+1)::after{
+    content: ".";
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    padding-left: 31px;
+}
+.menu_burger{
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+    height: 40px;
+    background: black;
+    color: white;
+}
+#check_menu{
+    display: none;
+}
+#check_menu:checked~.main_menu{
+    max-height: 800px;
+    font-size: 16px;
+    opacity: .7;
+}
+#check_menu:checked .menu_burger{
+    width: 100%;
+    float: inherit;
+}
+#check_menu:checked~.first{
+    display: none;
+}
+#check_menu:checked~.second{
+    transform: rotate(45deg);
+}
+#check_menu:checked~.third{
+    transform: rotate(-45deg);
+}
+#check_menu:checked~.fourth{
+    display: none;
+}
+.check_menu{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    cursor: pointer;
+    line-height: 40px;
+}
+.burger_line{
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    width: 35px;
+    height: 2px;
+    background: white;
+    transition: .5s all;
+}
+.second,.third{
+    top: 18px;
+}
+.fourth{
+    top: 28px;
+}
+.main_menu{
+    max-height: 0;
+    display: block;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    font-size: 0;
+    overflow: hidden;
+    transform: translateY(100%);
+    transition: .5s all;
+}
+.main_menu a{
+    width: 100%;
+    display: block;
+    padding: 90px 0 90px 0;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    background: black;
+}
+.main_menu a:hover{
+    color: green;
+    font-size: 20px;
+    font-weight: bold;
+}
+.header_article{
+    width: 100%;
+    position: relative;
+    height: 469px;
+    background-color: #f7f7f7;
+}
+.header_article img{
+    width: 52px;
+    height: 43px;
+    position: absolute;
+    left: calc(50% - 26px);
+    top: 117px;
+}
+.header_article .vehicle .spin img{
+    animation: spin 3s linear infinite;
+}
+@keyframes spin {
+    100% {
+        transform: rotate(1turn);
+    }
+}
+.header_article h2{
+    color: #353738;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3.6px;
+    text-align: center;
+    padding-top: 194px;
+}
+.header_article p{
+    color: #848789;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 34px;
+    text-align: justify;
+    padding: 3% 10% 10%;
+}
+.forma{
+    position: sticky;
+    width: 100px;
+    height: 100px;
+    background-color: #49c459;
+    left: 100%;
+    bottom: 0;
+    margin: 20px;
+    border-radius: 50%;
+}
+#form1{
+    display: none;
+    width: inherit;
+    height: inherit;
+}
+.forma>label{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 30px;
+    transform: translate(-50%, -50%);
+    color: white;
+}
 .wrapper {
     display: block;
     margin: 0 auto;
