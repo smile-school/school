@@ -38,6 +38,12 @@
     .menu_desktop{
         display: none;
     }
+
+}
+@media only screen and (max-width: 960px){
+.header .header_image{
+    height: 47vh;
+}
 }
 .wrapper{
     display: block;
@@ -47,13 +53,13 @@
 }
 .header{
     width: 100%;
-    height: 800px;
     position: relative;
 }
 .header_image{
     background: url("../ima/header_bg.png") no-repeat center center;
-    height: inherit;
     position: relative;
+    height: 100vh;
+    background-size: cover;
 }
 .header_image>.header_logo{
     position: absolute;
@@ -62,8 +68,8 @@
 }
 .header_logo img{
     animation: header_logo 5s linear infinite;
-  animation-play-state: running;
-  transform: scale(1, 1)
+    animation-play-state: running;
+    transform: scale(1, 1);
 }
  @keyframes header_logo {
     0%{
@@ -80,7 +86,7 @@
     text-transform: uppercase;
     height: 10px;
     margin: 0 auto;
-    width: 40%;
+    width: 50%;
     padding-top: 80px;
 }
 .menu_desktop a{
@@ -96,16 +102,15 @@
 }
 .menu_desktop li{
     float: left;
-}
-.menu_desktop li:nth-child(n):not(:first-child):not(:nth-child(2)){
-    text-align: right; 
+    text-align: center;
+    position: relative;
 }
 .menu_desktop li:nth-child(2n+1)::after{
     content: ".";
     width: 5px;
     height: 5px;
     position: absolute;
-    padding-left: 31px;
+    right: 0;
 }
 .menu_burger{
     margin: 0 auto;
@@ -127,16 +132,16 @@
     width: 100%;
     float: inherit;
 }
-#check_menu:checked~.first{
+#check_menu:checked~.firstl{
     display: none;
 }
-#check_menu:checked~.second{
+#check_menu:checked~.secondl{
     transform: rotate(45deg);
 }
-#check_menu:checked~.third{
+#check_menu:checked~.thirdl{
     transform: rotate(-45deg);
 }
-#check_menu:checked~.fourth{
+#check_menu:checked~.fourthl{
     display: none;
 }
 .check_menu{
@@ -159,10 +164,10 @@
     background: white;
     transition: .5s all;
 }
-.second,.third{
+.menu_burger .secondl,.thirdl{
     top: 18px;
 }
-.fourth{
+.menu_burger .fourthl{
     top: 28px;
 }
 .main_menu{
@@ -194,7 +199,6 @@
 .header_article{
     width: 100%;
     position: relative;
-    height: 469px;
     background-color: #f7f7f7;
 }
 .header_article img{
