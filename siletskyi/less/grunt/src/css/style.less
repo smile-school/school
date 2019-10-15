@@ -1,0 +1,159 @@
+a,
+.link {
+  @link-color: red;
+  color: @link-color;
+}
+a:hover {
+  color: @link-color;
+}
+.widget {
+  color: @blue;
+  background: @link-color;
+}
+
+
+
+@my-selector: banner;
+
+.@{my-selector} {
+  margin: 0 auto;
+}
+
+
+
+@property: color;
+
+.widget {
+  @{property}: @blue;
+  background-@{property}: @link-color;
+}
+
+
+@primary: green;
+@secondary: blue;
+
+.section {
+  @color: primary;
+  .element {
+    color: @@color;
+    .item {
+      margin: 0;
+    }
+  }
+}
+
+
+.lazy-eval {
+  width: @vars;
+}
+@vars: @aa;
+@aa: 10%;
+
+
+.lazy-eval {
+  width: @var;
+  @a: 9%;
+}
+@var: @a;
+@a: 100%;
+
+
+@var1: 0;
+.class {
+  @var1: 1;
+  .brass {
+    @var1: 2;
+    three: @var1; //3
+    @var1: 3;
+  }
+  one: @var1;
+}
+
+
+a {
+  color: blue;
+
+  &:hover {
+    color: green;
+  }
+  &::after {
+    content: '';
+    display: block;
+  }
+}
+
+.button {
+  background: blue;
+  &-ok {
+    background: red;
+    &-ff {
+      background: aqua;
+    }
+  }
+  &-cancel{
+    background: green;
+  }
+}
+
+
+.link {
+  & + &{
+    color: red;
+  }
+  & & {
+    color: red;
+  }
+  && {
+    color: red;
+  }
+  &, &is {
+    color: red;
+  }
+}
+
+
+.grand {
+  .parent {
+    & > & {
+      color: red;
+    }
+
+    & & {
+      color: red;
+    }
+
+    && {
+      color: red;
+    }
+
+    &, &-is{
+      color: red;
+    }
+  }
+}
+
+
+.header {
+  .menu {
+    border-radius: 5px;
+
+    .no-border-radius & {
+      border-radius: 0;
+    }
+  }
+}
+
+
+p, a, ul, li {
+  color: red;
+
+  & + & {
+    color: red;
+  }
+}
+
+
+
+
+
+
