@@ -1,0 +1,88 @@
+a,
+.link{
+  @link-color: red;
+  color: @link-color;
+}
+a:hover{
+  color: @link-color;
+}
+.widget{
+  color: @blue;
+  background: @link-color;
+}
+body{
+  background: @blue;
+}
+
+/*==============================================================================*/
+
+
+@header: header;
+@{header}{
+  background: @base-color;
+}
+
+/*==============================================================================*/
+
+
+@property:color;
+@{header}{
+  backgroun-@{property}: @base-color;
+}
+
+/*==============================================================================*/
+@primary: @link-color-hover;
+@{header}{
+  @color: primary;
+  .section{
+    color: @@color;
+  }
+}
+
+@div: div;
+
+@{div}{
+  &::after{
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  &::before{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}
+
+@{div}{
+  border-block: #222222;
+  &-left{
+    border-bottom: #9F9386;
+  }
+}
+
+.@{div}{
+  &+&{
+    color: blue;
+  }
+  &,&{
+    color: blue;
+  }
+  & &{
+    color: blue;
+  }
+}
+
+.@{div}{
+  .@{div}{
+    &+&{
+      color: blue;
+    }
+    &,&{
+      color: blue;
+    }
+    & &{
+      color: blue;
+    }
+  }
+}
