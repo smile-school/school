@@ -1,0 +1,137 @@
+
+a.link{
+  @link-color:white;
+  color: @link-color;
+}
+a:hover{
+  color: @link-color-hover;
+}
+widget{
+  color: @blue;
+  background-color: @link-color;
+}
+/*===================================================================*/
+@my-selector: banner;
+.@{my-selector} {
+  margin: 0 auto;
+}
+/*===================================================================*/
+@images: "../img";
+body{
+  color: blue;
+  background: url("@{images}/white-sand.png");
+}
+/*===================================================================*/
+@property:color;
+.widget{
+    @{property}:@blue;
+  background-@{property}: @link-color;
+}
+/*===================================================================*/
+@primary: green;
+@secondary: blue;
+.section{
+  @color:primary;
+  .element{
+    color: @primary;
+    .item{
+      margin: 0;
+    }
+  }
+}
+/*===================================================================*/
+.lazy-eval{
+  width:@var1;
+  @a:9%
+}
+@var1:@a;
+@a:100%;
+/*===================================================================*/
+@var2:0;
+.class{
+  @var2:1;
+  .brass{
+    @var2:2;
+    three:@var2; //3
+    @var2:3;
+  }
+  one:@var2;
+}
+/*=========================ampersant(звернення до батьківського елемента)================*/
+a{
+  color: blue;
+  &:hover{
+    color: green;
+  }
+  &::after{
+    content: '';
+    display: block;
+  }
+}
+/*===================================================================*/
+.button{
+  background-color: blue;
+  &-ok{
+    background-image: url("ok.png");
+    &-first{
+      margin: 0 auto;
+  }
+  }
+  &-cancel{
+    background-image: url("cancel.png");
+  }
+  &-custom{
+    background-image: url("custom.png");
+  }
+}
+/*===================================================================*/
+.link{
+  & + & {
+    color: red;
+  }
+  & &{
+    color: green;
+  }
+  &&{
+    color: blue;
+  }
+  &, &is{
+    color: cyan;
+  }
+}
+/*=================================================================*/
+.grand {
+  .parent {
+    & > &{
+      color: red;
+    }
+    & + &{
+      color: red;
+    }
+    & & {
+      color: dodgerblue;
+    }
+    && {
+      color: aliceblue;
+    }
+    &, &-ish{
+      color: cyan;
+    }
+  }
+}
+/*===========================ИЗМЕНЕНИЕ ПОРЯДКА ВЫБОРА===============*/
+.header{
+  .menu{
+    border-radius: 5px;
+    .no-border-radius & {
+      border-radius: 0;
+    }
+  }
+}
+/*===================Комбинаторный взрыв============================*/
+p, a, ul, li{
+  border-top: 2px dot-dash black;
+  & + &{
+    border-top: 0;
+  }
+}
