@@ -1,0 +1,120 @@
+a,
+.link{
+  @link-color: blue;
+  color: @link-color;
+}
+a:hover{
+  color: @link-color-hover;
+}
+.widget{
+  color: @blue;
+  background: @link-color;
+}
+/*===========*/
+@my-selector: banner;
+.@{my-selector} {
+  margin: 0 auto;
+}
+/*===========*/
+@property: color;
+
+.widget{
+  @{property}: @blue;
+  background-@{property}: @link-color;
+}
+/*===========*/
+@primary: green;
+.section{
+  @color: primary;
+  .element{
+    color: @@color;
+  }
+}
+/*===========*/
+.lazy-eval{
+  width: @vars;
+  @a: 9%
+}
+@vars: @a;
+@a: 10%;
+/*===========*/
+@var: 0;
+.class{
+  @var: 1;
+
+  .brass{
+    @var: 2;
+    three: @var; //3
+    @var: 3;
+  }
+
+  one: @var;
+}
+/*======Батьківськi селектори=====*/
+a{
+  color: blue;;
+
+  &:hover{
+    color: green;
+  }
+}
+/*===================*/
+.button{
+  background: #1d4545;
+
+  &-ok{
+    background-image: url("ok.png");
+  }
+  &-cancel{
+    background-image: url("cancel.png");
+  }
+}
+/*===================*/
+.link{
+  & + &{
+    color:red;
+  }
+  & &{
+    color:red;
+  }
+  &&{
+    color:red;
+  }
+  &, &is{
+    color:red;
+  }
+}
+/*===================*/
+.grant{
+  .parent{
+    & > &{
+      border: 1px solid blue;
+    }
+    & &{
+      border: 1px solid blue;
+    }
+    &&{
+      border: 1px solid blue;
+    }
+    &, &-is{
+      border: 1px solid blue;
+    }
+  }
+}
+/*-----------------------------------*/
+.header{
+  .menu{
+    border-radius: 5px;
+
+    .no-border-radius &{
+      border-radius: 0;
+    }
+  }
+}
+/*---------------------------------*/
+p, a, ul, li{
+  border-top: 2px;
+  & + &{
+    border-top: 0;
+  }
+}
