@@ -522,5 +522,38 @@ footer .autograph p{
         padding-bottom: 6px;
         border-bottom: 1px solid transparent;
     }
+    header .top_menu li:hover {
+        transition: 0.5s all;
+        border-bottom: 1px solid #4d4959;
+    }
+
+    header #burger:checked ~ nav {
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        max-height: 600px;
+        background-color: black;
+        font-size: 16px;
+        transition: all 0.7s ease-out;
+    }
+
+    header .burger-lin {
+        display: block;
+    }
+
+    header #burger:checked ~ .burger-lin {
+        top: 40px;
+    }
+
+    header #burger:checked ~ .one-lin {
+        transform: rotate(90deg);
+        top: 30px;
+    }
+
+    header #burger:checked ~ .two-lin {
+        transform: rotate(45deg);
+        width: 20px;
+        right: 25px;
+    }
 
 }
