@@ -292,3 +292,188 @@ main .topDescription > p{
     display: flex;
     flex-direction: row;
 }
+/*Початок стилізації футера*/
+footer .action-form{
+    background-color: #282f35;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+footer .action-form > input{
+    display: none;
+}
+footer .action-form > label{
+    text-transform: uppercase;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 21px 56px 19px 59px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    margin: 75px 0 75px 0;
+    cursor: pointer;
+}
+footer .form-shop{
+    position: absolute;
+    top: 200px;
+    z-index: 7;
+    background-color: #282f35;
+    transform: translateY(0) scale(0);
+}
+footer .action-form input[id=act-form]:checked ~ .form-shop{
+    transform: translateY(-90%) scale(1);
+    transition: all 1s;
+}
+footer .form-shop > input{
+    display: none;
+}
+footer .form-shop > label{
+    cursor: pointer;
+    color: white;
+    padding: 5px 10px;
+    background-color: #64c29e;
+    font-weight: 600;
+}
+footer .form-shop .form_site{
+    display: flex;
+    flex-direction: column;
+}
+footer .input_foorm{
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+footer .input_check{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin: 20px 0 20px 0;
+    width: 90%;
+}
+footer .form_site h3{
+    color: #64c29e;
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+footer .input_check  span{
+    margin-left: 180px;
+}
+footer .input_radio > label:first-of-type{
+    margin-right: 120px;
+}
+footer .input_radio label:first-of-type span{
+    margin-left: 24px;
+}
+footer .form_site .bootom{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.stay-sidle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.stay-sidle > img{
+    padding-top: 109px;
+    padding-bottom: 39px;
+}
+.stay-sidle p{
+    color: #848789;
+    font-size: 24px;
+    font-style: italic;
+    padding-bottom: 35px;
+}
+footer .email-form > input{
+    box-sizing: border-box;
+    outline: none;
+    height: 69px;
+    border:none;
+}
+footer .email-form{
+    margin-bottom: 111px;
+    display: flex;
+    flex-direction: row;
+}
+footer .email-form > input[type=email]{
+    width: 400px;
+    border: 1px solid #d3d7d9;
+}
+footer .email-form > input[placeholder] {
+    font-style: italic;
+    color: #929292;
+    font-size: 20px;
+    opacity: 0.7;
+    padding-left: 28px;
+}
+footer .email-form > input[type=submit]{
+    width: 126px;
+    margin-left: 8px;
+    background-color: #64c29e;
+    color: #ffffff;
+    font-size: 24px;
+    text-transform: uppercase;
+}
+footer .footer-bottom{
+    background-color: #f7f7f7;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+footer .adress{
+    display: flex;
+    flex-direction: column;
+    color: #848789;
+    margin: 99px 0 103px 249px;
+}
+footer .adress span:first-of-type{
+    font-weight: 700;
+}
+footer .adress span:not(:first-of-type){
+    font-style: italic;
+}
+footer .social{
+    display: flex;
+    flex-direction: row;
+}
+footer .social a{
+    width: 35px;
+    height: 34px;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer .social a{
+    text-decoration: none;
+}
+footer .social a:first-of-type{
+    background-color: #78cdf0;
+}
+footer .social a:first-of-type + a{
+    background-color: #537bbd;
+}
+footer .social a:last-of-type{
+    background-color: #eb5755;
+}
+footer .social a:not(:last-of-type){
+    margin-right: 15px;
+}
+footer .autograph{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 250px;
+}
+footer .autograph p{
+    font-size: 14px;
+    color: #848789;
+    font-style: italic;
+    margin-right: 9px;
+}
