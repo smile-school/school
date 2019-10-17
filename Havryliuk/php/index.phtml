@@ -47,7 +47,7 @@ $name = 'Products list';
                     <p class="finalprice"><?= $products['price']['finalPrice']; ?> USD</p>
                 <?php else: ?>
                     <p class="oldprice"><?= $products['price']['oldPrice']; ?></p>
-                    <div class="discount"><p>-<?= round(100 - ($products['price']['finalPrice'] / $products['price']['oldPrice'] * 100)); ?>%</p></div>
+                    <div class="discount" data-parent="Discount =>"><p>-<?= round(100 - ($products['price']['finalPrice'] / $products['price']['oldPrice'] * 100)); ?>%</p></div>
                     <p class="finalprice"><?= $products['price']['finalPrice']; ?> USD</p>
                 <?php endif; ?>
             </div>
