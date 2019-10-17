@@ -1,0 +1,203 @@
+/*---Header---*/
+header.header {
+  background-color: @header_color;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  .menu {
+    max-width: 1170px;
+    margin: 0 auto;
+
+    li {
+      list-style-type: none;
+      display: inline-block;
+
+      & > a {
+        text-decoration: none;
+      }
+    }
+
+    .quick-links-wrap {
+      border-bottom: 2px solid gray;
+      display: flex;
+      justify-content: flex-end;
+
+      .quick-link {
+        display: inline-block;
+        color: @link_color;
+        font-size: 14px;
+        padding: 18px;
+
+        .link-icon {
+          display: inline-block;
+          margin-right: 5px;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+      }
+
+      :nth-child(1) .quick-link {
+        .link-icon {
+          width: 12px;
+          height: 14px;
+          background-image: url("@{image_url}1.png");
+        }
+      }
+
+      :nth-child(2) .quick-link {
+        .link-icon {
+          width: 16px;
+          height: 13px;
+          background-image: url("@{image_url}2.png");
+        }
+      }
+
+      :nth-child(3) .quick-link {
+        position: relative;
+
+        .link-icon {
+          width: 14px;
+          height: 14px;
+          background-image: url("@{image_url}3.png");
+        }
+      }
+
+      :nth-child(3) .quick-link::after {
+        display: block;
+        content: '';
+        background-color: gray;
+        width: 2px;
+        height: 58.3%;
+        position: absolute;
+        right: 0;
+        top: 21%;
+        bottom: 21%;
+      }
+
+      :nth-child(4) .quick-link {
+        padding: 14px 18px 10px;
+
+        .link-icon {
+          width: 23px;
+          height: 24px;
+          background-image: url("@{image_url}4.png");
+        }
+      }
+    }
+
+    .contacts {
+      padding: 12px 0;
+      display: flex;
+
+      .information {
+        display: flex;
+        width: 72%;
+      }
+
+      .logo-wrapper {
+        width: 40%;
+
+        .logotype {
+          text-decoration: none;
+          font-size: 45px;
+          color: @link_color;
+          font-weight: bold;
+          max-width: 184px;
+          display: block;
+          padding: 5px 0 10px;
+
+          .white {
+            color: #ffffff;
+          }
+        }
+
+        .seller-text {
+          display: inline-block;
+          text-transform: uppercase;
+          letter-spacing: 4px;
+          max-width: 184px;
+          padding-bottom: 13px;
+        }
+      }
+
+      .contacts-wrapper {
+        width: 60%;
+        text-align: right;
+        padding: 19px 62px 24px 10px;
+      }
+
+      .telephone {
+        font-size: 20px;
+        font-weight: bold;
+        color: #ffffff;
+        letter-spacing: 1px;
+        display: flex;
+        justify-content: flex-end;
+        padding-bottom: 19px;
+
+        .link-icon {
+          display: block;
+          width: 13px;
+          height: 22px;
+          background-image: url("@{image_url}5.png");
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center;
+          margin-right: 10px;
+        }
+      }
+
+      .text {
+        display: block;
+        color: #a2a2a2;
+        font-size: 14px;
+        letter-spacing: 0.7px;
+        text-transform: uppercase;
+      }
+
+      .links-wrapper{
+        width: 28%;
+        display: flex;
+        li{
+          width: 33.33%;
+          border-left: 2px solid gray;
+          text-align: center;
+          .button{
+            display: block;
+            color: @link_color_button;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.75px;
+            .link-icon{
+              display: block;
+              background-size: cover;
+              background-position: center;
+              background-repeat: no-repeat;
+              margin: 8px auto 19px;
+
+            }
+            .link-icon.first{
+              background-image: url("@{image_url}6.png");
+              width: 24px;
+              height: 23px;
+            }
+            .link-icon.second{
+              background-image: url("@{image_url}7.png");
+              width: 24px;
+              height: 23px;
+            }
+            .link-icon.third{
+              background-image: url("@{image_url}8.png");
+              width: 24px;
+              height: 23px;
+
+            }
+          }
+        }
+      }
+    }
+  }
+}
