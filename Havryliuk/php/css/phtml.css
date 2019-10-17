@@ -1,5 +1,6 @@
 body{
     background-color: #8499c7;
+    font-family: sans-serif;
 }
 .product-list h1{
     text-align: center;
@@ -10,10 +11,9 @@ body{
     width: 1570px;
 }
 .product-item{
-    /*display: block;*/
     border: 1px solid black;
     background-color: darkgray;
-    box-shadow: 5px 5px 5px;
+    box-shadow: 5px 5px 5px darkblue;
     border-top-right-radius: 20px;
     border-bottom-left-radius: 20px;
     float: left;
@@ -21,7 +21,6 @@ body{
     height: 500px;
     margin: 5px;
     padding: 5px;
-    font-family: sans-serif;
     position: relative;
 }
 .product-item .gal{
@@ -72,7 +71,7 @@ body{
     top: -100%;
 }
 .discount::before{
-    content: "Discount =>";
+    content: attr(data-parent);
     position: absolute;
     right: 100%;
     padding-right: 10px;
