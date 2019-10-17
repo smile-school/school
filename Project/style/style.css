@@ -99,7 +99,7 @@ header .burger + input {
     width: 100%;
 }
 
-/*початок стилізації main*/
+/*main styles start*/
 main {
     max-width: 1600px;
     display: flex;
@@ -502,7 +502,120 @@ main .topDescription > p {
     opacity: 1;
 }
 
-/*Початок стилізації футера*/
+@media screen and (max-width: 1600px) {
+    main {
+        padding: 0 15px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    main .topDescription {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    main .topDescription img {
+        margin: 30px auto;
+    }
+
+    .descriptContaier {
+        padding: 5px 5px;
+    }
+
+    .descBottomImg > div {
+        padding: 0;
+    }
+
+    .gallRow .bicucleTextBlock .descBottomImg > div {
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 922px) {
+    main .topDescription {
+        padding: 20px 20px;
+    }
+
+    main .topDescription p {
+        padding: 20px 0;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    main {
+        padding: 0;
+    }
+
+    .gallRow {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .gallRow .bicucleBlock {
+        width: 100%;
+        min-height: 50vh;
+    }
+
+    .gallRow .bicucleTextBlock {
+        width: 100%;
+    }
+
+    .gallRow .bicucleTextBlock .descBottomImg > div {
+        padding: 10px 10%;
+    }
+
+    .gallRow .bicucleTextBlock .descBottomImg {
+        height: 40vh;
+    }
+
+    .gallRow:last-of-type .bicucleBlock:first-of-type {
+        width: 100%;
+    }
+
+    .gallRow:last-of-type > div {
+        width: 100%;
+    }
+
+    .descriptContaier {
+        padding: 0;
+    }
+
+    .bottomGallery {
+        flex-direction: column;
+    }
+
+    .bottomGallery .section {
+        width: 100%;
+    }
+
+    .bottomGallery .section {
+        height: 70vh;
+    }
+
+    .bottomGallery .section:nth-of-type(2) {
+        height: 90vh;
+    }
+
+    .bottomGallery .section:first-of-type .subSection:first-of-type > div:first-of-type,
+    .bottomGallery .section:first-of-type .subSection:first-of-type > div:last-of-type,
+    .bottomGallery .section:first-of-type .subSection:last-of-type,
+    .bottomGallery .section:nth-of-type(2) div:first-of-type,
+    .bottomGallery .section:nth-of-type(2) div:last-of-type,
+    .bottomGallery .section:last-of-type .subSection:first-of-type,
+    .bottomGallery .section:last-of-type .subSection:last-of-type > div:first-of-type,
+    .bottomGallery .section:last-of-type .subSection:last-of-type > div:last-of-type {
+        background-size: 100%;
+    }
+}
+
+@media screen and (width: 320px) {
+    main .topDescription {
+        padding: 20px 10px;
+    }
+}
+
+/*footer styles start*/
 footer .action-form {
     background-color: #282f35;
     display: flex;
@@ -718,12 +831,6 @@ footer .autograph p {
     color: #848789;
     font-style: italic;
     margin-right: 9px;
-}
-
-@media screen and (max-width: 1600px) {
-    main {
-        padding: 0 15px;
-    }
 }
 
 @media screen and (max-width: 1200px) {
