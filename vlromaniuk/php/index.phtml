@@ -35,7 +35,7 @@ $name = 'Product_list';
                 </div>
                 <h3><?php echo $products['title'] ?></h3>
                 <?php
-                $block->postRating(0);
+                $block->postRating($products['rating']);
                 ?>
                 <div class="cart-info">
                 <div class="price_wrapper">
@@ -57,6 +57,5 @@ $name = 'Product_list';
         <?php endforeach; ?>
     </div>
 </div>
-
 </body>
 </html>

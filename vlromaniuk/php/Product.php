@@ -9,47 +9,56 @@ class Product
 
         return $data;
     }
+
     public function getCountProduct()
     {
         return count($this->getData());
     }
+
     public function getImage($id)
     {
         $data = $this->getData();
         return $data[$id]['img'];
     }
+
     public function getTitle($id)
     {
         $data = $this->getData();
         return $data[$id]['title'];
     }
+
     public function getRating($id)
     {
         $data = $this->getData();
         return $data[$id]['rating'];
     }
+
     public function getPrice($id)
     {
         $data = $this->getData();
         return $data[$id]['price'];
     }
+
     public function getActions($id)
     {
         $data = $this->getData();
         return $data[$id]['actions'];
     }
+
     public function getUrl($id)
     {
         $data = $this->getData();
         return $data[$id]['url'];
     }
+
     public function postRating($id)
     {
-        $data = $this->getData();
-        for ($i=0; $i < $data[$id]['rating']; $i++){
-            echo "<span>*&nbsp</span>";
+        for ($i = 0; $i < $this->getRating($id); $i++) {
+            echo '<i class="fas fa-star"></i>';
         }
-        return $data[$id]['prating'];
+        for ($i = 0; $i < 10 - $this->getRating($id); $i++) {
+            echo '<i class="far fa-star"></i>';
+        }
     }
 }
 
