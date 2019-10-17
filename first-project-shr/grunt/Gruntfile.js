@@ -5,7 +5,7 @@ module.exports = function(grunt) {
         less: {
             build: {
                 files: {
-                    'dist/css/havryliuk_header.css': 'src/css/main.less'
+                    'dist/css/havryliuk.css': 'src/css/main.less'
                 }
             }
         },
@@ -15,7 +15,7 @@ module.exports = function(grunt) {
             },
             build: {
                 files: {
-                    'dist/css/havryliuk_header.min.css': 'dist/css/havryliuk_header.css'
+                    'dist/css/havryliuk.min.css': 'dist/css/havryliuk.css'
                 }
             }
         },
