@@ -676,9 +676,6 @@ header.header {
     font-size: 14px;
     font-style: italic;
 }
-.footer_content_social{
-    padding: 0 ;
-}
 .footer_content_social a{
     text-decoration: none;
 }
@@ -810,7 +807,19 @@ header.header {
         right: 75%;
         width: 75%;
     }
-
+    .footer_content{
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer_content > div{
+        padding: 10px 0;
+    }
+    .footer_content_address{
+        align-items: center;
+    }
+    .footer_content_address > span{
+        padding: 8px 0;
+    }
 }
 
 @media screen and (max-width: 500px){
@@ -856,5 +865,10 @@ header.header {
         position: relative;
         width: 100%;
     }
-
+    .footer_form-container_button{
+        width: 90%;
+    }
+    .footer_mailing_form > div p{
+        font-size: 20px;
+    }
 }
