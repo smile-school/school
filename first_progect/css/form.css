@@ -1,0 +1,88 @@
+.footer_form-container_form{
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 0px;
+    transition: height .5s ease-in-out;
+}
+.footer_form-container > input[type="checkbox"]:checked + .footer_form-container_form{
+    height: 350px;
+    transition: height .8s ease-in-out;
+}
+.footer_mailing_form{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.footer_form-container_form > input[type="text"]{
+    color: #d2d2d2;
+}
+.footer_form-container_form > input[type="text"],
+.footer_mailing_form > input[type="text"]{
+    width: 400px;
+    height: 69px;
+    border: none;
+    padding-left: 28px;
+    outline: 1px solid #d2d2d2;
+    font-size: 20px;
+    font-style: italic;
+    line-height: 24px;
+}
+.footer_form-container_form > input[type="text"]:hover,
+.footer_mailing_form > input[type="text"]:hover{
+    outline: 2px solid #64c29e;
+}
+.footer_form-container_form > input[type="text"]{
+    background-color: #282f35;
+}
+.footer_form-container_form > input[type="text"]:focus{
+    background-color: #ffffff;
+    color: black;
+}
+.footer_form-container_form > label{
+    line-height: 50px;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 2.8px;
+    align-self: flex-start;
+    padding-top: 15px;
+}
+.footer_mailing_form > input[type="text"]{
+    margin-right: 8px;
+    background-color: #ffffff;
+}
+.footer_form-container_form > button{
+    width: 220px;
+    height: 69px;
+    background-color: #64c29e;
+    border: none;
+    margin-top: 15px;
+}
+.footer_mailing_form > div{
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    width: 126px;
+    height: 69px;
+    background-color: #64c29e;
+}
+.footer_form-container_form > button:hover,
+.footer_mailing_form > div:hover{
+    outline: 2px solid #21bcc2;
+}
+.footer_form-container_form > button:hover,
+.footer_mailing_form > div:hover p{
+    font-weight: bold;
+}
+.footer_form-container_form > button,
+.footer_mailing_form > div p{
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 24px;
+    text-transform: uppercase;
+    transition: font-weight .3s ease-in;
+}
