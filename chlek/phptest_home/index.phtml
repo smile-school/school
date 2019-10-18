@@ -1,13 +1,6 @@
 <?php
 include_once './php/Product.php';
 $block = new Product();
-/*var_dump($block->getData());*/
-/*var_dump($block->getCountProduct());*/
-/*var_dump($block->getImage());*/
-//var_dump('Hello World');
-//$name = 'Hello world';
-//var_dump($name);
-//var_dump($block->getData()[0]['img']);
 ?>
 
 <!DOCTYPE html>
@@ -25,9 +18,7 @@ $block = new Product();
             <p class="title"><?= $block->getTitle($key) ?></p>
             <div class="rating-wrap">
                 <span class="rating">Rating:</span>
-                <?php for ($i = 0; $i < $block->getRating($key) / 10; $i++): ?>
-                    <?= '<i class="icon-star-empty"></i>' ?>
-                <?php endfor; ?>
+                <?php $block->getShowRating($key) ?>
             </div>
             <div class="price-wrap">
                 <span class="text">Old price:</span>
@@ -36,7 +27,7 @@ $block = new Product();
                     <span class="text">Final price:</span>
                     <span class="price"><?= $block->getPrice($key)['finalPrice'] . ' UAH' ?></span>
                     <span class="text">discount:</span>
-                    <span class="price discount"><?=$block->getDiscount($key) . ' UAH' ?></span>
+                    <span class="price discount"><?= $block->getDiscount($key) . ' UAH' ?></span>
                 <?php endif; ?>
             </div>
             <a href="#" class="bottom">buy now</a>

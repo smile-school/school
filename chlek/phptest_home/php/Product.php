@@ -9,42 +9,59 @@ class Product
 
         return $data;
     }
+
     public function getCountProduct()
     {
         return count($this->getData());
     }
+
     public function getImage($id)
     {
         $data = $this->getData();
         return $data[$id]['img'];
     }
+
     public function getTitle($id)
     {
         $data = $this->getData();
         return $data[$id]['title'];
     }
+
     public function getRating($id)
     {
         $data = $this->getData();
         return $data[$id]['rating'];
     }
+
     public function getPrice($id)
     {
         $data = $this->getData();
         return $data[$id]['price'];
     }
+
     public function getActions($id)
     {
         $data = $this->getData();
         return $data[$id]['actions'];
     }
+
     public function getUrl($id)
     {
         $data = $this->getData();
         return $data[$id]['url'];
     }
-    public function getDiscount($id){
+
+    public function getDiscount($id)
+    {
         $data = $this->getData();
         return $data[$id]['price']['oldPrice'] - $data[$id]['price']['finalPrice'];
+    }
+
+    public function getShowRating($id)
+    {
+        $data = $this->getRating($id);
+        for ($i = 0; $i < $data / 10; $i++) {
+            echo '<i class="icon-star-empty"></i>';
+        }
     }
 }
