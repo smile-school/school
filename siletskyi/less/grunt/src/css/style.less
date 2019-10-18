@@ -151,9 +151,34 @@ p, a, ul, li {
     color: red;
   }
 }
+//extend
 
+nav ul:extend(.inline){
+    color: red;
+  }
+.inline {
+  color: blue;
+}
+//mixin
+.a {
+  color: red;
+}
+.mixin-class {
+  .a()
+}
 
+.a() {
+  color: red;
+}
+.mixin-class {
+  .a()
+}
 
-
-
+.generate-columns(12);
+.generate-columns(@n, @i: 1) when (@i =< @n) {
+  .column-@{i} {
+    width: (@i * 100% / @n);
+  }
+  .generate-columns(@n, (@i + 1));
+}
 
