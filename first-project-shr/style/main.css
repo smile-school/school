@@ -2,7 +2,6 @@
 @import "normalise.css";
 @import "reset.css";
 @import "all.css";
-@import "form.css";
 * {
     box-sizing: border-box;
 }
@@ -12,6 +11,7 @@
     max-width: 1600px;
     padding: 0 15px;
 }
+/*header*/
 .header{
     width: 100%;
     position: relative;
@@ -30,7 +30,7 @@
 .header_logo img{
     animation: header_logo 5s linear infinite;
     animation-play-state: running;
-    transform: scale(1, 1)
+    transform: scale(1, 1);
 }
 @keyframes header_logo {
     0%{
@@ -101,6 +101,7 @@
     transform: translate(-50%, -50%);
     color: white;
 }
+/*media*/
 @media screen and (max-width: 1200px) {
     .wrapper{
         width: 100%;
@@ -117,7 +118,11 @@
         width: 100%;
     }
 }
+/*media header*/
 @media only screen and (min-width:767px){
+    #check_menu{
+        display: none;
+    }
     .menu_burger{
         background: url("../ima/header_bg.png") no-repeat center center;
         position: relative;
@@ -169,15 +174,6 @@
     }
 }
 @media only screen and (max-width: 767px){
-    .header_image{
-        height: 50vh;
-    }
-    .menu_burger{
-        background: url("../ima/header_bg.png") no-repeat center center;
-        position: relative;
-        height: 47vh;
-        background-size: cover;
-    }
     .menu_burger{
         margin: 0 auto;
         position: relative;
@@ -190,13 +186,12 @@
         display: none;
     }
     #check_menu:checked ~ .main_menu{
-        max-height: 800px;
+        max-height: 100vh;
         font-size: 25px;
         opacity: .7;
     }
     #check_menu:checked .menu_burger{
         width: 100%;
-        float: inherit;
     }
     #check_menu:checked~.firstl{
         display: none;
