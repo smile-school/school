@@ -86,3 +86,13 @@ body{
     }
   }
 }
+
+
+.generate-colums(12);
+
+.generate-colums(@n, @i: 1) when (@i =< @n){
+  .column-@{i}{
+    width: (@i * 100% / @n);
+  }
+  .generate-colums(@n, (@i + 1));
+}
