@@ -33,34 +33,32 @@ header .burger {
     cursor: pointer;
     display: none;
 }
-
-header .burger-lin {
-    position: absolute;
-    top: 10px;
-    right: 10px;
+header .burger::after,
+header .burger::before,
+header .burger span{
     width: 35px;
     height: 2px;
     z-index: 3;
     background-color: #64c29e;
     transition: .5s all;
+    position: absolute;
+    right: 3px;
+}
+header .burger::after{
+    content: "";
+}
+header .burger::before{
+    content: "";
+    top: 10px;
+}
+header .burger span{
+    bottom: 10px;
+}
+
+header #burger{
     display: none;
 }
 
-header .two-lin, header .three-lin {
-    top: 20px;
-}
-
-header .four-line {
-    top: 30px;
-}
-
-header .burger + input {
-    display: none;
-}
-
-.logotip {
-    display: none;
-}
 
 .top_menu {
     display: flex;
@@ -533,7 +531,7 @@ main .topDescription > p {
     .descBottomImg > div {
         padding: 0;
     }
-
+f
     .gallRow .bicucleTextBlock .descBottomImg > div {
         padding: 20px;
     }
@@ -607,13 +605,11 @@ main .topDescription > p {
         background-size: 100%;
     }
 }
-
 @media screen and (max-width: 320px) {
     main .topDescription {
         padding: 20px 10px;
     }
 }
-
 /*footer styles start*/
 footer .action-form {
     background-color: #282f35;
@@ -622,19 +618,17 @@ footer .action-form {
     align-items: center;
     position: relative;
 }
-
 footer .action-form > input {
     display: none;
 }
-
 footer .action-form > label {
     text-transform: uppercase;
     color: #ffffff;
     font-size: 14px;
     font-weight: 700;
-    padding: 21px 56px 19px 59px;
+    padding: 21px 56px;
     border: 1px solid rgba(255, 255, 255, 0.5);
-    margin: 75px 0 75px 0;
+    margin: 75px 0;
     cursor: pointer;
 }
 
@@ -668,47 +662,6 @@ footer .form-shop .form_site {
     flex-direction: column;
 }
 
-footer .input_foorm {
-    display: flex;
-    width: 90%;
-    justify-content: space-between;
-    margin-top: 10px;
-}
-
-footer .input_check {
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
-    margin: 20px 0 20px 0;
-    width: 90%;
-}
-
-footer .form_site h3 {
-    color: #64c29e;
-    font-size: 20px;
-    margin-bottom: 10px;
-    text-align: center;
-}
-
-footer .input_check span {
-    margin-left: 180px;
-}
-
-footer .input_radio > label:first-of-type {
-    margin-right: 120px;
-}
-
-footer .input_radio label:first-of-type span {
-    margin-left: 24px;
-}
-
-footer .form_site .bootom {
-    width: 90%;
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-}
-
 .stay-sidle {
     display: flex;
     justify-content: center;
@@ -728,41 +681,11 @@ footer .form_site .bootom {
     padding-bottom: 35px;
 }
 
-footer .email-form > input {
-    box-sizing: border-box;
-    outline: none;
-    height: 69px;
-    border: none;
-}
-
 footer .email-form {
     margin-bottom: 111px;
     display: flex;
     flex-direction: row;
 }
-
-footer .email-form > input[type=email] {
-    width: 400px;
-    border: 1px solid #d3d7d9;
-}
-
-footer .email-form > input[placeholder] {
-    font-style: italic;
-    color: #929292;
-    font-size: 20px;
-    opacity: 0.7;
-    padding-left: 28px;
-}
-
-footer .email-form > input[type=submit] {
-    width: 126px;
-    margin-left: 8px;
-    background-color: #64c29e;
-    color: #ffffff;
-    font-size: 24px;
-    text-transform: uppercase;
-}
-
 footer .footer-bottom {
     background-color: #f7f7f7;
     display: flex;
@@ -869,14 +792,19 @@ footer .autograph p {
     }
 
     header .top_menu .logo-img {
-        display: none;
+        position: absolute;
+        left: 15px;
+        top: 30px;
+        z-index: 5;
     }
-
+    .top_menu .logo-img {
+        animation: none;
+    }
     header .top_menu li:not(:first-child) {
         margin-left: 0;
     }
 
-    header .top_menu li {
+    header .top_menu li:not(.logo-img) {
         padding-top: 30px;
         width: 100%;
         text-align: center;
@@ -884,7 +812,7 @@ footer .autograph p {
         border-bottom: 1px solid transparent;
     }
 
-    header .top_menu li:hover {
+    header .top_menu li:not(.logo-img):hover {
         transition: 0.5s all;
         border-bottom: 1px solid #4d4959;
     }
@@ -898,35 +826,25 @@ footer .autograph p {
         font-size: 16px;
         transition: all 0.7s ease-out;
     }
-
-    header .burger-lin {
-        display: block;
+    header .burger {
+        display: flex;
     }
 
-    header #burger:checked ~ .burger-lin {
-        top: 40px;
-    }
-
-    header #burger:checked ~ .one-lin {
+    header #burger:checked ~::after{
         transform: rotate(90deg);
-        top: 30px;
+        top: 29px;
     }
-
-    header #burger:checked ~ .two-lin {
+    header #burger:checked ~::before{
         transform: rotate(45deg);
         width: 20px;
-        right: 25px;
+        right: 18px;
+        top:38px;
     }
-
-    header #burger:checked ~ .three-lin {
+    header #burger:checked ~ label span{
         transform: rotate(-45deg);
         width: 20px;
-    }
 
-    header #burger:checked ~ .four-line {
-        display: none;
     }
-
     header .logotip {
         display: block;
         position: absolute;
