@@ -42,6 +42,7 @@ header .burger span{
     background-color: #64c29e;
     transition: .5s all;
     position: absolute;
+    right: 3px;
 }
 header .burger::after{
     content: "";
@@ -867,15 +868,18 @@ footer .autograph p {
 
     header .top_menu .logo-img {
         position: absolute;
-        left: 5px;
+        left: 15px;
         top: 30px;
+        z-index: 5;
     }
-
+    .top_menu .logo-img {
+        animation: none;
+    }
     header .top_menu li:not(:first-child) {
         margin-left: 0;
     }
 
-    header .top_menu li {
+    header .top_menu li:not(.logo-img) {
         padding-top: 30px;
         width: 100%;
         text-align: center;
@@ -883,7 +887,7 @@ footer .autograph p {
         border-bottom: 1px solid transparent;
     }
 
-    header .top_menu li:hover {
+    header .top_menu li:not(.logo-img):hover {
         transition: 0.5s all;
         border-bottom: 1px solid #4d4959;
     }
@@ -897,9 +901,8 @@ footer .autograph p {
         font-size: 16px;
         transition: all 0.7s ease-out;
     }
-
-    header .burger-lin {
-        display: block;
+    header .burger {
+        display: flex;
     }
 
     header #burger:checked ~::after{
@@ -909,7 +912,7 @@ footer .autograph p {
     header #burger:checked ~::before{
         transform: rotate(45deg);
         width: 20px;
-        right: 15px;
+        right: 18px;
         top:38px;
     }
     header #burger:checked ~ label span{
@@ -917,10 +920,6 @@ footer .autograph p {
         width: 20px;
 
     }
-
-
-
-
     header .logotip {
         display: block;
         position: absolute;
