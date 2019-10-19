@@ -9,7 +9,7 @@
     transition: height .5s ease-in-out;
 }
 .footer_form-container > input[type="checkbox"]:checked + .footer_form-container_form{
-    height: 350px;
+    height: 470px;
     transition: height .8s ease-in-out;
 }
 .footer_mailing_form{
@@ -49,6 +49,53 @@
     letter-spacing: 2.8px;
     align-self: flex-start;
     padding-top: 15px;
+}
+.footer_form-container_form > div{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 15px 0;
+}
+.footer_form-container_form > div input[type="radio"]{
+    display: none;
+}
+.footer_form-container_form > div label{
+    position: relative;
+    padding: 0 0 0 36px;
+    cursor: pointer;
+    color: #ffffff;
+    letter-spacing: 2.8px;
+}
+.footer_form-container_form  > div label::before{
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #d2d2d2 ;
+    border-radius: 50%;
+    background-color: #282f35;
+    left: 0;
+    top: -6px;
+    transition: all .4s ease-in;
+}
+.footer_form-container_form > div label:after{
+    opacity: 0;
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #64c29e;
+    z-index: 10;
+    left: 6px;
+    top: 0;
+    transition: opacity .4s ease-in;
+}
+.footer_form-container_form > div input:checked + label::after{
+    opacity: 1;
+}
+.footer_form-container_form > div input:checked + label::before{
+    border: 1px solid #21bcc2;
 }
 .footer_mailing_form > input[type="text"]{
     margin-right: 8px;
