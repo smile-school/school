@@ -324,9 +324,13 @@ main .topDescription > p {
   width: 100%;
   height: 50%;
 }
+.bottomGallery .section:first-child .subSection:first-child {
+  display: flex;
+  flex-direction: row;
+}
 .bottomGallery .section:first-child .subSection:first-child div {
-  width: 100%;
-  height: 50%;
+  width: 50%;
+  height: 100%;
 }
 .bottomGallery .section:first-child .subSection:last-child div {
   width: 100%;
@@ -358,6 +362,47 @@ main .topDescription > p {
 .bottomGallery .section:nth-child(2) > div:last-child {
   background: url("../sourses/images/bottomVertical2.png") no-repeat center;
   background-size: 100% 100%;
+}
+.bottomGallery .section:last-child .subSection:first-child {
+  height: 50%;
+  width: 100%;
+  background: url("../sourses/images/bottomGorizontal2.png") no-repeat center;
+  background-size: 100% 100%;
+}
+.bottomGallery .section:last-child .subSection:last-child {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 50%;
+}
+.bottomGallery .section:last-child .subSection:last-child > div {
+  height: 100%;
+  width: 50%;
+}
+.bottomGallery .section:last-child .subSection:last-child > div:first-child {
+  background: url("../sourses/images/bottomMd3.png") no-repeat center;
+  background-size: 100% 100%;
+}
+.bottomGallery .section:last-child .subSection:last-child > div:last-child {
+  background: url("../sourses/images/bottomMd4.png") no-repeat center;
+  background-size: 100% 100%;
+}
+.bottomGallery .section div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bottomGallery .section .logoContainer {
+  min-width: 100%;
+  height: 100%;
+  background-color: rgba(100, 194, 158, 0.75);
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+.bottomGallery .section .subSection div:hover .logoContainer,
+.bottomGallery .section:nth-of-type(2) div:hover .logoContainer,
+.bottomGallery .section:last-of-type .subSection:first-of-type:hover .logoContainer {
+  opacity: 1;
 }
 .phoneLabel {
   width: 70px;
@@ -692,5 +737,86 @@ footer .input_radio > label:first-of-type span {
   }
   footer .autograph {
     margin: 30px 0 30px 0;
+  }
+}
+@media screen and (max-width: 1600px) {
+  main {
+    padding: 0 15px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  main .topDescription {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  main .topDescription img {
+    margin: 30px auto;
+  }
+  .descriptContaier {
+    padding: 5px 5px;
+  }
+  .gallRow .bicucleTextBlock .descBottomImg > div {
+    padding: 20px;
+  }
+}
+@media screen and (max-width: 922px) {
+  main .topDescription {
+    padding: 20px 20px;
+  }
+  main .topDescription p {
+    padding: 20px 0;
+  }
+}
+@media screen and (max-width: 767px) {
+  main {
+    padding: 0;
+  }
+  .gallRow {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .gallRow .bicucleBlock {
+    width: 100%;
+    min-height: 50vh;
+  }
+  .gallRow .bicucleTextBlock .descBottomImg {
+    height: 40vh;
+  }
+  .gallRow .bicucleTextBlock .descBottomImg > div {
+    padding: 10px 10%;
+  }
+  .gallRow:last-of-type .bicucleBlock:first-of-type,
+  .gallRow .bicucleTextBlock,
+  .gallRow:last-of-type > div,
+  .bottomGallery .section {
+    width: 100%;
+  }
+  .descriptContaier {
+    padding: 0;
+  }
+  .bottomGallery {
+    flex-direction: column;
+  }
+  .bottomGallery .section {
+    height: 70vh;
+  }
+  .bottomGallery .section:nth-of-type(2) {
+    height: 90vh;
+  }
+  .bottomGallery .section:first-of-type .subSection:first-of-type > div:first-of-type,
+  .bottomGallery .section:first-of-type .subSection:first-of-type > div:last-of-type,
+  .bottomGallery .section:first-of-type .subSection:last-of-type,
+  .bottomGallery .section:nth-of-type(2) div:first-of-type,
+  .bottomGallery .section:nth-of-type(2) div:last-of-type,
+  .bottomGallery .section:last-of-type .subSection:first-of-type,
+  .bottomGallery .section:last-of-type .subSection:last-of-type > div:first-of-type,
+  .bottomGallery .section:last-of-type .subSection:last-of-type > div:last-of-type {
+    background-size: 100%;
+  }
+}
+@media screen and (max-width: 320px) {
+  main .topDescription {
+    padding: 20px 10px;
   }
 }

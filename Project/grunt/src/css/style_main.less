@@ -1,4 +1,4 @@
-main{
+main {
   max-width: @max-width;
   display: flex;
   flex-direction: column;
@@ -13,9 +13,10 @@ main{
     background-color: @top-description-color;
     min-height: 53vh;
 
-     & img {
+    & img {
       margin-bottom: 25px;
     }
+
     & > p {
       font-size: @f-sizeh;
       padding: 20px 240px;
@@ -25,6 +26,7 @@ main{
     }
   }
 }
+
 .gallRow {
   display: flex;
   flex-wrap: wrap;
@@ -39,12 +41,12 @@ main{
   }
 
   & .bicucleTextBlock {
-     width: 33.33%;
-     align-self: @text-center;
-     display: flex;
-     flex-direction: column;
+    width: 33.33%;
+    align-self: @text-center;
+    display: flex;
+    flex-direction: column;
 
-   & .descriptContaier {
+    & .descriptContaier {
       display: flex;
       flex-direction: column;
       justify-content: @text-center;
@@ -53,78 +55,85 @@ main{
       width: 100%;
       position: relative;
 
-     & p {
-       padding: 30px;
-       width: 80%;
-     }
+      & p {
+        padding: 30px;
+        width: 80%;
+      }
 
-     &:after {
-         content: "";
-         width: 50px;
-         border-top: 1px solid @color-h;
-         margin-bottom: 60px;
-       }
-     &:before{
-         content: '';
-         position: absolute;
-         left: calc(50% - 10px);
-         bottom: -20px;
-         border: 10px solid transparent;
-         border-top: 10px solid @label_color;
-         z-index: 5;
-     }
+      &:after {
+        content: "";
+        width: 50px;
+        border-top: 1px solid @color-h;
+        margin-bottom: 60px;
+      }
 
-     & > img {
-         padding: 50px 0 30px;
-       }
+      &:before {
+        content: '';
+        position: absolute;
+        left: calc(50% - 10px);
+        bottom: -20px;
+        border: 10px solid transparent;
+        border-top: 10px solid @label_color;
+        z-index: 5;
+      }
+
+      & > img {
+        padding: 50px 0 30px;
+      }
     }
+
     & .descBottomImg {
-        display: flex;
-        position: relative;
-        min-height: 200px;
-        overflow: hidden;
+      display: flex;
+      position: relative;
+      min-height: 200px;
+      overflow: hidden;
 
       & > div {
-          position: absolute;
-          left: 100%;
-          top: 0;
-          transition: left .5s ease;
-          transition-delay: .1s;
-          padding: 20px 35px;
-          width: 90%;
-        }
-      &:hover > div {
-          left: 0;
-        }
-      & img{
-          position: absolute;
-          left: 0;
-          top: 0;
-          width: 100%;
-          height: 100%;
-          z-index: 3;
-          transition: top .5s ease-in-out;
+        position: absolute;
+        left: 100%;
+        top: 0;
+        transition: left .5s ease;
+        transition-delay: .1s;
+        padding: 20px 35px;
+        width: 90%;
       }
+
+      &:hover > div {
+        left: 0;
+      }
+
+      & img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 3;
+        transition: top .5s ease-in-out;
+      }
+
       &:hover img {
-          top: 100%;
+        top: 100%;
       }
     }
 
-   }
+  }
+
   &:first-of-type .bicucleBlock {
-      background: url("../sourses/images/galleryBg1.png") no-repeat;
-      background-position: @text-center;
-      background-size: cover;
-    }
+    background: url("../sourses/images/galleryBg1.png") no-repeat;
+    background-position: @text-center;
+    background-size: cover;
+  }
+
   &:nth-of-type(2) {
-      flex-direction: row-reverse;
-    }
+    flex-direction: row-reverse;
+  }
 
   &:nth-of-type(2) .bicucleBlock {
-      background: url("../sourses/images/gallaryBg2.png") no-repeat;
-      background-position: @text-center;
-      background-size: cover;
-    }
+    background: url("../sourses/images/gallaryBg2.png") no-repeat;
+    background-position: @text-center;
+    background-size: cover;
+  }
 
   &:last-of-type {
     & .bicucleBlock:first-of-type {
@@ -134,19 +143,21 @@ main{
     }
 
     & .bicucleBlock:last-of-type {
-       background: url("../sourses/images/gallImgMd2.png") no-repeat;
-       background-position: @text-center;
-       background-size: cover;
-     }
+      background: url("../sourses/images/gallImgMd2.png") no-repeat;
+      background-position: @text-center;
+      background-size: cover;
+    }
+
     & > div {
       width: 33.33%;
     }
   }
 }
+
 .sliderWrapper {
   background-color: @top-description-color;
 
-  & > input{
+  & > input {
     display: none;
   }
 }
@@ -159,25 +170,26 @@ main{
 }
 
 .sliderContainer {
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  overflow: hidden;
 
-    & > .list {
-        display: none;
-        animation: move .8s ease;
-    }
-}
-.sliderWrapper .labelContainer label {
-    display: block;
-    height: 11px;
-    width: 11px;
-    border: 1px solid @input-bottom-color;
-    cursor: pointer;
-    border-radius: 50%;
-    margin-bottom: 70px;
-    margin-top: 100px;
-    margin-right: 10px;
+  & > .list {
+    display: none;
+    animation: move .8s ease;
   }
+}
+
+.sliderWrapper .labelContainer label {
+  display: block;
+  height: 11px;
+  width: 11px;
+  border: 1px solid @input-bottom-color;
+  cursor: pointer;
+  border-radius: 50%;
+  margin-bottom: 70px;
+  margin-top: 100px;
+  margin-right: 10px;
+}
 
 #check1:checked ~ .sliderContainer > .list:first-of-type,
 #check2:checked ~ .sliderContainer > .list:nth-of-type(2),
@@ -189,40 +201,45 @@ main{
   transition: transform 1s;
 }
 
-.list{
+.list {
   i {
     font-size: 30px;
     margin-top: 124px;
     margin-bottom: 37px;
   }
+
   &:first-of-type i {
-      color: @twitter-color;
-    }
+    color: @twitter-color;
+  }
+
   &:nth-of-type(2) i {
-      color: @insta-color;
-    }
+    color: @insta-color;
+  }
+
   &:last-of-type i {
-      color: @facebook-color;
-    }
+    color: @facebook-color;
+  }
+
   & > span {
-      font-size: 18px;
-      font-weight: 700;
-      color: @color-h;
-      letter-spacing: 1.8px;
+    font-size: 18px;
+    font-weight: 700;
+    color: @color-h;
+    letter-spacing: 1.8px;
 
     & > span {
-        color: @color-p;
-        font-family: "Lato Light";
-        font-weight: 300;
-      }
+      color: @color-p;
+      font-family: "Lato Light";
+      font-weight: 300;
     }
+  }
+
   & > p {
-      font-style: italic;
-      font-size: 24px;
-      text-align: @text-center;
-      padding: 0 15%;
-      margin-top: 30px;
-    }
+    font-style: italic;
+    font-size: 24px;
+    text-align: @text-center;
+    padding: 0 15%;
+    margin-top: 30px;
+  }
 }
 
 .labelContainer {
@@ -245,115 +262,124 @@ main{
   min-height: 80vh;
 
   & .section {
-      display: flex;
-      flex-direction: column;
-      width: 33.33%;
-      min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    width: 33.33%;
+    min-height: 100%;
 
     &:first-child .subSection {
-        width: 100%;
-        height: 50%;
+      width: 100%;
+      height: 50%;
 
-      &:first-child div {
-        width: 100%;
-        height: 50%;
+      &:first-child {
+        display: flex;
+        flex-direction: row;
+
+        & div {
+          width: 50%;
+          height: 100%;
+        }
       }
-      &:last-child div{
+
+      &:last-child div {
         width: 100%;
         height: 100%;
       }
-      &:first-child > div{
+
+      &:first-child > div {
 
         &:first-child {
-        background: url("../sourses/images/bottomMd1.png") no-repeat center;
-        background-size:100% 100%;
+          background: url("../sourses/images/bottomMd1.png") no-repeat center;
+          background-size: 100% 100%;
         }
 
         &:last-child {
           background: url("../sourses/images/bottomMd2.png") no-repeat center;
-          background-size:100% 100%;
+          background-size: 100% 100%;
         }
       }
+
       &:last-child {
-          background: url("../sourses/images/bottomGorizontal.png") no-repeat center;
-          background-size:100% 100%;
-       }
+        background: url("../sourses/images/bottomGorizontal.png") no-repeat center;
+        background-size: 100% 100%;
+      }
     }
+
     &:nth-child(2) {
-        flex-direction: row;
+      flex-direction: row;
 
       & > div {
-          width: 50%;
-          height: 100%;
+        width: 50%;
+        height: 100%;
 
         &:first-child {
-            background: url("../sourses/images/bottomVertical.png") no-repeat center;
-            background-size:100% 100%;
-          }
+          background: url("../sourses/images/bottomVertical.png") no-repeat center;
+          background-size: 100% 100%;
+        }
+
         &:last-child {
-            background: url("../sourses/images/bottomVertical2.png") no-repeat center;
-            background-size:100% 100%;
+          background: url("../sourses/images/bottomVertical2.png") no-repeat center;
+          background-size: 100% 100%;
+        }
+      }
+    }
+
+    &:last-child {
+
+      .subSection {
+
+        &:first-child {
+          height: 50%;
+          width: 100%;
+          background: url("../sourses/images/bottomGorizontal2.png") no-repeat center;
+          background-size: 100% 100%;
+        }
+
+        &:last-child {
+          display: flex;
+          flex-direction: row;
+          width: 100%;
+          height: 50%;
+
+          & > div {
+            height: 100%;
+            width: 50%;
+
+            &:first-child {
+              background: url("../sourses/images/bottomMd3.png") no-repeat center;
+              background-size: 100% 100%;
+            }
+
+            &:last-child {
+              background: url("../sourses/images/bottomMd4.png") no-repeat center;
+              background-size: 100% 100%;
+            }
           }
         }
       }
+    }
+
+    & div {
+      display: flex;
+      justify-content: @text-center;
+      align-items: @text-center;
+    }
+
+    & .logoContainer {
+      min-width: 100%;
+      height: 100%;
+      background-color: @logo-contain-color;
+      opacity: 0;
+      transition: all .5s ease-in-out;
+    }
+
+    & .subSection div:hover .logoContainer,
+    &:nth-of-type(2) div:hover .logoContainer,
+    &:last-of-type .subSection:first-of-type:hover .logoContainer {
+      opacity: 1;
+    }
   }
 }
-
-//
-//.bottomGallery .section:first-child .subSection:first-child {
-//  display: flex;
-//  flex-direction: row;
-//}
-//
-//.bottomGallery .section:last-child .subSection:first-child {
-//  height: 50%;
-//  width: 100%;
-//  background: url("../sourses/images/bottomGorizontal2.png") no-repeat center;
-//  background-size:100% 100%;
-//}
-//
-//.bottomGallery .section:last-child .subSection:last-child {
-//  display: flex;
-//  flex-direction: row;
-//  width: 100%;
-//  height: 50%;
-//}
-//
-//.bottomGallery .section:last-child .subSection:last-child > div {
-//  height: 100%;
-//  width: 50%;
-//}
-//
-//.bottomGallery .section:last-child .subSection:last-child > div:first-child {
-//  background: url("../sourses/images/bottomMd3.png") no-repeat center;
-//  background-size:100% 100%;
-//}
-//
-//.bottomGallery .section:last-child .subSection:last-child > div:last-child {
-//  background: url("../sourses/images/bottomMd4.png") no-repeat center;
-//  background-size:100% 100%;
-//}
-//
-//.bottomGallery .section div {
-//  display: flex;
-//  justify-content: center;
-//  align-items: center;
-//}
-//
-//.bottomGallery .section .logoContainer {
-//  min-width: 100%;
-//  height: 100%;
-//  background-color: rgba(100, 194, 158, .75);
-//  opacity: 0;
-//  transition: all .5s ease-in-out;
-//}
-//
-//.bottomGallery .section .subSection div:hover .logoContainer,
-//.bottomGallery .section:nth-of-type(2) div:hover .logoContainer,
-//.bottomGallery .section:last-of-type .subSection:first-of-type:hover .logoContainer {
-//  opacity: 1;
-//}
-
 
 .phoneLabel {
   width: 70px;
@@ -367,7 +393,7 @@ main{
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow:@phone-box-shadow;
+  box-shadow: @phone-box-shadow;
   animation: phone 3s linear infinite;
 
   & > i {
