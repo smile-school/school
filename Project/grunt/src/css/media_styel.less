@@ -1,0 +1,133 @@
+@media screen and (max-width: 1200px){
+  footer{
+    .adress{
+      margin: 99px 0 103px 10%;
+    }
+    .autograph{
+      margin-right: 10%;
+    }
+  }
+}
+@media screen and (max-width: 992px){
+  footer{
+    .adress{
+      margin-left: 20px;
+    }
+    .autograph{
+      margin-right: 20px;
+    }
+  }
+}
+@media screen and (max-width: 767px){
+  header{
+    .burger{
+      display: flex;
+    }
+    nav{
+      max-height: 0;
+      font-size: 0;
+      overflow: hidden;
+      padding: 0;
+    }
+    .top_menu{
+      flex-direction: column;
+      .logo-img{
+        display: none;
+      }
+      li{
+        padding-top: 30px;
+        width: @nav-width;
+        text-align: center;
+        padding-bottom: 6px;
+        border: 1px solid transparent;
+        &:not(:first-child){
+          margin-left: 0;
+        }
+        &:hover{
+          transition:@transit-burger;
+          border-bottom:@border-hover-li;
+        }
+      }
+    }
+    #burger{
+      &:checked{
+        & ~ nav{
+          flex-direction: column;
+          justify-content: center;
+          width: @nav-width;
+          max-height: 600px;
+          background-color: @color-1;
+          font-size: @f-size-chec-nav;
+          transition:@transit-chec-menu;
+        }
+        & ~ .burger-lin{
+          top: 40px;
+        }
+        & ~ .one-lin{
+          transform: rotate(90deg);
+          top: 30px;
+        }
+        & ~ .two-lin{
+          transform: rotate(45deg);
+          width: 20px;
+          right: 25px;
+        }
+        & ~ .three-lin{
+          transform: rotate(-45deg);
+          width: 20px;
+        }
+        & ~ .fount-line{
+          display: none;
+        }
+      }
+    }
+    .burger-lin{
+      display: block;
+    }
+    .logotip{
+      display: block;
+      position: absolute;
+      left: 10px;
+      top: 10px;
+      z-index: 5;
+    }
+  }
+  footer{
+    .form-shop{
+      width: 310px;
+      transform: translateY(20%) scale(0);
+    }
+    .input_radio{
+      & > label{
+        &:first-of-type{
+          margin-right:   70px;
+        }
+      }
+    }
+    .email-form{
+      width: 80%;
+      & > input{
+        &[placeholder]{
+          padding-left: 0;
+        }
+        &:first-of-type{
+          width: 70%;
+        }
+        &:last-of-type{
+          width: 30%;
+        }
+      }
+    }
+    .footer-bottom{
+      flex-direction: column;
+      justify-content: center;
+    }
+    .adress{
+      margin: 30px 0 50px 0;
+      text-align: @text-center;
+    }
+    .autograph{
+      margin: 30px 0 30px 0;
+    }
+  }
+}

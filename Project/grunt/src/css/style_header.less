@@ -1,0 +1,87 @@
+header{
+  max-width: @max-width;
+  min-height:@min-height;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  nav{
+    width: @nav-width;
+    max-height: 105px;
+    display: flex;
+    justify-content: center;
+    padding-top: 35px;
+    font-size: @f-size-menu;
+    position: relative;
+  }
+  .burger{
+    width: @nav-width;
+    height: 50px;
+    background-color: @color-1;
+    position: absolute;
+    z-index: 2;
+    justify-content: flex-end;
+    align-items: center;
+    cursor: @cursor;
+    display: @list-s-none;
+
+  }
+  .burger-lin{
+     position: absolute;
+     top: 10px;
+     right: 10px;
+     width: 35px;
+     height: 2px;
+     z-index: 3;
+     background-color:@bg-color ;
+     transition: @transit-burger;
+     display:@list-s-none;
+   }
+  .two-lin,& .three-lin{
+    top: 20px;
+  }
+  .four-line{
+    top: 30px;
+  }
+  .burger{
+    & + input{
+      display: @list-s-none;
+    }
+  }
+}
+.logotip{
+  display: @list-s-none;
+}
+.top_menu{
+  display: flex;
+  flex-direction: row;
+  list-style-type: @list-s-none;
+  align-items: center;
+  .logo-img{
+    animation:@animation ;
+  }
+  li{
+    &:not(:first-child){
+      margin-left: 63px;
+    }
+    a{
+      text-decoration: @text-decor;
+      text-transform: @upercase;
+      text-align: @text-center;
+      color: @menu-linc-color;
+      font-weight: 600;
+      display: block;
+      width: @nav-width;
+    }
+  }
+}
+@keyframes logotip {
+  0%{
+    transform: @anim-transform1;
+  }
+  30%{
+    transform: @anim-transform1;
+  }
+  100%{
+    transform: @anim-transform2;
+  }
+}
