@@ -33,28 +33,28 @@ header .burger {
     cursor: pointer;
     display: none;
 }
-
-header .burger-lin {
-    position: absolute;
-    top: 10px;
-    right: 10px;
+header .burger::after,
+header .burger::before,
+header .burger span{
     width: 35px;
     height: 2px;
     z-index: 3;
     background-color: #64c29e;
     transition: .5s all;
-    display: none;
+    position: absolute;
+}
+header .burger::after{
+    content: "";
+}
+header .burger::before{
+    content: "";
+    top: 10px;
+}
+header .burger span{
+    bottom: 10px;
 }
 
-header .two-lin, header .three-lin {
-    top: 20px;
-}
-
-header .four-line {
-    top: 30px;
-}
-
-header .burger + input {
+header #burger{
     display: none;
 }
 
@@ -903,29 +903,24 @@ footer .autograph p {
         display: block;
     }
 
-    header #burger:checked ~ .burger-lin {
-        top: 40px;
-    }
-
-    header #burger:checked ~ .one-lin {
+    header #burger:checked ~::after{
         transform: rotate(90deg);
-        top: 30px;
+        top: 29px;
     }
-
-    header #burger:checked ~ .two-lin {
+    header #burger:checked ~::before{
         transform: rotate(45deg);
         width: 20px;
-        right: 25px;
+        right: 15px;
+        top:38px;
     }
-
-    header #burger:checked ~ .three-lin {
+    header #burger:checked ~ label span{
         transform: rotate(-45deg);
         width: 20px;
+
     }
 
-    header #burger:checked ~ .four-line {
-        display: none;
-    }
+
+
 
     header .logotip {
         display: block;
