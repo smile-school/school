@@ -25,25 +25,28 @@ header .burger {
   cursor: pointer;
   display: none;
 }
-header .burger-lin {
-  position: absolute;
-  top: 10px;
-  right: 10px;
+header .burger::after,
+header .burger::before,
+header .burger span {
   width: 35px;
   height: 2px;
   z-index: 3;
   background-color: #64c29e;
   transition: 0.5s all;
-  display: none;
+  position: absolute;
+  right: 3px;
 }
-header .two-lin,
-header .three-lin {
-  top: 20px;
+header .burger::after {
+  content: "";
 }
-header .four-line {
-  top: 30px;
+header .burger::before {
+  content: "";
+  top: 10px;
 }
-header .burger + input {
+header .burger span {
+  bottom: 10px;
+}
+header #burger {
   display: none;
 }
 .logotip {
@@ -101,7 +104,7 @@ footer .action-form > label {
   font-weight: 700;
   padding: 21px 56px 19px 59px;
   border: 1px solid rgba(255, 255, 255, 0.5);
-  margin: 75px 0 75px 0;
+  margin: 75px 0;
   cursor: pointer;
 }
 footer .form-shop {
@@ -139,7 +142,7 @@ footer .input_check {
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
-  margin: 20px 0 20px 0;
+  margin: 20px 0;
   width: 90%;
 }
 footer .input_check span {
@@ -393,4 +396,103 @@ h3 {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 4px;
+}
+.form_site {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid #64c29e;
+}
+.form_site input {
+  height: 30px;
+}
+.form_site input,
+.form_site textarea {
+  outline: none;
+  border-bottom: 1px solid #64c29e;
+  font-size: 13px;
+}
+.form_site textarea {
+  overflow: auto;
+  resize: none;
+  min-height: 80px;
+  border-right: 8px;
+}
+.form_site textarea:focus {
+  background-color: #efffea;
+}
+.form_site select {
+  width: 50%;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid #64c29e;
+  outline: none;
+  background-color: #d0e2d7;
+  color: #4a6b50;
+  font-size: 16px;
+  display: inline-block;
+}
+.form_site select option {
+  color: #4a6b50;
+  font-size: 16px;
+}
+.form_site .input_check input[type=checkbox],
+.form_site .input_check input[type=radio] {
+  display: none;
+}
+.form_site .label_checbox span {
+  content: "";
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  display: block;
+  border: 1px solid #64c29e;
+  top: 2px;
+  left: 80px;
+}
+.form_site .label_checbox span::after {
+  content: "\2714";
+  color: #64c29e;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  font-size: 22px;
+  transition: 0.3s ease-in-out 0s;
+}
+.form_site input[type=checkbox]:checked ~ span::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+.form_site label {
+  text-transform: capitalize;
+  vertical-align: middle;
+  position: relative;
+  cursor: pointer;
+  color: #4a6b50;
+  font-size: 18px;
+  font-weight: 600;
+}
+.form_site .label_radio span {
+  height: 13px;
+  width: 13px;
+  border-radius: 50%;
+  border: 3px solid #4a6b50;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 60px;
+}
+.form_site .label_radio span::after {
+  content: "";
+  height: 8px;
+  width: 8px;
+  background-color: #64c29e;
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  transition: 0.3s ease-in-out 0s;
 }

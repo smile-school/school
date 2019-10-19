@@ -1,0 +1,124 @@
+.form_site {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: @border-form;
+
+  input {
+    height: 30px;
+  }
+
+  input,
+  & textarea {
+    outline: none;
+    border-bottom: @border-form;
+    font-size: 13px;
+  }
+
+  & textarea {
+    overflow: auto;
+    resize: none;
+    min-height: 80px;
+    border-right: 8px;
+
+    &:focus {
+      background-color: @texterea;
+    }
+  }
+
+  select {
+    width: 50%;
+    height: 30px;
+    border-radius: 5px;
+    border: @border-form;
+    outline: none;
+    background-color: @select-form;
+    color: @select-text;
+    font-size: @f-size-chec-nav;
+    display: inline-block;
+
+    option {
+      color: @select-text;
+      font-size: @f-size-chec-nav;
+    }
+  }
+
+  .input_check {
+    input {
+      &[type=checkbox],
+      &[type=radio] {
+        display: none;
+      }
+    }
+  }
+
+  .label_checbox {
+    span {
+      content: "";
+      width: 15px;
+      height: 15px;
+      position: absolute;
+      display: block;
+      border: @border-form;
+      top: 2px;
+      left: 80px;
+
+      &::after {
+        content: "\2714";
+        color: @bg-color;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        font-size: @span-size;
+        transition: .3s ease-in-out 0s;
+      }
+    }
+  }
+  input{
+       &[type=checkbox]{
+         &:checked{
+           & ~ span{
+             &::after{
+               transform: translate(-50%, -50%) scale(1);
+             }
+           }
+         }
+       }
+     }
+  label{
+    text-transform: @transorm-text;
+    vertical-align: middle;
+    position: relative;
+    cursor: @cursor;
+    color: @select-text;
+    font-size: @f-sizeh;
+    font-weight: @fon-wei;
+  }
+  .label_radio {
+    span{
+      height: 13px;
+      width: 13px;
+      border-radius: 50%;
+      border:@bold-border ;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 60px;
+      &::after{
+        content: "";
+        height: 8px;
+        width: 8px;
+        background-color:@bg-color ;
+        display: block;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        transition:@trasition-span ;
+      }
+    }
+  }
+}

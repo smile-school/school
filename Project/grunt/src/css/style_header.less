@@ -23,29 +23,30 @@ header{
     align-items: center;
     cursor: @cursor;
     display: @list-s-none;
-
-  }
-  .burger-lin{
-     position: absolute;
-     top: 10px;
-     right: 10px;
-     width: 35px;
-     height: 2px;
-     z-index: 3;
-     background-color:@bg-color ;
-     transition: @transit-burger;
-     display:@list-s-none;
-   }
-  .two-lin,& .three-lin{
-    top: 20px;
-  }
-  .four-line{
-    top: 30px;
-  }
-  .burger{
-    & + input{
-      display: @list-s-none;
+      &::after,
+      &::before,
+      span{
+        width: 35px;
+        height: 2px;
+        z-index: 3;
+        background-color: #64c29e;
+        transition: .5s all;
+        position: absolute;
+        right: 3px;
+      }
+    &::after{
+      content: "";
     }
+    &::before{
+      content: "";
+      top: 10px;
+    }
+    span{
+      bottom: 10px;
+    }
+  }
+  #burger{
+    display: none;
   }
 }
 .logotip{
