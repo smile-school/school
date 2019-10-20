@@ -52,6 +52,29 @@
     right: 5px;
     top: 5px;
 }
+.product-rating{
+    position: relative;
+    padding: 15px 0;
+    width: 150px;
+    height: 30px;
+    background-image: url("../ima/product/Star.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.product-rating::before{
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 0;
+    width: 150px;
+    height: 30px;
+    background-image: url("../ima/product/Star-fill.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    clip-path: polygon(0 0, calc(var(--width)*1%) 0, calc(var(--width)*1%) 100%, 0 100%);
+}
 .button{
     position: absolute;
     outline: 1px solid grey;
