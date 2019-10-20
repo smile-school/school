@@ -1,5 +1,6 @@
 /* Color */
 /* fotn*/
+/* leter*/
 @import "reset.css";
 @import "normalize.css";
 header {
@@ -143,23 +144,76 @@ main {
   max-width: 1600px;
   display: flex;
   flex-direction: column;
-  background-color: #282828;
+  background-color: #1c1c1c;
 }
 .headlights {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  width: 100% ;
+  width: 100%;
 }
 .headlights .towar_lights {
-  min-width: 49%;
+  position: relative;
+  min-width: 50%;
+  min-height: 410px;
+}
+.headlights .towar_lights h3 {
+  font-size: 35px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 165px 0 25px 56px;
+}
+.headlights .towar_lights p {
+  font-size: 20px;
+  color: #979696;
+  margin-left: 50px;
+  letter-spacing: 1px;
+}
+.headlights .towar_lights img {
+  max-width: 40%;
 }
 .headlights .towar_lights:nth-child(3n+1) {
   background-color: #303030;
 }
-.headlights .towar_lights:nth-child(-3n+2) {
-  background-color: #1c1c1c;
+.headlights .towar_lights:first-child img {
+  right: 0;
+  bottom: 15%;
+  position: absolute;
+}
+.headlights .towar_lights:last-child img {
+  position: absolute;
+  right: 7%;
+  bottom: 1.2%;
+}
+.headlights .towar_lights:nth-child(2) img {
+  position: absolute;
+  bottom: 0;
+  right: 4%;
+}
+.headlights .towar_lights:nth-child(3) img {
+  position: absolute;
+}
+.headlights .towar_lights:nth-child(3) img:first-of-type {
+  right: 7%;
+  top: 13%;
+  z-index: 2;
+}
+.headlights .towar_lights:nth-child(3) img:last-of-type {
+  position: absolute;
+  top: 22%;
+  right: 23%;
+  filter: blur(2px) sepia(60%);
+}
+.featured {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.featured_prod {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 body {
   font-family: 'Lato', sans-serif;
