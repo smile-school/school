@@ -43,4 +43,22 @@ class Product
         $data = $this->getData();
         return $data[$id]['url'];
     }
+    public function getPostRating($id)
+    {
+        for ($i = 0; $i < $this->getRating($id); $i++) {
+            echo '<span style="color: gold">✩</span>';
+        }
+        for ($i = 0; $i < 5 - $this->getRating($id); $i++) {
+            echo '<span>✩</span>';
+        }
+    }
+    public  function  getDiscount($id)
+    {
+        $data = $this->getData();
+        return round(100 - $data[$id]['price']['finalPrice'] / $data[$id]['price']['oldPrice'] * 100);
+    }
+    public function isOnSalePrice($id)
+    {
+        return !($this->getPrice($id)['oldPrice'] == $this->getPrice($id)['finalPrice']);
+    }
 }
