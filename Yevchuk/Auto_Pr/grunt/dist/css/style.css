@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 body {
   font-family: 'Lato', sans-serif;
   font-size: 15px;
@@ -6,8 +9,148 @@ body {
   color: #ffffff;
 }
 h3 {
-  font-size: 35px;
+  font-size: 2.3em;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
+}
+header {
+  display: flex;
+  flex-direction: column;
+  min-height: 130vh;
+  background: url("../../../sourses/images/bugatty-bg.png") no-repeat center;
+  background-size: cover;
+  max-width: 1600px;
+}
+header .top-nav {
+  min-height: 20vh;
+  background-color: #212121;
+  padding: 0 15%;
+}
+header .bottom-nav {
+  min-height: 10vh;
+  background-color: #030303;
+  padding: 0 15%;
+}
+header .bottom-nav .bottom-nav-menu {
+  min-height: 10vh;
+  display: flex;
+  align-items: center;
+}
+header .bottom-nav .bottom-nav-menu li {
+  margin-left: 25px;
+  text-transform: uppercase;
+}
+header .bottom-nav .bottom-nav-menu li a {
+  text-decoration: none;
+  color: #ffffff;
+}
+main {
+  min-width: 100%;
+}
+main .headlights-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+}
+main .headlights-wrapper .headlights-cart {
+  min-width: 50%;
+  background-color: #303030;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 2%;
+}
+main .headlights-wrapper .headlights-cart img {
+  position: absolute;
+  max-width: 37%;
+}
+main .headlights-wrapper .headlights-cart:first-of-type img {
+  top: 30%;
+  right: 0;
+  max-width: 47%;
+}
+main .headlights-wrapper .headlights-cart:nth-of-type(2) img {
+  bottom: 0;
+  right: 20px;
+}
+main .headlights-wrapper .headlights-cart:nth-of-type(3) img:first-of-type {
+  max-width: 30%;
+  right: 15%;
+  bottom: 17%;
+}
+main .headlights-wrapper .headlights-cart:nth-of-type(3) img:last-of-type {
+  right: 0;
+}
+main .headlights-wrapper .headlights-cart:last-of-type img {
+  bottom: 5px;
+  right: 10px;
+}
+main .headlights-wrapper .headlights-cart:nth-of-type(2),
+main .headlights-wrapper .headlights-cart:nth-of-type(3) {
+  background-color: #1c1c1c;
+}
+main .headlights-wrapper .headlights-cart p {
+  color: #979696;
+  font-size: 1.3em;
+  letter-spacing: 1px;
+}
+main .card-wrapper {
+  display: flex;
+  flex-direction: column;
+  background-color: #282828;
+  align-items: center;
+  min-width: 100%;
+  padding: 5% 5%;
+}
+main .card-wrapper > h3 {
+  display: flex;
+  flex-direction: column;
+}
+main .card-wrapper > h3::after {
+  content: "";
+  display: block;
+  min-width: 40%;
+  align-self: center;
+  margin: 5% 0;
+  border: 2px solid #9c1c28;
+}
+main .card-wrapper .card-container {
+  display: flex;
+  align-items: center;
+  min-width: 100%;
+  padding: 3% 0;
+}
+main .card-wrapper .card-container .card {
+  background-color: #363636;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  min-width: calc(20% - 3%);
+  min-height: 50vh;
+}
+main .card-wrapper .card-container .card:not(:last-of-type) {
+  margin-right: 3%;
+}
+main .card-wrapper .card-container .card a {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+main .card-wrapper .card-container .card img {
+  max-width: 80%;
+  margin: 10% 5%;
+}
+main .card-wrapper .card-container .card h6 {
+  color: #ff3448;
+  padding: 10%;
+  text-transform: uppercase;
+  margin-top: 5%;
+}
+main .card-wrapper .card-container .card span {
+  color: #ffffff;
+  font-size: 1.2em;
+  font-weight: bolder;
 }
