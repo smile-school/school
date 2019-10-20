@@ -25,11 +25,11 @@ $name = 'Products list';
                 <p class="item-title"><a href="#"><?= $block->getTitle($i);?></a></p>
                 <div class="product-action">
                     <?php if ($block->getActions($i)['bestsellers']):?>
-                        <p>Category: Bestsellers</p>
+                        <p class="action">Category: Bestsellers</p>
                     <?php elseif ($block->getActions($i)['eco']):?>
-                        <p>Category: Eco</p>
+                        <p class="action">Category: Eco</p>
                     <?php else: ($block->getActions($i)['new']);?>
-                        <p>Category: New</p>
+                        <p class="action">Category: New</p>
                     <?php endif;?>
                 </div>
                 <div class="stars">
