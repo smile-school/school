@@ -9,13 +9,15 @@ body {
 }
 
 header {
-  background-color: @header-background-color;
-
+  height: 100vh;
+  background: url("../ima/bg-header.jpg") no-repeat center center;
+  & .bakground{
+    background-color: @header-background-color;
+  }
   & .personal {
     padding: 18px;
     display: flex;
     justify-content: flex-end;
-
     & span {
       color: @pink;
       font-size: 14px;
@@ -174,9 +176,19 @@ header {
     }
   }
   }
-  & .banner{
-    height: 82vh;
-    background: url("../ima/bg-header.jpg") no-repeat center bottom;
-    background-size: 100%;
+}
+main{
+  & .category{
+    display: flex;
+    flex-wrap: wrap;
+    & section{
+      width: 50%;
+      padding-top: 165px;
+      padding-bottom: 175px;
+      background-color: @light-silver;
+     &.dark{
+      background-color: @dark-silver;
+    }
+    }
   }
 }
