@@ -22,6 +22,8 @@ $block = new Product();
         <h2>
             <?= $block->getTitle($i);?>
         </h2>
+        <div class="product-rating" style="--width: <?= $block->getRating($i);?>" >
+        </div>
         <div class="product-prices">
             <?php if ($block->isSalePrice($i)):?>
                 <div>
