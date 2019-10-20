@@ -6,10 +6,16 @@ header{
   background: url("../sourse2/bg-fon/Layer_5.png") no-repeat center;
   background-size: cover;
   display: flex;
+  flex-direction: column;
+  ul{
+    list-style-type: none;
+  }
+  a{
+    text-decoration: none;
+  }
 }
 
 .header_info{
-  width: 100%;
   background-color: @bg-foter;
   height: 20%;
   padding: 0 12%;
@@ -23,7 +29,6 @@ header{
   border-bottom: 2px solid @line-color;
   ul{
     display: flex;
-    list-style-type: none;
     li{
       margin-left: 46px;
       &:last-of-type{
@@ -42,7 +47,6 @@ header{
         }
       }
       a{
-        text-decoration: none;
         color: @icon-color;
         i{
           padding-right: 4px;
@@ -98,7 +102,6 @@ header{
   align-items: center;
   ul{
     display: flex;
-    list-style-type: none;
     li{
       padding:0 15px;
       border-left: 2px solid @line-color;
@@ -106,7 +109,6 @@ header{
         display: flex;
         flex-direction: column;
         text-align: center;
-        text-decoration: none;
         text-transform: @transf-uper;
         color: @white;
         font-weight:@font-weight2 ;
@@ -119,4 +121,22 @@ header{
     }
   }
 }
+.nav_header{
+  background-color: @bg-darc;
+  min-height: 10%;
+  padding: 0 12%;
+  ul{
+    display: flex;
+    flex-direction: row;
+    li{
+      margin:25px 0 20px 35px;
+      a{
+        text-transform: @transf-uper;
+        color: @white;
+        font-weight: @font-weight2;
+      }
+    }
+  }
+}
+
 
