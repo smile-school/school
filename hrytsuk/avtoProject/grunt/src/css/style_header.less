@@ -138,5 +138,28 @@ header{
     }
   }
 }
+main{
+  max-width:1600px;
+  display: flex;
+  flex-direction: column;
+  background-color:@main-color ;
+}
+.headlights{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100% ;
+  .towar_lights{
+    min-width: 49%;
+    &:nth-child(3n+1){
+      background-color:@bg-schop;
+    }
+   &:nth-child(-3n+2){
+     background-color: @bg-schop2;
+   }
+  }
+
+}
 
 
