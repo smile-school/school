@@ -172,6 +172,7 @@ main {
 }
 .headlights .towar_lights img {
   max-width: 40%;
+  position: absolute;
 }
 .headlights .towar_lights:nth-child(3n+1) {
   background-color: #303030;
@@ -179,20 +180,14 @@ main {
 .headlights .towar_lights:first-child img {
   right: 0;
   bottom: 15%;
-  position: absolute;
 }
 .headlights .towar_lights:last-child img {
-  position: absolute;
   right: 7%;
   bottom: 1.2%;
 }
 .headlights .towar_lights:nth-child(2) img {
-  position: absolute;
   bottom: 0;
   right: 4%;
-}
-.headlights .towar_lights:nth-child(3) img {
-  position: absolute;
 }
 .headlights .towar_lights:nth-child(3) img:first-of-type {
   right: 7%;
@@ -205,15 +200,88 @@ main {
   right: 23%;
   filter: blur(2px) sepia(60%);
 }
+.products {
+  padding: 0 8%;
+  background-color: #282828;
+}
+.products h3 {
+  margin: 85px 0 100px;
+  text-align: center;
+  font-size: 35px;
+  font-weight: 700;
+  text-transform: uppercase;
+  position: relative;
+}
+.products h3::after {
+  content: "";
+  width: 172px;
+  height: 6px;
+  background-color: #9c1c28;
+  position: absolute;
+  top: 65px;
+  left: 43%;
+}
 .featured {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background-color: #282828;
 }
 .featured_prod {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-bottom: 120px;
+}
+.product_list {
+  background-color: #363636;
+  width: 15%;
+  min-height: 40vh;
+  display: flex;
+}
+.product_list img {
+  max-width: 80%;
+  margin-top: 10px;
+}
+.product_list a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  text-decoration: none;
+}
+.product_list span {
+  text-transform: uppercase;
+  color: #ff3448;
+  font-size: 17px;
+}
+.product_list span span:nth-child(2) {
+  font-size: 25px;
+  color: #ffffff;
+}
+.product_list span span:last-of-type {
+  margin: 10px 0 35px;
+}
+.product_list span span:first-of-type {
+  margin: 30px 0 20px;
+}
+.product_list .prise_product {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+.order {
+  min-height: 60vh;
+  background: url("../sourse2/bg-fon/Layer_6.png") no-repeat center;
+  padding: 0 12%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.over h2 {
+  font-size: 82px;
 }
 body {
   font-family: 'Lato', sans-serif;
