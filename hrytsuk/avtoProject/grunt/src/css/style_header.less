@@ -11,7 +11,7 @@ header{
 .header_info{
   width: 100%;
   background-color: @bg-foter;
-  max-height: 146px;
+  height: 20%;
   padding: 0 12%;
 }
 .header_top{
@@ -45,7 +45,70 @@ header{
         text-decoration: none;
         color: @icon-color;
         i{
-          margin-right: 4px;
+          padding-right: 4px;
+        }
+      }
+    }
+  }
+}
+.header_contact{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 25px;
+  justify-content: space-between;
+  .logo{
+    text-align: center;
+    h1{
+      margin: 0;
+      font-size:@font-size-logo ;
+      font-weight: 700;
+      span{
+        color: @icon-color;
+      }
+    }
+    p{
+      text-transform: @transf-uper;
+      letter-spacing: 4.5px;
+    }
+  }
+  .contact_phone{
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    h3{
+      font-size:@phone-size ;
+      font-weight:@font-weight2 ;
+      position: relative;
+      i{
+        color:@icon-color;
+        margin-right: 14px;
+        font-size: @phone-icon-size;
+      }
+    }
+    p{
+      color:@text-color3 ;
+      text-transform: @transf-uper;
+      font-size:@font-size-p;
+    }
+  }
+}
+.list_shop{
+  display: flex;
+  ul{
+    display: flex;
+    list-style-type: none;
+    li{
+      a{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        text-decoration: none;
+        text-transform: @transf-uper;
+        color: @white;
+        font-weight:@font-weight2 ;
+        i{
+          color: @icon-color;
         }
       }
     }
