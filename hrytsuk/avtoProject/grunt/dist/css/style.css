@@ -236,7 +236,7 @@ main {
 .product_list {
   background-color: #363636;
   width: 15%;
-  min-height: 40vh;
+  min-height: 50vh;
   display: flex;
 }
 .product_list img {
@@ -273,13 +273,22 @@ main {
   align-items: center;
 }
 .order {
-  min-height: 60vh;
+  min-height: 45vh;
   background: url("../sourse2/bg-fon/Layer_6.png") no-repeat center;
   padding: 0 12%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+}
+.order::after {
+  content: "";
+  width: 2px;
+  height: 170px;
+  background-color: #ffffff;
+  position: absolute;
+  left: 50%;
 }
 .over {
   display: flex;
@@ -348,13 +357,13 @@ footer .h3-foot::after {
   font-weight: 700;
 }
 .quick_links ul li:not(:first-child) {
-  margin-top: 25px;
+  margin-top: 20px;
 }
 .form_footer {
   position: relative;
 }
 .form_footer p {
-  color: #282828;
+  color: #887979;
 }
 .form_footer span {
   position: absolute;
@@ -387,6 +396,50 @@ footer .h3-foot::after {
   background-color: #282828;
   outline: none;
   border: 1px solid #282828;
+  color: #ffffff;
+  font-weight: 700;
+}
+.information_footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 85px 0 100px;
+  border-bottom: 2px solid #595959;
+}
+.information_footer p {
+  color: #887979;
+}
+.inform {
+  max-width: 30%;
+}
+.contact ul li {
+  color: #887979;
+}
+.contact ul li:not(:last-child) {
+  margin-bottom: 15px;
+}
+.contact ul li i {
+  color: #9c1c28;
+  padding-right: 10px;
+}
+.foorer_bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 50px 0 68px;
+}
+.info p {
+  color: #887979;
+}
+.info p span {
+  color: #ffffff;
+  font-weight: 700;
+}
+.cart i {
+  font-size: 25px;
+}
+.cart i:not(:first-child) {
+  margin-left: 25px;
 }
 body {
   font-family: 'Lato', sans-serif;
