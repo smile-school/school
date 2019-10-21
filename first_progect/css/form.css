@@ -1,4 +1,4 @@
-.footer_form-container_form{
+.form-container_form{
     width: 450px;
     display: flex;
     flex-direction: column;
@@ -8,20 +8,20 @@
     height: 0px;
     transition: height .5s ease-in-out;
 }
-.footer_form-container > input[type="checkbox"]:checked + .footer_form-container_form{
+.footer_form-container > input[type="checkbox"]:checked + .form-container_form{
     height: 470px;
     transition: height .8s ease-in-out;
 }
-.footer_mailing_form{
+.mailing_form{
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
-.footer_form-container_form > input[type="text"]{
+.form-container_form > input[type="text"]{
     color: #d2d2d2;
 }
-.footer_form-container_form > input[type="text"],
-.footer_mailing_form > input[type="text"]{
+.form-container_form > input[type="text"],
+.mailing_form > input[type="text"]{
     width: 400px;
     height: 69px;
     border: none;
@@ -31,18 +31,18 @@
     font-style: italic;
     line-height: 24px;
 }
-.footer_form-container_form > input[type="text"]:hover,
-.footer_mailing_form > input[type="text"]:hover{
+.form-container_form > input[type="text"]:hover,
+.mailing_form > input[type="text"]:hover{
     outline: 2px solid #64c29e;
 }
-.footer_form-container_form > input[type="text"]{
+.form-container_form > input[type="text"]{
     background-color: #282f35;
 }
-.footer_form-container_form > input[type="text"]:focus{
+.form-container_form > input[type="text"]:focus{
     background-color: #ffffff;
     color: black;
 }
-.footer_form-container_form > label{
+.form-container_form > label{
     line-height: 50px;
     color: #ffffff;
     text-transform: uppercase;
@@ -50,23 +50,23 @@
     align-self: flex-start;
     padding-top: 15px;
 }
-.footer_form-container_form > div{
+.form-container_form > div{
     display: flex;
     justify-content: space-around;
     width: 100%;
     padding: 15px 0;
 }
-.footer_form-container_form > div input[type="radio"]{
+.form-container_form > div input[type="radio"]{
     display: none;
 }
-.footer_form-container_form > div label{
+.form-container_form > div label{
     position: relative;
     padding: 0 0 0 36px;
     cursor: pointer;
     color: #ffffff;
     letter-spacing: 2.8px;
 }
-.footer_form-container_form  > div label::before{
+.form-container_form  > div label::before{
     content: "";
     position: absolute;
     width: 30px;
@@ -78,7 +78,7 @@
     top: -6px;
     transition: all .4s ease-in;
 }
-.footer_form-container_form > div label:after{
+.form-container_form > div label:after{
     opacity: 0;
     content: "";
     position: absolute;
@@ -91,24 +91,24 @@
     top: 0;
     transition: opacity .4s ease-in;
 }
-.footer_form-container_form > div input:checked + label::after{
+.form-container_form > div input:checked + label::after{
     opacity: 1;
 }
-.footer_form-container_form > div input:checked + label::before{
+.form-container_form > div input:checked + label::before{
     border: 1px solid #21bcc2;
 }
-.footer_mailing_form > input[type="text"]{
+.mailing_form > input[type="text"]{
     margin-right: 8px;
     background-color: #ffffff;
 }
-.footer_form-container_form > button{
+.form-container_form > button{
     width: 220px;
     height: 69px;
     background-color: #64c29e;
     border: none;
     margin-top: 15px;
 }
-.footer_mailing_form > div{
+.mailing_form > div{
     cursor: pointer;
     display: inline-block;
     position: relative;
@@ -116,16 +116,16 @@
     height: 69px;
     background-color: #64c29e;
 }
-.footer_form-container_form > button:hover,
-.footer_mailing_form > div:hover{
+.form-container_form > button:hover,
+.mailing_form > div:hover{
     outline: 2px solid #21bcc2;
 }
-.footer_form-container_form > button:hover,
-.footer_mailing_form > div:hover p{
+.form-container_form > button:hover,
+.mailing_form > div:hover p{
     font-weight: bold;
 }
-.footer_form-container_form > button,
-.footer_mailing_form > div p{
+.form-container_form > button,
+.mailing_form > div p{
     color: #ffffff;
     font-size: 24px;
     font-weight: 300;
@@ -134,18 +134,18 @@
     transition: font-weight .3s ease-in;
 }
 @media screen and (max-width: 767px) {
-    .footer_mailing_form > input[type="text"]{
+    .mailing_form > input[type="text"]{
         width: 70%;
     }
-    .footer_mailing_form > div{
+    .mailing_form > div{
         width: 20%;
     }
 }
 @media screen and (max-width: 500px){
-    .footer_form-container_form{
+    .form-container_form{
         width: 90%;
     }
-    .footer_form-container_form > input[type="text"]{
+    .form-container_form > input[type="text"]{
         width: 90%;
     }
 }
