@@ -36,6 +36,9 @@ $name = 'Product_list';
                 <h3><?php echo $block->getData()[$i]->{'title'} ?></h3>
                 <?php
                 //$block->postRating($products['rating']);
+                for ($j = 0; $j < $block->getData()[$i]->{'rating'}; $j++ ){
+                    echo '<i class="fas fa-star"></i>';
+                }
                 var_dump($block->getData()[$i]->{'rating'});
                 ?>
                 <div class="cart-info">
