@@ -5,7 +5,7 @@ class Product
     public function getData()
     {
         $json = file_get_contents('products.json');
-        $data = json_decode($json, true);
+        $data = json_decode($json);
 
         return $data;
     }

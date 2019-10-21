@@ -19,42 +19,43 @@ $name = 'Product_list';
         <h2><?= $name; ?></h2>
     <?php endif;?>
     <div class="product_wrapper">
-        <?php foreach ($block->getData() as $products):  ?>
+        <?php for ($i = 0; $i < $block->getCountProduct(); $i++):  ?>
             <div class="product_item">
-                <img src="<?php echo $products['img'] ?>" alt="">
+                <img src="<?php echo $block->getData()[$i]->{'img'}?>" alt="">
                 <div class="action-wrapper">
-                    <?php if ($products['actions']['bestsellers'] == true): ?>
+                    <?php if ($block->getData()[$i]->{'actions'}->{'bestsellers'} == true): ?>
                         <p class="action">bestsellers</p>
                     <?php endif; ?>
-                    <?php if ($products['actions']['eco'] == true): ?>
+                    <?php if ($block->getData()[$i]->{'actions'}->{'eco'} == true): ?>
                         <p class="action">eco</p>
                     <?php endif; ?>
-                    <?php if ($products['actions']['new'] == true): ?>
+                    <?php if ($block->getData()[$i]->{'actions'}->{'new'} == true): ?>
                         <p class="action">new</p>
                     <?php endif; ?>
                 </div>
-                <h3><?php echo $products['title'] ?></h3>
+                <h3><?php echo $block->getData()[$i]->{'title'} ?></h3>
                 <?php
-                $block->postRating($products['rating']);
+                //$block->postRating($products['rating']);
+                var_dump($block->getData()[$i]->{'rating'});
                 ?>
                 <div class="cart-info">
                 <div class="price_wrapper">
-                    <?php if ($products['price']['finalPrice'] == $products['price']['oldPrice']):?>
-                        <p class="price">Price: <?= $products['price']['finalPrice']?> UAH</p>
+                    <?php if ($block->getData()[$i]->{'price'}->{'finalPrice'} == $block->getData()[$i]->{'price'}->{'oldPrice'}):?>
+                        <p class="price">Price: <?= $block->getData()[$i]->{'price'}->{'finalPrice'}?> UAH</p>
                     <?php else:?>
                         <?php
-                        $sale = ($products['price']['oldPrice'] - $products['price']['finalPrice']) / ($products['price']['oldPrice'] / 100) ;
+                        $sale = ($block->getData()[$i]->{'price'}->{'oldPrice'} - $block->getData()[$i]->{'price'}->{'finalPrice'}) / ($block->getData()[$i]->{'price'}->{'oldPrice'} / 100) ;
                         ?>
-                        <span class="old-prce"><?= $products['price']['oldPrice'] ?> uah</span><br>
-                        <span class="final-price"><?= $products['price']['finalPrice'] ?> uah</span>
+                        <span class="old-prce"><?= $block->getData()[$i]->{'price'}->{'oldPrice'} ?> uah</span><br>
+                        <span class="final-price"><?= $block->getData()[$i]->{'price'}->{'finalPrice'} ?> uah</span>
                     <?php endif; ?>
                 </div>
                 <div class="buy">
-                    <a href="<?=$products['url'];?>">Перейти</a>
+                    <a href="<?=$block->getData()[$i]->{'url'};?>">Перейти</a>
                 </div>
                 </div>
             </div>
-        <?php endforeach; ?>
+        <?php endfor; ?>
     </div>
 </div>
 </body>
