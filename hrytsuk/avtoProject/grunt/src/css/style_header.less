@@ -103,7 +103,7 @@ header{
   ul{
     display: flex;
     li{
-      padding:0 15px;
+      padding:0 15px 0 10px;
       border-left: 2px solid @line-color;
       a{
         display: flex;
@@ -256,6 +256,7 @@ main{
     align-items: center;
     justify-content: flex-end;
     text-decoration: none;
+    cursor: pointer;
   }
   span{
       text-transform: @transf-uper;
@@ -291,7 +292,74 @@ main{
   align-items: center;
 }
 .over{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h2,& h3,& a{
+    font-weight: @font-weight2;
+    text-align: center;
+    text-transform: @transf-uper;
+    color: @white;
+  }
   h2{
   font-size: @font-size-max;
+  }
+  h3{
+    font-size:@font-size;
+  }
+  p{
+    text-align: center;
+  }
+  a{
+    padding: 13px 44px;
+    text-decoration: none;
+    text-align: center;
+    background-color: @bg-bordo-line;
+    border-radius: 19px;
+    display: block;
+    min-width: 102px;
+    margin-top: 30px;
+  }
+}
+footer{
+  background-color:@bg-darc ;
+  padding: 0 12%;
+  max-width: 1600px;
+  .h3-foot{
+    font-size:@f-size-icon;
+    font-weight:@font-weight2 ;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+    position: relative;
+    &::after{
+      content: "";
+      width: 90px ;
+      height: 6px;
+      background-color: @bg-bordo-line;
+      position: absolute;
+      top: 140%;
+      left: 0;
+    }
+  }
+}
+.top_footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 115px;
+}
+.quick_links{
+  ul{
+    li{
+      a{
+        color: @icon-color;
+        text-decoration: none;
+        font-weight: @font-weight2;
+      }
+      &:not(:first-child){
+        margin-top: 25px;
+      }
+    }
   }
 }

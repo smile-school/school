@@ -107,7 +107,7 @@ header a {
   display: flex;
 }
 .list_shop ul li {
-  padding: 0 15px;
+  padding: 0 15px 0 10px;
   border-left: 2px solid #595959;
 }
 .list_shop ul li a {
@@ -249,6 +249,7 @@ main {
   align-items: center;
   justify-content: flex-end;
   text-decoration: none;
+  cursor: pointer;
 }
 .product_list span {
   text-transform: uppercase;
@@ -280,8 +281,73 @@ main {
   justify-content: space-between;
   align-items: center;
 }
+.over {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.over h2,
+.over h3,
+.over a {
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  color: #ffffff;
+}
 .over h2 {
   font-size: 82px;
+}
+.over h3 {
+  font-size: 40px;
+}
+.over p {
+  text-align: center;
+}
+.over a {
+  padding: 13px 44px;
+  text-decoration: none;
+  text-align: center;
+  background-color: #9c1c28;
+  border-radius: 19px;
+  display: block;
+  min-width: 102px;
+  margin-top: 30px;
+}
+footer {
+  background-color: #000000;
+  padding: 0 12%;
+  max-width: 1600px;
+}
+footer .h3-foot {
+  font-size: 25px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+  position: relative;
+}
+footer .h3-foot::after {
+  content: "";
+  width: 90px ;
+  height: 6px;
+  background-color: #9c1c28;
+  position: absolute;
+  top: 140%;
+  left: 0;
+}
+.top_footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 115px;
+}
+.quick_links ul li a {
+  color: #ff3448;
+  text-decoration: none;
+  font-weight: 700;
+}
+.quick_links ul li:not(:first-child) {
+  margin-top: 25px;
 }
 body {
   font-family: 'Lato', sans-serif;
