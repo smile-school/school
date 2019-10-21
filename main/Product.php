@@ -1,5 +1,4 @@
 <?php
-
 class Product
 {
     public function getData()
