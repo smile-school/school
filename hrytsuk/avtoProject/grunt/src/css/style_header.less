@@ -329,7 +329,7 @@ footer{
   .h3-foot{
     font-size:@f-size-icon;
     font-weight:@font-weight2 ;
-    text-transform: uppercase;
+    text-transform: @transf-uper;
     margin-bottom: 50px;
     position: relative;
     &::after{
@@ -347,7 +347,8 @@ footer{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding-top: 115px;
+  padding:115px 0 90px;
+  border-bottom: 2px solid @line-color;
 }
 .quick_links{
   ul{
@@ -361,5 +362,43 @@ footer{
         margin-top: 25px;
       }
     }
+  }
+}
+.form_footer{
+  position: relative;
+  p{
+    color: @main-color;
+  }
+  span{
+    position: absolute;
+    bottom: 0;
+    i{
+      font-size: @f-size-icon;
+      &:not(:first-child){
+        margin-left: 27px;
+      }
+    }
+  }
+}
+.footer_forms{
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+  input[type=submit]{
+    width: 192px;
+    border-radius: 19px;
+    padding: 10px 0;
+    text-transform: @transf-uper;
+    color: @white;
+    background-color: @bg-bordo-line;
+    border: 1px solid @bg-bordo-line;
+    margin-top: 34px;
+    font-weight:@font-weight2 ;
+  }
+  input[type=email]{
+    height: 34px;
+    background-color: @main-color;
+    outline: none;
+    border: 1px solid @main-color;
   }
 }
