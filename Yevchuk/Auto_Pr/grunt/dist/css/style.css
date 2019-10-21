@@ -23,9 +23,101 @@ header {
   max-width: 100%;
 }
 header .top-nav {
-  min-height: 20vh;
+  min-height: 25vh;
   background-color: #212121;
   padding: 0 15%;
+}
+header .top-nav .admin-panel {
+  display: flex;
+}
+header .top-nav .admin-panel ul {
+  display: flex;
+  color: #ff3448;
+  min-width: 100%;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px 0;
+}
+header .top-nav .admin-panel ul li {
+  display: flex;
+  margin-right: 5%;
+}
+header .top-nav .admin-panel ul li i {
+  margin-right: 5px;
+}
+header .top-nav .admin-panel ul li:last-of-type {
+  font-size: 25px;
+  color: #ffffff;
+  border-left: 2px solid #887979;
+  padding-left: 15px;
+}
+header .top-nav .logo-panel {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  min-height: 15vh;
+}
+header .top-nav .logo-panel .logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 25%;
+}
+header .top-nav .logo-panel .logo > span:first-of-type {
+  font-size: 45px;
+  font-weight: 700;
+}
+header .top-nav .logo-panel .logo > span:first-of-type > span {
+  color: #ff3448;
+}
+header .top-nav .logo-panel .logo > span:last-of-type {
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+header .top-nav .logo-panel .icon-container {
+  width: 75%;
+  min-height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: right;
+}
+header .top-nav .logo-panel .icon-container > span {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-right: 30px;
+}
+header .top-nav .logo-panel .icon-container > span span:first-of-type {
+  font-size: 20px;
+}
+header .top-nav .logo-panel .icon-container > span span:first-of-type i {
+  color: #ff3448;
+  font-size: 30px;
+  margin: 0 0 15px 10px;
+}
+header .top-nav .logo-panel .icon-container > span span:last-of-type {
+  color: #a2a2a2;
+  text-transform: uppercase;
+}
+header .top-nav .logo-panel .icon-container ul {
+  display: flex;
+}
+header .top-nav .logo-panel .icon-container ul li {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border-left: 2px solid #887979;
+  font-size: 15px;
+  text-transform: uppercase;
+  padding: 5px 15px;
+}
+header .top-nav .logo-panel .icon-container ul li i {
+  font-size: 25px;
+  margin: 5px auto;
+  color: #ff3448;
 }
 header .bottom-nav {
   min-height: 10vh;
@@ -129,7 +221,7 @@ main .card-wrapper .card-container .card {
   justify-content: flex-end;
   align-items: center;
   min-width: calc(20% - 3%);
-  min-height: 50vh;
+  height: 60vh;
 }
 main .card-wrapper .card-container .card:not(:last-of-type) {
   margin-right: 3%;
