@@ -134,6 +134,9 @@ h6 {
   margin-bottom: 15px;
   width: 75%;
 }
+.md_hd_txt {
+  padding-left: 8%;
+}
 .md_hd_txt h2 {
   color: red;
   font-size: 55px;
@@ -149,7 +152,7 @@ h6 {
   text-transform: uppercase;
 }
 .md_hd_contact {
-  padding-left: 19%;
+  padding-left: 11%;
   text-align: right;
 }
 .md_hd_contact h3 {
@@ -273,8 +276,20 @@ h6 {
 }
 .featured_products .product_item {
   background-color: #363636;
+  width: 250px;
   height: 372px;
   justify-content: space-around;
+  margin-left: 3%;
+}
+.featured_products .product_item:first-child {
+  margin-left: 6%;
+}
+.featured_products .product_item:last-child {
+  margin-right: 6%;
+}
+.featured_products .product_item img {
+  padding-top: 30%;
+  width: 100%;
 }
 .featured_products .product_item a {
   text-align: center;
@@ -295,12 +310,6 @@ h6 {
 .discounts .sale_banner {
   width: 100%;
   display: flex;
-}
-.discounts .sale_banner hr {
-  width: 2px;
-  height: 170px;
-  margin-top: 250px;
-  background-color: white;
 }
 .discounts .sale_banner .sales1 {
   padding-right: 10%;
@@ -363,6 +372,9 @@ footer .footer_hr {
   display: flex;
   color: black;
 }
+.top_footer .top_footer_menu {
+  width: 25%;
+}
 .top_footer .top_footer_menu h4 {
   text-transform: uppercase;
   padding-top: 115px;
@@ -388,7 +400,7 @@ footer .footer_hr {
 .top_footer .top_footer_menu a > i {
   color: white;
   font-size: 30px;
-  padding-left: 5%;
+  padding-left: 10px;
 }
 .top_footer .top_footer_menu a:hover {
   border-bottom: 1px solid #ff3448;
@@ -415,6 +427,7 @@ footer .footer_hr {
   border-bottom-right-radius: 19px;
   text-transform: uppercase;
   border: solid 1px #9c1c28;
+  width: 142px;
   height: 38px;
   margin-top: 34px;
   font-weight: 600;
@@ -429,6 +442,12 @@ footer .footer_hr {
 .middle_footer {
   width: 100%;
   display: flex;
+}
+.middle_footer .contact_info_footer {
+  width: 40%;
+  height: 100%;
+  float: left;
+  padding-right: 10%;
 }
 .middle_footer .contact_info_footer p {
   padding-top: 60px;
@@ -448,6 +467,11 @@ footer .footer_hr {
   float: left;
   background-color: #9c1c28;
   margin-top: 16px;
+}
+.middle_footer .contact_footer {
+  width: 20%;
+  height: 100%;
+  float: left;
 }
 .middle_footer .contact_footer p {
   padding-top: 60px;
@@ -477,100 +501,4 @@ footer .footer_hr {
   font-size: 30px;
   text-align: right;
   width: 100%;
-}
-@media only screen and (max-width: 1480px) {
-  .headlight h2 {
-    padding-top: 90%;
-  }
-}
-@media only screen and (min-width: 967px) {
-  .featured_products .products .product_item {
-    margin-left: 3%;
-  }
-  .featured_products .products .product_item:first-child {
-    margin-left: 6%;
-  }
-  .featured_products .products .product_item:last-child {
-    margin-right: 6%;
-  }
-  .featured_products .products .product_item img {
-    padding-top: 30%;
-    width: 100%;
-  }
-}
-@media only screen and (max-width: 967px) {
-  .headlight {
-    width: 100%;
-  }
-  .discounts .sale_banner hr {
-    display: none;
-  }
-  .discounts .sale_banner .sales {
-    width: 100%;
-    align-content: center;
-  }
-  .discounts .sale_banner .sales1 {
-    padding-right: 0;
-  }
-  .discounts .sale_banner .sales2 {
-    display: none;
-  }
-  .featured_products .products {
-    flex-flow: column;
-  }
-  .featured_products .products .product_item {
-    margin: 1%;
-  }
-  .featured_products .products .product_item img {
-    padding-top: 5%;
-    width: auto;
-  }
-}
-@media only screen and (min-width: 768px) {
-  .top_footer .top_footer_menu {
-    width: calc(25%);
-  }
-  .top_footer #submit {
-    width: 142px;
-  }
-  .middle_footer .contact_info_footer {
-    width: 40%;
-    height: 100%;
-    float: left;
-    padding-right: 10%;
-  }
-  .middle_footer .contact_info_footer p {
-    padding-top: 60px;
-    color: #887979;
-  }
-  .middle_footer .contact_footer {
-    width: 20%;
-    height: 100%;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .top_footer .top_footer_menu {
-    width: 100%;
-  }
-  .top_footer .top_footer_menu2,
-  .top_footer .top_footer_menu3 {
-    display: none;
-  }
-  .top_footer #submit {
-    width: 100%;
-  }
-  .middle_footer {
-    flex-flow: column;
-  }
-  .middle_footer .contact_info_footer {
-    width: 100%;
-  }
-  .middle_footer .contact_footer {
-    width: 100%;
-  }
-}
-@media only screen and (max-width: 500px) {
-  .top_footer {
-    flex-flow: column;
-  }
 }
