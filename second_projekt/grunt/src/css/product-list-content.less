@@ -2,35 +2,50 @@
   .products-list {
     display: flex;
     flex-wrap: wrap;
-    @media(max-width: 767px){
-      flex-direction: column;
-    }
+
     .product {
+      align-self: stretch;
       width: 50%;
       padding: 87px 0 163px 19px;
       position: relative;
       background-color: @prod_background;
-      @media(max-width: 767px){
-        width: 100%;
-      }
-      @media(max-width: 1200px){
+      @media (max-width: 1200px) {
         padding: 70px 0 100px 19px;
       }
-      @media(max-width: 992px){
+      @media (max-width: 992px) {
         padding: 50px 0 70px 19px;
       }
+      @media (max-width: 767px) {
+        padding: 25px 0 35px 19px;
+      }
+
 
       &:nth-child(3n+1) {
         background-color: @prod_background_odd;
       }
 
+      @media (max-width: 500px) {
+        width: 100%;
+        &:nth-child(odd) {
+          background-color: @prod_background_odd;
+        }
+
+        &:nth-child(even) {
+          background-color: @prod_background;
+        }
+      }
+
       .product-text {
         width: 50%;
         padding: 72px 0 13px 30px;
-        @media(max-width: 992px){
+        @media (max-width: 992px) {
           padding-left: 0;
           width: 40%;
         }
+        @media (max-width: 320px) {
+          padding-top: 0;
+        }
+
 
         h3 {
           padding-bottom: 17px;
@@ -45,9 +60,12 @@
 
       .photo-wrapper {
         position: absolute;
-        width: 45.55%;
-        @media(max-width: 1200px){
-          width: 41%;
+        max-width: 45.55%;
+        @media (max-width: 1200px) {
+          max-width: 41%;
+        }
+        @media(max-width: 500px){
+          max-width: 35%;
         }
 
         .photo {
@@ -60,8 +78,14 @@
           right: 0;
           top: 27%;
 
-          @media(max-width: 1200px){
-            width: 54%;
+          @media (max-width: 1200px) {
+            max-width: 54%;
+          }
+          @media (max-width: 320px) {
+            max-width: 48%;
+          }
+          @media (max-width: 320px) {
+            top: 38%;
           }
         }
 
@@ -73,7 +97,7 @@
         &.third {
           bottom: 11%;
           right: 7%;
-          @media(max-width: 1200px){
+          @media (max-width: 1200px) {
             bottom: 7%;
             right: 0;
           }
@@ -88,7 +112,7 @@
             bottom: 5%;
             right: 40%;
             z-index: 1;
-            @media(max-width: 1200px){
+            @media (max-width: 1200px) {
               right: 30%;
             }
           }
@@ -97,6 +121,9 @@
         &.fourth {
           bottom: 1%;
           right: 9%;
+          @media(max-width: 320px){
+            right: 1%;
+          }
         }
       }
     }
