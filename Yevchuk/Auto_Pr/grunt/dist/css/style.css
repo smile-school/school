@@ -138,6 +138,47 @@ header .bottom-nav .bottom-nav-menu li a {
   text-decoration: none;
   color: #ffffff;
 }
+@media screen and (max-width: 1200px) {
+  header .top-nav .logo-panel .icon-container * {
+    font-size: calc(100% - 5px);
+  }
+  header .top-nav .logo-panel .icon-container > span span:last-of-type {
+    font-size: 11px;
+  }
+}
+@media screen and (max-width: 922px) {
+  header .top-nav {
+    padding: 0 10%;
+  }
+  header .admin-panel {
+    font-size: 0.95em;
+  }
+  header .top-nav .logo-panel .logo > span:first-of-type {
+    font-size: 2em;
+  }
+  header .top-nav .logo-panel .logo > span:last-of-type {
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+  header .top-nav .logo-panel .icon-container > span {
+    padding-right: 10px;
+  }
+  header .top-nav .logo-panel .icon-container > span span:first-of-type {
+    font-size: 10px;
+  }
+  header .top-nav .logo-panel .icon-container > span span:first-of-type i {
+    font-size: 20px;
+  }
+  header .top-nav .logo-panel .icon-container > span span:last-of-type {
+    font-size: 8px;
+  }
+  header .top-nav .logo-panel .icon-container ul li {
+    font-size: 8px;
+  }
+  header .top-nav .logo-panel .icon-container ul li i {
+    font-size: 15px;
+  }
+}
 main {
   min-width: 100%;
 }
@@ -213,6 +254,7 @@ main .card-wrapper .card-container {
   display: flex;
   align-items: center;
   min-width: 100%;
+  max-width: 100%;
   padding: 3% 0;
 }
 main .card-wrapper .card-container .card {
@@ -292,6 +334,84 @@ main .sale-wrapper .sale-block input {
   background: #9c1c28;
   border: none;
   min-width: 40%;
+}
+@media screen and (max-width: 1200px) {
+  main .headlights-wrapper .headlights-cart h3 {
+    font-size: 1.5em;
+  }
+  main .headlights-wrapper .headlights-cart p {
+    font-size: 1em;
+  }
+}
+@media screen and (max-width: 922px) {
+  main .headlights-wrapper .headlights-cart {
+    align-items: center;
+    justify-content: space-around;
+    padding: 15px 5px;
+    max-width: 50%;
+  }
+  main .headlights-wrapper .headlights-cart img {
+    position: static;
+  }
+  main .headlights-wrapper .headlights-cart:nth-of-type(3) img:first-of-type {
+    display: none;
+  }
+}
+@media screen and (max-width: 767px) {
+  main .headlights-wrapper {
+    flex-direction: column;
+  }
+  main .headlights-wrapper .headlights-cart {
+    min-width: 100%;
+    padding: 15px 0 0;
+  }
+  main .headlights-wrapper .headlights-cart:nth-of-type(2) {
+    order: 1;
+  }
+  main .card-wrapper h3 {
+    font-size: 15px;
+  }
+  main .card-wrapper .card-container {
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  main .card-wrapper .card-container .card {
+    width: 100%;
+    margin: 20px auto;
+    height: 60vh;
+    padding: 15px;
+  }
+  main .card-wrapper .card-container .card img {
+    width: 100%;
+  }
+  main .card-wrapper .card-container .card h6 {
+    padding: 10px;
+    margin: 0 0 20px 0;
+  }
+  main .card-wrapper .card-container .card span:last-of-type {
+    margin: 10px auto;
+  }
+  main .sale-wrapper {
+    flex-direction: column;
+  }
+  main .sale-wrapper > span {
+    min-height: 0;
+    height: 1px;
+    width: 50%;
+    margin: 15px 0;
+  }
+  main .sale-wrapper .sale-block h2 {
+    font-size: 25px;
+  }
+  main .sale-wrapper .sale-block h3 {
+    font-size: 20px;
+  }
+  main .sale-wrapper .sale-block input {
+    font-size: 12px;
+    min-width: 30%;
+    padding: 1%;
+  }
 }
 footer {
   background: #030303;
@@ -434,4 +554,45 @@ footer .bottom-card-wrapper span:last-child i:not(:last-of-type) {
 }
 footer .bottom-card-wrapper span > span {
   color: #ffffff;
+}
+@media screen and (max-width: 767px) {
+  footer .quick-link-wrapper {
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  footer .quick-link-wrapper .quick-link-block {
+    max-width: 100%;
+    width: 100%;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  footer .quick-link-wrapper .news-block {
+    align-items: center;
+    max-width: 33%;
+    text-align: center;
+  }
+  footer .quick-link-wrapper .news-block span {
+    width: 100%;
+  }
+  footer .information-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  footer .information-wrapper .information-block {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  footer .information-wrapper .contact-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 80%;
+  }
+  footer .bottom-card-wrapper {
+    font-size: 12px;
+  }
 }

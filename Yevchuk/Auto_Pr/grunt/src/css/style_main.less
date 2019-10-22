@@ -1,12 +1,12 @@
-main{
+main {
   min-width: 100%;
 
-  .headlights-wrapper{
+  .headlights-wrapper {
     min-height: 100vh;
     display: flex;
     flex-wrap: wrap;
 
-    .headlights-cart{
+    .headlights-cart {
       min-width: 50%;
       background-color: @main-bg-light-gray-color;
       position: relative;
@@ -15,53 +15,54 @@ main{
       justify-content: center;
       padding-left: 2%;
 
-      & img{
+      & img {
         position: absolute;
         max-width: 37%;
       }
 
-      &:first-of-type img{
+      &:first-of-type img {
         top: 30%;
         right: 0;
         max-width: 47%;
       }
 
-      &:nth-of-type(2) img{
+      &:nth-of-type(2) img {
         bottom: 0;
         right: 20px;
       }
 
-      &:nth-of-type(3) img{
+      &:nth-of-type(3) img {
 
-        &:first-of-type{
+        &:first-of-type {
           max-width: 30%;
           right: 15%;
           bottom: 17%;
         }
 
-        &:last-of-type{
-            right: 0;
+        &:last-of-type {
+          right: 0;
         }
       }
 
-      &:last-of-type img{
+      &:last-of-type img {
         bottom: 5px;
         right: 10px;
       }
 
       &:nth-of-type(2),
-      &:nth-of-type(3){
+      &:nth-of-type(3) {
         background-color: @main-bg-dark-gray-color;
       }
 
-      & p{
+      & p {
         color: @main-gray-color;
         font-size: 1.3em;
         letter-spacing: 1px;
       }
     }
   }
-  .card-wrapper{
+
+  .card-wrapper {
     display: flex;
     flex-direction: column;
     background-color: @products-wrapper-bg-color;
@@ -69,11 +70,11 @@ main{
     min-width: 100%;
     padding: 5% 5%;
 
-    & > h3{
+    & > h3 {
       display: flex;
       flex-direction: column;
 
-      &::after{
+      &::after {
         content: "";
         display: block;
         min-width: 40%;
@@ -83,13 +84,14 @@ main{
       }
     }
 
-    .card-container{
+    .card-container {
       display: flex;
       align-items: center;
       min-width: 100%;
+      max-width: 100%;
       padding: 3% 0;
 
-      .card{
+      .card {
         background-color: @products-card-bg-color;
         display: flex;
         flex-direction: column;
@@ -98,31 +100,36 @@ main{
         min-width: calc(20% - 3%);
         height: 60vh;
 
-        &:not(:last-of-type){
+        &:not(:last-of-type) {
           margin-right: 3%;
         }
-        & a{
+
+        & a {
           max-width: 100%;
           text-align: center;
           display: block;
         }
-        & img{
+
+        & img {
           max-width: 90%;
 
         }
-        & h6{
+
+        & h6 {
           color: @red-color;
           padding: 10%;
           text-transform: uppercase;
           margin-top: 5%;
         }
-        & span{
+
+        & span {
           &:first-of-type {
-          color: @white-color;
-          font-size: 1.2em;
-          font-weight: bolder;
+            color: @white-color;
+            font-size: 1.2em;
+            font-weight: bolder;
           }
-          &:last-of-type{
+
+          &:last-of-type {
             display: flex;
             font-weight: normal;
             font-size: 14px;
@@ -134,7 +141,7 @@ main{
     }
   }
 
-  .sale-wrapper{
+  .sale-wrapper {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -143,27 +150,30 @@ main{
     background-color: @bottom-header-bg-color;
     min-height: 70vh;
 
-     & > span{
+    & > span {
       display: block;
       min-height: 20vh;
       width: 1px;
       border: 1px solid @white-color;
     }
-    .sale-block{
+
+    .sale-block {
       display: flex;
       flex-direction: column;
       align-items: center;
 
-      & h2{
+      & h2 {
         font-size: 4em;
         font-weight: 700;
         text-transform: uppercase;
       }
-      & span{
+
+      & span {
         font-size: 1em;
         margin: 5% 0;
       }
-      & input{
+
+      & input {
         outline: none;
         border-radius: 19px;
         padding: 2%;
@@ -173,6 +183,109 @@ main{
         background: @title-red-line-color;
         border: none;
         min-width: 40%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  main .headlights-wrapper .headlights-cart h3 {
+    font-size: 1.5em;
+  }
+
+  main .headlights-wrapper .headlights-cart p {
+    font-size: 1em;
+  }
+}
+
+@media screen and (max-width: 922px) {
+  main .headlights-wrapper .headlights-cart {
+    align-items: center;
+    justify-content: space-around;
+    padding: 15px 5px;
+    max-width: 50%;
+
+    img {
+      position: static;
+    }
+
+    &:nth-of-type(3) img:first-of-type {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  main .headlights-wrapper {
+    flex-direction: column;
+
+    .headlights-cart {
+      min-width: 100%;
+      padding: 15px 0 0;
+
+      &:nth-of-type(2) {
+        order: 1;
+      }
+    }
+  }
+
+  main .card-wrapper {
+    h3 {
+      font-size: 15px;
+    }
+
+    .card-container {
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+
+      .card {
+        width: 100%;
+        margin: 20px auto;
+        height: 60vh;
+        padding: 15px;
+
+        & img {
+          width: 100%;
+        }
+
+        & h6 {
+          padding: 10px;
+          margin: 0 0 20px 0;
+        }
+
+        & span {
+          &:last-of-type {
+            margin: 10px auto;
+          }
+        }
+      }
+    }
+  }
+
+  main .sale-wrapper {
+    flex-direction: column;
+
+    & > span {
+      min-height: 0;
+      height: 1px;
+      width: 50%;
+      margin: 15px 0;
+    }
+
+    .sale-block {
+      h2 {
+        font-size: 25px;
+      }
+
+      h3 {
+        font-size: 20px;
+      }
+
+      input {
+        font-size: 12px;
+        min-width: 30%;
+        padding: 1%;
       }
     }
   }
