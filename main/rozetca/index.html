@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Vedana, sans-serif;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: normal;
+            color: white;
+        }
+        ul{
+            list-style-type: none;
+        }
+
+        .wrapper {
+            padding: 0 32px;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        header {
+            background-color: #122538;
+        }
+        .top-menu-wrap{
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+        }
+        .sw-lang{
+            display: flex;
+        }
+        .sw-lang,
+        .sw-lang li,
+        .sw-city li{
+            padding: 0 15px;
+        }
+        .top-menu-wrap > div{
+            flex-grow: 1;
+            display: flex;
+            padding: 0 15px;
+        }
+        .top-menu-wrap > div:last-child{
+            justify-content: flex-end;
+        }
+        header .sw-city{
+            display: flex;
+            padding: 0 15px;
+        }
+        header .sw-city .city li{
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        header .sw-city input{
+            display: none;
+        }
+        header .sw-city .city > label > ul > li{
+            display: none;
+        }
+        header .sw-city .city #kiyv:checked ~ label > ul > li#kiyvp,
+        header .sw-city .city #rivne:checked ~ label > ul > li#rivnep,
+        header .sw-city .city #gitomer:checked ~ label > ul > li#gitomerp,
+        header .sw-city .city #harkov:checked ~ label > ul > li#harkovp,
+        header .sw-city .city #lutck:checked ~ label > ul > li#lutckp,
+        header .sw-city .city #window:checked ~ .wrapper-pop{
+            display: block;
+        }
+        header .wrapper-pop {
+            display: none;
+            position: fixed;
+            width: 310px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #122538;
+            padding: 45px;
+            font-size: 250%;
+        }
+        header .wrapper-pop > label{
+            display: inline-block;
+            padding: 10px;
+            border: 1px solid grey;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 5px;
+        }
+        header .wrapper-pop > label:hover{
+            background-color: aliceblue;
+            color: #122538;
+        }
+        header .wrapper-pop > label.close{
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background-color: grey;
+            color: black;
+            cursor: pointer;
+            right: 0;
+            top: 0;
+            line-height: 23px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="wrapper">
+        <div class="top-menu-wrap">
+            <div>
+                <span>(044) 537-02-22</span>
+                <a href="#">Контакты</a>
+            </div>
+            <div>
+                <ul class="sw-lang">
+                    <li>
+                        <a href="#">RU</a>
+                    </li>
+                    <li>
+                        <a href="#" class="active">UA</a>
+                    </li>
+                </ul>
+                <ul class="sw-city">
+                    <li class="title">Город</li>
+                    <li class="city">
+                        <input type="radio" id="window" name="windows" class="window open"/>
+                        <input type="radio" id="closeWin" name="windows" class="window close"/>
+                        <input type="radio" name="city"  id="kiyv"/>
+                        <input type="radio" name="city" checked id="rivne"/>
+                        <input type="radio" name="city" id="gitomer"/>
+                        <input type="radio" name="city" id="harkov"/>
+                        <input type="radio" name="city" id="lutck"/>
+                        <label for="window">
+                            <ul>
+                                <li id="kiyvp">Киев</li>
+                                <li id="rivnep">Ровно</li>
+                                <li id="gitomerp">Житомер</li>
+                                <li id="harkovp">Харьков</li>
+                                <li id="lutckp">Луцк</li>
+                            </ul>
+                        </label>
+                        <div class="wrapper-pop">
+                            <label class="close" for="closeWin">X</label>
+                            <label for="kiyv">Киев</label>
+                            <label for="rivne">Ровно</label>
+                            <label for="gitomer">Житомер</label>
+                            <label for="harkov">Харьков</label>
+                            <label for="lutck">Луцк</label>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="wrapper main">
+
+</div>
+</body>
+</html>
