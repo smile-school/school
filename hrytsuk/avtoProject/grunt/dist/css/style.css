@@ -3,6 +3,13 @@
 /* leter*/
 @import "reset.css";
 @import "normalize.css";
+body {
+  font-family: 'Lato', sans-serif;
+  font-size: 15px;
+  line-height: 1.2;
+  font-weight: normal;
+  color: #ffffff;
+}
 header {
   max-width: 100%;
   min-height: 100vh;
@@ -188,6 +195,9 @@ header a {
   .header_info {
     padding: 0 4%;
   }
+  .header_info .contact_phone {
+    margin-right: 20px;
+  }
 }
 @media screen and (max-width: 767px) {
   header {
@@ -215,7 +225,7 @@ header a {
     font-size: 0;
     overflow: hidden;
     padding: 0;
-    margin-top: 40px;
+    margin-top: 60px;
   }
   .burger {
     display: flex;
@@ -227,7 +237,6 @@ header a {
     min-height: 400px;
     font-size: 16px;
     background-color: #000000;
-    margin-bottom: 60px ;
   }
   .bur:checked ~ ul li {
     margin: 30px 0 0;
@@ -280,7 +289,7 @@ main {
   font-size: 35px;
   font-weight: 700;
   text-transform: uppercase;
-  margin: 165px 0 25px 56px;
+  margin: 135px 0 25px 56px;
 }
 .headlights .towar_lights p {
   font-size: 20px;
@@ -292,7 +301,7 @@ main {
   max-width: 40%;
   position: absolute;
 }
-.headlights .towar_lights:nth-child(3n+1) {
+.headlights .towar_lights:nth-child(3) {
   background-color: #303030;
 }
 .headlights .towar_lights:first-child img {
@@ -300,27 +309,38 @@ main {
   bottom: 15%;
 }
 .headlights .towar_lights:last-child img {
-  right: 7%;
+  right: 4%;
   bottom: 1.2%;
 }
 .headlights .towar_lights:nth-child(2) img {
   bottom: 0;
   right: 4%;
 }
+.headlights .towar_lights:nth-child(3) img {
+  position: absolute;
+}
 .headlights .towar_lights:nth-child(3) img:first-of-type {
   right: 7%;
-  top: 13%;
+  bottom: 8%;
   z-index: 2;
 }
 .headlights .towar_lights:nth-child(3) img:last-of-type {
-  position: absolute;
-  top: 22%;
+  bottom: 8%;
   right: 23%;
-  filter: blur(2px) sepia(60%);
 }
 .products {
   padding: 0 8%;
   background-color: #282828;
+  position: relative;
+}
+.products::after {
+  content: "";
+  width: 11%;
+  height: 6px;
+  background-color: #9c1c28;
+  position: absolute;
+  top: 145px;
+  left: 44%;
 }
 .products h3 {
   margin: 85px 0 100px;
@@ -328,16 +348,6 @@ main {
   font-size: 35px;
   font-weight: 700;
   text-transform: uppercase;
-  position: relative;
-}
-.products h3::after {
-  content: "";
-  width: 172px;
-  height: 6px;
-  background-color: #9c1c28;
-  position: absolute;
-  top: 65px;
-  left: 43%;
 }
 .featured {
   display: flex;
@@ -354,7 +364,6 @@ main {
 .product_list {
   background-color: #363636;
   width: 15%;
-  min-height: 50vh;
   display: flex;
 }
 .product_list img {
@@ -441,10 +450,39 @@ main {
   min-width: 102px;
   margin-top: 30px;
 }
+@media screen and (max-width: 1200px) {
+  .headlights .towar_lights h3 {
+    margin: 50px 0 15px 40px;
+    font-size: 25px;
+  }
+  .headlights .towar_lights p {
+    margin: 0 0 0 40px;
+  }
+  .headlights .towar_lights:nth-child(3) img:first-of-type {
+    bottom: 2%;
+  }
+  .headlights .towar_lights:nth-child(3) img:last-of-type {
+    bottom: 2%;
+  }
+  .products {
+    padding: 0 3%;
+  }
+  .product_list {
+    width: 17%;
+  }
+  .order {
+    padding: 0 7%;
+  }
+  .over h2 {
+    font-size: 50px;
+  }
+  .over h3 {
+    font-size: 30px;
+  }
+}
 @media screen and (max-width: 800px) {
   .headlights {
     flex-direction: column;
-    padding-top: 90px;
   }
   .headlights .towar_lights {
     width: 100%;
@@ -452,14 +490,19 @@ main {
   .headlights .towar_lights h3 {
     margin: 65px 0 10px 26px;
   }
-  .headlights .towar_lights img {
-    bottom: 0;
+  .headlights .towar_lights p {
+    margin: 0 0 0 26px;
   }
   .headlights .towar_lights:nth-child(3) img:first-of-type {
-    top: 60%;
+    bottom: 10%;
   }
   .headlights .towar_lights:nth-child(3) img:last-of-type {
-    top: 60%;
+    bottom: 10%;
+  }
+}
+@media screen and (max-width: 360px) {
+  .headlights .towar_lights img {
+    max-width: 60%;
   }
 }
 footer {
@@ -580,10 +623,26 @@ footer .h3-foot::after {
 .cart i:not(:first-child) {
   margin-left: 25px;
 }
-body {
-  font-family: 'Lato', sans-serif;
-  font-size: 15px;
-  line-height: 1.2;
-  font-weight: normal;
-  color: #ffffff;
+@media screen and (max-width: 1200px) {
+  footer {
+    padding: 0 6%;
+  }
+}
+@media screen and (max-width: 950px) {
+  .top_footer {
+    flex-wrap: wrap ;
+  }
+  .form_footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 40px;
+  }
+  .form_footer span {
+    right: 10px;
+  }
+  .inform {
+    margin-right: 30px;
+  }
 }
