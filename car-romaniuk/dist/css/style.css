@@ -91,7 +91,6 @@ header .info .logo p:last-child {
   color: #fff;
   font-size: 15px;
   font-weight: 400;
-  text-transform: uppercase;
   letter-spacing: 5px;
 }
 header .info .contact {
@@ -108,7 +107,6 @@ header .info .contact span:first-child {
   color: #fff;
   font-size: 20px;
   font-weight: 700;
-  text-transform: uppercase;
   letter-spacing: 1px;
   padding-bottom: 26px;
 }
@@ -124,7 +122,6 @@ header .info .contact span:last-child {
   color: #a2a2a2;
   font-size: 14px;
   font-weight: 400;
-  text-transform: uppercase;
   letter-spacing: 0.7px;
 }
 header .info .contact .wishlist {
@@ -132,7 +129,7 @@ header .info .contact .wishlist {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0 44px;
+  padding: 0 22px;
   cursor: pointer;
   position: relative;
 }
@@ -159,7 +156,7 @@ header .info .contact .compare {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0 44px;
+  padding: 0 22px;
   cursor: pointer;
   position: relative;
 }
@@ -186,7 +183,7 @@ header .info .contact .cart {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0 44px;
+  padding: 0 22px;
   cursor: pointer;
   position: relative;
   padding-right: 0;
@@ -211,10 +208,19 @@ header .info .contact .cart::before {
 }
 header nav {
   background-color: #030303;
+  padding: 26px 0 18px;
+}
+header nav input[type='checkbox'] {
+  display: none;
+}
+header nav label {
+  color: #fff;
+  padding-left: 27px;
+  cursor: pointer;
+  display: none;
 }
 header nav ul {
   display: flex;
-  padding: 26px 0 18px;
 }
 header nav ul li {
   padding-left: 27px;
@@ -523,4 +529,202 @@ footer .copyright .payment {
 }
 footer .copyright .payment i {
   margin-right: 11px;
+}
+@media screen and (max-width: 1200px) {
+  .wrapper {
+    padding: 0 15px;
+  }
+  header .info .contact .phone {
+    padding-right: 20px;
+  }
+  main .category section {
+    padding-top: 10px;
+    padding-bottom: 240px;
+  }
+  main .category section:nth-child(5) {
+    background-position-y: bottom;
+    background-position-x: center;
+    background-size: 50%;
+  }
+  main .category section:nth-child(4) {
+    background-position-y: bottom;
+    background-position-x: center;
+    background-size: 50%;
+  }
+  main .category section:nth-child(3) {
+    background-position-y: bottom;
+    background-position-x: center;
+    background-size: 50%;
+  }
+  main .category section:nth-child(2) {
+    background-position-y: bottom;
+    background-position-x: center;
+    background-size: 50%;
+  }
+  main .feature-product section img {
+    width: 80%;
+  }
+  main .order section p {
+    font-size: 30px;
+  }
+  main .order section p::first-line {
+    font-size: 40px;
+  }
+}
+@media screen and (max-width: 992px) {
+  header {
+    background-size: cover;
+  }
+  header .info {
+    flex-direction: column;
+  }
+  header .info .logo {
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  main .feature-product {
+    justify-content: start;
+    flex-wrap: wrap;
+  }
+  main .feature-product section {
+    width: calc(33.33% - 37px);
+    justify-content: center;
+    align-items: center;
+    margin: 20px 18px;
+  }
+  footer .nav section input[type='email'] {
+    width: 200px;
+  }
+  footer .nav section .title {
+    font-size: 12px;
+  }
+  footer .nav section p {
+    width: 250px;
+    padding-top: 27px;
+  }
+  footer .nav section ul {
+    padding-top: 0;
+  }
+  footer .nav section ul li a {
+    margin-top: 24px;
+  }
+  footer .nav section .social {
+    padding-top: 81px;
+  }
+  footer .info section {
+    width: calc(33.33% - 18px);
+  }
+}
+@media screen and (max-width: 767px) {
+  header .personal span {
+    margin-right: 15px;
+  }
+  header .personal span:nth-child(4) {
+    display: none;
+  }
+  header .info .contact .wishlist {
+    display: none;
+  }
+  header .info .contact .compare {
+    display: none;
+  }
+  header .info .contact .cart {
+    display: none;
+  }
+  header .info .contact .phone {
+    text-align: center;
+    display: flex;
+    align-items: center;
+  }
+  header nav label {
+    font-size: x-large;
+    display: block;
+  }
+  header nav label:checked ~ .wrapper {
+    display: block;
+  }
+  header nav .wrapper {
+    display: none;
+    height: 100vh;
+  }
+  header nav ul li {
+    padding-left: 11px;
+    padding-top: 20px;
+    font-size: x-large;
+  }
+  main .category {
+    flex-direction: column;
+  }
+  main .category section {
+    padding-bottom: 200px;
+    width: 100%;
+  }
+  main .category section:nth-child(1) {
+    background-position-x: center;
+    background-size: 50%;
+  }
+  main .feature-product {
+    width: 100%;
+  }
+  main .feature-product section {
+    width: 100%;
+  }
+  main .order {
+    padding-bottom: 20px;
+    padding-top: 20px;
+    justify-content: center;
+    flex-direction: column;
+  }
+  main .order section {
+    width: 100%;
+  }
+  main .order section:nth-child(2) {
+    display: none;
+  }
+  footer {
+    padding-top: 30px;
+    padding-bottom: 24px;
+  }
+  footer .nav {
+    padding-bottom: 38px;
+  }
+  footer .nav > :nth-child(1) {
+    display: none;
+  }
+  footer .nav > :nth-child(2) {
+    display: none;
+  }
+  footer .nav > :nth-child(3) {
+    display: none;
+  }
+  footer .nav section input[type='submit'] {
+    padding: 11px 0;
+    width: 115px;
+  }
+  footer .nav section form {
+    display: flex;
+    flex-direction: column;
+  }
+  footer .nav section form .title {
+    font-size: 32px;
+  }
+  footer .nav section .social {
+    padding-top: 20px;
+  }
+  footer .info {
+    padding-top: 41px;
+    padding-bottom: 27px;
+  }
+  footer .info section {
+    width: 100%;
+  }
+  footer .copyright {
+    padding-top: 0;
+    flex-direction: column;
+  }
+  footer .copyright p {
+    padding: 20px 0;
+  }
 }
