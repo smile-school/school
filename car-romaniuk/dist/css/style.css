@@ -19,6 +19,7 @@ body {
 header {
   height: 100vh;
   background: url("../ima/bg-header.jpg") no-repeat center center;
+  background-size: cover;
 }
 header .bakground {
   background-color: #212121;
@@ -643,7 +644,7 @@ footer .copyright .payment i {
     display: block;
   }
   header nav label:checked ~ .wrapper {
-    display: block;
+    display: flex;
   }
   header nav .wrapper {
     display: none;
@@ -726,5 +727,11 @@ footer .copyright .payment i {
   }
   footer .copyright p {
     padding: 20px 0;
+  }
+  footer:nth-child(3) > section:nth-child(3) > section:nth-child(1) {
+    display: none;
+  }
+  footer:nth-child(3) > section:nth-child(3) > section:nth-child(2) {
+    display: none;
   }
 }

@@ -11,6 +11,7 @@ body {
 header {
   height: 100vh;
   background: url("../ima/bg-header.jpg") no-repeat center center;
+  background-size: cover;
 
   & .bakground {
     background-color: @header-background-color;
@@ -665,8 +666,10 @@ footer {
         font-size: x-large;
         display: block;
       }
-      & label:checked ~ .wrapper{
-        display: block;
+      & label{
+        &:checked ~ .wrapper{
+          display: flex;
+        }
       }
       & .wrapper{
       display: none;
@@ -758,6 +761,12 @@ footer {
       & p{
         padding: 20px 0;
       }
+    }
+    &:nth-child(3) > section:nth-child(3) > section:nth-child(1){
+      display: none;
+    }
+    &:nth-child(3) > section:nth-child(3) > section:nth-child(2){
+      display: none;
     }
   }
 }
