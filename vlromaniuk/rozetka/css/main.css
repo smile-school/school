@@ -1,0 +1,110 @@
+header{
+    background-color: #122538;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-size: 12px;
+    font-weight: normal;
+    font-weight: normal;
+}
+li{
+    list-style-type: none;
+}
+.wrapper{
+    padding: 0 32px;
+    max-width: 1600px;
+    display: block;
+    margin: 0 auto;
+}
+.wrapper .top-hed-wrapper section span{
+    color: white;
+    font-size: 130%;
+}
+.city-switch{
+    display: flex;
+}
+.city-switch input{
+    display: none;
+}
+.city-switch .city-name > label > ul > li {
+    display: none;
+}
+header .city-switch .city-name #kyiv:checked ~ label > ul > li#s-kiev{
+    display: block;
+}
+header .city-switch .city-name #gitomer:checked ~ label > ul > li#s-gitomer{
+    display: block;
+}
+header .city-switch .city-name #luck:checked ~ label > ul > li#s-luck{
+    display: block;
+}
+header .city-switch .city-name #harkiv:checked ~ label > ul > li#s-harkiv{
+    display: block;
+}
+header .city-switch .city-name #rivne:checked ~ label > ul > li#s-rivne{
+    display: block;
+}
+header .city-switch .city-name #window:checked ~ .popup-wrapper{
+    display: block;
+}
+
+header .popup-wrapper{
+    position: fixed;
+    width: 310px;
+    height: 150px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: silver;
+    padding: 45px;
+    font-size: 170%;
+    display: none;
+}
+header .popup-wrapper > label{
+    display: inline-block;
+    padding: 10px;
+    border: 1px solid black;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 5px;
+}
+header .popup-wrapper > label.windows{
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    right: 0;
+    top: 0;
+    background-color: #222222;
+    color: white;
+    text-align: center;
+}
+.city-switch{
+    color: white;
+}
+.city-switch .title{
+    padding-right: 5px;
+}
+.top-hed-wrapper{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 8px;
+}
+.top-hed-wrapper>section:last-child{
+    display: flex;
+    flex-direction: row;
+}
+.top-hed-wrapper>section>.switch{
+    display: flex;
+    flex-direction: row;
+    color: white;
+    flex-direction: row;
+}
+.top-hed-wrapper>section>.switch li a{
+    padding-right: 10px;
+    text-decoration: none;
+    color: white;
+}
