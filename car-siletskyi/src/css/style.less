@@ -383,6 +383,7 @@ footer {
   & .footer_wrap {
     max-width: 1325px;
     margin:0 auto;
+    padding: 0 15px;
     & .footer_top {
       display: flex;
       justify-content: space-between;
@@ -544,6 +545,223 @@ footer {
         font-size: 25px;
         color: @color-white;
         letter-spacing: 5px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1200px) {
+  header {
+    & .wrapper {
+      padding: 0 10px;
+      & .header_top_line2 {
+        & .logo {
+          width: 25%;
+        }
+        & .tel {
+          width: 40%;
+        }
+        & .items {
+          width: 35%;
+        }
+      }
+    }
+  }
+  main {
+    & .featured_products {
+      padding: 0 40px;
+      & .product {
+        width: calc(20% - 15px);
+      }
+    }
+  }
+}
+@media screen and (max-width: 992px) {
+  header {
+    & .wrapper {
+      & .header_top_line2 {
+        & .items {
+         display: none;
+        }
+        & .tel {
+          width: 50%;
+          & p {
+            letter-spacing: .1px;
+          }
+        }
+        & .logo {
+          width: 50%;
+        }
+      }
+    }
+  }
+  main {
+    & .main_tools {
+      & .tool {
+        width: 100%;
+      }
+    }
+    & .main_featured {
+      & h2 {
+        &::after {
+          left: 40%;
+        }
+      }
+    }
+    & .featured_products {
+      padding: 0 10px;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      & .product {
+        width: calc(50% - 10px);
+      }
+    }
+    & .main_order {
+      padding: 100px 0 50px;
+      background-size: cover;
+      flex-wrap: wrap;
+      & .order {
+        width: 100%;
+        &:first-child {
+          margin-bottom: 75px;
+          &::after {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  footer {
+    & .footer_wrap {
+      padding: 0 30px;
+      & .footer_top {
+        flex-wrap: wrap;
+        & .links {
+          width: calc(50% - 15px);
+          margin-top: 20px;
+        }
+      }
+      & .footer_center {
+        flex-wrap: wrap;
+        & .info {
+          width: 100%;
+          margin-right: 0;
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 767px) {
+  header {
+    & .header_top {
+      & .header_top_line1 {
+        padding: 10px;
+        justify-content: space-between;
+        & span {
+          letter-spacing: 0;
+          margin-right: 5px;
+        }
+        & .search {
+          width: 23px;
+          &::before {
+            display: none;
+          }
+        }
+      }
+      & .header_top_line2 {
+        padding: 15px 0;
+        flex-wrap: wrap;
+        & .logo {
+          width: 100%;
+          text-align: center;
+          & p {
+            &:last-child {
+              margin-top: 2px;
+            }
+          }
+        }
+        & .tel {
+          width: 100%;
+          align-items: center;
+          margin-top: 10px;
+          & p {
+            display: none;
+          }
+        }
+      }
+    }
+    & .header_nav {
+      & nav {
+        display: none;
+      }
+    }
+  }
+  main {
+    & .main_tools {
+      & .tool {
+        & span {
+          padding: 0;
+          letter-spacing: 0;
+        }
+        & h2 {
+          padding: 0;
+          text-align: center;
+        }
+      }
+    }
+    & .main_featured {
+      padding: 50px 0 80px;
+      & h2 {
+        &::after {
+          display: none;
+        }
+      }
+      & .featured_products {
+        & .product {
+          margin-top: 20px;
+          width: 100%;
+        }
+      }
+    }
+    & .main_order {
+      & .order {
+        & span {
+          &:first-child {
+            font-size: 50px;
+          }
+          &:nth-child(2) {
+            font-size: 22px;
+          }
+        }
+      }
+    }
+  }
+  footer {
+    padding: 50px 0;
+    & .footer_wrap {
+      & .footer_top {
+        padding-bottom: 40px;
+        & .links {
+          width: 100%;
+          & input[type=text] {
+            width: 250px;
+          }
+          & .social {
+            margin-top: 40px;
+          }
+        }
+      }
+      & .footer_center {
+        padding: 40px 0;
+      }
+      & .footer_bottom {
+        padding-top: 30px;
+        flex-wrap: wrap;
+        & p {
+          font-size: 14px;
+          letter-spacing: 0;
+          margin-bottom: 10px;
+        }
       }
     }
   }
