@@ -4,10 +4,13 @@ footer.footer {
 
   .footer-section {
     display: flex;
-    max-width: 1335px;
+    max-width: 1345px;
     margin: 0 auto;
     position: relative;
-    padding: 86px 5px 66px;
+    padding: 86px 10px 66px;
+    @media(max-width: 1200px){
+      padding: 70px 10px 55px;
+    }
 
     &::after {
       display: block;
@@ -71,6 +74,7 @@ footer.footer {
           letter-spacing: 0.75px;
           color: #887979;
           padding: 21px 0;
+          text-align: left;
         }
 
         input {
@@ -174,6 +178,9 @@ footer.footer {
       padding: 45px 0 56px;
       display: flex;
       justify-content: space-between;
+      @media(max-width: 1200px){
+        padding-right: 10px;
+      }
       &::after{
         display: none;
       }

@@ -1,16 +1,24 @@
 .wrapper {
   .products-list {
-    &::after {
-      display: block;
-      content: '';
-      clear: both;
+    display: flex;
+    flex-wrap: wrap;
+    @media(max-width: 767px){
+      flex-direction: column;
     }
     .product {
       width: 50%;
       padding: 87px 0 163px 19px;
       position: relative;
       background-color: @prod_background;
-      float: left;
+      @media(max-width: 767px){
+        width: 100%;
+      }
+      @media(max-width: 1200px){
+        padding: 70px 0 100px 19px;
+      }
+      @media(max-width: 992px){
+        padding: 50px 0 70px 19px;
+      }
 
       &:nth-child(3n+1) {
         background-color: @prod_background_odd;
@@ -19,7 +27,10 @@
       .product-text {
         width: 50%;
         padding: 72px 0 13px 30px;
-
+        @media(max-width: 992px){
+          padding-left: 0;
+          width: 40%;
+        }
 
         h3 {
           padding-bottom: 17px;
@@ -34,17 +45,24 @@
 
       .photo-wrapper {
         position: absolute;
-        max-width: 45.55%;
+        width: 45.55%;
+        @media(max-width: 1200px){
+          width: 41%;
+        }
 
         .photo {
           display: block;
-          max-width: 100%;
+          width: 100%;
         }
 
         &.first {
-          max-width: 54%;
+          width: 54%;
           right: 0;
           top: 27%;
+
+          @media(max-width: 1200px){
+            width: 54%;
+          }
         }
 
         &.second {
@@ -55,6 +73,10 @@
         &.third {
           bottom: 11%;
           right: 7%;
+          @media(max-width: 1200px){
+            bottom: 7%;
+            right: 0;
+          }
 
           .photo:first-child {
             z-index: 2;
@@ -66,6 +88,9 @@
             bottom: 5%;
             right: 40%;
             z-index: 1;
+            @media(max-width: 1200px){
+              right: 30%;
+            }
           }
         }
 

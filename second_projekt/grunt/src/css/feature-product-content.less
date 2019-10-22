@@ -3,6 +3,9 @@
     background-color: @f-prod_back-ground;
     padding: 83px 0 82px;
     text-align: center;
+    @media(max-width: 1200px){
+      padding: 55px 0;
+    }
 
     .heading {
       position: relative;
@@ -26,20 +29,33 @@
       max-width: 1435px;
       margin: 0 auto;
       display: flex;
+      @media(max-width: 1200px){
+        padding: 25px 10px;
+      }
 
       .product-show {
         width: 20%;
         padding: 18px;
         align-self: stretch;
         display: flex;
+        @media(max-width: 1200px){
+          padding: 14px;
+        }
+        @media(max-width: 992px){
+          padding: 10px;
+        }
 
         .prod-link {
           align-self: stretch;
           display: block;
           width: 100%;
           background-color: #363636;
-          padding: 1px 1px 1px 1px;
+          padding: 0 5px;
           text-decoration: none;
+          .prod-photo {
+            max-width: 100%;
+
+          }
           .text {
             color: #ff3448;
             text-transform: uppercase;
@@ -63,13 +79,8 @@
         &:nth-child(1) {
           .prod-link {
             padding-top: 93px;
-
-            .prod-photo {
-              max-width: 195px;
-            }
-
-            .text {
-
+            @media(max-width: 1200px){
+              padding-top: 91px;
             }
           }
         }
@@ -77,11 +88,6 @@
         &:nth-child(2) {
           .prod-link {
             padding-top: 33px;
-
-            .prod-photo {
-              max-width: 207px;
-            }
-
             .text {
               margin-top: 39px;
             }
@@ -91,11 +97,6 @@
         &:nth-child(3) {
           .prod-link {
             padding-top: 36px;
-
-            .prod-photo {
-              max-width: 179px;
-            }
-
             .text {
               margin-top: 2px;
             }
@@ -105,13 +106,9 @@
         &:nth-child(4) {
           .prod-link {
             padding-top: 79px;
-
-            .prod-photo {
-              max-width: 217px;
-            }
-
             .text {
               margin-top: 52px;
+
             }
           }
         }
@@ -119,11 +116,9 @@
         &:nth-child(5) {
           .prod-link {
             padding-top: 24px;
-
-            .prod-photo {
-              max-width: 210px;
+            @media(max-width: 1200px){
+              padding-top: 30px;
             }
-
             .text {
               margin-top: 21px;
             }
