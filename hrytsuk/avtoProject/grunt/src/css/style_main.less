@@ -30,20 +30,19 @@ main{
       max-width: 40%;
       position: absolute;
     }
-    &:nth-child(3){
-      background-color:@bg-schop;
-    }
     &:first-child{
       img{
         right: 0;
         bottom: 15%;
       }
+      background-color: @bg-schop;
     }
     &:last-child{
       img{
         right: 4%;
         bottom: 1.2%;
       }
+      background-color: @bg-schop;
     }
     &:nth-child(2){
       img{
@@ -189,7 +188,7 @@ main{
     margin-top: 30px;
   }
 }
-@media screen and (max-width: 1200px){
+@media screen and (max-width: 1280px){
   .headlights{
     .towar_lights{
       h3{
@@ -218,7 +217,7 @@ main{
     width: 17%;
   }
   .order{
-    padding: 0 7%;
+    padding: 0 5%;
   }
   .over{
     h2{
@@ -229,7 +228,7 @@ main{
     }
   }
 }
-@media screen and (max-width: 800px){
+@media screen and (max-width: 767px){
   .headlights{
     flex-direction: column;;
     .towar_lights{
@@ -250,6 +249,29 @@ main{
           }
         }
       }
+    }
+  }
+  .featured_prod{
+    flex-direction: column;
+    align-items: center;
+  }
+  .product_list{
+    width: 60%;
+    justify-content: center;
+    &:not(:last-child){
+      margin-bottom: 50px;
+    }
+  }
+  .order{
+    flex-direction: column;
+    &::after{
+      width: 100%;
+      height: 2px;
+      top: 45%;
+      left: 0;
+    }
+    .over{
+      margin-bottom: 50px;
     }
   }
 }
