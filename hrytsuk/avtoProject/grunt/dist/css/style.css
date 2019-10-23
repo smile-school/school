@@ -195,6 +195,9 @@ header a {
   .header_info .contact_phone {
     margin-right: 20px;
   }
+  .header_info .list_shop ul li a {
+    white-space: nowrap;
+  }
 }
 @media screen and (max-width: 767px) {
   header {
@@ -271,7 +274,7 @@ header a {
   }
 }
 main {
-  max-width: 1600px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   background-color: #1c1c1c;
@@ -345,7 +348,7 @@ main {
   height: 6px;
   background-color: #9c1c28;
   position: absolute;
-  top: 145px;
+  top: 170px;
   left: 44%;
 }
 .products h3 {
@@ -481,6 +484,11 @@ main {
   .headlights .towar_lights:nth-child(3) img:last-of-type {
     bottom: 2%;
   }
+  .headlights .towar_lights:first-child img {
+    right: 0;
+    bottom: 15%;
+    max-width: 60%;
+  }
   .products {
     padding: 0 3%;
   }
@@ -516,6 +524,9 @@ main {
   .headlights .towar_lights:nth-child(3) img:last-of-type {
     bottom: 10%;
   }
+  .headlights .towar_lights:first-child img {
+    max-width: 50%;
+  }
   .featured_prod {
     flex-direction: column;
     align-items: center;
@@ -542,7 +553,10 @@ main {
 }
 @media screen and (max-width: 360px) {
   .headlights .towar_lights img {
-    max-width: 60%;
+    max-width: 68%;
+  }
+  .headlights .towar_lights:first-child img {
+    max-width: 70%;
   }
 }
 footer {
