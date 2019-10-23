@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-family: Arial sans-serif;
+            font-size: 12px;
+            font-weight: normal;
+            font-style: normal;
+            color: white;
+        }
+
+        header{
+            background: #122538;
+
+
+        }
+        .wrapper{
+            padding: 0 32px;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+        .sw-city{
+            display: flex;
+
+        }
+        .sv-lang{
+            display: flex;
+
+        }
+        .sv-lang,
+        .sv-lang li{
+            
+        }
+        .sw-city input{
+            display: none;
+        }
+        .sw-city  .city> label >ul > li{
+            display: none;
+         }
+        .sw-city .city  #kiyv:checked ~ label >ul > li#kiyv-c,
+        .sw-city .city  #rivne:checked ~ label >ul > li#rivne-c,
+        .sw-city .city  #jitomur:checked ~ label >ul > li#jitomur-c,
+        .sw-city .city  #kharkiv:checked ~ label >ul > li#kharkiv-c,
+        .sw-city .city  #lutck:checked ~ label >ul > li#lutck-c{
+            display: block;
+        }
+        header .wrapper-pop {
+            position: fixed;
+            width: 250px;
+            height: 150px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%s);
+            background-color: #122538;
+            padding: 45px;
+            font-size: 250%;
+        }
+        header .wrapper-pop >label{
+            display: inline-block;
+            padding: 10px;
+            border: 1px solid gray;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 5px;
+        }
+        header .wrapper-pop > label:hover{
+            background-color: aliceblue;
+            color: #122538;
+
+        }
+
+
+    </style>
+</head>
+<body>
+<header>
+    <div class="wrapper">
+        <div class="top-menu-wrapper">
+            <div>
+                <span href="#">(044) 537-02-22</span>
+                <a href="#">Контакти</a>
+            </div>
+            <div>
+                <ul class="sv-lang">
+                    <li><a href="#">RU</a></li>
+                    <li><a href="#" class="active"> UA</a></li>
+                </ul>
+                <ul class="sw-city">
+                    <li class="tittlwe">Місто</li>
+                    <input type="radio" name="window" id="window">
+                    <input type="radio" name="window" id="closeWin">
+                    <li class="city">
+
+                        <input type="radio" name="city" id="kiyv">
+                        <input type="radio" name="city" id="rivne">
+                        <input type="radio" name="city" id="jitomur">
+                        <input type="radio" name="city" id="kharkiv">
+                        <input type="radio" name="city" id="lutck">
+                        <label for="window">
+                            <ul>
+                                <li id="kiyv-c">Київ</li>
+                                <li id="rivne-c">Ріне</li>
+                                <li id="jitomur-c">житомир</li>
+                                <li id="kharkiv-c">харків</li>
+                                <li id="lutck-c">луцьк</li>
+
+                            </ul>
+                        </label>
+                        <div class="wrapper-pop">
+                            <label for="kiyv">Київ</label>
+                            <label for="rivne">Ріне</label>
+                            <label for="jitomur">житомир</label>
+                            <label for="kharkiv">харків</label>
+                            <label for="lutck">луцьк</label>
+                        </div>
+                    </li>
+                </ul>
+
+                Вітаємо,
+                увійдіть в особистий кабінет
+                <path d="M8 8C4.68629 8 2 10.6863 2 14H14C14 10.6863 11.3137 8 8 8Z"></path>
+                <path d="M8 7C9.65685 7 11 5.65685 11 4C11 2.34315 9.65685 1 8 1C6.34315 1 5 2.34315 5 4C5 5.65685 6.34315 7 8 7Z"></path>
+            </div>
+        </div>
+        <div></div>
+    </div>
+
+</header>
+</body>
+</html>
