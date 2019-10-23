@@ -3,18 +3,22 @@
     padding: 0;
     box-sizing: border-box;
 }
-body{
+
+body {
     background-color: lightslategrey;
 }
-.wrapper{
+
+.wrapper {
     width: 80%;
     margin: 20px auto 0;
     background-color: lightslategrey;
 }
-.wrapper .tabs{
+
+.wrapper .tabs {
     display: none;
 }
-.wrapper .tabs-text{
+
+.wrapper .tabs-text {
     display: inline-block;
     margin: 0;
     width: 15%;
@@ -23,23 +27,26 @@ body{
     background-color: lavender;
 }
 
-.wrapper .tabs-text:last-of-type{
+.wrapper .tabs-text:last-of-type {
     border-right: none;
 }
-.wrapper .text-wrapper{
+
+.wrapper .text-wrapper {
     background-color: white;
     display: none;
     padding: 30px 10px;
 }
-.wrapper input.tabs:checked + .tabs-text{
+
+.wrapper input.tabs:checked + .tabs-text {
     background-color: red;
     color: white;
 }
+
 .wrapper #first:checked ~ .text-wrapper.first,
 .wrapper #second:checked ~ .text-wrapper.second,
 .wrapper #third:checked ~ .text-wrapper.third,
 .wrapper #fourth:checked ~ .text-wrapper.fourth,
-.wrapper #fifth:checked ~ .text-wrapper.fifth{
+.wrapper #fifth:checked ~ .text-wrapper.fifth {
     display: block;
     border-top: 3px solid red;
 }

@@ -1,13 +1,15 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body{
+
+body {
     font-size: 12px;
     font-family: 'Roboto', sans-serif;
 }
-a.icon{
+
+a.icon {
     display: block;
     width: 35px;
     color: white;
@@ -18,26 +20,31 @@ a.icon{
     text-transform: capitalize;
     overflow: hidden;
 }
-a.menu-start-icon{
+
+a.menu-start-icon {
     display: block;
     width: 35px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: 50%;
 }
-a.icon:hover{
+
+a.icon:hover {
     overflow: visible;
 }
-img.label{
+
+img.label {
     display: block;
     width: 32px;
     height: 32px;
     margin: 0 auto 4px;
 }
-img.label:hover{
+
+img.label:hover {
     background-color: rgba(255, 255, 255, .1);
 }
-.desktop-wrapper{
+
+.desktop-wrapper {
     position: fixed;
     top: 0;
     left: 0;
@@ -49,12 +56,14 @@ img.label:hover{
     background-position: center;
     padding: 10px;
 }
-.desktop-wrapper .label-wrapper{
+
+.desktop-wrapper .label-wrapper {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
 }
-.desktop-wrapper .computer-window{
+
+.desktop-wrapper .computer-window {
     width: 60%;
     position: absolute;
     top: 20%;
@@ -63,20 +72,24 @@ img.label:hover{
     background-color: white;
     display: none;
 }
-.desktop-wrapper .computer-window:target{
+
+.desktop-wrapper .computer-window:target {
     display: block;
 }
-.desktop-wrapper .computer-window .window-header{
+
+.desktop-wrapper .computer-window .window-header {
     max-height: 20px;
     padding: 3px;
     text-align: center;
     cursor: move;
     display: flex;
 }
-.desktop-wrapper .computer-window .window-header .left-bar{
+
+.desktop-wrapper .computer-window .window-header .left-bar {
     display: flex;
 }
-.desktop-wrapper .computer-window .window-header .pc{
+
+.desktop-wrapper .computer-window .window-header .pc {
     background-image: url("../img/this-pc.png");
     background-size: 80%;
     background-repeat: no-repeat;
@@ -85,14 +98,16 @@ img.label:hover{
     height: 20px;
     position: relative;
 }
-.desktop-wrapper .computer-window .window-header .options{
+
+.desktop-wrapper .computer-window .window-header .options {
     position: relative;
     width: 20px;
     height: 20px;
     margin-right: 3px;
 }
+
 .desktop-wrapper .computer-window .window-header .pc:after,
-.desktop-wrapper .computer-window .window-header .options:after{
+.desktop-wrapper .computer-window .window-header .options:after {
     display: block;
     background-color: lightslategrey;
     content: '';
@@ -104,7 +119,7 @@ img.label:hover{
 }
 
 /*--Start Menu--*/
-.menu-start-wrapper{
+.menu-start-wrapper {
     position: fixed;
     top: 95%;
     left: 0;
@@ -115,11 +130,12 @@ img.label:hover{
     padding: 5px;
 }
 
-.start{
+.start {
     background-image: url("../img/start.png");
 }
+
 .menu-start-wrapper .start-menu,
 .menu-start-wrapper .labels-menu,
-.menu-start-wrapper .task-panel{
+.menu-start-wrapper .task-panel {
     display: flex;
 }

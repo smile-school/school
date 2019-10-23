@@ -59,9 +59,11 @@ class Product
 
     public function getShowRating($id)
     {
+        $rating = '';
         $data = $this->getRating($id);
         for ($i = 0; $i < $data / 10; $i++) {
-            echo '<i class="icon-star-empty"></i>';
+            $rating .= '<i class="icon-star-empty"></i>';
         }
+        return $rating;
     }
 }

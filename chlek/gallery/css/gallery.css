@@ -4,7 +4,7 @@
 }
 
 div.wrapper {
-    width: 1000px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
@@ -72,7 +72,7 @@ div.wrapper > a img {
     display: block;
 }
 
-.blind{
+.blind {
     visibility: hidden;
     transform: scale(0);
     display: flex;
@@ -83,19 +83,22 @@ div.wrapper > a img {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0,0,0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     transition: all 500ms ease-out;
 }
-.blind .show-img{
+
+.blind .show-img {
     width: 40%;
     position: relative;
 }
+
 .blind .show-img .links,
-.blind .show-img .links, img{
+.blind .show-img .links, img {
     display: block;
     width: 100%;
 }
-.blind .show-img .bottom{
+
+.blind .show-img .bottom {
     position: absolute;
     opacity: 0.7;
     width: 20px;
@@ -107,26 +110,30 @@ div.wrapper > a img {
     border-radius: 3px;
     border: 1px solid black;
 }
-.blind .show-img .close{
+
+.blind .show-img .close {
     top: 0;
     right: 0;
     background-image: url("../img/close-button.png");
 }
+
 .blind .show-img .next,
-.blind .show-img .prev{
+.blind .show-img .prev {
     top: 50%;
     transform: translateY(-50%);
 }
-.blind .show-img .next{
+
+.blind .show-img .next {
     right: 0;
     background-image: url("../img/right-chevron.png");
 }
-.blind .show-img .prev{
+
+.blind .show-img .prev {
     left: 0;
     background-image: url("../img/left-chevron.png");
 }
 
-.blind:target{
+.blind:target {
     visibility: visible;
     transform: scale(1);
 }
