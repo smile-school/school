@@ -32,12 +32,17 @@ header.header {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: 500ms all ease-out;
 }
 
 .header .menu-wrapper .button {
     display: inline-block;
     list-style-type: none;
     text-align: center;
+}
+
+.header .menu-wrapper .button.home {
+    display: none;
 }
 
 .header .menu-wrapper .button .link {
@@ -82,39 +87,14 @@ header.header {
     background-repeat: no-repeat;
 }
 
-.header .hamburger-wrap label.menu {
-    opacity: 1;
-    position: absolute;
-    z-index: 10;
-    width: 35px;
-    height: 35px;
-    top: 0;
-    right: 0;
-    transform: translate(-50%, 50%);
-    /*display: block;*/
-}
-
 .header .hamburger-wrap input.menu {
     display: none;
 }
 
-.header .hamburger-wrap input.close:checked ~ label.close,
-.header .hamburger-wrap input.open:checked ~ label.open {
-    display: none;
-}
-
-.header .hamburger-wrap input.close:checked ~ label.open,
-.header .hamburger-wrap input.open:checked ~ label.close {
-    display: block;
-}
-
-.header .hamburger-wrap input.close:checked ~ ul.hamburger-menu {
-    transform: scale(0);
-}
-
-.header .hamburger-wrap input.open:checked ~ ul.hamburger-menu {
+.header .hamburger-wrap input.open:checked ~ ul.menu-wrapper {
     transform: scale(1);
 }
+
 
 .header .hamburger-wrap .menu-label {
     display: none;
@@ -133,15 +113,15 @@ header.header {
     z-index: 1;
 }
 
-.header .hamburger-wrap input.open:checked ~ a.menu-label .row:first-child {
+.header .hamburger-wrap input.open:checked ~ .menu-label .row:first-child {
     transform: translateY(420%) rotate(405deg);
 }
 
-.header .hamburger-wrap input.open:checked ~ a.menu-label .row:nth-child(2) {
+.header .hamburger-wrap input.open:checked ~ .menu-label .row:nth-child(2) {
     opacity: 0;
 }
 
-.header .hamburger-wrap input.open:checked ~ a.menu-label .row:last-child {
+.header .hamburger-wrap input.open:checked ~ .menu-label .row:last-child {
     transform: translateY(-420%) rotate(-405deg);
 }
 
@@ -298,6 +278,7 @@ header.header {
 .work-wrapper .row-wrapper .about-bicycle .decorate-blind {
     transition: all 500ms ease-out;
     display: block;
+    width: 100%;
 }
 
 .work-wrapper .about-bicycle .decorate-wrapper .additional-wrapper {
@@ -633,6 +614,25 @@ header.header {
     }
 }
 
+@media screen and (max-width: 1600px) {
+    div.wrapper {
+        max-width: 1600px;
+        padding: 0;
+        margin: 0 auto;
+    }
+
+    .work-wrapper .row-wrapper .about-bicycle:after{
+        bottom: 38%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .work-wrapper .row-wrapper .about-bicycle:after{
+        bottom: 33%;
+    }
+}
+
+
 @media screen and (max-width: 992px) {
     .wrapper .text-wrapper {
         padding: 130px 10px 80px;
@@ -655,7 +655,7 @@ header.header {
     }
 
     .work-wrapper .row-wrapper .about-bicycle:after {
-        bottom: 40%;
+        bottom: 27%;
     }
 
     .work-wrapper .row-wrapper .about-bicycle article.about {
@@ -689,6 +689,28 @@ header.header {
     }
 
     .header .menu-wrapper {
+        transform: scale(0);
+        position: fixed;
+        top: 85px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background-color: #f7f7f7;
+        border-top: 2px solid #64c29e
+    }
+
+    .header .menu-wrapper .button {
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+        border-bottom: 2px solid #64c29e;
+    }
+
+    .header .menu-wrapper .button.home {
+        display: block;
+    }
+
+    .header .menu-wrapper .button.logo {
         display: none;
     }
 
@@ -711,6 +733,23 @@ header.header {
 
     .work-wrapper .row-wrapper .about-bicycle {
         padding-top: 85px;
+    }
+
+    .work-wrapper .row-wrapper {
+        flex-direction: column;
+    }
+    .work-wrapper .row-wrapper .banner,
+    .work-wrapper .row-wrapper.third .banner {
+        width: 100%;
+        padding: 200px 0;
+    }
+
+    .work-wrapper .row-wrapper .about-bicycle,
+    .work-wrapper .row-wrapper.third .about-bicycle {
+        width: 100%;
+    }
+    .work-wrapper .row-wrapper .about-bicycle:after {
+        bottom: 51%;
     }
 
     .social-wrapper .content-slider .news article.text {
@@ -767,19 +806,8 @@ header.header {
         top: 15%;
     }
 
-    .work-wrapper .row-wrapper {
-        flex-direction: column;
-    }
-
-    .work-wrapper .row-wrapper .banner,
-    .work-wrapper .row-wrapper.third .banner {
-        width: 100%;
-        padding: 150px 0;
-    }
-
-    .work-wrapper .row-wrapper .about-bicycle,
-    .work-wrapper .row-wrapper.third .about-bicycle {
-        width: 100%;
+    .work-wrapper .row-wrapper .about-bicycle:after {
+        bottom: 39%;
     }
 
     .social-wrapper .content-slider {
