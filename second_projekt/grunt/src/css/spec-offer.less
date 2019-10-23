@@ -1,53 +1,75 @@
-.wrapper{
-  .spec-offer-wrap{
-    background-image: url("@{image_url}Layer_6.png");
-    background-color: @f-prod_back-ground;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    display: flex;
-    .spec-offer{
-      position: relative;
-      width: 50%;
-      text-align: center;
-      font-weight: bold;
-      padding: 175px 5px 105px;
-      .discount{
-        letter-spacing: 1.75px;
-        padding-bottom: 10px;
-      }
-      .order{
-        letter-spacing: 4px;
-        padding-bottom: 28px;
-      }
-      .text{
-        display: block;
-        letter-spacing: 0.75px;
-        padding-bottom: 28px;
-      }
-      .buy-now{
-        display: inline-block;
-        width: 190px;
-        padding: 12px 5px 11px;
-        text-decoration: none;
-        color: @link_color_button;
-        background-color: @decor_retangle-color;
-        border-radius: 19px;
-        text-transform: uppercase;
-      }
-      &:first-child{
-        &::after {
-          display: block;
-          content: '';
-          position: absolute;
-          right: 0;
-          top: 41%;
-          bottom: 26%;
-          width: 2px;
-          transform: translateX(50%);
-          background-color: @after_background-color;
+.wrapper {
+    .spec-offer-wrap {
+        background-image: url("@{image_url}Layer_6.png");
+        background-color: @f-prod_back-ground;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        display: flex;
+        @media (max-width: @mobile-width) {
+            flex-direction: column;
         }
-      }
+
+        .spec-offer {
+            width: 50%;
+            text-align: center;
+            font-weight: bold;
+            padding: 175px 5px 105px;
+            @media (max-width: @mobile-width) {
+                width: 100%;
+                padding: 40px 5px;
+            }
+
+            .discount {
+                letter-spacing: 1.75px;
+                padding-bottom: 10px;
+            }
+
+            .order {
+                letter-spacing: 4px;
+                padding-bottom: 28px;
+            }
+
+            .text {
+                display: block;
+                letter-spacing: 0.75px;
+                padding-bottom: 28px;
+            }
+
+            .buy-now {
+                display: inline-block;
+                width: 190px;
+                padding: 12px 5px 11px;
+                text-decoration: none;
+                color: @link_color_button;
+                background-color: @decor_retangle-color;
+                border-radius: 19px;
+                text-transform: uppercase;
+            }
+
+            &:first-child {
+                position: relative;
+
+                &::after {
+                    display: block;
+                    content: '';
+                    position: absolute;
+                    right: 0;
+                    top: 41%;
+                    bottom: 26%;
+                    width: 2px;
+                    transform: translateX(50%);
+                    background-color: @after_background-color;
+                    @media (max-width: @mobile-width) {
+                        top: 99%;
+                        bottom: 0;
+                        left: 10%;
+                        width: 80%;
+                        height: 2px;
+                        transform: translateX(0);
+                    }
+                }
+            }
+        }
     }
-  }
 }
