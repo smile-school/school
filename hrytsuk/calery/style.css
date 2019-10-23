@@ -1,119 +1,146 @@
-.wraper{
+.wraper {
     margin: 0 auto;
     width: 80%;
 }
-.wraper::after{
+
+.wraper::after {
     content: "";
     display: block;
-    clear:both ;
+    clear: both;
     height: 0;
 }
-.wraper a{
+
+.wraper a {
     float: left;
     width: calc(33.3% - 30px);
     margin-bottom: 10px;
     position: relative;
 }
-.wraper a:not(:nth-child(3n)){
-    margin-right: 15px;
+
+.wraper a:not(:nth-child(3n)) {
+    margin-right: 30px;
 }
+
 .wraper a > img {
     width: 100%;
     display: block;
 }
-.wraper a::after{
+
+.wraper a::after {
     content: "";
     position: absolute;
     background-color: black;
-    top:0;
+    top: 0;
     left: 0;
     bottom: 0;
     right: 0;
     opacity: 0;
 }
-.wraper a:hover::after{
+
+.wraper a:hover::after {
     opacity: 0.5;
 }
-.wraper a::before{
+
+.wraper a::before {
     content: "";
     display: block;
     position: absolute;
-    width:25px;
+    width: 25px;
     height: 25px;
     left: 50%;
-    top:50%;
-    transform: translate(-50%,-50%) scale(0);
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0);
     background-image: url("./ima/eye.svg");
     background-size: contain;
     background-position: center;
     z-index: 100;
     transition: all .3s ease-in-out;
 }
-.wraper a:hover::before{
+
+.wraper a:hover::before {
     opacity: 1;
-    transform: translate(-50%,-50%) scale(1);
+    transform: translate(-50%, -50%) scale(1);
 }
-.modal-wraper div{
+
+.modal-wraper div {
     position: absolute;
-    top:50%;
+    top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%) scale(0);
+    transform: translate(-50%, -50%) scale(0);
     transition: all .5s ease-in-out;
     z-index: 200;
+    width: 30%;
+    height: 30%;
 }
-.modal-wraper div img{
+
+.modal-wraper div img {
     display: block;
     width: 100%;
 }
-.modal-wraper div:target{
-    transform: translate(-50%,-50%) scale(2);
-    box-shadow: 3px 0 0 300px rgba(0,0,0,0.75);
+
+.modal-wraper div:target {
+    transform: translate(-50%, -50%) scale(1);
+    box-shadow: 3px 0 0 900px rgba(0, 0, 0, 0.75);
 }
-.modal-wraper div  a[href="#"] {
+
+.modal-wraper div a[href="#"] {
     position: absolute;
     top: 0;
     right: 0;
     z-index: 300;
-    width: 9px;
-    height: 14px;
+    width: 25px;
+    height: 25px;
     background: #ddd7d7;
     color: black;
     text-decoration: none;
 }
-.modal-wraper div a[href="#"]::after{
+
+.modal-wraper div a[href="#"]::after {
     content: "\2613";
     position: absolute;
+    font-size: 20px;
+    top: 2px;
+    right: 5px;
+    font-weight: 700;
 }
-.modal-wraper div a[href="#"]:hover{
+
+.modal-wraper div a[href="#"]:hover {
     color: brown;
 }
-.modal-wraper div a{
+
+.modal-wraper div a {
     text-decoration: none;
 }
-.modal-wraper div .forward, .bac{
+
+.modal-wraper div .forward, .bac {
     position: absolute;
     top: 50%;
     color: black;
     background: #bbb;
-    width: 20px;
-    height: 20px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    font-size: 18px;
+    font-size: 34px;
     opacity: 0.2;
     text-align: center;
+    line-height: 51px;
     font-weight: bold;
 }
-.modal-wraper div .forward{
-    right: 15px;
+
+.modal-wraper div .forward {
+    right: -65px;
 }
-.modal-wraper div .bac{
-    left: 15px;
+
+.modal-wraper div .bac {
+    left: -65px;
 }
-.modal-wraper div .forward:hover{
+
+.modal-wraper div .forward:hover {
     color: white;
     opacity: 0.8;
 }
-.modal-wraper div .bac:hover{
+
+.modal-wraper div .bac:hover {
     color: white;
     opacity: 0.8;
 }
