@@ -1,0 +1,198 @@
+.social-wrapper {
+    position: relative;
+    overflow: hidden;
+
+    .content-slider {
+        padding: 235px 0 234px;
+        @media (max-width: @tablet) {
+            padding: 177px 0 176px;
+        }
+        @media (max-width: @first-mobile) {
+            padding: 157px 10px 146px;
+        }
+        @media (max-width: @second-mobile) {
+            padding: 235px 0 146px;
+        }
+
+        .tabs {
+            display: none;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            transition: all 800ms ease;
+        }
+
+        #first:checked {
+            & ~ .slide:first-of-type {
+                left: 0;
+                right: 0;
+            }
+
+            & ~ .slide:nth-of-type(2) {
+                left: 100%;
+                right: -100%;
+            }
+
+            & ~ .slide:nth-of-type(3) {
+                left: 200%;
+                right: -200%;
+            }
+
+            & ~ div.tabs-active {
+                .tabs-view:nth-child(1) {
+                    opacity: 1;
+                }
+            }
+        }
+
+        #second:checked {
+            & ~ .slide:first-of-type {
+                left: -100%;
+                right: 100%;
+            }
+
+            & ~ .slide:nth-of-type(2) {
+                left: 0;
+                right: 0;
+            }
+
+            & ~ .slide:nth-of-type(3) {
+                left: 100%;
+                right: -100%;
+            }
+
+            & ~ div.tabs-active {
+                .tabs-view:nth-child(2) {
+                    opacity: 1;
+                }
+            }
+        }
+
+        #third:checked {
+            & ~ .slide:first-of-type {
+                left: -200%;
+                right: 200%;
+            }
+
+            & ~ .slide:nth-of-type(2) {
+                left: -100%;
+                right: 100%;
+            }
+
+            & ~ .slide:nth-of-type(3) {
+                left: 0;
+                right: 0;
+            }
+
+            & ~ div.tabs-active {
+                .tabs-view:nth-child(3) {
+                    opacity: 1;
+                }
+            }
+        }
+
+        .news {
+            position: relative;
+            padding: 188px 10px 178px;
+            text-align: center;
+            width: 100%;
+            display: block;
+            box-sizing: border-box;
+            @media (max-width: @tablet) {
+                padding: 130px 10px 120px;
+            }
+            @media (max-width: @first-mobile) {
+                padding: 110px 10px 90px;
+            }
+
+            &::before {
+                display: block;
+                content: '';
+                width: 32px;
+                height: 27px;
+                background-image: url("@{image_url}twiter.png");
+                position: absolute;
+                left: 50%;
+                top: 29%;
+                transform: translate(-50%, -50%);
+                @media (max-width: @tablet) {
+                    top: 23%;
+                }
+                @media (max-width: @second-mobile) {
+                    top: 17%;
+                }
+            }
+
+            .text-label {
+                padding-bottom: 17px;
+
+                span {
+                    color: @text-label-color;
+                    font-weight: lighter;
+                    padding-bottom: 27px;
+                }
+            }
+
+            article.text {
+                margin: 0 auto;
+                max-width: 1036px;
+                color: @article-text-color;
+                font-size: 24px;
+                font-style: italic;
+                line-height: 34px;
+                @media (max-width: @tablet) {
+                    font-size: 20px;
+                }
+                @media (max-width: @first-mobile) {
+                    font-size: 18px;
+                }
+            }
+
+            &.facebook {
+                &::before {
+                    height: 32px;
+                    background-image: url("@{image_url}facebook.png");
+                }
+            }
+
+            &.pinterest {
+                &::before {
+                    height: 32px;
+                    background-image: url("@{image_url}pint.png");
+                }
+            }
+        }
+    }
+
+    .tabs-wrapper,
+    .tabs-active {
+        position: absolute;
+        display: inline-block;
+        bottom: 14%;
+        left: 50%;
+        transform: translateX(-50%);
+        @media (max-width: @second-mobile) {
+            bottom: 7%;
+        }
+
+        .tabs-view {
+            display: inline-block;
+            height: 10px;
+            width: 10px;
+            border-radius: 50%;
+            border: 1px solid #c8c8c8;
+            cursor: pointer;
+            margin: 0 1.4px;
+        }
+    }
+
+    .tabs-active {
+        .tabs-view {
+            background-color: @tabs-view_color;
+            opacity: 0;
+        }
+    }
+}
