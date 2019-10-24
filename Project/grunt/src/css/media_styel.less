@@ -60,7 +60,7 @@
       }
     }
 
-    #burger {
+    .act-burger {
       &:checked {
         & ~ nav {
           flex-direction: column;
@@ -72,28 +72,21 @@
           transition: @transit-chec-menu;
         }
 
-        & ~ .burger-lin {
-          top: 40px;
-        }
-
-        & ~ .one-lin {
+        & ~ ::after{
           transform: rotate(90deg);
-          top: 30px;
+          top: 29px;
         }
 
-        & ~ .two-lin {
+        & ~ ::before {
           transform: rotate(45deg);
           width: 20px;
-          right: 25px;
+          top: 38px;
+          right: 18px;
         }
 
-        & ~ .three-lin {
+        & ~ label span {
           transform: rotate(-45deg);
           width: 20px;
-        }
-
-        & ~ .fount-line {
-          display: none;
         }
       }
     }
@@ -158,7 +151,21 @@
     }
   }
 }
-
+@media screen and (max-width: 480px){
+  footer{
+    .form-shop {
+      width: 95%;
+    }
+    .form_site{
+      label{
+        font-size: @f-size-label;
+      }
+    }
+    .form_site .label_checbox span {
+      left: 40px;
+    }
+  }
+}
 
 @media screen and (max-width: 1600px) {
   main {

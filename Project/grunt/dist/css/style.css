@@ -4,6 +4,8 @@ body {
   line-height: 1.2;
   font-weight: normal;
   color: #848789;
+  margin: 0;
+  padding: 0;
 }
 h3 {
   color: #353738;
@@ -13,9 +15,11 @@ h3 {
   letter-spacing: 4px;
 }
 header {
-  max-width: 1600px;
+  width: 100%;
   min-height: 100vh;
+  background-image: url("../../../sourses/images/Layer_7.png");
   background-size: cover;
+  background-position: center;
   display: flex;
   justify-content: center;
 }
@@ -483,6 +487,11 @@ footer .form-shop > label {
   background-color: #64c29e;
   font-weight: 600;
 }
+footer .form-shop > label span {
+  color: #eb5755;
+  padding-left: 3px;
+  font-weight: 700;
+}
 footer .form-shop .form_site {
   display: flex;
   flex-direction: column;
@@ -673,7 +682,7 @@ footer .input_radio > label:first-of-type span {
     transition: 0.5s all;
     border-bottom: 1px solid #4d4959;
   }
-  header #burger:checked ~ nav {
+  header .act-burger:checked ~ nav {
     flex-direction: column;
     justify-content: center;
     width: 100%;
@@ -682,24 +691,19 @@ footer .input_radio > label:first-of-type span {
     font-size: 16px;
     transition: all 0.7s ease-out;
   }
-  header #burger:checked ~ .burger-lin {
-    top: 40px;
-  }
-  header #burger:checked ~ .one-lin {
+  header .act-burger:checked ~ ::after {
     transform: rotate(90deg);
-    top: 30px;
+    top: 29px;
   }
-  header #burger:checked ~ .two-lin {
+  header .act-burger:checked ~ ::before {
     transform: rotate(45deg);
     width: 20px;
-    right: 25px;
+    top: 38px;
+    right: 18px;
   }
-  header #burger:checked ~ .three-lin {
+  header .act-burger:checked ~ label span {
     transform: rotate(-45deg);
     width: 20px;
-  }
-  header #burger:checked ~ .fount-line {
-    display: none;
   }
   header .burger-lin {
     display: block;
@@ -740,6 +744,17 @@ footer .input_radio > label:first-of-type span {
   }
   footer .autograph {
     margin: 30px 0 30px 0;
+  }
+}
+@media screen and (max-width: 480px) {
+  footer .form-shop {
+    width: 95%;
+  }
+  footer .form_site label {
+    font-size: 14px;
+  }
+  footer .form_site .label_checbox span {
+    left: 40px;
   }
 }
 @media screen and (max-width: 1600px) {
@@ -829,6 +844,7 @@ footer .input_radio > label:first-of-type span {
   align-items: center;
   flex-direction: column;
   border: 1px solid #64c29e;
+  z-index: 60;
 }
 .form_site input {
   height: 30px;
@@ -863,8 +879,10 @@ footer .input_radio > label:first-of-type span {
   color: #4a6b50;
   font-size: 16px;
 }
-.form_site .input_check input[type=checkbox],
-.form_site .input_check input[type=radio] {
+.form_site .input_check input[type=checkbox] {
+  display: none;
+}
+.form_site .input_radio input[type=radio] {
   display: none;
 }
 .form_site .label_checbox span {
@@ -921,4 +939,18 @@ footer .input_radio > label:first-of-type span {
   transform: translate(-50%, -50%);
   border-radius: 50%;
   transition: 0.3s ease-in-out 0s;
+}
+.form_site .bootom input {
+  background-color: #4a6b50;
+  border: 2px solid #4a6b50;
+  padding: 5px 10px;
+  width: 100px;
+  height: 50px;
+  font-size: 16px;
+  transform: scale(0.8);
+}
+.form_site .bootom input:hover {
+  border-color: #1e7e34;
+  transform: scale(1);
+  color: #ffffff;
 }
