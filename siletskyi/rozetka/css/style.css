@@ -1,0 +1,68 @@
+body {
+    font-family: Arial, Verdana, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+.wrapper {
+    max-width: 1600px;
+    padding: 0 32px;
+    margin: 0 auto;
+}
+header {
+    background-color: #122538;
+}
+.switch-city {
+    display: flex;
+}
+.switch-city input {
+    display: none;
+}
+.switch-city .city > label > ul > li {
+    display: none;
+}
+.switch-city .city #kiyv:checked ~ label > ul > li#kiyvp,
+.switch-city .city #rivne:checked ~ label > ul > li#rivnep,
+.switch-city .city #gitomir:checked ~ label > ul > li#gitomirp,
+.switch-city .city #harkiv:checked ~ label > ul > li#harkivp,
+.switch-city .city #lutsk:checked ~ label > ul > li#lutskp {
+    display: block;
+}
+header .wrap-pop {
+    position: fixed;
+    width: 350px;
+    top: 50%;
+    left: 50%;
+    transform: translate( -50%, -50%);
+    background-color: #345534;
+    padding: 25px;
+    font-size: 250%;
+    display: none;
+}
+header .wrap-pop > label {
+    display: inline-block;
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+header .wrap-pop > label:hover {
+    background-color: #4EC6DE;
+}
+header .wrap-pop > label.close {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    right: 0;
+    top: 0;
+    background-color: #222222;
+    color: white;
+    text-align: center;
+}
+
