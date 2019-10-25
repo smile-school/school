@@ -16,25 +16,51 @@ body {
 header {
     background-color: #122538;
 }
-.switch-city {
+header .top-menu-wrap {
+    display: flex;
+    color: #fff;
+    justify-content: space-between;
+    padding-top: 8px;
+}
+header .top-menu-wrap a {
+    color: #fff;
+    text-decoration: none;
+}
+header .top-menu-wrap div:nth-child(2) {
     display: flex;
 }
-.switch-city input {
+header .top-menu-wrap .switch-ln {
+    margin-right: 24px;
+}
+header .top-menu-wrap .switch-ln li {
+    display: inline-block;
+}
+header .switch-city {
+    display: flex;
+}
+header .switch-city .title {
+    margin-right: 8px;
+}
+header .switch-city li {
+    list-style: none;
+}
+header .switch-city input {
     display: none;
 }
-.switch-city .city > label > ul > li {
+header .switch-city .city > label > ul > li {
     display: none;
 }
-.switch-city .city #kiyv:checked ~ label > ul > li#kiyvp,
-.switch-city .city #rivne:checked ~ label > ul > li#rivnep,
-.switch-city .city #gitomir:checked ~ label > ul > li#gitomirp,
-.switch-city .city #harkiv:checked ~ label > ul > li#harkivp,
-.switch-city .city #lutsk:checked ~ label > ul > li#lutskp {
+header .switch-city .city #kiyv:checked ~ label > ul > li#kiyvp,
+header .switch-city .city #rivne:checked ~ label > ul > li#rivnep,
+header .switch-city .city #gitomir:checked ~ label > ul > li#gitomirp,
+header .switch-city .city #harkiv:checked ~ label > ul > li#harkivp,
+header .switch-city .city #lutsk:checked ~ label > ul > li#lutskp,
+header .switch-city .city #window:checked ~ .wrap-pop{
     display: block;
 }
 header .wrap-pop {
     position: fixed;
-    width: 350px;
+    width: 390px;
     top: 50%;
     left: 50%;
     transform: translate( -50%, -50%);
@@ -64,5 +90,10 @@ header .wrap-pop > label.close {
     background-color: #222222;
     color: white;
     text-align: center;
+    font-size: 25px;
+}
+header .wrap-pop > label.close:hover {
+    background-color: white;
+    color: #222222;
 }
 
