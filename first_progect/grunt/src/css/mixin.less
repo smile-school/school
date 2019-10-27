@@ -1,0 +1,44 @@
+.flex-mixin(@direction: row,
+            @justify: center,
+            @align: center){
+    display: flex;
+    flex-direction: @direction;
+    justify-content: @justify;
+    align-items: @align;
+}
+.container-mixin(@width: 0px, @height: 0px){
+    width: @width;
+    height: @height;
+}
+.circle-mixin(@width, @height, @background, @left, @top){
+    content: "";
+    position: absolute;
+    .container-mixin(@width, @height);
+    border-radius: 50%;
+    background-color: @background;
+    left: @left;
+    top: @top;
+}
+.text-button-mixin(){
+    color: @form-label-color;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 24px;
+    text-transform: uppercase;
+    transition: font-weight .3s ease-in;
+}
+.text-input-mixin(){
+    .container-mixin(400px, 69px);
+    border: none;
+    padding-left: 28px;
+    outline: 1px solid @form-input-text-outline-border-color;
+    font-size: 20px;
+    font-style: italic;
+    line-height: 24px;
+}
+.center-mixin(){
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}

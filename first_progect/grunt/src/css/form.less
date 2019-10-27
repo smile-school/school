@@ -1,0 +1,114 @@
+/*---Form---*/
+.form-container_form{
+    .flex-mixin(column, center, center);
+    .container-mixin(450px, 0);
+    overflow: hidden;
+    transition: height .5s ease-in-out;
+    .footer_form-container > input[type="checkbox"]:checked + &{
+        height: 470px;
+        transition: height .8s ease-in-out;
+    }
+    & > input[type="text"]{
+        color: @form-input-text-color;
+        background-color: @form-input-text-background;
+        .text-input-mixin();
+        &:hover{
+            outline: 2px solid @form-input-text-outline-border-color-hover;
+        }
+        &:focus{
+            background-color: @form-input-text-background-focus;
+            color: @form-input-text-color-focus;
+        }
+        @media(max-width: @second-mobile){
+            width: 90%;
+        }
+    }
+    & > label{
+        line-height: 50px;
+        color: @form-label-color;
+        text-transform: uppercase;
+        letter-spacing: 2.8px;
+        align-self: flex-start;
+        padding-top: 15px;
+    }
+    & > div{
+        .flex-mixin(row, space-around, center);
+        width: 100%;
+        padding: 15px 0;
+        & input[type="radio"]{
+            display: none;
+        }
+        & input:checked{
+            & + label::after {
+                opacity: 1;
+            }
+            & + label::before{
+                border: 1px solid @form-input-radio-border-checked;
+            }
+        }
+        & label{
+            position: relative;
+            padding: 0 0 0 36px;
+            cursor: pointer;
+            color: @form-label-color;
+            letter-spacing: 2.8px;
+            &:before{
+                .circle-mixin(30px, 30px, @form-input-radio-background, 0, -6px);
+                border: 1px solid @form-input-radio-border;
+                transition: all .4s ease-in;
+            }
+            &:after{
+                .circle-mixin(20px, 20px, @form-input-radio-center-background, 6px, 0);
+                opacity: 0;
+                transition: opacity .4s ease-in;
+            }
+        }
+    }
+    & > button{
+        .container-mixin(220px, 69px);
+        border:none;
+        margin-top: 15px;
+        background-color: @form-button-background;
+        .text-button-mixin();
+        &:hover{
+            font-weight: bold;
+            outline: 2px solid @form-button-hover;
+        }
+    }
+    @media(max-width: @second-mobile){
+        width: 90%;
+    }
+}
+.mailing_form{
+    .flex-mixin(row, center, center);
+    & > input[type="text"]{
+        .text-input-mixin();
+        margin-right: 8px;
+        background-color: @form-input-text-background-focus;
+        &:hover{
+            outline: 2px solid @form-input-text-outline-border-color-hover;
+        }
+        @media(max-width: @first-mobile){
+            width: 70%;
+        }
+    }
+    & > div{
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        .container-mixin(126px, 69px);
+        background-color: @form-button-background;
+        &:hover{
+            outline: 2px solid @form-button-hover;
+            & p{
+                font-weight: bold;
+            }
+        }
+        & p{
+            .text-button-mixin();
+        }
+        @media(max-width: @first-mobile){
+            width: 20%;
+        }
+    }
+}

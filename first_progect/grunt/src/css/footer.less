@@ -1,22 +1,10 @@
 /*----Footer----*/
-.flex-mixin(@direction: row,
-            @justify: center,
-            @align: center){
-    display: flex;
-    flex-direction: @direction;
-    justify-content: @justify;
-    align-items: @align;
-}
-.container-mixin(@width: 0px, @height: 0px){
-    width: @width;
-    height: @height;
-}
 .footer{
     &_form-container{
         width: 100%;
         padding: 75px 0;
         background-color: @footer-form-background;
-        .flex-mixin(column);
+        .flex-mixin(@direction: column);
         &_button{
             text-align: center;
             .container-mixin(300px, 50px);
@@ -43,9 +31,10 @@
     &_mailing{
         padding: 110px 0;
         &_logo-container{
-            .container-mixin(85px, 94px);
+            .container-mixin(94px, 85px);
             background-image: url("@{image_url}Logo.png");
             margin: 0 auto;
+            background-repeat: no-repeat;
         }
         &_slogan{
             padding: 39px 0 35px;
@@ -64,12 +53,12 @@
         }
     }
     &_content{
-        .flex-mixin(row, space-around, stretch);
+        .flex-mixin(@justify: space-around, @align:  stretch);
         width: 100%;
         background-color: @footer-content-background;
         padding: 108px 0;
         @media (max-width: @first-mobile){
-            .flex-mixin(column, center ,center);
+            .flex-mixin(@direction: column);
         }
         & > div{
             @media(max-width: @first-mobile){
@@ -78,7 +67,7 @@
         }
         &_address{
             width: 280px;
-            .flex-mixin(column, flex-start, flex-end);
+            .flex-mixin(@direction: column, @justify: flex-start, @align: flex-start);
             @media(max-width: @first-mobile){
                 align-items: center;
             }
@@ -91,7 +80,7 @@
                     font-size: 16px;
                     font-weight: 700;
                 }
-                & + & {
+                & + span {
                     font-size: 14px;
                     font-style: italic;
                 }
@@ -100,13 +89,14 @@
         &_social{
             width: 280px;
             text-align: center;
+            margin: auto 0;
             & a{
                 text-decoration: none;
             }
         }
         &_credits{
             width: 280px;
-            .flex-mixin(row, flex-end, center);
+            .flex-mixin(@justify: flex-end);
             @media(max-width: @first-mobile){
                 justify-content: center;
             }
@@ -118,16 +108,16 @@
         }
     }
 }
-:-ms-input-placeholder{
+::-webkit-input-placeholder{
     padding-left: 28px;
     color: @placeholder-text-color;
     font-size: 20px;
     font-style: italic;
     line-height: 24px;
 }
-::placeholder{
-    color: @placeholder-text-color;
-    font-size: 20px;
-    font-style: italic;
-    line-height: 24px;
+::-moz-placeholder:extend(::-webkit-input-placeholder){}
+:-ms-input-placeholder:extend(::-webkit-input-placeholder){}
+:-moz-placeholder:extend(::-webkit-input-placeholder){}
+.center_align{
+    .center-mixin();
 }
