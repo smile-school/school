@@ -26,7 +26,7 @@ header .top-menu-wrap {
     color: #fff;
     justify-content: space-between;
     padding-top: 8px;
-    padding-bottom: 3px;
+    /*padding-bottom: 3px;*/
 }
 header .top-menu-wrap .header-icon {
     fill: #c0cad3;
@@ -147,9 +147,133 @@ header .wrap-pop > label.close:hover {
     background-color: white;
     color: #222222;
 }
+header .bottom-menu-wrap {
+    display: flex;
+    color: #fff;
+    align-items: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+header .bottom-menu-wrap .logo {
+    margin-right: 24px;
+}
+header .bottom-menu-wrap .menu-but{
+    height: 40px;
+    padding-right: 10px;
+    padding-left: 10px;
+    border-radius: 3px;
+    border: 1px solid rgba(255,255,255,.5);
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    align-items: center;
+    display: flex;
+    margin-right: 24px;
+}
+header .bottom-menu-wrap .menu-but .menu-icon {
+    fill: rgba(255,255,255,.5);
+    margin-right: 10px;
+}
+header .bottom-menu-wrap .menu-but:hover {
+    background-color: rgba(255,255,255,.1);
+}
+header .bottom-menu-wrap .search {
+    flex-grow: 1;
+    margin-right: 24px;
+    height: 40px;
+    display: flex;
+}
+header .bottom-menu-wrap .search input[type=text] {
+    width: 86%;
+    font-size: 15px;
+    height: 40px;
+    border-radius: 3px 0 0 3px;
+    border: none;
+    padding-left: 40px;
+    box-sizing: border-box;
+    background: url("data:image/svg+xml;charset=utf-8,%3Csvg fill='%234E4C4C' height='18' viewBox='0 0 24 24' width='18' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath clip-rule='evenodd' d='M10 2a8 8 0 1 0 4.906 14.32l5.387 5.387a1 1 0 0 0 1.414-1.414l-5.387-5.387A8 8 0 0 0 10 2zm-6 8a6 6 0 1 1 12 0 6 6 0 0 1-12 0z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: 12px;
+    background-color: white;
+}
+header .bottom-menu-wrap .search .voice-search {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+header .bottom-menu-wrap .search .voice-search::before {
+    content: "";
+    height: 20px;
+    width: 1px;
+    background-color: #e9e9e9;
+    position: absolute;
+    left: 0;
+    display: block;
+}
+header .bottom-menu-wrap .search .voice-search .search-ico {
+    fill: #3e77aa;
+}
+header .bottom-menu-wrap .search .voice-search:hover .search-ico {
+    fill: #ff7878;
+}
+header .bottom-menu-wrap .search .but-search {
+    border-radius: 0 3px 3px 0;
+    border: none;
+    color: white;
+    padding: 0 16px;
+    font-size: 16px;
+    background-color: #00a046;
+}
+header .bottom-menu-wrap .search .but-search:hover {
+    background-color: #00bc52;
+}
+header .bottom-menu-wrap .header-actions .actions-item {
+    display: inline-block;
+    padding: 0 14px;
+}
+header .bottom-menu-wrap .header-actions .actions-item svg {
+    fill: #a6a5a5;
+}
+
 main.main .wrapper {
     display: flex;
     justify-content: space-between;
+}
+main.main .menu-left .main-menu {
+    padding: 24px 0;
+}
+main.main .menu-left .main-menu li{
+    list-style: none;
+    line-height: 30px;
+}
+main.main .menu-left .main-menu a{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: #3e77aa;
+    padding: 0 24px 0 15px;
+    font-size: 14px;
+}
+main.main .menu-left .main-menu a .hell {
+    display: flex;
+    align-items: center;
+}
+main.main .menu-left .main-menu a .hell img {
+    margin-left: 5px;
+}
+main.main .menu-left .main-menu a svg:first-child {
+    fill: #adb8c8;
+}
+main.main .menu-left .main-menu a svg:last-child {
+    fill: #3e77aa;
+}
+main.main .menu-left .main-menu a span {
+    flex-grow: 1;
+    margin-left: 8px;
 }
 main.main .content {
     padding: 40px 0 40px 40px;
