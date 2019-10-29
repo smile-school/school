@@ -2,3 +2,28 @@
     width: @width;
     height: @height;
 }
+.flex-mixin(@direction: row, @justify: center, @align: center){
+    display: flex;
+    flex-direction: @direction;
+    justify-content: @justify;
+    align-items: @align;
+}
+.horizontal-line-mixin(@width: 0px){
+    content: "";
+    position: absolute;
+    background-color: @page-horizontal-line-color;
+    width: 100%;
+    max-width: @width;
+    height: 2px;
+    bottom: -1px;
+    left: 0;
+}
+.underline-mixin(@width: 0px){
+    content: "";
+    position: absolute;
+    width: @width;
+    height: 6px;
+    background-color: @underline-color;
+    bottom: -3px;
+    left: 0;
+}

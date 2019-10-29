@@ -1,0 +1,103 @@
+/*---Footer---*/
+.footer{
+    &-container{
+        background-color: @footer-background;
+        &__quick-links,
+        &__info,
+        &__copyright{
+            width: 100%;
+            .flex-mixin(@justify: space-between, @align: flex-start);
+        }
+        &__quick-links{
+            padding: 115px 0 79px;
+            position: relative;
+            &::after{
+                .horizontal-line-mixin(@footer-wrapper-width);
+            }
+            &__links-item{
+                width: 25%;
+                &__title{
+                    font-weight: 700;
+                    padding-bottom: 17px;
+                    position: relative;
+                    &::after{
+                        .underline-mixin(89px);
+                    }
+                }
+                &__links-list{
+                    padding: 20px 0 0 5px;
+                    & li {
+                        padding: 8px 0;
+                        & a{
+                            color: @page-additional-color;
+                        }
+                    }
+                }
+                &__container {
+                    padding: 20px 0 0 5px;
+                    height: 100%;
+                }
+                &__subscribe-item{
+                    padding: 8px 0;
+                    height: 75%;
+                    .flex-mixin(@direction: column, @justify: flex-start, @align: flex-start);
+                    & label{
+                        display: inline-block;
+                        color: @footer-text-color;
+                        font-size: 15px;
+                        padding-bottom: 15px;
+                    }
+                    & .page-btn{
+                        align-self: center;
+                    }
+                }
+            }
+        }
+        &__info{
+            padding: 85px 0 105px;
+            position: relative;
+            &::after{
+                .horizontal-line-mixin(@footer-wrapper-width);
+            }
+            &__item{
+                width: 33.33%;
+                &__title{
+                    font-weight: 700;
+                    padding-bottom: 17px;
+                    position: relative;
+                    &::after{
+                        .underline-mixin(89px);
+                    }
+                }
+                &__content{
+                    padding: 40px 90px 0 0 ;
+                    color: @footer-text-color;
+                    & li {
+                        padding-bottom: 15px;
+                    }
+                }
+            }
+        }
+        &__copyright{
+            padding: 45px 0 70px;
+            align-items: center;
+            &__content span{
+                &:first-child{
+                    color: @page-main-color;
+                }
+                &:last-child{
+                    color: @footer-text-color;
+                }
+            }
+            &__pay{
+                .geometric-mixin(327px, 22px);
+                background-image: url("@{image-url}pay.png");
+            }
+        }
+    }
+    &-wrapper{
+        max-width: @footer-wrapper-width;
+        margin: 0 auto;
+    }
+}
+
