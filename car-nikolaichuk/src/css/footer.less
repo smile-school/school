@@ -3,10 +3,9 @@
     &-container{
         background-color: @footer-background;
         &__quick-links,
-        &__info,
-        &__copyright{
+        &__info{
             width: 100%;
-            .flex-mixin(@justify: space-between, @align: flex-start);
+            .flex-mixin(@justify: space-between, @align: stretch);
         }
         &__quick-links{
             padding: 115px 0 79px;
@@ -40,7 +39,6 @@
                 &__subscribe-item{
                     padding: 8px 0;
                     height: 75%;
-                    .flex-mixin(@direction: column, @justify: flex-start, @align: flex-start);
                     & label{
                         display: inline-block;
                         color: @footer-text-color;
@@ -48,7 +46,8 @@
                         padding-bottom: 15px;
                     }
                     & .page-btn{
-                        align-self: center;
+                        display: block;
+                        margin: 0 auto;
                     }
                 }
             }
@@ -60,7 +59,7 @@
                 .horizontal-line-mixin(@footer-wrapper-width);
             }
             &__item{
-                width: 33.33%;
+                width: calc(33.33% - 90px);
                 &__title{
                     font-weight: 700;
                     padding-bottom: 17px;
@@ -70,7 +69,7 @@
                     }
                 }
                 &__content{
-                    padding: 40px 90px 0 0 ;
+                    padding: 40px 0 0 ;
                     color: @footer-text-color;
                     & li {
                         padding-bottom: 15px;
@@ -80,16 +79,19 @@
         }
         &__copyright{
             padding: 45px 0 70px;
-            align-items: center;
-            &__content span{
-                &:first-child{
-                    color: @page-main-color;
-                }
-                &:last-child{
-                    color: @footer-text-color;
+            &__content{
+                float: left;
+                & span{
+                    &:first-child{
+                        color: @page-main-color;
+                    }
+                    &:last-child{
+                        color: @footer-text-color;
+                    }
                 }
             }
             &__pay{
+                float: right;
                 .geometric-mixin(327px, 22px);
                 background-image: url("@{image-url}pay.png");
             }
@@ -100,4 +102,3 @@
         margin: 0 auto;
     }
 }
-

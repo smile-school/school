@@ -69,7 +69,7 @@ h3 {
   text-transform: uppercase;
   background-color: #9c1c28;
   border: none;
-  border-radius: 1px;
+  border-radius: 23px;
   cursor: pointer;
   transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
@@ -92,18 +92,22 @@ h3 {
 .page-input:focus {
   background-color: #ffffff;
 }
+.clearfix-block::after {
+  content: "";
+  display: table;
+  clear: both;
+}
 /*---Footer---*/
 .footer-container {
   background-color: #000000;
 }
 .footer-container__quick-links,
-.footer-container__info,
-.footer-container__copyright {
+.footer-container__info {
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: stretch;
 }
 .footer-container__quick-links {
   padding: 115px 0 79px;
@@ -152,10 +156,6 @@ h3 {
 .footer-container__quick-links__links-item__subscribe-item {
   padding: 8px 0;
   height: 75%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
 }
 .footer-container__quick-links__links-item__subscribe-item label {
   display: inline-block;
@@ -164,7 +164,8 @@ h3 {
   padding-bottom: 15px;
 }
 .footer-container__quick-links__links-item__subscribe-item .page-btn {
-  align-self: center;
+  display: block;
+  margin: 0 auto;
 }
 .footer-container__info {
   padding: 85px 0 105px;
@@ -181,7 +182,7 @@ h3 {
   left: 0;
 }
 .footer-container__info__item {
-  width: 33.33%;
+  width: calc(33.33% - 90px);
 }
 .footer-container__info__item__title {
   font-weight: 700;
@@ -198,7 +199,7 @@ h3 {
   left: 0;
 }
 .footer-container__info__item__content {
-  padding: 40px 90px 0 0 ;
+  padding: 40px 0 0 ;
   color: #887979;
 }
 .footer-container__info__item__content li {
@@ -206,7 +207,9 @@ h3 {
 }
 .footer-container__copyright {
   padding: 45px 0 70px;
-  align-items: center;
+}
+.footer-container__copyright__content {
+  float: left;
 }
 .footer-container__copyright__content span:first-child {
   color: #ffffff;
@@ -215,6 +218,7 @@ h3 {
   color: #887979;
 }
 .footer-container__copyright__pay {
+  float: right;
   width: 327px;
   height: 22px;
   background-image: url("../../dist/ima/pay.png");
