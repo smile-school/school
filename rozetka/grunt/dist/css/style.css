@@ -290,7 +290,12 @@ body {
 div.wrapper {
   max-width: 1600px;
   margin: 0 auto;
-  padding: 5px 15px;
+  padding: 5px 32px;
+  box-sizing: border-box;
+}
+h1 {
+  font-size: 31px;
+  font-weight: normal;
 }
 h2 {
   font-size: 20px;
@@ -738,7 +743,7 @@ header.header .bottom-section .actions > li:hover + li {
 }
 aside.menu-left {
   width: 300px;
-  padding: 15px 0 15px 15px;
+  padding: 15px 0;
   border-right: 1px solid #e9e9e9;
   margin: -5px 0;
   box-sizing: border-box;
@@ -1051,6 +1056,7 @@ aside.menu-left .info-wrapper > p {
 }
 div.wrapper.main {
   display: flex;
+  padding: 0;
 }
 main.site-content {
   padding: 40px 0 0 40px;
@@ -1255,4 +1261,187 @@ main.site-content .video-wrap > ul li > p {
 main.site-content .video-wrap > ul li > span {
   color: white;
   font-size: 10px;
+}
+.wrapper .title-wrapper .laptops {
+  display: block;
+  color: #3e77aa;
+  margin: 24px 0 16px;
+  text-decoration: none;
+}
+.wrapper .title-wrapper .laptops:hover {
+  text-decoration: underline;
+  color: #ff7878;
+}
+.wrapper .title-wrapper .title {
+  padding-bottom: 24px;
+}
+.wrapper > input {
+  display: none;
+}
+.wrapper > #size-1:checked ~ .settings-wrap .size-wrap label:first-child {
+  background-color: #00a046;
+  border-color: #00a046;
+}
+.wrapper > #size-1:checked ~ .settings-wrap .size-wrap label:first-child > svg {
+  fill: #ffffff;
+}
+.wrapper #size-2:checked ~ .settings-wrap .size-wrap label:last-child {
+  background-color: #00a046;
+  border-color: #00a046;
+}
+.wrapper #size-2:checked ~ .settings-wrap .size-wrap label:last-child > svg {
+  fill: #ffffff;
+}
+.wrapper .settings-wrap {
+  display: flex;
+  justify-content: flex-end;
+  border-bottom: 1px solid #e9e9e9;
+  padding-bottom: 16px;
+}
+.wrapper .settings-wrap .filter {
+  padding: 0 40px 0 12px;
+  color: #221f1f;
+  height: 32px;
+  background-color: #ffffff;
+  border: 1px solid #d2d2d2;
+  border-radius: 4px;
+  -webkit-appearance: none;
+  appearance: none;
+  margin-right: 16px;
+  background-image: url("../../../img/arrow.svg");
+  background-size: 14px 9px;
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+}
+.wrapper .settings-wrap .size-wrap {
+  width: 80px;
+}
+.wrapper .settings-wrap .size-wrap > label {
+  width: 50%;
+  display: block;
+  float: left;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #d2d2d2;
+}
+.wrapper .settings-wrap .size-wrap > label:first-child {
+  border-radius: 4px 0 0 4px;
+  border-right: none;
+}
+.wrapper .settings-wrap .size-wrap > label:last-child {
+  border-radius: 0 4px 4px 0;
+  border-left: none;
+}
+.wrapper .settings-wrap .size-wrap > label > svg {
+  display: block;
+  margin: 0 auto;
+  fill: #3e77aa;
+}
+.wrapper .settings-wrap .size-wrap::after {
+  display: block;
+  content: '';
+  clear: both;
+}
+.wrapper .content-wrap {
+  display: flex;
+}
+.wrapper .content-wrap .menu-left.laptops {
+  margin: 0;
+}
+.wrapper .content-wrap .product-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+}
+.wrapper .content-wrap .product-wrap .buttons-wrap {
+  width: 32px;
+  position: absolute;
+  top: 16px;
+  right: 10px;
+  z-index: 10;
+}
+.wrapper .content-wrap .product-wrap .buttons-wrap > span {
+  display: block;
+  padding: 5px;
+  background-color: #ffffff;
+  border-radius: 4px;
+}
+.wrapper .content-wrap .product-wrap .buttons-wrap > span:first-child {
+  margin-bottom: 4px;
+}
+.wrapper .content-wrap .product-wrap .buttons-wrap > span:first-child svg {
+  stroke: #fcc10a;
+  stroke-width: 2px;
+  fill: #fff;
+}
+.wrapper .content-wrap .product-wrap .buttons-wrap > span:last-child svg {
+  fill: #a6a5a5;
+}
+.wrapper .content-wrap .product-wrap .product {
+  width: 20%;
+  border-right: 1px solid #d2d2d2;
+  border-bottom: 1px solid #d2d2d2;
+  padding: 16px;
+  box-sizing: border-box;
+  position: relative;
+}
+.wrapper .content-wrap .product-wrap .product::after {
+  display: block;
+  height: 24px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: absolute;
+  top: 10px;
+  left: 16px;
+  text-align: center;
+  padding-top: 6px;
+  box-sizing: border-box;
+  border-radius: 50px;
+  color: #ffffff;
+}
+.wrapper .content-wrap .product-wrap .product.super-price::after {
+  content: 'Суперціна';
+  width: 89px;
+  background-color: #ff5c00;
+}
+.wrapper .content-wrap .product-wrap .product.best-choice::after {
+  content: 'вибір розетки';
+  width: 114px;
+  background-color: #31a3db;
+}
+.wrapper .content-wrap .product-wrap .product.action::after {
+  content: 'акція';
+  width: 55px;
+  background-color: #f84147;
+}
+.wrapper .content-wrap .product-wrap .product.sale::after {
+  content: '-16%';
+  width: 45px;
+  background-color: #f84147;
+}
+.wrapper .content-wrap .product-wrap .product .product-image {
+  display: block;
+  position: relative;
+  margin: 16px 0 40px;
+}
+.wrapper .content-wrap .product-wrap .product .product-image > img {
+  width: 100%;
+}
+.wrapper .content-wrap .product-wrap .product .product-image > img:last-child {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+.wrapper .content-wrap .product-wrap .product .product-image:hover > img:first-child {
+  opacity: 0;
+}
+.wrapper .content-wrap .product-wrap .product .product-image:hover > img:last-child {
+  opacity: 1;
+}
+.wrapper .content-wrap .product-wrap .product .article-text {
+  font-size: 14px;
 }
