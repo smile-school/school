@@ -767,6 +767,10 @@ main.main aside.menu-left {
   position: sticky;
   bottom: 0;
   align-self: flex-end;
+  z-index: 300;
+}
+main.main aside.menu-left:hover .menu-aside-up {
+  display: block;
 }
 main.main .content .main-slider .slider-dots label:hover,
 main.main .content .main-slider #s1:checked ~ .slider-dots label.s1,
@@ -806,7 +810,7 @@ input.action-form:checked ~ .enter-offece {
 }
 .menu-aside-up {
   position: absolute;
-  width: 50%;
+  width: 600px;
   right: 5%;
   top: 0;
   left: 310px;
@@ -816,9 +820,7 @@ input.action-form:checked ~ .enter-offece {
   background-color: #ffffff;
   columns: 3;
   min-height: 460px;
-}
-.menu-aside-up ul {
-  width: 32%;
+  display: none;
 }
 .menu-aside-up ul li {
   padding: 2px 12px;

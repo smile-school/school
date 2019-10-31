@@ -377,6 +377,12 @@ main.main {
             position: sticky;
             bottom: 0;
             align-self: flex-end;
+            z-index: 300;
+            &:hover {
+                .menu-aside-up{
+                    display: block;
+                }
+            }
         }
     }
 }
@@ -436,7 +442,7 @@ input {
 
 .menu-aside-up {
     position: absolute;
-    width: 50%;
+    width: 600px;
     right: 5%;
     top: 0;
     left: 310px;
@@ -446,9 +452,9 @@ input {
     background-color: @white-color;
     columns: 3;
     min-height: 460px;
+    display: none;
 
     ul {
-        width: 32%;
 
         li {
             padding: 2px 12px;
