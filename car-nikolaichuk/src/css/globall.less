@@ -20,6 +20,9 @@ h2{
 h3 {
     font-size: @h3-font-size;
     text-transform: uppercase;
+    @media(max-width: @tablet) {
+        font-size: @h3-font-size-tablet;
+    }
 }
 .page-wrapper {
     max-width: @page-wrapper-width;
@@ -36,6 +39,12 @@ h3 {
     color: @page-main-color;
     font-size: 22px;
     padding: 0 12px;
+    @media(max-width: @second-desktop){
+        font-size: 17px;
+    }
+    @media(max-width: @tablet){
+        padding: 0 8px;
+    }
 }
 .page-btn{
     padding: 11px 35px;
@@ -49,6 +58,11 @@ h3 {
     cursor: pointer;
     transition: color .2s ease-in-out,
     background-color .2s ease-in-out;
+    @media(max-width: @tablet){
+        padding: 8px 20px;
+        font-size: 16px;
+        border-radius: 12px;
+    }
 }
 .page-btn:hover{
     color: @page-main-color;

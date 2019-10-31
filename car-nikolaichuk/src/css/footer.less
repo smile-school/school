@@ -13,6 +13,9 @@
             &::after{
                 .horizontal-line-mixin(@footer-wrapper-width);
             }
+            @media(max-width: @second-desktop){
+                padding: 80px 15px 30px;
+            }
             &__links-item{
                 width: 25%;
                 &__title{
@@ -58,8 +61,14 @@
             &::after{
                 .horizontal-line-mixin(@footer-wrapper-width);
             }
+            @media(max-width: @second-desktop){
+                padding: 60px 15px 30px;
+            }
             &__item{
                 width: calc(33.33% - 90px);
+                @media(max-width: @second-desktop){
+                    width: calc(33.33% - 38px);
+                }
                 &__title{
                     font-weight: 700;
                     padding-bottom: 17px;
@@ -79,6 +88,9 @@
         }
         &__copyright{
             padding: 45px 0 70px;
+            @media(max-width: @second-desktop){
+                padding: 40px 15px;
+            }
             &__content{
                 float: left;
                 & span{
