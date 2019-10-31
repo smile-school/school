@@ -1,7 +1,7 @@
 .wrapper {
     .title-wrapper {
         .laptops {
-            display: block;
+            display: inline-block;
             color: #3e77aa;
             margin: 24px 0 16px;
             text-decoration: none;
@@ -14,6 +14,8 @@
 
         .title {
             padding-bottom: 24px;
+            margin: 0;
+            line-height: 42px;
         }
     }
 
@@ -30,7 +32,16 @@
 
                     & > svg {
                         fill: #ffffff;
+
                     }
+                }
+            }
+        }
+
+        & ~ .content-wrap {
+            .product-wrap {
+                .product {
+                    width: 25%;
                 }
             }
         }
@@ -76,7 +87,6 @@
         .size-wrap {
             width: 80px;
 
-
             & > label {
                 width: 50%;
                 display: block;
@@ -113,15 +123,14 @@
     .content-wrap {
         display: flex;
 
-
-        .menu-left.laptops {
+        .menu-left.laptop-filter {
             margin: 0;
         }
 
         .product-wrap {
             display: flex;
             flex-wrap: wrap;
-            flex-grow: 1;
+            max-width: calc(100% - 300px);
 
             .buttons-wrap {
                 width: 32px;
@@ -132,22 +141,33 @@
 
                 & > span {
                     display: block;
-                    padding: 5px;
+                    padding-top: 4px;
                     background-color: #ffffff;
                     border-radius: 4px;
+                    width: 32px;
+                    height: 32px;
+                    box-sizing: border-box;
 
                     &:first-child {
                         margin-bottom: 4px;
+
+                        &:hover {
+                            background-color: #f4faf6;
+                        }
 
                         svg {
                             stroke: #fcc10a;
                             stroke-width: 2px;
                             fill: #fff;
+                            display: block;
+                            margin: 0 auto;
                         }
                     }
 
                     &:last-child svg {
                         fill: #a6a5a5;
+                        display: block;
+                        margin: 0 auto;
                     }
                 }
             }
@@ -159,6 +179,17 @@
                 padding: 16px;
                 box-sizing: border-box;
                 position: relative;
+
+                /*&::before{
+                    display: none;
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    left: 0;
+                    bottom: 0;
+                    background-color: #ffffff;
+                }*/
 
                 &::after {
                     display: block;
@@ -183,6 +214,7 @@
                         background-color: #ff5c00;
                     }
                 }
+
                 &.best-choice {
                     &::after {
                         content: 'вибір розетки';
@@ -190,6 +222,7 @@
                         background-color: #31a3db;
                     }
                 }
+
                 &.action {
                     &::after {
                         content: 'акція';
@@ -197,6 +230,7 @@
                         background-color: #f84147;
                     }
                 }
+
                 &.sale {
                     &::after {
                         content: '-16%';
@@ -238,9 +272,125 @@
 
                 .article-text {
                     font-size: 14px;
+                    margin-bottom: 8px;
+                }
+
+                .rating-wrap {
+                    margin-bottom: 8px;
+
+                    span {
+                        &.rating {
+                            margin-right: 4px;
+                        }
+
+                        &.reviews {
+                            color: #3e77aa;
+                            font-size: 12px;
+                            cursor: pointer;
+
+                            &:hover {
+
+                                color: #ff7878;
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                }
+
+                .last-price {
+                    color: #a6a5a5;
+                    text-decoration: line-through;
+                }
+
+                .new-price {
+                    display: flex;
+                    justify-content: space-between;
+
+                    & > span {
+                        &:first-child {
+                            color: #f84147;
+                            font-size: 24px;
+                        }
+
+                        &:last-child {
+                            width: 32px;
+                            height: 32px;
+                            border-radius: 4px;
+                            padding-top: 4px;
+
+                            &:hover {
+                                background-color: #f4faf6;
+                            }
+
+                            svg {
+                                fill: #00a046;
+                                display: block;
+                                margin: 0 auto;
+                            }
+                        }
+                    }
+                }
+
+                .available {
+                    margin-bottom: 16px;
+                    color: #00a046;
+                    display: block;
+
                 }
 
 
+
+                .info {
+                    display: none;
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    left: 0;
+
+                    transform: scale(0);
+                    padding: 0 16px ;
+                    background-color: #ffffff;
+                    .images {
+                        display: flex;
+                        margin-bottom: 16px;
+
+                        & > li {
+                            width: 25%;
+
+                            img {
+                                max-width: 48px;
+                                display: block;
+                            }
+                        }
+                    }
+
+                    .info-text {
+                        color: #797878;
+                        font-size: 12px;
+                        margin-bottom: 12px;
+                    }
+
+                }
+                &:hover{
+                    /*&::before{
+                        z-index: 10;
+                        -webkit-box-shadow: 0 2px 16px rgba(0,0,0,.24);
+                        top: -5px;
+                        bottom: -5px;
+                        left: -5px;
+                        right: -5px;
+                        display: none;
+                    }*/
+                    z-index: 20;
+                    background-color: #fff;
+
+                    .info{
+                        display: block;
+                        transform: translateY(100%);
+                        /*-webkit-box-shadow: 0 2px 16px rgba(0,0,0,.24);*/
+                    }
+
+                }
             }
         }
     }
