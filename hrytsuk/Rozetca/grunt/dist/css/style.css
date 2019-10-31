@@ -15,13 +15,13 @@ ul {
 header {
   background-color: #122538;
 }
-.wraper {
+.wrapper {
   padding: 0 32px;
   max-width: 1600px;
   margin: 0 auto;
   box-sizing: border-box;
 }
-.wraper a {
+.wrapper a {
   text-decoration: none;
 }
 .top-menu-wrap {
@@ -30,12 +30,12 @@ header {
   padding: 10px 0;
   color: #ffffff;
 }
-.sw-land {
+.sw-lang {
   display: flex;
   margin-right: 24px;
   position: relative;
 }
-.sw-land::after {
+.sw-lang::after {
   content: "";
   position: absolute;
   left: 50%;
@@ -45,18 +45,18 @@ header {
   height: 9px;
   background-color: rgba(255, 255, 255, 0.2);
 }
-.sw-land,
-.sw-land li,
+.sw-lang,
+.sw-lang li,
 .sw-city li {
   padding: 0 5px;
 }
-.sw-land li a {
+.sw-lang li a {
   text-decoration: none;
 }
-.sw-land li:first-of-type a {
+.sw-lang li:first-of-type a {
   color: #ffffff;
 }
-.sw-land li:last-of-type a {
+.sw-lang li:last-of-type a {
   color: rgba(255, 255, 255, 0.5);
 }
 .top-menu-wrap > div {
@@ -418,6 +418,19 @@ main.main .content .main-slider #s3:checked ~ .slider-dots label.s3 {
   background-color: rgba(255, 255, 255, 0.9);
   border-color: red;
 }
+.darc-fon {
+  position: absolute;
+  width: 100%;
+  height: 200vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000;
+  opacity: 0.5;
+  z-index: 29;
+  display: none;
+}
 input[name=exid] {
   display: none;
 }
@@ -428,10 +441,10 @@ label.action-form {
 label.action-form:hover {
   border-color: transparent;
 }
-label.action-form:checked ~ .darc-fon {
+input.action-form:checked ~ .darc-fon {
   display: block;
 }
-label.action-form:checked ~ .enter-offece {
+input.action-form:checked ~ .enter-offece {
   transform: translate(-50%, -50%) scale(1);
 }
 .menu-aside-up {
@@ -517,35 +530,22 @@ label.action-form:checked ~ .enter-offece {
   border-radius: 8px;
   transition: all 0.5s;
 }
-.darc-fon {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #000;
-  opacity: 0.5;
-  z-index: 29;
-  display: none;
-}
 .regisr {
   width: 322px;
   padding: 0 24px;
   border-right: 1px solid #d2d2d2;
   position: relative;
 }
-.regisr::after {
+.regisr .form-top input {
+  height: 40px;
+}
+div.regisr::after {
   content: "або";
   position: absolute;
   color: #797878;
   background-color: #ffffff;
   right: -10px;
   top: 50%;
-}
-.regisr .form-top input {
-  height: 40px;
 }
 .contact-inform {
   display: flex;
@@ -830,7 +830,7 @@ label.action-form:checked ~ .enter-offece {
 }
 .goods-bloc a img {
   max-width: 100%;
-  max-height: 140px;
+  max-height: 100px;
   margin-bottom: 16px;
 }
 .goods-bloc a img:last-of-type {
