@@ -143,11 +143,11 @@ header .sw-city .city #window:checked ~ .wrapper-pop {
   display: block;
 }
 .enter-offece {
-  position: absolute;
+  position: fixed;
   top: 400px;
   left: 50%;
   transform: translate(-50%, -50%) scale(0);
-  z-index: 30;
+  z-index: 501;
   background-color: #ffffff;
   max-width: 640px;
   height: 350px;
@@ -769,7 +769,10 @@ main.main aside.menu-left {
   align-self: flex-end;
   z-index: 300;
 }
-main.main aside.menu-left:hover .menu-aside-up {
+main.main aside.menu-left ul li a.li-one:hover .one-div {
+  display: block;
+}
+main.main aside.menu-left ul li a.li-twoo:hover .two-div {
   display: block;
 }
 main.main .content .main-slider .slider-dots label:hover,
@@ -780,7 +783,7 @@ main.main .content .main-slider #s3:checked ~ .slider-dots label.s3 {
   border-color: red;
 }
 .darc-fon {
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 200vh;
   top: 0;
@@ -789,7 +792,7 @@ main.main .content .main-slider #s3:checked ~ .slider-dots label.s3 {
   bottom: 0;
   background-color: #000;
   opacity: 0.5;
-  z-index: 29;
+  z-index: 500;
   display: none;
 }
 input[name=exid] {
@@ -873,6 +876,9 @@ input.action-form:checked ~ .enter-offece {
 .menu-aside-price a svg {
   padding-right: 10px;
   fill: #adb8c8;
+}
+.menu-aside-price a.li-one .one-div {
+  display: none;
 }
 .menu-aside-price a.li-one:hover ~ .one-div {
   display: flex;
