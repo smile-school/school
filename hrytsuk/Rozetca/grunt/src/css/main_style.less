@@ -488,6 +488,7 @@ input {
                     color: @bacground-bloc-a;
                 }
             }
+
         }
     }
 }
@@ -519,7 +520,7 @@ input {
             color: @hover-color-a;
         }
 
-        &:not(:nth-last-child(-n+3)) {
+        &:not(:nth-last-child(-n+2)) {
             &:hover {
                 svg {
                     &:last-of-type {
@@ -529,7 +530,7 @@ input {
             }
         }
 
-        &:not(:nth-last-child(-n+5)) {
+        &:not(:nth-last-child(-n+2)) {
             svg {
                 &:last-of-type {
                     fill: @color-fill-a;
@@ -550,10 +551,13 @@ input {
 
         &.li-one {
             .one-div{
-                display: none;
+
             }
             &:hover {
-                & ~ .one-div {
+                 & ~ .menu-aside-up .one-div {
+
+                }
+               & ~ .menu-aside-up{
                     display: flex;
                 }
             }
