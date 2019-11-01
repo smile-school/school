@@ -75,11 +75,79 @@ header {
 .top-menu-wrap .phone svg:last-of-type {
   padding-left: 5px;
 }
+.top-menu-wrap .phone span label {
+  border-bottom: 1px dashed #ffffff;
+  cursor: pointer;
+}
+.top-menu-wrap .phone span label:hover {
+  border-color: transparent;
+}
 .top-menu-wrap .phone a {
   margin-left: 25px;
   color: #ffffff;
   font-size: 14px;
   text-decoration: none;
+}
+.top-menu-wrap .phone .phone-bloc-action {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  max-width: 440px;
+  transform: translate(-50%, -50%) scale(0);
+  z-index: 500;
+  background-color: #ffffff;
+  color: #333;
+  padding: 10px 24px 24px;
+  border-radius: 8px;
+  transition: all 0.5s;
+}
+.top-menu-wrap .phone .phone-bloc-action .top-bloc-phone {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.top-menu-wrap .phone .phone-bloc-action .top-bloc-phone .ehit-phone {
+  font-size: 24px;
+}
+.top-menu-wrap .phone .phone-bloc-action .top-bloc-phone h3 {
+  font-size: 24px;
+  font-weight: 400;
+}
+.top-menu-wrap .phone .phone-bloc-action .top-bloc-phone label:hover {
+  color: #ff7878;
+}
+.top-menu-wrap .phone .phone-bloc-action .phone-coll {
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+.top-menu-wrap .phone .phone-bloc-action .phone-coll p {
+  margin-bottom: 8px;
+}
+.top-menu-wrap .phone .phone-bloc-action .phone-coll a {
+  color: #3e77aa;
+  margin: 0 16px 8px 0;
+}
+.top-menu-wrap .phone .phone-bloc-action .phone-coll a:hover {
+  color: #ff7878;
+}
+.top-menu-wrap .phone .phone-bloc-action .schedule-hours {
+  margin-bottom: 16px;
+}
+.top-menu-wrap .phone .phone-bloc-action .schedule-hours p {
+  font-size: 16px;
+}
+.top-menu-wrap .phone .phone-bloc-action .schedule-hours dl {
+  font-size: 14px;
+}
+.top-menu-wrap .phone span input[name=exids] {
+  display: none;
+}
+.top-menu-wrap .phone span input[class=action-phone]:checked ~ .phone-bloc-action {
+  transform: translate(-50%, -50%) scale(1);
+}
+.top-menu-wrap .phone span input[class=action-phone]:checked ~ .darc-fon {
+  display: block;
 }
 .velcom svg {
   fill: #a6a5a5;
@@ -369,9 +437,30 @@ div.regisr::after {
 .schop-menu .menu-ul-shop {
   display: flex;
   align-items: center;
+  position: relative;
 }
 .schop-menu .menu-ul-shop li:not(:last-of-type) {
   margin-right: 20px;
+}
+.schop-menu .menu-ul-shop li.heade-li-one:hover .one-bloc {
+  display: flex;
+}
+.schop-menu .menu-ul-shop li.heade-li-two .two-bloc p {
+  padding-bottom: 10px;
+}
+.schop-menu .menu-ul-shop li.heade-li-two .two-bloc svg {
+  fill: #fff;
+  stroke: #fcc10a;
+  stroke-width: 2px;
+}
+.schop-menu .menu-ul-shop li.heade-li-two:hover .two-bloc {
+  display: flex;
+}
+.schop-menu .menu-ul-shop li.heade-li-three:hover .three-bloc {
+  display: flex;
+}
+.schop-menu .menu-ul-shop li.heade-li-three .three-bloc svg {
+  fill: #00a046;
 }
 .schop-menu .menu-ul-shop li a svg {
   fill: #a6a5a5;
@@ -498,6 +587,38 @@ div.regisr::after {
   stroke: #fcc10a;
   stroke-width: 2px;
   fill: #fff;
+}
+.actions-balance {
+  position: absolute;
+  top: 130%;
+  right: 0;
+  background-color: #ffffff;
+  border-radius: 6px;
+  width: 530px;
+  z-index: 800;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px 30px;
+  box-sizing: border-box;
+  box-shadow: 0 8px 16px 4px rgba(0, 0, 0, 0.35), inset 0 -3px #cfcfcf;
+  display: none;
+}
+.actions-balance .action-header-text {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+}
+.actions-balance .action-header-text p {
+  color: #333;
+}
+.actions-balance .action-header-text p:first-of-type {
+  font-size: 200%;
+  margin-bottom: 14px;
+}
+.actions-balance .action-header-img svg {
+  fill: #cbd3df;
+  vertical-align: bottom;
 }
 .velcom-bloc {
   display: flex;
@@ -862,10 +983,10 @@ input.action-form:checked ~ .enter-offece {
   text-decoration: underline;
   color: #ff7878;
 }
-.menu-aside-price a:not(:nth-last-child(-n+3)):hover svg:last-of-type {
+.menu-aside-price a:not(:nth-last-child(-n+2)):hover svg:last-of-type {
   fill: #ff7878;
 }
-.menu-aside-price a:not(:nth-last-child(-n+5)) svg:last-of-type {
+.menu-aside-price a:not(:nth-last-child(-n+2)) svg:last-of-type {
   fill: #3e77aa;
   position: absolute;
   right: 16px;
@@ -877,9 +998,6 @@ input.action-form:checked ~ .enter-offece {
   padding-right: 10px;
   fill: #adb8c8;
 }
-.menu-aside-price a.li-one .one-div {
-  display: none;
-}
-.menu-aside-price a.li-one:hover ~ .one-div {
+.menu-aside-price a.li-one:hover ~ .menu-aside-up {
   display: flex;
 }
