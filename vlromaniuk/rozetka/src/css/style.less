@@ -21,6 +21,10 @@ body {
 .dashed-border() {
   border-bottom: 1px white dashed;
 }
+.width-content-menu(){
+  display: block;
+  width:20%;
+}
 
 .margin-right() {
   margin-right: 24px;
@@ -762,18 +766,20 @@ header {
 main{
   .wrapper{
     display: flex;
+    position: relative;
     aside{
-      width: 300px;
       border-right: 1px solid lightgrey;
       padding-top: 24px;
-      position: sticky;
-      bottom: 0;
-      align-self: flex-end;
       display: flex;
       flex-direction: column;
-      li{
-        list-style-type: none;
-        a{
+      &>ul{
+        width: 300px;
+      &>li{
+        .li();
+        &:hover > .hidden-menu{
+          display: flex;
+        }
+        &>a{
           display: flex;
           color: @menu-color;
           fill: @menu-color;
@@ -807,6 +813,81 @@ main{
             }
           }
         }
+        .hidden-menu{
+          position: absolute;
+          padding: 8px;
+          padding-bottom: 60px;
+          z-index: 1;
+          top: 0;
+          left: 325px;
+          right: 0;
+          display: none;
+          flex-wrap: wrap;
+          background-color: white;
+          .column-cat{
+            width: 20%;
+            .products{
+              .title-products{
+                margin-bottom: 4px;
+                margin-top: 8px;
+                padding-left: 12px;
+                padding-right: 12px;
+                font-size: 16px;
+                line-height: 18px;
+                color: #3e77aa;
+                cursor: pointer;
+              }
+              li{
+                padding: 2px 12px;
+                overflow: hidden;
+                font-size: 13px;
+                line-height: 15px;
+                white-space: nowrap;
+                position: relative;
+                &::after{
+                  content: '';
+                  background: linear-gradient(to right,rgba(255,255,255,.4) 0,#fff 55%);
+                  height: 100%;
+                  width: 20px;
+                  display: block;
+                  position: absolute;
+                  right: 0;
+                  top: 0;
+                }
+                a{
+                  text-decoration: none;
+                  color: @dark-color;
+                }
+              }
+            }
+          }
+          .top-products{
+            .width-content-menu();
+            background-color: @top-bg-hidden-menu;
+            li{
+              padding: 2px 12px;
+              overflow: hidden;
+              font-size: 13px;
+              line-height: 15px;
+              white-space: nowrap;
+              a{
+                text-decoration: none;
+                color: @dark-color;
+              }
+            }
+          }
+          .title-top-product{
+            padding-left: 12px;
+            padding-right: 12px;
+            font-size: 16px;
+            line-height: 18px;
+            color: @darken;
+          }
+          li{
+           .li();
+          }
+        }
+      }
       }
       .aside-login{
         margin-top: 24px;
@@ -854,6 +935,11 @@ main{
           display: flex;
           justify-content: space-around;
         }
+      }
+      .sticy{
+        position: sticky;
+        bottom: 0;
+        top: 0;
       }
       .caal-centre{
         padding: 16px 40px 0 20px;

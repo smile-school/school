@@ -637,21 +637,24 @@ header .bottom-header .actions > section .popup .r p {
 }
 main .wrapper {
   display: flex;
+  position: relative;
 }
 main .wrapper aside {
-  width: 300px;
   border-right: 1px solid lightgrey;
   padding-top: 24px;
-  position: sticky;
-  bottom: 0;
-  align-self: flex-end;
   display: flex;
   flex-direction: column;
 }
-main .wrapper aside li {
+main .wrapper aside > ul {
+  width: 300px;
+}
+main .wrapper aside > ul > li {
   list-style-type: none;
 }
-main .wrapper aside li a {
+main .wrapper aside > ul > li:hover > .hidden-menu {
+  display: flex;
+}
+main .wrapper aside > ul > li > a {
   display: flex;
   color: #adb8c8;
   fill: #adb8c8;
@@ -659,31 +662,104 @@ main .wrapper aside li a {
   text-decoration: none;
   align-items: center;
 }
-main .wrapper aside li a:hover {
+main .wrapper aside > ul > li > a:hover {
   text-decoration: underline;
   background-color: #fcfcee;
   color: #ff7878;
 }
-main .wrapper aside li a span:nth-child(1) {
+main .wrapper aside > ul > li > a span:nth-child(1) {
   margin-right: 8px;
 }
-main .wrapper aside li a span:nth-child(2) {
+main .wrapper aside > ul > li > a span:nth-child(2) {
   flex-grow: 1;
   color: #3e77aa;
 }
-main .wrapper aside li a span:nth-child(2):hover {
+main .wrapper aside > ul > li > a span:nth-child(2):hover {
   color: #ff7878;
 }
-main .wrapper aside li a span:nth-child(3) {
+main .wrapper aside > ul > li > a span:nth-child(3) {
   margin-right: 16px;
 }
-main .wrapper aside li a .offer {
+main .wrapper aside > ul > li > a .offer {
   display: flex;
   align-items: center;
   margin-bottom: 7px;
 }
-main .wrapper aside li a .offer img {
+main .wrapper aside > ul > li > a .offer img {
   padding-left: 8px;
+}
+main .wrapper aside > ul > li .hidden-menu {
+  position: absolute;
+  padding: 8px;
+  padding-bottom: 60px;
+  z-index: 1;
+  top: 0;
+  left: 325px;
+  right: 0;
+  display: none;
+  flex-wrap: wrap;
+  background-color: white;
+}
+main .wrapper aside > ul > li .hidden-menu .column-cat {
+  width: 20%;
+}
+main .wrapper aside > ul > li .hidden-menu .column-cat .products .title-products {
+  margin-bottom: 4px;
+  margin-top: 8px;
+  padding-left: 12px;
+  padding-right: 12px;
+  font-size: 16px;
+  line-height: 18px;
+  color: #3e77aa;
+  cursor: pointer;
+}
+main .wrapper aside > ul > li .hidden-menu .column-cat .products li {
+  padding: 2px 12px;
+  overflow: hidden;
+  font-size: 13px;
+  line-height: 15px;
+  white-space: nowrap;
+  position: relative;
+}
+main .wrapper aside > ul > li .hidden-menu .column-cat .products li::after {
+  content: '';
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.4) 0, #fff 55%);
+  height: 100%;
+  width: 20px;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+main .wrapper aside > ul > li .hidden-menu .column-cat .products li a {
+  text-decoration: none;
+  color: #333;
+}
+main .wrapper aside > ul > li .hidden-menu .top-products {
+  display: block;
+  width: 20%;
+  background-color: #f8f8f8;
+}
+main .wrapper aside > ul > li .hidden-menu .top-products li {
+  padding: 2px 12px;
+  overflow: hidden;
+  font-size: 13px;
+  line-height: 15px;
+  white-space: nowrap;
+}
+main .wrapper aside > ul > li .hidden-menu .top-products li a {
+  text-decoration: none;
+  color: #333;
+}
+main .wrapper aside > ul > li .hidden-menu .title-top-product {
+  padding-left: 12px;
+  padding-right: 12px;
+  font-size: 16px;
+  line-height: 18px;
+  color: #999;
+}
+main .wrapper aside > ul > li .hidden-menu li {
+  list-style-type: none;
 }
 main .wrapper aside .aside-login {
   margin-top: 24px;
@@ -731,6 +807,11 @@ main .wrapper aside .download {
 main .wrapper aside .download > section {
   display: flex;
   justify-content: space-around;
+}
+main .wrapper aside .sticy {
+  position: sticky;
+  bottom: 0;
+  top: 0;
 }
 main .wrapper aside .caal-centre {
   padding: 16px 40px 0 20px;
