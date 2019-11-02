@@ -769,12 +769,29 @@ main{
     position: relative;
     aside{
       border-right: 1px solid lightgrey;
-      padding-top: 24px;
       display: flex;
       flex-direction: column;
+      .overlay{
+        display: none;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0,0,0,.5);
+        z-index: 1;
+      }
+
       &>ul{
         width: 300px;
+        z-index: 2;
+        background: white;
+        padding-top: 24px;
+        &:hover ~ .overlay{
+          display: block;
+        }
       &>li{
+        padding-left: 15px;
         .li();
         &:hover > .hidden-menu{
           display: flex;
@@ -820,7 +837,7 @@ main{
           z-index: 1;
           top: 0;
           left: 325px;
-          right: 0;
+          right: 30px;
           display: none;
           flex-wrap: wrap;
           background-color: white;

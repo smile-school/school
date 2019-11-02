@@ -641,14 +641,30 @@ main .wrapper {
 }
 main .wrapper aside {
   border-right: 1px solid lightgrey;
-  padding-top: 24px;
   display: flex;
   flex-direction: column;
 }
+main .wrapper aside .overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
 main .wrapper aside > ul {
   width: 300px;
+  z-index: 2;
+  background: white;
+  padding-top: 24px;
+}
+main .wrapper aside > ul:hover ~ .overlay {
+  display: block;
 }
 main .wrapper aside > ul > li {
+  padding-left: 15px;
   list-style-type: none;
 }
 main .wrapper aside > ul > li:hover > .hidden-menu {
@@ -695,7 +711,7 @@ main .wrapper aside > ul > li .hidden-menu {
   z-index: 1;
   top: 0;
   left: 325px;
-  right: 0;
+  right: 30px;
   display: none;
   flex-wrap: wrap;
   background-color: white;
