@@ -1,0 +1,219 @@
+.wrapper{
+    padding: 0 24px;
+}
+.top-main-laptop{
+    display: flex;
+    flex-direction: column;
+    h1{
+        font-size: @font-h1;
+        margin-bottom: 24px;
+    }
+    ul{
+        &.ul-list-laptop{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            overflow: auto;
+            margin-bottom: 24px;
+            li{
+                display: inline-block;
+                box-sizing: border-box;
+                border-right: 1px solid @border-color1;
+                width:13%;
+                margin-bottom: 20px;
+                a{
+                    display: block;
+                    text-align: center;
+                    box-sizing: border-box;
+                    text-decoration: none;
+                    color:@bacground-bloc-a;
+                    cursor: pointer;
+                    max-width: 100%;
+                    height: 100%;
+                    padding: 0 16px;
+                    &:hover{
+                        text-decoration: underline;
+                        color: @hover-color-a;
+                    }
+                    span{
+                        &.power-img{
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            justify-content: center;
+                            height: 120px;
+                            margin-bottom: 16px;
+                            img{
+                                max-width: 100%;
+                                max-height: 100%;
+                                vertical-align: middle;
+                            }
+                        }
+                        &.info-power-lap{
+                            display: block;
+                            font-size: @font-size-h4;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.catalog-set{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    padding-bottom: 20px;
+    border-bottom: 1px solid @border-color1;
+    justify-content: flex-end;
+}
+.selection{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    .select-viev{
+        color: @select-color;
+        padding: 0 40px 0 12px;
+        font-size:@font-size-h4 ;
+        height: 32px;
+        box-sizing: border-box;
+        border-radius: 4px;
+        border: 1px solid @border-color-registr;
+        background-color: @white-color;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg fill='%233e77aa' viewBox='0 0 13 7'… 0 .839.839 0 0 1 0 1.237l-5.572 5.25A.956.956 0 0 1 6.5 7z'/%3E%3C/svg%3E");
+         background-size: 14px 9px;
+         background-repeat: no-repeat;
+        background-position: right 12px center;
+        &:hover{
+            border-color:@border-sel ;
+        }
+    }
+    .sel-bloc-input{
+        margin-left: 20px;
+        border: 1px solid @border-color-registr;
+       display: flex;
+        flex-direction: row;
+        align-items: center;
+        border-radius: 4px;
+        input[type=radio]{
+            display: none;
+        }
+        label{
+            padding: 2px 8px;
+            box-sizing: border-box;
+            height: 32px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &:first-of-type{
+                background-color: @white-color;
+                border-right: 1px solid @border-color-registr;;
+                svg{
+                    fill: @color-fill-a;
+                }
+            }
+            &:last-of-type{
+                background-color: @gray-fill;
+                svg{
+                    fill: @white-fill;
+                }
+            }
+        }
+    }
+}
+.menu-sitebar{
+    width: 250px;
+}
+.sitebar-product{
+    display: flex;
+    flex-direction: row;
+}
+.bloc-sitebar{
+    border-right: 1px solid @border-color1;
+    border-bottom: 1px solid @border-color1;
+    font-size: @font-size-h4;
+}
+.top-as{
+    padding: 8px 32px 8px 8px;
+    position: relative;
+    input{
+        display: none;
+        &:checked{
+            & ~ svg{
+                transform: rotate(180deg);
+            }
+        }
+    }
+    label{
+        font-size:@font-size-h4 ;
+        color: @bacground-bloc-a;
+        display: block;
+        width: 100%;
+        cursor: pointer;
+        span{
+            color: @spn-color;
+        }
+    }
+    svg{
+        position: absolute;
+        right: 16px;
+        fill: @color-fill-a;
+        top: 10px;
+        transition: all .5s;
+    }
+}
+.bott-as{
+    overflow-y: hidden;
+    padding-bottom: 21px;
+    ul{
+        margin-top: 2px;
+        padding-right: 32px;
+        li{
+            padding: 8px;
+            a{
+                color: @blac-color-text;
+                text-decoration: none;
+                label{
+                    padding-left: 24px;
+                    position: relative;
+                    cursor: pointer;
+                    &:after{
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        width: 14px;
+                        height: 14px;
+                        border: 1px solid @border-color-registr;
+                        border-radius: 4px;
+                        background-color: @white-color;
+                    }
+                    span{
+                        font-size: @font-size-standart;
+                        color: @spn-color;
+                        padding-left: 6px;
+                    }
+                }
+                input{
+                    display: none;
+                    &:checked{
+                        & + label{
+                            &:after{
+                                content: "\2714";
+                                background-color: @shade-bcground-gray;
+                                text-align: center;
+                                align-items: center;
+                                color: @white-color;
+                                background-size: 10px 8px;
+                                border-color: @shade-bcground-gray;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
