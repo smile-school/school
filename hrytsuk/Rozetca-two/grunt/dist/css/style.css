@@ -698,6 +698,9 @@ input.action-form:checked ~ .enter-offece {
   }
 }
 @media screen and (max-width: 1000px) {
+  div.wrapper {
+    padding: 0 16px;
+  }
   .top-menu-wrap {
     display: none;
   }
@@ -719,6 +722,32 @@ input.action-form:checked ~ .enter-offece {
   }
   .mobile-menu {
     display: block;
+  }
+  .catalog-price li {
+    width: 33%;
+  }
+}
+@media screen and (max-width: 760px) {
+  div.wrapper {
+    padding: 0 8px;
+  }
+  .bottom-menu > a {
+    display: none;
+  }
+  .bottom-menu .menu-ul-shop {
+    justify-content: center;
+  }
+  .bottom-menu .menu-ul-shop .heade-li-two {
+    display: none;
+  }
+  .bottom-menu .search-form button {
+    display: none;
+  }
+  .bottom-menu .search-form input {
+    width: 100%;
+  }
+  .schop-menu {
+    margin-left: 0;
   }
 }
 .wrapper {
@@ -783,9 +812,27 @@ input.action-form:checked ~ .enter-offece {
   display: flex;
   flex-direction: row;
   align-items: flex-end;
+  justify-content: flex-end;
   padding-bottom: 20px;
   border-bottom: 1px solid #e9e9e9;
-  justify-content: flex-end;
+}
+.catalog-set .select-bottom {
+  background-color: #00a046;
+  outline: 0;
+  color: #ffffff;
+  font-size: 14px;
+  height: 32px;
+  padding: 1px 16px;
+  border: 0;
+  border-radius: 4px;
+  display: none;
+}
+.catalog-set .select-bottom:hover {
+  background-color: #00bc52;
+}
+.catalog-set .select-bottom svg {
+  fill: #fff;
+  margin-right: 16px;
 }
 .selection {
   display: flex;
@@ -1191,7 +1238,42 @@ input.action-form:checked ~ .enter-offece {
   .top-main-laptop ul.ul-list-laptop {
     flex-wrap: nowrap;
   }
-  .top-main-laptop ul li {
+  .top-main-laptop ul.ul-list-laptop li {
     width: 104px;
+  }
+  .menu-sitebar {
+    display: none;
+  }
+  .catalog-set {
+    justify-content: space-between;
+  }
+  .catalog-set .select-bottom {
+    display: flex;
+  }
+}
+@media screen and (max-width: 760px) {
+  .catalog-set {
+    box-sizing: border-box;
+  }
+  .catalog-price li {
+    width: 50%;
+  }
+  .selection .sel-bloc-input {
+    display: none;
+  }
+}
+@media screen and (max-width: 480px) {
+  .catalog-set {
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  .catalog-set button {
+    width: 48% ;
+  }
+  .selection {
+    width: 50%;
+  }
+  .selection .select-viev {
+    width: 100%;
   }
 }

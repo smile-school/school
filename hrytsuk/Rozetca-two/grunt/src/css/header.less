@@ -919,6 +919,9 @@ input {
     }
 }
 @media screen and (max-width: 1000px) {
+    div.wrapper{
+        padding: 0 16px;
+    }
     .top-menu-wrap{
         display: none;
     }
@@ -947,5 +950,36 @@ input {
     .mobile-menu{
         display: block;
     }
+    .catalog-price{
+        li{
+            width: 33%;
+        }
+    }
 }
-
+@media screen and (max-width: 760px){
+    div.wrapper{
+        padding: 0 8px;
+    }
+    .bottom-menu{
+       & >  a{
+                display: none;
+        }
+        .menu-ul-shop{
+            justify-content: center;
+            .heade-li-two{
+                display: none;
+            }
+        }
+        .search-form{
+            button{
+                display: none;
+            }
+            input{
+                width: 100%;
+            }
+        }
+    }
+    .schop-menu{
+        margin-left: 0;
+    }
+}
