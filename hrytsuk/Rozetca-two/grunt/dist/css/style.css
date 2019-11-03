@@ -472,7 +472,6 @@ div.regisr::after {
   border-radius: 4px;
   overflow: hidden;
   position: relative;
-  z-index: 500;
 }
 .search-form input,
 .search-form button {
@@ -817,8 +816,12 @@ input.action-form:checked ~ .enter-offece {
   cursor: pointer;
   padding-bottom: 8px;
 }
+.top-as > label:hover {
+  color: #ff7878;
+}
 .top-as > label span {
   color: #a6a5a5;
+  margin-left: 5px;
 }
 .top-as svg {
   position: absolute;
@@ -836,12 +839,15 @@ input.action-form:checked ~ .enter-offece {
   margin-top: 2px;
   padding-right: 32px;
 }
-.bott-as ul li {
-  padding: 8px;
-}
 .bott-as ul li a {
   color: #333;
   text-decoration: none;
+  display: block;
+  padding: 8px;
+  transition: all 0.4s;
+}
+.bott-as ul li a:hover {
+  background-color: #f4faf6;
 }
 .bott-as ul li a label {
   padding-left: 24px;
@@ -961,4 +967,7 @@ input.action-form:checked ~ .enter-offece {
   margin: 0 4px;
   align-items: center;
   color: #a6a5a5;
+}
+.new-noisy .selers-left label {
+  white-space: nowrap;
 }
