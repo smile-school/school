@@ -1,0 +1,289 @@
+main {
+    min-width: 100%;
+
+    .headlights-wrapper {
+        min-height: 100vh;
+        display: flex;
+        flex-wrap: wrap;
+
+        .headlights-cart {
+            min-width: 50%;
+            background-color: @main-bg-light-gray-color;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 20px 2% 0;
+            min-height: 300px;
+
+            & img {
+                position: absolute;
+                max-width: 37%;
+            }
+
+            &:first-of-type img {
+                top: 30%;
+                right: 0;
+                max-width: 47%;
+            }
+
+            &:nth-of-type(2) img {
+                bottom: 0;
+                right: 20px;
+            }
+
+            &:nth-of-type(3) img {
+
+                &:first-of-type {
+                    max-width: 30%;
+                    right: 15%;
+                    bottom: 17%;
+                }
+
+                &:last-of-type {
+                    right: 0;
+                }
+            }
+
+            &:last-of-type img {
+                bottom: 5px;
+                right: 10px;
+            }
+
+            &:nth-of-type(2),
+            &:nth-of-type(3) {
+                background-color: @main-bg-dark-gray-color;
+            }
+
+            & p {
+                color: @main-gray-color;
+                font-size: 1.3em;
+                letter-spacing: 1px;
+            }
+        }
+    }
+
+    .card-wrapper {
+        display: flex;
+        flex-direction: column;
+        background-color: @products-wrapper-bg-color;
+        align-items: center;
+        min-width: 100%;
+        padding: 5% 5%;
+
+        & > h3 {
+            &::after {
+                content: "";
+                display: block;
+                width: 40%;
+                margin: 5% auto;
+                border: 2px solid @title-red-line-color;
+            }
+        }
+
+        .card-container {
+            display: flex;
+            align-items: stretch;
+            min-width: 100%;
+            max-width: 100%;
+            padding: 3% 0;
+            min-height: 65vh;
+
+            .card {
+                background-color: @products-card-bg-color;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                align-items: center;
+                min-width: calc(20% - 3%);
+                padding: 10px 5px;
+
+                &:not(:last-of-type) {
+                    margin-right: 3%;
+                }
+
+                & a {
+                    max-width: 100%;
+                    text-align: center;
+                    display: block;
+                }
+
+                & img {
+                    max-width: 100%;
+                }
+
+                & h6 {
+                    color: @red-color;
+                    padding: 10%;
+                    text-transform: uppercase;
+                    margin-top: 5%;
+                }
+
+                & span {
+                    &:first-of-type {
+                        color: @white-color;
+                        font-size: 1.2em;
+                        font-weight: bolder;
+                    }
+
+                    &:last-of-type {
+                        display: flex;
+                        font-weight: normal;
+                        font-size: 14px;
+                        color: @red-color;
+                        margin: 2% 0 10%;
+                    }
+                }
+            }
+        }
+    }
+
+    .sale-wrapper {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background: url("../../../sourses/images/bottom-bg.png") no-repeat center;
+        background-size: 100% 100%;
+        background-color: @bottom-header-bg-color;
+        min-height: 70vh;
+
+        & > span {
+            display: block;
+            min-height: 20vh;
+            width: 1px;
+            border: 1px solid @white-color;
+        }
+
+        .sale-block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            & h2 {
+                font-size: 4em;
+                font-weight: 700;
+                text-transform: uppercase;
+            }
+
+            & span {
+                font-size: 1em;
+                margin: 5% 0;
+            }
+
+            & input {
+                outline: none;
+                border-radius: 19px;
+                padding: 2%;
+                text-transform: uppercase;
+                font-size: 1.1em;
+                color: @white-color;
+                background: @title-red-line-color;
+                border: none;
+                min-width: 40%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    main .headlights-wrapper .headlights-cart h3 {
+        font-size: 1.5em;
+    }
+
+    main .headlights-wrapper .headlights-cart p {
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-width: 922px) {
+    main .headlights-wrapper .headlights-cart {
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 25px 15px;
+        max-width: 50%;
+
+        &:nth-of-type(3) img:first-of-type {
+            display: none;
+        }
+
+        &:nth-of-type(3) img:last-of-type {
+            bottom: 20%;
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    main .headlights-wrapper {
+        flex-direction: column;
+
+        .headlights-cart {
+            min-width: 100%;
+            padding: 35px 0 0 50px;
+            min-height: 350px;
+
+            &:nth-of-type(2) {
+                order: 1;
+            }
+        }
+    }
+
+    main .card-wrapper {
+        h3 {
+            font-size: 15px;
+        }
+
+        .card-container {
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+
+            .card {
+                width: 100%;
+                margin: 20px auto;
+                padding: 25px;
+
+                & img {
+                    width: 100%;
+                }
+
+                & h6 {
+                    padding: 10px;
+                    margin: 0 0 20px 0;
+                }
+
+                & span {
+                    &:last-of-type {
+                        margin: 10px auto;
+                    }
+                }
+            }
+        }
+    }
+
+    main .sale-wrapper {
+        flex-direction: column;
+
+        & > span {
+            min-height: 0;
+            height: 1px;
+            width: 50%;
+            margin: 15px 0;
+        }
+
+        .sale-block {
+            h2 {
+                font-size: 25px;
+            }
+
+            h3 {
+                font-size: 20px;
+            }
+
+            input {
+                font-size: 12px;
+                min-width: 30%;
+                padding: 1%;
+            }
+        }
+    }
+}
