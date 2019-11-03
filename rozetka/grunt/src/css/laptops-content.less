@@ -123,12 +123,10 @@
     .content-wrap {
         display: flex;
 
-        .menu-left.laptop-filter {
-            margin: 0;
-        }
+
 
         .product-wrap {
-            max-width: calc(100% - 300px);
+            max-width: calc(100% - 250px);
 
             & > ul {
                 width: 100%;
@@ -216,7 +214,6 @@
                     box-sizing: border-box;
                     border-radius: 50px;
                     color: #ffffff;
-                    z-index: 20;
                 }
 
                 &.super-price {
@@ -382,6 +379,9 @@
 
                 &:hover {
                     z-index: 20;
+                    &::after{
+                        z-index: 20;
+                    }
 
                     .product-content {
                         position: relative;
@@ -408,7 +408,7 @@
                     .info {
                         position: relative;
                         display: block;
-                        z-index: 20;
+                        z-index: 21;
                     }
                 }
             }
