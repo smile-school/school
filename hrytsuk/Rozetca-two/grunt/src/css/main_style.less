@@ -4,6 +4,7 @@
 .top-main-laptop{
     display: flex;
     flex-direction: column;
+    padding-top: 20px;
     h1{
         font-size: @font-h1;
         margin-bottom: 24px;
@@ -19,7 +20,7 @@
                 display: inline-block;
                 box-sizing: border-box;
                 border-right: 1px solid @border-color1;
-                width:13%;
+                width:14%;
                 margin-bottom: 20px;
                 a{
                     display: block;
@@ -83,7 +84,7 @@
         -webkit-appearance: none;
         -moz-appearance: none;
         appearance: none;
-        background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg fill='%233e77aa' viewBox='0 0 13 7'… 0 .839.839 0 0 1 0 1.237l-5.572 5.25A.956.956 0 0 1 6.5 7z'/%3E%3C/svg%3E");
+        background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg fill='%233e77aa' viewBox='0 0 13 7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M6.5 7a.956.956 0 0 1-.657-.256l-5.57-5.25a.839.839 0 0 1 0-1.237.968.968 0 0 1 1.312 0L6.5 4.888 11.415.257a.968.968 0 0 1 1.313 0 .839.839 0 0 1 0 1.237l-5.572 5.25A.956.956 0 0 1 6.5 7z'/%3E%3C/svg%3E");
          background-size: 14px 9px;
          background-repeat: no-repeat;
         background-position: right 12px center;
@@ -102,7 +103,7 @@
             display: none;
         }
         label{
-            padding: 2px 8px;
+            padding: 1px 8px;
             box-sizing: border-box;
             height: 32px;
             display: flex;
@@ -456,6 +457,7 @@
     span{
         color: @bacground-bloc-a;
         cursor: pointer;
+        white-space: nowrap;
         &:hover{
             color: @hover-color-a;
             text-decoration:underline ;
@@ -500,4 +502,18 @@
 .availability{
     color:@gray-fill ;
     font-size: @font-size-standart;
+}
+
+@media screen and (max-width: 1000px){
+    .top-main-laptop{
+        ul{
+            &.ul-list-laptop{
+                flex-wrap: nowrap;
+            }
+            li{
+                width: 104px;
+            }
+        }
+    }
+
 }
