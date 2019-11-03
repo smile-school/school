@@ -784,6 +784,7 @@ input.action-form:checked ~ .enter-offece {
 }
 .menu-sitebar {
   width: 250px;
+  height: 3000px;
 }
 .sitebar-product {
   display: flex;
@@ -798,20 +799,25 @@ input.action-form:checked ~ .enter-offece {
   padding: 8px 32px 8px 8px;
   position: relative;
 }
-.top-as input {
+.top-as input[type=checkbox] {
   display: none;
 }
-.top-as input:checked ~ svg {
+.top-as input[type=checkbox]:checked ~ svg {
   transform: rotate(180deg);
 }
-.top-as label {
+.top-as input[type=checkbox]:checked ~ .bott-as {
+  height: 0;
+  padding: 0;
+}
+.top-as > label {
   font-size: 14px;
   color: #3e77aa;
   display: block;
   width: 100%;
   cursor: pointer;
+  padding-bottom: 8px;
 }
-.top-as label span {
+.top-as > label span {
   color: #a6a5a5;
 }
 .top-as svg {
@@ -824,6 +830,7 @@ input.action-form:checked ~ .enter-offece {
 .bott-as {
   overflow-y: hidden;
   padding-bottom: 21px;
+  transition: all 0.4s;
 }
 .bott-as ul {
   margin-top: 2px;
@@ -840,6 +847,7 @@ input.action-form:checked ~ .enter-offece {
   padding-left: 24px;
   position: relative;
   cursor: pointer;
+  color: #333;
 }
 .bott-as ul li a label:after {
   content: "";
@@ -857,10 +865,10 @@ input.action-form:checked ~ .enter-offece {
   color: #a6a5a5;
   padding-left: 6px;
 }
-.bott-as ul li a input {
+.bott-as ul li a input[type=checkbox] {
   display: none;
 }
-.bott-as ul li a input:checked + label:after {
+.bott-as ul li a input[type=checkbox]:checked + label:after {
   content: "\2714";
   background-color: #00a046;
   text-align: center;
@@ -868,4 +876,54 @@ input.action-form:checked ~ .enter-offece {
   color: #ffffff;
   background-size: 10px 8px;
   border-color: #00a046;
+}
+.scrollbar-inner {
+  height: 600px;
+  padding-bottom: 21px;
+  overflow: hidden;
+}
+.scrollbar-inner input[type=search] {
+  width: 100%;
+  padding: 1px 12px;
+  height: 30px;
+  border-radius: 4px;
+  border: 1px solid #d2d2d2;
+}
+.scrollbar-inner .alfa-bloc {
+  height: 0;
+  overflow: hidden;
+}
+.scrollbar-inner .alfa-bloc .alfa-ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-right: 0;
+}
+.scrollbar-inner .alfa-bloc .alfa-ul li a {
+  color: #3e77aa;
+}
+.scrollbar-inner .alfa-label {
+  display: block;
+  margin-top: 10px;
+  width: 70%;
+  color: #3e77aa;
+  border-bottom: 1px dashed #3e77aa;
+  transition: all 0.3s;
+}
+.scrollbar-inner .alfa-label:hover {
+  color: #ff7878;
+  border-color: #ff7878;
+}
+.scrollbar-inner .alfa:checked ~ .alfa-bloc {
+  min-height: 140px;
+}
+.scrollbar-inner .scroll-bar-lay {
+  height: 100%;
+  overflow: auto;
+  position: relative;
+  padding-bottom: 21px;
+}
+.scrollbar-inner .scroll-bar-lay .ul-inp {
+  display: flex;
+  flex-direction: column;
 }
