@@ -482,7 +482,20 @@ div.regisr {
         }
     }
 }
-
+.mobile-menu{
+    display: none;
+    input{
+        display: none;
+    }
+    .label-mob-menu{
+        padding-right: 16px;
+        display: block;
+        cursor: pointer;
+        svg{
+            fill: @gray-shade-fill;
+        }
+    }
+}
 .social-enter {
     padding-left: 20px;
     width: 237px;
@@ -531,7 +544,7 @@ div.regisr {
 .bottom-menu {
     display: flex;
     justify-content: space-between;
-    height: 72px;
+    height: 62px;
     align-items: center;
 
     & > input {
@@ -683,6 +696,7 @@ div.regisr {
         }
 
         &.microphone {
+            fill: @bacground-bloc-a;
             &:hover {
                 svg {
                     fill: @color-fill-svg;
@@ -893,6 +907,45 @@ input {
                 transform: translate(-50%, -50%) scale(1);
             }
         }
+    }
+}
+@media screen and (max-width: 1200px) {
+    .bottom-menu{
+        & > a{
+            width: 40px;
+            overflow: hidden;
+            margin-right: 24px;
+        }
+    }
+}
+@media screen and (max-width: 1000px) {
+    .top-menu-wrap{
+        display: none;
+    }
+    .bottom-menu{
+        & > label{
+            display: none;
+        }
+        .search-form{
+            input{
+                width: 80%;
+            }
+        }
+    }
+    .schop-menu{
+        width: 80px;
+        .menu-ul-shop{
+            .heade-li-one{
+                display: none;
+            }
+            svg{
+                width: 30px;
+                height: 30px;
+            }
+        }
+    }
+    .mobile-menu{
+        display: block;
     }
 }
 
