@@ -919,6 +919,12 @@ input {
     }
 }
 @media screen and (max-width: 1000px) {
+    header{
+        position: fixed;
+        top: 0;
+        z-index: 100;
+        width: 100%;
+    }
     div.wrapper{
         padding: 0 16px;
     }
@@ -982,4 +988,55 @@ input {
     .schop-menu{
         margin-left: 0;
     }
+}
+.menu-mobile-left{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 320px;
+    height: 100vh;
+    z-index: 600;
+    background-color: @white-color;
+}
+.header-mobile-menu{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 56px;
+    padding: 0 16px;
+    background-color: @bacground-color;
+    a{
+        img{
+            width: 110px;
+        }
+    }
+    .close-label{
+        margin-left: 16px;
+        svg{
+            width: 20px;
+            height: 20px;
+            fill: @gray-shade-fill;
+        }
+    }
+    ul{
+        &.ul-language{
+            display: flex;
+            flex-direction: row;
+            margin-left: auto;
+            li{
+                padding: 0 13px;
+                font-size:@font-size-h4 ;
+                text-transform: uppercase;
+                &.one-lang{
+                    border: 1px solid @spn-color;
+                    border-radius: 50px;
+                    color: @spn-color;
+                }
+                &.two-lang{
+                    color: @white-color;
+                }
+            }
+        }
+    }
+
 }
