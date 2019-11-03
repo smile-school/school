@@ -119,7 +119,9 @@ header {
 }
 .top-menu-wrap .phone .phone-bloc-action .phone-coll {
   font-size: 16px;
-  margin-bottom: 16px;
+  margin: 16px 0;
+  display: flex;
+  flex-direction: column;
 }
 .top-menu-wrap .phone .phone-bloc-action .phone-coll p {
   margin-bottom: 8px;
@@ -136,15 +138,24 @@ header {
 }
 .top-menu-wrap .phone .phone-bloc-action .schedule-hours p {
   font-size: 16px;
+  padding-bottom: 10px;
 }
 .top-menu-wrap .phone .phone-bloc-action .schedule-hours dl {
   font-size: 14px;
+}
+.top-menu-wrap .phone .phone-bloc-action .schedule-hours dl dt,
+.top-menu-wrap .phone .phone-bloc-action .schedule-hours dl dd {
+  display: inline-block;
+  width: 49%;
+  margin-bottom: 6px;
 }
 .top-menu-wrap .phone span input[name=exids] {
   display: none;
 }
 .top-menu-wrap .phone span input[class=action-phone]:checked ~ .phone-bloc-action {
   transform: translate(-50%, -50%) scale(1);
+  max-width: 440px;
+  box-sizing: border-box;
 }
 .top-menu-wrap .phone span input[class=action-phone]:checked ~ .darc-fon {
   display: block;
@@ -392,6 +403,9 @@ div.regisr::after {
 }
 .social-enter a:first-of-type svg {
   fill: #3e77aa;
+}
+.social-enter a:last-of-type {
+  margin-top: 10px;
 }
 .bottom-menu {
   display: flex;
@@ -970,4 +984,156 @@ input.action-form:checked ~ .enter-offece {
 }
 .new-noisy .selers-left label {
   white-space: nowrap;
+}
+.catalog-price {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  list-style-type: none;
+}
+.li-catalog {
+  box-sizing: border-box;
+  border-right: 1px solid #e9e9e9;
+  border-bottom: 1px solid #e9e9e9;
+  width: 25%;
+}
+.tile-bloc {
+  width: 100%;
+  height: 364px;
+  overflow: hidden;
+  position: relative;
+}
+.iner-list-bloc {
+  padding: 16px;
+}
+.iner-list-bloc span.top-selling {
+  padding: 0 8px;
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  line-height: 24px;
+  background-color: #ffa900;
+  z-index: 5;
+  border-radius: 50px;
+  color: #ffffff;
+  font-weight: 700;
+}
+.iner-list-bloc .tile-action {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 5;
+}
+.iner-list-bloc .tile-action input[type=checkbox] {
+  display: none;
+}
+.iner-list-bloc .tile-action > label {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.iner-list-bloc .tile-action > label:first-of-type {
+  margin-bottom: 5px;
+}
+.iner-list-bloc .tile-action > label:first-of-type svg {
+  fill: #fff;
+  stroke: #fcc10a;
+  stroke-width: 2px;
+}
+.iner-list-bloc .tile-action > label:last-of-type svg {
+  fill: #a6a5a5;
+}
+.top-img-price {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 160px;
+  margin-bottom: 10px;
+}
+.top-img-price img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100%;
+  max-height: 100%;
+}
+.top-img-price img:first-of-type {
+  display: none;
+}
+.top-img-price:hover img:first-of-type {
+  display: block;
+}
+.top-img-price:hover img:last-of-type {
+  display: none;
+}
+.separator-div {
+  height: 20px;
+  margin-bottom: 8px;
+}
+.name-product {
+  display: block;
+  color: #221f1f;
+  margin-bottom: 10px;
+}
+.name-product span {
+  display: block;
+  height: 32px;
+  overflow: hidden;
+  line-height: 16px;
+  font-size: 14px;
+}
+.reting-bloc span {
+  color: #3e77aa;
+  cursor: pointer;
+}
+.reting-bloc span:hover {
+  color: #ff7878;
+  text-decoration: underline ;
+}
+.reting-bloc svg {
+  margin-right: 8px;
+}
+.price-bootom-bloc {
+  margin-top: 8px;
+}
+.price-bootom-bloc .old-price {
+  position: relative;
+  height: 18px;
+  font-size: 14px;
+  color: #a6a5a5;
+  text-decoration: line-through;
+}
+.price-bootom-bloc .now-price {
+  font-size: 20px;
+  color: #f84147;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.price-bootom-bloc .now-price span {
+  font-size: 16px;
+}
+.price-bootom-bloc .now-price > input {
+  display: none;
+}
+.price-bootom-bloc .now-price > label {
+  cursor: pointer;
+}
+.price-bootom-bloc .now-price > label svg {
+  fill: #00a046;
+}
+.price-bootom-bloc .now-price > label:hover {
+  background-color: #f4faf6;
+}
+.availability {
+  color: #00a046;
+  font-size: 12px;
 }
