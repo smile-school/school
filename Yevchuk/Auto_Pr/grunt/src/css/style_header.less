@@ -69,7 +69,6 @@ header {
                         text-transform: uppercase;
                     }
                 }
-
             }
 
             .icon-container {
@@ -114,6 +113,7 @@ header {
                         font-size: 15px;
                         text-transform: uppercase;
                         padding: 5px 15px;
+                        width: 100px;
 
                         i {
                             font-size: 25px;
@@ -137,7 +137,7 @@ header {
             align-items: center;
 
             li {
-                margin-left: 25px;
+                margin-left: 5%;
                 text-transform: uppercase;
 
                 a {
@@ -209,5 +209,45 @@ header {
 }
 
 @media screen and (max-width: 767px) {
+    header {
+        .top-nav {
+            padding: 20px;
 
+            .logo-panel {
+                flex-direction: column;
+                justify-content: space-around;
+                align-items: center;
+
+                .logo {
+                    margin: 25px;
+                    text-align: center;
+                }
+
+                .icon-container {
+                    margin: 10px;
+                    width: 100%;
+                    flex-direction: column;
+
+                    & > span {
+                        margin: 0 auto 20px auto;
+                        width: 100%;
+
+                        span {
+                            margin: auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    .bottom-nav-menu {
+        width: 100%;
+        flex-direction: column;
+
+        li {
+            margin: 25px 0;
+        }
+    }
 }
