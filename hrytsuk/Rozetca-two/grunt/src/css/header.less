@@ -495,6 +495,28 @@ div.regisr {
             fill: @gray-shade-fill;
         }
     }
+    .action-mob{
+        &:checked{
+            & ~ .menu-mobile-left{
+                display: block;
+            }
+            & ~ .darc-fon-mobile{
+                display: block;
+            }
+        }
+    }
+
+}
+.darc-fon-mobile{
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: @blac-color;
+    opacity: 0.5;
+    z-index: 200;
+    display: none;
 }
 .social-enter {
     padding-left: 20px;
@@ -997,6 +1019,7 @@ input {
     height: 100vh;
     z-index: 600;
     background-color: @white-color;
+    display: none;
 }
 .header-mobile-menu{
     display: flex;
@@ -1039,4 +1062,69 @@ input {
         }
     }
 
+}
+.menu-main-side{
+    font-size: @font-size-a;
+    ul {
+        li{
+            a{
+                cursor: pointer;
+                &:hover{
+                    color: @hover-color-a;
+                }
+            }
+        }
+    }
+   .aside-list{
+       border-bottom: 1px solid @border-line;
+        li{
+            width: 100%;
+            &:first-of-type{
+                border-bottom: 1px solid @border-line;
+            }
+            a{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                height: 46px;
+                color:@bacground-bloc-a ;
+                padding: 0 16px;
+                svg{
+                    margin-right: 16px;
+                    fill: @gray-shade-fill;
+                }
+            }
+        }
+    }
+    .botom-list-mob{
+        padding: 0 16px;
+        margin-top: 16px;
+        li{
+            &:not(:first-of-type){
+                margin-top: 24px;
+            }
+            a{
+                color:@bacground-bloc-a ;
+            }
+        }
+    }
+    .botom-menu-backyard{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 20px;
+        padding: 0 16px;
+        height: 45px;
+        border-top: 1px solid @border-line;
+        border-bottom:1px solid @border-line;
+        font-size:@font-size-menu ;
+        span{
+            color: @old-price-color;
+        }
+        a{
+            color: @bacground-bloc-a;
+            text-decoration: 1px dashed @bacground-bloc-a;
+        }
+    }
 }
