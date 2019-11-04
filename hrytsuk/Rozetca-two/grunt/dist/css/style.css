@@ -385,7 +385,7 @@ div.regisr::after {
   fill: #a6a5a5;
 }
 .mobile-menu .action-mob:checked ~ .menu-mobile-left {
-  display: block;
+  transform: translateX(0);
 }
 .mobile-menu .action-mob:checked ~ .darc-fon-mobile {
   display: block;
@@ -645,7 +645,6 @@ div.regisr::after {
   border-radius: 6px;
   width: 530px;
   z-index: 800;
-  display: flex;
   flex-direction: row;
   align-items: center;
   padding: 20px 30px;
@@ -772,6 +771,9 @@ input.action-form:checked ~ .enter-offece {
   .schop-menu {
     margin-left: 0;
   }
+  .actions-balance {
+    width: 300px;
+  }
 }
 .menu-mobile-left {
   position: fixed;
@@ -781,7 +783,8 @@ input.action-form:checked ~ .enter-offece {
   height: 100vh;
   z-index: 600;
   background-color: #ffffff;
-  display: none;
+  transform: translateX(-100%);
+  transition: all 0.5s;
 }
 .header-mobile-menu {
   display: flex;
@@ -1318,7 +1321,7 @@ input.action-form:checked ~ .enter-offece {
 }
 .reting-bloc span:hover {
   color: #ff7878;
-  text-decoration: underline ;
+  text-decoration: underline;
 }
 .reting-bloc svg {
   margin-right: 8px;
@@ -1393,7 +1396,7 @@ input.action-form:checked ~ .enter-offece {
     overflow: hidden;
   }
   .catalog-set button {
-    width: 48% ;
+    width: 48%;
   }
   .selection {
     width: 50%;
