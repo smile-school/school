@@ -1020,6 +1020,306 @@ main .wrapper .product-main .category-product .card-pr > section .old-prce {
   color: #999;
   text-decoration: line-through;
 }
+header.laptop .wrapper .top-header {
+  padding-top: 13px;
+}
+header.laptop .wrapper .top-header .phone-header .dashed {
+  color: #dde0e3;
+  padding-left: 22px;
+  font-weight: 400;
+}
+header.laptop .wrapper .top-header .phone-header .dashed::before {
+  content: '';
+  background-image: url(../../ima/sprite-laptop.svg);
+  background-repeat: no-repeat;
+  position: absolute;
+  background-position: -689px -746px;
+  width: 20px;
+  height: 17px;
+  top: 50%;
+  margin-top: -8px;
+  left: 0;
+}
+header.laptop .wrapper .top-header .inner span {
+  margin: 0;
+}
+header.laptop .wrapper .top-header .inner span:last-child::before {
+  height: 9px;
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  width: 1px;
+  content: '';
+  padding-left: 6px;
+  margin-left: 6px;
+}
+header.laptop .wrapper .top-header .inner span a {
+  color: white;
+  font-size: 130%;
+  text-decoration: none;
+}
+header.laptop .wrapper .top-header .inner span a:hover {
+  text-decoration: underline;
+}
+header.laptop .wrapper .top-header .inner .active-lang {
+  color: rgba(255, 255, 255, 0.5);
+}
+header.laptop .wrapper .top-header .inner .active-lang:hover {
+  text-decoration: none;
+}
+header.laptop .wrapper .top-header .inner-info {
+  padding-left: 20px;
+}
+header.laptop .wrapper .top-header .inner-info a {
+  color: white;
+  margin-right: 20px;
+  text-decoration: none;
+  font-size: 13px;
+}
+header.laptop .wrapper .top-header .inner-info a:hover {
+  text-decoration: underline;
+}
+header.laptop .wrapper .right-top-header .login span:first-child {
+  padding-right: 0;
+}
+header.laptop .wrapper .bottom-header {
+  justify-content: space-between;
+}
+header.laptop .wrapper .bottom-header .city .city-switch {
+  display: flex;
+  flex-direction: column;
+  margin-right: 24px;
+}
+header.laptop .wrapper .bottom-header .city .city-switch .title {
+  color: white;
+  font-size: 120%;
+}
+header.laptop .wrapper .bottom-header .city .city-switch input {
+  display: none;
+}
+header.laptop .wrapper .bottom-header .city .city-switch li {
+  list-style-type: none;
+}
+header.laptop .wrapper .bottom-header .city .city-switch .city-name > label > ul > li {
+  display: none;
+}
+header.laptop .wrapper .bottom-header .city .city-switch .city-name {
+  position: relative;
+}
+header.laptop .wrapper .bottom-header .city .city-switch .city-name::before {
+  display: block;
+  background-position: -666px -714px;
+  width: 13px;
+  height: 13px;
+  top: 50%;
+  margin-top: -6px;
+  right: -10px;
+  content: '';
+  position: absolute;
+  background-image: url(../../ima/sprite-laptop.svg);
+  background-repeat: no-repeat;
+}
+header.laptop .wrapper .bottom-header .city .city-switch .city-name .window ul li {
+  border-bottom: 1px white dashed;
+  font-size: 120%;
+  font-weight: 700;
+  color: white;
+}
+header.laptop .wrapper .bottom-header .city .city-switch .city-name .window ul li:hover {
+  cursor: pointer;
+}
+header.laptop .wrapper .bottom-header .city .city-switch .city-name #kyiv:checked ~ label > ul > li#s-kiev {
+  display: block;
+}
+header.laptop .wrapper .bottom-header .city .city-switch .city-name #gitomer:checked ~ label > ul > li#s-gitomer {
+  display: block;
+}
+header.laptop .wrapper .bottom-header .city .city-switch .city-name #luck:checked ~ label > ul > li#s-luck {
+  display: block;
+}
+header.laptop .wrapper .bottom-header .city .city-switch .city-name #harkiv:checked ~ label > ul > li#s-harkiv {
+  display: block;
+}
+header.laptop .wrapper .bottom-header .city .city-switch .city-name #rivne:checked ~ label > ul > li#s-rivne {
+  display: block;
+}
+header.laptop .wrapper .bottom-header .city .city-switch .city-name #window:checked ~ .popup-wrapper {
+  display: block;
+  z-index: 10;
+  border-radius: 10px;
+}
+header.laptop .wrapper .bottom-header .city .city-switch .city-name .popup-wrapper {
+  position: absolute;
+  width: 580px;
+  top: 100%;
+  background-color: white;
+  padding: 15px 24px 24px;
+  display: none;
+  animation-name: popup;
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+  box-shadow: 0 8px 16px 4px rgba(0, 0, 0, 0.35);
+}
+header.laptop .wrapper .bottom-header .city .city-switch .city-name .popup-wrapper .title {
+  color: #333;
+  display: block;
+  font-size: 240%;
+  margin-bottom: 4px;
+}
+header.laptop .wrapper .bottom-header .city .city-switch .city-name .popup-wrapper .description {
+  display: flex;
+  align-items: center;
+  margin-bottom: 38px;
+}
+header.laptop .wrapper .bottom-header .city .city-switch .city-name .popup-wrapper .description svg {
+  fill: #999;
+  margin-right: 9px;
+}
+header.laptop .wrapper .bottom-header .city .city-switch .city-name .popup-wrapper .description span {
+  color: #999;
+}
+header.laptop .wrapper .bottom-header .city .city-switch .city-name .popup-wrapper form {
+  margin-top: 16px;
+}
+header.laptop .wrapper .bottom-header .city .city-switch .city-name .popup-wrapper form label {
+  margin-bottom: 9px;
+  font-size: 150%;
+  display: block;
+}
+header.laptop .wrapper .bottom-header .city .city-switch .city-name .popup-wrapper form input[type='text'] {
+  display: block;
+  font-size: 150%;
+  width: 95%;
+  border: 1px solid gray;
+  height: 32px;
+  padding-left: 12px;
+  padding-right: 12px;
+  border-radius: 4px;
+}
+header.laptop .wrapper .bottom-header .city .city-switch .city-name .popup-wrapper form input[type='text']:hover {
+  border-color: #a6a5a5;
+}
+header.laptop .wrapper .bottom-header .city .city-switch .city-name .popup-wrapper .example {
+  margin-top: 8px;
+  font-size: 130%;
+  color: #999;
+  display: block;
+  margin-bottom: 20px;
+}
+header.laptop .wrapper .bottom-header .city .city-switch .city-name .popup-wrapper .example a {
+  color: #3e77aa;
+  text-decoration: none;
+  border-bottom: 1px dashed #3e77aa;
+}
+header.laptop .wrapper .bottom-header .city .city-switch .city-name .popup-wrapper .desk2 {
+  border-top: 1px solid lightgrey;
+  padding-top: 20px;
+}
+header.laptop .wrapper .bottom-header .city .city-switch .city-name .popup-wrapper .desk2 p {
+  font-size: 130%;
+  line-height: 17px;
+  color: #999;
+}
+header.laptop .wrapper .bottom-header .city .city-switch .city-name .popup-wrapper > label {
+  display: inline-block;
+  width: 30%;
+  cursor: pointer;
+  margin-bottom: 16px;
+  font-size: 150%;
+  color: #3e77aa;
+}
+header.laptop .wrapper .bottom-header .city .city-switch .city-name .popup-wrapper > label.windows {
+  color: #999;
+  position: absolute;
+  cursor: pointer;
+  right: 0;
+  top: 0;
+  text-align: center;
+  width: 9%;
+  line-height: 52px;
+  font-size: 30px;
+}
+header.laptop .wrapper .bottom-header .search {
+  max-width: 53%;
+}
+header.laptop .wrapper .bottom-header .search form section input[type='text'] {
+  border-radius: 5px;
+  height: 34px;
+  margin-right: 5px;
+}
+header.laptop .wrapper .bottom-header .search form section input[type='submit'] {
+  height: 34px;
+  border-radius: 5px;
+}
+header.laptop .wrapper .bottom-header .actions {
+  width: 25%;
+  justify-content: flex-end;
+}
+header.laptop .wrapper .bottom-header .actions section {
+  border-radius: 5px;
+}
+header.laptop .wrapper .bottom-header .actions section:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+main.main-laptop .wrapper aside.left {
+  width: 215px;
+  padding: 15px 15px 0 0;
+}
+main.main-laptop .wrapper aside.left .nav-button {
+  border: 0;
+  text-align: center;
+  padding: 8px 34px 8px 11px;
+  background-color: #00a046;
+  border-radius: 5px;
+  position: relative;
+}
+main.main-laptop .wrapper aside.left .nav-button:before {
+  content: '';
+  position: absolute;
+  background-image: url(../../ima/sprite-laptop.svg);
+  background-repeat: no-repeat;
+  background-position: -690px -516px;
+  width: 13px;
+  height: 13px;
+  top: 50%;
+  margin-top: -6px;
+  right: 20px;
+  transition: all 0.2s linear;
+}
+main.main-laptop .wrapper aside.left .nav-button span {
+  font-size: 18px;
+  line-height: 22px;
+  cursor: default;
+  color: white;
+}
+main.main-laptop .wrapper aside.left .nav-button:hover {
+  background-color: #00bc52;
+}
+main.main-laptop .wrapper aside.left .nav-button:hover ~ ul {
+  display: block;
+}
+main.main-laptop .wrapper aside.left .nav-button:hover::before {
+  transform: rotate(-180deg);
+}
+main.main-laptop .wrapper aside.left > ul {
+  display: none;
+  padding-top: 0px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  box-shadow: 3px 3px 7px 0 rgba(200, 200, 200, 0.5);
+}
+main.main-laptop .wrapper aside.left > ul:hover {
+  display: block;
+}
+main.main-laptop .wrapper aside.left > ul > li .hidden-menu {
+  padding-bottom: 36px;
+  top: 53px;
+  left: 327px;
+  border: 1px solid lightgrey;
+  overflow: hidden;
+  box-shadow: 3px 3px 7px 0 rgba(200, 200, 200, 0.5);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-left: 0;
+}
 @keyframes popup {
   from {
     opacity: 0;
