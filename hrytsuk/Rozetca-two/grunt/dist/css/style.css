@@ -384,6 +384,23 @@ div.regisr::after {
 .mobile-menu .label-mob-menu svg {
   fill: #a6a5a5;
 }
+.mobile-menu .action-mob:checked ~ .menu-mobile-left {
+  display: block;
+}
+.mobile-menu .action-mob:checked ~ .darc-fon-mobile {
+  display: block;
+}
+.darc-fon-mobile {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #000;
+  opacity: 0.5;
+  z-index: 200;
+  display: none;
+}
 .social-enter {
   padding-left: 20px;
   width: 237px;
@@ -764,6 +781,7 @@ input.action-form:checked ~ .enter-offece {
   height: 100vh;
   z-index: 600;
   background-color: #ffffff;
+  display: none;
 }
 .header-mobile-menu {
   display: flex;
@@ -801,6 +819,65 @@ input.action-form:checked ~ .enter-offece {
 }
 .header-mobile-menu ul.ul-language li.two-lang {
   color: #ffffff;
+}
+.menu-main-side {
+  font-size: 15px;
+}
+.menu-main-side ul li a {
+  cursor: pointer;
+}
+.menu-main-side ul li a:hover {
+  color: #ff7878;
+}
+.menu-main-side .aside-list {
+  border-bottom: 1px solid #dedede;
+}
+.menu-main-side .aside-list li {
+  width: 100%;
+}
+.menu-main-side .aside-list li:first-of-type {
+  border-bottom: 1px solid #dedede;
+}
+.menu-main-side .aside-list li a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 46px;
+  color: #3e77aa;
+  padding: 0 16px;
+}
+.menu-main-side .aside-list li a svg {
+  margin-right: 16px;
+  fill: #a6a5a5;
+}
+.menu-main-side .botom-list-mob {
+  padding: 0 16px;
+  margin-top: 16px;
+}
+.menu-main-side .botom-list-mob li:not(:first-of-type) {
+  margin-top: 24px;
+}
+.menu-main-side .botom-list-mob li a {
+  color: #3e77aa;
+}
+.menu-main-side .botom-menu-backyard {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding: 0 16px;
+  height: 45px;
+  border-top: 1px solid #dedede;
+  border-bottom: 1px solid #dedede;
+  font-size: 13px;
+}
+.menu-main-side .botom-menu-backyard span {
+  color: #999;
+}
+.menu-main-side .botom-menu-backyard a {
+  color: #3e77aa;
+  text-decoration: 1px dashed #3e77aa;
 }
 .wrapper {
   padding: 0 24px;
@@ -1103,7 +1180,7 @@ input.action-form:checked ~ .enter-offece {
   display: flex;
   flex-direction: row;
   align-items: center;
-  font-size: #a6a5a5;
+  font-size: 14px;
 }
 .bott-as form.form-price-left input {
   width: 32%;
