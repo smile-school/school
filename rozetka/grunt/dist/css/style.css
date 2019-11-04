@@ -1367,7 +1367,7 @@ main.site-content .video-wrap > ul li > span {
   max-height: 100%;
 }
 .menu-left.laptop-filter .options-choice > ul li {
-  padding: 8px;
+  padding: 9.5px 8px;
 }
 .menu-left.laptop-filter .options-choice > ul li > input {
   display: none;
@@ -1416,6 +1416,21 @@ main.site-content .video-wrap > ul li > span {
   border: 1px solid #d2d2d2;
   border-radius: 4px;
   font-size: 14px;
+  transition: all 500ms ease-out;
+}
+.menu-left.laptop-filter .options-choice.producer-choice > input:checked ~ .search-prod {
+  height: 0;
+  padding: 0;
+}
+.menu-left.laptop-filter .options-choice.producer-choice > input:checked ~ .search-prod > input {
+  padding: 0;
+  font-size: 0;
+  border: none;
+}
+.menu-left.laptop-filter .options-choice.producer-choice > input:checked ~ .alphabetical {
+  font-size: 0;
+  height: 0;
+  padding: 0;
 }
 .menu-left.laptop-filter .options-choice.producer-choice .alphabetical {
   padding: 8px;
@@ -1449,7 +1464,6 @@ main.site-content .video-wrap > ul li > span {
 }
 .menu-left.laptop-filter .options-choice.producer-choice > ul {
   max-height: 420px;
-  overflow: hidden;
   overflow-y: auto;
 }
 .menu-left.laptop-filter .options-choice.producer-choice > ul li > ul {
@@ -1462,25 +1476,89 @@ main.site-content .video-wrap > ul li > span {
   color: #ff7878;
 }
 .menu-left.laptop-filter .options-choice > form {
+  padding: 8px 8px 21px;
+}
+.menu-left.laptop-filter .options-choice > form .price-wrap {
   display: flex;
 }
-.menu-left.laptop-filter .options-choice > form > label {
+.menu-left.laptop-filter .options-choice > form .price-wrap > label {
   max-width: 65px;
 }
-.menu-left.laptop-filter .options-choice > form > label > input {
+.menu-left.laptop-filter .options-choice > form .price-wrap > label > input {
   display: block;
   width: 100%;
   border: 1px solid #d2d2d2;
   border-radius: 4px;
   height: 32px;
+  padding: 8px;
+  box-sizing: border-box;
 }
-.menu-left.laptop-filter .options-choice > form > span {
+.menu-left.laptop-filter .options-choice > form .price-wrap > span {
   width: 10px;
   height: 1px;
   background-color: #a6a5a5;
   display: block;
   margin: 4px;
   align-self: center;
+}
+.menu-left.laptop-filter .options-choice > form .price-wrap > button {
+  width: 52px;
+  margin-left: 16px;
+  text-transform: uppercase;
+  font-size: 14px;
+  background-color: #f5f5f5;
+  color: #3e77aa;
+  box-shadow: inset 0 0 0 1px #ebebeb;
+  border-radius: 4px;
+  border: none;
+}
+.menu-left.laptop-filter .options-choice > form .range-wrap {
+  display: block;
+  margin-top: 16px;
+  position: relative;
+  height: 24px;
+}
+.menu-left.laptop-filter .options-choice > form .range-wrap .range {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 2px;
+  background-color: #00a046;
+  border-radius: 4px;
+  z-index: -1;
+}
+.menu-left.laptop-filter .options-choice > form .range-wrap .range:last-child {
+  transform: translateY(-800%);
+}
+.menu-left.laptop-filter .options-choice > form .range-wrap .range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #f5f5f5;
+  box-shadow: inset 0 0 0 1px #ebebeb;
+  position: relative;
+  z-index: 5;
+}
+.menu-left.laptop-filter .options-choice.video-card-choice .search-video-card > input {
+  display: block;
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #d2d2d2;
+  border-radius: 4px;
+  font-size: 14px;
+}
+.menu-left.laptop-filter .options-choice.video-card-choice > input:checked ~ .search-video-card {
+  height: 0;
+  padding: 0;
+}
+.menu-left.laptop-filter .options-choice.video-card-choice > input:checked ~ .search-video-card > input {
+  padding: 0;
+  font-size: 0;
+  border: none;
+}
+.menu-left.laptop-filter .options-choice.video-card-choice > ul {
+  max-height: 400px;
+  overflow-y: auto;
 }
 .wrapper .title-wrapper .laptops {
   display: inline-block;

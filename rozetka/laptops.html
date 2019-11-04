@@ -632,16 +632,2174 @@
                     </svg>
                 </label>
                 <form action="#">
-                    <label for="min-price">
-                        <input type="text" id="min-price">
-                    </label>
-                    <span>&nbsp;</span>
-                    <label for="max-price">
-                        <input type="text" id="max-price">
-                    </label>
-                    <button>OK</button>
+                    <div class="price-wrap">
+                        <label for="min-price">
+                            <input type="text" id="min-price" value="1000">
+                        </label>
+                        <span>&nbsp;</span>
+                        <label for="max-price">
+                            <input type="text" id="max-price" value="46000">
+                        </label>
+                        <button>OK</button>
+                    </div>
 
+                    <label class="range-wrap">
+                        <input type="range" step="1" min="1000" max="200000" value="1000" id="min" class="range min">
+                        <input type="range" step="1" min="1000" max="200000" value="200000" id="max" class="range max">
+                    </label>
                 </form>
+            </div>
+
+            <div class="options-choice credit-choice">
+                <input type="checkbox" id="credit-show" class="state">
+                <label for="credit-show">
+                    <span class="option">
+                        <span>Безвітсотковий кредит</span>
+                        &nbsp;
+                        <span>2</span>
+                    </span>
+
+                    <svg class="sidebar-block__toggle-icon">
+                        <use xlink:href="#icon-chevron-down" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                    </svg>
+                </label>
+                <ul>
+                    <li>
+                        <input type="checkbox" id="credit-1">
+                        <label for="credit-1">
+                            <span>0% на 10 місяців</span>
+                            &nbsp;
+                            <span>(99)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="credit-2">
+                        <label for="credit-2">
+                            <span>0% на 15 місяців</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="credit-3">
+                        <label for="credit-3">
+                            <span>0% на 20 місяців</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="credit-4">
+                        <label for="credit-4">
+                            <span>0% на 25 місяців</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="credit-5">
+                        <label for="credit-5">
+                            <span>Оплата частинами</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="options-choice diagonal-choice">
+                <input type="checkbox" id="diagonal-show" class="state">
+                <label for="diagonal-show">
+                    <span class="option">
+                        <span>Діагональ екрана</span>
+                        &nbsp;
+                        <span>5</span>
+                    </span>
+
+                    <svg class="sidebar-block__toggle-icon">
+                        <use xlink:href="#icon-chevron-down" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                    </svg>
+                </label>
+                <ul>
+                    <li>
+                        <input type="checkbox" id="diagonal-1">
+                        <label for="diagonal-1">
+                            <span>13"</span>
+                            &nbsp;
+                            <span>(99)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="diagonal-2">
+                        <label for="diagonal-2">
+                            <span>14"</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="diagonal-3">
+                        <label for="diagonal-3">
+                            <span>15"-15.6"</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="diagonal-4">
+                        <label for="diagonal-4">
+                            <span>16"-17"</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="diagonal-5">
+                        <label for="diagonal-5">
+                            <span>9"-12.5"</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="options-choice country-choice">
+                <input type="checkbox" id="country" class="state">
+                <label for="country">
+                    <span class="option">
+                        <span>Країна виробник</span>
+                        &nbsp;
+                        <span>4</span>
+                    </span>
+
+                    <svg class="sidebar-block__toggle-icon">
+                        <use xlink:href="#icon-chevron-down" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                    </svg>
+                </label>
+                <ul>
+                    <li>
+                        <input type="checkbox" id="country-1">
+                        <label for="country-1">
+                            <span>Великобританія</span>
+                            &nbsp;
+                            <span>(99)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="country-2">
+                        <label for="country-2">
+                            <span>Китай</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="country-3">
+                        <label for="country-3">
+                            <span>Тайвань(Китай)</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="country-4">
+                        <label for="country-4">
+                            <span>Польща</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="options-choice processor-choice">
+                <input type="checkbox" id="processor" class="state">
+                <label for="processor">
+                    <span class="option">
+                        <span>процесор</span>
+                        &nbsp;
+                        <span>18</span>
+                    </span>
+
+                    <svg class="sidebar-block__toggle-icon">
+                        <use xlink:href="#icon-chevron-down" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                    </svg>
+                </label>
+                <ul>
+                    <li>
+                        <input type="checkbox" id="processor-1">
+                        <label for="processor-1">
+                            <span>AMD A12</span>
+                            &nbsp;
+                            <span>(99)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="processor-2">
+                        <label for="processor-2">
+                            <span>AMD A4</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="processor-3">
+                        <label for="processor-3">
+                            <span>AMD A6</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="processor-4">
+                        <label for="processor-4">
+                            <span>AMD A8</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="processor-5">
+                        <label for="processor-5">
+                            <span>AMD A9</span>
+                            &nbsp;
+                            <span>(99)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="processor-6">
+                        <label for="processor-6">
+                            <span>AMD E</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="processor-7">
+                        <label for="processor-7">
+                            <span>AMD FX</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="processor-8">
+                        <label for="processor-8">
+                            <span>AMD Ryzen 3</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="processor-9">
+                        <label for="processor-9">
+                            <span>AMD Ryzen 5</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="processor-10">
+                        <label for="processor-10">
+                            <span>AMD Ryzen 7</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="processor-11">
+                        <label for="processor-11">
+                            <span>Intel Atom</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="processor-12">
+                        <label for="processor-11">
+                            <span>Intel Celeron</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="processor-13">
+                        <label for="processor-13">
+                            <span>Intel Core M</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="processor-14">
+                        <label for="processor-14">
+                            <span>Intel Core i3</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="processor-15">
+                        <label for="processor-15">
+                            <span>Intel Core i5</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="processor-16">
+                        <label for="processor-16">
+                            <span>Intel Core i7</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="processor-17">
+                        <label for="processor-17">
+                            <span>Intel Core i9</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="processor-18">
+                        <label for="processor-18">
+                            <span>Intel Pentium</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="options-choice frequency-choice">
+                <input type="checkbox" id="frequency" class="state">
+                <label for="frequency">
+                    <span class="option">
+                        <span>Частота оновлення екрану</span>
+                        &nbsp;
+                        <span>4</span>
+                    </span>
+
+                    <svg class="sidebar-block__toggle-icon">
+                        <use xlink:href="#icon-chevron-down" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                    </svg>
+                </label>
+                <ul>
+                    <li>
+                        <input type="checkbox" id="frequency-1">
+                        <label for="frequency-1">
+                            <span>120 Гц</span>
+                            &nbsp;
+                            <span>(99)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="frequency-2">
+                        <label for="frequency-2">
+                            <span>144 Гц</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="frequency-3">
+                        <label for="frequency-3">
+                            <span>240 Гц</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="frequency-4">
+                        <label for="frequency-4">
+                            <span>60 Гц</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="options-choice cpu-choice">
+                <input type="checkbox" id="cpu" class="state">
+                <label for="cpu">
+                    <span class="option">
+                        <span>Обсяг оперативної пам'яті</span>
+                        &nbsp;
+                        <span>6</span>
+                    </span>
+
+                    <svg class="sidebar-block__toggle-icon">
+                        <use xlink:href="#icon-chevron-down" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                    </svg>
+                </label>
+                <ul>
+                    <li>
+                        <input type="checkbox" id="cpu-1">
+                        <label for="cpu-1">
+                            <span>10 - 12 ГБ</span>
+                            &nbsp;
+                            <span>(99)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="cpu-2">
+                        <label for="cpu-2">
+                            <span>16 - 24 ГБ</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="cpu-3">
+                        <label for="cpu-3">
+                            <span>32 ГБ і більше</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="cpu-4">
+                        <label for="cpu-4">
+                            <span>4 ГБ</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="cpu-5">
+                        <label for="cpu-5">
+                            <span>6 - 8 ГБ</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="cpu-6">
+                        <label for="cpu-6">
+                            <span>До 2 ГБ</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="options-choice disk-choice">
+                <input type="checkbox" id="disk" class="state">
+                <label for="disk">
+                    <span class="option">
+                        <span>Тип накопичувача</span>
+                        &nbsp;
+                        <span>8</span>
+                    </span>
+
+                    <svg class="sidebar-block__toggle-icon">
+                        <use xlink:href="#icon-chevron-down" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                    </svg>
+                </label>
+                <ul>
+                    <li>
+                        <input type="checkbox" id="disk-1">
+                        <label for="disk-1">
+                            <span>HDD</span>
+                            &nbsp;
+                            <span>(99)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="disk-2">
+                        <label for="disk-2">
+                            <span>HDD + eMMC</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="disk-3">
+                        <label for="disk-3">
+                            <span>Optane + HDD</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="disk-4">
+                        <label for="disk-4">
+                            <span>Optane + SSHD</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="disk-5">
+                        <label for="disk-5">
+                            <span>SSD</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="disk-6">
+                        <label for="disk-6">
+                            <span>SSD + HDD</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="disk-7">
+                        <label for="disk-7">
+                            <span>eMMC</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="disk-8">
+                        <label for="disk-8">
+                            <span>Гібрид SSHD</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="options-choice video-card-choice">
+                <input type="checkbox" id="video-card" class="state">
+                <label for="video-card">
+                    <span class="option">
+                        <span>Серія дискретної відеокарти</span>
+                        &nbsp;
+                        <span>25</span>
+                    </span>
+
+                    <svg class="sidebar-block__toggle-icon">
+                        <use xlink:href="#icon-chevron-down" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                    </svg>
+                </label>
+                <label for="search-producer" class="search-video-card">
+                    <input type="text" id="search-video-card" placeholder="Пошук">
+                </label>
+                <ul>
+                    <li>
+                        <input type="checkbox" id="video-card-1">
+                        <label for="video-card-1">
+                            <span> GeForce 320M&nbsp;</span>
+                            &nbsp;
+                            <span>(99)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="video-card-2">
+                        <label for="video-card-2">
+                            <span> GeForce 8xx/910/920&nbsp; </span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="video-card-3">
+                        <label for="video-card-3">
+                            <span> GeForce 930/940/945&nbsp; </span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="video-card-4">
+                        <label for="video-card-4">
+                            <span> GeForce GTX 1050&nbsp; </span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="video-card-5">
+                        <label for="video-card-5">
+                            <span> GeForce GTX 1050 Ti&nbsp; </span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="video-card-6">
+                        <label for="video-card-6">
+                            <span> GeForce GTX 1060&nbsp; </span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="video-card-7">
+                        <label for="video-card-7">
+                            <span> GeForce GTX 1070/1080&nbsp; </span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="video-card-8">
+                        <label for="video-card-8">
+                            <span> GeForce GTX 1650&nbsp;</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="video-card-9">
+                        <label for="video-card-9">
+                            <span> GeForce 320M&nbsp;</span>
+                            &nbsp;
+                            <span>(99)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="video-card-10">
+                        <label for="video-card-10">
+                            <span> GeForce 8xx/910/920&nbsp; </span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="video-card-11">
+                        <label for="video-card-11">
+                            <span> GeForce 930/940/945&nbsp; </span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="video-card-12">
+                        <label for="video-card-12">
+                            <span> GeForce GTX 1050&nbsp; </span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="video-card-13">
+                        <label for="video-card-13">
+                            <span> GeForce GTX 1050 Ti&nbsp; </span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="video-card-14">
+                        <label for="video-card-14">
+                            <span> GeForce GTX 1060&nbsp; </span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="video-card-15">
+                        <label for="video-card-7">
+                            <span> GeForce GTX 1070/1080&nbsp; </span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="video-card-16">
+                        <label for="video-card-16">
+                            <span> GeForce GTX 1650&nbsp;</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="video-card-17">
+                        <label for="video-card-17">
+                            <span> GeForce 320M&nbsp;</span>
+                            &nbsp;
+                            <span>(99)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="video-card-18">
+                        <label for="video-card-18">
+                            <span> GeForce 8xx/910/920&nbsp; </span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="video-card-19">
+                        <label for="video-card-19">
+                            <span> GeForce 930/940/945&nbsp; </span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="video-card-20">
+                        <label for="video-card-20">
+                            <span> GeForce GTX 1050&nbsp; </span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="video-card-21">
+                        <label for="video-card-21">
+                            <span> GeForce GTX 1050 Ti&nbsp; </span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="video-card-22">
+                        <label for="video-card-22">
+                            <span> GeForce GTX 1060&nbsp; </span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="video-card-23">
+                        <label for="video-card-23">
+                            <span> GeForce GTX 1070/1080&nbsp; </span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="video-card-24">
+                        <label for="video-card-8">
+                            <span> GeForce GTX 1650&nbsp;</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="video-card-25">
+                        <label for="video-card-25">
+                            <span> GeForce GTX 1060&nbsp; </span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="options-choice os-choice">
+                <input type="checkbox" id="os" class="state">
+                <label for="disk">
+                    <span class="option">
+                        <span>Тип накопичувача</span>
+                        &nbsp;
+                        <span>8</span>
+                    </span>
+
+                    <svg class="sidebar-block__toggle-icon">
+                        <use xlink:href="#icon-chevron-down" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                    </svg>
+                </label>
+                <ul>
+                    <li>
+                        <input type="checkbox" id="os-1">
+                        <label for="os-1">
+                            <span>Linux</span>
+                            &nbsp;
+                            <span>(99)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="os-2">
+                        <label for="os-2">
+                            <span>Windows</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="os-3">
+                        <label for="os-3">
+                            <span>Mac OS</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="os-4">
+                        <label for="os-4">
+                            <span>Endless OS</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="os-5">
+                        <label for="os-5">
+                            <span>Windows 10 Home</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="os-6">
+                        <label for="os-6">
+                            <span>Windows - 10 Ultimate</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="os-7">
+                        <label for="os-7">
+                            <span>Windows 7/8.x/10 Professional</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="os-8">
+                        <label for="os-8">
+                            <span>Windows 8.x</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="options-choice ssd-choice">
+                <input type="checkbox" id="ssd" class="state">
+                <label for="ssd">
+                    <span class="option">
+                        <span>Обсяг SSD</span>
+                        &nbsp;
+                        <span>8</span>
+                    </span>
+
+                    <svg class="sidebar-block__toggle-icon">
+                        <use xlink:href="#icon-chevron-down" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                    </svg>
+                </label>
+                <ul>
+                    <li>
+                        <input type="checkbox" id="ssd-1">
+                        <label for="ssd-1">
+                            <span>1 ТБ</span>
+                            &nbsp;
+                            <span>(99)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="ssd-2">
+                        <label for="ssd-2">
+                            <span>128 ГБ</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="ssd-3">
+                        <label for="ssd-3">
+                            <span>2 ТБ</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="ssd-4">
+                        <label for="ssd-4">
+                            <span>240 ГБ</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="ssd-5">
+                        <label for="ssd-5">
+                            <span>256 ГБ</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="ssd-6">
+                        <label for="ssd-6">
+                            <span>4 ТБ</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="ssd-7">
+                        <label for="ssd-7">
+                            <span>500 ГБ</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="ssd-8">
+                        <label for="ssd-8">
+                            <span>512 ГБ</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="options-choice expansion-choice">
+                <input type="checkbox" id="expansion" class="state">
+                <label for="expansion">
+                    <span class="option">
+                        <span>Обсяг SSD</span>
+                        &nbsp;
+                        <span>9</span>
+                    </span>
+
+                    <svg class="sidebar-block__toggle-icon">
+                        <use xlink:href="#icon-chevron-down" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                    </svg>
+                </label>
+                <ul>
+                    <li>
+                        <input type="checkbox" id="expansion-1">
+                        <label for="expansion-1">
+                            <span>1024x768</span>
+                            &nbsp;
+                            <span>(99)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="expansion-2">
+                        <label for="expansion-2">
+                            <span>1280x720</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="expansion-3">
+                        <label for="expansion-3">
+                            <span>1280x800</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="expansion-4">
+                        <label for="expansion-4">
+                            <span>1024x768</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="expansion-5">
+                        <label for="expansion-5">
+                            <span>1280x800</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="expansion-6">
+                        <label for="expansion-6">
+                            <span>1280x720</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="expansion-7">
+                        <label for="expansion-7">
+                            <span>1600x900</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="expansion-8">
+                        <label for="expansion-8">
+                            <span>1600x900</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="expansion-9">
+                        <label for="expansion-9">
+                            <span> Більш ніж Full HD</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="options-choice cores-choice">
+                <input type="checkbox" id="cores" class="state">
+                <label for="cores">
+                    <span class="option">
+                        <span>Частота оновлення екрану</span>
+                        &nbsp;
+                        <span>4</span>
+                    </span>
+
+                    <svg class="sidebar-block__toggle-icon">
+                        <use xlink:href="#icon-chevron-down" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                    </svg>
+                </label>
+                <ul>
+                    <li>
+                        <input type="checkbox" id="cores-1">
+                        <label for="cores-1">
+                            <span>2</span>
+                            &nbsp;
+                            <span>(99)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="cores-2">
+                        <label for="cores-2">
+                            <span>4</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="cores-3">
+                        <label for="cores-3">
+                            <span>6</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="cores-4">
+                        <label for="cores-4">
+                            <span>8</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="options-choice card-mark-choice">
+                <input type="checkbox" id="card-mark" class="state">
+                <label for="card-mark">
+                    <span class="option">
+                        <span>Частота оновлення екрану</span>
+                        &nbsp;
+                        <span>4</span>
+                    </span>
+
+                    <svg class="sidebar-block__toggle-icon">
+                        <use xlink:href="#icon-chevron-down" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                    </svg>
+                </label>
+                <ul>
+                    <li>
+                        <input type="checkbox" id="card-mark-2">
+                        <label for="card-mark-2">
+                            <span>AMD Radeon</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="card-mark-3">
+                        <label for="card-mark-3">
+                            <span>nVidia GeForce</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="card-mark-1">
+                        <label for="card-mark-1">
+                            <span>nVidia Quadro</span>
+                            &nbsp;
+                            <span>(99)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="card-mark-4">
+                        <label for="card-mark-4">
+                            <span>Інтегрована відеокарта</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="options-choice weight-choice">
+                <input type="checkbox" id="weight" class="state">
+                <label for="weight">
+                    <span class="option">
+                        <span>Вага, кг</span>
+                        &nbsp;
+                        <span>6</span>
+                    </span>
+
+                    <svg class="sidebar-block__toggle-icon">
+                        <use xlink:href="#icon-chevron-down" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                    </svg>
+                </label>
+                <ul>
+                    <li>
+                        <input type="checkbox" id="weight-1">
+                        <label for="weight-1">
+                            <span> Від 2.5 до 3</span>
+                            &nbsp;
+                            <span>(99)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="weight-2">
+                        <label for="weight-2">
+                            <span> Понад 2</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="weight-3">
+                        <label for="weight-3">
+                            <span> Понад 3</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="weight-4">
+                        <label for="weight-4">
+                            <span> Від 1 до 1.5</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="weight-5">
+                        <label for="weight-5">
+                            <span> Від 1.5 до 2</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="weight-6">
+                        <label for="weight-6">
+                            <span>до 1</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="options-choice color-choice">
+                <input type="checkbox" id="color" class="state">
+                <label for="color">
+                    <span class="option">
+                        <span>Вага, кг</span>
+                        &nbsp;
+                        <span>8</span>
+                    </span>
+
+                    <svg class="sidebar-block__toggle-icon">
+                        <use xlink:href="#icon-chevron-down" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                    </svg>
+                </label>
+                <ul>
+                    <li>
+                        <input type="checkbox" id="color-1">
+                        <label for="color-1">
+                            <span>Білий</span>
+                            &nbsp;
+                            <span>(99)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="color-2">
+                        <label for="color-2">
+                            <span>Золотий</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="color-3">
+                        <label for="color-3">
+                            <span>Коричневий</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="color-4">
+                        <label for="color-4">
+                            <span>Синій</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="color-5">
+                        <label for="color-5">
+                            <span>Чорний</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="color-6">
+                        <label for="color-6">
+                            <span>Сірий</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="color-7">
+                        <label for="color-7">
+                            <span>Фіолетовий</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="color-8">
+                        <label for="color-8">
+                            <span>Червоний</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="options-choice screen-type-choice">
+                <input type="checkbox" id="screen-type" class="state">
+                <label for="screen-type">
+                    <span class="option">
+                        <span>Вага, кг</span>
+                        &nbsp;
+                        <span>5</span>
+                    </span>
+
+                    <svg class="sidebar-block__toggle-icon">
+                        <use xlink:href="#icon-chevron-down" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                    </svg>
+                </label>
+                <ul>
+                    <li>
+                        <input type="checkbox" id="screen-type-1">
+                        <label for="screen-type-1">
+                            <span>OGZO</span>
+                            &nbsp;
+                            <span>(99)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="screen-type-2">
+                        <label for="screen-type-2">
+                            <span>IPS</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="screen-type-3">
+                        <label for="screen-type-3">
+                            <span>OLED</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="screen-type-4">
+                        <label for="screen-type-4">
+                            <span>Retina</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="screen-type-5">
+                        <label for="screen-type-5">
+                            <span>NT + film</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="options-choice processor-type-choice">
+                <input type="checkbox" id="processor-type" class="state">
+                <label for="screen-type">
+                    <span class="option">
+                        <span> Покоління процесора Intel</span>
+                        &nbsp;
+                        <span>15</span>
+                    </span>
+
+                    <svg class="sidebar-block__toggle-icon">
+                        <use xlink:href="#icon-chevron-down" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                    </svg>
+                </label>
+                <ul>
+                    <li>
+                        <input type="checkbox" id="processor-type-1">
+                        <label for="processor-type-1">
+                            <span>10-ое Ice Lak</span>
+                            &nbsp;
+                            <span>(99)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="processor-type-2">
+                        <label for="processor-type-2">
+                            <span>2-е Sandy Bridge</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="processor-type-3">
+                        <label for="processor-type-3">
+                            <span>3-е Ivy Bridge</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="processor-type-4">
+                        <label for="processor-type-4">
+                            <span>5-е Broadwell</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="processor-type-5">
+                        <label for="processor-type-5">
+                            <span>8-е Amber Lake Y</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+
+                    <li>
+                        <input type="checkbox" id="processor-type-6">
+                        <label for="processor-type-6">
+                            <span>10-ое Ice Lak</span>
+                            &nbsp;
+                            <span>(99)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="processor-type-7">
+                        <label for="processor-type-7">
+                            <span>2-е Sandy Bridge</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="processor-type-8">
+                        <label for="processor-type-8">
+                            <span>3-е Ivy Bridge</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="processor-type-9">
+                        <label for="processor-type-9">
+                            <span>5-е Broadwell</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="processor-type-10">
+                        <label for="processor-type-10">
+                            <span>8-е Amber Lake Y</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+
+                    <li>
+                        <input type="checkbox" id="processor-type-11">
+                        <label for="processor-type-11">
+                            <span>10-ое Ice Lak</span>
+                            &nbsp;
+                            <span>(99)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="processor-type-12">
+                        <label for="processor-type-12">
+                            <span>2-е Sandy Bridge</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="processor-type-13">
+                        <label for="processor-type-13">
+                            <span>3-е Ivy Bridge</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="processor-type-14">
+                        <label for="processor-type-14">
+                            <span>5-е Broadwell</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="processor-type-15">
+                        <label for="processor-type-15">
+                            <span>8-е Amber Lake Y</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="options-choice keyboard-choice">
+                <input type="checkbox" id="keyboard" class="state">
+                <label for="keyboard">
+                    <span class="option">
+                        <span>Клавіатура</span>
+                        &nbsp;
+                        <span>2</span>
+                    </span>
+
+                    <svg class="sidebar-block__toggle-icon">
+                        <use xlink:href="#icon-chevron-down" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                    </svg>
+                </label>
+                <ul>
+                    <li>
+                        <input type="checkbox" id="keyboard-1">
+                        <label for="keyboard-1">
+                            <span>Без підсвітки</span>
+                            &nbsp;
+                            <span>(6142)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="keyboard-2">
+                        <label for="keyboard-2">
+                            <span>З підсвіткою</span>
+                            &nbsp;
+                            <span>(6142)</span>
+                        </label>
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="options-choice card-type-choice">
+                <input type="checkbox" id="card-type" class="state">
+                <label for="card-type">
+                    <span class="option">
+                        <span>Тип відеокарти</span>
+                        &nbsp;
+                        <span>2</span>
+                    </span>
+
+                    <svg class="sidebar-block__toggle-icon">
+                        <use xlink:href="#icon-chevron-down" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                    </svg>
+                </label>
+                <ul>
+                    <li>
+                        <input type="checkbox" id="card-type-1">
+                        <label for="card-type-1">
+                            <span>Інтегрована</span>
+                            &nbsp;
+                            <span>(6142)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="card-type-2">
+                        <label for="keyboard-2">
+                            <span>Дискретна</span>
+                            &nbsp;
+                            <span>(6142)</span>
+                        </label>
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="options-choice amount-choice">
+                <input type="checkbox" id="amount" class="state">
+                <label for="amount">
+                    <span class="option">
+                        <span>Обсяг накопичувача</span>
+                        &nbsp;
+                        <span>4</span>
+                    </span>
+
+                    <svg class="sidebar-block__toggle-icon">
+                        <use xlink:href="#icon-chevron-down" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                    </svg>
+                </label>
+                <ul>
+                    <li>
+                        <input type="checkbox" id="amount-1">
+                        <label for="amount-1">
+                            <span>1 ТБ - 2 ТБ</span>
+                            &nbsp;
+                            <span>(6142)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="amount-2">
+                        <label for="amount-2">
+                            <span>1 ТБ - 2 ТБ</span>
+                            &nbsp;
+                            <span>(6142)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="amount-3">
+                        <label for="amount-3">
+                            <span>1 ТБ - 2 ТБ</span>
+                            &nbsp;
+                            <span>(6142)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="amount-4">
+                        <label for="amount-4">
+                            <span>1 ТБ - 2 ТБ</span>
+                            &nbsp;
+                            <span>(6142)</span>
+                        </label>
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="options-choice coating-screen-choice">
+                <input type="checkbox" id="coating-screen" class="state">
+                <label for="coating-screen">
+                    <span class="option">
+                        <span>Покриття екранф</span>
+                        &nbsp;
+                        <span>3</span>
+                    </span>
+
+                    <svg class="sidebar-block__toggle-icon">
+                        <use xlink:href="#icon-chevron-down" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                    </svg>
+                </label>
+                <ul>
+                    <li>
+                        <input type="checkbox" id="coating-screen-1">
+                        <label for="coating-screen-1">
+                            <span>Глянцеве</span>
+                            &nbsp;
+                            <span>(6142)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="coating-screen-2">
+                        <label for="amount-2">
+                            <span>Глянцеве з антивідблисковим покриттям</span>
+                            &nbsp;
+                            <span>(6142)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="coating-screen-3">
+                        <label for="coating-screen-3">
+                            <span>Матове</span>
+                            &nbsp;
+                            <span>(6142)</span>
+                        </label>
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="options-choice optical-driver-choice">
+                <input type="checkbox" id="optical-driver" class="state">
+                <label for="optical-driver">
+                    <span class="option">
+                        <span>Оптичний привід</span>
+                        &nbsp;
+                        <span>6</span>
+                    </span>
+
+                    <svg class="sidebar-block__toggle-icon">
+                        <use xlink:href="#icon-chevron-down" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                    </svg>
+                </label>
+                <ul>
+                    <li>
+                        <input type="checkbox" id="optical-driver-1">
+                        <label for="optical-driver-1">
+                            <span>Blu-Ray</span>
+                            &nbsp;
+                            <span>(99)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="optical-driver-2">
+                        <label for="optical-driver-2">
+                            <span>CD-ROM</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="optical-driver-3">
+                        <label for="optical-driver-3">
+                            <span>DVD</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="optical-driver-4">
+                        <label for="optical-driver-4">
+                            <span>HD-DVD</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="optical-driver-5">
+                        <label for="optical-driver-5">
+                            <span>Немає</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="options-choice card-amount-choice">
+                <input type="checkbox" id="card-amount" class="state">
+                <label for="card-amount">
+                    <span class="option">
+                        <span>Обсяг пам'яті відеокарти</span>
+                        &nbsp;
+                        <span>4</span>
+                    </span>
+
+                    <svg class="sidebar-block__toggle-icon">
+                        <use xlink:href="#icon-chevron-down" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                    </svg>
+                </label>
+                <ul>
+                    <li>
+                        <input type="checkbox" id="card-amount-1">
+                        <label for="card-amount-1">
+                            <span>1 ГБ</span>
+                            &nbsp;
+                            <span>(6142)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="card-amount-2">
+                        <label for="card-amount-2">
+                            <span>2 ГБ</span>
+                            &nbsp;
+                            <span>(6142)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="card-amount-3">
+                        <label for="card-amount-3">
+                            <span>256 МБ</span>
+                            &nbsp;
+                            <span>(6142)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="card-amount-4">
+                        <label for="card-amount-4">
+                            <span>Понад 2 ГБ</span>
+                            &nbsp;
+                            <span>(6142)</span>
+                        </label>
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="options-choice battery-choice">
+                <input type="checkbox" checked id="battery" class="state">
+                <label for="battery">
+                    <span class="option">
+                        <span>Батарея</span>
+                        &nbsp;
+                        <span>3</span>
+                    </span>
+
+                    <svg class="sidebar-block__toggle-icon">
+                        <use xlink:href="#icon-chevron-down" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                    </svg>
+                </label>
+                <ul>
+                    <li>
+                        <input type="checkbox" id="battery-1">
+                        <label for="battery-1">
+                            <span>Змінна</span>
+                            &nbsp;
+                            <span>(6142)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="battery-2">
+                        <label for="battery-2">
+                            <span>Незмінна</span>
+                            &nbsp;
+                            <span>(6142)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="battery-3">
+                        <label for="battery-3">
+                            <span>Незмінна + змінна</span>
+                            &nbsp;
+                            <span>(6)</span>
+                        </label>
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <div class="options-choice slot-choice">
+                <input type="checkbox" checked id="slot" class="state">
+                <label for="slot">
+                    <span class="option">
+                        <span>Кількість слотів для оперативної пам'яті</span>
+                        &nbsp;
+                        <span>4</span>
+                    </span>
+
+                    <svg class="sidebar-block__toggle-icon">
+                        <use xlink:href="#icon-chevron-down" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                    </svg>
+                </label>
+                <ul>
+                    <li>
+                        <input type="checkbox" id="slot-1">
+                        <label for="slot-1">
+                            <span>1</span>
+                            &nbsp;
+                            <span>(6142)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="slot-2">
+                        <label for="slot-2">
+                            <span>2</span>
+                            &nbsp;
+                            <span>(6142)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="slot-3">
+                        <label for="slot-3">
+                            <span>4</span>
+                            &nbsp;
+                            <span>(6)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="slot-4">
+                        <label for="slot-4">
+                            <span>Немає</span>
+                            &nbsp;
+                            <span>(6)</span>
+                        </label>
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <div class="options-choice ddr-choice">
+                <input type="checkbox" checked id="ddr" class="state">
+                <label for="ddr">
+                    <span class="option">
+                        <span>Тип оперативної пам'яті</span>
+                        &nbsp;
+                        <span>3</span>
+                    </span>
+
+                    <svg class="sidebar-block__toggle-icon">
+                        <use xlink:href="#icon-chevron-down" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                    </svg>
+                </label>
+                <ul>
+                    <li>
+                        <input type="checkbox" id="ddr-1">
+                        <label for="ddr-1">
+                            <span>DDR3</span>
+                            &nbsp;
+                            <span>(6142)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="ddr-2">
+                        <label for="ddr-2">
+                            <span>DDR4</span>
+                            &nbsp;
+                            <span>(6142)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="ddr-3">
+                        <label for="ddr-3">
+                            <span>LPDDR3</span>
+                            &nbsp;
+                            <span>(6)</span>
+                        </label>
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <div class="options-choice ua-choice">
+                <input type="checkbox" checked id="ua" class="state">
+                <label for="ua">
+                    <span class="option">
+                        <span>Українська розкладка клавіатури</span>
+                        &nbsp;
+                        <span>2</span>
+                    </span>
+
+                    <svg class="sidebar-block__toggle-icon">
+                        <use xlink:href="#icon-chevron-down" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                    </svg>
+                </label>
+                <ul>
+                    <li>
+                        <input type="checkbox" id="yes">
+                        <label for="yes">
+                            <span>Без</span>
+                            &nbsp;
+                            <span>(6142)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="no">
+                        <label for="no">
+                            <span>З</span>
+                            &nbsp;
+                            <span>(6142)</span>
+                        </label>
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="options-choice net-choice">
+                <input type="checkbox" checked id="net" class="state">
+                <label for="net">
+                    <span class="option">
+                        <span>3G - модуль</span>
+                        &nbsp;
+                        <span>2</span>
+                    </span>
+
+                    <svg class="sidebar-block__toggle-icon">
+                        <use xlink:href="#icon-chevron-down" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                    </svg>
+                </label>
+                <ul>
+                    <li>
+                        <input type="checkbox" id="yes-3g">
+                        <label for="yes-3g">
+                            <span>Без 3G</span>
+                            &nbsp;
+                            <span>(6142)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="no-3g">
+                        <label for="no-3g">
+                            <span>З 3G</span>
+                            &nbsp;
+                            <span>(6142)</span>
+                        </label>
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="options-choice adit-opt-choice">
+                <input type="checkbox" checked id="adit-opt" class="state">
+                <label for="adit-opt">
+                    <span class="option">
+                        <span>Додаткові можливості</span>
+                        &nbsp;
+                        <span>1</span>
+                    </span>
+
+                    <svg class="sidebar-block__toggle-icon">
+                        <use xlink:href="#icon-chevron-down" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                    </svg>
+                </label>
+                <ul>
+                    <li>
+                        <input type="checkbox" id="adit-opt-1">
+                        <label for="adit-opt-1">
+                            <span>Порт Thunderbolt</span>
+                            &nbsp;
+                            <span>(680)</span>
+                        </label>
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="options-choice brend-choice">
+                <input type="checkbox" id="brend" class="state">
+                <label for="brend">
+                    <span class="option">
+                        <span>Країна реєстрації бренду</span>
+                        &nbsp;
+                        <span>7</span>
+                    </span>
+
+                    <svg class="sidebar-block__toggle-icon">
+                        <use xlink:href="#icon-chevron-down" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                    </svg>
+                </label>
+                <ul>
+                    <li>
+                        <input type="checkbox" id="brend-1">
+                        <label for="brend-1">
+                            <span>Китай</span>
+                            &nbsp;
+                            <span>(99)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="brend-2">
+                        <label for="optical-driver-2">
+                            <span>Китай(Тайвань)</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="brend-3">
+                        <label for="brend-3">
+                            <span>Кіпр</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="brend-4">
+                        <label for="brend-4">
+                            <span>Польща</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="brend-5">
+                        <label for="brend-5">
+                            <span>США</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="brend-6">
+                        <label for="brend-6">
+                            <span>Україна</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="brend-7">
+                        <label for="brend-7">
+                            <span>Японія</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="options-choice class-type-choice">
+                <input type="checkbox" id="class-type" class="state">
+                <label for="class-type">
+                    <span class="option">
+                        <span>Клас</span>
+                        &nbsp;
+                        <span>9</span>
+                    </span>
+
+                    <svg class="sidebar-block__toggle-icon">
+                        <use xlink:href="#icon-chevron-down" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                    </svg>
+                </label>
+                <ul>
+                    <li>
+                        <input type="checkbox" id="class-type-1">
+                        <label for="class-type-1">
+                            <span>Геймерські</span>
+                            &nbsp;
+                            <span>(99)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="class-type-2">
+                        <label for="class-type-2">
+                            <span>Для бізнесу</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="class-type-3">
+                        <label for="class-type-3">
+                            <span>Для нескладних завдань</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="class-type-4">
+                        <label for="class-type-4">
+                            <span>Для роботи та навчання</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="class-type-5">
+                        <label for="class-type-5">
+                            <span>З 3G</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="class-type-6">
+                        <label for="class-type-6">
+                            <span>На ОС Windows</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="class-type-7">
+                        <label for="class-type-7">
+                            <span>Ноутбук з SSD</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="class-type-8">
+                        <label for="class-type-8">
+                            <span>Тонкі та легкі</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="class-type-9">
+                        <label for="class-type-9">
+                            <span>Трансформери/2 в 1</span>
+                            &nbsp;
+                            <span>(18)</span>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="options-choice seller-choice">
+                <input type="checkbox" id="seller" class="state">
+                <label for="seller">
+                    <span class="option">
+                        <span>Продавець</span>
+                        &nbsp;
+                        <span>2</span>
+                    </span>
+
+                    <svg class="sidebar-block__toggle-icon">
+                        <use xlink:href="#icon-chevron-down" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                    </svg>
+                </label>
+                <ul>
+                    <li>
+                        <input type="checkbox" id="seller-1">
+                        <label for="seller-1">
+                            <span>Розетка</span>
+                            &nbsp;
+                            <span>(6142)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="seller-2">
+                        <label for="seller-2">
+                            <span>Інші продавці</span>
+                            &nbsp;
+                            <span>(6142)</span>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="options-choice programs-choice">
+                <input type="checkbox" id="programs" class="state">
+                <label for="programs">
+                    <span class="option">
+                        <span>Програма лояльності</span>
+                        &nbsp;
+                        <span>0</span>
+                    </span>
+
+                    <svg class="sidebar-block__toggle-icon">
+                        <use xlink:href="#icon-chevron-down" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                    </svg>
+                </label>
+                <ul>
+                    <li>
+                        <input type="checkbox" id="programs-1">
+                        <label for="seller-1">
+                            <span>З бонусами</span>
+                            &nbsp;
+                            <span>(0)</span>
+                        </label>
+                    </li>
+                </ul>
             </div>
 
         </aside>
