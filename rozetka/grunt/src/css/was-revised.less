@@ -1,0 +1,107 @@
+.wrapper {
+    .revised-prod {
+        & > p{
+            font-size: 20px;
+
+            margin: 4px 0 16px;
+        }
+        .revised {
+            display: flex;
+            .product {
+                width: 12.5%;
+                border-right: 1px solid #d2d2d2;
+                border-bottom: 1px solid #d2d2d2;
+                box-sizing: border-box;
+                position: relative;
+
+                .icon {
+                    position: absolute;
+                    top: 8px;
+                    right: 8px;
+
+                    & > svg {
+                        stroke: #fcc10a;
+                        stroke-width: 2px;
+                        fill: #ffffff;
+                        z-index: 5;
+                    }
+                }
+
+                .product-content {
+                    padding: 16px;
+                    background-color: #ffffff;
+                }
+
+                .product-image {
+                    display: block;
+                    margin: 16px 0 16px;
+                    position: relative;
+                    height: 170px;
+
+                    & > img {
+                        max-width: 100%;
+                        max-height: 100%;
+                        display: block;
+                        margin: 0 auto;
+                    }
+
+                    & > img:last-child {
+                        opacity: 0;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                    }
+
+                    &:hover {
+                        & > img:first-child {
+                            opacity: 0;
+                        }
+
+                        & > img:last-child {
+                            opacity: 1;
+                        }
+                    }
+                }
+
+                .article-text {
+                    font-size: 14px;
+                    line-height: 16px;
+                    margin-bottom: 8px;
+                    height: 32px;
+                    overflow: hidden;
+                }
+
+                .rating-wrap {
+                    margin-bottom: 8px;
+
+                    span {
+                        &.rating {
+                            margin-right: 4px;
+                        }
+
+                        &.reviews {
+                            color: #3e77aa;
+                            font-size: 12px;
+                            cursor: pointer;
+
+                            &:hover {
+
+                                color: #ff7878;
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                }
+
+                .price {
+                    & > span {
+                        color: #333;
+                        font-size: 24px;
+                    }
+                }
+            }
+        }
+    }
+}
