@@ -1320,6 +1320,144 @@ main.main-laptop .wrapper aside.left > ul > li .hidden-menu {
   border-bottom-right-radius: 5px;
   border-left: 0;
 }
+main.main-laptop .wrapper aside.left .prev-nav {
+  padding-top: 20px;
+}
+main.main-laptop .wrapper aside.left .prev-nav ul li {
+  list-style-type: none;
+  position: relative;
+  padding-left: 10px;
+  font-size: 13px;
+  color: #3e77aa;
+  padding-bottom: 5px;
+  cursor: pointer;
+}
+main.main-laptop .wrapper aside.left .prev-nav ul li:nth-child(2) {
+  margin-left: 10px;
+}
+main.main-laptop .wrapper aside.left .prev-nav ul li:nth-child(3) {
+  margin-left: 20px;
+}
+main.main-laptop .wrapper aside.left .prev-nav ul li::before {
+  content: '';
+  position: absolute;
+  background-image: url(../../ima/sprite-laptop.svg);
+  background-repeat: no-repeat;
+  background-position: -777px -247px;
+  width: 9px;
+  height: 9px;
+  left: -1px;
+  top: 4px;
+  transform: rotate(90deg);
+}
+main.main-laptop .wrapper aside.left .prev-nav p {
+  text-align: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: #4d4b4b;
+}
+main.main-laptop .wrapper aside.left .filtre details[open] summary:before {
+  transform: rotate(0deg);
+  background-position: -726px -714px;
+}
+main.main-laptop .wrapper aside.left .filtre details[open] summary:after {
+  border: 1px solid #f9c2c5;
+}
+main.main-laptop .wrapper aside.left .filtre details summary {
+  position: relative;
+  margin-top: 30px;
+  list-style: none;
+  color: #3e77aa;
+  font-size: 125%;
+}
+main.main-laptop .wrapper aside.left .filtre details summary::before {
+  content: '';
+  position: absolute;
+  display: block;
+  background-position: -436px -207px;
+  width: 13px;
+  height: 13px;
+  top: 50%;
+  margin-top: -6px;
+  right: 10px;
+  transform: rotate(-180deg);
+  transition: transform 250ms ease;
+  background-image: url(../../ima/sprite-laptop.svg);
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+main.main-laptop .wrapper aside.left .filtre details summary:hover {
+  color: #ff7878;
+}
+main.main-laptop .wrapper aside.left .filtre details summary:hover::before {
+  background-position: -726px -714px;
+}
+main.main-laptop .wrapper aside.left .filtre details summary::after {
+  position: absolute;
+  content: '';
+  top: 50%;
+  right: 3px;
+  width: 27px;
+  height: 27px;
+  margin-top: -13px;
+  border-radius: 50%;
+}
+main.main-laptop .wrapper aside.left .filtre details .remember {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+main.main-laptop .wrapper aside.left .filtre details .remember .container {
+  display: block;
+  position: relative;
+  padding-left: 34px;
+  cursor: pointer;
+  font-size: 120%;
+  -moz-user-select: none;
+  user-select: none;
+  line-height: 40px;
+  color: #4d4b4b;
+}
+main.main-laptop .wrapper aside.left .filtre details .remember .container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+main.main-laptop .wrapper aside.left .filtre details .remember .container input:checked ~ .checkmark {
+  background-color: #00a046;
+  border-color: #00a046;
+}
+main.main-laptop .wrapper aside.left .filtre details .remember .container input:checked ~ .checkmark:after {
+  display: block;
+}
+main.main-laptop .wrapper aside.left .filtre details .remember .container .checkmark {
+  position: absolute;
+  top: 7px;
+  left: 0;
+  height: 23px;
+  width: 23px;
+  border-radius: 2px;
+  background-color: #fff;
+  border: 1px solid #999;
+}
+main.main-laptop .wrapper aside.left .filtre details .remember .container .checkmark::after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 6px;
+  width: 9px;
+  height: 15px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+main.main-laptop .wrapper aside.left .filtre details .remember .container:hover input ~ .checkmark {
+  border-color: #666;
+}
 @keyframes popup {
   from {
     opacity: 0;
