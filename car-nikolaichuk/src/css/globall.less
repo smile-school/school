@@ -9,6 +9,7 @@ body {
     letter-spacing: 1.2px;
     color: @page-main-color;
     font-weight: 400;
+    position: relative;
 }
 h1 {
     font-size: @h1-font-size;
@@ -20,13 +21,16 @@ h2{
 h3 {
     font-size: @h3-font-size;
     text-transform: uppercase;
-    @media(max-width: @tablet) {
-        font-size: @h3-font-size-tablet;
+    @media(max-width: @small-laptop) {
+        font-size: @h3-font-size-laptop;
     }
 }
 .page-wrapper {
     max-width: @page-wrapper-width;
     margin: 0 auto;
+    @media(max-width: @desktop){
+        max-width: 100%;
+    }
 }
 .link{
     text-decoration: none;
@@ -39,7 +43,7 @@ h3 {
     color: @page-main-color;
     font-size: 22px;
     padding: 0 12px;
-    @media(max-width: @second-desktop){
+    @media(max-width: @laptop){
         font-size: 17px;
     }
     @media(max-width: @tablet){
@@ -57,7 +61,7 @@ h3 {
     border-radius: 23px;
     cursor: pointer;
     transition: color .2s ease-in-out,
-    background-color .2s ease-in-out;
+                background-color .2s ease-in-out;
     @media(max-width: @tablet){
         padding: 8px 20px;
         font-size: 16px;
