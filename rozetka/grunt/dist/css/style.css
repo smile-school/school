@@ -632,22 +632,42 @@ header.header .bottom-section {
   padding: 15px 0 10px;
 }
 header.header .bottom-section a.logotype {
-  max-width: 240px;
+  min-width: 240px;
+  height: 40px;
   display: block;
   margin-right: 24px;
+}
+@media (max-width: 1279px) {
+  header.header .bottom-section a.logotype {
+    min-width: 0;
+    width: 40px;
+    overflow: hidden;
+  }
 }
 header.header .bottom-section a.logotype > img {
   display: block;
   width: 100%;
 }
+@media (max-width: 1279px) {
+  header.header .bottom-section a.logotype > img {
+    width: auto;
+  }
+}
 header.header .bottom-section > label {
   border: 1px solid rgba(255, 255, 255, 0.7);
   border-radius: 3px;
-  padding: 5px 10px;
+  padding: 0 10px;
   font-size: 16px;
   font-weight: bold;
   margin-right: 24px;
-  align-self: flex-start;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  height: 40px;
+  min-width: 182px;
+  box-sizing: border-box;
+  /*display: flex;
+            flex-wrap: nowrap;*/
 }
 header.header .bottom-section > label > svg {
   width: 24px;
@@ -656,7 +676,9 @@ header.header .bottom-section > label > svg {
 }
 header.header .bottom-section > label > span {
   display: inline-block;
-  transform: translateY(-30%);
+  font-size: 100%;
+  line-height: 40px;
+  hyphens: none;
 }
 header.header .bottom-section > input.menu-open {
   display: none;
@@ -670,6 +692,7 @@ header.header .bottom-section .search {
 header.header .bottom-section .search > label {
   box-sizing: border-box;
   width: calc(89% - 40px);
+  height: 40px;
 }
 header.header .bottom-section .search > label input {
   width: 100%;
@@ -681,6 +704,7 @@ header.header .bottom-section .search > label input {
   background-position: 12px;
   border: none;
   border-radius: 4px 0 0 4px;
+  height: 40px;
 }
 header.header .bottom-section .search > button:first-of-type {
   width: 40px;
@@ -716,6 +740,7 @@ header.header .bottom-section .actions {
   display: flex;
   position: relative;
   z-index: 10;
+  width: 204px;
 }
 header.header .bottom-section .actions > li {
   text-align: center;
@@ -1732,10 +1757,17 @@ main.site-content .video-wrap > ul li > span {
   height: 408px;
   overflow: visible;
 }
+@media (max-width: 1279px) {
+  .wrapper .content-wrap .product-wrap .product {
+    width: 33.33%;
+    height: 370px;
+  }
+}
 .wrapper .content-wrap .product-wrap .product .product-content {
   padding: 16px;
   position: relative;
   background-color: #ffffff;
+  box-sizing: border-box;
 }
 .wrapper .content-wrap .product-wrap .product .product-content::before {
   display: none;
@@ -1784,9 +1816,15 @@ main.site-content .video-wrap > ul li > span {
 }
 .wrapper .content-wrap .product-wrap .product .product-image {
   display: block;
-  margin: 16px 0 16px;
+  margin: 16px 0 ;
   position: relative;
   height: 184px;
+}
+@media (max-width: 1279px) {
+  .wrapper .content-wrap .product-wrap .product .product-image {
+    height: 160px;
+    margin: 0 0 36px;
+  }
 }
 .wrapper .content-wrap .product-wrap .product .product-image > img {
   max-width: 100%;
@@ -1833,6 +1871,8 @@ main.site-content .video-wrap > ul li > span {
 .wrapper .content-wrap .product-wrap .product .last-price {
   color: #a6a5a5;
   text-decoration: line-through;
+  height: 16px;
+  line-height: 16px;
 }
 .wrapper .content-wrap .product-wrap .product .new-price {
   display: flex;
@@ -1971,12 +2011,24 @@ main.site-content .video-wrap > ul li > span {
 .wrapper .revised-prod .revised {
   display: flex;
 }
+@media (max-width: 1279px) {
+  .wrapper .revised-prod .revised {
+    flex-wrap: wrap;
+    height: 327px;
+    overflow: hidden;
+  }
+}
 .wrapper .revised-prod .revised .product {
   width: 12.5%;
   border-right: 1px solid #d2d2d2;
   border-bottom: 1px solid #d2d2d2;
   box-sizing: border-box;
   position: relative;
+}
+@media (max-width: 1279px) {
+  .wrapper .revised-prod .revised .product {
+    width: 20%;
+  }
 }
 .wrapper .revised-prod .revised .product .icon {
   position: absolute;
@@ -2050,12 +2102,22 @@ main.site-content .video-wrap > ul li > span {
   box-sizing: border-box;
   padding: 60px 0;
 }
+@media (max-width: 1279px) {
+  .wrapper .revised-prod .content-filter {
+    flex-wrap: wrap;
+  }
+}
 .wrapper .revised-prod .content-filter > li {
   box-sizing: border-box;
   padding: 2px 8px;
   margin-right: 4px;
   background-color: #f5f5f5;
   border-radius: 3px;
+}
+@media (max-width: 1279px) {
+  .wrapper .revised-prod .content-filter > li {
+    margin-bottom: 8px;
+  }
 }
 .wrapper .revised-prod .content-filter > li > a {
   text-decoration: none;

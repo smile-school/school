@@ -42,6 +42,7 @@
             .product-wrap {
                 .product {
                     width: 25%;
+
                 }
             }
         }
@@ -180,11 +181,16 @@
                 position: relative;
                 height: 408px;
                 overflow: visible;
+                @media (max-width: 1279px){
+                    width: 33.33%;
+                    height: 370px;
+                }
 
                 .product-content {
                     padding: 16px;
                     position: relative;
                     background-color: #ffffff;
+                    box-sizing: border-box;
 
                     &::before {
                         display: none;
@@ -248,9 +254,13 @@
 
                 .product-image {
                     display: block;
-                    margin: 16px 0 16px;
+                    margin: 16px 0 ;
                     position: relative;
                     height: 184px;
+                    @media(max-width: 1279px){
+                        height: 160px;
+                        margin: 0 0 36px;
+                    }
 
                     & > img {
                         max-width: 100%;
@@ -312,6 +322,8 @@
                 .last-price {
                     color: #a6a5a5;
                     text-decoration: line-through;
+                    height: 16px;
+                    line-height: 16px;
                 }
 
                 .new-price {
