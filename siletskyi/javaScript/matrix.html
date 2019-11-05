@@ -24,12 +24,12 @@
                 var div = document.querySelector("#p"), char = "";
                 for (var i=0; i< +height; i++){
                     for (var y = +height - 1; y>=0; y--){
-                        char = (y <= i) ? "#" : "&nbsp;";
+                        char = (y <= i) ? "1" : "0";
                         div.innerHTML += char;
                     }
                     div.innerHTML += "&nbsp;&nbsp;";
-                    for (var j = 0; j<= +height; j++){
-                        char = (j <= i) ? "#" : "&nbsp;";
+                    for (var j = 0; j<= +height - 1; j++){
+                        char = (j <= i) ? "1" : "0";
                         div.innerHTML += char;
                     }
                     div.innerHTML += "<br>"
