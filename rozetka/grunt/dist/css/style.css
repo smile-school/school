@@ -2066,19 +2066,19 @@ main.site-content .video-wrap > ul li > span {
   color: #ff7878;
   text-decoration: underline;
 }
-footer.footer .wrapper .article-wrap input {
+.wrapper .article-wrap input {
   display: none;
 }
-footer.footer .wrapper .article-wrap input:checked ~ article.about-laptops {
+.wrapper .article-wrap input:checked ~ article.about-laptops {
   max-height: 100%;
 }
-footer.footer .wrapper .article-wrap input:checked ~ article.about-laptops::after {
+.wrapper .article-wrap input:checked ~ article.about-laptops::after {
   display: none;
 }
-footer.footer .wrapper .article-wrap input:checked ~ label {
+.wrapper .article-wrap input:checked ~ label {
   display: none;
 }
-footer.footer .wrapper .article-wrap > article.about-laptops {
+.wrapper .article-wrap > article.about-laptops {
   font-size: 13px;
   line-height: 19px;
   color: #999999;
@@ -2087,7 +2087,7 @@ footer.footer .wrapper .article-wrap > article.about-laptops {
   position: relative;
   width: 100%;
 }
-footer.footer .wrapper .article-wrap > article.about-laptops::after {
+.wrapper .article-wrap > article.about-laptops::after {
   display: block;
   content: '';
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, #fff 100%);
@@ -2098,40 +2098,217 @@ footer.footer .wrapper .article-wrap > article.about-laptops::after {
   bottom: 0;
   position: absolute;
 }
-footer.footer .wrapper .article-wrap > article.about-laptops > p {
+.wrapper .article-wrap > article.about-laptops > p {
   font-size: 13px;
   line-height: 19px;
 }
-footer.footer .wrapper .article-wrap > article.about-laptops > p > span {
+.wrapper .article-wrap > article.about-laptops > p > span {
   font-weight: bold;
   display: block;
   padding-top: 8px;
 }
-footer.footer .wrapper .article-wrap > article.about-laptops > h2 {
+.wrapper .article-wrap > article.about-laptops > h2 {
   font-size: 17px;
   margin-bottom: 8px;
   line-height: 19px;
   font-weight: normal;
 }
-footer.footer .wrapper .article-wrap > article.about-laptops ul {
+.wrapper .article-wrap > article.about-laptops ul {
   margin: 12px 0;
 }
-footer.footer .wrapper .article-wrap > article.about-laptops ul li {
+.wrapper .article-wrap > article.about-laptops ul li {
   margin-top: 4px;
 }
-footer.footer .wrapper .article-wrap > article.about-laptops ul li:before {
+.wrapper .article-wrap > article.about-laptops ul li:before {
   display: inline-block;
   content: '-';
   margin: 0 24px;
 }
-footer.footer .wrapper .article-wrap > article.about-laptops ul li > span {
+.wrapper .article-wrap > article.about-laptops ul li > span {
   font-weight: bold;
 }
-footer.footer .wrapper .article-wrap > label {
+.wrapper .article-wrap > label {
   color: #3e77aa;
   border-bottom: 1px dotted;
 }
-footer.footer .wrapper .article-wrap > label:hover {
+.wrapper .article-wrap > label:hover {
   color: #ff7878;
   cursor: pointer;
+}
+.wrapper.stores {
+  max-width: 100%;
+  padding: 0;
+}
+.wrapper.stores .content {
+  width: 100%;
+  margin-top: 100px;
+  padding: 0 80px;
+  background-color: #00a046;
+  max-height: 72px;
+  box-sizing: border-box;
+  display: flex;
+}
+.wrapper.stores .image-store {
+  width: 33.33%;
+  align-self: flex-end;
+}
+.wrapper.stores .image-store img {
+  width: 248px;
+  display: block;
+}
+.wrapper.stores .apps-wrapper {
+  align-self: center;
+  display: flex;
+  justify-content: space-between;
+  width: 66.66%;
+}
+.wrapper.stores .apps-wrapper > h3 {
+  color: #ffffff;
+  font-weight: normal;
+  max-height: 450px;
+  padding-right: 16px;
+  line-height: 40px;
+}
+.wrapper.stores .apps-wrapper > ul {
+  display: flex;
+  max-width: 260px;
+  max-height: 40%;
+}
+.wrapper.stores .apps-wrapper > ul li {
+  display: block;
+  max-width: 128px;
+  margin-left: 8px;
+}
+.wrapper.stores .apps-wrapper > ul li > a {
+  display: block;
+}
+.wrapper.stores .apps-wrapper > ul li > a img {
+  display: block;
+  width: 100%;
+  height: 40px;
+}
+footer.footer {
+  background-color: #f5f5f5;
+}
+footer.footer .wrapper {
+  padding: 0 32px;
+}
+footer.footer .wrapper .footer-content {
+  padding: 24px 0;
+  display: flex;
+  border-bottom: 1px solid #e9e9e9;
+}
+footer.footer .wrapper .footer-content .content-section {
+  width: 20%;
+  padding-right: 8px;
+  line-height: 1.4;
+}
+footer.footer .wrapper .footer-content .content-section:first-child {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+footer.footer .wrapper .footer-content .content-section > a {
+  color: #3e77aa;
+  text-decoration: none;
+  font-size: 14px;
+  display: block;
+}
+footer.footer .wrapper .footer-content .content-section > a > svg {
+  fill: #3e77aa;
+  display: inline-block;
+}
+footer.footer .wrapper .footer-content .content-section > a:hover {
+  color: #ff7878;
+  text-decoration: underline;
+}
+footer.footer .wrapper .footer-content .content-section > a:hover > svg {
+  fill: #ff7878;
+}
+footer.footer .wrapper .footer-content .content-section .social {
+  display: flex;
+  margin-top: 8px;
+  padding: 24px 8px 0 0;
+}
+footer.footer .wrapper .footer-content .content-section .social > li {
+  padding: 0;
+  margin: 0;
+}
+footer.footer .wrapper .footer-content .content-section .social > li:not(:first-child) {
+  margin-left: 8px;
+}
+footer.footer .wrapper .footer-content .content-section .social > li a {
+  display: block;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #3e77aa;
+  position: relative;
+}
+footer.footer .wrapper .footer-content .content-section .social > li a > svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  fill: #fff;
+}
+footer.footer .wrapper .footer-content .content-section .social > li a.facebook {
+  background-color: #506098;
+}
+footer.footer .wrapper .footer-content .content-section .social > li a.twitter {
+  background-color: #76c9fd;
+}
+footer.footer .wrapper .footer-content .content-section .social > li a.youtube {
+  background-color: #e90000;
+}
+footer.footer .wrapper .footer-content .content-section .social > li a.instagram {
+  background: linear-gradient(45deg, #ffb700 14.65%, #ff6800 31.68%, #cb217d 54.72%, #7e00aa 85.35%);
+}
+footer.footer .wrapper .footer-content .content-section .social > li a.viber {
+  background-color: #7d3daf;
+}
+footer.footer .wrapper .footer-content .content-section .social > li:not(:first-child) {
+  margin-left: 10px;
+}
+footer.footer .wrapper .footer-content .content-section > p.content-title {
+  color: #797878;
+  font-size: 10px;
+}
+footer.footer .wrapper .footer-content .content-section > ul li {
+  margin-top: 8px;
+  padding-right: 8px;
+}
+footer.footer .wrapper .footer-content .content-section > ul li > a {
+  color: #3e77aa;
+  text-decoration: none;
+  font-size: 14px;
+}
+footer.footer .wrapper .footer-content .content-section > ul li > a:hover {
+  color: #ff7878;
+  text-decoration: underline;
+}
+footer.footer .wrapper .different {
+  padding: 17px 0;
+  display: flex;
+  justify-content: space-between;
+}
+footer.footer .wrapper .different .cards {
+  display: flex;
+}
+footer.footer .wrapper .different .cards > .card {
+  width: 72px;
+  display: block;
+  padding-right: 8px;
+}
+footer.footer .wrapper .different .cards > .card img {
+  width: 100%;
+  margin: 0 auto;
+}
+footer.footer .wrapper .different > p {
+  font-size: 12px;
+  color: #333333;
+  line-height: 35px;
+}
+footer.footer .wrapper .different > p > span {
+  color: #797878;
 }
