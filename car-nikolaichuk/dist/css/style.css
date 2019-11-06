@@ -125,7 +125,7 @@ h3 {
   display: table;
   clear: both;
 }
-/*---header---*/
+/*---Header---*/
 .header-container {
   width: 100%;
   height: 910px;
@@ -174,15 +174,13 @@ h3 {
   font-size: 14px;
   transition: background-color 0.1s ease-in-out;
 }
-.header-links__quick-links__link-item:hover,
-.header-links__quick-links__link-item .nav-panel__menu-item:hover,
-.header-links__quick-links__link-item .main-links-list__link:hover {
+.header-links__quick-links__link-item:hover {
   background-color: #201f1f;
 }
 .header-links__quick-links__link-item i {
   padding-right: 5px;
 }
-.header-links__quick-links__link-item :nth-child(3)::after {
+.header-links__quick-links__link-item:nth-child(3)::after {
   content: "";
   position: absolute;
   background-color: #a2a2a2;
@@ -192,7 +190,7 @@ h3 {
   top: 50%;
   transform: translate(0, -50%);
 }
-.header-links__quick-links__link-item :last-child {
+.header-links__quick-links__link-item:last-child {
   font-size: 25px;
   color: #ffffff;
 }
@@ -257,8 +255,10 @@ h3 {
     text-align: center;
   }
 }
-.header-links__main-links__item.contact-info-container {
-  order: 3;
+@media (max-width: 992px) {
+  .header-links__main-links__item.contact-info-container {
+    order: 3;
+  }
 }
 @media (max-width: 992px) {
   .header-links__main-links__item.main-links-list {
@@ -300,9 +300,10 @@ h3 {
   text-transform: uppercase;
   transition: transform 0.1s ease-in;
 }
-.nav-panel__menu-item :hover {
+.nav-panel__menu-item:hover {
   transform: scale(1.1);
-  border-radius: 5px;
+  border-radius: 7px;
+  background-color: #201f1f;
 }
 @media (max-width: 1600px) {
   .nav-panel {
@@ -320,7 +321,7 @@ h3 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
 }
 .contact-info-container__row {
   text-align: right;
@@ -385,6 +386,9 @@ h3 {
   .main-links-list__link__title {
     display: none;
   }
+}
+.main-links-list__link:hover {
+  background-color: #201f1f;
 }
 .main-links-list__link:hover i,
 .main-links-list__link:hover .main-links-list__link__title {
@@ -521,6 +525,24 @@ h3 {
   .hamburger-menu {
     display: block;
   }
+}
+#menu-toggle:checked ~ .hamburger-menu__btn {
+  position: fixed;
+}
+#menu-toggle:checked ~ .hamburger-menu__btn > span {
+  transform: rotate(45deg);
+  left: 9%;
+}
+#menu-toggle:checked ~ .hamburger-menu__btn > span::before {
+  top: 0;
+  transform: rotate(0);
+}
+#menu-toggle:checked ~ .hamburger-menu__btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+#menu-toggle:checked ~ .hamburger-menu-list {
+  display: block;
 }
 /*---Footer---*/
 .footer-container {

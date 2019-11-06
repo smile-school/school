@@ -1,4 +1,4 @@
-/*---header---*/
+/*---Header---*/
 .header{
     &-container{
         .geometric-mixin(@width: 100%, @height: 910px);
@@ -31,18 +31,16 @@
                 color: @page-additional-color;
                 font-size: 14px;
                 transition: background-color .1s ease-in-out;
-                &:hover,
-                .nav-panel__menu-item:hover,
-                .main-links-list__link:hover{
+                &:hover{
                     background-color: @header-links-color-hover;
                 }
                 & i{
                     padding-right: 5px;
                 }
-                :nth-child(3)::after{
+                &:nth-child(3)::after{
                     .vertical-line-mixin(@height: 60%, @vertical-side: right);
                 }
-                :last-child{
+                &:last-child{
                     font-size: 25px;
                     color: @page-main-color;
                 }
@@ -96,7 +94,9 @@
                 }
             }
             &__item.contact-info-container{
-                order: 3;
+                @media(max-width: @small-laptop){
+                    order: 3;
+                }
             }
             &__item.main-links-list{
                 @media(max-width: @small-laptop){
@@ -131,9 +131,10 @@
         font-weight: 700;
         text-transform: uppercase;
         transition: transform .1s ease-in;
-        :hover{
+        &:hover{
             transform: scale(1.1);
-            border-radius: 20px/4px;
+            border-radius: 7px;
+            background-color: @header-links-color-hover;
         }
     }
     @media (max-width: @desktop){
@@ -146,7 +147,7 @@
 }
 .contact-info-container{
     padding-right: 32px;
-    .flex-mixin(@direction: column, @justify: space-between);
+    .flex-mixin(@direction: column, @justify: space-between, @align: flex-end);
     &__row{
         text-align: right;
         & i{
@@ -204,6 +205,9 @@
         @media (max-width: @mobile){
             display: none;
         }
+    }
+    &:hover{
+        background-color: @header-links-color-hover;
     }
     &:hover i,
     &:hover &__title{
@@ -320,5 +324,27 @@
     }
     @media (max-width: @small-laptop){
         display: block;
+    }
+}
+#menu-toggle:checked{
+    & ~ .hamburger-menu{
+        &__btn{
+            position: fixed;
+            & > span{
+                transform: rotate(45deg);
+                left: 9%;
+                &::before{
+                    top: 0;
+                    transform: rotate(0);
+                }
+                &::after{
+                    top: 0;
+                    transform: rotate(90deg);
+                }
+            }
+        }
+        &-list{
+            display: block;
+        }
     }
 }
