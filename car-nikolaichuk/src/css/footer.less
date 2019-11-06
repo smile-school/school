@@ -1,4 +1,4 @@
-/*---Footer---*/
+/*---footer---*/
 .footer{
     &-container{
         background-color: @footer-background;
@@ -11,7 +11,7 @@
             padding: 115px 0 79px;
             position: relative;
             &::after{
-                .horizontal-line-mixin(@footer-wrapper-width);
+                .horizontal-line-mixin(@footer-wrapper-width, @color: @page-line-color);
             }
             @media(max-width: @desktop){
                 padding: 80px 15px 30px;
@@ -59,7 +59,7 @@
             padding: 85px 0 105px;
             position: relative;
             &::after{
-                .horizontal-line-mixin(@footer-wrapper-width);
+                .horizontal-line-mixin(@footer-wrapper-width, @color: @page-line-color);
             }
             @media(max-width: @desktop){
                 padding: 60px 15px 30px;

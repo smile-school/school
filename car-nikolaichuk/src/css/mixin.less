@@ -14,32 +14,32 @@
     background-position: @position;
     background-repeat: no-repeat;
 }
-.line-mixin(){
+.line-mixin(@color){
     content: "";
     position: absolute;
-    background-color: @page-line-color;
+    background-color: @color;
 }
-.horizontal-line-mixin(@width: 0px){
-    .line-mixin();
+.horizontal-line-mixin(@width: 0px, @color){
+    .line-mixin(@color: @color);
     width: 100%;
     max-width: @width;
     height: 2px;
     bottom: -1px;
 }
-.vertical-line-mixin(@height: 0px, @vertical-side){
-    .line-mixin();
+.vertical-line-mixin(@height: 0px, @vertical-side, @color){
+    .line-mixin(@color: @color);
     width: 2px;
     height: @height;
     @{vertical-side}: -1px;
     top: 50%;
     transform: translate(0, -50%);
 }
-.underline-mixin(@width: 0px){
+.underline-mixin(@width: 0, @left: 0){
     content: "";
     position: absolute;
     width: @width;
     height: 6px;
     background-color: @underline-color;
     bottom: -3px;
-    left: 0;
+    left: @left;
 }
