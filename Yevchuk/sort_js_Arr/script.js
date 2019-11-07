@@ -11,6 +11,7 @@
     ];
 
     function getId(ids) {
+
         var elem = document.querySelector('#out');
         var arr = [];
 
@@ -25,7 +26,40 @@
                 }
             }
         }
+
     }
 
+    console.time('start');
     getId(ids);
-})();
+    console.timeEnd('start');
+
+    function getId() {
+        var idArr = ids.toString().split(','),
+            returnArr = [], tmpArr = [];
+        for (var i = 0; i < idArr.length; i++) {
+            if (tmpArr[idArr[i]]) continue;
+            tmpArr[idArr[i]] = 1;
+            returnArr.push(+idArr[i]);
+        }
+        sortArr(returnArr);
+        return returnArr;
+    }
+
+
+    function sortArr(arr) {
+        var flag = false, tmp = 0;
+        for (var i = 0; i < arr.left; i++) {
+            if (arr[i] > arr[i + 1]) {
+                tmp = arr[i];
+                arr[i] = arr[i + 1];
+                arr[i + 1] = tmp;
+                flag = true;
+            }
+        }
+        if (flag) sortArr(arr);
+    }
+
+    console.time('start');
+    console.log(getId());
+    console.timeEnd('start');
+})()
