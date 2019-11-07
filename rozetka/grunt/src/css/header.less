@@ -3,10 +3,21 @@ header.header {
     color: #ffffff;
     padding: 3px 5px;
     box-sizing: border-box;
+    @media(max-width: 1025px){
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 30;
+        padding: 3px 0 0;
+    }
 
     .top-section {
         display: flex;
         justify-content: space-between;
+        @media(max-width: 1025px){
+            display: none;
+        }
 
         .contacts {
 
@@ -393,6 +404,28 @@ header.header {
     .bottom-section {
         display: flex;
         padding: 15px 0 10px;
+        @media(max-width: 1025px){
+            padding: 0;
+        }
+
+
+        & > input.hamburger-menu{
+            display: none;
+        }
+
+        .mobile-menu-bottom{
+            width: 24px;
+            margin-right: 16px;
+            display: none;
+            & > svg{
+                fill: #a6a5a5;
+                line-height: 100%;
+                align-self: center;
+            }
+            @media(max-width: 1025px){
+                display: flex;
+            }
+        }
 
         a.logotype {
             min-width: 240px;
@@ -400,9 +433,12 @@ header.header {
             display: block;
             margin-right: 24px;
             @media (max-width: 1279px){
-                min-width: 0;
-                width: 40px;
+                min-width: 40px;
+                width: 45px;
                 overflow: hidden;
+            }
+            @media(max-width: 767px){
+                display: none;
             }
 
             & > img {
@@ -415,7 +451,7 @@ header.header {
             }
         }
 
-        & > label {
+        & > label.menu-bottom {
             border: 1px solid rgba(255, 255, 255, 0.7);
             border-radius: 3px;
             padding: 0 10px;
@@ -428,8 +464,9 @@ header.header {
             height: 40px;
             min-width: 182px;
             box-sizing: border-box;
-            /*display: flex;
-            flex-wrap: nowrap;*/
+            @media(max-width: 1025px){
+                display: none;
+            }
 
             & > svg {
                 width: 24px;
@@ -454,12 +491,19 @@ header.header {
             display: flex;
             align-self: flex-start;
             margin-right: 24px;
+            @media(max-width: 1025px){
+                flex-grow: 1;
+                margin-right: 0;
+            }
 
 
             & > label {
                 box-sizing: border-box;
                 width: calc(89% - 40px);
                height: 40px;
+                @media(max-width: 767px){
+                    width: 100%;
+                }
 
                 input {
                     width: 100%;
@@ -472,6 +516,9 @@ header.header {
                     border: none;
                     border-radius: 4px 0 0 4px;
                     height: 40px;
+                    @media(max-width: 767px){
+                       border-radius: 4px;
+                    }
                 }
             }
 
@@ -498,6 +545,9 @@ header.header {
                         fill: #ff7878;
                     }
                 }
+                @media(max-width: 767px){
+                    display: none;
+                }
             }
 
             & > button:last-of-type {
@@ -506,6 +556,9 @@ header.header {
                 border: none;
                 background-color: #00a046;
                 border-radius: 0 3px 3px 0;
+                @media(max-width: 767px){
+                    display: none;
+                }
 
             }
         }
@@ -515,15 +568,38 @@ header.header {
             display: flex;
             position: relative;
             z-index: 10;
-            width: 204px;
+            max-width: 204px;
+            @media(max-width: 1025px){
+                max-width: 112px;
+            }
+            @media(max-width: 767px){
+                max-width: 56px;
+            }
 
             & > li {
                 text-align: center;
                 width: 33%;
+                min-width: 68px;
+                @media(max-width: 1025px){
+                    width: 50%;
+                    min-width: 56px;
+                    &:first-child{
+                        display: none;
+                    }
+                }
+                @media(max-width: 767px){
+                    &:nth-child(3){
+                        display: none;
+                    }
+                }
 
                 svg {
                     width: 40px;
                     fill: #a6a5a5;
+
+                    @media(max-width: 1025px){
+                        width: 30px;
+                    }
                 }
 
                 &:nth-child(even) {
@@ -536,6 +612,7 @@ header.header {
                     padding: 20px 30px 30px;
                     border-radius: 5px;
                     box-sizing: border-box;
+                    box-shadow: 0 2px 16px rgba(0, 0, 0, .24);
 
                     svg {
                         width: 80px;
