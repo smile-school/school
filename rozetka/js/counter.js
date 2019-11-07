@@ -11,6 +11,7 @@
         function build(elem) {
             elem.forEach(function (item, elem) {
                 click(item);
+
             });
             addElem(self.allShopping, self.countElement);
         }
@@ -24,10 +25,15 @@
             return elem;
         }
 
+        function addElemProd(elem) {
+            elem.innerHTML += '<span class=' + "counter-show" + '></span>';
+        }
+
         function shoppingCounter() {
             self.value++;
             addValue(self.allShopping, self.value, addClass(self.allShopping));
             addClass(addElem(this, self.productBuy));
+            addElemProd(this);
         }
 
         function addValue(elem, val) {
