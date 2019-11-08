@@ -184,7 +184,7 @@
 }
 
 .top-as {
-    padding: 8px 32px 8px 8px;
+    padding: 2px 10px 8px 8px;
     position: relative;
 
     input[type=checkbox] {
@@ -206,9 +206,9 @@
         font-size: @font-size-h4;
         color: @bacground-bloc-a;
         display: block;
-        width: 100%;
+        width: 90%;
         cursor: pointer;
-        padding-bottom: 8px;
+        padding: 8px 32px 8px 8px;
 
         &:hover {
             color: @hover-color-a;
@@ -605,6 +605,87 @@
     color: @gray-fill;
     font-size: @font-size-standart;
 }
+
+.bottom-main-download{
+    display: flex;
+    align-items: center;
+    padding: 24px 0;
+    .link-botom-main{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        color: @bacground-bloc-a;
+        &:hover{
+            color: @hover-color-a;
+            text-decoration: underline;
+        }
+        svg {
+            width: 64px;
+            height: 64px;
+            fill: @gray-fill;
+        }
+        span{
+            margin-left: 28px;
+            font-size: @font-size-h3;
+        }
+    }
+}
+.botom-main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 16px 0;
+    margin-bottom: 48px;
+    border-top: 1px solid @border-color1;
+    border-bottom: 1px solid @border-color1;
+    & > a{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 62px;
+        height: 56px;
+        &:last-of-type{
+            svg{
+                transform: rotate(180deg);
+            }
+        }
+    }
+    svg{
+        width: 14px;
+        height: 24px;
+        fill: @gray-fill;
+    }
+    .number-list{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        li{
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            a{
+                font-size: @font-size-h3;
+                color: @bacground-bloc-a;
+                &:hover{
+                    color: @hover-color-a;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
 
 
 @media screen and (max-width: 1000px) {
