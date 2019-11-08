@@ -945,70 +945,81 @@ main.main .content .main-slider #s3:checked ~ .slider-dots label.s3 {
 }
 .menu-aside-up {
   position: absolute;
-  width: 600px;
-  right: 5%;
+  right: 100px;
+  left: 280px;
   top: 0;
-  left: 310px;
-  justify-content: space-between;
-  padding: 40px 32px 40px 40px;
-  z-index: 31;
-  background-color: #ffffff;
-  columns: 3;
-  min-height: 460px;
   display: none;
+  justify-content: space-between;
+  height: 80vh;
+  border-radius: 0 5px 5px 0;
+  z-index: 20;
+  padding: 15px;
+  width: 900px;
+  overflow: hidden;
+  background-color: #ffffff;
 }
-.menu-aside-up ul li {
-  padding: 2px 12px;
+.menu-aside-up > ul {
+  padding-top: 10px;
+  width: 25%;
+  min-height: 100%;
 }
-.menu-aside-up ul li a {
-  text-decoration: none;
-  width: 100%;
-}
-.menu-aside-up ul li h3 {
-  display: flex;
-}
-.menu-aside-up ul li h3 a {
-  font-size: 16px;
-  color: #3e77aa;
-}
-.menu-aside + li {
-  display: flex;
-}
-.menu-aside-price {
-  display: flex;
-  flex-direction: column;
-  padding: 20px 5px 20px 20px;
-  min-width: 300px;
-}
-.menu-aside-price a {
-  margin-top: 10px;
-  display: flex;
-  align-items: center;
-  position: relative;
-  color: #3e77aa;
-  text-decoration: none;
-  font-size: 14px;
-  transition: all 0.3s;
-}
-.menu-aside-price a:hover {
+.menu-aside-up > ul a:hover {
   text-decoration: underline;
   color: #ff7878;
 }
-.menu-aside-price a:not(:nth-last-child(-n+2)):hover svg:last-of-type {
-  fill: #ff7878;
+.menu-aside-up > ul li {
+  padding: 2px 5px;
+  min-width: 100%;
 }
-.menu-aside-price a:not(:nth-last-child(-n+2)) svg:last-of-type {
-  fill: #3e77aa;
-  position: absolute;
-  right: 16px;
-}
-.menu-aside-price a img {
-  padding-left: 10px;
-}
-.menu-aside-price a svg {
-  padding-right: 10px;
-  fill: #adb8c8;
-}
-.menu-aside-price a.li-one:hover ~ .menu-aside-up {
+.menu-aside-up > ul li a {
+  text-decoration: none;
+  color: #333;
+  box-sizing: border-box;
+  overflow: hidden;
+  line-height: 15px;
+  min-width: 100%;
+  padding: 2px 12px;
   display: flex;
+}
+.menu-aside-up > ul li h3 a {
+  font-size: 16px;
+  color: #3e77aa;
+  font-weight: 500;
+}
+.menu-aside-up > ul:last-of-type img {
+  max-width: 200px;
+}
+.menu-aside {
+  display: flex;
+  flex-direction: column;
+  padding: 24px 0;
+}
+.menu-aside > li:hover .menu-aside-up {
+  display: flex;
+}
+.menu-aside > li:not(:nth-last-child(-n+2)) a svg:last-of-type {
+  right: 15px;
+  position: absolute;
+  fill: #3e77aa;
+}
+.menu-aside > li:nth-last-child(2) img.cherep {
+  margin-left: 5px;
+}
+.menu-aside > li > a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 24px 0 12px;
+  color: #3e77aa;
+  font-size: 14px;
+  line-height: 31px;
+  transition: all 0.3s;
+}
+.menu-aside > li > a svg:first-of-type {
+  fill: #adb8c8;
+  margin-right: 8px;
+}
+.menu-aside > li > a:hover {
+  text-decoration: underline;
+  color: #ff7878;
 }
