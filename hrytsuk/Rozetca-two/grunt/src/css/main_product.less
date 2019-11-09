@@ -376,6 +376,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    margin-bottom: 15px;
     li{
         &:not(:first-of-type){
             margin-left: 20px;
@@ -391,5 +392,97 @@
                 width: 48px;
             }
         }
+    }
+}
+.delivery-info-city{
+    display: flex;
+    flex-direction: column;
+    ul{
+        .list-info-delivery{
+            display: flex;
+            flex-direction: column;
+            font-size: @font-size-h4;
+            margin-bottom: 2px;
+            position: relative;
+            padding-left: 40px;
+            &>div{
+                margin-bottom: 4px;
+            }
+            svg{
+                position: absolute;
+                left: 0;
+                top: -2px;
+                fill: @text-color-h4;
+            }
+        }
+    }
+}
+.top-delivery{
+    font-size: @font-size-h4;
+    color: @blac-color-text;
+    padding-bottom: 4px;
+    a{
+        color: @bacground-bloc-a;
+        text-decoration: none;
+    }
+}
+.delivery-bloc{
+    padding-top: 0;
+    a{
+        &:hover{
+            color: @hover-color-a;
+            text-decoration: underline;
+        }
+    }
+}
+.delivery-bloc-top{
+    font-size: @font-size-a2;
+    height: 42px;
+    border-bottom: 1px solid @border-color1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 0;
+    a{
+        color: @bacground-bloc-a;
+        text-decoration: none;
+    }
+}
+.delivery-info-city{
+    padding-top: 16px;
+}
+.hours-delivery{
+    padding-bottom: 8px;
+    h3{
+        font-size: @font-size-h4;
+    }
+    .adres-diliver{
+        font-size: @font-size-standart;
+        color: @text-color-h4;
+    }
+}
+.free-dile{
+    color: @shade-bcground-gray;
+}
+.payment-bloc-info{
+    padding: 0;
+    color: @blac-color-text;
+    .text-paymen{
+        p{
+            margin-bottom: 12px;
+        }
+
+    }
+}
+.info-paymen-text{
+    padding: 16px;
+    p{
+        font-size: @font-size-h4;
+    }
+}
+.paymen-top-bloc{
+    padding: 0 16px;
+    p{
+        font-size: @font-size-a2;
     }
 }
