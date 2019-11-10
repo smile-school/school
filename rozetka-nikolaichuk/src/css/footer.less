@@ -65,6 +65,78 @@
                 }
                 &__item{
                     padding-bottom: 13px;
+                    & .link > .link-ico{
+                        display: inline-block;
+                        margin-right: 10px;
+                        width: 16px;
+                        height: 16px;
+                    }
+                    & .pointer > .link-ico{
+                        background-image: url("@{image-url}pointer.svg");
+                    }
+                    & .holidays > .link-ico{
+                        background-image: url("@{image-url}holidays.svg");
+                    }
+                    & .call-center > .link-ico{
+                        background-image: url("@{image-url}call_center.svg");
+                    }
+                }
+                &__list{
+                    margin-top: 20px;
+                }
+                &__list .social-list{
+                    &__link-item{
+                        display: inline-block;
+                        & .social-link{
+                            display: inline-block;
+                            position: relative;
+                            margin-right: 8px;
+                            .container-mixin(@width: 24px, @height: 24px);
+                            border-radius: 50%;
+                            transition: opacity .3s ease;
+                            &:hover{
+                                opacity: .8;
+                            }
+                            & .social-link__ico{
+                                display: inline-block;
+                                .container-mixin(@width: 16px, @height: 16px);
+                                .middle-mixin();
+                                background-repeat: no-repeat;
+                                background-size: contain;
+                                background-position: center;
+                            }
+                        }
+                        & > .fb-link{
+                            background-color: @facebook-ico-background-color;
+                            & .social-link__ico{
+                                background-image: url("@{image-url}fb_ico.svg");
+                            }
+                        }
+                        & > .tw-link{
+                            background-color: @twitter-ico-background-color;
+                            & .social-link__ico{
+                                background-image: url("@{image-url}tw_ico.svg");
+                            }
+                        }
+                        & > .yt-link{
+                            background-color: @yuotube-ico-background-color;
+                            & .social-link__ico{
+                                background-image: url("@{image-url}yt_ico.svg");
+                            }
+                        }
+                        & > .ig-link{
+                            background: @instagram-ico-background-color;
+                            & .social-link__ico{
+                                background-image: url("@{image-url}isg_ico.svg");
+                            }
+                        }
+                        & > .vb-link{
+                            background-color: @viber-ico-background-color;
+                            & .social-link__ico{
+                                background-image: url("@{image-url}vb_ico.svg");
+                            }
+                        }
+                    }
                 }
             }
         }
