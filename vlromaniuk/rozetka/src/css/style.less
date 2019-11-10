@@ -1570,10 +1570,11 @@ header.laptop {
 }
 
 main.main-laptop {
+  padding-top: 14px;
   .wrapper {
     aside.left {
       width: 215px;
-      padding: 15px 15px 0 0;
+      padding: 0 15px 0 0;
 
       .nav-button {
         border: 0;
@@ -1630,7 +1631,7 @@ main.main-laptop {
 
         & > li .hidden-menu {
           padding-bottom: 36px;
-          top: 53px;
+          top: 38px;
           left: 327px;
           border: 1px solid lightgrey;
           overflow: hidden;
@@ -1806,6 +1807,363 @@ main.main-laptop {
               &:hover input ~ .checkmark {
                 border-color: @silver;
               }
+            }
+          }
+        }
+      }
+    }
+    section.product{
+      border: 0;
+      margin-left: 10px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      position: relative;
+      .categoty-title{
+        font-size: 40px;
+        padding-bottom: 10px;
+        font-weight: 400;
+      }
+      .product-nav{
+        font-size: 115%;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        ul{
+          display: flex;
+          color: #4d4b4b;
+          li{
+            list-style: none;
+            margin: 0 4px 6px 0;
+          }
+          li.filter-default{
+            padding: 4px 11px 5px;
+            border: 1px solid #d2d2d2;
+            border-radius: 40px;
+            cursor: pointer;
+          }
+          li.filter-active{
+            position: relative;
+            padding: 4px 26px 5px 11px;
+            &::before{
+              content: '';
+              position: absolute;
+              background-image: url('../../ima/sprite-laptop.svg');
+              background-repeat: no-repeat;
+              background-position: -55px -904px;
+              width: 16px;
+              height: 16px;
+              right: 5px;
+              top: 4px;
+            }
+            &:hover{
+              color: #ff7878;
+              &::before{
+                  background-position: -37px -904px;
+
+              }
+            }
+          }
+          li.reset-filtre{
+            border: 1px solid #ff7878;
+            &:hover{
+              color: #ff7878;
+              &::before{
+                background-position: -37px -904px;
+              }
+            }
+          }
+          .filter-title{
+            padding: 3px;
+            font-size: 130%;
+          }
+        }
+      }
+      .sort{
+        display: flex;
+        &>p{
+          color: #4d4b4b;
+        }
+        .select {
+          position: relative;
+          width: 184px;
+          select {
+            display: block;
+            width: 100%;
+            padding: 4px 20px 4px 7px;
+            background: none;
+            border: 1px solid #d2d2d2;
+            border-radius: 4px;
+            -moz-appearance: none;
+            appearance: none;
+            font-family: inherit;
+            font-size: 13px;
+            color: #4d4b4b;
+          }
+          &::after {
+            content: "";
+            background-image: url('../../ima/sprite-laptop.svg');
+            background-repeat: no-repeat;
+            position: absolute;
+            background-position: -681px -714px;
+            width: 13px;
+            height: 13px;
+            top: 50%;
+            margin-top: -6px;
+            right: 4px;
+            z-index: 1;
+          }
+        }
+        .tabs{
+          display: flex;
+          margin: 16px;
+          & input[type='radio']{
+            display: none;
+            &:checked ~ .title{
+              border-color: #00a046;
+              background: #00a046;
+            }
+            &:checked ~ .content{
+              display: block;
+            }
+          }
+          .content{
+            display: none;
+            position: absolute;
+            width: 100%;
+            left: 0;
+            right: 0;
+            margin-top: 20px;
+            border-top: 1px solid lightgrey;
+            display: flex;
+            flex-wrap: wrap;
+          }
+          label.title{
+            border: 1px solid #d2d2d2;
+            cursor: pointer;
+            width: 38px;
+            height: 26px;
+            display: block;
+            position: relative;
+            &::before{
+              content: '';
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              background-image: url('../../ima/sprite-laptop.svg');
+              transform: translate(-50%,-50%);
+              background-repeat: no-repeat;
+            }
+          }
+          .tab1{
+            .title{
+              border-radius: 4px 0 0 4px;
+              &::before{
+                background-position: -759px -798px;
+                width: 14px;
+                height: 14px;
+              }
+            }
+            & input[type='radio']:checked ~ .title::before{
+              background-position: -775px -798px;
+              width: 14px;
+              height: 14px;
+            }
+            ul{
+              display: flex;
+              flex-wrap: wrap;
+            }
+            .product-card{
+              width: 19%;
+              padding: 3px;
+              position: relative;
+              border-right: 1px solid lightgrey;
+              border-bottom: 1px solid lightgrey;
+              margin-top: 5px;
+              background-color: white;
+              height: 365px;
+              z-index: 1;
+              a.img{
+                height: 170px;
+                display: block;
+                img{
+                  width: 100%;
+                }
+                &:hover{
+                  & .first{
+                    display: none;
+                  }
+                  & .second{
+                    display: block;
+                  }
+                }
+                .second{
+                  display: none;
+                }
+              }
+              .action{
+                font-size: 12px;
+                color: #fb3f4c;
+                display: block;
+                width: 100%;
+                position: relative;
+                span{
+                  &::before{
+                    content: '';
+                    position: absolute;
+                    background: url("../../ima/sprite-laptop.svg") no-repeat;
+                    background-position: -674px -798px;
+                    width: 15px;
+                    height: 15px;
+                    right: 57px;
+                    bottom: 2;
+                  }
+                }
+                &:hover{
+                  cursor: pointer;
+                  span{
+                    border-bottom: 1px dotted #fb3f4c;
+                    &::before{
+                      background-position: -434px -348px;
+                    }
+                  }
+                }
+              }
+              .product-name{
+                color: #3e77aa;
+                font-size: 12px;
+                text-decoration: none;
+                &:hover{
+                  color:  #fb3f4c;
+                }
+              }
+              .about-prod{
+                display: flex;
+                .price{
+                  display: flex;
+                  flex-direction: column;
+                  margin-right: 10px;
+                  .old-prce{
+                    font-size: 18px;
+                    color: @darken;
+                    text-decoration: line-through;
+                    text-decoration-color: #fb3f4c;
+                    padding: 7px 7px 5px;;
+                    & ~ .new-prce{
+                      color: #fb3f4c;
+                    }
+                  }
+                  .new-prce{
+                    font-size: 18px;
+                    color: #4d4b4b;
+                    background: #fef2b8;
+                    border-radius: 4px;
+                    padding: 7px 7px 5px;
+                    border: 1px solid transparent;
+                  }
+                }
+              }
+              .rating{
+                display: flex;
+                align-items: flex-end;
+                .star{
+                  background-image: url('../../ima/sprite-laptop.svg');
+                  background-repeat: no-repeat;
+                  position: relative;
+                  background-position: -595px -542px;
+                  width: 71px;
+                  height: 14px;
+                  display: block;
+                  margin-right: 5px;
+                  span{
+                    background-image: inherit;
+                    background-position: -324px -183px;
+                    width: 89%;
+                    display: block;
+                    height: 100%;
+                  }
+                }
+                .comment{
+                  color: #3e77aa;
+                  line-height: 10px;
+                }
+              }
+              .ico{
+                margin-top: 10px;
+                position: relative;
+                height: 30px;
+                span{
+                  background-image: url('../../ima/sprite-laptop.svg');
+                  background-repeat: no-repeat;
+                  position: absolute;
+                  cursor: pointer;
+                 &:first-child{
+                   background-position: -297px -798px;
+                   width: 24px;
+                   height: 23px;
+                   left: 9px;
+                   top: 4px;
+                 }
+                  &:nth-child(2){
+                    background-position: -243px -798px;
+                    width: 25px;
+                    height: 23px;
+                    top: 4px;
+                    left: 55px;
+                  }
+                  &:last-child{
+                    background-position: -860px -447px;
+                    width: 29px;
+                    height: 22px;
+                    top: 4px;
+                    left: 99px;
+                  }
+                }
+              }
+              .hidden-info{
+                background: white;
+                opacity: 0;
+                .imma-info{
+                  display: flex;
+                  justify-content: space-around;
+                  align-content: center;
+                  padding: 10px;
+                }
+              }
+              .zoom{
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+              }
+              &:hover{
+                height: 100%;
+                border: 0;
+                z-index: 8;
+                & .zoom{
+                  transform: scale(1.023);
+                  box-shadow: 0 0 13px 0 rgba(0,0,0,.4);
+                }
+                & .hidden-info{
+                  opacity: 1;
+                }
+              }
+            }
+          }
+          .tab2{
+            .title{
+              border-radius: 0 4px 4px 0;
+              &::before{
+                background-position: -494px -714px;
+                width: 19px;
+                height: 14px;
+              }
+            }
+            & input[type='radio']:checked ~ .title::before{
+              background-position: -515px -714px;
+              width: 19px;
+              height: 14px;
             }
           }
         }
