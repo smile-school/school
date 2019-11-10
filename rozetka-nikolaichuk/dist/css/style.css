@@ -1,0 +1,222 @@
+@import "reset.css";
+@import "normalize.css";
+.middle-mixin {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  letter-spacing: 1.2px;
+  color: #4d4b4b;
+  font-weight: 400;
+  background-color: #ffffff;
+  position: relative;
+}
+footer {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+.page-wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+a.link {
+  text-decoration: none;
+  transition: color 0.1s ease-in-out;
+}
+a.link:hover {
+  color: #ff7878;
+}
+ul {
+  list-style: none;
+}
+.clearfix-block::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.footer__subscribe {
+  width: 100%;
+  padding-bottom: 35px;
+}
+.footer__application {
+  width: 100%;
+  padding: 13px 5%;
+  margin-top: 45px;
+  position: relative;
+}
+.footer__application-bg {
+  width: 100%;
+  background-color: #00a046;
+}
+.footer__application__left-block {
+  float: left;
+  height: 100%;
+}
+.footer__application__img {
+  position: relative;
+  height: 100%;
+}
+.footer__application__left-block > .footer__application__img img {
+  position: absolute;
+  bottom: -55px;
+  left: 0;
+  width: 248px;
+  height: 120px;
+  background-image: url("../../dist/ima/sprite.svg");
+  background-position: -1px -1px;
+  background-repeat: no-repeat;
+}
+.footer__application__right-block .app-store_link img {
+  width: 120px;
+  height: 40px;
+  background-image: url("../../dist/ima/sprite.svg");
+  background-position: -318px -403px;
+  background-repeat: no-repeat;
+}
+.footer__application__right-block .google-play_link img {
+  width: 128px;
+  height: 40px;
+  background-image: url("../../dist/ima/sprite.svg");
+  background-position: -454px -145px;
+  background-repeat: no-repeat;
+}
+.footer__application__center-block {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  color: #fff;
+}
+.footer__application__right-block {
+  float: right;
+}
+.footer__links {
+  width: 100%;
+}
+.footer__links-list {
+  padding: 24px 0;
+}
+.footer__links-list__col {
+  float: left;
+  width: 20%;
+  display: inline-block;
+}
+.footer__links-list__col:first-child {
+  position: relative;
+  padding-top: 22px;
+}
+.footer__links-list__col__title {
+  font-size: 12px;
+  color: #797878;
+  padding-bottom: 10px;
+}
+.footer__links-list__col__item {
+  padding-bottom: 13px;
+}
+.footer__links_bottom {
+  padding: 12px 0;
+  position: relative;
+}
+.footer__links_bottom::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: #e9e9e9;
+}
+.footer__links_bottom__payment-links {
+  float: left;
+}
+.footer__links_bottom__payment-links .payment__link:first-child img {
+  margin-right: 6px;
+  width: 72px;
+  height: 32px;
+  background-image: url("../../dist/ima/sprite.svg");
+  background-position: -367px -295px;
+  background-repeat: no-repeat;
+}
+.footer__links_bottom__payment-links .payment__link:last-child img {
+  width: 72px;
+  height: 32px;
+  background-image: url("../../dist/ima/sprite.svg");
+  background-position: -370px -253px;
+  background-repeat: no-repeat;
+}
+.footer__links_bottom__copyright {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 12px;
+}
+.footer__links_bottom__copyright span:first-child {
+  color: #221f1f;
+}
+.footer__links_bottom__copyright span:last-child {
+  color: #797878;
+}
+.footer__links_bottom__right-element {
+  float: right;
+  position: relative;
+}
+.footer__links_bottom__right-element .btn-mobile {
+  display: inline-block;
+  border: 1px solid #e9e9e9;
+  border-radius: 4px;
+  padding: 9px 20px 10px;
+  cursor: pointer;
+}
+.footer__links_bottom__right-element .btn-mobile a {
+  font-size: 16px;
+}
+.form-subscribe {
+  width: 100%;
+  padding: 32px 56px;
+  background-color: #f5f5f5;
+  border: 1px solid #e9e9e9;
+  border-radius: 4px;
+}
+.form-subscribe__label {
+  float: left;
+  display: inline-block;
+  width: 70%;
+  font-size: 24px;
+  color: #221f1f;
+  padding-right: 20px;
+}
+.form-subscribe__input {
+  float: right;
+  width: calc(20% - 8px);
+  height: 36px;
+  padding: 5px;
+  margin-right: 8px;
+  border: 1px solid #d2d2d2;
+  border-radius: 4px;
+}
+.form-subscribe__btn {
+  float: right;
+  width: 10%;
+  padding: 9px 16px;
+  font-size: 16px;
+  text-align: center;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  background-color: #3e77aa;
+  cursor: pointer;
+}
+.form-subscribe__btn:hover {
+  background-color: #4096e3;
+}

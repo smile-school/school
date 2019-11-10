@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: @page-font-size;
+    letter-spacing: 1.2px;
+    color: @page-font-color;
+    font-weight: 400;
+    background-color: @page-background-color;
+    position: relative;
+}
+footer{
+    max-width: @page-max-width;
+    margin: 0 auto;
+}
+.page-wrapper {
+    max-width: @page-wrapper-width;
+    margin: 0 auto;
+}
+a.link{
+    text-decoration: none;
+    transition: color .1s ease-in-out;
+}
+a.link:hover{
+    color: @page-hover-color;
+}
+ul{
+    list-style: none;
+}
+.clearfix-block::after{
+    content: "";
+    display: table;
+    clear: both;
+}
