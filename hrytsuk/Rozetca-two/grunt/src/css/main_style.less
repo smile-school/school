@@ -440,6 +440,7 @@
 
 .iner-list-bloc {
     padding: 16px;
+
     span {
         &.top-selling {
             padding: 0 8px;
@@ -495,13 +496,15 @@
         }
     }
 }
-.hover-bloc{
+
+.hover-bloc {
     position: relative;
     opacity: 0;
     width: 100%;
     z-index: 100;
     background-color: white;
-    &:before{
+
+    &:before {
         display: none;
         content: '';
         position: absolute;
@@ -511,23 +514,27 @@
         bottom: -8px;
         background-color: #ffffff;
     }
-    ul{
+
+    ul {
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
         padding: 0 15px;
     }
-    .info-bloc-hover{
+
+    .info-bloc-hover {
         margin-top: 10px;
         padding: 0 15px;
-        p{
+
+        p {
             color: @text-color-h4;
         }
     }
 }
-.tile-bloc{
-    &:before{
+
+.tile-bloc {
+    &:before {
         display: none;
         content: '';
         position: absolute;
@@ -537,18 +544,22 @@
         bottom: -8px;
         background-color: #ffffff;
     }
-    &:hover{
+
+    &:hover {
         overflow: visible;
-        .hover-bloc{
+
+        .hover-bloc {
             opacity: 1;
-            &:before{
+
+            &:before {
                 z-index: -2;
                 -webkit-box-shadow: 0 2px 16px rgba(0, 0, 0, 0.24);
                 box-shadow: 0 8px 9px rgba(0, 0, 0, 0.24);
                 display: block;
             }
         }
-        &:before{
+
+        &:before {
             z-index: -1;
             -webkit-box-shadow: 0 2px 16px rgba(0, 0, 0, 0.24);
             box-shadow: 0 2px 16px rgba(0, 0, 0, 0.24);
@@ -556,6 +567,7 @@
         }
     }
 }
+
 .top-img-price {
     display: block;
     position: relative;
@@ -665,33 +677,38 @@
     font-size: @font-size-standart;
 }
 
-.bottom-main-download{
+.bottom-main-download {
     display: flex;
     align-items: center;
     padding: 24px 0;
-    .link-botom-main{
+
+    .link-botom-main {
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
         width: 100%;
         color: @bacground-bloc-a;
-        &:hover{
+
+        &:hover {
             color: @hover-color-a;
             text-decoration: underline;
         }
+
         svg {
             width: 64px;
             height: 64px;
             fill: @gray-fill;
         }
-        span{
+
+        span {
             margin-left: 28px;
             font-size: @font-size-h3;
         }
     }
 }
-.botom-main{
+
+.botom-main {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -699,85 +716,90 @@
     margin-bottom: 48px;
     border-top: 1px solid @border-color1;
     border-bottom: 1px solid @border-color1;
-    & > a{
+
+    & > a {
         display: flex;
         justify-content: center;
         align-items: center;
         width: 62px;
         height: 56px;
-        &:last-of-type{
-            svg{
+
+        &:last-of-type {
+            svg {
                 transform: rotate(180deg);
             }
         }
     }
-    svg{
+
+    svg {
         width: 14px;
         height: 24px;
         fill: @gray-fill;
     }
-    .number-list{
+
+    .number-list {
         display: flex;
         flex-direction: row;
         align-items: center;
-        li{
+
+        li {
             width: 40px;
             height: 40px;
             display: flex;
             justify-content: center;
             align-items: center;
-            a{
+
+            a {
                 font-size: @font-size-h3;
                 color: @bacground-bloc-a;
-                &:hover{
+
+                &:hover {
                     color: @hover-color-a;
                 }
             }
         }
     }
 }
-.catalog-price2{
+
+.catalog-price2 {
     display: none;
 }
-input{
+
+input {
     &#act-viv-one1,
-    &#act-viv-two1{
+    &#act-viv-two1 {
         display: none;
     }
-    &#act-viv-one1{
-        &:checked{
-            & ~ .catalog-price{
+
+    &#act-viv-one1 {
+        &:checked {
+            & ~ .catalog-price {
                 display: none;
             }
-            & ~ .catalog-price2{
+
+            & ~ .catalog-price2 {
                 display: block;
             }
         }
     }
 }
+
 .absolute-lab1,
-.absolute-lab2{
+.absolute-lab2 {
     position: absolute;
     top: 790px;
     height: 30px;
     width: 25px;
     opacity: 0;
 }
-.absolute-lab1{
+
+.absolute-lab1 {
     right: 30px;
 }
-.absolute-lab2{
+
+.absolute-lab2 {
     right: 59px;
 }
-
-
-
-
-
-
-
-
-
 
 
 @media screen and (max-width: 1000px) {
