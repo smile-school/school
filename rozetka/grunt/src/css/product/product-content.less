@@ -1,6 +1,9 @@
 .wrapper {
     .title-wrap {
         padding: 24px 0;
+        @media (max-width: 1025px) {
+            margin-top: 50px;
+        }
 
         .links {
             display: flex;
@@ -9,6 +12,23 @@
             & > li {
                 padding-right: 24px;
                 position: relative;
+                @media (max-width: 1025px) {
+                    &:not(:last-child) {
+                        display: none;
+                    }
+
+                    padding-left: 24px;
+                    &:before {
+                        display: block;
+                        content: '›';
+                        font-size: 34px;
+                        color: #3e77aa;
+                        position: absolute;
+                        left: 0;
+                        top: 50%;
+                        transform: translateY(-46%) rotate(180deg);
+                    }
+                }
 
                 & > a {
                     text-decoration: none;
@@ -24,6 +44,9 @@
                     top: 50%;
                     right: 8px;
                     transform: translateY(-50%);
+                    @media (max-width: 1025px) {
+                        display: none;
+                    }
                 }
             }
         }
@@ -35,14 +58,25 @@
 
             & > .title {
                 margin: 0;
+                @media (max-width: 1025px) {
+                    font-size: 24px;
+                    line-height: 24px;
+                }
             }
 
             & > span {
-                width: 40px;
-                align-self: center;
+                max-width: 88px;
+                height: 40px;
+                align-self: flex-start;
+                margin-left: 24px;
+                box-sizing: border-box;
+                padding-left: 48px;
+                @media (max-width: 1025px) {
+                    display: none;
+                }
 
                 & > img {
-                    width: 100%;
+                    width: 40px;
                 }
             }
 
@@ -62,11 +96,20 @@
                         display: inline-block;
                         width: 110px;
                         height: 20px;
+                        @media (max-width: 1025px) {
+                            width: 64px;
+                            height: 12px;
+                            margin-right: 8px;
+                        }
                     }
 
                     .reviews {
                         display: inline-block;
                         padding-left: 8px;
+                        @media (max-width: 1025px) {
+                            height: 12px;
+                            margin-top: -6px;
+                        }
 
                         & > a {
                             display: inline-block;
@@ -102,11 +145,15 @@
 
     .wrapper {
         padding: 0 32px;
+        @media (max-width: 1025px) {
+            padding: 0 16px;
+        }
 
         .about-product-links {
             display: flex;
             margin: 0 -8px;
             height: 40px;
+            overflow: auto;
 
             & > li {
                 margin-right: 16px;
@@ -145,14 +192,23 @@
 .wrapper {
     &.product-card {
         display: flex;
+        @media (max-width: 767px) {
+            flex-direction: column;
+        }
     }
 
     .about-prod-section {
         width: 50%;
+        @media (max-width: 767px) {
+            width: 100%;
+        }
 
         &.left {
-
             padding-right: 24px;
+            @media (max-width: 767px) {
+                padding-right: 0;
+                margin-bottom: 24px;
+            }
         }
 
         .image-tabs-wrap {
@@ -162,6 +218,10 @@
 
         .tabs {
             max-width: 88px;
+            @media (max-width: 1025px) {
+                height: 100%;
+                overflow-y: auto;
+            }
 
             .tab-button {
                 width: 56px;
@@ -169,17 +229,8 @@
                 border-radius: 4px;
                 margin: 0 32px 8px 0;
                 box-sizing: border-box;
-
-                & > label {
-                    width: 100%;
-                    height: 100%;
-                    display: flex;
-                    justify-content: center;
-                }
-
-                &:hover {
-                    border: 1px solid #00ba34;
-                }
+                display: flex;
+                justify-content: center;
 
                 img {
                     display: block;
@@ -194,6 +245,9 @@
             padding-bottom: 90%;
             position: relative;
             width: 100%;
+            @media (max-width: 1025px) {
+                align-self: flex-start;
+            }
 
             &::before {
                 display: block;
@@ -212,6 +266,12 @@
                 font-weight: bold;
                 line-height: 40px;
                 z-index: 5;
+                @media (max-width: 1025px) {
+                    width: 89px;
+                    height: 24px;
+                    font-size: 12px;
+                    line-height: 24px;
+                }
             }
 
             &::after {
@@ -227,7 +287,11 @@
                 background-repeat: no-repeat;
                 background-size: cover;
                 z-index: 5;
-
+                @media (max-width: 1025px) {
+                    width: 48px;
+                    height: 48px;
+                    margin-left: 16px;
+                }
             }
 
             .prod-photo {
@@ -236,15 +300,23 @@
                 left: 0;
                 right: 0;
                 transform: translateY(-50%);
+                max-height: 100%;
 
                 & > img {
                     display: block;
-                    width: 100%;
+                    max-height: 100%;
+                    max-width: 100%;
+                    margin: 0 auto;
+                    @media (max-width: 1200px) {
+                        max-height: 400px;
+                    }
+                    @media (max-width: 1025px) {
+                        max-height: 330px;
+                    }
+                    @media (max-width: 767px) {
+                        max-height: 100%;
+                    }
                 }
-            }
-
-            & > input {
-                display: none;
             }
         }
 
@@ -273,6 +345,9 @@
 
         &.right {
             padding-left: 24px;
+            @media (max-width: 1025px) {
+                padding-left: 0;
+            }
 
             .product-info {
                 padding: 16px;
@@ -281,9 +356,16 @@
                 display: flex;
                 margin-bottom: 24px;
                 position: relative;
+                @media (max-width: 1025px) {
+                    flex-wrap: wrap;
+                }
 
                 .text {
                     flex-grow: 1;
+                    @media (max-width: 1025px) {
+                        width: 100%;
+                        padding-bottom: 8px;
+                    }
 
                     & > p {
                         padding-bottom: 8px;
@@ -327,6 +409,11 @@
                     &:hover {
                         color: #4096e3;
                     }
+
+                    @media (max-width: 1025px) {
+                        min-width: 100%;
+                        margin-left: 0;
+                    }
                 }
 
                 .was-price {
@@ -359,6 +446,13 @@
                     font-size: 36px;
                     color: #f84147;
                     margin-right: 32px;
+                    @media (max-width: 1025px) {
+                        font-size: 24px;
+                        margin-bottom: 8px;
+                        order: 1;
+                        flex-grow: 1;
+                        padding-top: 12px;
+                    }
 
                     & > span {
                         font-size: 24px;
@@ -376,7 +470,13 @@
                     height: 48px;
                     display: inline-flex;
                     align-items: center;
+                    justify-content: center;
                     margin-right: 16px;
+                    @media (max-width: 1025px) {
+                        margin-right: 0;
+                        width: 100%;
+                        order: 3;
+                    }
 
                     & > svg {
                         fill: #ffffff;
@@ -386,6 +486,9 @@
 
                 .ico-wrap {
                     max-height: 48px;
+                    @media (max-width: 1025px) {
+                        order: 2;
+                    }
 
                     & > span {
                         border-radius: 4px;
@@ -423,13 +526,15 @@
                                 background-color: #f4faf6;
                             }
                         }
-
                     }
                 }
 
                 .subscription {
                     flex-grow: 1;
                     display: flex;
+                    @media (max-width: 1025px) {
+                        margin-bottom: 16px;
+                    }
 
                     & > svg {
                         display: inline-block;
@@ -446,17 +551,27 @@
                             font-weight: bold;
                         }
                     }
-
                 }
 
                 .buy-in-credit,
                 .seller {
                     flex-grow: 1;
                     align-self: center;
+                    @media (max-width: 1025px) {
+                        width: 100%;
+                        margin-bottom: 8px;
+                    }
 
                     & > p {
                         & > span {
                             font-size: 20px;
+                            @media (max-width: 1025px) {
+                                font-size: 18px;
+                            }
+                        }
+
+                        @media (max-width: 1025px) {
+                            font-size: 14px;
                         }
                     }
                 }
@@ -477,7 +592,6 @@
                         }
                     }
                 }
-
             }
 
             .knitting {
@@ -551,16 +665,28 @@
                             padding: 4px 0;
                             display: flex;
                             font-size: 14px;
+                            @media (max-width: 1025px) {
+                                flex-direction: column;
+                                padding-left: 40px;
+                            }
 
                             &:not(:first-child) {
                                 margin-top: 8px;
                             }
 
                             & > div {
+                                width: 40%;
+                                @media (max-width: 1025px) {
+                                    width: 100%;
+                                    margin-bottom: 4px;
+                                }
+
                                 &:first-child {
                                     display: flex;
-                                    /*align-items: center;*/
                                     padding-right: 16px;
+                                    @media (max-width: 1025px) {
+                                        margin-left: -40px;
+                                    }
 
                                     & > p {
                                         & > a {
@@ -575,7 +701,6 @@
                                     }
                                 }
 
-                                width: 40%;
 
                                 & > svg {
                                     fill: #797878;
@@ -596,11 +721,18 @@
                                 &:last-child {
                                     width: 20%;
                                     text-align: right;
+                                    @media (max-width: 1025px) {
+                                        text-align: left;
+                                    }
 
                                     & > p {
                                         & > span {
                                             color: #00a046;
                                         }
+                                    }
+
+                                    @media (max-width: 1025px) {
+                                        width: 100%;
                                     }
                                 }
                             }
@@ -639,6 +771,10 @@
                 width: 100%;
                 display: flex;
                 flex-wrap: wrap;
+                @media (max-width: 1440px) {
+                    height: 343px;
+                    overflow: hidden;
+                }
             }
 
             .buttons-wrap {
@@ -677,6 +813,18 @@
                 border-bottom: 1px solid #d2d2d2;
                 box-sizing: border-box;
                 position: relative;
+                @media (max-width: 1440px) {
+                    width: 16.66%;
+                }
+                @media (max-width: 1440px) {
+                    width: 20%;
+                }
+                @media (max-width: 1025px) {
+                    width: 25%;
+                }
+                @media (max-width: 767px) {
+                    width: 50%;
+                }
 
                 .product-content {
                     padding: 16px;
@@ -717,6 +865,9 @@
                         content: 'Суперціна';
                         width: 89px;
                         background-color: #ff5c00;
+                        @media (max-width: 1025px) {
+                            width: 76px;
+                        }
                     }
                 }
 
@@ -725,6 +876,9 @@
                         content: 'вибір розетки';
                         width: 114px;
                         background-color: #31a3db;
+                        @media (max-width: 1025px) {
+                            width: 76px;
+                        }
                     }
                 }
 
@@ -733,6 +887,9 @@
                         content: 'акція';
                         width: 55px;
                         background-color: #f84147;
+                        @media (max-width: 1025px) {
+                            width: 48px;
+                        }
                     }
                 }
 
@@ -751,8 +908,8 @@
                     height: 170px;
 
                     & > img {
-                        max-width: 100%;
-                        max-height: 100%;
+                        max-width: 140px;
+                        max-height: 97px;
                         display: block;
                         position: absolute;
                         top: 50%;
@@ -815,20 +972,38 @@
 .wrapper {
     &.characteristics {
         padding: 0 32px;
+        @media (max-width: 1025px) {
+            padding: 0 16px;
+        }
+        @media(max-width: 320px){
+            padding: 0 5px;
+        }
 
         .characteristics-section {
             display: flex;
+            @media (max-width: 767px) {
+                flex-wrap: wrap;
+            }
 
             & > div {
                 width: 50%;
+                @media (max-width: 767px) {
+                    width: 100%;
+                }
 
                 &.description {
                     padding-right: 24px;
+                    @media (max-width: 767px) {
+                        padding-right: 0;
+                    }
 
                     .description-title {
                         font-size: 28px;
                         font-weight: normal;
                         margin-bottom: 24px;
+                        @media (max-width: 1025px) {
+                            font-size: 22px;
+                        }
 
                         & > span {
                             color: #d2d2d2;
@@ -867,6 +1042,9 @@
                                     width: 100%;
                                     border-bottom: 1px dotted #d2d2d2;
                                     height: 1px;
+                                    @media (max-width: 767px) {
+                                        display: none;
+                                    }
                                 }
                             }
 
@@ -898,16 +1076,28 @@
                 &.comments {
                     padding-left: 24px;
                     margin-bottom: 48px;
+                    @media (max-width: 767px) {
+                        padding-left: 0;
+                    }
 
                     .comments-title-wrap {
                         display: flex;
                         justify-content: space-between;
                         margin-bottom: 24px;
+                        @media (max-width: 767px) {
+                            flex-wrap: wrap;
+                        }
 
                         .comments-title {
                             font-size: 28px;
                             font-weight: normal;
                             padding-right: 16px;
+                            @media (max-width: 1025px) {
+                                font-size: 22px;
+                            }
+                            @media (max-width: 767px) {
+                                width: 100%;
+                            }
 
                             & > span {
                                 color: #d2d2d2;
@@ -923,6 +1113,10 @@
                             font-size: 16px;
                             border-radius: 4px;
                             border: none;
+                            width: 150px;
+                            @media (max-width: 767px) {
+                                width: 100%;
+                            }
                         }
                     }
 
@@ -959,7 +1153,6 @@
                                 & > p {
                                     flex-grow: 1;
                                     font-weight: bold;
-
                                 }
 
                                 .time-comment {
@@ -1055,10 +1248,7 @@
                                 }
                             }
                         }
-
                     }
-
-
                 }
             }
         }
