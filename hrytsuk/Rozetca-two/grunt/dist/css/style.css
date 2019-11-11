@@ -1072,9 +1072,27 @@ input.asortiment-inp:checked ~ .darc-fonts {
   display: flex;
   flex-direction: row;
   align-items: flex-end;
+  justify-content: flex-end;
   padding-bottom: 20px;
   border-bottom: 1px solid #e9e9e9;
-  justify-content: flex-end;
+}
+.catalog-set .select-bottom {
+  background-color: #00a046;
+  outline: 0;
+  color: #ffffff;
+  font-size: 14px;
+  height: 32px;
+  padding: 1px 16px;
+  border: 0;
+  border-radius: 4px;
+  display: none;
+}
+.catalog-set .select-bottom:hover {
+  background-color: #00bc52;
+}
+.catalog-set .select-bottom svg {
+  fill: #fff;
+  margin-right: 16px;
 }
 .selection {
   display: flex;
@@ -1113,7 +1131,7 @@ input.asortiment-inp:checked ~ .darc-fonts {
   display: none;
 }
 .selection .sel-bloc-input label {
-  padding: 2px 8px;
+  padding: 1px 8px;
   box-sizing: border-box;
   height: 32px;
   display: flex;
@@ -1147,7 +1165,7 @@ input.asortiment-inp:checked ~ .darc-fonts {
   font-size: 14px;
 }
 .top-as {
-  padding: 8px 32px 8px 8px;
+  padding: 2px 10px 8px 8px;
   position: relative;
 }
 .top-as input[type=checkbox] {
@@ -1164,9 +1182,12 @@ input.asortiment-inp:checked ~ .darc-fonts {
   font-size: 14px;
   color: #3e77aa;
   display: block;
-  width: 100%;
+  width: 90%;
   cursor: pointer;
-  padding-bottom: 8px;
+  padding: 8px 32px 8px 8px;
+}
+.top-as > label:hover {
+  color: #ff7878;
 }
 .top-as > label span {
   color: #a6a5a5;
@@ -1188,12 +1209,15 @@ input.asortiment-inp:checked ~ .darc-fonts {
   margin-top: 2px;
   padding-right: 32px;
 }
-.bott-as ul li {
-  padding: 8px;
-}
 .bott-as ul li a {
   color: #333;
   text-decoration: none;
+  display: block;
+  padding: 8px;
+  transition: all 0.4s;
+}
+.bott-as ul li a:hover {
+  background-color: #f4faf6;
 }
 .bott-as ul li a label {
   padding-left: 24px;

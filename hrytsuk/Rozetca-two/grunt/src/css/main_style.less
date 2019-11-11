@@ -24,7 +24,7 @@
                 display: inline-block;
                 box-sizing: border-box;
                 border-right: 1px solid @border-color1;
-                width:14%;
+                width: 14%;
                 margin-bottom: 20px;
 
                 a {
@@ -69,22 +69,46 @@
         }
     }
 }
-.catalog-set{
+
+.catalog-set {
     display: flex;
     flex-direction: row;
     align-items: flex-end;
+    justify-content: flex-end;
     padding-bottom: 20px;
     border-bottom: 1px solid @border-color1;
-    justify-content: flex-end;
+
+    .select-bottom {
+        background-color: @shade-bcground-gray;
+        outline: 0;
+        color: @white-color;
+        font-size: @font-size-h4;
+        height: 32px;
+        padding: 1px 16px;
+        border: 0;
+        border-radius: 4px;
+        display: none;
+
+        &:hover {
+            background-color: @shade-bcground-gray2;
+        }
+
+        svg {
+            fill: @white-fill;
+            margin-right: 16px;
+        }
+    }
 }
-.selection{
+
+.selection {
     display: flex;
     flex-direction: row;
     align-items: center;
-    .select-viev{
+
+    .select-viev {
         color: @select-color;
         padding: 0 40px 0 12px;
-        font-size:@font-size-h4 ;
+        font-size: @font-size-h4;
         height: 32px;
         box-sizing: border-box;
         border-radius: 4px;
@@ -94,87 +118,110 @@
         -moz-appearance: none;
         appearance: none;
         background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg fill='%233e77aa' viewBox='0 0 13 7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M6.5 7a.956.956 0 0 1-.657-.256l-5.57-5.25a.839.839 0 0 1 0-1.237.968.968 0 0 1 1.312 0L6.5 4.888 11.415.257a.968.968 0 0 1 1.313 0 .839.839 0 0 1 0 1.237l-5.572 5.25A.956.956 0 0 1 6.5 7z'/%3E%3C/svg%3E");
-         background-size: 14px 9px;
-         background-repeat: no-repeat;
+        background-size: 14px 9px;
+        background-repeat: no-repeat;
         background-position: right 12px center;
-        &:hover{
-            border-color:@border-sel ;
+
+        &:hover {
+            border-color: @border-sel;
         }
     }
-    .sel-bloc-input{
+
+    .sel-bloc-input {
         margin-left: 20px;
         border: 1px solid @border-color-registr;
-       display: flex;
+        display: flex;
         flex-direction: row;
         align-items: center;
         border-radius: 4px;
-        input[type=radio]{
+
+        input[type=radio] {
             display: none;
         }
-        label{
-            padding: 2px 8px;
+
+        label {
+            padding: 1px 8px;
             box-sizing: border-box;
             height: 32px;
             display: flex;
             justify-content: center;
             align-items: center;
-            &:first-of-type{
+
+            &:first-of-type {
                 background-color: @white-color;
                 border-right: 1px solid @border-color-registr;;
-                svg{
+
+                svg {
                     fill: @color-fill-a;
                 }
             }
-            &:last-of-type{
+
+            &:last-of-type {
                 background-color: @gray-fill;
-                svg{
+
+                svg {
                     fill: @white-fill;
                 }
             }
         }
     }
 }
-.menu-sitebar{
+
+.menu-sitebar {
     width: 250px;
     height: 3000px;
 }
-.sitebar-product{
+
+.sitebar-product {
     display: flex;
     flex-direction: row;
 }
-.bloc-sitebar{
+
+.bloc-sitebar {
     border-right: 1px solid @border-color1;
     border-bottom: 1px solid @border-color1;
     font-size: @font-size-h4;
 }
-.top-as{
-    padding: 8px 32px 8px 8px;
+
+.top-as {
+    padding: 2px 10px 8px 8px;
     position: relative;
-    input[type=checkbox]{
+
+    input[type=checkbox] {
         display: none;
-        &:checked{
-            & ~ svg{
+
+        &:checked {
+            & ~ svg {
                 transform: rotate(180deg);
             }
-            & ~ .bott-as{
+
+            & ~ .bott-as {
                 height: 0;
                 padding: 0;
             }
         }
     }
-  & > label{
-        font-size:@font-size-h4 ;
+
+    & > label {
+        font-size: @font-size-h4;
         color: @bacground-bloc-a;
         display: block;
-        width: 100%;
+        width: 90%;
         cursor: pointer;
-      padding-bottom: 8px;
-        span{
+        padding: 8px 32px 8px 8px;
+
+        &:hover {
+            color: @hover-color-a;
+
+        }
+
+        span {
             color: @spn-color;
             margin-left: 5px;
         }
     }
-    svg{
+
+    svg {
         position: absolute;
         right: 16px;
         fill: @color-fill-a;
@@ -182,24 +229,35 @@
         transition: all .5s;
     }
 }
-.bott-as{
+
+.bott-as {
     overflow-y: hidden;
     padding-bottom: 21px;
     transition: all .4s;
-    ul{
+
+    ul {
         margin-top: 2px;
         padding-right: 32px;
-        li{
-            padding: 8px;
-            a{
+
+        li {
+            a {
                 color: @blac-color-text;
                 text-decoration: none;
-                label{
+                display: block;
+                padding: 8px;
+                transition: all .4s;
+
+                &:hover {
+                    background-color: @hover-label-a;
+                }
+
+                label {
                     padding-left: 24px;
                     position: relative;
                     cursor: pointer;
                     color: @blac-color-text;
-                    &:after{
+
+                    &:after {
                         content: "";
                         position: absolute;
                         left: 0;
@@ -210,17 +268,20 @@
                         border-radius: 4px;
                         background-color: @white-color;
                     }
-                    span{
+
+                    span {
                         font-size: @font-size-standart;
                         color: @spn-color;
                         padding-left: 6px;
                     }
                 }
-                input[type=checkbox]{
+
+                input[type=checkbox] {
                     display: none;
-                    &:checked{
-                        & + label{
-                            &:after{
+
+                    &:checked {
+                        & + label {
+                            &:after {
                                 content: "\2714";
                                 background-color: @shade-bcground-gray;
                                 text-align: center;
@@ -241,62 +302,71 @@
     height: 600px;
     padding-bottom: 21px;
     overflow: hidden;
-    input[type=search]{
+
+    input[type=search] {
         width: 100%;
-        padding:1px 12px;
+        padding: 1px 12px;
         height: 30px;
         border-radius: 4px;
         border: 1px solid @border-color-registr;
         outline: 0;
     }
-    .alfa-bloc{
+
+    .alfa-bloc {
         height: 0;
         overflow: hidden;
 
-        .alfa-ul{
+        .alfa-ul {
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
             padding-right: 0;
-            li{
-                a{
+
+            li {
+                a {
                     color: @bacground-bloc-a;
                 }
             }
         }
     }
-    .alfa-label{
+
+    .alfa-label {
         display: block;
         margin-top: 10px;
         width: 70%;
         color: @bacground-bloc-a;
         border-bottom: 1px dashed @bacground-bloc-a;
         transition: all .3s;
-        &:hover{
+
+        &:hover {
             color: @hover-color-a;
             border-color: @hover-color-a;
         }
     }
-    .alfa{
-        &:checked{
-            & ~ .alfa-bloc{
+
+    .alfa {
+        &:checked {
+            & ~ .alfa-bloc {
                 min-height: 140px;
 
             }
         }
     }
-    .scroll-bar-lay{
+
+    .scroll-bar-lay {
         height: 100%;
         overflow: auto;
         position: relative;
         padding-bottom: 21px;
-        .ul-inp{
+
+        .ul-inp {
             display: flex;
             flex-direction: column;
         }
     }
 }
-.bott-as{
+
+.bott-as {
     width: 100%;
 
     form {
@@ -737,7 +807,8 @@ input {
         ul {
             &.ul-list-laptop {
                 flex-wrap: nowrap;
-                li{
+
+                li {
                     width: 104px;
                 }
             }
