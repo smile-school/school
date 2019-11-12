@@ -66,7 +66,6 @@ body{
     font-weight: normal;
     font-style: normal;
     font-size: 12px;
-    /*color: #333333;*/
 }
 header .sw-lang,.sw-city{
     display: flex;
@@ -271,7 +270,6 @@ main.main .wrapper{
     padding: 5px;
     color: #3e77aa;
 }
-
 .menu-left  .menu-aside > li > a:nth-child(n):not(:nth-child(1n+16))::after{
     content: ">";
     position: absolute;
@@ -304,6 +302,7 @@ main.main aside.menu-left{
     position: sticky;
     bottom: 0;
     align-self: flex-end;
+    z-index: 2;
 }
 main.main .content .main-slider{
     position: relative;
@@ -358,21 +357,6 @@ main.main .content .main-slider .slider-wrapper .item-slide{
 main.main .content .main-slider .slider-wrapper .item-slide img{
     width: 100%;
 }
-/*.menu-aside a:hover ~ .menu-aside-content{*/
-/*    display: block;*/
-/*    position: absolute;*/
-/*    top: 0;*/
-/*    padding: 10px 10px 62px 0;*/
-/*    left: 301px;*/
-/*    display: flex;*/
-/*    z-index: 20;*/
-/*    background-color: white;*/
-
-/*}*/
-/*.menu-left .menu-aside:hover{*/
-/*    background-color: white;*/
-/*    box-shadow: 0 0 0 9999px rgba(0,0,0,0.7);*/
-/*}*/
 .menu-aside .menu-aside-content{
     display: none;
 }
@@ -406,7 +390,6 @@ main.main .content .main-slider .slider-wrapper .item-slide img{
     margin: 25px 0 7px;
     font-size: 15px;
 }
-
 .menu-left .aside-login a span{
     background-color: #3e77aa;
     color: white;
@@ -668,44 +651,6 @@ main.main .content .main-slider .slider-wrapper .item-slide img{
 .menu-wrapper-popup {
     display: none;
 }
-/*.menu-left .menu-aside:hover{*/
-/*    background-color: white;*/
-/*    box-shadow: 0 0 0 9999px rgba(0,0,0,0.7);*/
-/*}*/
-/*.menu-aside:hover ~*/
-/*.menu-wrapper-popup {*/
-/*    display: block;*/
-/*    position: absolute;*/
-/*    top: 0;*/
-/*    padding: 10px 10px 62px 0;*/
-/*    left: 0;*/
-/*    display: flex;*/
-/*    z-index:50;*/
-/*    background-color: white;*/
-/*    width: 1600px;*/
-
-/*}*/
-/*.menu-aside:hover ~*/
-/*.menu-wrapper-popup a{*/
-/*display: flex;*/
-/*text-decoration: none;*/
-/*font-size: 14px;*/
-/*padding: 5px;*/
-/*color:#3e77aa;*/
-/*}*/
-/*.menu-aside a:hover ~ .menu-wrapper-popup .menu-aside-content{*/
-/*    display: block;*/
-/*    position: absolute;*/
-/*    top: 0;*/
-/*    padding: 10px 10px 62px 0;*/
-/*    left: 301px;*/
-/*    display: flex;*/
-/*    z-index: 20;*/
-/*    background-color: white;*/
-/*}*/
-/*popup-menu*/
-
-
 main.main .wrapper .menu-aside-content{
     display: flex;
     width: 95%;
@@ -744,4 +689,70 @@ main.main .wrapper .menu-aside-content a span>svg{
 }
 .params-menu details{
     position: relative;
+}
+main .aside-catalogue-menu:hover{
+    box-shadow: 0 0 0 9999px rgba(0,0,0,.5);
+}
+main .aside-catalogue-menu{
+    background-color: white;
+    width: 280px;
+    z-index: 5;
+}
+main .aside-catalogue-menu a{
+    color: #3e77aa;
+    text-decoration: none;
+    display: block;
+    padding: 10px 10px;
+    position: relative;
+}
+main .aside-catalogue-menu>a svg{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    fill: #3e77aa;
+}
+main .aside-catalogue-menu a:hover,
+main .aside-catalogue-menu a:hover svg{
+    background-color: rgba(255, 248, 183, 0.41);
+    color: orangered;
+    fill: orangered;
+}
+main .aside-catalogue-menu .menu-none{
+    display: none;
+    position: absolute;
+    left: 280px;
+    width: 1240px;
+    background-color: white;
+    top: 0;
+    height: 612px;
+}
+main .aside-catalogue-menu .menu-none a{
+    font-size: 13px;
+    color: black;
+    padding: 2px 15px 2px 10px;
+}
+main .aside-catalogue-menu .menu-none a:hover{
+    color: orangered;
+    background:none;
+    cursor: pointer;
+}
+main .aside-catalogue-menu .menu-none .menu-title{
+    font-size: 17px;
+    color: #3e77aa;
+}
+main .aside-catalogue-menu .menu-none .grey-menu{
+    background-color: lightgrey;
+}
+main .aside-catalogue-menu:hover .menu-none{
+    display: flex;
+}
+main .aside-catalogue-btn:hover .aside-catalogue-menu{
+    display: block;
+}
+main .aside-catalogue-btn .dropdown:hover{
+    background-color: #49c459;
+}
+main .main-container .aside-menu .aside-catalogue-btn:hover{
+    background-color: #3e77aa;
+    border-radius: 5px;
 }
