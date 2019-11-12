@@ -196,6 +196,8 @@ main.main {
             max-width: 100%;
             display: flex;
             flex-direction: column;
+            position: relative;
+            margin-bottom: 100px;
 
             .goods-tittle{
                 display: flex;
@@ -212,6 +214,8 @@ main.main {
                 display: flex;
                 max-width: 100%;
                 flex-wrap: wrap;
+                height: 315px;
+                overflow: hidden;
 
                 li{
                     width: 20%;
@@ -279,6 +283,97 @@ main.main {
                         }
                     }
                 }
+            }
+            .view-more-button{
+                position: absolute;
+                box-sizing: border-box;
+                display: block;
+                right: 0;
+                bottom: -33px;
+                width: calc(20% + 1px);
+                text-align: center;
+                cursor: pointer;
+                border: 1px solid #eaeaea;
+                border-top: none;
+                padding: 10px 0;
+
+                span{
+                    border-bottom: 1px dotted;
+                    color: #3e77aa;
+                    font-size: 13px;
+
+                    svg{
+                        fill: #3e77aa;
+
+                    }
+                    &:hover{
+                        color: #ff7878;
+
+                        svg{
+                            fill: #ff7878;
+                        }
+
+                    }
+                }
+            }
+            #check, #check1, #check2, #check3{
+                display: none;
+            }
+            #check:checked ~ .goods-list,
+            #check1:checked ~ .goods-list,
+            #check2:checked ~ .goods-list,
+            #check3:checked ~ .goods-list{
+                overflow:visible;
+                height: auto;
+
+            }
+            #check:checked ~ .view-more-button,
+            #check1:checked ~ .view-more-button,
+            #check2:checked ~ .view-more-button,
+            #check3:checked ~ .goods-list{
+                display: none;
+            }
+
+        }
+    }
+    aside .welckom-block{
+        box-sizing: content-box;
+        padding: 16px 24px;
+        border-bottom: 1px solid #eaeaea;
+        text-align: center;
+        background-color: #f4f4f4;
+        text-align: center;
+
+        h3{
+            margin-bottom: 8px;
+            font-size: 20px;
+        }
+        p{
+            margin-bottom: 8px;
+            line-height: 14px;
+        }
+        a{
+            display: block;
+        }
+        a:first-of-type{
+            margin-bottom: 14px;
+            padding: 10px 16px;
+            font-size: 15px;
+            background-color: #3e77aa;
+            color: #fff;
+            border-radius: 4px;
+
+            &:hover{
+                background-color: #4096e3;
+            }
+        }
+        a:last-of-type{
+            color: #3e77aa;
+            font-size: 15px;
+
+            &:hover{
+                text-decoration: underline;
+                color: #ff7878;
             }
         }
     }
