@@ -1,0 +1,161 @@
+.read-bottoms {
+    position: relative;
+    display: flex;
+    @media (max-width: @first-mobile) {
+        display: block;
+    }
+
+    .image-container {
+        width: 33.33%;
+        display: flex;
+        flex-wrap: wrap;
+        background-color: @image-container-background;
+
+
+        .row {
+            width: 100%;
+            display: flex;
+        }
+
+        .image {
+            a {
+                display: block;
+                text-transform: uppercase;
+                text-decoration: none;
+                color: @image-link-color;
+                font-weight: bold;
+                background-color: @image-link-background;
+                text-align: center;
+                font-size: 14px;
+                opacity: 0;
+                transition: opacity 500ms ease-out;
+
+                &:hover {
+                    opacity: .7;
+                }
+            }
+
+            &.vertical {
+                @media (max-width: @first-mobile) {
+                    width: 100%;
+                }
+            }
+        }
+
+        &:first-child {
+            .row {
+                .image {
+                    &.horizontal:first-child {
+                        background-image: url("@{image_url}Layer_19.png");
+                    }
+
+                    &.horizontal:last-child {
+                        background-image: url("@{image_url}Layer_21.png");
+                    }
+                }
+            }
+
+            & > .image.horizontal {
+                background-image: url("@{image_url}Layer_20.png");
+            }
+        }
+
+        &:nth-child(2) {
+            @media (max-width: @first-mobile) {
+                flex-direction: column;
+                width: 25%;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+            }
+
+            .image {
+                &.vertical:first-child {
+                    background-image: url("@{image_url}Layer_22.png");
+                }
+
+                &.vertical:last-child {
+                    background-image: url("@{image_url}Layer_25.png");
+                }
+            }
+        }
+
+        &:last-child {
+            & > .image.horizontal {
+                background-image: url("@{image_url}Layer_23.png");
+            }
+
+            .row {
+                .image {
+                    &.horizontal {
+                        &:first-child {
+                            background-image: url("@{image_url}Layer_24.png");
+                        }
+
+                        &:last-child {
+                            background-image: url("@{image_url}Layer_26.png");
+                        }
+                    }
+                }
+            }
+        }
+
+        .image.horizontal {
+            width: 50%;
+
+            a {
+                padding: 106px 15px 110px;
+            }
+        }
+
+        & > .image.horizontal {
+            width: 100%;
+        }
+
+        .image.vertical {
+            width: 50%;
+            @media (max-width: @first-mobile) {
+                width: 100%;
+            }
+
+            a {
+                padding: 245px 15px;
+            }
+        }
+
+        img {
+            display: block;
+            width: 51px;
+            height: 44px;
+            margin: 0 auto;
+            padding-bottom: 14px;
+        }
+
+        &:nth-child(2n+1) {
+            @media (max-width: @first-mobile) {
+                left: 0;
+                right: 75%;
+                width: 75%;
+            }
+            @media (max-width: @second-mobile) {
+                width: 100%;
+            }
+        }
+
+        &:nth-child(2) {
+            @media (max-width: @first-mobile) {
+                flex-direction: column;
+                width: 25%;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+            }
+            @media (max-width: @second-mobile) {
+                width: 100%;
+                position: relative;
+            }
+        }
+    }
+}
