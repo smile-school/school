@@ -8,12 +8,12 @@
     float: left;
     background-color: #1c1c1c;
     background-size: 60%;
-    & p{
+    p{
         padding: 25px 0 0 56px;
         color: grey;
         text-transform: capitalize;
     }
-    & h2{
+    h2{
         padding: 165px 0 0 56px;
     }
     &:first-child{
@@ -37,7 +37,7 @@
     }
     &:hover{
         background-color: #4d4d5d;
-        & h2,p{
+        h2,p{
             color: red;
         }
     }
@@ -50,7 +50,7 @@
     flex-wrap: wrap;
     width: 100%;
     padding-bottom: 122px;
-    & span{
+    span{
         margin: 0 auto;
         text-transform: uppercase;
         padding-top: 86px;
@@ -61,27 +61,27 @@
         text-align: center;
         width: 100%;
     }
-    & .products{
+    .products{
         padding-top: 66px;
         display: flex;
         width: 100%;
     }
-    & .product_item{
+    .product_item{
         background-color: #363636;
         height: 372px;
         justify-content: space-around;
-        //margin-left: 3%;
-        //&:first-child{
-        //    margin-left: 6%;
-        //}
-        //&:last-child{
-        //    margin-right: 6%;
-        //}
-        //& img{
-        //    padding-top: 30%;
-        //    width: 100%;
-        //}
-        & a{
+        margin-left: 3%;
+        &:first-child{
+            margin-left: 6%;
+        }
+        &:last-child{
+            margin-right: 6%;
+        }
+        img{
+            padding-top: 30%;
+            width: 100%;
+        }
+        a{
             text-align: center;
             display: inline-block;
             height: 100%;
@@ -98,49 +98,46 @@
     background: url("../../img/bgimg.png") no-repeat center center;
     background-size: cover;
         height: 60vh;
-    & .sale_banner{
+    .sale_banner{
         width: 100%;
         display: flex;
-        & hr{
+        hr{
             width: 2px;
             height: 170px;
             margin-top: 250px;
             background-color: white;
         }
-        & .sales1{
+        .sales1{
             padding-right: 10%;
         }
-        & .sales2{
+        .sales2{
             padding-left: 10%;
         }
-        & .sales{
+        .sales{
             width: calc(50%);
             text-align: center;
             text-transform: uppercase;
             padding-top: 10%;
-            & h2{
+            h2{
                 font-size: 82px;
                 font-weight: 700;
             }
-            & h3{
+            h3{
                 font-size: 40px;
                 font-weight: 700;
                 padding-top: 18px;
             }
-            & h5{
+            h5{
                 text-transform: capitalize;
                 padding-top: 28px;
             }
-            & .buynow{
+            .buynow{
                 padding-top: 30px;
             }
-            & #button1,#button2{
+            #button1,#button2{
                 background-color: #9c1c28;
                 color: white;
-                border-top-left-radius: 19px;
-                border-top-right-radius: 19px;
-                border-bottom-left-radius: 19px;
-                border-bottom-right-radius: 19px;
+                border-radius: 19px;
                 text-transform: uppercase;
                 border: solid 1px #9c1c28;
                 width: 190px;
@@ -155,5 +152,43 @@
         }
     }
 }
-
-
+@media only screen and (max-width: 1480px){
+    .headlight h2{
+        padding-top: 90%;
+    }
+}
+@media only screen and (max-width: 992px){
+    .headlight{
+        width: 100%;
+    }
+    .discounts .sale_banner{
+        flex-flow: column;
+        hr{
+            width: 60%;
+            height: 2px;
+            margin-top: 100px;
+        }
+        .sales{
+            width: 100%;
+            align-content: center;
+        }
+        .sales1{
+            padding-right: 0;
+        }
+        .sales2{
+            padding-left: 0;
+        }
+    }
+    .featured_products{
+        .products{
+            flex-flow: column;
+            .product_item{
+                margin: 1%;
+                img{
+                    padding-top: 5%;
+                    width: auto;
+                }
+            }
+        }
+    }
+}
