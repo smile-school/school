@@ -99,13 +99,13 @@
                         }
 
                         &.reviews {
-                            color: #3e77aa;
+                            color: @reviews;
                             font-size: 12px;
                             cursor: pointer;
 
                             &:hover {
 
-                                color: #ff7878;
+                                color: @reviews-hover;
                                 text-decoration: underline;
                             }
                         }
@@ -114,7 +114,7 @@
 
                 .price {
                     & > span {
-                        color: #333;
+                        color: @price-color;
                         font-size: 24px;
                     }
                 }
@@ -136,7 +136,7 @@
                 box-sizing: border-box;
                 padding: 2px 8px;
                 margin-right: 4px;
-                background-color: #f5f5f5;
+                background-color: @li-background-color;
                 border-radius: 3px;
                 @media (max-width: 1279px) {
                     margin-bottom: 8px;
@@ -144,13 +144,13 @@
 
                 & > a {
                     text-decoration: none;
-                    color: #3e77aa;
+                    color: @reviews;
                     font-size: 12px;
                 }
 
                 &:hover {
                     & > a {
-                        color: #ff7878;
+                        color: @reviews-hover;
                         text-decoration: underline;
                     }
                 }
@@ -189,7 +189,7 @@
             &::after {
                 display: block;
                 content: '';
-                background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, #fff 100%);
+                background: @about-laptops-after;
                 width: 100%;
                 height: 50px;
                 left: 0;
@@ -236,11 +236,11 @@
         }
 
         & > label {
-            color: #3e77aa;
+            color: @reviews;
             border-bottom: 1px dotted;
 
             &:hover {
-                color: #ff7878;
+                color: @reviews-hover;
                 cursor: pointer;
             }
         }
@@ -249,7 +249,7 @@
     &.stores {
         max-width: 100%;
         padding: 0 120px;
-        background-color: #00a046;
+        background-color: @stores;
         margin: 0;
         @media(max-width: 757px){
             padding: 0 16px;
@@ -323,7 +323,7 @@
             }
 
             & > h3 {
-                color: #ffffff;
+                color: @product-content;
                 font-weight: normal;
                 max-height: 450px;
                 padding-right: 16px;
