@@ -131,7 +131,17 @@
         }
     }
 }
+.left-bloc-menu{
+    position: relative;
+    &:hover{
+        box-shadow: 0 0 100vh 100vw rgba(0, 0, 0, 0.5);
+        z-index: 50;
 
+        & ~ div{
+            border-bottom: 0;
+        }
+    }
+}
 .menu-left-social {
     display: flex;
     flex-direction: column;
@@ -421,11 +431,11 @@ main.main .content .main-slider #s3:checked ~ .slider-dots label.s3 {
 .menu-aside-up {
     position: absolute;
     right: 100px;
-    left: 280px;
+    left: 278px;
     top: 0;
     display: none;
     justify-content: space-between;
-    height: 80vh;
+    height: 87vh;
     border-radius: 0 5px 5px 0;
     z-index: 990;
     padding: 15px;
@@ -449,6 +459,7 @@ main.main .content .main-slider #s3:checked ~ .slider-dots label.s3 {
         li {
             padding: 2px 5px;
             min-width: 100%;
+            overflow: hidden;
 
             a {
                 text-decoration: none;
@@ -459,6 +470,7 @@ main.main .content .main-slider #s3:checked ~ .slider-dots label.s3 {
                 min-width: 100%;
                 padding: 2px 12px;
                 display: flex;
+                white-space: nowrap;
             }
 
             h3 {
@@ -466,13 +478,14 @@ main.main .content .main-slider #s3:checked ~ .slider-dots label.s3 {
                     font-size: @font-size-a2;
                     color: @bacground-bloc-a;
                     font-weight: 500;
+                    white-space: pre-wrap;
                 }
             }
         }
 
         &:last-of-type {
             img {
-                max-width: 200px;
+                max-width: 100%;
             }
         }
     }
@@ -483,10 +496,7 @@ main.main .content .main-slider #s3:checked ~ .slider-dots label.s3 {
     flex-direction: column;
     padding: 24px 0;
     z-index: 890;
-
-    &:hover {
-
-    }
+    position: relative;
 
     & > li {
         &:hover {
