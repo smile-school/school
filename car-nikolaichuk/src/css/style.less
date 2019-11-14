@@ -1,4 +1,4 @@
-/*---Main---*/
+
 .products-links {
     width: 100%;
     background-color: @main-background-color;
@@ -144,7 +144,7 @@
         @media (max-width: @tablet){
             padding: 30px 20px 20px;
         }
-        & .product a{
+        .product a{
             .flex-mixin(@direction: column);
             background-color: @featured-products-background;
             .geometric-mixin(@width: 250px, @height: 370px);
@@ -158,11 +158,11 @@
                 border-radius: 10px;
                 box-shadow: 0 14px 28px rgba(255, 255, 255, 0.25), 0 10px 10px rgba(255, 255, 255, 0.22);
             }
-            & .product__rating{
+            .product__rating{
                 color: @page-additional-color;
             }
         }
-        & .product{
+        .product{
             @media (max-width: @large-laptop){
                 align-self: center;
                 padding: 14px;
@@ -178,7 +178,7 @@
                 position: relative;
                 .geometric-mixin(@width: 100%, @height: 100%);
                 overflow: hidden;
-                & img{
+                img{
                     position: absolute;
                     top: 50%;
                     left: 50%;
@@ -236,7 +236,7 @@
         &:last-child{
             float: right;
         }
-        & span{
+        span{
             display: block;
         }
         &__percent{

@@ -1,4 +1,3 @@
-/*---Header---*/
 .header{
     &-container{
         .geometric-mixin(@width: 100%, @height: 910px);
@@ -34,7 +33,7 @@
                 &:hover{
                     background-color: @header-links-color-hover;
                 }
-                & i{
+                i{
                     padding-right: 5px;
                 }
                 &:nth-child(3)::after{
@@ -70,16 +69,16 @@
         &__main-links{
             padding: 12px 215px;
             .flex-mixin(@justify: space-between, @align: stretch);
-            & .logo{
+            .logo{
                 margin-right: auto;
             }
-            & .logo__brand{
+            .logo__brand{
                 margin: 0;
-                & span:last-child{
+                span:last-child{
                     color: @page-additional-color
                 }
             }
-            & .logo__slogan{
+            .logo__slogan{
                 text-transform: uppercase;
                 letter-spacing: .3rem;
                 text-align: center;
@@ -151,7 +150,7 @@
     .flex-mixin(@direction: column, @justify: space-between, @align: flex-end);
     &__row{
         text-align: right;
-        & i{
+        i{
             font-size: 22px;
             color: @icon-color;
             & + span{
@@ -160,7 +159,7 @@
                 font-weight: 700;
             }
         }
-        & span{
+        span{
             color: @contact-info-color;
             font-size: 14px;
             text-transform: uppercase;
@@ -176,7 +175,7 @@
                 display: inline-block;
             }
         }
-        & span:first-child{
+        span:first-child{
             @media (max-width: @laptop){
                 padding: 0;
             }
@@ -192,7 +191,7 @@
     position: relative;
     padding: 10px 18px 0;
     text-align: center;
-    & i{
+    i{
         display: block;
         color: #ff3448;
         font-size: 25px;
@@ -234,11 +233,11 @@
     bottom: 0;
     right: 0;
     z-index: 20;
-    & #menu-toggle{
+    #menu-toggle{
         display: none;
         &:checked ~ &__btn{
             position: fixed;
-            & span{
+            span{
                 transform: rotate(45deg);
                 left: 9%;
                 &::before{
