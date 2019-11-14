@@ -817,6 +817,11 @@ main.main {
 
             /*laptops*/
 
+main.main {
+    .wrapper-laptops {
+        justify-content: normal;
+    }
+}
 .menu-left-laptops {
     min-width: 215px;
     padding-top: 14px;
@@ -1012,6 +1017,177 @@ main.main {
                     background-position: -359px -872px;
                     width: 23px;
                     height: 23px;
+                }
+            }
+        }
+    }
+}
+.content-laptops {
+    padding-top: 14px;
+    width: 100%;
+    .top-content {
+        display: flex;
+        justify-content: space-between;
+        .top-content-title {
+            h1 {
+                font-weight: 400;
+                color: #221f1f;
+                font-size: 40px;
+                padding-bottom: 10px;
+            }
+        }
+        .top-content-menu {
+            display: flex;
+            padding-right: 10px;
+            .top-content-menu-sort {
+                display: flex;
+                input {
+                    display: none;
+                    &:checked {
+                        & ~ .menu-sort-none {
+                            display: block;
+                        }
+                    }
+                }
+                .sort-title {
+                    margin-bottom: 2px;
+                    font-size: 11px;
+                    line-height: 15px;
+                    color: #797878;
+                    display: block;
+                }
+                .sort-check {
+                    display: inline-block;
+                    cursor: pointer;
+                    width: 174px;
+                    box-sizing: border-box;
+                    padding: 4px 20px 4px 7px;
+                    border: 1px solid #d2d2d2;
+                    border-radius: 4px;
+                    font-size: 13px;
+                    line-height: 18px;
+                    color: #4d4b4b;
+                    background-color: @white-color;
+                    position: relative;
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        background-image: url("../../ima/sprite-roz.svg");
+                        background-repeat: no-repeat;
+                        background-position: -436px -337px;
+                        width: 13px;
+                        height: 13px;
+                        top: 50%;
+                        margin-top: -6px;
+                        right: 4px;
+                    }
+                    &:hover {
+                        background-color: #f4faf6;
+                    }
+                }
+                .menu-sort-none {
+                    display: none;
+                    width: 248px;
+                    background: @white-color;
+                    box-shadow: 0 0 13px 0 rgba(0,0,0,.4);
+                    box-sizing: border-box;
+                    margin-top: 5px;
+                    border: 1px solid #a8cbeb;
+                    padding: 5px 0 5px 17px;
+                    li {
+                        border-bottom: 1px solid #eaeaea;
+                        list-style: none;
+                        color: @color-link;
+                        padding: 11px 33px 11px 0;
+                        cursor: pointer;
+                        font-size: 13px;
+                        &:hover {
+                            color: @color-link-hover;
+                        }
+                        &:last-child {
+                            border: none;
+                            color: #4d4b4b;
+                            cursor: default;
+                            position: relative;
+                            &::after {
+                                content: '';
+                                position: absolute;
+                                background-image: url("../../ima/sprite-roz.svg");
+                                background-repeat: no-repeat;
+                                background-position: -495px -471px;
+                                width: 16px;
+                                height: 13px;
+                                right: 10px;
+                            }
+                        }
+                    }
+                }
+                .top-content-menu-btn {
+                    display: flex;
+                    padding-top: 11px;
+                    margin-left: 10px;
+                    .width-btn {
+                        background: @white-color;
+                        border: 1px solid #d2d2d2;
+                        //background: @but-search;
+                        //border-color: @but-search;
+                        width: 38px;
+                        display: inline-block;
+                        height: 26px;
+                        position: relative;
+                        margin-top: 5px;
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%,-50%);
+                            background-image: url("../../ima/sprite-roz.svg");
+                            background-repeat: no-repeat;
+                        }
+                    }
+                    .width20-btn {
+                        border-radius: 4px 0 0 4px;
+                        &::before {
+                            background-position: -627px -798px;
+                            width: 14px;
+                            height: 14px;
+                        }
+                    }
+                    .width25-btn {
+                        border-radius: 0 4px 4px 0;
+                        &::before {
+                            background-position: -396px -471px;
+                            width: 19px;
+                            height: 14px;
+                        }
+                    }
+                    input {
+                        &:checked {
+                            & + label {
+                                background: @but-search;
+                                border-color: @but-search;
+                            }
+                        }
+                        &:first-child {
+                            &:checked {
+                                & + label {
+                                    &::before {
+                                        background-position: -611px -798px;
+                                    }
+                                }
+                            }
+                        }
+                        &:nth-child(2) {
+                            &:checked {
+                                & + label {
+                                    &::before {
+                                        background-position: -417px -471px;
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
