@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/tooltip.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-size: 14px;
+            line-height: 1.2;
+            font-family: sans-serif;
+        }
+        .wrapper {
+            max-width: 1220px;
+            margin: 50px auto;
+        }
+        .tooltip {
+            display: inline-block;
+            margin: 0 5px;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background-color: gray;
+            margin: 0 5px;
+        }
+        .tooltip-box {
+            border: 1px solid black;
+            padding: 10px;
+            border-radius: 10px;
+            position: absolute;
+            display: none;
+            max-width: 250px;
+            background-color: white;
+        }
+        .tooltip-box.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <a class="tooltip tooltip-js" href="#" data-tooltip="Text for tooltip 1 Lorem ipsum dolor sit amet"></a> Quod, totam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, eaque.</p>
+        <p>Lorem ipsum dolor <a class="tooltip tooltip-js" href="#" data-tooltip="Text for tooltip 2 Lorem ipsum dolor sit amet"></a> sit amet, consectetur adipisicing elit. Quod, totam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum, placeat!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <a class="tooltip tooltip-js" href="#" data-tooltip="Text for tooltip 3 Lorem ipsum dolor sit amet"></a> Quod, totam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, expedita.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <a class="tooltip tooltip-js" href="#" data-tooltip="Text for tooltip 4 Lorem ipsum dolor sit amet"></a> Quod, totam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, perferendis?</p>
+    </div>
+
+    <script>
+        var t = new Tooltip({
+            beforeTooltip: function (elem) {
+                console.log(elem);
+            }
+        })
+    </script>
+</body>
+</html>
