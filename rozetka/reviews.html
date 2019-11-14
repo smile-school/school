@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no">
     <title>Reviews</title>
+    <script src="js/counter-like.js"></script>
+    <script src="js/add-review.js"></script>
     <link rel="stylesheet" href="grunt/dist/css/style.css">
+
 </head>
 <body>
 <header class="header">
@@ -350,162 +353,17 @@
                             Відповісти
                         </button>
                         <div class="likes-wrap">
-                            <button>
+                            <button class="like-js">
                                 <svg aria-hidden="true" height="16" width="16">
                                     <use xlink:href="#icon-thumb-up" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
                                 </svg>
-                                0
+                                <span>0</span>
                             </button>
-                            <button>
+                            <button class="dis-like-js">
                                 <svg aria-hidden="true" height="16" width="16">
                                     <use xlink:href="#icon-thumb-up" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
                                 </svg>
-                                3
-                            </button>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="top-section">
-                        <svg class="product-comment__label" height="24" role="img" width="25" aria-label="Уже купил">
-                            <use xlink:href="#icon-basket-filled" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                        </svg>
-                        <p class="commentator-name">
-                            Богдан Довгополий
-                        </p>
-                        <span class="time-comment">вчора</span>
-                        <button>
-                            <svg aria-hidden="true" height="16" width="16">
-                                <use xlink:href="#icon-report" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="bottom-section">
-                        <div class="rating-stars-wrap">
-                            <svg class="rating-stars" viewBox="0 0 64 12" aria-label="Рейтинг товара 5 из 5">
-                                <g>
-                                    <defs>
-                                        <linearGradient gradientUnits="userSpaceOnUse" id="ratingFill_44707207">
-                                            <stop stop-color="#ffa900" stop-opacity="1" offset="1"></stop>
-                                            <stop attr.offset="100%" stop-color="#d2d2d2" stop-opacity="1"></stop>
-                                        </linearGradient>
-                                    </defs>
-                                    <path d="M11.91,4.88,9.28,7.57a.3.3,0,0,0-.08.27l.62,3.8a.3.3,0,0,1-.43.32L6.14,10.17a.28.28,0,0,0-.28,0L2.61,12a.3.3,0,0,1-.43-.32l.62-3.8a.3.3,0,0,0-.08-.27L.09,4.88a.31.31,0,0,1,.16-.53L3.89,3.8a.32.32,0,0,0,.22-.17L5.73.17a.3.3,0,0,1,.54,0L7.89,3.63a.32.32,0,0,0,.22.17l3.64.55A.31.31,0,0,1,11.91,4.88Zm12.84-.53L21.11,3.8a.32.32,0,0,1-.22-.17L19.27.17a.3.3,0,0,0-.54,0L17.11,3.63a.32.32,0,0,1-.22.17l-3.64.55a.31.31,0,0,0-.16.53l2.63,2.69a.3.3,0,0,1,.08.27l-.62,3.8a.3.3,0,0,0,.43.32l3.25-1.79a.28.28,0,0,1,.28,0L22.39,12a.3.3,0,0,0,.43-.32l-.62-3.8a.3.3,0,0,1,.08-.27l2.63-2.69A.31.31,0,0,0,24.75,4.35Zm13,0L34.11,3.8a.32.32,0,0,1-.22-.17L32.27.17a.3.3,0,0,0-.54,0L30.11,3.63a.32.32,0,0,1-.22.17l-3.64.55a.31.31,0,0,0-.16.53l2.63,2.69a.3.3,0,0,1,.08.27l-.62,3.8a.3.3,0,0,0,.43.32l3.25-1.79a.28.28,0,0,1,.28,0L35.39,12a.3.3,0,0,0,.43-.32l-.62-3.8a.3.3,0,0,1,.08-.27l2.63-2.69A.31.31,0,0,0,37.75,4.35Zm13,0L47.11,3.8a.32.32,0,0,1-.22-.17L45.27.17a.3.3,0,0,0-.54,0L43.11,3.63a.32.32,0,0,1-.22.17l-3.64.55a.31.31,0,0,0-.16.53l2.63,2.69a.3.3,0,0,1,.08.27l-.62,3.8a.3.3,0,0,0,.43.32l3.25-1.79a.28.28,0,0,1,.28,0L48.39,12a.3.3,0,0,0,.43-.32l-.62-3.8a.3.3,0,0,1,.08-.27l2.63-2.69A.31.31,0,0,0,50.75,4.35Zm13.16.53a.31.31,0,0,0-.16-.53L60.11,3.8a.32.32,0,0,1-.22-.17L58.27.17a.3.3,0,0,0-.54,0L56.11,3.63a.32.32,0,0,1-.22.17l-3.64.55a.31.31,0,0,0-.16.53l2.63,2.69a.3.3,0,0,1,.08.27l-.62,3.8a.3.3,0,0,0,.43.32l3.25-1.79a.28.28,0,0,1,.28,0L61.39,12a.3.3,0,0,0,.43-.32l-.62-3.8a.3.3,0,0,1,.08-.27Z"
-                                          fill="url(#ratingFill_44707207)"></path>
-                                </g>
-                            </svg>
-                        </div>
-                        <p>Чудовий девайс за свої кошти. Відео дійсно 1050ті,
-                            хоча я чекав підвоху від розетки.
-                            Вживу гарніший ніж на фото, працює швидко.
-                            Чудовий варіант для тих, хто розуміється.
-                        </p>
-                        <p class="bold-point">Переваги:</p>
-                        <p>
-                            1050ті за смішні кошти <br>
-                            8300Н з 8 мб кеша 3 рівня<br>
-                            Приємна зелена підсвітка<br>
-                            Металевий(сплав) корпусу, гарна система охолодження
-                        </p>
-                        <p class="bold-point">Недоліки:</p>
-                        <p>
-                            Озу встановлена 2х4гб
-                            Не регулюється яскравість підсвітки клавіш, як в тому ж легіоні.
-                        </p>
-                    </div>
-                    <div class="buttons-section">
-                        <button>
-                            <svg aria-hidden="true" height="12" width="12">
-                                <use xlink:href="#icon-return" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                            </svg>
-                            Відповісти
-                        </button>
-                        <div class="likes-wrap">
-                            <button>
-                                <svg aria-hidden="true" height="16" width="16">
-                                    <use xlink:href="#icon-thumb-up" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                                </svg>
-                                0
-                            </button>
-                            <button>
-                                <svg aria-hidden="true" height="16" width="16">
-                                    <use xlink:href="#icon-thumb-up" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                                </svg>
-                                3
-                            </button>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="top-section">
-                        <p class="commentator-name">Дмитро Фещенко</p>
-                        <span class="time-comment">вчора</span>
-                        <button>
-                            <svg aria-hidden="true" height="16" width="16">
-                                <use xlink:href="#icon-report" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="bottom-section">
-                        <p>Там же є російська клавіатура?<br>
-                            І чи можна його придбати в розстрочку?</p>
-                    </div>
-                    <div class="buttons-section">
-                        <button>
-                            <svg aria-hidden="true" height="12" width="12">
-                                <use xlink:href="#icon-return" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                            </svg>
-                            Відповісти
-                        </button>
-                        <div class="likes-wrap">
-                            <button>
-                                <svg aria-hidden="true" height="16" width="16">
-                                    <use xlink:href="#icon-thumb-up" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                                </svg>
-                                0
-                            </button>
-                            <button>
-                                <svg aria-hidden="true" height="16" width="16">
-                                    <use xlink:href="#icon-thumb-up" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                                </svg>
-                                3
-                            </button>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="top-section">
-                        <p class="commentator-name">Дмитро Фещенко</p>
-                        <span class="time-comment">вчора</span>
-                        <button>
-                            <svg aria-hidden="true" height="16" width="16">
-                                <use xlink:href="#icon-report" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="bottom-section">
-                        <p>Там же є російська клавіатура?<br>
-                            І чи можна його придбати в розстрочку?</p>
-                    </div>
-                    <div class="buttons-section">
-                        <button>
-                            <svg aria-hidden="true" height="12" width="12">
-                                <use xlink:href="#icon-return" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                            </svg>
-                            Відповісти
-                        </button>
-                        <div class="likes-wrap">
-                            <button>
-                                <svg aria-hidden="true" height="16" width="16">
-                                    <use xlink:href="#icon-thumb-up" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                                </svg>
-                                0
-                            </button>
-                            <button>
-                                <svg aria-hidden="true" height="16" width="16">
-                                    <use xlink:href="#icon-thumb-up" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                                </svg>
-                                3
+                                <span>0</span>
                             </button>
                         </div>
                     </div>
@@ -566,17 +424,17 @@
                             Відповісти
                         </button>
                         <div class="likes-wrap">
-                            <button>
+                            <button class="like-js">
                                 <svg aria-hidden="true" height="16" width="16">
                                     <use xlink:href="#icon-thumb-up" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
                                 </svg>
-                                0
+                                <span>0</span>
                             </button>
-                            <button>
+                            <button class="dis-like-js">
                                 <svg aria-hidden="true" height="16" width="16">
                                     <use xlink:href="#icon-thumb-up" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
                                 </svg>
-                                3
+                                <span>0</span>
                             </button>
                         </div>
                     </div>
@@ -603,17 +461,162 @@
                             Відповісти
                         </button>
                         <div class="likes-wrap">
-                            <button>
+                            <button class="like-js">
                                 <svg aria-hidden="true" height="16" width="16">
                                     <use xlink:href="#icon-thumb-up" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
                                 </svg>
-                                0
+                                <span>0</span>
                             </button>
-                            <button>
+                            <button class="dis-like-js">
                                 <svg aria-hidden="true" height="16" width="16">
                                     <use xlink:href="#icon-thumb-up" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
                                 </svg>
-                                3
+                                <span>0</span>
+                            </button>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="top-section">
+                        <p class="commentator-name">Дмитро Фещенко</p>
+                        <span class="time-comment">вчора</span>
+                        <button>
+                            <svg aria-hidden="true" height="16" width="16">
+                                <use xlink:href="#icon-report" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="bottom-section">
+                        <p>Там же є російська клавіатура?<br>
+                            І чи можна його придбати в розстрочку?</p>
+                    </div>
+                    <div class="buttons-section">
+                        <button>
+                            <svg aria-hidden="true" height="12" width="12">
+                                <use xlink:href="#icon-return" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                            </svg>
+                            Відповісти
+                        </button>
+                        <div class="likes-wrap">
+                            <button class="like-js">
+                                <svg aria-hidden="true" height="16" width="16">
+                                    <use xlink:href="#icon-thumb-up" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                                <span>0</span>
+                            </button>
+                            <button class="dis-like-js">
+                                <svg aria-hidden="true" height="16" width="16">
+                                    <use xlink:href="#icon-thumb-up" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                                <span>0</span>
+                            </button>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="top-section">
+                        <svg class="product-comment__label" height="24" role="img" width="25" aria-label="Уже купил">
+                            <use xlink:href="#icon-basket-filled" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                        </svg>
+                        <p class="commentator-name">
+                            Богдан Довгополий
+                        </p>
+                        <span class="time-comment">вчора</span>
+                        <button>
+                            <svg aria-hidden="true" height="16" width="16">
+                                <use xlink:href="#icon-report" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="bottom-section">
+                        <div class="rating-stars-wrap">
+                            <svg class="rating-stars" viewBox="0 0 64 12" aria-label="Рейтинг товара 5 из 5">
+                                <g>
+                                    <defs>
+                                        <linearGradient gradientUnits="userSpaceOnUse" id="ratingFill_44707207">
+                                            <stop stop-color="#ffa900" stop-opacity="1" offset="1"></stop>
+                                            <stop attr.offset="100%" stop-color="#d2d2d2" stop-opacity="1"></stop>
+                                        </linearGradient>
+                                    </defs>
+                                    <path d="M11.91,4.88,9.28,7.57a.3.3,0,0,0-.08.27l.62,3.8a.3.3,0,0,1-.43.32L6.14,10.17a.28.28,0,0,0-.28,0L2.61,12a.3.3,0,0,1-.43-.32l.62-3.8a.3.3,0,0,0-.08-.27L.09,4.88a.31.31,0,0,1,.16-.53L3.89,3.8a.32.32,0,0,0,.22-.17L5.73.17a.3.3,0,0,1,.54,0L7.89,3.63a.32.32,0,0,0,.22.17l3.64.55A.31.31,0,0,1,11.91,4.88Zm12.84-.53L21.11,3.8a.32.32,0,0,1-.22-.17L19.27.17a.3.3,0,0,0-.54,0L17.11,3.63a.32.32,0,0,1-.22.17l-3.64.55a.31.31,0,0,0-.16.53l2.63,2.69a.3.3,0,0,1,.08.27l-.62,3.8a.3.3,0,0,0,.43.32l3.25-1.79a.28.28,0,0,1,.28,0L22.39,12a.3.3,0,0,0,.43-.32l-.62-3.8a.3.3,0,0,1,.08-.27l2.63-2.69A.31.31,0,0,0,24.75,4.35Zm13,0L34.11,3.8a.32.32,0,0,1-.22-.17L32.27.17a.3.3,0,0,0-.54,0L30.11,3.63a.32.32,0,0,1-.22.17l-3.64.55a.31.31,0,0,0-.16.53l2.63,2.69a.3.3,0,0,1,.08.27l-.62,3.8a.3.3,0,0,0,.43.32l3.25-1.79a.28.28,0,0,1,.28,0L35.39,12a.3.3,0,0,0,.43-.32l-.62-3.8a.3.3,0,0,1,.08-.27l2.63-2.69A.31.31,0,0,0,37.75,4.35Zm13,0L47.11,3.8a.32.32,0,0,1-.22-.17L45.27.17a.3.3,0,0,0-.54,0L43.11,3.63a.32.32,0,0,1-.22.17l-3.64.55a.31.31,0,0,0-.16.53l2.63,2.69a.3.3,0,0,1,.08.27l-.62,3.8a.3.3,0,0,0,.43.32l3.25-1.79a.28.28,0,0,1,.28,0L48.39,12a.3.3,0,0,0,.43-.32l-.62-3.8a.3.3,0,0,1,.08-.27l2.63-2.69A.31.31,0,0,0,50.75,4.35Zm13.16.53a.31.31,0,0,0-.16-.53L60.11,3.8a.32.32,0,0,1-.22-.17L58.27.17a.3.3,0,0,0-.54,0L56.11,3.63a.32.32,0,0,1-.22.17l-3.64.55a.31.31,0,0,0-.16.53l2.63,2.69a.3.3,0,0,1,.08.27l-.62,3.8a.3.3,0,0,0,.43.32l3.25-1.79a.28.28,0,0,1,.28,0L61.39,12a.3.3,0,0,0,.43-.32l-.62-3.8a.3.3,0,0,1,.08-.27Z"
+                                          fill="url(#ratingFill_44707207)"></path>
+                                </g>
+                            </svg>
+                        </div>
+                        <p>Чудовий девайс за свої кошти. Відео дійсно 1050ті,
+                            хоча я чекав підвоху від розетки.
+                            Вживу гарніший ніж на фото, працює швидко.
+                            Чудовий варіант для тих, хто розуміється.
+                        </p>
+                        <p class="bold-point">Переваги:</p>
+                        <p>
+                            1050ті за смішні кошти <br>
+                            8300Н з 8 мб кеша 3 рівня<br>
+                            Приємна зелена підсвітка<br>
+                            Металевий(сплав) корпусу, гарна система охолодження
+                        </p>
+                        <p class="bold-point">Недоліки:</p>
+                        <p>
+                            Озу встановлена 2х4гб
+                            Не регулюється яскравість підсвітки клавіш, як в тому ж легіоні.
+                        </p>
+                    </div>
+                    <div class="buttons-section">
+                        <button>
+                            <svg aria-hidden="true" height="12" width="12">
+                                <use xlink:href="#icon-return" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                            </svg>
+                            Відповісти
+                        </button>
+                        <div class="likes-wrap">
+                            <button class="like-js">
+                                <svg aria-hidden="true" height="16" width="16">
+                                    <use xlink:href="#icon-thumb-up" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                                <span>0</span>
+                            </button>
+                            <button class="dis-like-js">
+                                <svg aria-hidden="true" height="16" width="16">
+                                    <use xlink:href="#icon-thumb-up" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                                <span>0</span>
+                            </button>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="top-section">
+                        <p class="commentator-name">Дмитро Фещенко</p>
+                        <span class="time-comment">вчора</span>
+                        <button>
+                            <svg aria-hidden="true" height="16" width="16">
+                                <use xlink:href="#icon-report" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="bottom-section">
+                        <p>Там же є російська клавіатура?<br>
+                            І чи можна його придбати в розстрочку?</p>
+                    </div>
+                    <div class="buttons-section">
+                        <button>
+                            <svg aria-hidden="true" height="12" width="12">
+                                <use xlink:href="#icon-return" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                            </svg>
+                            Відповісти
+                        </button>
+                        <div class="likes-wrap">
+                            <button class="like-js">
+                                <svg aria-hidden="true" height="16" width="16">
+                                    <use xlink:href="#icon-thumb-up" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                                <span>0</span>
+                            </button>
+                            <button class="dis-like-js">
+                                <svg aria-hidden="true" height="16" width="16">
+                                    <use xlink:href="#icon-thumb-up" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                                <span>0</span>
                             </button>
                         </div>
                     </div>
@@ -644,10 +647,12 @@
                 <p class="new-price">19&nbsp;999&nbsp;<span>₴</span></p>
                 <div class="ico-wrap">
                 <span>
-                    <svg _ngcontent-c45="" height="24" width="24"><use _ngcontent-c45="" xlink:href="#icon-compare" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg>
+                    <svg _ngcontent-c45="" height="24" width="24"><use _ngcontent-c45="" xlink:href="#icon-compare"
+                                                                       xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg>
                 </span>
                     <span>
-                    <svg height="22" width="22"><use xlink:href="#icon-favorites" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg>
+                    <svg height="22" width="22"><use xlink:href="#icon-favorites"
+                                                     xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg>
                 </span>
                 </div>
             </div>
@@ -658,6 +663,20 @@
                 <div class="seller-logo">
                     <img src="./img/1248032.png" alt="">
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="blind-wrapper">
+        <div class="form-wrapper">
+            <div class="title">
+                <h3>Написати відгук</h3>
+                <button class="close-form-js">
+                    <svg _ngcontent-c48="" height="16" pointer-events="none" width="16">
+                        <use _ngcontent-c48="" xlink:href="#icon-close-modal"
+                             xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                    </svg>
+                </button>
             </div>
         </div>
     </div>
@@ -2253,5 +2272,6 @@
     </defs>
 </svg>
 
+<script src="js/main-js.js"></script>
 </body>
 </html>

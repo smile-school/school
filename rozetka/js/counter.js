@@ -1,6 +1,6 @@
 (function () {
 
-    function elemObj() {
+    function ElemObj() {
         var self = this;
         this.allShopping = document.querySelector('.shopping');
         this.countElement = document.createElement('span');
@@ -56,5 +56,5 @@
         build(self.buy);
     }
 
-    elemObj();
+    ElemObj();
 })();
