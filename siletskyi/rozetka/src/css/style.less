@@ -1028,6 +1028,7 @@ main.main {
     .top-content {
         display: flex;
         justify-content: space-between;
+        border-bottom: 1px solid @border-color;
         .top-content-title {
             h1 {
                 font-weight: 400;
@@ -1046,6 +1047,7 @@ main.main {
                     &:checked {
                         & ~ .menu-sort-none {
                             display: block;
+                            z-index: 10;
                         }
                     }
                 }
@@ -1086,6 +1088,7 @@ main.main {
                     }
                 }
                 .menu-sort-none {
+                    position: absolute;
                     display: none;
                     width: 248px;
                     background: @white-color;
@@ -1095,7 +1098,7 @@ main.main {
                     border: 1px solid #a8cbeb;
                     padding: 5px 0 5px 17px;
                     li {
-                        border-bottom: 1px solid #eaeaea;
+                        border-bottom: 1px solid @border-color;
                         list-style: none;
                         color: @color-link;
                         padding: 11px 33px 11px 0;
@@ -1129,8 +1132,6 @@ main.main {
                     .width-btn {
                         background: @white-color;
                         border: 1px solid #d2d2d2;
-                        //background: @but-search;
-                        //border-color: @but-search;
                         width: 38px;
                         display: inline-block;
                         height: 26px;
@@ -1144,50 +1145,250 @@ main.main {
                             transform: translate(-50%,-50%);
                             background-image: url("../../ima/sprite-roz.svg");
                             background-repeat: no-repeat;
-                        }
-                    }
-                    .width20-btn {
-                        border-radius: 4px 0 0 4px;
-                        &::before {
                             background-position: -627px -798px;
                             width: 14px;
                             height: 14px;
                         }
                     }
+                    .width20-btn {
+                        border-radius: 4px 0 0 4px;
+                    }
                     .width25-btn {
                         border-radius: 0 4px 4px 0;
-                        &::before {
-                            background-position: -396px -471px;
-                            width: 19px;
-                            height: 14px;
-                        }
                     }
                     input {
                         &:checked {
                             & + label {
                                 background: @but-search;
                                 border-color: @but-search;
-                            }
-                        }
-                        &:first-child {
-                            &:checked {
-                                & + label {
-                                    &::before {
-                                        background-position: -611px -798px;
-                                    }
-                                }
-                            }
-                        }
-                        &:nth-child(2) {
-                            &:checked {
-                                & + label {
-                                    &::before {
-                                        background-position: -417px -471px;
-                                    }
+                                &::before {
+                                    background-position: -611px -798px;
                                 }
                             }
                         }
                     }
+                }
+            }
+        }
+    }
+    .content-item-list {
+        padding-top: 6px;
+        display: flex;
+        flex-wrap: wrap;
+        .content-item {
+            position: relative;
+            img {
+                width: 100%;
+            }
+            &:hover {
+                z-index: 10;
+                &::after {
+                    content: '';
+                    width: 100%;
+                    height: 588px;
+                    border: 1px solid @border-color;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    z-index: -1;
+                    box-shadow: 0px 10px 25px rgba(000,000,000,.7);
+                }
+                .content-item-none {
+                    display: block;
+                    position: absolute;
+                    background-color: #fff;
+                    padding-bottom: 13px;
+                    padding-right: 10px;
+                    z-index: 10;
+                }
+            }
+            width: 20%;
+            box-sizing: border-box;
+            padding: 25px 10px 30px 8px;
+            border-right: 1px solid @border-color;
+            border-bottom: 1px solid @border-color;
+            .content-item-stock {
+                color: @color-new-price;
+                padding-right: 18px;
+                padding-top: 13px;
+                line-height: 14px;
+                margin-bottom: 3px;
+                position: relative;
+                &::after {
+                    content: '';
+                    background-image: url("../../ima/sprite-roz.svg");
+                    background-repeat: no-repeat;
+                    background-position: -635px -872px;
+                    width: 15px;
+                    height: 15px;
+                    left: 22px;
+                    position: absolute;
+                }
+            }
+            .content-item-title {
+                margin: 5px 0 10px;
+                display: block;
+                font-size: 13px;
+                color: @color-link;
+                text-decoration: none;
+                &:hover {
+                    color: @color-link-hover;
+                }
+            }
+            .prices-rating-container {
+                display: flex;
+                .content-item-prices {
+                    display: flex;
+                    flex-direction: column;
+                    .old-price {
+                        font-size: 18px;
+                        color: #999;
+                        position: relative;
+                        margin-left: 7px;
+                        display: inline-block;
+                        span {
+                            font-size: 12px;
+                        }
+                        &::before {
+                            content: '';
+                            width: 76px;
+                            height: 1px;
+                            position: absolute;
+                            background: #fb515d;
+                            left: 0;
+                            top: 50%;
+                        }
+                    }
+                    .new-price {
+                        background: #fef2b8;
+                        border-radius: 4px;
+                        display: inline-block;
+                        padding: 7px 7px 5px;
+                        color: #fb515d;
+                        border: 1px solid transparent;
+                        font-size: 18px;
+                        margin-right: 7px;
+                        margin-bottom: 7px;
+                        span {
+                            font-size: 12px;
+                        }
+                    }
+                }
+                .content-item-rating {
+                    padding-top: 32px;
+                    .rating-stars {
+                        display: inline-block;
+                        cursor: pointer;
+                        &:hover {
+                            & + .rating-view {
+                                color: @color-link-hover;
+                            }
+                        }
+                        span {
+                            display: inline-block;
+                            width: 15px;
+                            height: 14px;
+                            position: relative;
+                            margin-right: -4px;
+                        }
+                        .star-full {
+                            &::before {
+                                position: absolute;
+                                width: 15px;
+                                height: 14px;
+                                content: '';
+                                background-image: url("../../ima/sprite-roz.svg");
+                                background-repeat: no-repeat;
+                                background-position: -324px -183px;
+                            }
+                        }
+                        .star-incomplet {
+                            &::before {
+                                position: absolute;
+                                width: 15px;
+                                height: 14px;
+                                content: '';
+                                background-image: url("../../ima/sprite-roz.svg");
+                                background-repeat: no-repeat;
+                                background-position: -251px -183px;
+                            }
+                        }
+                    }
+                    .rating-view {
+                        font-size: 11px;
+                        color: @color-link;
+                        padding-left: 5px;
+                        cursor: pointer;
+                        &:hover {
+                            color: @color-link-hover;
+                        }
+                    }
+                }
+            }
+            .content-item-tools {
+                margin-top: 10px;
+                span {
+                    display: inline-block;
+                    position: relative;
+                    width: 47px;
+                    height: 34px;
+                    cursor: pointer;
+                    border: 1px solid transparent;
+                    &:hover {
+                        border: 1px solid #fd9fa5;
+                        border-radius: 3px;
+                    }
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        background-image: url("../../ima/sprite-roz.svg");
+                        background-repeat: no-repeat;
+                    }
+                }
+                .tools-buy {
+                    &::before {
+                        background-position: -156px -872px;
+                        width: 24px;
+                        height: 23px;
+                        left: 9px;
+                        top: 4px;
+                    }
+                }
+                .tools-like {
+                    border-right: 1px solid @border-color;
+                    border-left: 1px solid @border-color;;
+                    &::before {
+                        background-position: -377px -838px;
+                        width: 25px;
+                        height: 23px;
+                        left: 11px;
+                        top: 4px;
+                    }
+                }
+                .tools-comparison {
+                    &::before {
+                        background-position: -283px -798px;
+                        width: 29px;
+                        height: 22px;
+                        left: 9px;
+                        top: 4px;
+                    }
+                }
+            }
+            .content-item-none {
+                display: none;
+                .content-item-info {
+                    display: flex;
+                    padding: 15px 0;
+                    .item-info {
+                        margin-right: 6px;
+                    }
+                }
+                .content-item-description {
+                    margin-top: 6px;
+                    font-size: 13px;
+                    line-height: 18px;
+                    color: #4d4b4b;
                 }
             }
         }
