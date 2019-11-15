@@ -678,10 +678,10 @@
                 </button>
             </div>
             <div class="form-wrap">
-                <form action="#" class="add-review-form">
+                <form action="#" class="add-review-form" method="post">
                     <div class="rating-section">
                         <input type="radio" class="rating-add" id="rating-5" name="rating">
-                        <span data-rating="5">
+                        <span data-rating="5" class="rating-point">
                         <label for="rating-5">
                             <svg aria-hidden="true"><use xlink:href="#icon-rating-star"
                                                          xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg>
@@ -689,7 +689,7 @@
                         <span>Чудовий</span>
                     </span>
                         <input type="radio" class="rating-add" id="rating-4" name="rating">
-                        <span data-rating="4">
+                        <span data-rating="4" class="rating-point">
                         <label for="rating-4">
                             <svg aria-hidden="true"><use xlink:href="#icon-rating-star"
                                                          xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg>
@@ -697,7 +697,7 @@
                         <span>Добрий</span>
                     </span>
                         <input type="radio" class="rating-add" id="rating-3" name="rating">
-                        <span data-rating="3">
+                        <span data-rating="3" class="rating-point">
                         <label for="rating-3">
                             <svg aria-hidden="true"><use xlink:href="#icon-rating-star"
                                                          xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg>
@@ -705,7 +705,7 @@
                         <span>Нормальний</span>
                     </span>
                         <input type="radio" class="rating-add" id="rating-2" name="rating">
-                        <span data-rating="2">
+                        <span data-rating="2" class="rating-point">
                         <label for="rating-2">
                             <svg aria-hidden="true"><use xlink:href="#icon-rating-star"
                                                          xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg>
@@ -713,7 +713,7 @@
                         <span>Так собі</span>
                     </span>
                         <input type="radio" class="rating-add" id="rating-1" name="rating">
-                        <span data-rating="1">
+                        <span data-rating="1" class="rating-point">
                         <label for="rating-1">
                             <svg aria-hidden="true"><use xlink:href="#icon-rating-star"
                                                          xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg>
@@ -722,9 +722,9 @@
                     </span>
                     </div>
                     <label for="benefits" class="input-">Переваги</label>
-                    <input type="text" id="benefits">
+                    <input type="text" id="benefits" name="benefits">
                     <label for="disadvantages">Недоліки</label>
-                    <input type="text" id="disadvantages">
+                    <input type="text" id="disadvantages" name="disadvantages">
                     <label for="product-review">Коментар</label>
                     <textarea name="product-review" id="product-review" rows="5"></textarea>
                     <div class="add-video-wrap">
@@ -733,25 +733,25 @@
                         </svg>
                         <div class="input-wrap">
                             <label for="link-youtube">Ссылка на видео с Youtube</label>
-                            <input type="text" id="link-youtube">
+                            <input type="url" id="link-youtube" name="link-youtube">
                         </div>
                         <button class="add-video-button">
                             Додати відео
                         </button>
                     </div>
                     <label for="user-name">Ваше ім'я та прізвище</label>
-                    <input type="text" id="user-name">
+                    <input type="text" id="user-name" name="name">
                     <label for="email-address">Електронна пошта</label>
-                    <input type="text" id="email-address">
+                    <input type="text" id="email-address" name="email">
                     <div class="send-message">
-                        <input type="checkbox" id="send">
+                        <input type="checkbox" id="send" name="send">
                         <label for="send">Повідомляти про відповіді по електронній пошті</label>
                     </div>
                     <div class="buttons-wrap">
-                        <button class="cancel-form">
+                        <button class="cancel-form" type="reset">
                             Скасувати
                         </button>
-                        <button class="submit-form">
+                        <button class="submit-form" type="submit">
                             Залишити відгук
                         </button>
                     </div>

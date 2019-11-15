@@ -2,45 +2,73 @@
     function AddReview(option) {
         var self = this;
         this.options = {
-            buttons: {
-                openButton: document.querySelector('.' + option.addReviewClass),
-                formWindow: document.querySelector('.' + option.formWindowClass),
+            eventElem: {
+                buttons: {
+                    openButton: document.querySelector('.add-review-js'),
+                    formWindow: document.querySelector('.blind-wrapper'),
+                },
+                addReviewForm: document.querySelector('.add-review-form'),
+                /* rating: document.querySelectorAll('.rating-point'),*/
+                likes: document.querySelectorAll('.like-js'),
+                disLikes: document.querySelectorAll('.dis-like-js'),
             },
-            addReview: document.querySelector('.' + option.formClass),
-            likes: document.querySelectorAll('.' + option.likeClass),
-            disLikes: document.querySelectorAll('.' + option.disLikesClass),
         };
 
         function build(collection) {
             for (var key in collection) {
                 if (key === 'buttons') {
                     for (var key2 in collection[key]) {
-                        addEvent(collection[key][key2], toggleForm);
+                        addEvent('click', collection[key][key2], toggleForm);
                     }
                 }
-                if (key === 'addReview') {
-                    addEvent(collection[key], parseForm);
+                if (key === 'addReviewForm') {
+                    addEvent('submit', collection[key], parseForm);
                 } else {
                     for (var i = 0; i < collection[key].length; i++) {
-                        addEvent(collection[key][i], counterLikes(collection[key][i]));
+                        addEvent('click', collection[key][i], counterLikes(collection[key][i]));
                     }
                 }
             }
         }
 
-        function addEvent(elem, func) {
-            elem.addEventListener('click', func);
+        function addEvent(eventName, elem, func) {
+            elem.addEventListener(eventName, func);
         }
 
         function toggleForm(event) {
-            self.options.buttons.formWindow.classList.toggle('active');
-            if(event.target.className === 'DIV'|| event.target.tagName==='BUTTON'){
-                console.log(event.target.tagName);
+            if (event.target.className === 'add-review-js') {
+                setTimeout(function () {
+                    self.options.eventElem.buttons.formWindow.classList.add('active');
+                }, 10);
+            }
+            if (event.target.className === 'close-form-js' || event.target.className === 'cancel-form' || event.target.className === 'blind-wrapper active') {
+                setTimeout(function () {
+                    self.options.eventElem.buttons.formWindow.classList.remove('active');
+                }, 10);
             }
         }
 
-        function parseForm() {
-            console.log('Hi');
+        function parseForm(event) {
+            var formComment = new FormData(this);
+            event.preventDefault();
+            self.options.eventElem.buttons.formWindow.classList.remove('active');
+            createCommentSection(formComment);
+        }
+
+        function newElem(elemName, className) {
+            var elem = document.createElement(elemName);
+            elem.classList.add(className);
+            return elem;
+        }
+
+        function createCommentSection(collection) {
+            collection.forEach(function (item, key) {
+                console.log(item, key);
+            })
+        }
+
+        function getRating(e) {
+            console.log(e.target);
         }
 
         function counterLikes(elem) {
@@ -52,7 +80,7 @@
             }
         }
 
-        build(self.options);
+        build(self.options.eventElem);
     }
 
     window.AddReview = AddReview;

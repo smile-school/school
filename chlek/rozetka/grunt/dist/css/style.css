@@ -4238,46 +4238,6 @@ footer.footer .wrapper .different > p > span {
   height: 16px;
   width: 16px;
 }
-header.header .bottom-section .actions .shopping {
-  position: relative;
-}
-header.header .bottom-section .actions .shopping .counter-show {
-  position: absolute;
-  top: 0;
-  right: 10%;
-  height: 15px;
-  width: 15px;
-  border-radius: 50%;
-  color: #ffffff;
-  background-color: #f84147;
-  text-align: center;
-  font-size: 10px;
-  line-height: 15px;
-  display: block;
-}
-.wrapper .content-wrap .product .new-price .buy {
-  position: relative;
-}
-.wrapper .content-wrap .product .new-price .buy .counter-show {
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 15px;
-  width: 15px;
-  border-radius: 50%;
-  color: #ffffff;
-  background-color: #f84147;
-  text-align: center;
-  font-size: 10px;
-  line-height: 15px;
-  display: none;
-}
-.wrapper .content-wrap .product .new-price .buy .counter-show.active {
-  display: block;
-}
-.wrapper .about-prod-section .tabs .tab-button.active {
-  border: 1px solid #00ba34;
-}
 .wrapper .blind-wrapper {
   position: fixed;
   top: 0;
@@ -4289,9 +4249,11 @@ header.header .bottom-section .actions .shopping .counter-show {
   display: flex;
   justify-content: center;
   align-items: center;
+  transform: scale(0);
+  transition: all 0.2s ease-out;
 }
 .wrapper .blind-wrapper.active {
-  display: flex;
+  transform: scale(1);
 }
 .wrapper .blind-wrapper .form-title-wrapper {
   transition: scale 500ms ease-out;
@@ -4496,4 +4458,44 @@ header.header .bottom-section .actions .shopping .counter-show {
 }
 .wrapper .blind-wrapper .form-title-wrapper .form-wrap .add-review-form .buttons-wrap > button:last-child:hover {
   background-color: #4096e3;
+}
+header.header .bottom-section .actions .shopping {
+  position: relative;
+}
+header.header .bottom-section .actions .shopping .counter-show {
+  position: absolute;
+  top: 0;
+  right: 10%;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  color: #ffffff;
+  background-color: #f84147;
+  text-align: center;
+  font-size: 10px;
+  line-height: 15px;
+  display: block;
+}
+.wrapper .content-wrap .product .new-price .buy {
+  position: relative;
+}
+.wrapper .content-wrap .product .new-price .buy .counter-show {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  color: #ffffff;
+  background-color: #f84147;
+  text-align: center;
+  font-size: 10px;
+  line-height: 15px;
+  display: none;
+}
+.wrapper .content-wrap .product .new-price .buy .counter-show.active {
+  display: block;
+}
+.wrapper .about-prod-section .tabs .tab-button.active {
+  border: 1px solid #00ba34;
 }
