@@ -1,0 +1,58 @@
+.main{
+    &-layout{
+        .flex-mixin(@justify: space-between, @align: flex-end);
+    }
+    &-content{
+        width: calc(100% - 300px);
+        display: inline-block;
+        padding: 40px 0 0 40px;
+    }
+    &-slider{
+
+    }
+    &-goods{
+        width: 100%;
+        padding-top: 20px;
+        margin-bottom: 45px;
+        &__heading{
+            padding: 20px 0 16px;
+            svg{
+                vertical-align: bottom;
+                margin-right: 15px;
+                fill: @element-background-color;
+            }
+        }
+        &__list{
+            display: table;
+            height: 320px;
+            &-item{
+                display: inline-block;
+                position: relative;
+                .container-mixin(@width: 16.66%, @height: 100%);
+                vertical-align: top;
+                .product-card{
+                    padding: 16px 16px 24px;
+                }
+            }
+        }
+        &__btn{
+            width: 16.66%;
+            background-color: @page-background-color;
+            cursor: pointer;
+            padding: 12px 0;
+            float: right;
+            border: 1px solid @page-border-line-color;
+            margin-right: 1px;
+            border-top: none;
+            color: @page-link-color;
+            &:hover,
+            &:hover svg{
+                color: @page-hover-color;
+                fill: @page-hover-color;
+            }
+            svg{
+                fill: @page-link-color;
+            }
+        }
+    }
+}

@@ -10,8 +10,8 @@
     &-sidebar {
         width: 300px;
         display: inline-block;
-        float: left;
-        position: relative;
+        position: sticky;
+        bottom: 0;
         border-right: 1px solid @page-border-line-color;
 
         &__label {
@@ -153,20 +153,20 @@
                 }
             }
 
-            .fb-link > .social-link__ico {
+            & .fb-link > .social-link__ico {
                 .container-mixin(@width: 11px, @height: 20px);
             }
 
-            .tw-link > .social-link__ico,
-            .yt-link > .social-link__ico {
+            & .tw-link > .social-link__ico,
+            & .yt-link > .social-link__ico {
                 .container-mixin(@width: 18px, @height: 14px);
             }
 
-            .ig-link > .social-link__ico {
+            & .ig-link > .social-link__ico {
                 .container-mixin(@width: 18px, @height: 18px);
             }
 
-            .vb-link > .social-link__ico {
+            & .vb-link > .social-link__ico {
                 .container-mixin(@width: 18px, @height: 19px);
             }
         }
@@ -198,7 +198,7 @@
     }
 
     &-copyright {
-        padding: 16px 20px;
+        padding: 16px 20px 35px;
         font-size: 12px;
 
         &_color-gray {
