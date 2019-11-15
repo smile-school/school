@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .wrapper{
+            max-width: 300px;
+            margin: 0 auto;
+            padding: 10px;
+            background-color: gray;
+            color: white;
+        }
+        .wrapper input,
+        .wrapper button,
+        .wrapper textarea{
+            display: block;
+            margin: 10px 0;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 15px;
+        }
+        .anim{
+            width: 100px;
+            height: 80px;
+            background-color: red;
+            transition: background-color 0.5s ease-in-out;
+        }
+        .anim.activ{
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="getIp" id="ip">
+<div id="myIp">
+
+</div>
+<div class="wrapper">
+    <form action="myFor.php" id="myForm">
+        <input type="text" name="name" placeholder="Name">
+        <input type="email" name="email" placeholder="Email">
+        <p>Yor maseg</p>
+        <textarea name="description"></textarea>
+        <button type="submit">Отправить</button>
+    </form>
+
+</div>
+<script src="ajax.js"></script>
+<script src="../asinhron/asing.js"></script>
+</body>
+</html>
