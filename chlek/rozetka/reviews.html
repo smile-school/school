@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no">
     <title>Reviews</title>
-    <script src="js/counter-like.js"></script>
     <script src="js/add-review.js"></script>
     <link rel="stylesheet" href="grunt/dist/css/style.css">
 
@@ -668,7 +667,7 @@
     </div>
 
     <div class="blind-wrapper">
-        <div class="form-wrapper">
+        <div class="form-title-wrapper">
             <div class="title">
                 <h3>Написати відгук</h3>
                 <button class="close-form-js">
@@ -677,6 +676,86 @@
                              xmlns:xlink="http://www.w3.org/1999/xlink"></use>
                     </svg>
                 </button>
+            </div>
+            <div class="form-wrap">
+                <form action="#" class="add-review-form">
+                    <div class="rating-section">
+                        <input type="radio" class="rating-add" id="rating-5" name="rating">
+                        <span data-rating="5">
+                        <label for="rating-5">
+                            <svg aria-hidden="true"><use xlink:href="#icon-rating-star"
+                                                         xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg>
+                        </label>
+                        <span>Чудовий</span>
+                    </span>
+                        <input type="radio" class="rating-add" id="rating-4" name="rating">
+                        <span data-rating="4">
+                        <label for="rating-4">
+                            <svg aria-hidden="true"><use xlink:href="#icon-rating-star"
+                                                         xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg>
+                        </label>
+                        <span>Добрий</span>
+                    </span>
+                        <input type="radio" class="rating-add" id="rating-3" name="rating">
+                        <span data-rating="3">
+                        <label for="rating-3">
+                            <svg aria-hidden="true"><use xlink:href="#icon-rating-star"
+                                                         xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg>
+                        </label>
+                        <span>Нормальний</span>
+                    </span>
+                        <input type="radio" class="rating-add" id="rating-2" name="rating">
+                        <span data-rating="2">
+                        <label for="rating-2">
+                            <svg aria-hidden="true"><use xlink:href="#icon-rating-star"
+                                                         xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg>
+                        </label>
+                        <span>Так собі</span>
+                    </span>
+                        <input type="radio" class="rating-add" id="rating-1" name="rating">
+                        <span data-rating="1">
+                        <label for="rating-1">
+                            <svg aria-hidden="true"><use xlink:href="#icon-rating-star"
+                                                         xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg>
+                        </label>
+                        <span>Поганий</span>
+                    </span>
+                    </div>
+                    <label for="benefits" class="input-">Переваги</label>
+                    <input type="text" id="benefits">
+                    <label for="disadvantages">Недоліки</label>
+                    <input type="text" id="disadvantages">
+                    <label for="product-review">Коментар</label>
+                    <textarea name="product-review" id="product-review" rows="5"></textarea>
+                    <div class="add-video-wrap">
+                        <svg aria-hidden="true" height="32" width="32">
+                            <use xlink:href="#icon-youtube-squared" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                        </svg>
+                        <div class="input-wrap">
+                            <label for="link-youtube">Ссылка на видео с Youtube</label>
+                            <input type="text" id="link-youtube">
+                        </div>
+                        <button class="add-video-button">
+                            Додати відео
+                        </button>
+                    </div>
+                    <label for="user-name">Ваше ім'я та прізвище</label>
+                    <input type="text" id="user-name">
+                    <label for="email-address">Електронна пошта</label>
+                    <input type="text" id="email-address">
+                    <div class="send-message">
+                        <input type="checkbox" id="send">
+                        <label for="send">Повідомляти про відповіді по електронній пошті</label>
+                    </div>
+                    <div class="buttons-wrap">
+                        <button class="cancel-form">
+                            Скасувати
+                        </button>
+                        <button class="submit-form">
+                            Залишити відгук
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

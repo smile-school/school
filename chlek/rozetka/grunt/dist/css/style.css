@@ -4286,34 +4286,34 @@ header.header .bottom-section .actions .shopping .counter-show {
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 20;
-  display: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .wrapper .blind-wrapper.active {
-  display: block;
+  display: flex;
 }
-.wrapper .blind-wrapper .form-wrapper {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+.wrapper .blind-wrapper .form-title-wrapper {
   transition: scale 500ms ease-out;
-  transform: translate(-50%, -50%);
   width: 640px;
-  height: 605px;
-  /*---Видалити---*/
   background-color: #ffffff;
   border-radius: 8px;
   z-index: 25;
+  overflow-y: auto;
+  margin: 32px 0;
+  max-height: calc(100% - 64px);
+  box-sizing: border-box;
 }
-.wrapper .blind-wrapper .form-wrapper .title {
+.wrapper .blind-wrapper .form-title-wrapper .title {
   padding: 0 24px;
   display: flex;
   justify-content: space-between;
 }
-.wrapper .blind-wrapper .form-wrapper .title > h3 {
+.wrapper .blind-wrapper .form-title-wrapper .title > h3 {
   font-size: 24px;
   align-self: center;
 }
-.wrapper .blind-wrapper .form-wrapper .title > button {
+.wrapper .blind-wrapper .form-title-wrapper .title > button {
   height: 56px;
   width: 56px;
   background-color: #ffffff;
@@ -4324,9 +4324,176 @@ header.header .bottom-section .actions .shopping .counter-show {
   position: relative;
   z-index: 30;
 }
-.wrapper .blind-wrapper .form-wrapper .title > button > svg {
+.wrapper .blind-wrapper .form-title-wrapper .title > button > svg {
   fill: #a6a5a5;
+  position: relative;
+  z-index: -1;
 }
-.wrapper .blind-wrapper .form-wrapper .title > button:hover > svg {
+.wrapper .blind-wrapper .form-title-wrapper .title > button:hover > svg {
   fill: #ff7878;
+}
+.wrapper .blind-wrapper .form-title-wrapper .form-wrap {
+  padding: 0 24px 24px;
+}
+.wrapper .blind-wrapper .form-title-wrapper .form-wrap .add-review-form {
+  display: block;
+}
+.wrapper .blind-wrapper .form-title-wrapper .form-wrap .add-review-form .rating-section {
+  display: inline-flex;
+  flex-direction: row-reverse;
+}
+.wrapper .blind-wrapper .form-title-wrapper .form-wrap .add-review-form .rating-section > input {
+  display: none;
+}
+.wrapper .blind-wrapper .form-title-wrapper .form-wrap .add-review-form .rating-section > input:checked ~ span > label > svg {
+  fill: #ffa900;
+}
+.wrapper .blind-wrapper .form-title-wrapper .form-wrap .add-review-form .rating-section > span {
+  width: 80px;
+  height: 72px;
+  display: block;
+  box-sizing: border-box;
+  text-align: center;
+}
+.wrapper .blind-wrapper .form-title-wrapper .form-wrap .add-review-form .rating-section > span:not(:first-child) {
+  margin-right: 24px;
+}
+.wrapper .blind-wrapper .form-title-wrapper .form-wrap .add-review-form .rating-section > span > span {
+  display: block;
+  font-size: 14px;
+  text-align: center;
+}
+.wrapper .blind-wrapper .form-title-wrapper .form-wrap .add-review-form .rating-section > span > label {
+  display: block;
+}
+.wrapper .blind-wrapper .form-title-wrapper .form-wrap .add-review-form .rating-section > span > label > svg {
+  fill: #d2d2d2;
+  width: 40px;
+  height: 37px;
+  display: inline-block;
+  margin-bottom: 12px;
+}
+.wrapper .blind-wrapper .form-title-wrapper .form-wrap .add-review-form .rating-section > span:hover > label > svg {
+  fill: #ffa900;
+}
+.wrapper .blind-wrapper .form-title-wrapper .form-wrap .add-review-form .rating-section > span:hover ~ span > label > svg {
+  fill: #ffa900;
+}
+.wrapper .blind-wrapper .form-title-wrapper .form-wrap .add-review-form > label,
+.wrapper .blind-wrapper .form-title-wrapper .form-wrap .add-review-form > textarea,
+.wrapper .blind-wrapper .form-title-wrapper .form-wrap .add-review-form > input {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 14px;
+  border-radius: 4px;
+}
+.wrapper .blind-wrapper .form-title-wrapper .form-wrap .add-review-form > input {
+  border: 1px solid #d2d2d2;
+  height: 32px;
+  padding: 1px 12px;
+}
+.wrapper .blind-wrapper .form-title-wrapper .form-wrap .add-review-form > textarea {
+  border: 1px solid #d2d2d2;
+  padding: 8px 12px;
+}
+.wrapper .blind-wrapper .form-title-wrapper .form-wrap .add-review-form > label {
+  margin: 16px 0 4px;
+  font-size: 12px;
+  color: #797878;
+}
+.wrapper .blind-wrapper .form-title-wrapper .form-wrap .add-review-form .add-video-wrap {
+  margin-top: 16px;
+  padding: 24px;
+  display: flex;
+  border: 1px solid #d2d2d2;
+  border-radius: 4px;
+}
+.wrapper .blind-wrapper .form-title-wrapper .form-wrap .add-review-form .add-video-wrap > svg {
+  fill: #a6a5a5;
+  margin-right: 16px;
+  align-self: flex-end;
+}
+.wrapper .blind-wrapper .form-title-wrapper .form-wrap .add-review-form .add-video-wrap .input-wrap {
+  margin-right: 16px;
+  flex-grow: 1;
+}
+.wrapper .blind-wrapper .form-title-wrapper .form-wrap .add-review-form .add-video-wrap .input-wrap > label,
+.wrapper .blind-wrapper .form-title-wrapper .form-wrap .add-review-form .add-video-wrap .input-wrap > input {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+.wrapper .blind-wrapper .form-title-wrapper .form-wrap .add-review-form .add-video-wrap .input-wrap > label {
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+.wrapper .blind-wrapper .form-title-wrapper .form-wrap .add-review-form .add-video-wrap .input-wrap > input {
+  height: 32px;
+  border: 1px solid #d2d2d2;
+  border-radius: 4px;
+}
+.wrapper .blind-wrapper .form-title-wrapper .form-wrap .add-review-form .add-video-wrap .add-video-button {
+  height: 32px;
+  padding: 1px 16px;
+  background-color: #f5f5f5;
+  box-shadow: inset 0 0 0 1px #ebebeb;
+  align-self: flex-end;
+  border-radius: 4px;
+  border: none;
+}
+.wrapper .blind-wrapper .form-title-wrapper .form-wrap .add-review-form .send-message {
+  padding: 16px 0 24px;
+}
+.wrapper .blind-wrapper .form-title-wrapper .form-wrap .add-review-form .send-message > input {
+  display: none;
+}
+.wrapper .blind-wrapper .form-title-wrapper .form-wrap .add-review-form .send-message > input:checked ~ label:before {
+  background-image: url("../../../img/checked.svg");
+  background-color: #00a046;
+}
+.wrapper .blind-wrapper .form-title-wrapper .form-wrap .add-review-form .send-message > label {
+  position: relative;
+  padding-left: 32px;
+}
+.wrapper .blind-wrapper .form-title-wrapper .form-wrap .add-review-form .send-message > label::before {
+  display: block;
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 22px;
+  height: 22px;
+  border: 1px solid #d2d2d2;
+  border-radius: 4px;
+  transform: translateY(-20%);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 13px 11px;
+}
+.wrapper .blind-wrapper .form-title-wrapper .form-wrap .add-review-form .buttons-wrap {
+  display: flex;
+}
+.wrapper .blind-wrapper .form-title-wrapper .form-wrap .add-review-form .buttons-wrap > button {
+  width: calc(50% - 8px);
+  height: 40px;
+  border-radius: 4px;
+  border: none;
+  margin-bottom: 16px;
+  padding: 1px 16px;
+  box-sizing: border-box;
+  color: #ffffff;
+  background-color: #3e77aa;
+  font-size: 16px;
+}
+.wrapper .blind-wrapper .form-title-wrapper .form-wrap .add-review-form .buttons-wrap > button:first-child {
+  margin-right: 16px;
+  box-shadow: inset 0 0 0 1px #ebebeb;
+  background-color: #f5f5f5;
+  color: #3e77aa;
+}
+.wrapper .blind-wrapper .form-title-wrapper .form-wrap .add-review-form .buttons-wrap > button:first-child:hover {
+  color: #4096e3;
+}
+.wrapper .blind-wrapper .form-title-wrapper .form-wrap .add-review-form .buttons-wrap > button:last-child:hover {
+  background-color: #4096e3;
 }
