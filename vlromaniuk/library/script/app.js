@@ -6,6 +6,7 @@
         this.offset = 5;
         this.beforeTooltip = options.beforeTooltip;
         this.afterTooltip = options.afterTooltip;
+        this.closeToolTip = options.closeToolTip
         this.tooltipWrapper = document.createElement('div');
         this.status = false;
         this.tooltip = function (elem) {
@@ -35,10 +36,11 @@
             }
             self.closeTips();
         }
-        this.closeTips = function () {
+        this.closeTips = function (elem) {
             this.tooltipWrapper.classList.remove('active');
             this.remElemActive();
             this.status = false;
+            if (this.closeToolTip) this.closeToolTip(elem);
             document.removeEventListener('click', self.closeTipsBody, false)
         }
         this.remElemActive = function () {

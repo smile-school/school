@@ -1834,7 +1834,6 @@ main.main-laptop {
           color: #4d4b4b;
           li{
             list-style: none;
-            margin: 0 4px 6px 0;
           }
           li.filter-default{
             padding: 4px 11px 5px;
@@ -1917,14 +1916,18 @@ main.main-laptop {
         .tabs{
           display: flex;
           margin: 16px;
-          & input[type='radio']{
+          & #tab1{
             display: none;
             &:checked ~ .title{
               border-color: #00a046;
               background: #00a046;
             }
-            &:checked ~ .content{
-              display: block;
+          }
+          & #tab2{
+            display: none;
+            &:checked ~ .title2{
+              border-color: #00a046;
+              background: #00a046;
             }
           }
           .content{
@@ -1938,7 +1941,8 @@ main.main-laptop {
             display: flex;
             flex-wrap: wrap;
           }
-          label.title{
+          label.title,
+          label.title2{
             border: 1px solid #d2d2d2;
             cursor: pointer;
             width: 38px;
@@ -1958,6 +1962,7 @@ main.main-laptop {
           .tab1{
             .title{
               border-radius: 4px 0 0 4px;
+              display: inline-block;
               &::before{
                 background-position: -759px -798px;
                 width: 14px;
@@ -1969,201 +1974,221 @@ main.main-laptop {
               width: 14px;
               height: 14px;
             }
-            ul{
-              display: flex;
-              flex-wrap: wrap;
-            }
-            .product-card{
-              width: 19%;
-              padding: 3px;
-              position: relative;
-              border-right: 1px solid lightgrey;
-              border-bottom: 1px solid lightgrey;
-              margin-top: 5px;
-              background-color: white;
-              height: 365px;
-              z-index: 1;
-              a.img{
-                height: 170px;
-                display: block;
-                img{
-                  width: 100%;
-                }
-                &:hover{
-                  & .first{
-                    display: none;
-                  }
-                  & .second{
-                    display: block;
-                  }
-                }
-                .second{
-                  display: none;
-                }
-              }
-              .action{
-                font-size: 12px;
-                color: #fb3f4c;
-                display: block;
-                width: 100%;
-                position: relative;
-                span{
-                  &::before{
-                    content: '';
-                    position: absolute;
-                    background: url("../../ima/sprite-laptop.svg") no-repeat;
-                    background-position: -674px -798px;
-                    width: 15px;
-                    height: 15px;
-                    right: 57px;
-                    bottom: 2;
-                  }
-                }
-                &:hover{
-                  cursor: pointer;
-                  span{
-                    border-bottom: 1px dotted #fb3f4c;
-                    &::before{
-                      background-position: -434px -348px;
-                    }
-                  }
-                }
-              }
-              .product-name{
-                color: #3e77aa;
-                font-size: 12px;
-                text-decoration: none;
-                &:hover{
-                  color:  #fb3f4c;
-                }
-              }
-              .about-prod{
-                display: flex;
-                .price{
-                  display: flex;
-                  flex-direction: column;
-                  margin-right: 10px;
-                  .old-prce{
-                    font-size: 18px;
-                    color: @darken;
-                    text-decoration: line-through;
-                    text-decoration-color: #fb3f4c;
-                    padding: 7px 7px 5px;;
-                    & ~ .new-prce{
-                      color: #fb3f4c;
-                    }
-                  }
-                  .new-prce{
-                    font-size: 18px;
-                    color: #4d4b4b;
-                    background: #fef2b8;
-                    border-radius: 4px;
-                    padding: 7px 7px 5px;
-                    border: 1px solid transparent;
-                  }
-                }
-              }
-              .rating{
-                display: flex;
-                align-items: flex-end;
-                .star{
-                  background-image: url('../../ima/sprite-laptop.svg');
-                  background-repeat: no-repeat;
-                  position: relative;
-                  background-position: -595px -542px;
-                  width: 71px;
-                  height: 14px;
-                  display: block;
-                  margin-right: 5px;
-                  span{
-                    background-image: inherit;
-                    background-position: -324px -183px;
-                    width: 89%;
-                    display: block;
-                    height: 100%;
-                  }
-                }
-                .comment{
-                  color: #3e77aa;
-                  line-height: 10px;
-                }
-              }
-              .ico{
-                margin-top: 10px;
-                position: relative;
-                height: 30px;
-                span{
-                  background-image: url('../../ima/sprite-laptop.svg');
-                  background-repeat: no-repeat;
-                  position: absolute;
-                  cursor: pointer;
-                 &:first-child{
-                   background-position: -297px -798px;
-                   width: 24px;
-                   height: 23px;
-                   left: 9px;
-                   top: 4px;
-                 }
-                  &:nth-child(2){
-                    background-position: -243px -798px;
-                    width: 25px;
-                    height: 23px;
-                    top: 4px;
-                    left: 55px;
-                  }
-                  &:last-child{
-                    background-position: -860px -447px;
-                    width: 29px;
-                    height: 22px;
-                    top: 4px;
-                    left: 99px;
-                  }
-                }
-              }
-              .hidden-info{
-                background: white;
-                opacity: 0;
-                .imma-info{
-                  display: flex;
-                  justify-content: space-around;
-                  align-content: center;
-                  padding: 10px;
-                }
-              }
-              .zoom{
-                position: absolute;
-                left: 0;
-                right: 0;
-                top: 0;
-                bottom: 0;
-              }
-              &:hover{
-                border: 0;
-                z-index: 8;
-                & .zoom{
-                  transform: scale(1.023);
-                  box-shadow: 0 0 13px 0 rgba(0,0,0,.4);
-                }
-                & .hidden-info{
-                  opacity: 1;
-                }
-              }
-            }
-          }
-          .tab2{
-            .title{
+            .title2{
               border-radius: 0 4px 4px 0;
+              display: inline-block;
+              margin-left: -3px;
               &::before{
                 background-position: -494px -714px;
                 width: 19px;
                 height: 14px;
               }
             }
-            & input[type='radio']:checked ~ .title::before{
+            & #tab2:checked ~ .title2::before{
               background-position: -515px -714px;
               width: 19px;
               height: 14px;
             }
+            & #tab2:checked ~ .content>ul>li{
+              width: 25%;
+              height: 383px;
+              & .action{
+                margin-top: 20px;
+              }
+              & .zoom{
+                height: 510px;
+              }
+            }
+          }
+        }
+      }
+      input[type='radio']{
+        display: none;
+      }
+      ul{
+        display: flex;
+        flex-wrap: wrap;
+        li{
+          list-style-type: none;
+        }
+      }
+      .product-card{
+        width: 20%;
+        box-sizing: border-box;
+        padding: 3px;
+        position: relative;
+        border-right: 1px solid lightgrey;
+        border-bottom: 1px solid lightgrey;
+        margin-top: 5px;
+        background-color: white;
+        height: 365px;
+        z-index: 1;
+        a.img{
+          height: 185px;
+          display: block;
+          img{
+            width: 100%;
+          }
+          &:hover{
+            & .first{
+              display: none;
+            }
+            & .second{
+              display: block;
+            }
+          }
+          .second{
+            display: none;
+          }
+        }
+        .action{
+          font-size: 12px;
+          color: #fb3f4c;
+          display: block;
+          width: 100%;
+          position: relative;
+          span{
+            &::before{
+              content: '';
+              position: absolute;
+              background: url("../../ima/sprite-laptop.svg") no-repeat;
+              background-position: -674px -798px;
+              width: 15px;
+              height: 15px;
+              right: 46px;
+              bottom: 2;
+            }
+          }
+          &:hover{
+            cursor: pointer;
+            span{
+              border-bottom: 1px dotted #fb3f4c;
+              &::before{
+                background-position: -434px -348px;
+              }
+            }
+          }
+        }
+        .product-name{
+          color: #3e77aa;
+          font-size: 12px;
+          text-decoration: none;
+          &:hover{
+            color:  #fb3f4c;
+          }
+        }
+        .about-prod{
+          display: flex;
+          .price{
+            display: flex;
+            flex-direction: column;
+            margin-right: 10px;
+            .old-prce{
+              font-size: 18px;
+              color: @darken;
+              text-decoration: line-through;
+              text-decoration-color: #fb3f4c;
+              padding: 7px 7px 5px;;
+              & ~ .new-prce{
+                color: #fb3f4c;
+              }
+            }
+            .new-prce{
+              font-size: 18px;
+              color: #4d4b4b;
+              background: #fef2b8;
+              border-radius: 4px;
+              padding: 7px 7px 5px;
+              border: 1px solid transparent;
+            }
+          }
+        }
+        .rating{
+          display: flex;
+          align-items: flex-end;
+          .star{
+            background-image: url('../../ima/sprite-laptop.svg');
+            background-repeat: no-repeat;
+            position: relative;
+            background-position: -595px -542px;
+            width: 71px;
+            height: 14px;
+            display: block;
+            margin-right: 5px;
+            span{
+              background-image: inherit;
+              background-position: -324px -183px;
+              width: 89%;
+              display: block;
+              height: 100%;
+            }
+          }
+          .comment{
+            color: #3e77aa;
+            line-height: 10px;
+          }
+        }
+        .ico{
+          margin-top: 10px;
+          position: relative;
+          height: 30px;
+          span{
+            background-image: url('../../ima/sprite-laptop.svg');
+            background-repeat: no-repeat;
+            position: absolute;
+            cursor: pointer;
+            &:first-child{
+              background-position: -297px -798px;
+              width: 24px;
+              height: 23px;
+              left: 9px;
+              top: 4px;
+            }
+            &:nth-child(2){
+              background-position: -243px -798px;
+              width: 25px;
+              height: 23px;
+              top: 4px;
+              left: 55px;
+            }
+            &:last-child{
+              background-position: -860px -447px;
+              width: 29px;
+              height: 22px;
+              top: 4px;
+              left: 99px;
+            }
+          }
+        }
+        .hidden-info{
+          background: white;
+          opacity: 0;
+          .imma-info{
+            display: flex;
+            justify-content: space-around;
+            align-content: center;
+            padding: 10px;
+          }
+        }
+        .zoom{
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+        }
+        &:hover{
+          border: 0;
+          z-index: 8;
+          & .zoom{
+            transform: scale(1.023);
+            box-shadow: 0 0 13px 0 rgba(0,0,0,.4);
+            height: 492px;
+            background-color: white;
+            z-index: -1;
+          }
+          & .hidden-info{
+            opacity: 1;
           }
         }
       }
