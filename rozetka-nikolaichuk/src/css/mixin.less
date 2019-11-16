@@ -22,13 +22,12 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
-.horizontal-line-mixin(@bottom: 0px, @height: 0px, @color){
+
+.line-mixin(@width: 0px, @height: 0px, @left, @top, @color){
     content: "";
     position: absolute;
     background-color: @color;
-    width: 100%;
-    height: @height;
-    bottom: @bottom;
-    left: 0;
-    display: none;
+    .container-mixin(@width: @width, @height: @height);
+    top: @top;
+    left: @left;
 }
