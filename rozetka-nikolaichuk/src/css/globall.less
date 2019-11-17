@@ -14,7 +14,19 @@ body {
     position: relative;
 }
 
-header,
+.page-overlay{
+    position: fixed;
+    opacity: 0;
+    //display: none;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: @page-overlay-color;
+    z-index: 10;
+}
+
 footer,
 main,
 .main-page-content {
