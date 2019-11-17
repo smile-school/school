@@ -329,90 +329,90 @@ main.main {
         display: flex;
         justify-content: space-between;
     }
+    .main-menu {
+        padding: 24px 0;
+        li {
+            list-style: none;
+            line-height: 30px;
+            &:hover {
+                .menu-none {
+                    display: flex;
+                }
+            }
+            a {
+                text-decoration: none;
+                display: flex;
+                align-items: center;
+                color: @color-link;
+                padding: 0 24px 0 15px;
+                font-size: 14px;
+                &:hover {
+                    color: @color-link-hover;
+                    cursor: pointer;
+                    svg {
+                        &:last-child {
+                            fill: @color-link-hover;
+                        }
+                    }
+                }
+                .hell {
+                    display: flex;
+                    align-items: center;
+                    img {
+                        margin-left: 5px;
+                    }
+                }
+                svg {
+                    &:first-child {
+                        fill: #adb8c8;
+                    }
+                    &:last-child {
+                        fill: @color-link;
+                    }
+                }
+                span {
+                    flex-grow: 1;
+                    margin-left: 8px;
+                }
+            }
+        }
+        & > li > a:hover {
+            background-color: rgba(250, 250, 185, .3);
+        }
+    }
+    .menu-none {
+        position: absolute;
+        top: 0;
+        left: 330px;
+        background-color: white;
+        z-index: 20;
+        padding: 15px 8px 15px 8px;
+        justify-content: space-between;
+        display: none;
+        ul {
+            &:first-child {
+                background-color: #f0f0f0;
+            }
+        }
+        img {
+            display: block;
+            height: 450px;
+        }
+        li {
+            line-height: 17px;
+            a {
+                color: #333333;
+                .tit {
+                    color:@color-link;
+                    font-size: 16px;
+                    margin: 7px 0;
+                }
+            }
+        }
+    }
     aside.menu-left {
         border-right: 1px solid #e9e9e9;
         width: 300px;
-        .main-menu {
-            padding: 24px 0;
-            li {
-                list-style: none;
-                line-height: 30px;
-                &:hover {
-                    .menu-none {
-                        display: flex;
-                    }
-                }
-                a {
-                    text-decoration: none;
-                    display: flex;
-                    align-items: center;
-                    color: @color-link;
-                    padding: 0 24px 0 15px;
-                    font-size: 14px;
-                    &:hover {
-                        color: @color-link-hover;
-                        cursor: pointer;
-                        svg {
-                            &:last-child {
-                                fill: @color-link-hover;
-                            }
-                        }
-                    }
-                    .hell {
-                        display: flex;
-                        align-items: center;
-                        img {
-                            margin-left: 5px;
-                        }
-                    }
-                    svg {
-                        &:first-child {
-                            fill: #adb8c8;
-                        }
-                        &:last-child {
-                            fill: @color-link;
-                        }
-                    }
-                    span {
-                        flex-grow: 1;
-                        margin-left: 8px;
-                    }
-                }
-            }
-            & > li > a:hover {
-                background-color: rgba(250, 250, 185, .3);
-            }
-        }
-        .menu-none {
-            position: absolute;
-            top: 0;
-            left: 330px;
-            background-color: white;
-            z-index: 20;
-            padding: 15px 8px 15px 8px;
-            justify-content: space-between;
-            display: none;
-            ul {
-                &:first-child {
-                    background-color: #f0f0f0;
-                }
-            }
-            img {
-                display: block;
-                height: 450px;
-            }
-            li {
-                line-height: 17px;
-                a {
-                    color: #333333;
-                    .tit {
-                        color:@color-link;
-                        font-size: 16px;
-                        margin: 7px 0;
-                    }
-                }
-            }
-        }
         .personal-acc {
             text-align: center;
             padding: 16px 24px;
@@ -538,46 +538,6 @@ main.main {
                 margin-bottom: 12px;
                 font-size: 13px;
                 font-weight: 400;
-            }
-            .social-list {
-                margin-bottom: 4px;
-                a.social-item {
-                    display: inline-block;
-                    margin-right: 10px;
-                    width: 28px;
-                    height: 28px;
-                    border-radius: 50px;
-                    opacity: .85;
-                    -webkit-transition: .3s;
-                    -o-transition: .3s;
-                    transition: all .3s ease;
-                    position: relative;
-                    svg {
-                        fill: @white-color;
-                        position: absolute;
-                        top: 50%;
-                        left: 50%;
-                        transform: translate(-50%, -50%);
-                    }
-                    &:hover {
-                        opacity: 1;
-                    }
-                    &:first-child {
-                        background-color: #506098;
-                    }
-                    &:nth-child(2) {
-                        background-color: #76c9fd;
-                    }
-                    &:nth-child(3) {
-                        background-color: #e90000;
-                    }
-                    &:nth-child(4) {
-                        background: radial-gradient(circle farthest-corner at 32% 106%,#ffe17d 0,#ffcd69 10%,#fa9137 28%,#eb4141 42%,transparent 82%),linear-gradient(135deg,#234bd7 12%,#c33cbe 58%);
-                    }
-                    &:nth-child(5) {
-                        background-color: #7d3daf;
-                    }
-                }
             }
             .social-buttons {
                 .social-but {
@@ -814,214 +774,276 @@ main.main {
         }
     }
 }
+.social-list {
+    margin-bottom: 4px;
+    a.social-item {
+        display: inline-block;
+        margin-right: 10px;
+        width: 28px;
+        height: 28px;
+        border-radius: 50px;
+        opacity: .85;
+        -webkit-transition: .3s;
+        -o-transition: .3s;
+        transition: all .3s ease;
+        position: relative;
+        svg {
+            fill: @white-color;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        &:hover {
+            opacity: 1;
+        }
+        &:first-child {
+            background-color: #506098;
+        }
+        &:nth-child(2) {
+            background-color: #76c9fd;
+        }
+        &:nth-child(3) {
+            background-color: #e90000;
+        }
+        &:nth-child(4) {
+            background: radial-gradient(circle farthest-corner at 32% 106%,#ffe17d 0,#ffcd69 10%,#fa9137 28%,#eb4141 42%,transparent 82%),linear-gradient(135deg,#234bd7 12%,#c33cbe 58%);
+        }
+        &:nth-child(5) {
+            background-color: #7d3daf;
+        }
+    }
+}
 
             /*laptops*/
 
 main.main {
     .wrapper-laptops {
         justify-content: normal;
-    }
-}
-.menu-left-laptops {
-    min-width: 215px;
-    padding-top: 14px;
-    padding-right: 15px;
-    box-sizing: border-box;
-    .menu-btn {
-        width: 183px;
-        background-color: @but-search;
-        border-radius: 4px;
-        border: none;
-        color: @white-color;
-        font-size: 18px;
-        line-height: 22px;
-        padding: 8px 34px 8px 11px;
         position: relative;
-        &::before {
-            content: '';
-            position: absolute;
-            background-image: url("../../ima/sprite-roz.svg");
-            background-position: -528px -471px;
-            background-repeat: no-repeat;
-            width: 13px;
-            height: 13px;
-            top: 50%;
-            right: 10px;
-            margin-top: -6px;
-            transition: transform .2s ease;
-        }
-        &:hover {
-            background-color: @but-search-hover;
-            &::before {
-                transform: rotate(180deg);
-            }
-        }
-    }
-    .details-left {
-        border-right: 1px solid #e9e9e9;
-        .links-catalog {
-            width: 98%;
-            padding-top: 20px;
-            list-style: none;
-            border-right: 1px solid #e9e9e9;
-            border-bottom: 1px solid #e9e9e9;
-            li {
-                padding-bottom: 14px;
-                .links-catalog-tit-bold {
-                    color: #4d4b4b;
-                    font-weight: 700;
+        .menu-left-laptops {
+            min-width: 215px;
+            padding-top: 14px;
+            padding-right: 15px;
+            box-sizing: border-box;
+            .menu-btn {
+                width: 183px;
+                background-color: @but-search;
+                border-radius: 4px;
+                border: none;
+                color: @white-color;
+                font-size: 18px;
+                line-height: 22px;
+                padding: 8px 34px 8px 11px;
+                position: relative;
+                outline: none;
+                &::before {
+                    content: '';
+                    position: absolute;
+                    background-image: url("../../ima/sprite-roz.svg");
+                    background-position: -528px -471px;
+                    background-repeat: no-repeat;
+                    width: 13px;
+                    height: 13px;
+                    top: 50%;
+                    right: 10px;
+                    margin-top: -6px;
+                    transition: transform .2s ease;
                 }
-                a {
+                &:hover {
+                    background-color: @but-search-hover;
+                    & ~ .main-menu-laptops {
+                        display: block;
+                    }
+                    &::before {
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+            .main-menu-laptops {
+                display: none;
+                position: absolute;
+                z-index: 10;
+                background-color: @white-color;
+                border: 1px solid @border-color;
+                padding: 0;
+                .menu-none {
+                    max-width: 1250px;
+                    left: 270px;
+                    padding-top: 0;
+                }
+                &:hover {
+                    display: block;
+                }
+            }
+            .details-left {
+                border-right: 1px solid #e9e9e9;
+                .links-catalog {
+                    width: 98%;
+                    padding-top: 20px;
+                    list-style: none;
+                    border-right: 1px solid #e9e9e9;
+                    border-bottom: 1px solid #e9e9e9;
+                    li {
+                        padding-bottom: 14px;
+                        .links-catalog-tit-bold {
+                            color: #4d4b4b;
+                            font-weight: 700;
+                        }
+                        a {
+                            color: @color-link;
+                            text-decoration: none;
+                            position: relative;
+                            &::before {
+                                content: '';
+                                position: absolute;
+                                width: 9px;
+                                height: 9px;
+                                background-image: url("../../ima/sprite-roz.svg");
+                                background-position: -777px -313px;
+                                background-repeat: no-repeat;
+                                transform: rotate(90deg);
+                                top: 2px;
+                                left: -15px;
+                            }
+                            &:hover {
+                                color: @color-link-hover;
+                                &::before {
+                                    background-position: -777px -302px;
+                                }
+                            }
+                        }
+                        &:nth-child(2) {
+                            a {
+                                margin-left: 10px;
+                            }
+                        }
+                        &:nth-child(3) {
+                            a {
+                                margin-left: 20px;
+                            }
+                        }
+                        &:nth-child(4) {
+                            .links-catalog-tit-bold {
+                                margin-left: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+            .details {
+                width: 98%;
+                border-right: 1px solid #e9e9e9;
+                border-bottom: 1px solid #e9e9e9;
+                margin-top: 4px;
+                padding-bottom: 6px;
+                .details-none {
+                    display: none;
+                }
+                .check-none {
+                    display: none;
+                    &:checked {
+                        & ~ .details-none {
+                            display: block;
+                        }
+                        & ~ .details-btn {
+                            &::before {
+                                transform: rotate(-180deg);
+                            }
+                        }
+                    }
+                }
+                .details-btn {
+                    padding: 9px 9px 9px 0;
+                    cursor: pointer;
+                    font-size: 13px;
                     color: @color-link;
-                    text-decoration: none;
+                    box-sizing: border-box;
+                    display: block;
                     position: relative;
                     &::before {
                         content: '';
                         position: absolute;
-                        width: 9px;
-                        height: 9px;
                         background-image: url("../../ima/sprite-roz.svg");
-                        background-position: -777px -313px;
                         background-repeat: no-repeat;
-                        transform: rotate(90deg);
-                        top: 2px;
-                        left: -15px;
+                        background-position: -513px -471px;
+                        width: 13px;
+                        height: 13px;
+                        top: 50%;
+                        margin-top: -6px;
+                        right: 10px;
+                        transition: transform 250ms ease;
+                        transform: rotate(0);
                     }
                     &:hover {
                         color: @color-link-hover;
                         &::before {
-                            background-position: -777px -302px;
+                            background-position: -558px -471px;
+                        }
+                        &::after {
+                            position: absolute;
+                            content: '';
+                            top: 50%;
+                            right: 3px;
+                            width: 27px;
+                            height: 27px;
+                            margin-top: -13px;
+                            border-radius: 50%;
+                            box-shadow: 0 0 0 1px #f9c2c5;
                         }
                     }
                 }
-                &:nth-child(2) {
-                    a {
-                        margin-left: 10px;
+                .details-none {
+                    list-style: none;
+                    padding: 3px 0 6px;
+                    li {
+                        padding: 3px 6px 2px 0;
                     }
-                }
-                &:nth-child(3) {
-                    a {
-                        margin-left: 20px;
+                    input[type=checkbox]{
+                        display: none;
+                        &:checked {
+                            & ~ .parameter {
+                                &::before {
+                                    background-position: -284px -872px;
+                                }
+                            }
+                        }
                     }
-                }
-                &:nth-child(4) {
-                    .links-catalog-tit-bold {
-                        margin-left: 20px;
-                    }
-                }
-            }
-        }
-    }
-    .details {
-        width: 98%;
-        border-right: 1px solid #e9e9e9;
-        border-bottom: 1px solid #e9e9e9;
-        margin-top: 4px;
-        padding-bottom: 6px;
-        .details-none {
-            display: none;
-        }
-        .check-none {
-            display: none;
-            &:checked {
-                & ~ .details-none {
-                    display: block;
-                }
-                & ~ .details-btn {
-                    &::before {
-                        transform: rotate(-180deg);
-                    }
-                }
-            }
-        }
-        .details-btn {
-            padding: 9px 9px 9px 0;
-            cursor: pointer;
-            font-size: 13px;
-            color: @color-link;
-            box-sizing: border-box;
-            display: block;
-            position: relative;
-            &::before {
-                content: '';
-                position: absolute;
-                background-image: url("../../ima/sprite-roz.svg");
-                background-repeat: no-repeat;
-                background-position: -513px -471px;
-                width: 13px;
-                height: 13px;
-                top: 50%;
-                margin-top: -6px;
-                right: 10px;
-                transition: transform 250ms ease;
-                transform: rotate(0);
-            }
-            &:hover {
-                color: @color-link-hover;
-                &::before {
-                    background-position: -558px -471px;
-                }
-                &::after {
-                    position: absolute;
-                    content: '';
-                    top: 50%;
-                    right: 3px;
-                    width: 27px;
-                    height: 27px;
-                    margin-top: -13px;
-                    border-radius: 50%;
-                    box-shadow: 0 0 0 1px #f9c2c5;
-                }
-            }
-        }
-        .details-none {
-            list-style: none;
-            padding: 3px 0 6px;
-            li {
-                padding: 3px 6px 2px 0;
-            }
-            input[type=checkbox]{
-                display: none;
-                &:checked {
-                    & ~ .parameter {
+                    .parameter {
+                        color: #4d4b4b;
+                        cursor: pointer;
+                        position: relative;
+                        height: 25px;
+                        display: block;
+                        &:hover {
+                            color: @color-link-hover;
+                        }
+                        span {
+                            height: 25px;
+                            display: table-cell;
+                            vertical-align: middle;
+                            padding-left: 30px;
+                            i {
+                                font-style: normal;
+                                color: #999;
+                            }
+                        }
                         &::before {
-                            background-position: -284px -872px;
+                            content: '';
+                            background-image: url("../../ima/sprite-roz.svg");
+                            background-repeat: no-repeat;
+                            position: absolute;
+                            background-position: -359px -872px;
+                            width: 23px;
+                            height: 23px;
                         }
                     }
-                }
-            }
-            .parameter {
-                color: #4d4b4b;
-                cursor: pointer;
-                position: relative;
-                height: 25px;
-                display: block;
-                &:hover {
-                    color: @color-link-hover;
-                }
-                span {
-                    height: 25px;
-                    display: table-cell;
-                    vertical-align: middle;
-                    padding-left: 30px;
-                    i {
-                        font-style: normal;
-                        color: #999;
-                    }
-                }
-                &::before {
-                    content: '';
-                    background-image: url("../../ima/sprite-roz.svg");
-                    background-repeat: no-repeat;
-                    position: absolute;
-                    background-position: -359px -872px;
-                    width: 23px;
-                    height: 23px;
                 }
             }
         }
     }
 }
+
 .content-laptops {
     padding-top: 14px;
     width: 100%;
@@ -1389,6 +1411,265 @@ main.main {
                     font-size: 13px;
                     line-height: 18px;
                     color: #4d4b4b;
+                }
+            }
+        }
+    }
+}
+footer.footer {
+    margin-top: 100px;
+    .footer-top {
+        padding: 32px 56px;
+        margin-bottom: 37px;
+        background: #f5f5f5;
+        border-radius: 4px;
+        border: 1px solid #e9e9e9;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h3 {
+            font-size: 24px;
+            line-height: 29px;
+            font-weight: 400;
+            color: #221f1f;
+        }
+        form {
+            display: flex;
+            .mail {
+                width: 272px;
+                margin-right: 8px;
+                border: 1px solid #d2d2d2;
+                border-radius: 4px;
+                padding: 9px;
+                box-sizing: border-box;
+                font-size: 15px;
+                color: #4d4b4b;
+                outline: none;
+                &:focus {
+                    border-color: black;
+                }
+            }
+            .mail-btn {
+                padding: 9px 16px;
+                font-size: 16px;
+                line-height: 19px;
+                color: @white-color;
+                cursor: pointer;
+                border-radius: 4px;
+                background: @color-link;
+                outline: none;
+                border: none;
+                &:hover {
+                    background: #4096e3;
+                }
+            }
+        }
+    }
+    .footer-color-wrap {
+        background: @but-search;
+        margin-top: 85px;
+        .footer-application {
+            display: flex;
+            padding: 0 5%;
+            .footer-app-phone {
+                width: 248px;
+                position: relative;
+                &:before {
+                    content: '';
+                    position: absolute;
+                    background-image: url("../../ima/sprite-roz.svg");
+                    background-repeat: no-repeat;
+                    background-position: -1px -1px;
+                    width: 248px;
+                    height: 120px;
+                    left: 0;
+                    bottom: 0;
+                    z-index: 10;
+                }
+            }
+            .footer-app-text {
+                text-align: center;
+                line-height: 70px;
+                flex-grow: 1;
+                h2 {
+                    font-size: 24px;
+                    color: @white-color;
+                    font-weight: 400;
+                }
+            }
+            .footer-app-btn {
+                padding: 16px 0;
+                .apple-app {
+                    display: inline-block;
+                    width: 120px;
+                    height: 40px;
+                    background-image: url("../../ima/sprite-roz.svg");
+                    background-repeat: no-repeat;
+                    background-position: -318px -403px;
+                    margin-right: 8px;
+                }
+                .google-app {
+                    display: inline-block;
+                    width: 128px;
+                    height: 40px;
+                    background-image: url("../../ima/sprite-roz.svg");
+                    background-repeat: no-repeat;
+                    background-position: -454px -103px;
+                }
+            }
+        }
+    }
+    .footer-color-gray-wrap {
+        background-color:  #f5f5f5;
+        .footer-color-gray-wrap-border {
+            border-bottom: 1px solid #e9e9e9;
+        }
+        .footer-links {
+            padding: 24px 0;
+            display: flex;
+            justify-content: space-between;
+            .footer-links-item {
+                width: 20%;
+                li {
+                    list-style: none;
+                    margin-bottom: 13px;
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                    .link-item {
+                        text-decoration: none;
+                        font-size: 14px;
+                        line-height: 16px;
+                        color: @color-link;
+                        &:hover {
+                            color: @color-link-hover;
+                        }
+                    }
+                }
+                .link-item-title {
+                    margin-bottom: 10px;
+                    font-size: 12px;
+                    line-height: 12px;
+                    color: #797878;
+                }
+                .link-item-style {
+                    padding-top: 22px;
+                    li {
+                        margin-bottom: 17px;
+                        a {
+                            position: relative;
+                            padding-left: 25px;
+                            &::before {
+                                content: '';
+                                position: absolute;
+                                background-image: url("../../ima/sprite-roz.svg");
+                                background-repeat: no-repeat;
+                                width: 16px;
+                                height: 16px;
+                                left: 0;
+                            }
+                        }
+                        &:first-child {
+                            a {
+                                &::before {
+                                    background-position: -654px -714px;
+                                }
+                                &:hover {
+                                    &::before {
+                                        background-position: -636px -714px;
+                                    }
+                                }
+                            }
+                        }
+                        &:nth-child(2) {
+                            a {
+                                &::before {
+                                    background-position: -708px -714px;
+                                }
+                                &:hover {
+                                    &::before {
+                                        background-position: -690px -714px;
+                                    }
+                                }
+                            }
+                        }
+                        &:nth-child(3) {
+                            a {
+                                &::before {
+                                    background-position: -672px -714px;
+                                }
+                            }
+                        }
+                    }
+                }
+                .social-list {
+                    padding-top: 15px;
+                    .social-item {
+                        margin-right: 4px;
+                        width: 24px;
+                        height: 24px;
+                    }
+                }
+            }
+        }
+        .footer-bottom {
+            padding: 12px 0;
+            .footer-bottom-content {
+                display: flex;
+                .footer-bottom-pay {
+                    a {
+                        display: inline-block;
+                        width: 72px;
+                        height: 40px;
+                        position: relative;
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            background-image: url("../../ima/sprite-roz.svg");
+                            background-repeat: no-repeat;
+                            width: 72px;
+                            height: 32px;
+                        }
+                        &:first-child {
+                            margin-right: 6px;
+                            &::before {
+                                background-position: -370px -253px;
+                            }
+                        }
+                        &:last-child {
+                             &::before {
+                                 background-position: -367px -295px;
+                             }
+                        }
+                    }
+                }
+                .footer-bottom-copy {
+                    flex-grow: 1;
+                    text-align: center;
+                    p {
+                        color: #221f1f;
+                        font-size: 12px;
+                        line-height: 43px;
+                        span {
+                            color: #797878;
+                        }
+                    }
+                }
+                .footer-bottom-btn {
+                    a {
+                        display: inline-block;
+                        font-size: 16px;
+                        line-height: 19px;
+                        padding: 9px 20px 10px;
+                        color: @color-link;
+                        text-decoration: none;
+                        border: 1px solid #ebebeb;
+                        background-color: #f5f5f5;
+                        border-radius: 4px;
+                        &:hover {
+                            color: #4096e3;
+                        }
+                    }
                 }
             }
         }
