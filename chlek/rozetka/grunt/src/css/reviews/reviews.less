@@ -389,6 +389,16 @@
 
                 .add-review-form {
 
+                    .message{
+                        color: #f84147;
+                        margin-top: 8px;
+                        display: none;
+                        font-size: 12px;
+                        &.active{
+                            display: block;
+                        }
+                    }
+
                     display: block;
 
                     .rating-section {
@@ -473,17 +483,29 @@
                         box-sizing: border-box;
                         font-size: 14px;
                         border-radius: 4px;
+                        background-position-x: 99%;
+                        background-position-y: 50%;
+                        background-repeat: no-repeat;
+
                     }
 
                     & > input {
                         border: 1px solid #d2d2d2;
                         height: 32px;
                         padding: 1px 12px;
+                        &.active{
+                            border-color: #f84147;
+                            background-image: url("../../../img/no-fill.svg");
+                        }
                     }
 
                     & > textarea {
                         border: 1px solid #d2d2d2;
                         padding: 8px 12px;
+                        &.active{
+                            border-color: #f84147;
+                            background-image: url("../../../img/no-fill.svg");
+                        }
                     }
 
                     & > label {

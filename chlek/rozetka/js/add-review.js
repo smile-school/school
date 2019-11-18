@@ -14,7 +14,7 @@
             },
             prodRating: 0,
             checkedStar: '',
-
+            commentCount: document.querySelector('.comment-counter'),
         };
 
         function build(collection) {
@@ -55,35 +55,36 @@
         function parseForm(event) {
             var formComment = new FormData(this);
             event.preventDefault();
-            formComment.forEach(function (item, key) {
-                console.log(item, key);
-            });
             isValid(formComment);
         }
 
         function isValid(collect) {
-            var textReview = document.querySelector('#review'),
-                commenterName = document.querySelector('#user-name'),
-                commenterEmail = document.querySelector('#email-address'),
-                prodBenefits = document.querySelector('#benefits'),
-                prodDisadvantages = document.querySelector('#disadvantages'),
-                youtubeUrl = document.querySelector('#youtube'),
-                reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+            var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/,
+                formElements = {
+                    textReview: document.querySelector('#review'),
+                    commenterName: document.querySelector('#user-name'),
+                    commenterEmail: document.querySelector('#email-address'),
+                    prodBenefits: document.querySelector('#benefits'),
+                    prodDisadvantages: document.querySelector('#disadvantages'),
+                    youtubeUrl: document.querySelector('#youtube'),
+                };
 
-            if (reg.test(commenterEmail.value) && commenterName.value.length > 1 && commenterName.value.length < 50 && textReview.value.length > 60) {
-                createComment(collect);
-                self.options.eventElem.buttons.formWindow.classList.remove('active');
-                console.log('Hi')
+            if (!reg.test(formElements.commenterEmail.value)) {
+                formElements.commenterEmail.classList.add('active');
+                formElements.commenterEmail.nextElementSibling.classList.add('active');
             }
-            commenterName.value = '';
-            commenterEmail.value = '';
-            textReview.value = '';
-            prodBenefits.value = '';
-            prodDisadvantages.value = '';
-            youtubeUrl.value = '';
-            self.prodRating = 0;
-            self.options.checkedStar.parentNode.previousElementSibling.checked = false;
-
+            if (formElements.commenterName.value.length < 1 || formElements.commenterName.value.length > 50) {
+                formElements.commenterName.classList.add('active');
+                formElements.commenterName.nextElementSibling.classList.add('active');
+            }
+            if (formElements.textReview.value.length < 60) {
+                formElements.textReview.classList.add('active');
+                formElements.textReview.nextElementSibling.classList.add('active');
+            }
+            if (reg.test(formElements.commenterEmail.value) && formElements.commenterName.value.length > 1 && formElements.commenterName.value.length < 50 && formElements.textReview.value.length > 60) {
+                self.options.eventElem.buttons.formWindow.classList.remove('active');
+                resetForm(formElements, createCommentValues(collect));
+            }
         }
 
         function newElem(elemName, elemClass, content) {
@@ -93,25 +94,29 @@
             return elem;
         }
 
-        function createComment(collect) {
+        function createCommentValues(collect) {
+            var formVal = {};
 
-            var name = '', benefits = '', disadvantages = '', review = '', rating = 0, youtube = '',
-                par = document.querySelector('.comments-wrapper'),
+            collect.forEach(function (item, key) {
+                if (key === 'rating') formVal.rating = self.options.prodRating;
+                else if (key === 'name') formVal.name = item;
+                else if (key === 'benefits') formVal.benefits = item;
+                else if (key === 'disadvantages') formVal.disadvantages = item;
+                else if (key === 'review') formVal.review = item;
+                else if (key === 'youtube') formVal.youtube = item.split('v=')[1];
+            });
+
+            creteCommentSection(formVal);
+        }
+
+        function creteCommentSection(formValues) {
+            var par = document.querySelector('.comments-wrapper'),
                 likeBut = '', disLikeBut = '', butWrap = '', li = '', sect = '', date = new Date(),
                 tegContent = '';
 
-            collect.forEach(function (item, key) {
-                if (key === 'rating') rating = self.options.prodRating;
-                else if (key === 'name') name = item;
-                else if (key === 'benefits') benefits = item;
-                else if (key === 'disadvantages') disadvantages = item;
-                else if (key === 'review') review = item;
-                else if (key === 'youtube') youtube = item.split('v=')[1];
-            });
-
             li = newElem('li');
 
-            tegContent = '<p class="commentator-name">' + name + '</p>\n' +
+            tegContent = '<p class="commentator-name">' + formValues.name + '</p>\n' +
                 '        <span class="time-comment">' + (date.getDate() + '.' + (date.getMonth() + 1) + '.' + date.getFullYear()) + '</span>\n' +
                 '        <button>\n' +
                 '            <svg aria-hidden="true" height="16" width="16">\n' +
@@ -122,11 +127,11 @@
             sect = newElem('div', 'top-section', tegContent);
             li.appendChild(sect);
 
-            tegContent = '<div class="rating-stars-wrap" style="' + ((rating) ? 'display: block' : 'display: none') + '">' + '<svg class="rating-stars" viewBox="0 0 64 12" aria-label="Рейтинг товара ' + self.options.prodRating + ' из 5">\n' +
+            tegContent = '<div class="rating-stars-wrap" style="' + ((formValues.rating) ? 'display: block' : 'display: none') + '">' + '<svg class="rating-stars" viewBox="0 0 64 12" aria-label="Рейтинг товара ' + self.options.prodRating + ' из 5">\n' +
                 '    <g>\n' +
                 '        <defs>\n' +
                 '            <linearGradient gradientUnits="userSpaceOnUse" id="ratingFill_44730882">\n' +
-                '                <stop stop-color="#ffa900" stop-opacity="1" offset="' + rating + '"></stop>\n' +
+                '                <stop stop-color="#ffa900" stop-opacity="1" offset="' + formValues.rating + '"></stop>\n' +
                 '                <stop attr.offset="100%" stop-color="#d2d2d2" stop-opacity="1"></stop>\n' +
                 '            </linearGradient>\n' +
                 '        </defs>\n' +
@@ -134,12 +139,12 @@
                 '              fill="url(#ratingFill_44730882)"></path>\n' +
                 '    </g>\n' +
                 '</svg>' + '</div>\n' +
-                '         <p>\n' + review + '</p>\n' +
-                '         <p class="bold-point" style="' + ((benefits) ? 'display:block' : 'display: none') + '">Переваги:</p>\n' +
-                '         <p style="' + ((benefits) ? 'display:block' : 'display: none') + '">\n' + benefits + '         </p>\n' +
-                '         <p class="bold-point" style="' + ((disadvantages) ? 'display:block' : 'display: none') + '">Недоліки:</p>\n' +
-                '         <p style="' + ((disadvantages) ? 'display:block' : 'display: none') + '">\n' + disadvantages + '</p>\n' +
-                '<iframe width="560" height="315" style="' + ((youtube) ? 'display: block' : 'display: none') + '" src="https://www.youtube.com/embed/' + youtube + '" frameborder="0"\n' +
+                '         <p>\n' + formValues.review + '</p>\n' +
+                '         <p class="bold-point" style="' + ((formValues.benefits) ? 'display:block' : 'display: none') + '">Переваги:</p>\n' +
+                '         <p style="' + ((formValues.benefits) ? 'display:block' : 'display: none') + '">\n' + formValues.benefits + '         </p>\n' +
+                '         <p class="bold-point" style="' + ((formValues.disadvantages) ? 'display:block' : 'display: none') + '">Недоліки:</p>\n' +
+                '         <p style="' + ((formValues.disadvantages) ? 'display:block' : 'display: none') + '">\n' + formValues.disadvantages + '</p>\n' +
+                '<iframe width="560" height="315" style="' + ((formValues.youtube) ? 'display: block' : 'display: none') + '" src="https://www.youtube.com/embed/' + formValues.youtube + '" frameborder="0"\n' +
                 'allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>\n';
 
             sect = newElem('div', 'bottom-section', tegContent);
@@ -166,13 +171,34 @@
             sect = newElem('div', 'buttons-section', tegContent);
             sect.appendChild(butWrap);
             li.appendChild(sect);
-
             par.appendChild(li);
+        }
+
+        function resetForm(obj) {
+
+            for (var key in obj) {
+                obj[key].value = '';
+
+                if (obj[key].classList.contains('active')) {
+                    obj[key].classList.remove('active')
+                    obj[key].nextElementSibling.classList.remove('active');
+                }
+            }
+
+            if (self.options.prodRating) {
+                self.options.checkedStar.parentNode.previousElementSibling.checked = false;
+                self.prodRating = 0;
+            }
+            commentsCount();
+        }
+        
+        function commentsCount() {
+            +(self.options.commentCount.innerHTML)++;
         }
 
         function getRating(event) {
             if (event.target.tagName === 'LABEL') {
-                self.options.prodRating = +(event.target.dataset.rating)/5;
+                self.options.prodRating = +(event.target.dataset.rating) / 5;
                 self.options.checkedStar = event.target;
             }
             return self.options.prodRating;
@@ -191,4 +217,5 @@
     }
 
     window.AddReview = AddReview;
+
 })();
