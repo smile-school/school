@@ -49,9 +49,8 @@
         }
     }
     &__city-chooser{
-        width: 80px;
-        height: 20px;
         border: 1px solid white;
+        position: relative;
     }
     &__search{
 
@@ -162,6 +161,49 @@ a.action__item-link{
         }
         &:hover{
             display: inline-block;
+        }
+    }
+}
+
+.city-chooser{
+    &__wrapper{
+        position: fixed;
+        display: none;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 1px solid @city-chooser_border-color;
+        background: @page-background-color;
+        box-shadow: 0 0 45px 0 rgba(51,51,51,.6), inset 0 -3px 0 0 #c1c1c1;
+        width: 580px;
+        padding: 15px 24px;
+        color: @form-label-color;
+        &__popular-cities{
+            padding: 20px 0;
+            .city-link{
+                color: @page-link-color;
+                display: inline-block;
+                width: 30%;
+                line-height: 2.2;
+                &:hover{
+                    color: @page-hover-color;
+                }
+            }
+        }
+    }
+    input,
+    &__city > &__city-choise li{
+        display: none;
+    }
+    &__city{
+        #kiyv-city:checked ~ .city-chooser__city-choise li#kiyv-choise,
+        #rivne-city:checked ~ .city-chooser__city-choise li#rivne-choise,
+        #odessa-city:checked ~ .city-chooser__city-choise li#odessa-choise,
+        #kharkiv-city:checked ~ .city-chooser__city-choise li#kharkiv-choise,
+        #dnipro-city:checked ~ .city-chooser__city-choise li#dnipro-chiose,
+        #lviv-city:checked ~ .city-chooser__city-choise li#lviv-choise,
+        #window:checked ~ .city-chooser__wrapper{
+            display: block;
         }
     }
 }

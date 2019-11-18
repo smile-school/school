@@ -85,13 +85,56 @@
                          title="Интернет магазин Rozetka.ua™ - №1">
                 </a>
             </div>
-            <div class="header-row__cell header__city-chooser"></div>
+            <div class="header-row__cell header__city-chooser">
+                <ul class="city-chooser">
+                    <li class="city-chooser__title">Город</li>
+                    <li class="city-chooser__city">
+                        <input type="radio" id="window" name="window" class="window">
+                        <input type="radio" id="window-close" name="window" class="window">
+                        <input type="radio" name="city" checked id="kiyv-city">
+                        <input type="radio" name="city" id="rivne-city">
+                        <input type="radio" name="city" id="odessa-city">
+                        <input type="radio" name="city" id="kharkiv-city">
+                        <input type="radio" name="city" id="dnipro-city">
+                        <input type="radio" name="city" id="lviv-city">
+                        <label for="window" class="city-chooser__city-choise">
+                            <ul>
+                                <li id="kiyv-choise">Киев</li>
+                                <li id="rivne-choise">Ривне</li>
+                                <li id="odessa-choise">Одесса</li>
+                                <li id="kharkiv-choise">Харьков</li>
+                                <li id="dnipro-chiose">Днепр</li>
+                                <li id="lviv-choise">Львов</li>
+                            </ul>
+                        </label>
+                        <div class="city-chooser__wrapper">
+                            <h2 class="city-chooser__wrapper__title">Выберите свой город</h2>
+                            <label class="close" for="window-close">X</label>
+                            <p>доставляем заказы по всей Украине!</p>
+                            <div class="city-chooser__wrapper__popular-cities">
+                                <label class="city-link" for="kiyv-city">Киев</label>
+                                <label class="city-link" for="odessa-city">Одесса</label>
+                                <label class="city-link" for="dnipro-city">Днепр</label>
+                                <label class="city-link" for="kharkiv-city">Харьков</label>
+                                <label class="city-link" for="rivne-city">Ривне</label>
+                                <label class="city-link" for="lviv-city">Львов</label>
+                            </div>
+                            <label>Введите населенный пункт Украины</label>
+                            <input type="text" class="city-chooser__wrapper__city-input">
+                            <p>Выбор города поможет предоставить актуальную информацию о наличии товара, его цены и
+                                способов
+                                доставки в вашем городе! Это поможет сохранить больше свободного времени для вас!
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
             <div class="header-row__cell header__search">
                 <form class="search-form" name="search-form" method="get" action="#">
                     <div class="search-form__wrapper">
                         <input type="text" class="search-form__input" placeholder="Я ищу...">
                         <button type="button" class="search-form__button-close">
-                            <svg _ngcontent-c9="" height="16" width="16">
+                            <svg height="16" width="16">
                                 <use xlink:href="#icon-close-modal" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
                             </svg>
                         </button>
@@ -130,8 +173,11 @@
                             <div class="action__popup__content">
                                 <div class="action__popup__title">Бонусный счет</div>
                                 <p>Накапливайте бонусы и используйте их при оплате своих покупок!</p>
-                                <button type="button" class="action__popup__button green-button">Использовать бонусный счет</button>
-                                <p class="action__popup__small-text">Для этого вам необходимо подтвердить свой номер телефона и принять правила и условия использования
+                                <button type="button" class="action__popup__button green-button">Использовать бонусный
+                                    счет
+                                </button>
+                                <p class="action__popup__small-text">Для этого вам необходимо подтвердить свой номер
+                                    телефона и принять правила и условия использования
                                     <a href="#" class="link">бонусного счета</a></p>
                                 <p>Если у вас уже есть бонусный счет, <a href="#" class="link">авторизуйтесь</a></p>
                             </div>
