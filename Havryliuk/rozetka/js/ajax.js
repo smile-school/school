@@ -20,7 +20,7 @@
         e.preventDefault();
         var data = new FormData(this);
         data.forEach(function (value, key) {
-            console.log('key = ' + key +', value = ' + value);e);
+            console.log('key = ' + key +', value = ' + value);
         });
         sendForm('myForm.php', data, function (data) {
             var el = document.createElement('div');
