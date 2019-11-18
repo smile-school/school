@@ -13,6 +13,8 @@
                 disLikes: document.querySelectorAll('.dis-like-js'),
             },
             prodRating: 0,
+            checkedStar: '',
+
         };
 
         function build(collection) {
@@ -53,22 +55,34 @@
         function parseForm(event) {
             var formComment = new FormData(this);
             event.preventDefault();
+            formComment.forEach(function (item, key) {
+                console.log(item, key);
+            });
             isValid(formComment);
         }
 
         function isValid(collect) {
             var textReview = document.querySelector('#review'),
-            commenterName = document.querySelector('#user-name'),
-            commenterEmail = document.querySelector('#email-address'),
-            reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+                commenterName = document.querySelector('#user-name'),
+                commenterEmail = document.querySelector('#email-address'),
+                prodBenefits = document.querySelector('#benefits'),
+                prodDisadvantages = document.querySelector('#disadvantages'),
+                youtubeUrl = document.querySelector('#youtube'),
+                reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
 
-            /*console.log(reg.test(commenterEmail.value));*/
-            /*console.log(textReview, commenterName, commenterEmail);*/
-
-            if(reg.test(commenterEmail.value) && commenterName.value.length > 1 && commenterName.value.length > 50 && textReview.value > 60){
+            if (reg.test(commenterEmail.value) && commenterName.value.length > 1 && commenterName.value.length < 50 && textReview.value.length > 60) {
                 createComment(collect);
                 self.options.eventElem.buttons.formWindow.classList.remove('active');
+                console.log('Hi')
             }
+            commenterName.value = '';
+            commenterEmail.value = '';
+            textReview.value = '';
+            prodBenefits.value = '';
+            prodDisadvantages.value = '';
+            youtubeUrl.value = '';
+            self.prodRating = 0;
+            self.options.checkedStar.parentNode.previousElementSibling.checked = false;
 
         }
 
@@ -87,7 +101,7 @@
                 tegContent = '';
 
             collect.forEach(function (item, key) {
-                if (key === 'rating') rating = self.options.prodRating / 5;
+                if (key === 'rating') rating = self.options.prodRating;
                 else if (key === 'name') name = item;
                 else if (key === 'benefits') benefits = item;
                 else if (key === 'disadvantages') disadvantages = item;
@@ -154,13 +168,12 @@
             li.appendChild(sect);
 
             par.appendChild(li);
-
         }
 
         function getRating(event) {
-
             if (event.target.tagName === 'LABEL') {
-                self.options.prodRating = +(event.target.dataset.rating);
+                self.options.prodRating = +(event.target.dataset.rating)/5;
+                self.options.checkedStar = event.target;
             }
             return self.options.prodRating;
         }
