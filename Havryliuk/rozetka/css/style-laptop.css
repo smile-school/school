@@ -17,6 +17,9 @@ li{
 label{
     cursor: pointer;
 }
+a{
+    cursor: pointer;
+}
 .banner{
     height: 30px;
     background-color: #FFDE00;
@@ -153,7 +156,6 @@ header .wrapper-pop svg{
 }
 header .wrapper-pop > label{
     display: inline-block;
-    cursor: pointer;
     margin-bottom: 5px;
     color: #8499c7;
     width: 30%;
@@ -168,7 +170,6 @@ header .wrapper-pop > label.close{
     position: absolute;
     width: 0;
     color: grey;
-    cursor: pointer;
     top: 5%;
     right: 5%;
     text-align: center;
@@ -234,10 +235,6 @@ header .bottom-menu-toggle .item-catalogue{
     background-repeat: no-repeat;
     background-position: 12px;
     border-radius: 2px;
-    /*border-top-left-radius: 2px;*/
-    /*border-top-right-radius: 2px;*/
-    /*border-bottom-right-radius: 2px;*/
-    /*border-bottom-left-radius: 2px;*/
     border-color: white;
 }
 .bottom-menu-wrapper .bottom-search-menu #search{
@@ -256,16 +253,16 @@ header .bottom-menu-toggle .item-catalogue{
     fill: #a6a5a5;
     margin: 0 12px 0;
 }
-
 main .main-wrap{
     padding: 0 40px;
+    margin-bottom: 350px;
 }
 main .main-container{
     padding-top: 14px;
+    display: flex;
 }
 main .main-container .aside-menu{
     width: 11.3%;
-    float: left;
 }
 main .aside-catalogue-btn{
     position: relative;
@@ -293,6 +290,7 @@ main .aside-catalogue-menu{
     background-color: white;
     width: 280px;
     z-index: 5;
+    border: 1px solid lightgray;
     box-shadow:  0 0 0 9999px rgba(0,0,0,.35);
 }
 main .aside-catalogue-menu a{
@@ -321,7 +319,8 @@ main .aside-catalogue-menu .menu-none{
     width: 1240px;
     background-color: white;
     top: 0;
-    height: 612px;
+    height: 610px;
+    border: 1px solid white;
 }
 main .aside-catalogue-menu .menu-none a{
     font-size: 13px;
@@ -342,15 +341,21 @@ main .aside-catalogue-menu .menu-none .grey-menu{
 main .aside-catalogue-menu:hover .menu-none{
     display: flex;
 }
-main .aside-catalogue-btn:hover .aside-catalogue-menu{
-    display: block;
-}
-main .aside-catalogue-btn .dropdown:hover{
+main .aside-catalogue-menu:hover .dropdown{
     background-color: #49c459;
 }
+main .aside-catalogue-btn .dropdown svg{
+    transition: transform 250ms ease;
+}
+main .aside-catalogue-btn:hover .dropdown svg{
+    transform: rotate(-180deg);
+}
+main .aside-catalogue-btn:hover .aside-catalogue-menu{
+    display: block;
+    z-index: -1;
+}
 main .main-container .aside-menu .aside-catalogue-btn:hover{
-    background-color: #3e77aa;
-    border-radius: 5px;
+    z-index: 1;
 }
 main .choose-param{
     border-right: 1px solid lightgrey;
@@ -424,6 +429,27 @@ main .params-menu .param .top-link{
     color: #3e77aa;
     margin: 10px 0;
 }
+main .params-menu .param .arrow-before{
+    padding-left: 25px;
+    position: relative;
+}
+main .params-menu .param .arrow-before:hover::before{
+    background-position: -557px -470px;
+}
+main .params-menu .param .arrow-before:hover{
+    background-color: white;
+}
+main .params-menu .param .arrow-before::before{
+    position: absolute;
+    content: "";
+    display: block;
+    background-position: -657px -797px;
+    width: 15px;
+    height: 15px;
+    left: 3px;
+    background-image: url('../ima/sprite-roz.svg');
+    background-repeat: no-repeat;
+}
 main .params-menu span{
     color: grey;
 }
@@ -432,14 +458,11 @@ main .params-menu .param a{
     color: #4d4b4b;
     text-decoration: none;
     display: block;
-    width: 100%;
     padding: 5px 0;
-    cursor: pointer;
 }
 main .params-menu .param > a:hover{
     color: #ff7878;
     background-color: rgba(252,251,211,0.4);
-    cursor: pointer;
 }
 main .param a>label{
     display: inline-block;
@@ -512,7 +535,6 @@ main .item-box-block h1{
 .sort-selector-list li>a:hover{
     color: #ff7878;
     background-color: rgba(252,251,211,0.4);
-    cursor: pointer;
 }
 .sort-selector-list .checked-link::after{
     content: "\2713";
@@ -584,7 +606,6 @@ input[type=radio] + .second-radio:before {
     display: flex;
     flex-wrap: wrap;
     margin-top: 20px;
-    padding-top: 10px;
     border-top: 1px solid lightgrey;
     height: 200px;
 }
@@ -595,7 +616,8 @@ input[type=radio] + .second-radio:before {
     border-right: 1px solid lightgrey;
     border-bottom: 1px solid lightgrey;
     padding: 15px;
-    width: 14.3%;
+    width: 14.29%;
+    margin: 5px 0 0 5px;
     height: 320px;
     overflow: hidden;
 }
@@ -729,16 +751,15 @@ main .param:not([open]) .sprite-side::before{
 }
 .sprite-side::before{
     display: block;
-    background-position: -436px -207px;
-    width: 13px;
-    height: 13px;
-    right: 10px;
+    background-position: -657px -797px;
+    width: 15px;
+    height: 15px;
+    right: 9px;
     transform: rotate(-180deg);
     transition: transform 250ms ease;
 }
 .sprite-side:hover::before{
-    background-position: -726px -714px;
-    border-radius: 50%;
+    background-position: -557px -470px;
 }
 .sprite-side::after {
     position: absolute;
@@ -758,18 +779,18 @@ main .param:not([open]) .sprite-side::before{
     position: absolute;
 }
 .sprite-side::before {
-    background-image: url(https://i.rozetka.ua/h.2ceda2/sprite.svg) !important;
+    background-image: url('../ima/sprite-roz.svg');
     background-repeat: no-repeat;
 }
 .left-sprite::before{
     position: absolute;
-    background-position: -777px -247px;
-    width: 9px;
+    background-position: -776px -312px;
+    width: 12px;
     height: 9px;
     left: -15px;
     top: 7px;
     transform: rotate(90deg);
 }
 .left-sprite:hover::before {
-    background-position: -777px -258px;
+    background-position: -776px -301px;
 }
