@@ -28,29 +28,38 @@
 }
 .select-sort{
     position: relative;
+    overflow: visible;
+    border: 1px solid #d2d2d2;
+    height: 40px;
+    border-radius: 4px;
     select{
+        position: relative;
+        z-index: 2;
+        height: 100%;
+        display: block;
+        background-color: rgba(255, 255, 255, 0);
+        border: none;
         padding: 0 44px 0 12px;
-        background-color: @white-color;
-        height: 40px;
-        border: 1px solid @border-color-registr;
         border-radius: 4px;
-        outline: 0;
-        box-sizing: border-box;
+        appearance: none;
         -webkit-appearance: none;
         -moz-appearance: none;
-        appearance: none;
-        position: relative;
-        &::after{
-            content: "asf";
-            position: absolute;
-            right: 0;
-            top: 0;
-            width: 44px;
-            color: #000;
-            font-size: 14px;
-            height: 44px;
-            display: block;
-        }
+    }
+    &::after{
+        display: block;
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 44px;
+        height: 40px;
+        border-radius: 0 4px 4px 0;
+        background: url("../../../img/arrow.svg");
+        background-repeat: no-repeat;
+        background-size: 19px 7px;
+        background-position: center;
+
     }
 }
 .left-comment{

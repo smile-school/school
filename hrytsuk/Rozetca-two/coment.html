@@ -1663,44 +1663,92 @@
                                 </div>
                             </div>
                             <div class="border-form">
-                                <form action="#" id="comentForm" class="formComent">
-                                    <fieldset class="form-elem"></fieldset>
+                                <form action="#" id="comentForm" class="formComent" method="POST">
+                                    <fieldset class="form-elem">
+                                        <div class="star-bloc">
+                                            <input type="radio" class="rating-inp" id="rating-5" name="rating">
+                                            <span data-rating="5" class="rating-spn">
+                                            <label for="rating-5">
+                                                <svg aria-hidden="true"><use xlink:href="#icon-rating-star"
+                                                                             xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg>
+                                             </label>
+                                             <span>Чудовий</span>
+                                        </span>
+                                            <input type="radio" class="rating-inp" id="rating-4" name="rating">
+                                            <span data-rating="4" class="rating-spn">
+                                        <label for="rating-4">
+                                             <svg aria-hidden="true"><use xlink:href="#icon-rating-star"
+                                                                          xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg>
+                                        </label>
+                                         <span>Добрий</span>
+                                         </span>
+                                            <input type="radio" class="rating-inp" id="rating-3" name="rating">
+                                            <span data-rating="3" class="rating-spn">
+                                        <label for="rating-3">
+                                            <svg aria-hidden="true"><use xlink:href="#icon-rating-star"
+                                                                         xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg>
+                                        </label>
+                                        <span>Нормальний</span>
+                                          </span>
+                                            <input type="radio" class="rating-inp" id="rating-2" name="rating">
+                                            <span data-rating="2" class="rating-spn">
+                                        <label for="rating-2">
+                                            <svg aria-hidden="true"><use xlink:href="#icon-rating-star"
+                                                                         xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg>
+                                        </label>
+                                        <span>Так собі</span>
+                                    </span>
+                                                            <input type="radio" class="rating-inp" id="rating-1" name="rating">
+                                                            <span data-rating="1" class="rating-spn">
+                                        <label for="rating-1">
+                                            <svg aria-hidden="true"><use xlink:href="#icon-rating-star"
+                                                                         xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg>
+                                        </label>
+                                        <span>Поганий</span>
+                                    </span>
+                                        </div>
+
+                                    </fieldset>
                                     <fieldset class="form-elem">
                                         <label for="digniti-input" class="label-form-coment">Достоинства</label>
-                                        <input type="text" id="digniti-input" class="digniti-input">
+                                        <input type="text" id="digniti-input" class="digniti-input" name="digniti">
                                     </fieldset>
                                     <fieldset class="form-elem">
                                         <label for="disadvantages-input" class="label-form-coment">Недостатки</label>
-                                        <input type="text" id="disadvantages-input" class="disadvantages-input">
+                                        <input type="text" id="disadvantages-input" class="disadvantages-input" name="disadvantages">
                                     </fieldset>
                                     <fieldset class="form-elem">
                                         <label for="comment-input" class="label-form-coment">Коментарий</label>
-                                        <textarea id="comment-input" class="comment-input">
+                                        <textarea id="comment-input" class="comment-input" name="coment">
 
                                     </textarea>
                                     </fieldset>
                                     <fieldset class="form-elem">
                                         <div class="graphic-form">
                                             <div class="yotube-bloc-form">
-                                                <label for="yotube-input" class="label-form-coment">Ссилка на видео с Youtube</label>
-                                                <input type="text" id="yotube-input">
+                                                <svg aria-hidden="true" height="32" width="32"><use xlink:href="#icon-youtube-squared" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg>
+                                                <div class="yotube-url">
+                                                    <label for="yotube-input" class="label-form-coment">Ссилка на видео с Youtube</label>
+                                                    <input type="url" id="yotube-input" name="url-yotube">
+                                                </div>
+                                                <button class="add-yotube">Добавить видео</button>
                                             </div>
                                             <div class="yotube-bloc-form">
                                                 <label for="img-input" class="label-form-coment">Добавить картинку</label>
-                                                <input type="image" id="img-input">
+                                                <input type="file" id="img-input" name="img">
                                             </div>
                                         </div>
                                     </fieldset>
                                     <fieldset class="form-elem">
                                         <label for="name-input" class="label-form-coment">Ваше имя и фамилия</label>
-                                        <input type="text" id="name-input" class="disadvantages-input">
+                                        <input type="text" id="name-input" class="disadvantages-input" name="name">
                                     </fieldset>
                                     <fieldset class="form-elem">
                                         <label for="email-input" class="label-form-coment">Эдектронная почта</label>
-                                        <input type="email" id="email-input" class="disadvantages-input">
+                                        <input type="email" id="email-input" class="disadvantages-input" name="email">
                                     </fieldset>
                                     <fieldset class="form-elem check-bloc">
-                                        <input type="checkbox" id="check-coment" class="chec-coment" value="yes=check">
+                                        <input type="checkbox" id="check-coment" class="chec-coment" value="yes=check" name="check-form">
                                         <label for="check-coment" class="label-form-coment chec-label"> Уведомлять об ответах по электронной почте</label>
                                     </fieldset>
                                     <fieldset class="form-elem">
@@ -1714,7 +1762,7 @@
                         </div>
                     </div>
                     <div class="response-h2">
-                        <h2>Отзывы покупателей о Ноутбук HP 255 G7 (7DF19EA) Dark Ash Silver Суперцена!!! 30</h2>
+                        <h2>Отзывы покупателей о Ноутбук HP 255 G7 (7DF19EA) Dark Ash Silver Суперцена!!! <span class="number-coment">30</span></h2>
                        <div class="select-sort">
                            <select>
                                <option>По дате</option>
@@ -1724,29 +1772,53 @@
                            </select>
                        </div>
                     </div>
-                    <div class="top-reviews">
+                    <div class="top-reviews revievs-top">
                         <h3 class="h3-response h3-response">
                             Оставьте свой отзыв об этом товаре
                             <span>14</span>
                         </h3>
                         <button class="to-write-button" id="actForm">Написать отзив</button>
                     </div>
-                    <ul class="list-product-coment">
+                    <ul class="list-product-coment coment-list">
                         <li>
                             <div class="list-coment-bloc">
-                                <div class="top-coment-list">
+                                <div class="top-coment-list top-coment">
                                     <p>
-                                        Илья Зенов
+                                        <span class="name-list">Илья Зенов</span>
                                         <span class="todau-list">
-                                            ceгодня
+                                            <time>Cегодня</time>
                                             <svg aria-hidden="true" height="16" width="16"><use
                                                     xlink:href="#icon-report"
                                                     xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg>
                                         </span>
                                     </p>
                                 </div>
+                                <ul class="rating">
+                                    <li class="star"><span></span><span></span></li>
+                                    <li class="star"><span></span><span></span></li>
+                                    <li class="star"><span></span><span></span></li>
+                                    <li class="star"><span></span><span></span></li>
+                                    <li class="star"><span></span><span></span></li>
+                                </ul>
                                 <div class="coment-text">
-                                    <p>Здесь стоит 1 планка на 8 или 2 на 4?</p>
+                                    <p class="coment">
+                                        Здесь стоит 1 планка на 8 или 2 на 4? десь стоит 1 планка на 8 или 2 на 4? десь стоит 1 планка на 8 или 2 на 4? десь стоит 1 планка на 8 или 2 на 4?
+                                    </p>
+                                    <dl class="character-bloc">
+                                        <dt>Достоинства:</dt>
+                                        <dd>Быстрый при обычном пользовании, Full HD ютуб без лагов, 8 гиг оперативы</dd>
+                                    </dl>
+                                    <dl class="character-bloc">
+                                        <dt>
+                                            Недостатки:
+                                        </dt>
+                                        <dd>
+                                            Дорого! Не все драйвера на офф. сайте HP, батарея слабовата.
+                                        </dd>
+                                    </dl>
+                                </div>
+                                <div class="video">
+                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/LZysvLqL6VI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 </div>
                                 <div class="coment-footer">
                                     <button class="answer-bottom">
@@ -1757,19 +1829,19 @@
                                         Ответить
                                     </button>
                                     <div class="coment-lice">
-                                        <button class="answer-bottom lice">
+                                        <button class="answer-bottom buton-lice">
                                             <svg aria-hidden="true" height="16" width="16">
                                                 <use xlink:href="#icon-thumb-up"
                                                      xmlns:xlink="http://www.w3.org/1999/xlink"></use>
                                             </svg>
-                                            3
+                                            <span class="like">6</span>
                                         </button>
-                                        <button class="answer-bottom lice">
+                                        <button class="answer-bottom lice buton-lice">
                                             <svg aria-hidden="true" height="16" width="16">
                                                 <use xlink:href="#icon-thumb-up"
                                                      xmlns:xlink="http://www.w3.org/1999/xlink"></use>
                                             </svg>
-                                            0
+                                            <span class="like">1</span>
                                         </button>
                                     </div>
                                 </div>
@@ -1777,19 +1849,43 @@
                         </li>
                         <li>
                             <div class="list-coment-bloc">
-                                <div class="top-coment-list">
+                                <div class="top-coment-list top-coment">
                                     <p>
-                                        Илья Зенов
+                                        <span class="name-list">Илья Зенов</span>
                                         <span class="todau-list">
-                                            ceгодня
+                                            <time>Cегодня</time>
                                             <svg aria-hidden="true" height="16" width="16"><use
                                                     xlink:href="#icon-report"
                                                     xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg>
                                         </span>
                                     </p>
                                 </div>
+                                <ul class="rating">
+                                    <li class="star"><span></span><span></span></li>
+                                    <li class="star"><span></span><span></span></li>
+                                    <li class="star"><span></span><span></span></li>
+                                    <li class="star"><span></span><span></span></li>
+                                    <li class="star"><span></span><span></span></li>
+                                </ul>
                                 <div class="coment-text">
-                                    <p>Здесь стоит 1 планка на 8 или 2 на 4?</p>
+                                    <p class="coment">
+                                        Здесь стоит 1 планка на 8 или 2 на 4? десь стоит 1 планка на 8 или 2 на 4? десь стоит 1 планка на 8 или 2 на 4? десь стоит 1 планка на 8 или 2 на 4?
+                                    </p>
+                                    <dl class="character-bloc">
+                                        <dt>Достоинства:</dt>
+                                        <dd>Быстрый при обычном пользовании, Full HD ютуб без лагов, 8 гиг оперативы</dd>
+                                    </dl>
+                                    <dl class="character-bloc">
+                                        <dt>
+                                            Недостатки:
+                                        </dt>
+                                        <dd>
+                                            Дорого! Не все драйвера на офф. сайте HP, батарея слабовата.
+                                        </dd>
+                                    </dl>
+                                </div>
+                                <div class="video">
+                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/LZysvLqL6VI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 </div>
                                 <div class="coment-footer">
                                     <button class="answer-bottom">
@@ -1800,191 +1896,19 @@
                                         Ответить
                                     </button>
                                     <div class="coment-lice">
-                                        <button class="answer-bottom lice">
+                                        <button class="answer-bottom buton-lice">
                                             <svg aria-hidden="true" height="16" width="16">
                                                 <use xlink:href="#icon-thumb-up"
                                                      xmlns:xlink="http://www.w3.org/1999/xlink"></use>
                                             </svg>
-                                            3
+                                            <span class="like">6</span>
                                         </button>
-                                        <button class="answer-bottom lice">
+                                        <button class="answer-bottom lice buton-lice">
                                             <svg aria-hidden="true" height="16" width="16">
                                                 <use xlink:href="#icon-thumb-up"
                                                      xmlns:xlink="http://www.w3.org/1999/xlink"></use>
                                             </svg>
-                                            0
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="list-coment-bloc">
-                                <div class="top-coment-list">
-                                    <p>
-                                        Илья Зенов
-                                        <span class="todau-list">
-                                            ceгодня
-                                            <svg aria-hidden="true" height="16" width="16"><use
-                                                    xlink:href="#icon-report"
-                                                    xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg>
-                                        </span>
-                                    </p>
-                                </div>
-                                <div class="coment-text">
-                                    <p>Здесь стоит 1 планка на 8 или 2 на 4?</p>
-                                </div>
-                                <div class="coment-footer">
-                                    <button class="answer-bottom">
-                                        <svg aria-hidden="true" height="12" width="12">
-                                            <use xlink:href="#icon-return"
-                                                 xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                                        </svg>
-                                        Ответить
-                                    </button>
-                                    <div class="coment-lice">
-                                        <button class="answer-bottom lice">
-                                            <svg aria-hidden="true" height="16" width="16">
-                                                <use xlink:href="#icon-thumb-up"
-                                                     xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                                            </svg>
-                                            3
-                                        </button>
-                                        <button class="answer-bottom lice">
-                                            <svg aria-hidden="true" height="16" width="16">
-                                                <use xlink:href="#icon-thumb-up"
-                                                     xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                                            </svg>
-                                            0
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="list-coment-bloc">
-                                <div class="top-coment-list">
-                                    <p>
-                                        Илья Зенов
-                                        <span class="todau-list">
-                                            ceгодня
-                                            <svg aria-hidden="true" height="16" width="16"><use
-                                                    xlink:href="#icon-report"
-                                                    xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg>
-                                        </span>
-                                    </p>
-                                </div>
-                                <div class="coment-text">
-                                    <p>Здесь стоит 1 планка на 8 или 2 на 4?</p>
-                                </div>
-                                <div class="coment-footer">
-                                    <button class="answer-bottom">
-                                        <svg aria-hidden="true" height="12" width="12">
-                                            <use xlink:href="#icon-return"
-                                                 xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                                        </svg>
-                                        Ответить
-                                    </button>
-                                    <div class="coment-lice">
-                                        <button class="answer-bottom lice">
-                                            <svg aria-hidden="true" height="16" width="16">
-                                                <use xlink:href="#icon-thumb-up"
-                                                     xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                                            </svg>
-                                            3
-                                        </button>
-                                        <button class="answer-bottom lice">
-                                            <svg aria-hidden="true" height="16" width="16">
-                                                <use xlink:href="#icon-thumb-up"
-                                                     xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                                            </svg>
-                                            0
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="list-coment-bloc">
-                                <div class="top-coment-list">
-                                    <p>
-                                        Илья Зенов
-                                        <span class="todau-list">
-                                            ceгодня
-                                            <svg aria-hidden="true" height="16" width="16"><use
-                                                    xlink:href="#icon-report"
-                                                    xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg>
-                                        </span>
-                                    </p>
-                                </div>
-                                <div class="coment-text">
-                                    <p>Здесь стоит 1 планка на 8 или 2 на 4?</p>
-                                </div>
-                                <div class="coment-footer">
-                                    <button class="answer-bottom">
-                                        <svg aria-hidden="true" height="12" width="12">
-                                            <use xlink:href="#icon-return"
-                                                 xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                                        </svg>
-                                        Ответить
-                                    </button>
-                                    <div class="coment-lice">
-                                        <button class="answer-bottom lice">
-                                            <svg aria-hidden="true" height="16" width="16">
-                                                <use xlink:href="#icon-thumb-up"
-                                                     xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                                            </svg>
-                                            3
-                                        </button>
-                                        <button class="answer-bottom lice">
-                                            <svg aria-hidden="true" height="16" width="16">
-                                                <use xlink:href="#icon-thumb-up"
-                                                     xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                                            </svg>
-                                            0
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="list-coment-bloc">
-                                <div class="top-coment-list">
-                                    <p>
-                                        Илья Зенов
-                                        <span class="todau-list">
-                                            ceгодня
-                                            <svg aria-hidden="true" height="16" width="16"><use
-                                                    xlink:href="#icon-report"
-                                                    xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg>
-                                        </span>
-                                    </p>
-                                </div>
-                                <div class="coment-text">
-                                    <p>Здесь стоит 1 планка на 8 или 2 на 4?</p>
-                                </div>
-                                <div class="coment-footer">
-                                    <button class="answer-bottom">
-                                        <svg aria-hidden="true" height="12" width="12">
-                                            <use xlink:href="#icon-return"
-                                                 xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                                        </svg>
-                                        Ответить
-                                    </button>
-                                    <div class="coment-lice">
-                                        <button class="answer-bottom lice">
-                                            <svg aria-hidden="true" height="16" width="16">
-                                                <use xlink:href="#icon-thumb-up"
-                                                     xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                                            </svg>
-                                            3
-                                        </button>
-                                        <button class="answer-bottom lice">
-                                            <svg aria-hidden="true" height="16" width="16">
-                                                <use xlink:href="#icon-thumb-up"
-                                                     xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                                            </svg>
-                                            0
+                                            <span class="like">1</span>
                                         </button>
                                     </div>
                                 </div>
@@ -3583,6 +3507,6 @@
         </symbol>
     </defs>
 </svg>
-<script src="Script.js"></script>
+<script src="js/Script.js"></script>
 </body>
 </html>
