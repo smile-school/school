@@ -90,7 +90,7 @@
                     <li class="city-chooser__title">Город</li>
                     <li class="city-chooser__city">
                         <input type="radio" id="window" name="window" class="window">
-                        <input type="radio" id="window-close" name="window" class="window">
+                        <input type="radio" id="window-close" name="window">
                         <input type="radio" name="city" checked id="kiyv-city">
                         <input type="radio" name="city" id="rivne-city">
                         <input type="radio" name="city" id="odessa-city">
@@ -109,7 +109,12 @@
                         </label>
                         <div class="city-chooser__wrapper">
                             <h2 class="city-chooser__wrapper__title">Выберите свой город</h2>
-                            <label class="close" for="window-close">X</label>
+                            <label class="close" for="window-close">
+                                <svg height="14" width="14">
+                                    <use xlink:href="#icon-close-modal"
+                                         xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                            </label>
                             <p>доставляем заказы по всей Украине!</p>
                             <div class="city-chooser__wrapper__popular-cities">
                                 <label class="city-link" for="kiyv-city">Киев</label>
@@ -119,9 +124,10 @@
                                 <label class="city-link" for="rivne-city">Ривне</label>
                                 <label class="city-link" for="lviv-city">Львов</label>
                             </div>
-                            <label>Введите населенный пункт Украины</label>
+                            <label>Или введите другой населенный пункт Украины</label>
                             <input type="text" class="city-chooser__wrapper__city-input">
-                            <p>Выбор города поможет предоставить актуальную информацию о наличии товара, его цены и
+                            <p class="city-chooser__wrapper__note">Выбор города поможет предоставить актуальную
+                                информацию о наличии товара, его цены и
                                 способов
                                 доставки в вашем городе! Это поможет сохранить больше свободного времени для вас!
                             </p>
@@ -245,45 +251,115 @@
 </header>
 
 <main>
-    <div class="page-wrapper">
+    <div class="page-wrapper product-page">
         <h1 class="product-title">Ноутбук Acer Aspire 5 A515-54G (NX.HFREU.038) Pure Silver Суперцена!!!</h1>
-        <section class="product-info">
-            <div class="product-info_left-col">
-                <div class="product-info__img"></div>
-                <div class="product-info__details">
+        <div class="product__tabs-container">
+            <input type="radio" name="product_tab" id="tab-info">
+            <label class="tab__title" for="tab-info">Все о товаре</label>
+            <input type="radio" name="product_tab" id="tab-respond" checked>
+            <label class="tab__title" for="tab-respond">Отзывы</label>
+            <input type="radio" name="product_tab" id="tab-params">
+            <label class="tab__title" for="tab-params">Характеристики</label>
+            <input type="radio" name="product_tab" id="tab-photo">
+            <label class="tab__title" for="tab-photo">Фото</label>
+            <input type="radio" name="product_tab" id="tab-subproducts">
+            <label class="tab__title" for="tab-subproducts">Покупают вместе</label>
+            <input type="radio" name="product_tab" id="tab-delivery">
+            <label class="tab__title" for="tab-delivery">Доставка</label>
+            <div class="tab__content tab-info">
+                <div class="product-info_left-col">
+                    <div class="product-info__img"></div>
                     <div class="product-info__details">
-                        <div class="product-info__details__description"></div>
-                        <ul class="product-info__details__icons">
-                            <li class="product-info__details__icons__item">
-                                <img src="./dist/ima/RAM.45x45.png" alt="RAM 8GB">
-                            </li>
-                            <li class="product-info__details__icons__item">
-                                <img src="./dist/ima/SSD.45x45.png" alt="SSD 256GB">
-                            </li>
-                            <li class="product-info__details__icons__item">
-                                <img src="./dist/ima/IPS.45x45.png" alt="IPS (monitor)">
-                            </li>
-                            <li class="product-info__details__icons__item">
-                                <img src="./dist/ima/CORE.45x45.png" alt="4 cores">
-                            </li>
-                            <li class="product-info__details__icons__item">
-                                <img src="./dist/ima/DDR.45x45.png" alt="DDR4">
-                            </li>
-                        </ul>
+                        <div class="product-info__details">
+                            <div class="product-info__details__description"></div>
+                            <ul class="product-info__details__icons">
+                                <li class="product-info__details__icons__item">
+                                    <img src="./dist/ima/RAM.45x45.png" alt="RAM 8GB">
+                                </li>
+                                <li class="product-info__details__icons__item">
+                                    <img src="./dist/ima/SSD.45x45.png" alt="SSD 256GB">
+                                </li>
+                                <li class="product-info__details__icons__item">
+                                    <img src="./dist/ima/IPS.45x45.png" alt="IPS (monitor)">
+                                </li>
+                                <li class="product-info__details__icons__item">
+                                    <img src="./dist/ima/CORE.45x45.png" alt="4 cores">
+                                </li>
+                                <li class="product-info__details__icons__item">
+                                    <img src="./dist/ima/DDR.45x45.png" alt="DDR4">
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="product-info_right-col">
-                <div class="product-info__content-main">
-                    <div class=""></div>
-                </div>
-                <div class="product-info__content-links"></div>
-                <div class="product-info__content-actions">
+                <div class="product-info_right-col">
+                    <div class="product-info__content-main">
+                        <div class=""></div>
+                    </div>
+                    <div class="product-info__content-links"></div>
+                    <div class="product-info__content-actions">
 
+                    </div>
+                    <div class="product-info__content-other"></div>
                 </div>
-                <div class="product-info__content-other"></div>
             </div>
-        </section>
+            <div class="tab__content tab-respond">
+                <div class="responds-content clearfix-block">
+                    <div class="responds-content_left">
+                        <div class="product-responds__heading">
+                            <p class="product-responds__heading__title">
+                                Отзывы покупателей о Ноутбук Acer Aspire 5
+                                A515-54G (NX.HFREU.038) Pure Silver Суперцена!!!
+                            </p>
+                            <button type="button" class="product-responds__heading__button">Написать отзыв</button>
+                        </div>
+                        <div class="product-responds__respond">
+                            <div class="respond__heading clearfix-block">
+                                <span class="respond__heading__author">Аноним Анонимович</span>
+                                <span class="respond__heading__trade-status">Status</span>
+                                <span class="respond__headind__likes">5</span>
+                                <span class="respond__heading__date">15 ноября 2019</span>
+                            </div>
+                            <div class="respond__text">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam aspernatur
+                                    commodi deserunt enim error eum illum nemo officia placeat possimus, praesentium quae
+                                    reprehenderit sed, soluta tempora, temporibus ullam vitae.
+                                </p>
+                                <p>
+                                    <span>Достоинства: </span>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam aspernatur
+                                </p>
+                                <p>
+                                    <span>Недостатки: </span>
+                                    reprehenderit sed, soluta tempora, temporibus ullam vitae.
+                                </p>
+                            </div>
+                            <div class="respond__action-links">
+
+                            </div>
+                        </div>
+                        <form action="#" method="post" class="form-respond">
+                            <label class="form-respond__label" for="advantages">Достоинства</label>
+                            <input class="form-respond__input" type="text" name="advantages" id="advantages">
+                            <label class="form-respond__label" for="disadvantages">Недостатки</label>
+                            <input class="form-respond__input" type="text" name="disadvantages" id="disadvantages">
+                            <label class="form-respond__label" for="comment">Комментарий</label>
+                            <textarea class="form-respond__input" name="comment" id="comment"></textarea>
+                            <label class="form-respond__label" for="user-name">Ваше имя и фамилия</label>
+                            <input class="form-respond__input" type="text" name="user" id="user-name">
+                            <label class="form-respond__label" for="contact">Эл. почта или телефон</label>
+                            <input class="form-respond__input" type="text" name="contact" id="contact">
+                        </form>
+                    </div>
+                    <div class="responds-content_right"></div>
+                </div>
+            </div>
+            <div class="tab__content tab-params"></div>
+            <div class="tab__content tab-photo"></div>
+            <div class="tab__content tab-subproducts"></div>
+            <div class="tab__content tab-delivery"></div>
+        </div>
     </div>
 </main>
 <footer>
