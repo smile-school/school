@@ -55,16 +55,16 @@
             var ul = document.querySelector(".coment-list");
             // var li = document.createElement('li');
 
-            var name = '', benefits = '', disadvantages = '', review = '', rating = 0, youtube = '',
+            var name = '', digniti = '', disadvantages = '', coment = '', rating = 0, urlYotube = '',
                 likeBut = '', disLikeBut = '', butWrap = '', li = '', sect = '', date = new Date(),
                 tegContent = '';
 
             data.forEach(function (item,key){
               if (key === 'name') name = item;
-                else if (key === 'benefits') benefits = item;
+                else if (key === 'digniti') digniti = item;
                 else if (key === 'disadvantages') disadvantages = item;
-                else if (key === 'review') review = item;
-                else if (key === 'youtube') youtube = item.split('v=')[1];
+                else if (key === 'coment') coment = item;
+                else if (key === 'url-yotube') urlYotube = item.split('v=')[1];
 
             });
 
@@ -87,26 +87,29 @@
                 '<li class="star"><span></span><span></span></li>\n' +
                 '<li class="star"><span></span><span></span></li>\n' +
                 '<li class="star"><span></span><span></span></li>\n' +
-                '</ul>'+
+                '</ul>' +
                 '<div class="coment-text">\n' +
-                '                                    <p class="coment">\n' +
-                '                                        Здесь стоит 1 планка на 8 или 2 на 4? десь стоит 1 планка на 8 или 2 на 4? десь стоит 1 планка на 8 или 2 на 4? десь стоит 1 планка на 8 или 2 на 4?\n' +
-                '                                    </p>\n' +
-                '                                    <dl class="character-bloc">\n' +
-                '                                        <dt>Достоинства:</dt>\n' +
-                '                                        <dd>'+ benefits +'</dd>\n' +
-                '                                    </dl>\n' +
-                '                                    <dl class="character-bloc">\n' +
-                '                                        <dt>\n' +
-                '                                            Недостатки:\n' +
-                '                                        </dt>\n' +
-                '                                        <dd>\n' +
-                '                                            Дорого! Не все драйвера на офф. сайте HP, батарея слабовата.\n' +
-                '                                        </dd>\n' +
-                '                                    </dl>\n' +
-                '                                </div>'
-                "</div>" +
-                "</li>";
+                '<p class="coment">\n' + coment +'</p>\n' +
+                '<dl class="character-bloc">\n' +
+                '<dt>Достоинства:</dt>\n' +
+                '<dd>' + digniti + '</dd>\n' +
+                '</dl>\n' +
+                '<dl class="character-bloc">\n' +
+                '<dt>\n' +
+                'Недостатки:\n' +
+                '</dt>\n' +
+                '<dd>\n' + disadvantages +'</dd>\n' +
+                '</dl>\n' +
+                '</div>'+
+            //     '<div class="coment-footer">'+
+            //     '<button class="answer-bottom">'+
+            //     '<svg aria-hidden="true" height="12" width="12">'+
+            //    '<use xlink:href="#icon-return"xmlns:xlink="http://www.w3.org/1999/xlink"></use>'+
+            //     '</svg>'+
+            // Ответить+
+            // '</button>'+
+            "</div>" +
+            "</li>";
 
             console.log(ul);
             // var name= data.get("name"),
