@@ -56,8 +56,8 @@
             // var li = document.createElement('li');
 
             var name = '', digniti = '', disadvantages = '', coment = '', rating = 0, urlYotube = '',
-                likeBut = '', disLikeBut = '', butWrap = '', li = '', sect = '', date = new Date(),
-                tegContent = '';
+                 date = new Date();
+
 
             data.forEach(function (item,key){
               if (key === 'name') name = item;
