@@ -2082,9 +2082,13 @@ main.main-laptop.product-pg aside.left {
   padding: 0;
   margin-right: 7px;
 }
+main.main-laptop.product-pg aside.left > ul > li .hidden-menu {
+  top: 40px;
+}
 main.main-laptop.product-pg aside.left .nav-button {
   background-color: #f5f5f5;
   border: 1px solid #f5f5f5;
+  border-radius: 5px 0 0 5px;
 }
 main.main-laptop.product-pg aside.left .nav-button:hover {
   background-color: #f5f5f5;
@@ -2204,6 +2208,44 @@ main.main-laptop.product-pg .char-list > li:hover::before {
   height: 2px;
   z-index: 1;
   background-color: #ff7878;
+}
+main.main-laptop.product-pg .pdroduct-img {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+}
+main.main-laptop.product-pg .pdroduct-img input[type='radio'] {
+  display: none;
+}
+main.main-laptop.product-pg .pdroduct-img input[type='radio']#im1:checked ~ .im1 {
+  display: block;
+}
+main.main-laptop.product-pg .pdroduct-img input[type='radio']#im2:checked ~ .im2 {
+  display: block;
+}
+main.main-laptop.product-pg .pdroduct-img input[type='radio']#im3:checked ~ .im3 {
+  display: block;
+}
+main.main-laptop.product-pg .pdroduct-img input[type='radio']#im4:checked ~ .im4 {
+  display: block;
+}
+main.main-laptop.product-pg .pdroduct-img input[type='radio']#im5:checked ~ .im5 {
+  display: block;
+}
+main.main-laptop.product-pg .pdroduct-img label {
+  display: flex;
+  align-items: center;
+  border: 1px;
+  padding: 5px;
+  width: 40px;
+  height: 40px;
+  border: 2px solid white;
+}
+main.main-laptop.product-pg .pdroduct-img label:hover {
+  border: 2px solid rgba(0, 160, 70, 0.6);
+}
+main.main-laptop.product-pg .pdroduct-img > img {
+  display: none;
 }
 @keyframes popup {
   from {
