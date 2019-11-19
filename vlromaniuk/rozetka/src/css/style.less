@@ -743,6 +743,7 @@ header {
 
         svg:hover ~ .popup {
           display: flex;
+          z-index: 10;
         }
 
         .popup {
@@ -1571,10 +1572,14 @@ header.laptop {
 
 main.main-laptop {
   padding-top: 14px;
+
   .wrapper {
+    display: inline-block;
+
     aside.left {
       width: 215px;
       padding: 0 15px 0 0;
+      float: left;
 
       .nav-button {
         border: 0;
@@ -1729,6 +1734,7 @@ main.main-laptop {
               &::before {
                 background-position: -726px -714px;
               }
+
               color: #ff7878;
             }
 
@@ -1812,39 +1818,48 @@ main.main-laptop {
         }
       }
     }
-    section.product{
+
+    section.product {
       border: 0;
       margin-left: 10px;
       display: flex;
       flex-direction: column;
       flex-grow: 1;
       position: relative;
-      .categoty-title{
+      padding-left: 20px;
+
+      .categoty-title {
         font-size: 40px;
         padding-bottom: 10px;
         font-weight: 400;
       }
-      .product-nav{
+
+      .product-nav {
         font-size: 115%;
         display: flex;
         justify-content: space-between;
         flex-direction: row;
-        ul{
+
+        ul {
           display: flex;
           color: #4d4b4b;
-          li{
+
+          li {
             list-style: none;
           }
-          li.filter-default{
+
+          li.filter-default {
             padding: 4px 11px 5px;
             border: 1px solid #d2d2d2;
             border-radius: 40px;
             cursor: pointer;
           }
-          li.filter-active{
+
+          li.filter-active {
             position: relative;
             padding: 4px 26px 5px 11px;
-            &::before{
+
+            &::before {
               content: '';
               position: absolute;
               background-image: url('../../ima/sprite-laptop.svg');
@@ -1855,37 +1870,47 @@ main.main-laptop {
               right: 5px;
               top: 4px;
             }
-            &:hover{
+
+            &:hover {
               color: #ff7878;
-              &::before{
-                  background-position: -37px -904px;
+
+              &::before {
+                background-position: -37px -904px;
 
               }
             }
           }
-          li.reset-filtre{
+
+          li.reset-filtre {
             border: 1px solid #ff7878;
-            &:hover{
+
+            &:hover {
               color: #ff7878;
-              &::before{
+
+              &::before {
                 background-position: -37px -904px;
               }
             }
           }
-          .filter-title{
+
+          .filter-title {
             padding: 3px;
             font-size: 130%;
           }
         }
       }
-      .sort{
+
+      .sort {
         display: flex;
-        &>p{
+
+        & > p {
           color: #4d4b4b;
         }
+
         .select {
           position: relative;
           width: 184px;
+
           select {
             display: block;
             width: 100%;
@@ -1899,6 +1924,7 @@ main.main-laptop {
             font-size: 13px;
             color: #4d4b4b;
           }
+
           &::after {
             content: "";
             background-image: url('../../ima/sprite-laptop.svg');
@@ -1913,24 +1939,30 @@ main.main-laptop {
             z-index: 1;
           }
         }
-        .tabs{
+
+        .tabs {
           display: flex;
           margin: 16px;
-          & #tab1{
+
+          & #tab1 {
             display: none;
-            &:checked ~ .title{
+
+            &:checked ~ .title {
               border-color: #00a046;
               background: #00a046;
             }
           }
-          & #tab2{
+
+          & #tab2 {
             display: none;
-            &:checked ~ .title2{
+
+            &:checked ~ .title2 {
               border-color: #00a046;
               background: #00a046;
             }
           }
-          .content{
+
+          .content {
             display: none;
             position: absolute;
             width: 100%;
@@ -1941,78 +1973,97 @@ main.main-laptop {
             display: flex;
             flex-wrap: wrap;
           }
+
           label.title,
-          label.title2{
+          label.title2 {
             border: 1px solid #d2d2d2;
             cursor: pointer;
             width: 38px;
             height: 26px;
             display: block;
             position: relative;
-            &::before{
+
+            &::before {
               content: '';
               position: absolute;
               top: 50%;
               left: 50%;
               background-image: url('../../ima/sprite-laptop.svg');
-              transform: translate(-50%,-50%);
+              transform: translate(-50%, -50%);
               background-repeat: no-repeat;
             }
           }
-          .tab1{
-            .title{
+
+          .tab1 {
+            .title {
               border-radius: 4px 0 0 4px;
               display: inline-block;
-              &::before{
+
+              &::before {
                 background-position: -759px -798px;
                 width: 14px;
                 height: 14px;
               }
             }
-            & input[type='radio']:checked ~ .title::before{
+
+            & input[type='radio']:checked ~ .title::before {
               background-position: -775px -798px;
               width: 14px;
               height: 14px;
             }
-            .title2{
+
+            .title2 {
               border-radius: 0 4px 4px 0;
               display: inline-block;
               margin-left: -3px;
-              &::before{
+
+              &::before {
                 background-position: -494px -714px;
                 width: 19px;
                 height: 14px;
               }
             }
-            & #tab2:checked ~ .title2::before{
+
+            & #tab2:checked ~ .title2::before {
               background-position: -515px -714px;
               width: 19px;
               height: 14px;
             }
-            & #tab2:checked ~ .content>ul>li{
+
+            & #tab2:checked ~ .content > ul > li {
               width: 25%;
               height: 383px;
-              & .action{
+
+              & .action {
                 margin-top: 20px;
               }
-              & .zoom{
+
+              & .zoom:hover {
                 height: 510px;
               }
             }
           }
         }
       }
-      input[type='radio']{
+
+      input[type='radio'] {
         display: none;
       }
-      ul{
+
+      .content {
+        border-top: 1px solid lightgray;;
+      }
+
+      ul {
         display: flex;
         flex-wrap: wrap;
-        li{
+
+        li {
           list-style-type: none;
         }
       }
-      .product-card{
+
+      .product-card {
         width: 20%;
         box-sizing: border-box;
         padding: 3px;
@@ -2023,32 +2074,39 @@ main.main-laptop {
         background-color: white;
         height: 365px;
         z-index: 1;
-        a.img{
+
+        a.img {
           height: 185px;
           display: block;
-          img{
+
+          img {
             width: 100%;
           }
-          &:hover{
-            & .first{
+
+          &:hover {
+            & .first {
               display: none;
             }
-            & .second{
+
+            & .second {
               display: block;
             }
           }
-          .second{
+
+          .second {
             display: none;
           }
         }
-        .action{
+
+        .action {
           font-size: 12px;
           color: #fb3f4c;
           display: block;
           width: 100%;
           position: relative;
-          span{
-            &::before{
+
+          span {
+            &::before {
               content: '';
               position: absolute;
               background: url("../../ima/sprite-laptop.svg") no-repeat;
@@ -2059,41 +2117,51 @@ main.main-laptop {
               bottom: 2;
             }
           }
-          &:hover{
+
+          &:hover {
             cursor: pointer;
-            span{
+
+            span {
               border-bottom: 1px dotted #fb3f4c;
-              &::before{
+
+              &::before {
                 background-position: -434px -348px;
               }
             }
           }
         }
-        .product-name{
+
+        .product-name {
           color: #3e77aa;
           font-size: 12px;
           text-decoration: none;
-          &:hover{
-            color:  #fb3f4c;
+
+          &:hover {
+            color: #fb3f4c;
           }
         }
-        .about-prod{
+
+        .about-prod {
           display: flex;
-          .price{
+
+          .price {
             display: flex;
             flex-direction: column;
             margin-right: 10px;
-            .old-prce{
+
+            .old-prce {
               font-size: 18px;
               color: @darken;
               text-decoration: line-through;
               text-decoration-color: #fb3f4c;
               padding: 7px 7px 5px;;
-              & ~ .new-prce{
+
+              & ~ .new-prce {
                 color: #fb3f4c;
               }
             }
-            .new-prce{
+
+            .new-prce {
               font-size: 18px;
               color: #4d4b4b;
               background: #fef2b8;
@@ -2103,10 +2171,12 @@ main.main-laptop {
             }
           }
         }
-        .rating{
+
+        .rating {
           display: flex;
           align-items: flex-end;
-          .star{
+
+          .star {
             background-image: url('../../ima/sprite-laptop.svg');
             background-repeat: no-repeat;
             position: relative;
@@ -2115,7 +2185,8 @@ main.main-laptop {
             height: 14px;
             display: block;
             margin-right: 5px;
-            span{
+
+            span {
               background-image: inherit;
               background-position: -324px -183px;
               width: 89%;
@@ -2123,35 +2194,41 @@ main.main-laptop {
               height: 100%;
             }
           }
-          .comment{
+
+          .comment {
             color: #3e77aa;
             line-height: 10px;
           }
         }
-        .ico{
+
+        .ico {
           margin-top: 10px;
           position: relative;
           height: 30px;
-          span{
+
+          span {
             background-image: url('../../ima/sprite-laptop.svg');
             background-repeat: no-repeat;
             position: absolute;
             cursor: pointer;
-            &:first-child{
+
+            &:first-child {
               background-position: -297px -798px;
               width: 24px;
               height: 23px;
               left: 9px;
               top: 4px;
             }
-            &:nth-child(2){
+
+            &:nth-child(2) {
               background-position: -243px -798px;
               width: 25px;
               height: 23px;
               top: 4px;
               left: 55px;
             }
-            &:last-child{
+
+            &:last-child {
               background-position: -860px -447px;
               width: 29px;
               height: 22px;
@@ -2160,35 +2237,332 @@ main.main-laptop {
             }
           }
         }
-        .hidden-info{
+
+        .hidden-info {
           background: white;
           opacity: 0;
-          .imma-info{
+
+          .imma-info {
             display: flex;
             justify-content: space-around;
             align-content: center;
             padding: 10px;
           }
         }
-        .zoom{
+
+        .zoom {
           position: absolute;
           left: 0;
           right: 0;
           top: 0;
           bottom: 0;
         }
-        &:hover{
+
+        &:hover {
           border: 0;
           z-index: 8;
-          & .zoom{
+
+          & .zoom {
             transform: scale(1.023);
-            box-shadow: 0 0 13px 0 rgba(0,0,0,.4);
+            box-shadow: 0 0 13px 0 rgba(0, 0, 0, .4);
             height: 492px;
             background-color: white;
             z-index: -1;
           }
-          & .hidden-info{
+
+          & .hidden-info {
             opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+footer {
+  margin-top: 20px;
+
+  .desctiption-cat {
+    font-size: 13px;
+    color: @darken;
+
+    h2 {
+      font-size: 24px;
+      margin-top: 14px;
+      margin-bottom: 14px;
+      color: black;
+    }
+
+    input[type="checkbox"] {
+      display: none;
+
+      &:checked ~ .hv {
+        display: block;
+      }
+
+      &:checked ~ label {
+        display: none;
+      }
+    }
+
+    label {
+      display: flex;
+      justify-content: right;
+
+      span {
+        border-bottom: 1px dotted;
+        color: #3e77aa;
+        font-size: 17px;
+        cursor: pointer;
+
+        &:hover {
+          color: #fb3f4c;
+        }
+      }
+    }
+
+    .hv {
+      display: none;
+    }
+  }
+
+  .form {
+    margin: 40px 0 40px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 32px 56px;
+    background: #f5f5f5;
+    border: 1px solid #e9e9e9;
+    border-radius: 4px;
+
+    span {
+      font-size: 24px;
+      line-height: 29px;
+      color: #221f1f;
+    }
+
+    input[type="email"] {
+      border: 1px solid #d2d2d2;
+      border-radius: 4px;
+      font-size: 15px;
+      padding: 9px 16px;
+      resize: none;
+      caret-color: #00a046;
+      color: #4d4b4b;
+      margin-right: 8px;
+    }
+
+    input[type="submit"] {
+      color: white;
+      padding: 9px 16px;
+      background-color: #3e77aa;
+      font-size: 16px;
+      border-radius: 4px;
+      border: 0;
+
+      &:hover {
+        background: #4096e3;
+      }
+    }
+  }
+
+  .mobile {
+    margin-top: 45px;
+    background-color: #00a046;
+    height: 73px;
+    display: flex;
+    justify-content: space-between;
+
+    .wrapper {
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-end;
+      width: 100%;
+
+      .phone {
+        background-position: -1px -1px;
+        width: 248px;
+        height: 120px;
+        background-image: url('../../ima/sprite-laptop.svg');
+      }
+
+      .text-d {
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 24px;
+        color: white;
+        line-height: 72px;
+      }
+
+      .download {
+        transform: translateY(-40%);
+        display: flex;
+
+        .ios {
+          display: block;
+          background-position: -318px -403px;
+          background-image: url("../../ima/sprite-laptop.svg");
+          width: 120px;
+          height: 40px;
+          margin-right: 8px;
+        }
+
+        .google {
+          display: block;
+          background-position: -454px -103px;
+          background-image: url("../../ima/sprite-laptop.svg");
+          width: 128px;
+          height: 40px;
+        }
+      }
+    }
+  }
+
+  .footer-nav {
+    padding-top: 24px;
+    background-color: #f5f5f5;
+
+    .wrapper {
+      & > ul {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      ul {
+        li,a {
+          list-style-type: none;
+          font-size: 14px;
+          padding-bottom: 17px;
+          color: #3e77aa;
+          cursor: pointer;
+        }
+        li a{
+          padding-bottom: 7px;
+          text-decoration: none;
+        }
+        .fl{
+          display: flex;
+          flex-direction: column;
+        }
+        p{
+          margin-bottom: 10px;
+          font-size: 12px;
+          color: #797878;
+        }
+        .fr {
+          & > ul {
+            & > li {
+              position: relative;
+              padding-left: 25px;
+
+              &::before {
+                content: '';
+                position: absolute;
+                background-image: url('../../ima/sprite-laptop.svg');
+                top: 2px;
+                left: 7px;
+                width: 16px;
+                height: 16px;
+              }
+
+              &:hover {
+                color: #ff7878;
+              }
+
+              &.magazin {
+                &::before {
+                  background-position: 928px -904px;
+                }
+
+                &:hover::before {
+                  background-position: 910px -904px;
+                }
+              }
+
+              &.caal-centr {
+                &::before {
+                  background-position: 998px -878px;
+
+                }
+
+                &:hover::before {
+                  background-position: 1088px -878px;
+                }
+              }
+
+              &.day-off {
+                &::before {
+                  background-position: 962px -878px;
+
+                }
+              }
+            }
+
+            .social-footer {
+              padding: 0;
+
+              &::before {
+                display: none;
+              }
+
+              & > .media {
+                display: flex;
+
+                & > li {
+                  display: block;
+                  margin-left: 8px;
+                  &::before {
+                    content: '';
+                    display: block;
+                    width: 24px;
+                    height: 24px;
+                    background-image: url("../../ima/sprite1.svg");
+                  }
+
+                  &:nth-child(1) {
+                    &::before {
+                      background-position: -679px -626px;
+                    }
+                    &:hover::before{
+                      background-position: -209px -899px;
+                    }
+                  }
+                  &:nth-child(2) {
+                    &::before {
+                      background-position: -53px -899px;
+                    }
+                    &:hover::before{
+                      background-position: -130px -872px;
+                    }
+                  }
+                  &:nth-child(3) {
+                    &::before {
+                      background-position: -183px -899px;
+                    }
+                    &:hover::before{
+                      background-position: -157px -899px;
+                    }
+                  }
+                  &:nth-child(4) {
+                    &::before {
+                      background-position: -104px -872px;
+                    }
+                    &:hover::before{
+                      background-position: -78px -872px;
+                    }
+                  }
+                  &:nth-child(5) {
+                    &::before {
+                      background-position: -105px -899px;
+                    }
+                    &:hover::before{
+                      background-position: -79px -899px;
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       }
