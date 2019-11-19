@@ -68,10 +68,6 @@
         margin-right: 10px;
     }
 
-    &__search {
-
-    }
-
     &__actions {
         &-list,
         &-list__item {
@@ -208,20 +204,18 @@ a.action__item-link {
         padding-bottom: 5px;
     }
     &__city{
-        border-bottom: 1px dotted;
         &-choise{
             position: relative;
-            ul > li{
-                cursor: pointer;
-                font-weight: bold;
+            cursor: pointer;
+            ul{
+                display: inline-block;
             }
-            &::after{
-                content: "";
-                position: absolute;
-                .container-mixin(@width: 18px, @height: 18px);
-                .background-sprite-mixin(@positionX: -648px, @positionY: -708px);
-                top: -6px;
-                left: 60px;
+            ul > li{
+                font-weight: bold;
+                border-bottom: 1px dotted;
+            }
+            svg{
+                fill: @form-input-border-color;
             }
         }
     }
@@ -309,7 +303,7 @@ a.action__item-link {
         #dnipro-city:checked ~ .city-chooser__city-choise li#dnipro-chiose,
         #lviv-city:checked ~ .city-chooser__city-choise li#lviv-choise,
         #window:checked ~ .city-chooser__wrapper {
-            display: block;
+            display: inline-block;
         }
     }
 }

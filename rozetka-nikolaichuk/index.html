@@ -9,9 +9,251 @@
     <link rel="stylesheet" href="dist/css/style.css">
 </head>
 <body>
-<header>
+<header class="header">
+    <div class="page-wrapper">
+        <div class="header-row">
+            <div class="header-row__cell header__phones">
+                <div class="header__phones__ico">
+                    <svg width="14" height="14">
+                        <use xlink:href="#phone" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                    </svg>
+                </div>
+                <span class="header__phones__phone phone_type_bold"> (044) 537-02-22, </span>
+                <span class="header__phones__phone"> (044) 503-80-80 </span>
+            </div>
+            <div class="header-row__cell header__lang-switcher">
 
+            </div>
+            <div class="header-row__cell header__links-container">
+                <ul class="header__links">
+                    <li class="header__links__link-item">
+                        <a href="#" class="link link_white">
+                            Вопросы и ответы
+                        </a>
+                    </li>
+                    <li class="header__links__link-item">
+                        <a href="#" class="link link_white link_decorate">
+                            Кредит
+                        </a>
+                    </li>
+                    <li class="header__links__link-item">
+                        <a href="#" class="link link_white link_decorate">
+                            Доставка и оплата
+                        </a>
+                    </li>
+                    <li class="header__links__link-item">
+                        <a href="#" class="link link_white link_decorate">
+                            Гарантия
+                        </a>
+                    </li>
+                    <li class="header__links__link-item">
+                        <a href="#" class="link link_white link_decorate">
+                            Контакты
+                        </a>
+                    </li>
+                    <li class="header__links__link-item">
+                        <svg width="11" height="14">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#pointer"></use>
+                        </svg>
+                        <a href="#" class="link link_white link_decorate">
+                            Отследить заказ
+                        </a>
+                    </li>
+                    <li class="header__links__link-item">
+                        <a href="#" class="link link_white link_decorate">
+                            Продавать на Розетке
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="header-row__cell header__user">
+                <p class="header__user__text">
+                    <span>Здравствуйте,</span>
+                    <svg width="15" height="14">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#user-small"></use>
+                    </svg>
+                    <a href="#" class="header__user__link">
+                        войдите в личный кабинет
+                    </a>
+                </p>
+            </div>
+        </div>
+        <div class="header-row">
+            <div class="header-row__cell header__logo">
+                <a href="#" class="header__logo__link">
+                    <img src="./dist/ima/logo-white.svg" alt="Интернет магазин Rozetka.ua™ - №1"
+                         title="Интернет магазин Rozetka.ua™ - №1">
+                </a>
+            </div>
+            <div class="header-row__cell header__city-chooser">
+                <ul class="city-chooser">
+                    <li class="city-chooser__title">Город</li>
+                    <li class="city-chooser__city">
+                        <input type="radio" id="window" name="window" class="window">
+                        <input type="radio" id="window-close" name="window">
+                        <input type="radio" name="city" checked id="kiyv-city">
+                        <input type="radio" name="city" id="rivne-city">
+                        <input type="radio" name="city" id="odessa-city">
+                        <input type="radio" name="city" id="kharkiv-city">
+                        <input type="radio" name="city" id="dnipro-city">
+                        <input type="radio" name="city" id="lviv-city">
+                        <label for="window" class="city-chooser__city-choise">
+                            <ul>
+                                <li id="kiyv-choise">Киев</li>
+                                <li id="rivne-choise">Ривне</li>
+                                <li id="odessa-choise">Одесса</li>
+                                <li id="kharkiv-choise">Харьков</li>
+                                <li id="dnipro-chiose">Днепр</li>
+                                <li id="lviv-choise">Львов</li>
+                            </ul>
+                            <svg width="13" height="13">
+                                <use xlink:href="#arrow-13x13" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                </use>
+                            </svg>
+                        </label>
+                        <div class="city-chooser__wrapper">
+                            <h2 class="city-chooser__wrapper__title">Выберите свой город</h2>
+                            <label class="close" for="window-close">
+                                <svg height="14" width="14">
+                                    <use xlink:href="#icon-close-modal"
+                                         xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                            </label>
+                            <p>доставляем заказы по всей Украине!</p>
+                            <div class="city-chooser__wrapper__popular-cities">
+                                <label class="city-link" for="kiyv-city">Киев</label>
+                                <label class="city-link" for="odessa-city">Одесса</label>
+                                <label class="city-link" for="dnipro-city">Днепр</label>
+                                <label class="city-link" for="kharkiv-city">Харьков</label>
+                                <label class="city-link" for="rivne-city">Ривне</label>
+                                <label class="city-link" for="lviv-city">Львов</label>
+                            </div>
+                            <label>Или введите другой населенный пункт Украины</label>
+                            <input type="text" class="city-chooser__wrapper__city-input">
+                            <p class="city-chooser__wrapper__note">Выбор города поможет предоставить актуальную
+                                информацию о наличии товара, его цены и
+                                способов
+                                доставки в вашем городе! Это поможет сохранить больше свободного времени для вас!
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="header-row__cell header__search">
+                <form class="search-form" name="search-form" method="get" action="#">
+                    <div class="search-form__wrapper">
+                        <input type="text" class="search-form__input" placeholder="Я ищу...">
+                        <button type="button" class="search-form__button-close">
+                            <svg height="16" width="16">
+                                <use xlink:href="#icon-close-modal" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                            </svg>
+                        </button>
+                        <div class="search-form__microphone">
+                            <svg height="20" width="15">
+                                <use xlink:href="#icon-microphone" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                            </svg>
+                        </div>
+                        <button type="button" class="search-form__button green-button">Найти</button>
+                        <div class="search-form__results">
+                            <ul class="search-form__results-list">
+                                <li class="search-form__results-list__item">
+                                    По вашему запросу ничего не найдено. Уточните свой запрос
+                                </li>
+                                <li class="search-form__results-list__item">
+                                    <a href="#"></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="header-row__cell header__actions">
+                <ul class="header__actions-list">
+                    <li class="header__actions-list__item">
+                        <a href="#" class="action__item-link">
+                            <svg class="action__item-link__ico" width="36" height="36">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bonuses-icon"></use>
+                            </svg>
+                            <span class="action__item-link__title">Бонусы</span>
+                        </a>
+                        <div class="action__popup">
+                            <svg class="action__popup__icon bonuses-icon" width="80" height="80">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bonuses-icon"></use>
+                            </svg>
+                            <div class="action__popup__content">
+                                <div class="action__popup__title">Бонусный счет</div>
+                                <p>Накапливайте бонусы и используйте их при оплате своих покупок!</p>
+                                <button type="button" class="action__popup__button green-button">Использовать бонусный
+                                    счет
+                                </button>
+                                <p class="action__popup__small-text">Для этого вам необходимо подтвердить свой номер
+                                    телефона и принять правила и условия использования
+                                    <a href="#" class="link">бонусного счета</a></p>
+                                <p>Если у вас уже есть бонусный счет, <a href="#" class="link">авторизуйтесь</a></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="header__actions-list__item">
+                        <a href="#" class="action__item-link">
+                            <svg class="action__item-link__ico" width="41" height="36">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#g-comparison"></use>
+                            </svg>
+                            <span class="action__item-link__title">Сравнение</span>
+                        </a>
+                        <div class="action__popup">
+                            <svg class="action__popup__icon comparison-icon" width="80" height="80">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#g-comparison"></use>
+                            </svg>
+                            <div class="action__popup__content">
+                                <div class="action__popup__title">Нет товаров в сравнении</div>
+                                <p>Добавляйте товары к сравнению характеристик
+                                    и выбирайте самый подходящий вам товар</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="header__actions-list__item">
+                        <a href="#" class="action__item-link">
+                            <svg class="action__item-link__ico" width="35" height="36">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#g-wishlist"></use>
+                            </svg>
+                            <span class="action__item-link__title">Желания</span>
+                        </a>
+                        <div class="action__popup">
+                            <svg class="action__popup__icon wishlist-icon" width="80" height="80">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#g-wishlist"></use>
+                            </svg>
+                            <div class="action__popup__content">
+                                <div class="action__popup__title">Cписок желаний пуст</div>
+                                <p>Добавляйте товары в список желаний, делитесь
+                                    списками с друзьями и обсуждайте товары вместе</p>
+                                <p>Если у вас уже есть списки желаний, <a href="#" class="link">авторизуйтесь</a></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="header__actions-list__item">
+                        <a href="#" class="action__item-link">
+                            <svg class="action__item-link__ico" width="35" height="36">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#g-cart"></use>
+                            </svg>
+                            <span class="action__item-link__title">Корзина</span>
+                        </a>
+                        <div class="action__popup clearfix-block">
+                            <svg class="action__popup__icon cart-icon" width="80" height="80">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#g-cart"></use>
+                            </svg>
+                            <div class="action__popup__content">
+                                <div class="action__popup__title">Ваша корзина пуста</div>
+                                <p>Добавляйте понравившиеся товары в корзину</p>
+                                <p>Или <a href="#" class="link">авторизуйтесь</a>, если добавляли ранее</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </header>
+
 <div class="main-page-content">
     <div class="page-wrapper main-layout">
         <aside class="main-sidebar">
@@ -1236,7 +1478,6 @@
         </div>
     </div>
 </div>
-
 <svg style="display: none;">
     <defs id="symbols">
         <symbol viewBox="0 0 32 16" id="icon-18">
@@ -2406,6 +2647,98 @@
                 <path d="M18.59,17.07l-3.81-3.81a1.08,1.08,0,0,0-1.53,1.52l3.82,3.81a1.07,1.07,0,0,0,1.52-1.52Z"></path>
                 <path d="M7.46,0a7.47,7.47,0,1,0,7.47,7.46A7.46,7.46,0,0,0,7.46,0Zm0,12.94a5.48,5.48,0,1,1,5.48-5.48A5.47,5.47,0,0,1,7.46,12.94Z"></path>
                 <path d="M10,6.5H8.5V5a1,1,0,0,0-2,0V6.5H5a1,1,0,0,0,0,2H6.5V10a1,1,0,0,0,2,0V8.5H10a1,1,0,0,0,0-2Z"></path>
+            </g>
+        </symbol>
+        <symbol viewBox="0 0 13 14" id="user-small">
+            <g>
+                <path d="M6.521 6.266c1.657 0 3-1.346 3-3.008 0-1.661-1.343-3.008-3-3.008s-3 1.347-3 3.008 1.343 3.008 3 3.008zM6.5 7.734c-3.314 0-6 2.693-6 6.016h12c0-3.323-2.686-6.016-6-6.016z"></path>
+            </g>
+        </symbol>
+        <symbol viewBox="0 0 14 14" id="phone">
+            <g>
+                <path d="M12.646 11.26c.113-.135.097-.301-.015-.392l-2.8-2.287a.266.266 0 0 0-.355.022L8.207 9.872a.863.863 0 0 1-1.045.136 8.845 8.845 0 0 1-1.807-1.363 8.845 8.845 0 0 1-1.363-1.807.863.863 0 0 1 .136-1.046l1.268-1.269a.266.266 0 0 0 .022-.356L3.131 1.368c-.118-.12-.286-.12-.392-.014L1.545 2.548c-.95.95.483 4.865 2.762 7.144 2.28 2.28 6.195 3.711 7.144 2.763l1.194-1.195zM7.534 8.743l1.042-1.041a1.54 1.54 0 0 1 2.063-.108l2.799 2.287a1.538 1.538 0 0 1 .109 2.28l-1.194 1.195c-1.635 1.634-6.229-.045-8.946-2.763C.689 7.875-.99 3.283.645 1.647L1.839.452a1.54 1.54 0 0 1 2.28.11L6.406 3.36a1.54 1.54 0 0 1-.108 2.063L5.257 6.465a7.25 7.25 0 0 0 1 1.279c.35.35.776.684 1.278.999z"></path>
+            </g>
+        </symbol>
+        <symbol viewBox="0 0 11 14" id="pointer">
+            <g>
+                <path d="M11 5.384c0 2.426-1.639 4.477-3.891 5.15L5.555 14 3.96 10.554C1.672 9.902 0 7.834 0 5.384 0 2.411 2.463 0 5.5 0S11 2.41 11 5.384zm-2.358 0c0 1.699-1.407 3.076-3.143 3.076S2.356 7.083 2.356 5.384c0-1.7 1.407-3.077 3.143-3.077s3.143 1.377 3.143 3.077z"
+                      fill-rule="evenodd" clip-rule="evenodd"></path>
+            </g>
+        </symbol>
+        <symbol viewBox="0 0 30 30" id="bonuses-icon">
+            <g>
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M27.5 15c0 6.904-5.596 12.5-12.5 12.5S2.5 21.904 2.5 15C2.5 8.098 8.096 2.5 15 2.5S27.5 8.097 27.5 15zM0 15c0 8.285 6.716 15 15 15 8.284 0 15-6.715 15-15 0-8.284-6.716-15-15-15C6.716 0 0 6.716 0 15z"></path>
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M17.5 20h-6.25v-5h6.25a2.5 2.5 0 0 1 0 5zm0-7.5h-6.25V10h7.5a1.25 1.25 0 1 0 0-2.5h-2.5V6.25a1.25 1.25 0 1 0-2.5 0V7.5h-5v15h5v1.25a1.25 1.25 0 0 0 2.5 0V22.5h1.25a5 5 0 0 0 0-10z"></path>
+            </g>
+        </symbol>
+        <symbol viewBox="0 0 29 22" id="g-comparison">
+            <g>
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M11.136 15.463c-.37 2.534-2.366 4.426-4.7 4.426-2.332 0-4.329-1.892-4.699-4.426h9.4zm-8.685-1.7l3.986-5.747 3.985 5.748h-7.97zm10.374.595a1.792 1.792 0 0 0-.104-.234L7.122 6.05a.824.824 0 0 0-.685-.361.824.824 0 0 0-.686.361L.152 14.125a1.8 1.8 0 0 0-.104.234 1.742 1.742 0 0 0-.048.255c0 3.846 2.888 6.975 6.437 6.975 3.549 0 6.436-3.13 6.436-6.975 0-.034-.031-.2-.048-.256zM27.25 15.463c-.37 2.534-2.367 4.426-4.7 4.426s-4.33-1.892-4.7-4.426h9.4zm-8.686-1.7l3.986-5.747 3.986 5.748h-7.972zm10.374.595a1.718 1.718 0 0 0-.104-.234L23.235 6.05a.823.823 0 0 0-.685-.361.822.822 0 0 0-.685.361l-5.6 8.076c-.018.027-.086.181-.103.234a1.74 1.74 0 0 0-.049.255c0 3.846 2.888 6.975 6.437 6.975 3.549 0 6.437-3.13 6.437-6.975 0-.034-.032-.2-.049-.256zM23.506 1.793h-6.337C16.766.717 15.757 0 14.63 0c-1.128 0-2.137.717-2.54 1.793H6.028a.845.845 0 0 0-.838.849c0 .468.376.85.838.85h5.968c.316 1.222 1.386 2.067 2.635 2.067 1.25 0 2.318-.845 2.634-2.067h6.242a.846.846 0 0 0 .838-.85.845.845 0 0 0-.838-.85z"></path>
+            </g>
+        </symbol>
+        <symbol viewBox="0 0 25 23" id="g-wishlist">
+            <g>
+                <path d="M.446 7.527A7.087 7.087 0 0 1 12.5 2.47a7.087 7.087 0 0 1 12.054 5.057 7.04 7.04 0 0 1-2.259 5.187l-9.797 9.843-9.833-9.88a7.067 7.067 0 0 1-2.218-5.15z"
+                      fill-rule="evenodd" clip-rule="evenodd"></path>
+                <path d="M0 7.356C0 3.359 3.225-.002 7.356-.002A7.33 7.33 0 0 1 12.5 2.097a7.328 7.328 0 0 1 5.145-2.099C21.775-.002 25 3.359 25 7.356c0 2.118-.897 4.04-2.347 5.39L12.498 22.998 2.291 12.69A7.346 7.346 0 0 1 0 7.354zM7.356 2.01c-2.815 0-5.221 2.326-5.221 5.346 0 1.564.654 2.958 1.68 3.928l.013.012 8.67 8.755 8.626-8.71.017-.015a5.387 5.387 0 0 0 1.724-3.97c0-3.02-2.405-5.347-5.22-5.347-1.732 0-3.292.868-4.252 2.246L12.5 5.534l-.892-1.28C10.647 2.876 9.087 2.01 7.355 2.01z"
+                      fill-rule="evenodd" clip-rule="evenodd"></path>
+            </g>
+        </symbol>
+        <symbol viewBox="0 0 24 23" id="g-cart">
+            <g>
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M0 1a1 1 0 0 1 1-1h1.852a2 2 0 0 1 1.825 1.182L5.492 3h15.195c2.258 0 3.706 2.4 2.655 4.397l-3.241 6.159a2 2 0 0 1-1.336 1.02L11.013 16.3a2 2 0 0 1-2.259-1.134L2.852 2H1a1 1 0 0 1-1-1zm6.389 4l4.19 9.347 7.752-1.723 3.241-6.158A1 1 0 0 0 20.687 5H6.39z"></path>
+                <circle cx="8" cy="21" r="2"></circle>
+                <circle cx="20" cy="21" r="2"></circle>
+            </g>
+        </symbol>
+        <symbol viewBox="0 0 13 13" id="arrow-13x13">
+            <g>
+                <path d="M6.5 10a.956.956 0 0 1-.657-.256l-5.57-5.25a.839.839 0 0 1 0-1.238.968.968 0 0 1 1.312 0L6.5 7.888l4.914-4.632a.968.968 0 0 1 1.313 0 .839.839 0 0 1 0 1.238l-5.57 5.25A.955.955 0 0 1 6.5 10z">
+                </path>
+            </g>
+        </symbol>
+        <symbol viewBox="0 0 12 12" id="review-reply-add">
+            <g><path d="M3.782 5.835l1.764 1.753c.433.43.433 1.127 0 1.557-.432.43-1.134.43-1.566 0L.324 5.512a1.096 1.096 0 0 1 0-1.557L3.98.323a1.112 1.112 0 0 1 1.566 0c.433.43.433 1.127 0 1.556L3.782 3.633H7.2c2.65 0 4.8 2.136 4.8 4.77V10.9c0 .608-.496 1.101-1.108 1.101a1.104 1.104 0 0 1-1.107-1.1V8.403A2.577 2.577 0 0 0 7.2 5.834H3.782z"></path>
+            </g>
+        </symbol>
+        <symbol viewBox="0 0 16 16" id="positive-vote">
+            <g>
+                <path d="M4.9 6.623l1.065-.716a6.397 6.397 0 0 0 1.182-1.78l1.38-3.101a.64.64 0 0 1 .647-.295l.678.11c.331.053.564.354.532.688l-.427 4.5c-.021.219.145.584.365.594l3.915.004c.58.047 1.061.466 1.186 1.034.215.981.122 2.607.042 3.473-.101 1.085-1.16 3.058-1.589 3.82a.614.614 0 0 1-.536.313H6.49l-1.859-.944V7.13a.61.61 0 0 1 .27-.506z" fill-rule="evenodd" clip-rule="evenodd"></path><path d="M3.967 7.256a.2.2 0 0 0-.2-.2H1.293a.2.2 0 0 0-.2.2v7.452c0 .11.09.2.2.2h2.474a.2.2 0 0 0 .2-.2V7.256zM9.355 6.6a1.04 1.04 0 0 1-.105-.97 9.505 9.505 0 0 0 .684-3.549v-.576a.411.411 0 0 0-.41-.41h-.31a.412.412 0 0 0-.395.297l-.195.681a11.393 11.393 0 0 1-2.068 4.003 2.6 2.6 0 0 1-1.52.929c.016.081.025.166.025.252v6.866l1.372.686c.13.065.277.1.422.1h6.026a.46.46 0 0 0 .398-.232l.561-.981a8.095 8.095 0 0 0 1.066-4.012V8.002a.946.946 0 0 0-.946-.946h-3.742c-.346 0-.669-.17-.863-.457zm-8.062-.636h3.221c.465 0 .898-.208 1.189-.571a10.304 10.304 0 0 0 1.87-3.62l.195-.682A1.51 1.51 0 0 1 9.213 0h.31c.829 0 1.504.675 1.504 1.504v.576c0 1.336-.247 2.643-.735 3.886l3.667-.003c1.125 0 2.04.914 2.04 2.038v1.682c0 1.595-.418 3.17-1.21 4.554l-.562.982a1.556 1.556 0 0 1-1.347.781H6.855c-.314 0-.63-.074-.911-.215l-1.017-.508a1.294 1.294 0 0 1-1.16.723H1.293C.58 16 0 15.42 0 14.708V7.256a1.293 1.293 0 0 1 1.292-1.292z" fill-rule="evenodd" clip-rule="evenodd" fill="currentColor">
+            </path>
+            </g>
+        </symbol>
+        <symbol viewBox="0 0 16 16" id="negative-vote">
+            <g>
+                <path d="M4.9 9.378l1.065.716c.49.523.89 1.124 1.182 1.78l1.38 3.101a.64.64 0 0 0 .647.295l.678-.109a.637.637 0 0 0 .532-.689l-.427-4.5c-.021-.219.145-.584.365-.594l3.915-.003a1.323 1.323 0 0 0 1.186-1.035c.216-.981.123-2.606.042-3.473-.1-1.085-1.16-3.058-1.589-3.82a.615.615 0 0 0-.536-.313H6.49l-1.859.944v7.194a.61.61 0 0 0 .27.507z" fill-rule="evenodd" clip-rule="evenodd"></path><path d="M3.967 8.745a.2.2 0 0 1-.2.2H1.293a.2.2 0 0 1-.2-.2V1.294c0-.11.09-.2.2-.2h2.474c.11 0 .2.09.2.2v7.45zm5.388.657a1.04 1.04 0 0 0-.105.97 9.504 9.504 0 0 1 .684 3.549v.576c0 .226-.184.41-.41.41h-.31a.412.412 0 0 1-.395-.297l-.195-.681a11.387 11.387 0 0 0-2.068-4.003 2.599 2.599 0 0 0-1.52-.929c.016-.081.025-.166.025-.252V1.879l1.372-.686c.13-.065.277-.1.422-.1h6.026a.46.46 0 0 1 .398.231l.561.982a8.095 8.095 0 0 1 1.066 4.012v1.681a.946.946 0 0 1-.946.946h-3.742c-.346 0-.669.17-.863.457zm-8.062.636h3.221c.465 0 .898.208 1.189.57a10.303 10.303 0 0 1 1.87 3.621l.195.682A1.51 1.51 0 0 0 9.214 16h.31c.829 0 1.504-.675 1.504-1.504v-.576c0-1.336-.247-2.643-.735-3.886l3.667.003c1.125 0 2.04-.915 2.04-2.039V6.318c0-1.595-.418-3.17-1.21-4.554l-.562-.982A1.555 1.555 0 0 0 12.881 0H6.855c-.314 0-.629.075-.91.215L4.926.723A1.294 1.294 0 0 0 3.767 0H1.295C.58 0 0 .58 0 1.293v7.452c0 .713.58 1.293 1.294 1.293z" fill-rule="evenodd" clip-rule="evenodd" fill="currentColor">
+            </path>
+            </g>
+        </symbol>
+        <symbol viewBox="0 0 17 17" id="review-complaint">
+            <g>
+                <path d="M10.419 6.655a.885.885 0 0 1-.885-.884V.884a.886.886 0 0 1 1.77 0v4.887a.885.885 0 0 1-.885.884zM10.419 9.882a1.052 1.052 0 1 1 1.054-1.053v.001c0 .58-.473 1.052-1.054 1.052z" fill-rule="evenodd" clip-rule="evenodd" fill="currentColor"></path><path d="M12.278 3.119v1.672a3.695 3.695 0 0 1 3.077 3.657c0 2.05-1.64 3.716-3.656 3.716h-2.65l-3.735 2.039v-1.974l-.675-.125c-1.735-.322-2.994-1.86-2.994-3.655 0-2.05 1.64-3.717 3.656-3.717h3.336V3.06H5.301C2.378 3.06 0 5.477 0 8.449c0 2.365 1.507 4.421 3.67 5.129V17l5.792-3.163H11.7c2.923-.001 5.3-2.418 5.3-5.389 0-2.77-2.073-5.032-4.721-5.33z" fill-rule="evenodd" clip-rule="evenodd">
+            </path>
+            </g>
+        </symbol>
+        <symbol overflow="scroll" viewBox="0 0 70 14" id="g-rating-stars">
+            <g>
+                <path fill="#fff" d="M0 0v14h70V0zm14.601 5.9l-2.6 2.8c-.1.1-.1.2-.1.4l.5 3.9c0 .4-.3.6-.7.5l-3.5-1.6c-.1-.1-.3-.1-.4 0l-3.5 1.6c-.3.1-.7-.2-.7-.5l.5-3.9c0-.1 0-.3-.1-.4L1.3 5.9c-.2-.3-.1-.7.3-.8l3.8-.7c.1 0 .3-.1.3-.2L7.6.8c.2-.3.7-.3.8 0l1.9 3.4c.1.1.2.2.3.2l3.8.7c.3.1.4.5.2.8zm13.501 0l-2.6 2.8c-.1.1-.1.2-.1.4l.5 3.9c0 .4-.3.6-.7.5l-3.5-1.6c-.1-.1-.3-.1-.4 0l-3.5 1.6c-.302.2-.702-.1-.702-.5l.5-3.9c0-.1 0-.3-.1-.4l-2.6-2.8c-.3-.3-.1-.7.3-.8l3.8-.7c.1 0 .3-.1.3-.2L21.2.8c.2-.3.7-.3.8 0l1.9 3.4c.1.1.2.2.3.2l3.801.7c.2.1.3.5.1.8zm13.501 0l-2.6 2.8c-.1.1-.1.2-.1.4l.5 3.9c0 .4-.3.6-.7.5l-3.5-1.6c-.1-.1-.3-.1-.4 0l-3.5 1.6c-.302.2-.702-.1-.702-.5l.5-3.9c0-.1 0-.3-.1-.4l-2.6-2.8c-.3-.3-.1-.7.3-.8l3.8-.7c.1 0 .3-.1.3-.2l1.9-3.4c.2-.3.7-.3.8 0l1.901 3.4c.1.1.2.2.3.2l3.8.7c.2.1.3.5.1.8zm13.501 0l-2.6 2.8c-.1.1-.1.2-.1.4l.5 3.9c0 .4-.3.6-.7.5l-3.5-1.6c-.1-.1-.3-.1-.4 0l-3.502 1.6c-.3.2-.7-.1-.7-.5l.5-3.9c0-.1 0-.3-.1-.4l-2.6-2.8c-.3-.3-.1-.7.3-.8l3.8-.7c.1 0 .3-.1.3-.2l1.9-3.4c.2-.3.7-.3.8 0l1.901 3.4c.1.1.2.2.3.2l3.8.7c.2.1.3.5.1.8zm13.501 0l-2.6 2.8c-.1.1-.1.2-.1.4l.5 3.9c0 .4-.3.6-.7.5l-3.5-1.6c-.1-.1-.3-.1-.4 0l-3.5 1.6c-.303.2-.703-.1-.703-.5l.5-3.9c0-.1 0-.3-.1-.4l-2.6-2.8c-.3-.3-.1-.7.3-.8l3.8-.7c.1 0 .3-.1.3-.2l1.9-3.4c.2-.3.7-.3.8 0l1.9 3.4c.1.1.2.2.3.2l3.801.7c.2.1.3.5.1.8z">
+                </path>
+            </g>
+        </symbol>
+        <symbol fill="none" viewBox="0 0 13 12" id="review-buyer">
+            <g>
+                <path fill="none" d="M0 0h13v12H0z"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M11.86 3.494l-1.274 2.859a.546.546 0 0 1-.392.313l-4.026.803a.547.547 0 0 1-.614-.33L3.76 2.727h7.6a.546.546 0 0 1 .5.767zm-.5-1.858H3.31l-.25-.615c-.274-.675-.967-1-1.734-1L.562.001a.546.546 0 1 0-.03 1.09l.78.02c.383.001.658.13.735.32L4.54 7.55a1.642 1.642 0 0 0 1.842.99l4.026-.804a1.64 1.64 0 0 0 1.177-.94l1.274-2.858a1.638 1.638 0 0 0-1.499-2.3zM4.588 12c.604 0 1.094-.488 1.094-1.09 0-.603-.49-1.091-1.094-1.091-.604 0-1.094.488-1.094 1.09 0 .603.49 1.091 1.094 1.091zM11.148 12c.604 0 1.094-.488 1.094-1.09 0-.603-.49-1.091-1.094-1.091-.604 0-1.094.488-1.094 1.09 0 .603.49 1.091 1.094 1.091z" fill="#00AF46"></path><path d="M5 1a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V1z" fill="#00AF46">
+            </path>
+            </g>
+        </symbol>
+        <symbol viewBox="0 0 39 37" id="rating-star">
+            <g>
+                <path d="M18.637.534a.964.964 0 0 1 1.726 0l5.28 10.645c.14.283.412.479.725.524l11.806 1.708c.79.114 1.105 1.08.535 1.634l-8.545 8.286a.953.953 0 0 0-.276.847l2.016 11.7c.136.783-.69 1.38-1.397 1.01l-10.559-5.525a.97.97 0 0 0-.896 0l-10.56 5.524c-.706.37-1.532-.227-1.396-1.01l2.016-11.7a.952.952 0 0 0-.276-.849L.293 15.042c-.571-.553-.256-1.52.534-1.634l11.807-1.707a.961.961 0 0 0 .724-.524L18.638.532z" fill-rule="evenodd" clip-rule="evenodd">
+                </path>
             </g>
         </symbol>
     </defs>
