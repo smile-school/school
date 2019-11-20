@@ -113,7 +113,7 @@
                         </label>
                         <div class="city-chooser__wrapper">
                             <h2 class="city-chooser__wrapper__title">Выберите свой город</h2>
-                            <label class="close" for="window-close">
+                            <label class="close-button" for="window-close">
                                 <svg height="14" width="14">
                                     <use xlink:href="#icon-close-modal"
                                          xmlns:xlink="http://www.w3.org/1999/xlink"></use>
@@ -256,6 +256,59 @@
 </header>
 
 <main>
+    <div class="page-overlay">
+        <div class="form-wrapper">
+            <form action="#" method="post" class="form-respond" id="form-respond">
+                <div class="form-respond__heading">
+                    <h2>Отзыв о товаре</h2>
+                </div>
+
+                <div class="form-respond__content clearfix-block">
+                    <div class="form-respond__stars-rating">
+                        <div class="stars-rating__wrapper clearfix-block">
+                            <div class="stars-rating__star">
+                                <svg width="39" height="37"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use>
+                                </svg>
+                                <p class="stars-rating__status">Плохой</p>
+                            </div>
+                            <div class="stars-rating__star">
+                                <svg width="39" height="37"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use>
+                                </svg>
+                                <p class="stars-rating__status">Так себе</p>
+                            </div>
+                            <div class="stars-rating__star">
+                                <svg width="39" height="37"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use>
+                                </svg>
+                                <p class="stars-rating__status">Нормальный</p>
+                            </div>
+                            <div class="stars-rating__star">
+                                <svg width="39" height="37"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use>
+                                </svg>
+                                <p class="stars-rating__status">Хороший</p>
+                            </div>
+                            <div class="stars-rating__star">
+                                <svg width="39" height="37"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use>
+                                </svg>
+                                <p class="stars-rating__status">Отличный</p>
+                            </div>
+                        </div>
+                    </div>
+                    <label class="form-respond__label" for="advantages">Достоинства</label>
+                    <input class="form-respond__input" type="text" name="advantages" id="advantages">
+                    <label class="form-respond__label" for="disadvantages">Недостатки</label>
+                    <input class="form-respond__input" type="text" name="disadvantages" id="disadvantages">
+                    <label class="form-respond__label" for="comment">Комментарий</label>
+                    <textarea class="form-respond__input textarea" name="comment" id="comment"></textarea>
+                    <label class="form-respond__label" for="user-name">Ваше имя и фамилия</label>
+                    <input class="form-respond__input" type="text" name="user" id="user-name">
+                    <label class="form-respond__label" for="contact">Эл. почта или телефон</label>
+                    <input class="form-respond__input" type="text" name="contact" id="contact">
+                    <button type="submit" class="form-respond__submit blue-button submitRespondBtn-js">Оставить отзыв</button>
+                    <button type="button" class="form-respond__cancel gray-button cancelRespondBtn-js">Отменить</button>
+                </div>
+            </form>
+        </div>
+    </div>
     <div class="page-wrapper product-page">
         <h1 class="product-title">Ноутбук Acer Aspire 5 A515-54G (NX.HFREU.038) Pure Silver Суперцена!!!</h1>
         <div class="product__tabs-container clearfix-block">
@@ -316,9 +369,9 @@
                                 Отзывы покупателей о Ноутбук Acer Aspire 5
                                 A515-54G (NX.HFREU.038) Pure Silver Суперцена!!!
                             </p>
-                            <button type="button" class="product-responds__heading__button gray-button">Написать отзыв</button>
+                            <button type="button" class="product-responds__heading__button gray-button openFormBtn-js">Написать отзыв</button>
                         </div>
-                        <div class="product-responds__respond">
+                        <div class="product-responds__respond respond-js">
                             <div class="respond__heading clearfix-block">
                                 <span class="respond__heading__author">Аноним Анонимович</span>
                                 <span class="respond__heading__trade-status">
@@ -331,7 +384,7 @@
                                     <svg width="70" height="14">
                                         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#g-rating-stars"></use>
                                     </svg>
-                                    % пользователей считают этот отзыв полезным
+                                    <span class="percentVotes-js"></span>% пользователей считают этот отзыв полезным
                                 </span>
                                 <span class="respond__heading__date">15 ноября 2019</span>
                             </div>
@@ -363,22 +416,22 @@
                                     </svg>
                                 </div>
                                 <div class="respond__action-links__vote-links clearfix-block">
-                                    <div class="vote-link_positive">
+                                    <div class="vote-link_positive positiveBtn-js">
                                         <svg width="16" height="16">
                                             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#positive-vote"></use>
                                         </svg>
-                                        <span class="vote-link_positive__counter">1</span>
+                                        <span class="vote-link_positive__counter positiveVote-js"></span>
                                     </div>
-                                    <div class="vote-link_negative">
+                                    <div class="vote-link_negative negativeBtn-js">
                                         <svg width="16" height="16">
                                             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#negative-vote"></use>
                                         </svg>
-                                        <span class="vote-link_negative__counter">2</span>
+                                        <span class="vote-link_negative__counter negativeVote-js"></span>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="product-responds__respond">
+                        <div class="product-responds__respond respond-js">
                             <div class="respond__heading clearfix-block">
                                 <span class="respond__heading__author">Аноним Анонимович</span>
                                 <span class="respond__heading__trade-status">
@@ -391,7 +444,7 @@
                                     <svg width="70" height="14">
                                         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#g-rating-stars"></use>
                                     </svg>
-                                    % пользователей считают этот отзыв полезным
+                                    <span class="percentVotes-js"></span>% пользователей считают этот отзыв полезным
                                 </span>
                                 <span class="respond__heading__date">7 ноября 2019</span>
                             </div>
@@ -424,22 +477,22 @@
                                     </svg>
                                 </div>
                                 <div class="respond__action-links__vote-links clearfix-block">
-                                    <div class="vote-link_positive">
+                                    <div class="vote-link_positive positiveBtn-js">
                                         <svg width="16" height="16">
                                             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#positive-vote"></use>
                                         </svg>
-                                        <span class="vote-link_positive__counter">1</span>
+                                        <span class="vote-link_positive__counter positiveVote-js"></span>
                                     </div>
-                                    <div class="vote-link_negative">
+                                    <div class="vote-link_negative negativeBtn-js">
                                         <svg width="16" height="16">
                                             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#negative-vote"></use>
                                         </svg>
-                                        <span class="vote-link_negative__counter"></span>
+                                        <span class="vote-link_negative__counter negativeVote-js"></span>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <form action="#" method="post" class="form-respond">
+                       <!-- <form action="#" method="post" class="form-respond">
                             <div class="form-respond__heading clearfix-block">
                                 <span class="left-side"> Отзыв о товаре </span>
                                 <span class="right-side"> Краткий комментарий </span>
@@ -486,7 +539,7 @@
                                 <input class="form-respond__input" type="text" name="contact" id="contact">
                                 <button type="submit" class="form-respond__submit blue-button">Оставить отзыв</button>
                             </div>
-                        </form>
+                        </form>-->
                     </div>
                     <div class="responds-content_right">
                         <div class="product-review"></div>
@@ -1946,5 +1999,7 @@
         </symbol>
     </defs>
 </svg>
+<script src="./script/script.js"></script>
+<script src="./script/votesCounter.js"></script>
 </body>
 </html>
