@@ -2875,6 +2875,7 @@ main.main-laptop.product-pg .right-side .delivery.content .delivery-car .col .ro
 .product-info .feedback .feedback-section .main {
   display: flex;
   flex-direction: column;
+  margin-bottom: 15px;
 }
 .product-info .feedback .feedback-section .main .massage {
   margin-bottom: 7px;
@@ -2895,6 +2896,193 @@ main.main-laptop.product-pg .right-side .delivery.content .delivery-car .col .ro
   content: 'Недостатки:';
   font-weight: 700;
   margin-right: 4px;
+}
+.product-info .feedback .feedback-section .footer-fedback {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 24px;
+  margin-bottom: 32px;
+  border-bottom: 1px solid #eaeaea;
+}
+.product-info .feedback .feedback-section .footer-fedback .left span {
+  position: relative;
+  padding: 9px 10px 13px 26px;
+  color: #3e77aa;
+  font-size: 14px;
+  cursor: pointer;
+}
+.product-info .feedback .feedback-section .footer-fedback .left span:nth-child(2) svg {
+  width: 17px;
+  height: 14px;
+}
+.product-info .feedback .feedback-section .footer-fedback .left span svg {
+  position: absolute;
+  top: 9px;
+  left: 7px;
+  width: 12px;
+  height: 12px;
+  fill: currentColor;
+}
+.product-info .feedback .feedback-section .footer-fedback .left span::before {
+  position: absolute;
+  content: '';
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background: #fff;
+  z-index: 1;
+}
+.product-info .feedback .feedback-section .footer-fedback .left span:hover {
+  color: #ff7878;
+}
+.product-info .feedback .feedback-section .footer-fedback .left span:hover::before {
+  background: #ff7878;
+}
+.product-info .feedback .feedback-section .footer-fedback .right {
+  display: flex;
+  align-items: center;
+}
+.product-info .feedback .feedback-section .footer-fedback .right .like-dislike {
+  display: flex;
+  position: relative;
+}
+.product-info .feedback .feedback-section .footer-fedback .right .like-dislike::before {
+  content: '';
+  width: 1px;
+  height: 18px;
+  position: absolute;
+  background-color: #999;
+  left: 28px;
+  display: block;
+}
+.product-info .feedback .feedback-section .footer-fedback .right .like-dislike svg.arr {
+  cursor: pointer;
+}
+.product-info .feedback .feedback-section .footer-fedback .right .like-dislike svg.arr:first-child {
+  display: block;
+  width: 18px;
+  height: 18px;
+  fill: #80d2a4;
+  color: #00a046;
+  margin-right: 20px;
+}
+.product-info .feedback .feedback-section .footer-fedback .right .like-dislike svg.arr:last-child {
+  display: block;
+  width: 18px;
+  height: 18px;
+  fill: #ffa6aa;
+  color: #ff4b50;
+}
+.product-info .feedback .feedback-section .footer-fedback .right .reviev {
+  margin-left: 20px;
+}
+.product-info .feedback .feedback-section .footer-fedback .right .reviev svg {
+  width: 17px;
+  height: 17px;
+  fill: #d2d2d2;
+  color: #ff4b50;
+  overflow: hidden;
+  cursor: pointer;
+}
+.product-info .feedback .feedback-section .footer-fedback .right .reviev svg:hover {
+  fill: #ff4b50;
+  color: #ff4b50;
+}
+.product-info .feedback .feedback-section .more-feedback a {
+  cursor: pointer;
+  color: #3e77aa;
+  border-bottom: 1px dashed #3e77aa;
+  font-size: 14px;
+  border: 0;
+  text-decoration: none;
+  font-size: 18px;
+}
+.product-info .feedback .feedback-section .more-feedback a:hover {
+  color: #fb3f4c;
+  border-bottom: 1px dashed #fb3f4c;
+}
+.product-info .feedback .feedback-section .more-feedback a:hover {
+  border: 0;
+}
+.title-comment {
+  position: relative;
+  display: flex;
+  width: 75%;
+  align-items: center;
+}
+.title-comment .top {
+  width: 60%;
+  display: block;
+}
+.title-comment .top p {
+  font-size: 24px;
+}
+.title-comment button {
+  font-size: 18px;
+  color: #3e77aa;
+  padding: 8px 25px;
+  background: #f5f5f5;
+  border: 1px solid #ebebeb;
+  cursor: pointer;
+  border-radius: 3px;
+}
+.title-comment .dropdown {
+  padding-left: 10px;
+}
+.title-comment .sort {
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border: 1px solid #d2d2d2;
+  border-radius: 4px;
+  display: block;
+  position: relative;
+  padding: 4px 20px 4px 7px;
+  width: 182px;
+  font-size: 13px;
+}
+.title-comment .sort:hover {
+  background-color: #f4faf6;
+}
+.title-comment .sort svg {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  width: 13px;
+  height: 13px;
+  margin-top: -6px;
+  fill: #00a046;
+  z-index: 1;
+  transform: rotate(90deg);
+}
+.title-comment li {
+  list-style-type: none;
+}
+.title-comment input[type='checkbox'] {
+  display: none;
+}
+.title-comment input[type='checkbox']:checked ~ .cheked-garan {
+  display: block;
+  z-index: 10;
+}
+.title-comment .cheked-garan {
+  display: none;
+  position: absolute;
+  background: #fff;
+  border: 1px solid #a8cbeb;
+  box-shadow: 0 0 13px 0 rgba(0, 0, 0, 0.4);
+  white-space: initial;
+  width: 209px;
+  font-size: 13px;
+}
+.title-comment .cheked-garan ul li {
+  border-bottom: 1px solid #eaeaea;
+  padding: 8px 25px 8px 8px;
+  cursor: pointer;
+}
+.title-comment .cheked-garan ul li:hover {
+  color: #fb3f4c;
 }
 @keyframes popup {
   from {
