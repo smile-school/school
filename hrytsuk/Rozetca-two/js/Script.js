@@ -20,22 +20,24 @@
 
     Form();
 
-    function setCount(spn) {
-        spn.innerHTML = this.counts + ++spn.textContent;
-    }
-
-    function Counter(elem, count) {
-        this.targetElem = elem;
-        this.counts = count;
-        for (var i = 0; i < elem.length; i++) {
-            this.targetElem[i].addEventListener("click", function () {
-                var spn = this.children[1];
-                counter.setCount(spn);
-            });
+        function setCount(spn) {
+            spn.innerHTML = this.counts + ++spn.textContent;
         }
-    }
-    Counter.prototype.setCount = setCount;
-    var counter = new Counter(document.querySelectorAll('.buton-lice'), 0);
+
+        function Counter(elem, count) {
+            this.targetElem = elem;
+            this.counts = count;
+            for (var i = 0; i < elem.length; i++) {
+                this.targetElem[i].addEventListener("click", function () {
+                    var spn = this.children[1];
+                    counter.setCount(spn);
+                });
+            }
+        }
+        Counter.prototype.setCount = setCount;
+        var counter = new Counter(document.querySelectorAll('.buton-lice'), 0);
+
+
 
 
 
@@ -123,5 +125,4 @@
 
     formValid();
 
-    Counter();
 })();
