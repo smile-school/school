@@ -583,6 +583,12 @@ a.action__item-link {
 .search-form__results-list__item:hover {
   background-color: #f6f6f6;
 }
+.main-page__header .main-page_hidden {
+  display: none;
+}
+.main-page__header .header__links-container {
+  margin-left: 30px;
+}
 .main-stores,
 .main-schedule,
 .main-socials,
@@ -779,14 +785,15 @@ a.action__item-link {
   fill: #00a046;
 }
 .main-goods__list {
-  display: table;
-  height: 320px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
 }
 .main-goods__list-item {
   display: inline-block;
   position: relative;
-  width: 16.66%;
-  height: 100%;
+  width: calc(100% / 6);
   vertical-align: top;
 }
 .main-goods__list-item .product-card {

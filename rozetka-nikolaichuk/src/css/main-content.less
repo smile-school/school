@@ -23,12 +23,11 @@
             }
         }
         &__list{
-            display: table;
-            height: 320px;
+            .flex-mixin(@justify: space-between, @align: stretch);
             &-item{
                 display: inline-block;
                 position: relative;
-                .container-mixin(@width: 16.66%, @height: 100%);
+                width: calc(100% / 6);
                 vertical-align: top;
                 .product-card{
                     padding: 16px 16px 24px;
