@@ -4,6 +4,7 @@
 }
 body {
   font: 62.5%/1.4 BlinkMacSystemFont, -apple-system, Arial, "Segoe UI", Roboto, Helvetica, sans-serif;
+  color: #4d4b4b;
 }
 body > svg {
   display: none;
@@ -2736,6 +2737,164 @@ main.main-laptop.product-pg .right-side .delivery.content .delivery-car .col .ro
   position: absolute;
   width: 100%;
   height: 100%;
+}
+.product-info {
+  display: flex;
+  margin-top: 80px;
+}
+.product-info .pr-description {
+  width: 65%;
+  padding-right: 40px;
+}
+.product-info .pr-description h2 {
+  font-size: 24px;
+  margin-bottom: 24px;
+  color: #221f1f;
+  font-weight: 400;
+}
+.product-info .pr-description h2 .silver-h2 {
+  color: #b2b2b2;
+}
+.product-info .pr-description p {
+  font-size: 14px;
+  color: #4d4b4b;
+  text-align: justify;
+}
+.product-info .tabs {
+  list-style-type: none;
+  display: flex;
+}
+.product-info .tabs li {
+  display: block;
+  position: relative;
+  padding: 11px 15px;
+  font-size: 14px;
+}
+.product-info .tabs li a {
+  text-decoration: none;
+  color: #3e77aa;
+}
+.product-info .tabs li::before {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  z-index: 1;
+}
+.product-info .tabs li:hover a {
+  color: #fb3f4c;
+}
+.product-info .tabs li:hover::before {
+  background-color: #fb3f4c;
+}
+.product-info .tabs li.active a {
+  color: #4d4b4b;
+}
+.product-info .tabs li.active::before {
+  height: 4px;
+  background-color: #00a046;
+}
+.product-info .feature-product {
+  width: 100%;
+}
+.product-info .feature-product tr td {
+  font-size: 14px;
+  line-height: 17px;
+  padding: 9px 0;
+}
+.product-info .feature-product tr td:first-child {
+  color: #797878;
+  word-break: break-word;
+  width: 40%;
+}
+.product-info .feature-product tr td a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #3e77aa;
+  border-bottom: 1px dashed #3e77aa;
+  font-size: 14px;
+  border: 0;
+}
+.product-info .feature-product tr td a:hover {
+  color: #fb3f4c;
+  border-bottom: 1px dashed #fb3f4c;
+}
+.product-info .feature-product tr td a:hover {
+  border: 0;
+}
+.product-info .feedback {
+  width: 35%;
+}
+.product-info .feedback h2 {
+  font-size: 24px;
+  margin-bottom: 24px;
+  color: #221f1f;
+  font-weight: 400;
+}
+.product-info .feedback h2 .silver-h2 {
+  color: #b2b2b2;
+}
+.product-info .feedback .feedback-section .head {
+  display: flex;
+  justify-content: space-between;
+}
+.product-info .feedback .feedback-section .head .name {
+  font-size: 16px;
+  color: #4d4b4b;
+  font-weight: 700;
+}
+.product-info .feedback .feedback-section .head .rating svg {
+  position: relative;
+  z-index: 2;
+  width: 108px;
+  height: 21px;
+  padding-left: 20px;
+}
+.product-info .feedback .feedback-section .head .data {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-grow: 1;
+  font-size: 13px;
+  color: #999;
+}
+.product-info .feedback .feedback-section .head .data svg {
+  padding-left: 10px;
+  display: block;
+  width: 16px;
+  height: 6px;
+  fill: #3a76ac;
+  overflow: hidden;
+  cursor: pointer;
+}
+.product-info .feedback .feedback-section .head .data svg:hover {
+  color: #4c98dd;
+}
+.product-info .feedback .feedback-section .main {
+  display: flex;
+  flex-direction: column;
+}
+.product-info .feedback .feedback-section .main .massage {
+  margin-bottom: 7px;
+  font-size: 14px;
+}
+.product-info .feedback .feedback-section .main .pluse {
+  font-size: 14px;
+}
+.product-info .feedback .feedback-section .main .pluse::before {
+  content: 'Достоинства:';
+  font-weight: 700;
+  margin-right: 4px;
+}
+.product-info .feedback .feedback-section .main .minus {
+  font-size: 14px;
+}
+.product-info .feedback .feedback-section .main .minus::before {
+  content: 'Недостатки:';
+  font-weight: 700;
+  margin-right: 4px;
 }
 @keyframes popup {
   from {
