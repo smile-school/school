@@ -277,7 +277,6 @@ main .aside-catalogue-btn .dropdown::after {
     right: 5px;
     top: 13px;
     position: absolute;
-
     transition: transform 250ms ease;
 }
 main .aside-catalogue-btn .popUp:hover .dropdown::after{
@@ -354,7 +353,6 @@ main .aside-catalogue-menu .menu-none .menu-title {
 main .aside-catalogue-menu .menu-none .grey-menu {
     background-color: lightgrey;
 }
-
 main .aside-catalogue-menu:hover .menu-none {
     display: flex;
 }
@@ -366,6 +364,7 @@ main .aside-menu {
     justify-content: space-between;
     flex-flow: row;
     position: relative;
+    z-index: 0;
 }
 main .aside-menu .aside-catalogue-btn {
     z-index: 2;
@@ -396,7 +395,7 @@ main .aside-menu .menu-btn-link::before {
 }
 main .aside-menu .menu-btn-link::after {
     left: auto;
-    top: 0px;
+    top: 0;
     right: -13px;
     border-top: 19px solid transparent;
     border-bottom: 19px solid transparent;
@@ -554,50 +553,13 @@ main h1 {
 #img4:checked ~ .image-perform img:nth-child(4),
 #img5:checked ~ .image-perform img:nth-child(5),
 #img6:checked ~ .image-perform img:nth-child(6){
-
-}
-#img1:checked ~ .image-perform img:nth-child(1){
     display: block;
 }
-#img2:checked ~ .image-perform img:nth-child(2){
-    display: block;
-}
-#img3:checked ~ .image-perform img:nth-child(3){
-    display: block;
-}
-#img4:checked ~ .image-perform img:nth-child(4){
-    display: block;
-}
-#img5:checked ~ .image-perform img:nth-child(5){
-    display: block;
-}
-#img6:checked ~ .image-perform img:nth-child(6){
-    display: block;
-}
-#img1:hover ~ .image-perform img:nth-child(1){
-    display: block;
-    z-index: 1;
-}
-#img2:hover ~ .image-perform img:nth-child(2){
-    display: block;
-    z-index: 1;
-}
-#img3:hover ~ .image-perform img:nth-child(3){
-    display: block;
-    z-index: 1;
-}
-#img4:hover ~ .image-perform img:nth-child(4){
-    display: block;
-    z-index: 1;
-}
-#img4:hover ~ .image-perform img:not(:nth-child(4)){
-    display: none;
-    z-index: 1;
-}
-#img5:hover ~ .image-perform img:nth-child(5){
-    display: block;
-    z-index: 1;
-}
+#img1:hover ~ .image-perform img:nth-child(1),
+#img2:hover ~ .image-perform img:nth-child(2),
+#img3:hover ~ .image-perform img:nth-child(3),
+#img4:hover ~ .image-perform img:nth-child(4),
+#img5:hover ~ .image-perform img:nth-child(5),
 #img6:hover ~ .image-perform img:nth-child(6){
     display: block;
     z-index: 1;
@@ -1024,6 +986,7 @@ aside .watch-the-price a::before{
 .answer::before{
     background-position: -672px -797px;
     left: 5px;
+    top: 15px;
 }
 .positive::before{
     background-position: -722px -745px;
@@ -1048,6 +1011,7 @@ aside .watch-the-price a::before{
     margin-left: 10px;
     padding: 10px;
     width: 20%;
+    z-index: -1;
 }
 .aside-product-sticky_form .item-to-buy{
     background-color: white;
@@ -1197,7 +1161,8 @@ who-sales-product-minified>img{
     font-size: 14px;
 }
 .forma input{
-    width: 100%;
+    /*width: 100%;*/
+    width: inherit;
 }
 .forma .text-area{
     padding: 5px 0;
@@ -1210,10 +1175,10 @@ who-sales-product-minified>img{
 .forma .action-input:hover{
     color: orangered;
 }
-.forma input[type=checkbox] {
+input[type=checkbox] {
     display: none;
 }
-.forma input[type=checkbox] + label:before {
+input[type=checkbox] + label:before {
     content: "\2713";
     color: transparent;
     display: inline-block;
@@ -1227,7 +1192,7 @@ who-sales-product-minified>img{
     vertical-align: middle;
     transition: color ease .3s;
 }
-.forma input[type=checkbox]:checked + label:before {
+input[type=checkbox]:checked + label:before {
     color: #ffffff;
     background-color: #49c459;
     border: 1px solid #49c459;
@@ -1365,11 +1330,9 @@ who-sales-product-minified>img{
     text-decoration: underline dotted;
     font-size: 12px;
 }
-
 .header-client-feedback-new{
     font-size: 16px;
     margin-bottom: 10px;
-
 }
 .header-client-feedback-new p {
     padding: 10px 0;
@@ -1388,4 +1351,81 @@ who-sales-product-minified>img{
     font-size: 14px;
     text-decoration: none;
     color: #3e77aa;
+    padding-top: 15px;
+}
+
+.popUp-form{
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 0 0 9999px rgba(0, 0, 0, .35);
+    top: 4%;
+    left: calc(50% - 300px);
+    width: 600px;
+    border-radius: 25px;
+    padding: 15px;
+}
+#comment{
+    display: flex;
+    flex-flow: column;
+}
+.popUp-form label:not(:first-child){
+    padding-top: 15px;
+}
+#comment>a{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+.popUp-form .add-content-video{
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    margin: 10px 0;
+    padding: 30px 0 20px;
+}
+.videourl{
+    position: relative;
+    padding-left: 70px;
+}
+.add-content-video .videourl::before{
+    content: "";
+    background-image: url('../ima/sprite-roz.svg');
+    background-repeat: no-repeat;
+    position: absolute;
+    cursor: pointer;
+    background-position: -183px -745px;
+    width: 40px;
+    height: 50px;
+    left: 20%;
+    top: 0;
+}
+.add-content-video  .videourl::after {
+    content: "Ссылка на видео с YouTube";
+    position: absolute;
+    font-size: 12px;
+    width: 170px;
+    top: -20px;
+}
+.form-action-btn .reset{
+    margin-right: 15px;
+    color: #3e77aa;
+    background-color: #eeeeee;
+    border: 1px solid #a2a2a2;
+}
+#formaOpen:checked ~ .popUp-form{
+    display: block;
+}
+#formaClose:checked ~ .popUp-form{
+    display: none;
+}
+.btnClose{
+    position: absolute;
+    right: 15px;
+    color: grey;
+}
+.btnClose:hover{
+    color: orangered;
+    cursor: pointer;
 }

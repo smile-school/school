@@ -285,7 +285,51 @@
                             <p> Отзывы покупателей о Ноутбук HP 255 G7 (7DF20EA) Dark Ash Суперцена!!!&nbsp;&nbsp;<span>24</span></p>
                         </div>
                         <div class="leave-feedback">
-                            <a href="#myForm" class="feedback-btn">Написать отзыв</a>
+                            <label for="formaOpen" class="feedback-btn" id="btnOpen">Написать отзыв</label>
+                            <input type="radio" id="formaClose" class="formaClose" name="formaBtn" checked>
+                            <input type="radio" id="formaOpen" class="formaOpen"  name="formaBtn">
+
+
+                            <form class="popUp-form forma" id="formaPop" action="#" method="POST">
+                                <div id="comment">
+                                    <label for="formaClose" class="btnClose" id="btnClose">x</label>
+
+                                    <div class="star-rating">
+                                        <input type="radio" id="5-star" name="rating" value="5" />
+                                        <label for="5-star" class="star">&bigstar;<br><span>Отличный</span></label>
+                                        <input type="radio" id="4-star" name="rating" value="4" />
+                                        <label for="4-star" class="star">&bigstar;<br><span>Хороший</span></label>
+                                        <input type="radio" id="3-star" name="rating" value="3" />
+                                        <label for="3-star" class="star">&bigstar;<br><span>Нормальный</span></label>
+                                        <input type="radio" id="2-star" name="rating" value="2" />
+                                        <label for="2-star" class="star">&bigstar;<br><span>Так себе</span></label>
+                                        <input type="radio" id="1-star" name="rating" value="1" />
+                                        <label for="1-star" class="star">&bigstar;<br><span>Плохой</span></label>
+                                    </div>
+                                    <label class="action-input1" for="qualities1">Достоинства</label>
+                                    <input class="text-area1" type="text" name="qualities" id="qualities1" />
+                                    <label class="action-input1" for="defects1">Недостатки</label>
+                                    <input class="text-area1" type="text" name="defects" id="defects1"/>
+                                    <label class="action-input1" for="description1">Комментарий</label><br>
+                                    <textarea rows=5" class="text-area1" name="description" id="description1"></textarea>
+                                    <div class="add-content-video">
+                                        <label for="video1" class="videourl"></label>
+                                        <input type="text" id="videoUrl" class="video1" name="videoUrl" class="videoUrl">
+                                        <input type="file" id="video1" class="video1-1" name="video" accept=".mp4, .mpeg, .avi">
+
+                                    </div>
+                                    <label class="action-input1" for="name1">Ваше имя и фамилия </label>
+                                    <input class="text-area1" type="text" name="fullName" id="name1" >
+                                    <label class="action-input1" for="email1">Эл. почта </label>
+                                    <input class="text-area1" type="email" name="email" id="email1"  placeholder="Введите свой электронный адрес">
+                                    <input type="checkbox" id="accept1" name="show-feedback-on-mailbox">
+                                    <label class="action-input" for="accept1">Уведомлять об ответах по эл. почте </label>
+                                    <div class="form-action-btn">
+                                        <button type="submit" name="submit" value="Оставить отзыв" />Оставить отзыв</button>
+                                        <button type="reset" name="cancel" value="Отменить" class="reset">Отменить</button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                         <div class="sort-feedback">
                             <select class="sort-by">
@@ -298,174 +342,83 @@
                     </div>
                     <div class="community-feedbacks">
 
-                        <div class="new-comment"></div>
-
                         <div class="client-feedback">
                             <div class="header-client-feedback-new">
-                                <h4 class="person"><b>test drive</b><span class="date-of-comment">Сегодня</span></h4>
-                                <p>Чoiahds'lf lawdh'fh 'ahd'lkhf 'lkhad'lf'k</p>
+                                <h4 class="person"><b>Вячеслав Бушуев</b><span class="date-of-comment">11/20/2019</span></h4>
+                                <p>Заказал в пятницу утром, в воскресенье в обед уже был с ноутбуком. Первое что могу сказать, что при включении на почте надо чтобы он минут 5 постоял от сети зарядился (чтобы включить его и проверить на битые пиксели). Затем дома морочался с установкой виндовс, чтобы поставить приоритет загрузки не нужно идти в биос, нужно при включении нажать F9 и там выбрать флешку с виндовс. Всем доволен, ноутбук хороший. За 2 часа работы ушло примерно 30% заряда.</p>
                                 <div class="like-dislike">
                                     <a href="#" class="answer">Ответить</a>
                                     <div class="positive-negative">
                                         <label for="likee" class="positive counter">&nbsp</label>
-                                        <input type="button" class="react" id="likee" value="like">
-                                        <p   id="likeee">&nbsp;</p>
+                                        <input type="button" class="react" value="like">
+                                        <p>&nbsp</p>
                                         <label for="dislikee" class="negative">&nbsp</label>
-                                        <input type="button" class="react" id="dislikee" value="dislike">
+                                        <input type="button" class="react" value="dislike">
                                         <a href="#" class="complaint">&nbsp</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
                         <div class="client-feedback">
-                            <div class="header-client-feedback">
-                                <div class="person">
-                                    <span><b>Іво Бобул</b></span>
-                                </div>
-                                <div class="date-of-comment">
-                                    Сегодня
-                                </div>
-                            </div>
-                            <div class="comment">
-                                <p>Чи є тут оптичний привід, щоб я міг дивитися старі записи з концертів, дякую.</p>
-                            </div>
-                            <div class="bottom-client-feedback">
-                                <div class="answer-feedback">
+                            <div class="header-client-feedback-new">
+                                <h4 class="person"><b>
+                                    Михаил Маслов </b><span class="date-of-comment">11/13/2019</span></h4>
+                                <p>Заказал в пятницу утром, в воскресенье в обед уже был с ноутбуком. Первое что могу сказать, что при включении на почте надо чтобы он минут 5 постоял от сети зарядился (чтобы включить его и проверить на битые пиксели). Затем дома морочался с установкой виндовс, чтобы поставить приоритет загрузки не нужно идти в биос, нужно при включении нажать F9 и там выбрать флешку с виндовс. Всем доволен, ноутбук хороший. За 2 часа работы ушло примерно 30% заряда.</p>
+                                <div class="like-dislike">
                                     <a href="#" class="answer">Ответить</a>
-                                    <div class="like-dislike">
-                                        <label for="like1" class="positive counter">&nbsp</label>
-                                        <input type="button" class="react" id="like1" value="like">
-                                        <p id="clicks-for">&nbsp;</p>
-                                        <label for="dislike1" class="negative">&nbsp</label>
-                                        <input type="button" class="react" id="dislike1" value="dislike">
-                                        <p id="clicks-against">&nbsp;</p>
+                                    <div class="positive-negative">
+                                        <label for="likee1" class="positive counter">&nbsp</label>
+                                        <input type="button" class="react" id="likee1" value="like">
+                                        <p id="likeee1">&nbsp;</p>
+                                        <label for="dislikee1" class="negative">&nbsp</label>
+                                        <input type="button" class="react" id="dislikee1" value="dislike">
+                                        <a href="#" class="complaint">&nbsp</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="client-feedback">
+                            <div class="header-client-feedback-new">
+                                <h4 class="person"><b>Алексей Малышенко</b><span class="date-of-comment">10/20/2019</span></h4>
+                                <p>Установка винды только GPT, в MBR флешку не видит. 3 неизвестных устройства при установке ВСЕХ драйверов с официального сайта, пришлось с драйвер пака устанавливать. Батарея держит слабовато, для серфинга интернета на рабочий день не хватает. Но 8 рабочих ядер проц и 8 гиг оперативы это просто ракета, всё летает, винду грузит за 12 секунд с биосом. Был бы этот ноут еще хоть на пару тысяч дешевле....</p>
+                                <div class="like-dislike">
+                                    <a href="#" class="answer">Ответить</a>
+                                    <div class="positive-negative">
+                                        <label for="likee2" class="positive counter">&nbsp</label>
+                                        <input type="button" class="react" id="likee2" value="like">
+                                        <p id="likeee2">&nbsp;</p>
+                                        <label for="dislikee2" class="negative">&nbsp</label>
+                                        <input type="button" class="react" id="dislikee2" value="dislike">
+                                        <a href="#" class="complaint">&nbsp</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="client-feedback">
+                            <div class="header-client-feedback-new">
+                                <h4 class="person"><b>Іво Бобул</b><span class="date-of-comment">01/10/2018</span></h4>
+                                <p>Чи є тут оптичний привід, щоб я міг дивитися старі записи з концертів, дякую.</p>
+                                <div class="like-dislike">
+                                    <a href="#" class="answer">Ответить</a>
+                                    <div class="positive-negative">
+                                        <label for="likee3" class="positive counter">&nbsp</label>
+                                        <input type="button" class="react" id="likee3" value="like">
+                                        <p id="likeee3">&nbsp;</p>
+                                        <label for="dislikee3" class="negative">&nbsp</label>
+                                        <input type="button" class="react" id="dislikee3" value="dislike">
                                         <a href="#" class="complaint">&nbsp</a>
                                     </div>
                                 </div>
                             </div>
                             <div class="comment-to-feedback">
-                                <div class="header-client-feedback">
-                                    <div class="person">
-                                        <span><b>Seller</b></span>
-                                    </div>
-                                    <div class="date-of-comment">
-                                        Сегодня
-                                    </div>
+                                <div class="header-client-feedback-new">
+                                    <h4 class="person"><b>Продавец</b><span class="date-of-comment">01/10/2018</span></h4>
                                 </div>
                                 <div class="comment">
                                     <p>Так, звичайно.</p>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="client-feedback">
-                            <div class="header-client-feedback">
-                                <div class="person">
-                                    <span><b>Маленький задрот</b></span>
-                                </div>
-                                <div class="date-of-comment">
-                                    15-11-19
-                                </div>
-                            </div>
-                            <div class="comment">
-                                <p>а кс го будет идти на максималках?? и еще можна будит диржать майкрафт сервер на етом компютере?????</p>
-                            </div>
-                            <div class="bottom-client-feedback">
-                                <div class="answer-feedback">
-                                    <a href="#" class="answer">Ответить</a>
-                                    <div class="like-dislike">
-                                        <label for="like2" class="positive">&nbsp</label>
-                                        <input type="button" class="react" id="like2" value="like">
-                                        <label for="dislike2" class="negative">&nbsp</label>
-                                        <input type="button" class="react" id="dislike2" value="dislike">
-                                        <a href="#" class="complaint">&nbsp;</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="client-feedback">
-                            <div class="header-client-feedback">
-                                <div class="person">
-                                    <span><b>Петро</b></span>
-                                </div>
-                                <div class="date-of-comment">
-                                    05-01-19
-                                </div>
-                            </div>
-                            <div class="comment">
-                                <p>У мене шось почав глючит компуктор і погано показує екран.</p>
-                            </div>
-                            <div class="image-comment" style="height: 75px; width: 100px; padding: 10px; border: 1px solid lightgrey;">
-                                <a href="#image-comment-popUp" style="width: inherit; opacity: 0.5; cursor: pointer"><img src="ima/crashed.jpg" style="width: inherit;"></a>
-                            </div>
-                            <div class="image-comment-popUp" style="display: none">
-                                <img src="ima/laptop.jpg">
-                            </div>
-                            <div class="bottom-client-feedback">
-                                <div class="answer-feedback">
-                                    <a href="#" class="answer">Ответить</a>
-                                    <div class="like-dislike">
-                                        <label for="like3" class="positive">&nbsp</label>
-                                        <input type="button" class="react" id="like3" value="like">
-                                        <label for="dislike3" class="negative">&nbsp</label>
-                                        <input type="button" class="react" id="dislike3" value="dislike">
-                                        <a href="#" class="complaint">&nbsp;</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="client-feedback">
-                            <div class="header-client-feedback">
-                                <div class="person">
-                                    <span><b>Person name</b></span>
-                                </div>
-                                <div class="date-of-comment">
-                                    10-12-14
-                                </div>
-                            </div>
-                            <div class="comment">
-                                <p>lorem ipsum dolor sit amet.lorem ipsum dolor sit amet.lorem ipsum dolor sit amet.lorem ipsum dolor sit amet.lorem ipsum dolor sit amet.lorem ipsum dolor sit amet.</p>
-                            </div>
-                            <div class="bottom-client-feedback">
-                                <div class="answer-feedback">
-                                    <a href="#" class="answer">Ответить</a>
-                                    <div class="like-dislike">
-                                        <label for="like5" class="positive">&nbsp</label>
-                                        <input type="button" class="react" id="like5" value="like">
-                                        <label for="dislike5" class="negative">&nbsp</label>
-                                        <input type="button" class="react" id="dislike5" value="dislike">
-                                        <a href="#" class="complaint">&nbsp;</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="client-feedback">
-                            <div class="header-client-feedback">
-                                <div class="person">
-                                    <span><b>Person name</b></span>
-                                </div>
-                                <div class="date-of-comment">
-                                    05-07-13
-                                </div>
-                            </div>
-                            <div class="comment">
-                                <p>lorem ipsum dolor sit amet.lorem ipsum dolor sit amet.lorem ipsum dolor sit amet.lorem ipsum dolor sit amet.lorem ipsum dolor sit amet.lorem ipsum dolor sit amet.</p>
-                            </div>
-                            <div class="bottom-client-feedback">
-                                <div class="answer-feedback">
-                                    <a href="#" class="answer">Ответить</a>
-                                    <div class="like-dislike">
-                                        <label for="like4" class="positive">&nbsp</label>
-                                        <input type="button" class="react" id="like4" value="like">
-                                        <label for="dislike4" class="negative">&nbsp</label>
-                                        <input type="button" class="react" id="dislike4" value="dislike">
-                                        <a href="#" class="complaint">&nbsp;</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     <div class="forma">
                         <form id="myForm" action="myForm.php" method="POST">
                             <ul>
@@ -482,16 +435,15 @@
                                 <label for="3-stars" class="star">&bigstar;<br><span>Нормальный</span></label>
                                 <input type="radio" id="2-stars" name="rating" value="2" />
                                 <label for="2-stars" class="star">&bigstar;<br><span>Так себе</span></label>
-                                <input type="radio" id="1-star" name="rating" value="1" />
-                                <label for="1-star" class="star">&bigstar;<br><span>Плохой</span></label>
+                                <input type="radio" id="1-stars" name="rating" value="1" />
+                                <label for="1-stars" class="star">&bigstar;<br><span>Плохой</span></label>
                             </div>
                             <label class="action-input" for="qualities">Достоинства</label>
                             <input class="text-area" type="text" name="qualities" id="qualities" required/>
                             <label class="action-input" for="defects">Недостатки</label>
                             <input class="text-area" type="text" name="defects" id="defects" required/>
                             <label class="action-input" for="description">Комментарий</label><br>
-                            <textarea rows=5"
-                                      class="text-area" name="description" id="description"></textarea>
+                            <textarea rows=5" class="text-area" name="description" id="description"></textarea>
                             <div class="add-content">
                                 <input type="file" id="image" name="image" accept=".png, .jpg, .jpeg">
                                 <label for="image" class="image-icon icons">&nbsp</label>
@@ -513,6 +465,7 @@
                             </div>
                         </form>
                     </div>
+                </div>
                 </div>
                 <aside class="aside-product-sticky_form">
                     <div class="item-to-buy">
@@ -631,7 +584,6 @@
                     </div>
                 </div>
             </footer>
-<script src="js/ajax.js"></script>
 <script src="js/style.js"></script>
 <svg style="display: none" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink"><defs><symbol viewBox="0 0 32 16" id="icon-18">
     <path d="m4.15984.999999-3.219996 2.500001v3.1l2.879996-2.24v10.64h2.68v-14.000001zm14.06406 6.620001c.94-.72 1.5-1.72 1.5-2.92 0-2.3-2.06-3.94-4.94-3.94s-4.95999 1.64-4.95999 3.94c0 1.2.53999 2.2 1.47999 2.9-1.24.74-1.99999 1.94-1.99999 3.32 0 2.54 2.23999 4.3 5.47999 4.3s5.48-1.76 5.48-4.3c0-1.4-.76-2.58-2.04-3.3zm-3.44-4.64c1.38 0 2.32.74 2.32 1.84s-.94 1.86-2.32 1.86-2.32-.76-2.32-1.86.94-1.84 2.32-1.84zm0 9.84c-1.68 0-2.78-.8-2.78-2.02s1.1-2.02 2.78-2.02 2.78.8 2.78 2.02-1.1 2.02-2.78 2.02zm17.0786-4.72h-3.4v-3.44h-2.2v3.44h-3.4v2.2h3.4v3.44h2.2v-3.44h3.4z"></path>
