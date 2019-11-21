@@ -646,7 +646,7 @@ header.header .bottom-section .buttons-wrap .my-card::before {
   top: 0;
   bottom: 0;
   left: 44px;
-  border-right: 2px solid #E5E5E5;
+  border-right: 2px solid #282828;
 }
 header.header .bottom-section .buttons-wrap .my-card::after {
   display: block;
@@ -663,8 +663,11 @@ header.header .bottom-section .buttons-wrap .my-card::after {
   border-radius: 50%;
   transform: translate(-50%, -50%);
 }
+header.header .bottom-section .buttons-wrap .my-card:hover ~ .shopping {
+  display: block;
+}
 header.header .bottom-section .buttons-wrap .shopping {
-  padding: 25px;
+  padding: 25px 25px 23px 25px;
   max-width: 355px;
   position: absolute;
   top: 100%;
@@ -674,14 +677,19 @@ header.header .bottom-section .buttons-wrap .shopping {
   background-color: #FFFFFF;
   z-index: 10;
   box-sizing: border-box;
+  display: none;
+}
+header.header .bottom-section .buttons-wrap .shopping:hover {
+  display: block;
 }
 header.header .bottom-section .buttons-wrap .shopping .about-shopping {
   display: flex;
 }
 header.header .bottom-section .buttons-wrap .shopping .about-shopping .image-wrap {
-  width: 113px;
+  max-width: 113px;
   position: relative;
   margin-right: 11px;
+  align-self: flex-start;
 }
 header.header .bottom-section .buttons-wrap .shopping .about-shopping .image-wrap:after {
   display: block;
@@ -696,11 +704,12 @@ header.header .bottom-section .buttons-wrap .shopping .about-shopping .image-wra
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  transform: translate(50%, 50%);
+  transform: translate(38%, 33%);
+  background-color: white;
 }
 header.header .bottom-section .buttons-wrap .shopping .about-shopping img {
   display: block;
-  width: 100%;
+  min-width: 113px;
 }
 header.header .bottom-section .buttons-wrap .shopping .about-shopping .prod-about {
   width: calc(100% - 113px);
@@ -710,6 +719,111 @@ header.header .bottom-section .buttons-wrap .shopping .about-shopping .prod-abou
   text-transform: uppercase;
   font-weight: lighter;
   line-height: 17px;
+  margin-bottom: 43px;
+}
+header.header .bottom-section .buttons-wrap .shopping .about-shopping .prod-about .details {
+  background-color: #FFFFFF;
+  display: inline-block;
+  font-weight: lighter;
+  margin-bottom: 11px;
+  position: relative;
+  padding-right: 13px;
+}
+header.header .bottom-section .buttons-wrap .shopping .about-shopping .prod-about .details:after {
+  display: block;
+  content: '';
+  background-image: url("../../../img/arrow-grey.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 0;
+  top: 15%;
+  width: 9px;
+  height: 5px;
+}
+header.header .bottom-section .buttons-wrap .shopping .about-shopping .prod-about .show-details {
+  display: none;
+}
+header.header .bottom-section .buttons-wrap .shopping .about-shopping .prod-about .prod-details > span:not(:last-child) {
+  margin-right: 12px;
+}
+header.header .bottom-section .buttons-wrap .shopping .about-shopping .prod-about .prod-details > span > span {
+  font-weight: lighter;
+}
+header.header .bottom-section .buttons-wrap .shopping .about-prod-bottoms .section {
+  margin: 0 -25px;
+  border-bottom: 1px solid #DDDDDD;
+  padding: 17px 25px;
+  display: flex;
+}
+header.header .bottom-section .buttons-wrap .shopping .about-prod-bottoms .top > span {
+  align-self: center;
+}
+header.header .bottom-section .buttons-wrap .shopping .about-prod-bottoms .top > span:first-of-type {
+  display: inline-block;
+  margin-right: 10px;
+}
+header.header .bottom-section .buttons-wrap .shopping .about-prod-bottoms .top > span:last-of-type {
+  color: #FF2D37;
+}
+header.header .bottom-section .buttons-wrap .shopping .about-prod-bottoms .top > label {
+  max-width: 76px;
+  display: block;
+  margin-right: 16px;
+}
+header.header .bottom-section .buttons-wrap .shopping .about-prod-bottoms .top > label > input {
+  max-width: 100%;
+  height: 100%;
+  text-align: center;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid #E5E5E5;
+  font-size: 13px;
+}
+header.header .bottom-section .buttons-wrap .shopping .about-prod-bottoms .top .update {
+  width: 89px;
+  height: 28px;
+  border: none;
+  border-radius: 5px;
+  background-color: #FF2D37;
+  margin-right: 31px;
+  color: #FFFFFF;
+  font-size: 13px;
+}
+header.header .bottom-section .buttons-wrap .shopping .about-prod-bottoms .bottom {
+  justify-content: space-between;
+  padding: 17px 25px 16px;
+  margin-bottom: 17px;
+}
+header.header .bottom-section .buttons-wrap .shopping .about-prod-bottoms .bottom > span {
+  font-weight: 500;
+}
+header.header .bottom-section .buttons-wrap .shopping .about-prod-bottoms .bottom > span:first-of-type {
+  text-transform: uppercase;
+  font-size: 13px;
+  line-height: 15px;
+}
+header.header .bottom-section .buttons-wrap .shopping .about-prod-bottoms .bottom > span:last-of-type {
+  color: #FF2D37;
+  font-size: 18px;
+}
+header.header .bottom-section .buttons-wrap .shopping .about-prod-bottoms .but-wrap {
+  display: flex;
+}
+header.header .bottom-section .buttons-wrap .shopping .about-prod-bottoms .but-wrap > button {
+  height: 30px;
+  border: none;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  border-radius: 5px;
+  background-color: #FF2D37;
+  padding: 0 39px;
+  font-size: 13px;
+  line-height: 15px;
+}
+header.header .bottom-section .buttons-wrap .shopping .about-prod-bottoms .but-wrap > button:first-of-type {
+  margin-right: 15px;
 }
 header.header nav.menu {
   box-sizing: border-box;
