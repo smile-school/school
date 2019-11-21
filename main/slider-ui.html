@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/slider.js"></script>
+    <link rel="stylesheet" href="css/slider.css">
+</head>
+<body>
+<div class="content">
+    <div class="box">
+        <div class="item">
+            <div>
+                <img src="ima/oil-1.jpg" height="400" width="400" />
+                <h3>Название товара0</h3>
+            </div>
+            <p class="price">452 US</p>
+            <a class="btn">В конзину</a>
+        </div>
+        <div class="item">
+            <div>
+                <img src="ima/oil-1.jpg" height="400" width="400" />
+                <h3>Название товара1</h3>
+            </div>
+            <p class="price">452 US</p>
+            <a class="btn">В конзину</a>
+        </div>
+        <div class="item">
+            <div>
+                <img src="ima/oil-1.jpg" height="400" width="400" />
+                <h3>Название товара2</h3>
+            </div>
+            <p class="price">452 US</p>
+            <a class="btn">В конзину</a>
+        </div>
+        <div class="item">
+            <div>
+                <img src="ima/oil-1.jpg" height="400" width="400" />
+                <h3>Название товара</h3>
+            </div>
+            <p class="price">452 US</p>
+            <a class="btn">В конзину</a>
+        </div>
+        <div class="item">
+            <div>
+                <img src="ima/oil-1.jpg" height="400" width="400" />
+                <h3>Название товара</h3>
+            </div>
+            <p class="price">452 US</p>
+            <a class="btn">В конзину</a>
+        </div>
+        <div class="item">
+            <div>
+                <img src="ima/oil-1.jpg" height="400" width="400" />
+                <h3>Название товара</h3>
+            </div>
+            <p class="price">452 US</p>
+            <a class="btn">В конзину</a>
+        </div>
+        <div class="item">
+            <div>
+                <img src="ima/oil-1.jpg" height="400" width="400" />
+                <h3>Название товара</h3>
+            </div>
+            <p class="price">452 US</p>
+            <a class="btn">В конзину</a>
+        </div>
+        <div class="item">
+            <div>
+                <img src="ima/oil-1.jpg" height="400" width="400" />
+                <h3>Название товара</h3>
+            </div>
+            <p class="price">452 US</p>
+            <a class="btn">В конзину</a>
+        </div>
+    </div>
+</div>
+<button id="next">next</button>
+<button id="prev">prev</button>
+<script>
+   var slider = $('.box').smilecarousel({
+        delay:5000,
+        toShow: 3,
+        currentSlide: 2,
+        afterSlide: function () {
+            console.log(this, 'after');
+        },
+        beforeSlide: function () {
+           console.log(this, 'before');
+       },
+   });
+
+   $('#next').on('click', function () {
+       slider.smilecarousel('toNext');
+   });
+
+   $('#prev').on('click', function () {
+       slider.smilecarousel('toPrev');
+   });
+</script>
+</body>
+</html>
