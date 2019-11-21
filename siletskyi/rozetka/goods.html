@@ -141,24 +141,33 @@
             <div class="goods-img-wrap">
                 <div class="goods-img-block">
                     <div class="goods-img-items">
-                        <div class="img-item">
+                        <label for="img1" class="img-item">
                             <img src="ima/goods-item1.jpg" alt="">
-                        </div>
-                        <div class="img-item">
+                        </label>
+                        <label for="img2" class="img-item">
                             <img src="ima/goods-item2.jpg" alt="">
-                        </div>
-                        <div class="img-item">
+                        </label>
+                        <label for="img3" class="img-item">
                             <img src="ima/goods-item3.jpg" alt="">
-                        </div>
-                        <div class="img-item">
+                        </label>
+                        <label for="img4" class="img-item">
                             <img src="ima/goods-item4.jpg" alt="">
-                        </div>
-                        <div class="img-item">
+                        </label>
+                        <label for="img5" class="img-item">
                             <img src="ima/goods-item5.jpg" alt="">
-                        </div>
+                        </label>
                     </div>
                     <div class="goods-img">
+                        <input type="radio" name="goods-img" id="img1" checked>
                         <img src="ima/goods-img1.jpg" alt="">
+                        <input type="radio" name="goods-img" id="img2">
+                        <img src="ima/goods-img2.jpg" alt="">
+                        <input type="radio" name="goods-img" id="img3">
+                        <img src="ima/goods-img3.jpg" alt="">
+                        <input type="radio" name="goods-img" id="img4">
+                        <img src="ima/goods-img4.jpg" alt="">
+                        <input type="radio" name="goods-img" id="img5">
+                        <img src="ima/goods-img5.jpg" alt="">
                     </div>
                 </div>
                 <div class="goods-img-text">
@@ -194,7 +203,107 @@
                 </div>
             </div>
             <div class="goods-description-wrap">
-
+                <div class="goods-content-wrapper">
+                    <div class="goods-content-price">
+                        <div class="goods-content-price-old">
+                            <p>12 499 грн</p>
+                        </div>
+                        <div class="goods-price-buy">
+                            <div class="goods-price">
+                                <p>10 499 <span>грн</span></p>
+                            </div>
+                            <div class="goods-buy">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="27" height="26" fill="none" viewBox="-1 -1 27 26" id="cart-detail" x="567" y="418"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 1a1 1 0 0 1 1-1h1.835a2 2 0 0 1 1.844 1.227L5.423 3h16.13c2.304 0 3.748 2.488 2.605 4.488l-4.07 7.124a2 2 0 0 1-1.303.96l-7.752 1.723a2 2 0 0 1-2.278-1.179L2.835 2H1a1 1 0 0 1-1-1zm6.262 4l4.337 10.342 7.752-1.722 4.07-7.124A1 1 0 0 0 21.555 5H6.262z" fill="#fff"/><circle cx="8" cy="22" r="2" fill="#fff"/><circle cx="20" cy="22" r="2" fill="#fff"/></svg>
+                                <button class="buy-btn" type="submit"> Купить </button>
+                            </div>
+                            <div class="goods-wishlist">
+                                <a href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="25" width="27" viewBox="-1 -1 27 25" id="g-wishlist" x="376" y="837"><path fill-opacity="0" d="M0 0h25v23H0z"/><g fill="none"><path fill-opacity="0" d="M0 0h25v23H0z"/><path d="M0 7.358C0 3.36 3.224 0 7.355 0A7.33 7.33 0 0 1 12.5 2.099 7.328 7.328 0 0 1 17.644 0C21.775 0 25 3.361 25 7.358c0 2.117-.897 4.04-2.348 5.39L12.499 23 2.29 12.694A7.343 7.343 0 0 1 0 7.358zM7.355 2.01c-2.814 0-5.22 2.327-5.22 5.347 0 1.563.653 2.957 1.68 3.928l.013.011 8.67 8.755 8.625-8.709.017-.016a5.387 5.387 0 0 0 1.725-3.97c0-3.019-2.406-5.346-5.221-5.346-1.732 0-3.291.868-4.252 2.246l-.892 1.28-.893-1.28c-.96-1.378-2.52-2.245-4.252-2.245z" fill-rule="evenodd" clip-rule="evenodd" fill="#ffa900"/></g></svg>
+                                    <span>В список желаний</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="goods-pay-method">
+                            <div class="goods-pay-method-item">
+                                <a href="#"><span>Оплата частями</span></a>
+                                <span class="pay-time">7 платежей</span>
+                            </div>
+                            <div class="goods-pay-method-item">
+                                <a href="#"><span>Купить в кредит</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="goods-content-wrapper">
+                    <div class="goods-service">
+                        <div class="goods-service-item">
+                            <div class="service-item-check">
+                                <input type="checkbox" id="check1">
+                                <label for="check1" class="parameter"><span><b>Продление гарантии</b></span></label>
+                            </div>
+                            <div class="service-item-options">
+                                <input type="checkbox" id="sort">
+                                <label for="sort" class="sort-check">
+                                    <span>Продление гарантии на 1 год (10001-15000)</span>
+                                </label>
+                                <div class="menu-sort-none">
+                                    <ul>
+                                        <li>Продление гарантии на 1 год (10001-15000)</li>
+                                        <li>Продление гарантии на 2 года (10001-15000)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="service-item-price">
+                                <span>1 099 грн</span>
+                            </div>
+                        </div>
+                        <div class="goods-service-item">
+                            <div class="service-item-check">
+                                <input type="checkbox" id="check2">
+                                <label for="check2" class="parameter"><span><b>Настройка ПК/ноутбука от А до Я по вашему адресу</b></span></label>
+                            </div>
+                            <div class="service-item-options">
+                                <input type="checkbox" id="sort2">
+                                <label for="sort2" class="sort-check">
+                                    <span>Настройка ПК или ноутбука Ultra</span>
+                                </label>
+                                <div class="menu-sort-none">
+                                    <ul>
+                                        <li>Настройка ПК или ноутбука Ultra</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="service-item-price">
+                                <span>1 499 грн</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="goods-content-wrapper mb-10">
+                    <div class="goods-seller">
+                        <span>Продавец этого товара</span>
+                        <span>Rozetka</span>
+                        <div class="seller-logo">
+                            <a href="#">
+                                <img src="ima/goods-logo.svg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="goods-tools-wrap">
+                    <div class="goods-tools-item">
+                        <div>
+                            <span>656 человек добавили </span>
+                            <span>в&nbsp;<a href="#">список желаний</a></span>
+                        </div>
+                    </div>
+                    <div class="goods-tools-item-link">
+                        <a href="#"><span class="pad-link"><span class="border-bot">Добавить к сравнению</span></span></a>
+                    </div>
+                    <div class="goods-tools-item-link">
+                        <a href="#"><span class="pad-link"><span class="border-bot">Следить за ценой</span></span></a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
