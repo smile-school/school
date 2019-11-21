@@ -2184,6 +2184,10 @@ main.main-laptop.product-pg .char-list > li {
   cursor: pointer;
   color: #3e77aa;
 }
+main.main-laptop.product-pg .char-list > li a {
+  text-decoration: none;
+  color: #3e77aa;
+}
 main.main-laptop.product-pg .char-list > li span {
   color: #8c8484;
 }
@@ -3008,8 +3012,8 @@ main.main-laptop.product-pg .right-side .delivery.content .delivery-car .col .ro
 .title-comment {
   position: relative;
   display: flex;
-  width: 75%;
   align-items: center;
+  margin-bottom: 30px;
 }
 .title-comment .top {
   width: 60%;
@@ -3083,6 +3087,548 @@ main.main-laptop.product-pg .right-side .delivery.content .delivery-car .col .ro
 }
 .title-comment .cheked-garan ul li:hover {
   color: #fb3f4c;
+}
+.feedback-section .head {
+  display: flex;
+  justify-content: space-between;
+}
+.feedback-section .head .name {
+  font-size: 16px;
+  color: #4d4b4b;
+  font-weight: 700;
+}
+.feedback-section .head .rating svg {
+  position: relative;
+  z-index: 2;
+  width: 108px;
+  height: 21px;
+  padding-left: 20px;
+}
+.feedback-section .head .data {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-grow: 1;
+  font-size: 13px;
+  color: #999;
+}
+.feedback-section .head .data svg {
+  padding-left: 10px;
+  display: block;
+  width: 16px;
+  height: 6px;
+  fill: #3a76ac;
+  overflow: hidden;
+  cursor: pointer;
+}
+.feedback-section .head .data svg:hover {
+  color: #4c98dd;
+}
+.feedback-section .main {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+.feedback-section .main .massage {
+  margin-bottom: 7px;
+  font-size: 14px;
+}
+.feedback-section .main .pluse {
+  font-size: 14px;
+}
+.feedback-section .main .pluse::before {
+  content: 'Достоинства:';
+  font-weight: 700;
+  margin-right: 4px;
+}
+.feedback-section .main .minus {
+  font-size: 14px;
+}
+.feedback-section .main .minus::before {
+  content: 'Недостатки:';
+  font-weight: 700;
+  margin-right: 4px;
+}
+.feedback-section .footer-fedback {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 24px;
+  margin-bottom: 32px;
+  border-bottom: 1px solid #eaeaea;
+}
+.feedback-section .footer-fedback .left span {
+  position: relative;
+  padding: 9px 10px 13px 26px;
+  color: #3e77aa;
+  font-size: 14px;
+  cursor: pointer;
+}
+.feedback-section .footer-fedback .left span:nth-child(2) svg {
+  width: 17px;
+  height: 14px;
+}
+.feedback-section .footer-fedback .left span svg {
+  position: absolute;
+  top: 9px;
+  left: 7px;
+  width: 12px;
+  height: 12px;
+  fill: currentColor;
+}
+.feedback-section .footer-fedback .left span::before {
+  position: absolute;
+  content: '';
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background: #fff;
+  z-index: 1;
+}
+.feedback-section .footer-fedback .left span:hover {
+  color: #ff7878;
+}
+.feedback-section .footer-fedback .left span:hover::before {
+  background: #ff7878;
+}
+.feedback-section .footer-fedback .right {
+  display: flex;
+  align-items: center;
+}
+.feedback-section .footer-fedback .right .like-dislike {
+  display: flex;
+  position: relative;
+}
+.feedback-section .footer-fedback .right .like-dislike::before {
+  content: '';
+  width: 1px;
+  height: 18px;
+  position: absolute;
+  background-color: #999;
+  left: 28px;
+  display: block;
+}
+.feedback-section .footer-fedback .right .like-dislike svg.arr {
+  cursor: pointer;
+}
+.feedback-section .footer-fedback .right .like-dislike svg.arr:first-child {
+  display: block;
+  width: 18px;
+  height: 18px;
+  fill: #80d2a4;
+  color: #00a046;
+  margin-right: 20px;
+}
+.feedback-section .footer-fedback .right .like-dislike svg.arr:last-child {
+  display: block;
+  width: 18px;
+  height: 18px;
+  fill: #ffa6aa;
+  color: #ff4b50;
+}
+.feedback-section .footer-fedback .right .reviev {
+  margin-left: 20px;
+}
+.feedback-section .footer-fedback .right .reviev svg {
+  width: 17px;
+  height: 17px;
+  fill: #d2d2d2;
+  color: #ff4b50;
+  overflow: hidden;
+  cursor: pointer;
+}
+.feedback-section .footer-fedback .right .reviev svg:hover {
+  fill: #ff4b50;
+  color: #ff4b50;
+}
+.feedback-section .more-feedback a {
+  cursor: pointer;
+  color: #3e77aa;
+  border-bottom: 1px dashed #3e77aa;
+  font-size: 14px;
+  border: 0;
+  text-decoration: none;
+  font-size: 18px;
+}
+.feedback-section .more-feedback a:hover {
+  color: #fb3f4c;
+  border-bottom: 1px dashed #fb3f4c;
+}
+.feedback-section .more-feedback a:hover {
+  border: 0;
+}
+.commens {
+  display: flex;
+}
+.commens .lleft {
+  width: 75%;
+  padding: 10px;
+}
+.commens .right-comments {
+  width: 25%;
+  background-color: #f7f7f7;
+  padding: 15px;
+  position: relative;
+}
+.commens .right-comments .body {
+  position: sticky;
+  top: 0;
+  bottom: 0;
+}
+.commens .right-comments .body .content {
+  margin-bottom: 10px;
+  background-color: white;
+}
+.commens .right-comments .body .content .tab ul {
+  display: flex;
+  list-style-type: none;
+  font-size: 14px;
+  justify-content: space-around;
+  cursor: pointer;
+}
+.commens .right-comments .body .content .tab ul li {
+  position: relative;
+  display: block;
+  padding: 11px 15px;
+  width: 50%;
+  text-align: center;
+  color: #3a76ac;
+}
+.commens .right-comments .body .content .tab ul li::before {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  z-index: 1;
+  background-color: #f7f7f7;
+}
+.commens .right-comments .body .content .tab ul li:hover::before {
+  height: 2px;
+  background-color: #fb3f4c;
+}
+.commens .right-comments .body .content .tab ul li.active {
+  color: #4d4b4b;
+}
+.commens .right-comments .body .content .tab ul li.active::before {
+  height: 4px;
+  background-color: #00a046;
+}
+.commens .right-comments .body .content .pdoduct-card {
+  display: flex;
+  padding: 20px 15px;
+}
+.commens .right-comments .body .content .pdoduct-card p {
+  font-size: 14px;
+  padding-left: 15px;
+}
+.commens .right-comments .body .content .buy {
+  padding: 15px;
+  display: flex;
+}
+.commens .right-comments .body .content .buy .price {
+  background-color: #fef2b8;
+  padding: 3px 7px 7px 7px;
+  margin-right: 10px;
+}
+.commens .right-comments .body .content .buy .price span {
+  font-size: 24px;
+}
+.commens .right-comments .body .content .buy .add-cart {
+  padding: 8px 20px 9px 45px;
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+  background-color: #00a046;
+  border-radius: 4px;
+  cursor: pointer;
+  display: table;
+  margin-top: 2px;
+  position: relative;
+}
+.commens .right-comments .body .content .buy .add-cart:hover {
+  background-color: #00bc52;
+}
+.commens .right-comments .body .content .buy .add-cart svg {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  margin-top: -14px;
+  width: 26px;
+  height: 24px;
+  fill: #fff;
+}
+.commens .right-comments .body .content .credit {
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #f7f7f7;
+}
+.commens .right-comments .body .content .credit a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #3e77aa;
+  border-bottom: 1px dashed #3e77aa;
+  font-size: 14px;
+}
+.commens .right-comments .body .content .credit a:hover {
+  color: #fb3f4c;
+  border-bottom: 1px dashed #fb3f4c;
+}
+.commens .right-comments .body .content .seller {
+  display: flex;
+}
+.commens .right-comments .body .content .seller section {
+  padding: 15px;
+  width: 50%;
+}
+.commens .right-comments .body .content .seller section:first-child {
+  font-size: 14px;
+}
+.commens .right-comments .body .content .carriage {
+  display: flex;
+  margin-top: 15px;
+}
+.commens .right-comments .body .content .carriage section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  border-left: 1px solid #f7f7f7;
+}
+.commens .right-comments .body .content .carriage section span {
+  text-align: center;
+  cursor: pointer;
+  color: #3e77aa;
+  border-bottom: 1px dashed #3e77aa;
+  font-size: 14px;
+  font-size: 11px;
+}
+.commens .right-comments .body .content .carriage section span:hover {
+  color: #fb3f4c;
+  border-bottom: 1px dashed #fb3f4c;
+}
+.commens .right-comments .body .content .carriage section svg {
+  width: 26px;
+  height: 26px;
+}
+.commens .right-comments .body .content .carriage section.first svg {
+  color: white;
+  fill: #ffa900;
+}
+.commens .right-comments .body .content .carriage section.second svg {
+  fill: #4d4b4b;
+}
+.commens .right-comments .body .content .social-btn {
+  padding: 10px 15px;
+  list-style-type: none;
+  display: flex;
+}
+.commens .right-comments .body .content .social-btn li {
+  display: block;
+  margin: 5px 8px 5px 0;
+  cursor: pointer;
+}
+.commens .right-comments .body .content .social-btn li::before {
+  content: '';
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-image: url(../../ima/sprite1.svg);
+}
+.commens .right-comments .body .content .social-btn li.twitter::before {
+  background-position: 31px -690px;
+}
+.commens .right-comments .body .content .social-btn li.facebook::before {
+  background-position: 31px -718px;
+}
+.commens .right-comments .body .content .social-btn li.mail::before {
+  background-position: 31px -793px;
+}
+.commens .lleft .form-comment {
+  background: #f6f6f6;
+  border: 1px solid #ededed;
+  box-shadow: inset 0 -3px 0 0 #c5c5c5, 3px 3px 7px 0 rgba(200, 200, 200, 0.5);
+  border-radius: 3px;
+}
+.commens .lleft .form-comment .head .tab ul {
+  display: flex;
+  list-style-type: none;
+  font-size: 14px;
+  justify-content: space-around;
+  cursor: pointer;
+}
+.commens .lleft .form-comment .head .tab ul li {
+  position: relative;
+  display: block;
+  padding: 14px;
+  width: 50%;
+  text-align: center;
+  color: #3a76ac;
+}
+.commens .lleft .form-comment .head .tab ul li::before {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  z-index: 1;
+  background-color: #f7f7f7;
+}
+.commens .lleft .form-comment .head .tab ul li:hover::before {
+  height: 2px;
+  background-color: #fb3f4c;
+}
+.commens .lleft .form-comment .head .tab ul li.active {
+  color: #4d4b4b;
+}
+.commens .lleft .form-comment .head .tab ul li.active::before {
+  height: 4px;
+  background-color: #00a046;
+}
+.commens .lleft .form-comment .star {
+  font-size: 0;
+  padding: 25px;
+  display: flex;
+  justify-content: center;
+}
+.commens .lleft .form-comment .star .star-rating__wrap {
+  display: inline-block;
+  font-size: 39px;
+}
+.commens .lleft .form-comment .star .star-rating__wrap::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.commens .lleft .form-comment .star .star-rating__wrap label {
+  padding: 15px;
+}
+.commens .lleft .form-comment .star .star-rating__wrap label::after {
+  position: absolute;
+  bottom: 0;
+  left: 4px;
+  font-size: 11px;
+  color: #999;
+}
+.commens .lleft .form-comment .star .star-rating__wrap label:hover::after {
+  color: #1d1f21;
+}
+.commens .lleft .form-comment .star .star-rating__wrap label.first::after {
+  content: 'Отличный';
+}
+.commens .lleft .form-comment .star .star-rating__wrap label.second::after {
+  content: 'Хороший';
+  left: 9px;
+}
+.commens .lleft .form-comment .star .star-rating__wrap label.three::after {
+  content: 'Нормальный';
+  left: -5px;
+}
+.commens .lleft .form-comment .star .star-rating__wrap label.for::after {
+  content: 'Так себе';
+  left: 7px;
+}
+.commens .lleft .form-comment .star .star-rating__wrap label.five::after {
+  content: 'Плохой';
+  left: -4px;
+}
+.commens .lleft .form-comment .star .star-rating__ico {
+  float: right;
+  padding-left: 2px;
+  cursor: pointer;
+  color: #999;
+}
+.commens .lleft .form-comment .star .star-rating__ico:last-child {
+  padding-left: 0;
+}
+.commens .lleft .form-comment .star .star-rating__input {
+  display: none;
+}
+.commens .lleft .form-comment .star .star-rating__ico:hover:before,
+.commens .lleft .form-comment .star .star-rating__ico:hover ~ .star-rating__ico:before,
+.commens .lleft .form-comment .star .star-rating__input:checked ~ .star-rating__ico:before {
+  color: #ffa900;
+}
+.commens .lleft .body-form {
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+}
+.commens .lleft .body-form label {
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+.commens .lleft .body-form input[type='text'],
+.commens .lleft .body-form textarea {
+  width: 100%;
+  height: 37px;
+  line-height: 18px;
+  box-sizing: border-box;
+  padding: 5px;
+  border: 1px solid #d2d2d2;
+  border-radius: 4px;
+  font-size: 15px;
+  resize: none;
+  caret-color: #00a046;
+  color: #4d4b4b;
+  transition: border-color 0.2s ease;
+}
+.commens .lleft .body-form textarea {
+  height: 128px;
+}
+.commens .send-file {
+  display: flex;
+  padding: 0 25px;
+}
+.commens .send-file span {
+  position: relative;
+}
+.commens .send-file span.bordered {
+  background: #f5f5f5;
+  border: 1px solid #ebebeb;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  padding: 10px;
+  flex-direction: column;
+  height: 100%;
+  text-align: center;
+  margin-right: 10px;
+  color: #3e77aa;
+  fill: #3e77aa;
+}
+.commens .send-file span.bordered svg {
+  width: 38px;
+  height: 34px;
+}
+.commens .send-file span.arr svg {
+  width: 47px;
+  height: 22px;
+  transform: translateY(170%);
+}
+.commens .send-file span.text {
+  font-size: 14px;
+  color: #888;
+  max-width: 350px;
+  padding-left: 11px;
+}
+.commens input[type='submit'] {
+  background-color: #3e77aa;
+  color: white;
+  border-radius: 4px;
+  border: 0;
+  margin-left: 25px;
+  margin-bottom: 25px;
+  cursor: pointer;
+  padding: 7px 18px 8px;
+}
+.commens input[disabled] {
+  color: #a6a5a5;
+  background-color: #eeeeee;
+  cursor: default;
 }
 @keyframes popup {
   from {
