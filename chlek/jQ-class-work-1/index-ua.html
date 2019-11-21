@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/slider.js"></script>
     <script src="js/jquery-ui.js"></script>
+    <script src="js/slider.js"></script>
+
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -80,7 +81,9 @@
 <button id="next">next</button>
 <button id="prev">prev</button>
 <script>
-    var sliderWrap = $('.box'),
+    $('.box').smilecarousel();
+
+  /*  var sliderWrap = $('.box'),
         sliderWidth = sliderWrap.outerWidth(),
         toShow = 4,
         itemWidth = sliderWidth / toShow,
@@ -133,7 +136,7 @@
         } else {
             currentSlide = (currentSlide != 0) ?
                 ((currentSlide - toSlide) > 0) ? currentSlide - toSlide: 0: 0;
-                /*currentSlide - toSlide : 0;*/
+                /!*currentSlide - toSlide : 0;*!/
         }
     }
 
@@ -150,7 +153,8 @@
         } else {
             arrows.remove('.class');
         }
-    }
+    }*/
+
 </script>
 </body>
 </html>
