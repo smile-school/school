@@ -7,6 +7,8 @@
             src="https://code.jquery.com/jquery-3.4.1.min.js"
             integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
             crossorigin="anonymous"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/slider.js"></script>
     <link rel="stylesheet" href="./css/slider_style.css">
 </head>
 <body>
@@ -81,7 +83,23 @@
 <button id="next">next</button>
 <button id="prev">prev</button>
 <script>
-    var sliderWrap = $('.box'),
+    var slider = $('.box').smilecarousel({
+        delay:5000,
+        afterSlide: function () {
+            console.log(this, "after");
+        },
+        beforeSlide: function () {
+            console.log(this, 'before');
+        }
+    });
+    $('#next').on('click', function () {
+        slider.smilecarousel('toNext');
+    });
+        $('#prev').on('click', function () {
+            slider.smilecarousel('toPrev');
+        });
+
+    /*var sliderWrap = $('.box'),
         sliderWidth = sliderWrap.outerWidth(),
         toShow = 4,
         itemWidth = sliderWidth / toShow,
@@ -147,7 +165,7 @@
     }
     function go() {
         sliderItemWrap.animate({'marginLeft': -(currentSlide * itemWidth) + 'px'})
-    }
+    }*/
 </script>
 </body>
 </html>
