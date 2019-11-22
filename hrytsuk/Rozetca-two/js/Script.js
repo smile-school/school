@@ -1,6 +1,6 @@
 (function () {
 
-    function Form(acForm) {
+    function Form() {
         var btn = document.querySelector("#actForm"),
             actForm = document.querySelector(".action-form-bloc"),
             exidForm = document.querySelectorAll(".ehitForm"),
@@ -22,6 +22,8 @@
 
         function setCount(spn) {
             spn.innerHTML = this.counts + ++spn.textContent;
+            var cou1 = spn.innerHTML;
+
         }
 
         function Counter(elem, count) {
@@ -29,13 +31,21 @@
             this.counts = count;
             for (var i = 0; i < elem.length; i++) {
                 this.targetElem[i].addEventListener("click", function () {
-                    var spn = this.children[1];
-                    counter.setCount(spn);
+                  if (this.classList.contains('buton-lice')){
+                      var spn = this.children[1];
+                      counter.setCount(spn);
+                  }
+                    if (this.classList.contains('buton-diz')){
+                        var spn2 = this.children[1];
+                        counter2.setCount(spn);
+                    }
                 });
+
             }
         }
         Counter.prototype.setCount = setCount;
         var counter = new Counter(document.querySelectorAll('.buton-lice'), 0);
+        var counter2 = new Counter(document.querySelectorAll('.buton-diz'), 0);
 
 
 
@@ -45,7 +55,7 @@
 
     function formValid(a) {
         var myForm = document.getElementById('comentForm');
-         myForm.addEventListener('submit', parsForm);
+        myForm.addEventListener('submit', parsForm);
 
         function parsForm(e) {
             e.preventDefault();
@@ -58,11 +68,11 @@
             // var li = document.createElement('li');
 
             var name = '', digniti = '', disadvantages = '', coment = '', rating = 0, urlYotube = '',
-                 date = new Date();
+                date = new Date();
 
 
             data.forEach(function (item,key){
-              if (key === 'name') name = item;
+                if (key === 'name') name = item;
                 else if (key === 'digniti') digniti = item;
                 else if (key === 'disadvantages') disadvantages = item;
                 else if (key === 'coment') coment = item;
@@ -82,7 +92,7 @@
                 '                                                    xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg>'+
                 "</span>"+
                 "</p>"+
-                 "</div>" +
+                "</div>" +
                 '<ul class="rating">\n' +
                 '<li class="star"><span></span><span></span></li>\n' +
                 '<li class="star"><span></span><span></span></li>\n' +
@@ -103,15 +113,15 @@
                 '<dd>\n' + disadvantages +'</dd>\n' +
                 '</dl>\n' +
                 '</div>'+
-            //     '<div class="coment-footer">'+
-            //     '<button class="answer-bottom">'+
-            //     '<svg aria-hidden="true" height="12" width="12">'+
-            //    '<use xlink:href="#icon-return"xmlns:xlink="http://www.w3.org/1999/xlink"></use>'+
-            //     '</svg>'+
-            // Ответить+
-            // '</button>'+
-            "</div>" +
-            "</li>";
+                //     '<div class="coment-footer">'+
+                //     '<button class="answer-bottom">'+
+                //     '<svg aria-hidden="true" height="12" width="12">'+
+                //    '<use xlink:href="#icon-return"xmlns:xlink="http://www.w3.org/1999/xlink"></use>'+
+                //     '</svg>'+
+                // Ответить+
+                // '</button>'+
+                "</div>" +
+                "</li>";
 
             console.log(ul);
             // var name= data.get("name"),
@@ -120,9 +130,9 @@
             //     coment = data.get("coment");
 
         }
+
     }
 
 
     formValid();
-
 })();
