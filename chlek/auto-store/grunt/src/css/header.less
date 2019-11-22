@@ -244,6 +244,7 @@ header.header {
         .container {
             display: flex;
             box-sizing: border-box;
+            padding-right: 15px;
         }
 
         .logo-wrap {
@@ -258,8 +259,8 @@ header.header {
 
         .form-wrap {
             box-sizing: border-box;
-            padding: 5px 18px 0 10px;
-            width: 50%;
+            padding: 5px 21px 0 13px;
+            width: 51%;
 
             .input-wrap {
                 box-sizing: border-box;
@@ -271,7 +272,7 @@ header.header {
                     height: 100%;
                     padding: 10px;
                     font-size: 14px;
-                    width: calc(100% - 54px);
+                    width: calc(100% - 50px);
                     border-radius: 5px 0 0 5px;
                     border: 2px solid #C4C4C4;
 
@@ -335,7 +336,7 @@ header.header {
 
                 .right-section {
                     max-width: 125px;
-                    padding: 0 18px;
+                    padding: 0 16px;
 
                     .red-color {
                         color: #FF2D37;
@@ -584,14 +585,19 @@ header.header {
         padding: 22px 0 0;
         border-bottom: 2px solid #FF2D37;
         position: relative;
+        max-height: 72px;
 
         .wrapper {
-            position: relative;
+
+            .container{
+                padding: 0 15px;
+                position: relative;
+            }
 
             .tab {
                 font-weight: bold;
                 text-transform: uppercase;
-                padding: 20px 17.5px 14px 17.5px;
+                padding: 20px 17.5px 15px 17.5px;
                 display: inline-block;
                 border-radius: 5px 5px 0 0;
                 margin: 0;
@@ -621,10 +627,57 @@ header.header {
                 }
 
                 &.all-cate {
-                    margin: 0 28px 0 15px;
-                    padding: 20px 130px 14px 18px;
+                   margin-right: 28px;
+                    padding: 20px 133px 15px 18px;
                     background-color: #ff2d37;
                     color: #FFFFFF;
+
+                    &:before,
+                    &:after,
+                    & > span {
+                        display: block;
+                        position: absolute;
+                        right: 20px;
+                        border-bottom: 2px solid #FFFFFF;
+                        width: 15px;
+                        opacity: 1;
+                        transition: all 300ms ease-out;
+                    }
+
+                    &:before {
+                        top: 43%;
+                        content: '';
+                    }
+
+                    &:after {
+                        bottom: 36%;
+                        content: '';
+                    }
+
+                    & > span {
+                        top: 52%;
+                        line-height: 0;
+                        transform: translateY(-20%);
+
+                        /*border: none;*/
+                    }
+
+                    &:hover {
+                        &:before,
+                        &:after,
+                        & > span.row {
+                            transform: translateX(200%);
+                            opacity: 0;
+                        }
+
+                        &:after {
+                            transition-delay: 200ms;
+                        }
+
+                        & > span {
+                            transition-delay: 100ms;
+                        }
+                    }
                 }
 
                 &.home {
@@ -658,6 +711,43 @@ header.header {
                 border-top: 2px solid #FF2D37;
                 box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
                 border-radius: 0 0 5px 5px;
+
+                &.all-cate {
+                    left: 5%;
+                    top: 100%;
+                    right: 73.5%;
+                    flex-direction: column;
+                    transform: translateX(-11%);
+                    box-sizing: border-box;
+
+                    & > li {
+                        width: calc(100% - 30px);
+                        cursor: pointer;
+                        position: relative;
+
+                        &:after {
+                            position: absolute;
+                            display: none;
+                            content: '';
+                            width: 9px;
+                            height: 5px;
+                            background-image: url("../../../img/arrow-black.png");
+                            background-size: cover;
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            transform: translateY(-50%) rotate(-90deg);
+                            right: 5%;
+                            top: 50%;
+
+                        }
+
+                        &:hover {
+                            &:after {
+                                display: block;
+                            }
+                        }
+                    }
+                }
 
                 &:hover {
                     display: flex;
