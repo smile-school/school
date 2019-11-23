@@ -6,3 +6,78 @@ body {
   color: #282828;
   min-height: 100vh;
 }
+* {
+  padding: 0;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+  transition: color 0.3s;
+}
+ul {
+  list-style-type: none;
+}
+.wraper-header {
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+.top-header {
+  background-color: #282828;
+  padding: 0 12%;
+  display: flex;
+  justify-content: flex-end;
+}
+.ul-header {
+  display: flex;
+  flex-direction: row;
+  padding: 13px 0;
+  font-size: 13px;
+}
+.ul-header input {
+  display: none;
+}
+.ul-header li {
+  color: #CCCCCC;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+.ul-header li:not(:first-of-type):after {
+  content: "";
+  width: 1px;
+  height: 11px;
+  position: absolute;
+  left: 0;
+  background-color: #CCCCCC;
+}
+.ul-header li .lock {
+  margin-right: 20px;
+  color: #FF2D37;
+}
+.ul-header li a {
+  color: #CCCCCC;
+  display: block;
+}
+.ul-header li a:hover {
+  color: #FF2D37;
+}
+.ul-header li svg {
+  margin-left: 5px;
+}
+.ul-header .country-li img {
+  margin-right: 5px;
+}
+.ul-header .acaunt-crete a:first-of-type {
+  margin-right: 10px;
+}
+.ul-header .acaunt-crete a:last-of-type {
+  margin-left: 5px;
+}
+.ul-header label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
