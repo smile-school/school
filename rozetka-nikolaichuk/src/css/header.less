@@ -23,6 +23,8 @@
     }
 
     &__lang-switcher{
+        padding-top: 3px;
+        margin-left: 15px;
         .lang-switcher__title{
             cursor: pointer;
             position: relative;
@@ -55,6 +57,7 @@
         }
 
         &__link-item {
+            position: relative;
             display: inline-block;
             padding-left: 7px;
 
@@ -69,12 +72,60 @@
             &:hover svg {
                 fill: @header-font-color;
             }
+            .show_links{
+                cursor: pointer;
+                &:hover + .links-popup{
+                    display: block;
+                }
+                span{
+                    border-bottom: 1px dotted;
+                }
+            }
+            .links-popup{
+                display: none;
+                width: 270px;
+                position: absolute;
+                top: 17px;
+                right: 0;
+                padding: 10px 0;
+                background-color: @page-background-color;
+                border: 1px solid @page-border-line-color;
+                border-radius: 4px;
+                z-index: 10;
+                &:hover{
+                    display: block;
+                }
+                &__link-item{
+                    padding: 10px 8px 10px 20px;
+                    &:hover{
+                        .link__arrow > svg{
+                            fill: @page-hover-color;
+                        }
+                    }
+                    .link__text{
+                        float: left;
+                        font-size: larger;
+                    }
+                    .link__arrow{
+                        transform: rotate(-90deg);
+                        float: right;
+                        svg{
+                            fill: @page-link-color;
+                        }
+                    }
+                    &:first-child,
+                    &:last-child{
+                        border-bottom: 1px solid @page-border-line-color;
+                        border-top: 1px solid @page-border-line-color;
+                    }
+                }
+            }
         }
 
     }
 
     &__user {
-        margin-left: auto;
+        margin-left: 40px;
 
         &__link {
             color: @header-font-color;
