@@ -36,7 +36,7 @@ ul{
         padding: 0 15px;
         box-sizing: border-box;
         &:not(:first-of-type){
-           
+
             &:after{
                 content: "";
                 width: 1px;
@@ -83,4 +83,99 @@ ul{
         flex-direction: row;
         align-items: center;
     }
+}
+.header-store{
+    padding: 0 12%;
+}
+.center-header{
+    min-width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding:30px 0;
+}
+.search-form{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    border-radius: 5px;
+    overflow: hidden;
+    box-sizing: border-box;
+    border-radius: 5px;
+    height: 44px;
+
+    input{
+        width: 90%;
+    }
+}
+.logo{
+    display: block;
+    margin-right: 120px;
+}
+.search-button{
+    font-size: @font-size-standart;
+    color: @white-color;
+    padding: 15px 20px;
+    background-color:@bordo;
+    border: 2px solid @bordo;
+}
+.search-input{
+    padding-left: 60px;
+    border: 2px solid @line-gray;
+    border-right: none;
+    outline: 0;
+}
+.likes{
+    margin-left: 30px;
+    min-width: 44px;
+    width: 44px;
+    height: 44px;
+    background-color: @white-color;
+    color: @defolt-color;
+    font-size: @social-font-size;
+    border: 2px solid @line-gray;
+    border-radius: 5px;
+}
+.my-cart{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 60px;
+    border: 2px solid @line-gray;
+    border-radius: 5px;
+    font-weight: 600;
+    height: 44px;
+    box-sizing: border-box;
+    position: relative;
+    padding: 1px;
+    font-size: @font-size-menu;
+    p{
+        padding:0 20px 0 16px;
+        span{
+            color: @bordo;
+            padding-left: 5px;
+        }
+    }
+}
+.bascet-button{
+    &:extend(.likes);
+    margin-left: 0;
+    border: 2px solid @line-gray;
+    border-left: 1px;
+    border-radius: 0;
+}
+.count-shop{
+    position: absolute;
+    background-color: @bordo;
+    color: @white-color;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    top: -10px;
+    left: 33px;
+
 }
