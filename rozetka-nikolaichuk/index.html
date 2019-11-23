@@ -21,9 +21,6 @@
                 <span class="header__phones__phone phone_type_bold"> (044) 537-02-22 </span>
                 <span class="header__phones__phone main-page_hidden">, (044) 503-80-80 </span>
             </div>
-            <div class="header-row__cell header__lang-switcher">
-
-            </div>
             <div class="header-row__cell header__links-container">
                 <ul class="header__links">
                     <li class="header__links__link-item main-page_hidden">
@@ -66,24 +63,11 @@
                     </li>
                 </ul>
             </div>
-            <div class="header-row__cell header__user">
-                <p class="header__user__text">
-                    <span>Здравствуйте,</span>
-                    <svg width="15" height="14">
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#user-small"></use>
-                    </svg>
-                    <a href="#" class="header__user__link">
-                        войдите в личный кабинет
-                    </a>
-                </p>
-            </div>
-        </div>
-        <div class="header-row">
-            <div class="header-row__cell header__logo">
-                <a href="#" class="header__logo__link">
-                    <img src="./dist/ima/logo-white.svg" alt="Интернет магазин Rozetka.ua™ - №1"
-                         title="Интернет магазин Rozetka.ua™ - №1">
-                </a>
+            <div class="header-row__cell header__lang-switcher">
+                <input type="radio" name="lang-switch" id="ru-lang" checked>
+                <label class="lang-switcher__title" for="ru-lang">RU</label>
+                <input type="radio" name="lang-switch" id="ua-lang">
+                <label class="lang-switcher__title" for="ua-lang">UA</label>
             </div>
             <div class="header-row__cell header__city-chooser">
                 <ul class="city-chooser">
@@ -107,7 +91,8 @@
                                 <li id="lviv-choise">Львов</li>
                             </ul>
                             <svg width="13" height="13">
-                                <use xlink:href="#arrow-13x13" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <use xlink:href="#arrow-13x13"
+                                     xmlns:xlink="http://www.w3.org/1999/xlink">
                                 </use>
                             </svg>
                         </label>
@@ -119,7 +104,12 @@
                                          xmlns:xlink="http://www.w3.org/1999/xlink"></use>
                                 </svg>
                             </label>
-                            <p>доставляем заказы по всей Украине!</p>
+                            <p>
+                                <svg width="24" height="17">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                         xlink:href="#delivery"></use>
+                                </svg>
+                                доставляем заказы по всей Украине!</p>
                             <div class="city-chooser__wrapper__popular-cities">
                                 <label class="city-link" for="kiyv-city">Киев</label>
                                 <label class="city-link" for="odessa-city">Одесса</label>
@@ -139,18 +129,39 @@
                     </li>
                 </ul>
             </div>
+            <div class="header-row__cell header__user">
+                <p class="header__user__text">
+                    <span>Здравствуйте,</span>
+                    <svg width="15" height="14">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#user-small"></use>
+                    </svg>
+                    <a href="#" class="header__user__link">
+                        войдите в личный кабинет
+                    </a>
+                </p>
+            </div>
+        </div>
+        <div class="header-row">
+            <div class="header-row__cell header__logo">
+                <a href="#" class="header__logo__link">
+                    <img src="./dist/ima/logo-white.svg" alt="Интернет магазин Rozetka.ua™ - №1"
+                         title="Интернет магазин Rozetka.ua™ - №1">
+                </a>
+            </div>
             <div class="header-row__cell header__search">
                 <form class="search-form" name="search-form" method="get" action="#">
                     <div class="search-form__wrapper">
                         <input type="text" class="search-form__input" placeholder="Я ищу...">
                         <button type="button" class="search-form__button-close">
                             <svg height="16" width="16">
-                                <use xlink:href="#icon-close-modal" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                <use xlink:href="#icon-close-modal"
+                                     xmlns:xlink="http://www.w3.org/1999/xlink"></use>
                             </svg>
                         </button>
                         <div class="search-form__microphone">
                             <svg height="20" width="15">
-                                <use xlink:href="#icon-microphone" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                <use xlink:href="#icon-microphone"
+                                     xmlns:xlink="http://www.w3.org/1999/xlink"></use>
                             </svg>
                         </div>
                         <button type="button" class="search-form__button green-button">Найти</button>
@@ -172,13 +183,15 @@
                     <li class="header__actions-list__item main-page_hidden">
                         <a href="#" class="action__item-link">
                             <svg class="action__item-link__ico" width="36" height="36">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bonuses-icon"></use>
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     xlink:href="#bonuses-icon"></use>
                             </svg>
                             <span class="action__item-link__title">Бонусы</span>
                         </a>
                         <div class="action__popup">
                             <svg class="action__popup__icon bonuses-icon" width="80" height="80">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bonuses-icon"></use>
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     xlink:href="#bonuses-icon"></use>
                             </svg>
                             <div class="action__popup__content">
                                 <div class="action__popup__title">Бонусный счет</div>
@@ -196,13 +209,15 @@
                     <li class="header__actions-list__item">
                         <a href="#" class="action__item-link">
                             <svg class="action__item-link__ico" width="41" height="36">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#g-comparison"></use>
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     xlink:href="#g-comparison"></use>
                             </svg>
                             <span class="action__item-link__title main-page_hidden">Сравнение</span>
                         </a>
                         <div class="action__popup">
                             <svg class="action__popup__icon comparison-icon" width="80" height="80">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#g-comparison"></use>
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     xlink:href="#g-comparison"></use>
                             </svg>
                             <div class="action__popup__content">
                                 <div class="action__popup__title">Нет товаров в сравнении</div>
@@ -214,13 +229,15 @@
                     <li class="header__actions-list__item">
                         <a href="#" class="action__item-link">
                             <svg class="action__item-link__ico" width="35" height="36">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#g-wishlist"></use>
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     xlink:href="#g-wishlist"></use>
                             </svg>
                             <span class="action__item-link__title main-page_hidden">Желания</span>
                         </a>
                         <div class="action__popup">
                             <svg class="action__popup__icon wishlist-icon" width="65" height="57">
-                                <use xlink:href="#icon-favorites" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                <use xlink:href="#icon-favorites"
+                                     xmlns:xlink="http://www.w3.org/1999/xlink"></use>
                             </svg>
 
                             <div class="action__popup__content">
@@ -234,13 +251,15 @@
                     <li class="header__actions-list__item">
                         <a href="#" class="action__item-link">
                             <svg class="action__item-link__ico" width="35" height="36">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#g-cart"></use>
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     xlink:href="#g-cart"></use>
                             </svg>
                             <span class="action__item-link__title main-page_hidden">Корзина</span>
                         </a>
                         <div class="action__popup clearfix-block">
                             <svg class="action__popup__icon cart-icon" width="80" height="80">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#g-cart"></use>
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     xlink:href="#g-cart"></use>
                             </svg>
                             <div class="action__popup__content">
                                 <div class="action__popup__title">Ваша корзина пуста</div>
