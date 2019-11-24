@@ -1,0 +1,128 @@
+footer.footer {
+    color: #FFFFFF;
+
+    .top-section {
+        background-color: #181818;
+
+        .container {
+            display: flex;
+            padding: 75px 15px;
+
+            & > li {
+                width: 44%;
+                box-sizing: border-box;
+                display: flex;
+
+                &:first-child {
+                    width: 60%;
+
+                    ul {
+                        box-sizing: border-box;
+
+                        &:first-child {
+                            width: 55%;
+
+                            li {
+                                position: relative;
+                                & > h5 {
+                                    padding-bottom: 23px;
+                                    line-height: 23px;
+                                }
+
+                                & > a {
+                                    padding-bottom: 28px;
+                                    line-height: 23px;
+                                }
+
+                                &:not(:first-child) {
+                                    padding: 0 20px 0 36px;
+                                    &:before {
+                                        display: block;
+                                        content: '';
+                                        position: absolute;
+                                        top: 50%;
+                                        left: 0;
+                                        transform: translate(-15%, -90%);
+                                        width: 36px;
+                                        height: 35px;
+                                        background-position: center;
+                                        background-size: cover;
+                                        background-repeat: no-repeat;
+                                    }
+                                }
+                                &.address::before{
+                                    background-image: url("../../../img/icon1.png");
+                                }
+                                &.telephone::before{
+                                    background-image: url("../../../img/icon2.png");
+                                }
+                                &.email::before{
+                                    background-image: url("../../../img/icon3.png");
+                                }
+                                &.work-schedule::before{
+                                    background-image: url("../../../img/icon4.png");
+                                }
+                            }
+                        }
+
+                        &:last-child {
+                            width: 45%;
+                            padding: 0 28px;
+                            box-sizing: border-box;
+
+                            h5 {
+                                padding-bottom: 28px;
+                            }
+
+                            a {
+                                padding-bottom: 21px;
+                            }
+                        }
+                    }
+                }
+
+                &:last-child {
+                    padding-left: 25px;
+
+                    ul {
+                        li {
+                            h5 {
+                                padding-bottom: 28px;
+                            }
+
+                            a {
+                                padding-bottom: 21px;
+                            }
+                        }
+
+                        &:first-child {
+                            width: 64%;
+                        }
+
+                        &:last-child {
+                            width: 36%;
+                        }
+                    }
+                }
+
+                & > ul {
+                    width: 50%;
+
+                    li {
+                        & > h5 {
+                            font-weight: 500;
+                            text-transform: uppercase;
+                            line-height: 23px;
+                        }
+
+                        & > a {
+                            display: block;
+                            text-decoration: none;
+                            color: #FFFFFF;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
