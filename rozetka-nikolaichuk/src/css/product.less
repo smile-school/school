@@ -187,7 +187,7 @@
                 padding: 10px 0;
                 position: relative;
 
-                &::before{
+                &::before {
                     .line-mixin(@width: calc(100% + 30px), @height: 1px, @left: -15px, @top: 0, @color: @page-border-line-color);
                 }
 
@@ -241,29 +241,78 @@
                 }
             }
         }
-        &__social-wrapper{
+
+        &__social-wrapper {
             margin-top: 15px;
             padding: 5px 10px;
             border-radius: 4px;
             background-color: @page-background-color;
             border-bottom: 1px solid @tab-respond-right-sidebar-border-color;
         }
-        &__socials-list{
-            .social-link{
+
+        &__socials-list {
+            .social-link {
                 .container-mixin(@width: 28px, @height: 28px);
-                &:hover{
+
+                &:hover {
                     opacity: .8;
                 }
             }
+
             .fb-link > .social-link__ico {
                 .container-mixin(@width: 11px, @height: 20px);
             }
+
             .tw-link > .social-link__ico {
                 .container-mixin(@width: 18px, @height: 14px);
             }
-            .latter-link > .social-link__ico{
+
+            .latter-link > .social-link__ico {
                 .container-mixin(@width: 28px, @height: 28px);
             }
+        }
+    }
+}
+.product-page__menu-container{
+    position: relative;
+    .menu-open-button {
+        cursor: default;
+        &:hover ~ .main-menu-wrapper {
+            display: block;
+        }
+    }
+    .main-menu-wrapper {
+        width: 300px;
+        border: 1px solid #ededed;
+        border-bottom: 3px solid #ccc;
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+        background: #fff;
+        box-shadow: 3px 3px 7px 0 rgba(200, 200, 200, .5);
+    }
+    .hidden-menu{
+        display: none;
+        position: absolute;
+        top: 33px;
+        left: 0;
+        z-index: 20;
+    }
+    .menu-categories {
+        &__item {
+            padding: 10px 8px;
+        }
+
+        &__link-icon {
+            display: none;
+        }
+
+        &__link-arrow {
+            width: 5%;
+            height: 85%;
+        }
+
+        &__link-text {
+            font-size: 14px;
         }
     }
 }
