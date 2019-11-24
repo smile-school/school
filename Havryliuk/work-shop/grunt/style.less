@@ -1,0 +1,59 @@
+* {
+    box-sizing: border-box;
+}
+body{
+font-size: 16px;
+}
+a {
+    text-decoration: none;
+    text-transform: uppercase;
+}
+span{
+    text-transform: capitalize;
+}
+h1,h2{
+    color: black;
+}
+h3,h4,h5,h6{
+    color: @button;
+}
+.wrapper {
+    display: block;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 15px;
+}
+input[type=button]{
+    display: none;
+}
+input[type=radio]{
+    display: none;
+}
+label{
+    cursor: pointer;
+}
+.like-btn::before {
+    content: '\f004';
+}
+.restart-cart::before {
+    content: '\f021';
+}
+.like-btn, .restart-cart {
+    position: relative;
+    padding: 13px 18px 13px;
+    background-color: black;
+    border-radius: 5px;
+    color: white;
+    &:hover {
+        background-color: @button;
+    }
+    &::before {
+        color: white;
+        font-family: Font Awesome\ 5 Free;
+        font-weight: 900;
+        position: absolute;
+        left: calc(50% - 7px);
+        top: calc(50% - 8px);
+        font-size: 15px;
+    }
+}
