@@ -73,9 +73,11 @@
                 } else if (starCount == 2){
                     ratings.children[0].style.width = 43.2 + 'px'
                 } else if (starCount == 3){
-                    ratings.children[0].style.width = 64.8 + 'px'
+                    ratings.children[0].style.width = 63.8 + 'px'
                 } else if (starCount == 4){
                     ratings.children[0].style.width = 86.4 + 'px'
+                } else if (starCount == 0){
+                    ratings.children[0].style.width = 0;
                 }
 
 
@@ -101,6 +103,34 @@
                 minuse.classList.add('minus')
                 main.append(minuse)
                 minuse.textContent = minus
+
+                var footerFeedback = document.createElement('section');
+                footerFeedback.classList.add('footer-fedback')
+                parentComment.append(footerFeedback)
+                footerFeedback.innerHTML = ' <section class="left">\n' +
+                    '                            <span class="replace">\n' +
+                    '                            <svg class="arr" _ngcontent-c11="" aria-hidden="true" height="40" width="40">\n' +
+                    '                            <use _ngcontent-c11="" xlink:href="#review-reply-add" xmlns:xlink="http://www.w3.org/1999/xlink"></use>\n' +
+                    '                        </svg>\n' +
+                    '                                 Ответить\n' +
+                    '                            </span>\n' +
+                    '                            </section>\n' +
+                    '                            <section class="right">\n' +
+                    '                                <section class="like-dislike">\n' +
+                    '                                    <svg class="arr" _ngcontent-c11="" aria-hidden="true" height="40" width="40">\n' +
+                    '                                        <use _ngcontent-c11="" xlink:href="#positive-vote" xmlns:xlink="http://www.w3.org/1999/xlink"></use>\n' +
+                    '                                    </svg>\n' +
+                    '                                    <svg class="arr" _ngcontent-c11="" aria-hidden="true" height="40" width="40">\n' +
+                    '                                        <use _ngcontent-c11="" xlink:href="#negative-vote" xmlns:xlink="http://www.w3.org/1999/xlink"></use>\n' +
+                    '                                    </svg>\n' +
+                    '                                </section>\n' +
+                    '                                <section class="reviev">\n' +
+                    '                                    <svg class="arr" _ngcontent-c11="" aria-hidden="true" height="40" width="40">\n' +
+                    '                                        <use _ngcontent-c11="" xlink:href="#review-complaint" xmlns:xlink="http://www.w3.org/1999/xlink"></use>\n' +
+                    '                                    </svg>\n' +
+                    '                                </section>\n' +
+                    '                            </section>'
+
             }
             createContent();
         }
@@ -127,7 +157,7 @@
             submit.disabled = false
         }
     }
-    document.addEventListener('focus', validateEmail);
+    document.addEventListener('DOMContentLoaded', validateEmail);
     form.addEventListener('submit', function () {
         this.reset();
     });
