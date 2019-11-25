@@ -1,7 +1,40 @@
 .wrapper {
     .container.likes-prod {
-        padding: 53px 15px 50px;
-        margin-bottom: 40px;
+        padding: 53px 15px 45px;
+        position: relative;
+
+        .prev,
+        .next {
+            position: absolute;
+            background-color: #FF2D37;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 5;
+            padding: 13.5px 17.5px;
+            box-sizing: border-box;
+
+            & > img {
+                display: block;
+            }
+
+            &.slick-arrow {
+                @media (max-width: 992px) {
+                    transform: scale(0);
+                }
+            }
+
+        }
+
+        .prev {
+            left: 0;
+        }
+
+        .next {
+            right: 0;
+        }
 
         .title {
             .before-title {
@@ -51,13 +84,17 @@
                 padding: 15px;
                 width: 25%;
                 box-sizing: border-box;
-                @media(max-width: 1200px){
+                @media (max-width: 1200px) {
                     padding: 10px;
+                }
+                @media (max-width: 767px) {
+                    padding: 5px;
                 }
 
                 .card-height-wrap {
                     max-height: 399px;
                     overflow: visible;
+                    margin-bottom: 45px;
                 }
             }
 
@@ -155,6 +192,7 @@
                         color: #FFFFFF;
                         padding-top: 2px;
 
+
                         &:hover {
                             background-color: #FF2D37;
                         }
@@ -162,6 +200,7 @@
                         &:first-child,
                         &:last-child {
                             width: 40px;
+                            padding: 0 13px;
                         }
 
                         &:nth-child(2) {
@@ -199,6 +238,9 @@
                         &:first-child {
                             color: #ff2d37;
                             margin-right: 16px;
+                            @media (max-width: 500px) {
+                                margin-right: 8px;
+                            }
                         }
 
                         &:last-child {
