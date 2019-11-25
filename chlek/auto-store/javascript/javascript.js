@@ -5,6 +5,14 @@
             bigImageClass: '.show-img',
             frameClass: '.frame',
             clickElemClass: '.images-small',
+            events: {
+                beforeLoad: function () {
+                    console.log("My slider start to load.");
+                },
+                afterLoad: function () {
+                    console.log("My slider is load.");
+                },
+            }
         }
     );
 

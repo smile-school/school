@@ -19,6 +19,7 @@
         }
 
         function show(elem) {
+
             self.options.slideShow.classList.add('active');
             setTimeout(function () {
                 self.options.slideShow.src = 'img/' + elem.dataset['image'];
