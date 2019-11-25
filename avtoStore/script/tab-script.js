@@ -1,44 +1,48 @@
 (function () {
 
     function tab() {
-        var tab = document.getElementsByClassName('tab'),
-            tabContent = document.getElementsByClassName('tab-content');
-        hideTabsContent(0);
-        function hideTabsContent(el) {
-            for(var i = el; i < tabContent.length;i++){
-                tabContent[i].classList.remove('shov');
-                tabContent[i].classList.add('hide');
-                tab[i].classList.remove('white-li');
-            }
-        }
+       var tabNav = document.querySelectorAll('.tab'),
+            tabContent = document.querySelectorAll('.tab-content'),
+           tabName;
 
-        var tabs = document.querySelector('.tabs');
-        tabs.addEventListener('click', function (event) {
-            var target = event.target;
-            if (target.className =='tab'){
-                for (var i=0; i<tab.length;i++){
-                    if (target == tab[i]){
-                        showTabContent(i);
-                        break;
-                    }
-                }
-            }
+        tabNav.forEach(item=>{
+            item.addEventListener('click', selectTabNav)
         });
-        function showTabContent(bloc) {
-            if (tabContent[bloc].classList.contains('hide')){
-                hideTabsContent(0);
-                tab[bloc].classList.add('white-li');
-                tabContent[bloc].classList.remove('hide');
-                tabContent[bloc].classList.add('shov');
-
-            }
+        function selectTabNav() {
+            tabNav.forEach(item =>{
+                item.classList.remove('white-li');
+            });
+            this.classList.add('white-li');
+            tabName = this.getAttribute('data-tab-name');
+            selectTabContent(tabName);
+        }
+        function selectTabContent(tabName) {
+            tabContent.forEach(item =>{
+                item.classList.contains(tabName) ? item.classList.add('is-active') : item.classList.remove('is-active');
+            });
         }
     }
+
     tab();
 
-
-
-
-
-
 })();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

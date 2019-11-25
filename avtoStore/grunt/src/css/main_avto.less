@@ -2,9 +2,15 @@
 
 }
 .sidedar-product{
-    padding: 50px 12%;
+    padding-top: 50px;
     display: flex;
     flex-direction: row;
+    overflow: hidden;
+}
+.wrapper{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 .product{
     margin-right: 18px;
@@ -95,7 +101,6 @@ button.add-cart{
     outline: 0;
 }
 .btn-like{
-    margin-left: 0;
     background-color: @defolt-color;
     color: @white-color;
     font-size: @font-size-menu;
@@ -226,6 +231,8 @@ button.add-cart{
 }
 .white-li{
     border-right-color: @white-color;
+    border-left-color: @bordo;
+
 }
 .content-tabs{
     padding: 30px;
@@ -245,15 +252,102 @@ button.add-cart{
         padding-right: 30px;
     }
 }
-
+.content-tabs{
+    min-height: 600px;
+}
+.tab-content{
+    display: none;
+}
+.tab-content.is-active{
+    display: block;
+}
 .custom-tabs{
     img{
         padding: 20px 0 10px 0;
     }
 }
-.shov{
-    display: block;
+.related-products{
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px;
 }
-.hide{
+.slider-product{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    height: 440px;
+}
+.add-to-cart{
     display: none;
+    flex-direction: row;
+    align-items: center;
+    .btn-like{
+        &:first-of-type{
+            margin-left: 0;
+            margin-right: 4px;
+        }
+    }
+    button{
+        cursor: pointer;
+        &:hover{
+            background-color: @bordo;
+        }
+    }
+}
+button.mod-cart{
+    background-color: @defolt-color;
+}
+.item{
+    height: 400px;
+    &:hover{
+        height: 440px;
+        box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.6);
+        .add-to-cart{
+            display: flex;
+        }
+    }
+}
+.bloc-cart-towar{
+    text-align: center;
+}
+.info-cart-towar{
+        .name-towar{
+            text-transform: uppercase;
+            color: @defolt-color;
+            padding: 20px 0 10px 0;
+        }
+        & > img{
+            padding-bottom: 10px;
+        }
+    .price-rod{
+        font-weight: 600;
+    }
+    .now-price{
+        color: @bordo;
+        padding-right: 15px;
+    }
+    .old-price{
+        color: @color-numenclat;
+        text-decoration: line-through;
+    }
+}
+.head-relate-products{
+    text-transform: uppercase;
+    text-align: center;
+    padding-bottom: 30px;
+    h4{
+        font-weight: normal;
+        color: @bordo;
+    }
+    h3{
+        padding-top: 7px;
+        font-weight: 900;
+        font-size:@font-h1;
+        color: @defolt-color;
+        span{
+            color: @bordo;
+        }
+    }
 }
