@@ -3,8 +3,7 @@ header.header {
         background-color: @header-top-sect-background-color;
 
         .wrapper {
-            display: flex;
-            justify-content: flex-end;
+            .flex-mixin(@justify-content: flex-end);
 
             & > ul {
                 width: 436px;
@@ -24,11 +23,9 @@ header.header {
                     }
 
                     &.section {
-                        &:after {
-                            display: block;
-                            content: '';
+                        &::after {
+                            .pseudo-elements-mixin;
                             border-right: 1px solid #CCCCCC;
-                            position: absolute;
                             right: 2px;
                             top: 17px;
                             bottom: 16px;
@@ -60,9 +57,7 @@ header.header {
                             }
 
                             &:after {
-                                display: block;
-                                content: '';
-                                position: absolute;
+                                .pseudo-elements-mixin;
                                 top: 2px;
                                 right: 6px;
                                 bottom: 2px;
@@ -108,15 +103,10 @@ header.header {
                     }
 
                     &:before {
-                        display: block;
-                        content: '';
-                        position: absolute;
+                        .pseudo-elements-mixin;
+                        .background-image-mixin(@image :"arrow.png");
                         width: 9px;
                         height: 5px;
-                        background-image: url("../../../img/arrow.png");
-                        background-size: cover;
-                        background-position: center;
-                        background-repeat: no-repeat;
                         right: 23px;
                         top: 19px;
                         transition: all 300ms ease-out;
@@ -151,15 +141,13 @@ header.header {
                     }
 
                     .all-languages {
+                        .border-mixin;
                         position: absolute;
                         display: none;
-                        background-color: #FFFFFF;
                         left: -2px;
                         right: 4px;
                         top: 100%;
                         padding: 10px;
-                        box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
-                        border: 1px solid #E5E5E5;
                         z-index: 15;
 
                         &:hover {
@@ -203,15 +191,10 @@ header.header {
                     }
 
                     &:before {
-                        display: block;
-                        content: '';
-                        position: absolute;
+                        .pseudo-elements-mixin;
+                        .background-image-mixin(@image :"arrow.png");
                         width: 9px;
                         height: 5px;
-                        background-image: url("../../../img/arrow.png");
-                        background-size: cover;
-                        background-position: center;
-                        background-repeat: no-repeat;
                         right: 18px;
                         top: 19px;
                         transition: all 300ms ease-out;
@@ -236,13 +219,12 @@ header.header {
                     .all-currency {
                         position: absolute;
                         display: none;
-                        background-color: #FFFFFF;
+
                         left: -74px;
                         right: 14px;
                         top: 100%;
                         padding: 10px;
-                        box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
-                        border: 1px solid #E5E5E5;
+                        .border-mixin;
 
                         &:hover {
                             display: block;
@@ -255,9 +237,7 @@ header.header {
                             background-color: #F5F5F5;
 
                             &:hover {
-                                background-color: #FFFFFF;
-                                outline: 1px solid #FF2D37;
-                                color: #FF2D37;
+                                .hover-point;
                             }
 
                             &:not(:last-child) {
@@ -440,9 +420,7 @@ header.header {
                 }
 
                 &::before {
-                    display: block;
-                    content: '';
-                    position: absolute;
+                    .pseudo-elements-mixin;
                     top: 0;
                     bottom: 0;
                     left: 44px;
@@ -453,13 +431,11 @@ header.header {
                 }
 
                 &::after {
-                    display: block;
-                    content: '0';
+                    .pseudo-elements-mixin(@content: '0');
                     font-size: 13px;
                     color: #FFFFFF;
                     background-color: #FF2D37;
                     line-height: 24px;
-                    position: absolute;
                     top: 0;
                     left: 44px;
                     height: 24px;
@@ -479,17 +455,16 @@ header.header {
             }
 
             .shopping {
+                .border-mixin;
                 padding: 25px 25px 23px 25px;
                 max-width: 355px;
                 position: absolute;
                 top: 100%;
                 right: 0;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
-                border: 1px solid #E5E5E5;
-                background-color: #FFFFFF;
                 z-index: 10;
                 box-sizing: border-box;
                 display: none;
+                border-radius: 5px;
 
                 &:hover {
                     display: block;
@@ -505,18 +480,13 @@ header.header {
                         align-self: flex-start;
 
                         &:after {
-                            display: block;
-                            content: '';
-                            position: absolute;
+                            .pseudo-elements-mixin;
+                            .background-image-mixin(@image: "close.png");
                             bottom: 0;
                             right: 0;
                             height: 20px;
                             width: 20px;
                             border-radius: 50%;
-                            background-image: url("../../../img/close.png");
-                            background-position: center;
-                            background-size: cover;
-                            background-repeat: no-repeat;
                             transform: translate(38%, 33%);
                             background-color: white;
                         }
@@ -548,13 +518,8 @@ header.header {
                             padding-right: 13px;
 
                             &:after {
-                                display: block;
-                                content: '';
-                                background-image: url("../../../img/arrow-grey.png");
-                                background-position: center;
-                                background-size: cover;
-                                background-repeat: no-repeat;
-                                position: absolute;
+                                .pseudo-elements-mixin;
+                                .background-image-mixin(@image: "arrow-grey.png");
                                 right: 0;
                                 top: 15%;
                                 width: 9px;
@@ -672,7 +637,6 @@ header.header {
                             &:first-of-type {
                                 margin-right: 15px;
                             }
-
                         }
                     }
                 }
@@ -687,9 +651,8 @@ header.header {
 
         .wrapper {
             .container-tab {
-                display: flex;
+                .flex-mixin;
                 padding: 0 15px;
-                justify-content: space-between;
                 @media (max-width: 992px) {
                     padding: 0 5px;
                     position: relative;
@@ -760,8 +723,7 @@ header.header {
                         &:before,
                         &:after,
                         & > span.row {
-                            display: block;
-                            position: absolute;
+                            .pseudo-elements-mixin;
                             right: 20px;
                             border-bottom: 2px solid #FFFFFF;
                             width: 15px;
@@ -771,7 +733,6 @@ header.header {
 
                         &:before {
                             top: 43%;
-                            content: '';
                             @media (max-width: 992px) {
                                 top: 38%;
                             }
@@ -779,7 +740,6 @@ header.header {
 
                         &:after {
                             bottom: 36%;
-                            content: '';
                             @media (max-width: 992px) {
                                 bottom: 29%;
                             }
@@ -811,6 +771,7 @@ header.header {
                 }
 
                 .tab-points {
+                    .border-mixin;
                     position: absolute;
                     max-height: 400px;
                     top: 100%;
@@ -818,10 +779,8 @@ header.header {
                     right: 0;
                     padding: 15px;
                     z-index: 5;
-                    background-color: #FFFFFF;
                     display: none;
                     border-top: 2px solid #FF2D37;
-                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
                     border-radius: 0 0 5px 5px;
 
                     &:hover {
@@ -843,9 +802,7 @@ header.header {
                                     background-color: #F5F5F5;
 
                                     &:hover {
-                                        outline: 1px solid #FF2D37;
-                                        background-color: #FFFFFF;
-                                        cursor: pointer;
+                                        .hover-point;
                                     }
                                 }
 
@@ -877,21 +834,15 @@ header.header {
                             }
 
                             &:hover {
-                                color: #ff2d37;
-                                outline: 1px solid #FF2D37;
-                                background-color: #FFFFFF;
+                                .hover-point;
                             }
 
                             &:after {
-                                position: absolute;
-                                display: none;
-                                content: '';
+                                .pseudo-elements-mixin;
+                                .background-image-mixin(@image: "arrow-black.png");
                                 width: 9px;
                                 height: 5px;
-                                background-image: url("../../../img/arrow-black.png");
-                                background-size: cover;
-                                background-repeat: no-repeat;
-                                background-position: center;
+
                                 transform: translateY(-50%) rotate(-90deg);
                                 right: 5%;
                                 top: 50%;
@@ -953,8 +904,7 @@ header.header {
                         &::before,
                         &::after,
                         .row {
-                            display: block;
-                            position: absolute;
+                            .pseudo-elements-mixin;
                             right: 20px;
                             border-bottom: 2px solid #FFFFFF;
                             width: 15px;
@@ -964,12 +914,10 @@ header.header {
 
                         &:before {
                             top: 38%;
-                            content: '';
                         }
 
                         &:after {
                             bottom: 29%;
-                            content: '';
                         }
 
                         & > span {
@@ -1010,17 +958,12 @@ header.header {
 
                         .menu-tab {
                             &::after {
-                                display: block;
-                                content: '';
-                                position: absolute;
+                                .pseudo-elements-mixin;
+                                .background-image-mixin(@image: "arrow-black.png");
                                 width: 9px;
                                 height: 5px;
                                 top: 50%;
                                 right: 3px;
-                                background-image: url("../../../img/arrow-black.png");
-                                background-size: cover;
-                                background-repeat: no-repeat;
-                                background-position: center;
                                 transition: all 200ms ease-out;
                             }
 

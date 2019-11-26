@@ -552,6 +552,16 @@ template {
   color: black;
   opacity: 0.75;
 }
+.hover-point {
+  color: #ff2d37;
+  outline: 1px solid #FF2D37;
+  background-color: #FFFFFF;
+}
+.border-mixin {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  border: 1px solid #E5E5E5;
+  background-color: #FFFFFF;
+}
 * {
   margin: 0;
   padding: 0;
@@ -601,6 +611,7 @@ header.header .top-section {
 }
 header.header .top-section .wrapper {
   display: flex;
+  flex-direction: row;
   justify-content: flex-end;
 }
 header.header .top-section .wrapper > ul {
@@ -624,17 +635,17 @@ header.header .top-section .wrapper > ul li {
     padding: 7px;
   }
 }
-header.header .top-section .wrapper > ul li.section:after {
+header.header .top-section .wrapper > ul li.section::after {
   display: block;
   content: '';
-  border-right: 1px solid #CCCCCC;
   position: absolute;
+  border-right: 1px solid #CCCCCC;
   right: 2px;
   top: 17px;
   bottom: 16px;
 }
 @media (max-width: 500px) {
-  header.header .top-section .wrapper > ul li.section:after {
+  header.header .top-section .wrapper > ul li.section::after {
     display: none;
   }
 }
@@ -712,12 +723,12 @@ header.header .top-section .wrapper > ul .language:before {
   display: block;
   content: '';
   position: absolute;
-  width: 9px;
-  height: 5px;
   background-image: url("../../../img/arrow.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  width: 9px;
+  height: 5px;
   right: 23px;
   top: 19px;
   transition: all 300ms ease-out;
@@ -748,15 +759,15 @@ header.header .top-section .wrapper > ul .language .country-flag {
   margin-right: 8px;
 }
 header.header .top-section .wrapper > ul .language .all-languages {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  border: 1px solid #E5E5E5;
+  background-color: #FFFFFF;
   position: absolute;
   display: none;
-  background-color: #FFFFFF;
   left: -2px;
   right: 4px;
   top: 100%;
   padding: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
-  border: 1px solid #E5E5E5;
   z-index: 15;
 }
 header.header .top-section .wrapper > ul .language .all-languages:hover {
@@ -797,12 +808,12 @@ header.header .top-section .wrapper > ul .currency:before {
   display: block;
   content: '';
   position: absolute;
-  width: 9px;
-  height: 5px;
   background-image: url("../../../img/arrow.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  width: 9px;
+  height: 5px;
   right: 18px;
   top: 19px;
   transition: all 300ms ease-out;
@@ -825,13 +836,13 @@ header.header .top-section .wrapper > ul .currency:hover > ul {
 header.header .top-section .wrapper > ul .currency .all-currency {
   position: absolute;
   display: none;
-  background-color: #FFFFFF;
   left: -74px;
   right: 14px;
   top: 100%;
   padding: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
   border: 1px solid #E5E5E5;
+  background-color: #FFFFFF;
 }
 header.header .top-section .wrapper > ul .currency .all-currency:hover {
   display: block;
@@ -843,9 +854,9 @@ header.header .top-section .wrapper > ul .currency .all-currency > li {
   background-color: #F5F5F5;
 }
 header.header .top-section .wrapper > ul .currency .all-currency > li:hover {
-  background-color: #FFFFFF;
+  color: #ff2d37;
   outline: 1px solid #FF2D37;
-  color: #FF2D37;
+  background-color: #FFFFFF;
 }
 header.header .top-section .wrapper > ul .currency .all-currency > li:not(:last-child) {
   margin-bottom: 10px;
@@ -1047,11 +1058,11 @@ header.header .bottom-section .buttons-wrap .my-card::before {
 header.header .bottom-section .buttons-wrap .my-card::after {
   display: block;
   content: '0';
+  position: absolute;
   font-size: 13px;
   color: #FFFFFF;
   background-color: #FF2D37;
   line-height: 24px;
-  position: absolute;
   top: 0;
   left: 44px;
   height: 24px;
@@ -1068,17 +1079,18 @@ header.header .bottom-section .buttons-wrap .my-card:hover ~ .shopping {
   display: block;
 }
 header.header .bottom-section .buttons-wrap .shopping {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  border: 1px solid #E5E5E5;
+  background-color: #FFFFFF;
   padding: 25px 25px 23px 25px;
   max-width: 355px;
   position: absolute;
   top: 100%;
   right: 0;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
-  border: 1px solid #E5E5E5;
-  background-color: #FFFFFF;
   z-index: 10;
   box-sizing: border-box;
   display: none;
+  border-radius: 5px;
 }
 header.header .bottom-section .buttons-wrap .shopping:hover {
   display: block;
@@ -1096,15 +1108,15 @@ header.header .bottom-section .buttons-wrap .shopping .about-shopping .image-wra
   display: block;
   content: '';
   position: absolute;
+  background-image: url("../../../img/close.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   bottom: 0;
   right: 0;
   height: 20px;
   width: 20px;
   border-radius: 50%;
-  background-image: url("../../../img/close.png");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
   transform: translate(38%, 33%);
   background-color: white;
 }
@@ -1133,11 +1145,11 @@ header.header .bottom-section .buttons-wrap .shopping .about-shopping .prod-abou
 header.header .bottom-section .buttons-wrap .shopping .about-shopping .prod-about .details:after {
   display: block;
   content: '';
-  background-image: url("../../../img/arrow-grey.png");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
   position: absolute;
+  background-image: url("../../../img/arrow-grey.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   right: 0;
   top: 15%;
   width: 9px;
@@ -1233,8 +1245,9 @@ header.header nav.menu {
 }
 header.header nav.menu .wrapper .container-tab {
   display: flex;
-  padding: 0 15px;
+  flex-direction: row;
   justify-content: space-between;
+  padding: 0 15px;
 }
 @media (max-width: 992px) {
   header.header nav.menu .wrapper .container-tab {
@@ -1316,6 +1329,7 @@ header.header nav.menu .wrapper .container-tab .menu-tab.all-cats:before,
 header.header nav.menu .wrapper .container-tab .menu-tab.all-cats:after,
 header.header nav.menu .wrapper .container-tab .menu-tab.all-cats > span.row {
   display: block;
+  content: '';
   position: absolute;
   right: 20px;
   border-bottom: 2px solid #FFFFFF;
@@ -1325,7 +1339,6 @@ header.header nav.menu .wrapper .container-tab .menu-tab.all-cats > span.row {
 }
 header.header nav.menu .wrapper .container-tab .menu-tab.all-cats:before {
   top: 43%;
-  content: '';
 }
 @media (max-width: 992px) {
   header.header nav.menu .wrapper .container-tab .menu-tab.all-cats:before {
@@ -1334,7 +1347,6 @@ header.header nav.menu .wrapper .container-tab .menu-tab.all-cats:before {
 }
 header.header nav.menu .wrapper .container-tab .menu-tab.all-cats:after {
   bottom: 36%;
-  content: '';
 }
 @media (max-width: 992px) {
   header.header nav.menu .wrapper .container-tab .menu-tab.all-cats:after {
@@ -1359,6 +1371,9 @@ header.header nav.menu .wrapper .container-tab .menu-tab.all-cats:hover > span {
   transition-delay: 100ms;
 }
 header.header nav.menu .wrapper .container-tab .tab-points {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  border: 1px solid #E5E5E5;
+  background-color: #FFFFFF;
   position: absolute;
   max-height: 400px;
   top: 100%;
@@ -1366,10 +1381,8 @@ header.header nav.menu .wrapper .container-tab .tab-points {
   right: 0;
   padding: 15px;
   z-index: 5;
-  background-color: #FFFFFF;
   display: none;
   border-top: 2px solid #FF2D37;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
   border-radius: 0 0 5px 5px;
 }
 header.header nav.menu .wrapper .container-tab .tab-points:hover {
@@ -1390,9 +1403,9 @@ header.header nav.menu .wrapper .container-tab .tab-points .point > ul li:not(:f
   background-color: #F5F5F5;
 }
 header.header nav.menu .wrapper .container-tab .tab-points .point > ul li:not(:first-child):hover {
+  color: #ff2d37;
   outline: 1px solid #FF2D37;
   background-color: #FFFFFF;
-  cursor: pointer;
 }
 header.header nav.menu .wrapper .container-tab .tab-points .point > ul li > p {
   font-weight: bold;
@@ -1422,15 +1435,15 @@ header.header nav.menu .wrapper .container-tab .tab-points.all-cate > li:hover {
   background-color: #FFFFFF;
 }
 header.header nav.menu .wrapper .container-tab .tab-points.all-cate > li:after {
-  position: absolute;
-  display: none;
+  display: block;
   content: '';
-  width: 9px;
-  height: 5px;
+  position: absolute;
   background-image: url("../../../img/arrow-black.png");
   background-size: cover;
-  background-repeat: no-repeat;
   background-position: center;
+  background-repeat: no-repeat;
+  width: 9px;
+  height: 5px;
   transform: translateY(-50%) rotate(-90deg);
   right: 5%;
   top: 50%;
@@ -1477,6 +1490,7 @@ header.header nav.menu .wrapper .container-tab .hamburger > span {
   header.header nav.menu .wrapper .container-tab .hamburger::after,
   header.header nav.menu .wrapper .container-tab .hamburger .row {
     display: block;
+    content: '';
     position: absolute;
     right: 20px;
     border-bottom: 2px solid #FFFFFF;
@@ -1486,11 +1500,9 @@ header.header nav.menu .wrapper .container-tab .hamburger > span {
   }
   header.header nav.menu .wrapper .container-tab .hamburger:before {
     top: 38%;
-    content: '';
   }
   header.header nav.menu .wrapper .container-tab .hamburger:after {
     bottom: 29%;
-    content: '';
   }
   header.header nav.menu .wrapper .container-tab .hamburger > span {
     top: 52%;
@@ -1530,14 +1542,14 @@ header.header nav.menu .wrapper .container-tab .hamburger .hamb-wrap .menu-tab::
   display: block;
   content: '';
   position: absolute;
+  background-image: url("../../../img/arrow-black.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   width: 9px;
   height: 5px;
   top: 50%;
   right: 3px;
-  background-image: url("../../../img/arrow-black.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
   transition: all 200ms ease-out;
 }
 header.header nav.menu .wrapper .container-tab .hamburger .hamb-wrap .menu-tab:hover {
@@ -1603,15 +1615,15 @@ header.header nav.menu .wrapper .container-tab .hamburger .hamb-wrap .menu-tab:h
 .wrapper .main-container .container-content .links > a:first-child:after {
   display: block;
   content: '';
-  width: 8px;
-  height: 11px;
   position: absolute;
-  top: 0;
-  right: 12%;
   background-image: url("../../../img/arrow-right.svg");
   background-size: cover;
-  background-repeat: no-repeat;
   background-position: center;
+  background-repeat: no-repeat;
+  width: 8px;
+  height: 11px;
+  top: 0;
+  right: 12%;
 }
 .wrapper .main-container .container-content .links > a:hover {
   text-decoration: underline;
@@ -1715,6 +1727,7 @@ header.header nav.menu .wrapper .container-tab .hamburger .hamb-wrap .menu-tab:h
 .wrapper .main-container .container-content .add-prod .description .decore-wrap {
   padding: 13px 0 15px;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
 }
 @media (max-width: 992px) {
@@ -1734,15 +1747,16 @@ header.header nav.menu .wrapper .container-tab .hamburger .hamb-wrap .menu-tab:h
 .wrapper .main-container .container-content .add-prod .description .decore-wrap > span:last-child:before {
   display: block;
   content: '';
+  position: absolute;
+  background-image: url("../../../img/checked.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   width: 10px;
   height: 10px;
-  position: absolute;
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  background-image: url("../../../img/checked.png");
-  background-position: center;
-  background-size: cover;
 }
 .wrapper .main-container .container-content .add-prod .description .rating-wrap {
   padding: 3px 0;
@@ -1995,8 +2009,9 @@ header.header nav.menu .wrapper .container-tab .hamburger .hamb-wrap .menu-tab:h
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.2);
   z-index: 10;
-  justify-content: center;
   display: none;
+  flex-direction: row;
+  justify-content: space-between;
 }
 .wrapper .main-container .container-content .characteristics .details .reviews .blind.active {
   display: flex;
@@ -2019,10 +2034,11 @@ header.header nav.menu .wrapper .container-tab .hamburger .hamb-wrap .menu-tab:h
   box-sizing: border-box;
 }
 .wrapper .main-container .container-content .characteristics .details .reviews .add-rev-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   padding: 0 0 30px;
   border-bottom: 1px solid #E5E5E5;
-  display: flex;
-  justify-content: space-between;
   margin-bottom: 25px;
 }
 .wrapper .main-container .container-content .characteristics .details .reviews .add-rev-section > h3 {
@@ -2058,6 +2074,7 @@ header.header nav.menu .wrapper .container-tab .hamburger .hamb-wrap .menu-tab:h
   padding: 0 10px 20px;
   margin: 0 -10px;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   border-bottom: 1px solid #E5E5E5;
 }
@@ -2079,6 +2096,7 @@ header.header nav.menu .wrapper .container-tab .hamburger .hamb-wrap .menu-tab:h
 .wrapper .main-container .container-content .characteristics .details .reviews > ul li .buttons-section {
   padding-top: 15px;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
 }
 .wrapper .main-container .container-content .characteristics .details .reviews > ul li .buttons-section > button {
@@ -2315,10 +2333,10 @@ header.header nav.menu .wrapper .container-tab .hamburger .hamb-wrap .menu-tab:h
 .wrapper .container.likes-prod .prod-cards .card:hover .image-wrap:before {
   display: block;
   content: '';
+  position: absolute;
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -2341,17 +2359,18 @@ header.header nav.menu .wrapper .container-tab .hamburger .hamb-wrap .menu-tab:h
 .wrapper .container.likes-prod .prod-cards .card .image-wrap:before {
   display: none;
   content: '';
+  position: absolute;
+  background-image: url("../../../img/fl.png");
+  background-size: auto;
+  background-position: center;
+  background-repeat: no-repeat;
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #FF2D37;
-  background-image: url("../../../img/fl.png");
-  background-position: center;
-  background-repeat: no-repeat;
 }
 .wrapper .container.likes-prod .prod-cards .card .button-wrap {
   position: relative;
@@ -2485,6 +2504,9 @@ footer.footer .top-section .container > li:first-child ul:first-child li:not(:fi
   padding: 0 20px 0 36px;
 }
 footer.footer .top-section .container > li:first-child ul:first-child li:not(:first-child):before {
+  /*display: block;
+                                        content: '';
+                                        position: absolute;*/
   display: block;
   content: '';
   position: absolute;
@@ -2493,21 +2515,30 @@ footer.footer .top-section .container > li:first-child ul:first-child li:not(:fi
   transform: translate(-15%, -90%);
   width: 36px;
   height: 35px;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 footer.footer .top-section .container > li:first-child ul:first-child li.address::before {
   background-image: url("../../../img/icon1.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 footer.footer .top-section .container > li:first-child ul:first-child li.telephone::before {
   background-image: url("../../../img/icon2.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 footer.footer .top-section .container > li:first-child ul:first-child li.email::before {
   background-image: url("../../../img/icon3.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 footer.footer .top-section .container > li:first-child ul:first-child li.work-schedule::before {
   background-image: url("../../../img/icon4.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 footer.footer .top-section .container > li:first-child ul:last-child {
   width: 45%;
@@ -2593,6 +2624,7 @@ footer.footer .bottom-section {
 footer.footer .bottom-section .container {
   padding: 25px 15px;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
 }
 @media (max-width: 992px) {

@@ -57,9 +57,7 @@
 
                     &::before,
                     &::after {
-                        display: block;
-                        content: '';
-                        position: absolute;
+                        .pseudo-elements-mixin;
                         top: 50%;
                         height: 8px;
                         width: 8px;
@@ -116,9 +114,7 @@
                 padding-bottom: 23px;
 
                 &:after {
-                    display: block;
-                    content: '';
-                    position: absolute;
+                    .pseudo-elements-mixin;
                     top: 0;
                     right: 0;
                     left: 0;
@@ -139,12 +135,10 @@
                         border: none;
 
                         &:before {
-                            display: block;
-                            content: '';
+                            .pseudo-elements-mixin;
                             width: 50px;
                             height: 50px;
                             border-radius: 50%;
-                            position: absolute;
                             top: 50%;
                             left: 50%;
                             transform: translate(-50%, -50%);
@@ -173,19 +167,15 @@
                     }
 
                     &:before {
-                        display: none;
-                        content: '';
+                        .pseudo-elements-mixin(@display: none);
+                        .background-image-mixin(@image: "fl.png", @background-size: auto);
                         width: 50px;
                         height: 50px;
                         border-radius: 50%;
-                        position: absolute;
                         top: 50%;
                         left: 50%;
                         transform: translate(-50%, -50%);
                         background-color: #FF2D37;
-                        background-image: url("../../../img/fl.png");
-                        background-position: center;
-                        background-repeat: no-repeat;
                     }
                 }
 

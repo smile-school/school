@@ -40,17 +40,12 @@
                         position: relative;
 
                         &:after {
-                            display: block;
-                            content: '';
+                            .pseudo-elements-mixin;
+                            .background-image-mixin(@image: "arrow-right.svg");
                             width: 8px;
                             height: 11px;
-                            position: absolute;
                             top: 0;
                             right: 12%;
-                            background-image: url("../../../img/arrow-right.svg");
-                            background-size: cover;
-                            background-repeat: no-repeat;
-                            background-position: center;
                         }
                     }
 
@@ -150,8 +145,7 @@
 
                     .decore-wrap {
                         padding: 13px 0 15px;
-                        display: flex;
-                        justify-content: space-between;
+                        .flex-mixin;
                         @media (max-width: 992px) {
                             padding: 8px 0;
                         }
@@ -168,17 +162,13 @@
                                 padding-left: 15px;
 
                                 &:before {
-                                    display: block;
-                                    content: '';
+                                    .pseudo-elements-mixin;
+                                    .background-image-mixin(@image: "checked.png");
                                     width: 10px;
                                     height: 10px;
-                                    position: absolute;
                                     left: 0;
                                     top: 50%;
                                     transform: translateY(-50%);
-                                    background-image: url("../../../img/checked.png");
-                                    background-position: center;
-                                    background-size: cover;
                                 }
                             }
                         }
@@ -206,9 +196,7 @@
                                 position: relative;
 
                                 &:after {
-                                    display: block;
-                                    content: '';
-                                    position: absolute;
+                                    .pseudo-elements-mixin;
                                     right: 10px;
                                     top: 2px;
                                     bottom: 0;
@@ -470,6 +458,7 @@
 
                     .reviews {
                         /*--Доробити--*/
+
                         .blind {
                             position: fixed;
                             top: 0;
@@ -478,22 +467,24 @@
                             bottom: 0;
                             background-color: rgba(0, 0, 0, .2);
                             z-index: 10;
-                            justify-content: center;
-                            display: none;
-                            &.active{
+                            .flex-mixin(@display: none);
+
+                            &.active {
                                 display: flex;
                             }
-                            .form-title-wrapper{
+
+                            .form-title-wrapper {
                                 max-width: 500px;
                                 max-height: 900px;
                                 margin: 30px 0;
                                 padding: 15px;
                                 background-color: #FFFFFF;
                                 border-radius: 5px;
-                                form{
+
+                                form {
                                     display: block;
 
-                                    input{
+                                    input {
                                         height: 40px;
                                         width: 100px;
                                         display: block;
@@ -502,13 +493,13 @@
                                 }
                             }
                         }
+
                         /*----------*/
 
                         .add-rev-section {
+                            .flex-mixin;
                             padding: 0 0 30px;
                             border-bottom: 1px solid #E5E5E5;
-                            display: flex;
-                            justify-content: space-between;
                             margin-bottom: 25px;
 
                             & > h3 {
@@ -547,8 +538,7 @@
                                 .top-section {
                                     padding: 0 10px 20px;
                                     margin: 0 -10px;
-                                    display: flex;
-                                    justify-content: space-between;
+                                    .flex-mixin;
                                     border-bottom: 1px solid #E5E5E5;
                                 }
 
@@ -573,8 +563,7 @@
 
                                 .buttons-section {
                                     padding-top: 15px;
-                                    display: flex;
-                                    justify-content: space-between;
+                                    .flex-mixin;
 
                                     & > button {
                                         width: 80px;
