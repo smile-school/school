@@ -577,9 +577,9 @@
                 </div>
             </div>
             <div class="characteristics">
-                <input type="radio" checked name="characteristics" id="details" class="details">
+                <input type="radio" name="characteristics" id="details" class="details">
                 <input type="radio" name="characteristics" id="more" class="more">
-                <input type="radio" name="characteristics" id="reviews" class="reviews">
+                <input type="radio" checked name="characteristics" id="reviews" class="reviews">
                 <input type="radio" name="characteristics" id="custom" class="custom">
                 <div class="tabs-wrap">
                     <label for="details" class="det">details</label>
@@ -674,11 +674,55 @@
                     </div>
 
                     <div class="reviews">
+                        <!--Доробити-->
                         <div class="blind">
                             <div class="form-wrapper">
-                                <form action="#" class="add-rew"></form>
+                                <div class="form-title-wrapper">
+                                    <div class="title">
+                                        <h3>Написати відгук</h3>
+                                        <button class="close-form-js"></button>
+                                    </div>
+                                    <div class="form-wrap">
+                                        <form action="#" class="add-review-form" method="post">
+                                            <label for="benefits" class="input-">Переваги</label>
+                                            <input type="text" id="benefits" name="benefits">
+                                            <label for="disadvantages">Недоліки</label>
+                                            <input type="text" id="disadvantages" name="disadvantages">
+                                            <label for="review">Коментар</label>
+                                            <textarea name="review" id="review" rows="5"></textarea>
+                                            <span class="message">Поле обов'язкове для заповнення</span>
+                                            <div class="add-video-wrap">
+                                                <div class="input-wrap">
+                                                    <label for="youtube">Ссылка на видео с Youtube</label>
+                                                    <input type="url" id="youtube" name="youtube">
+                                                </div>
+                                                <button class="add-video-button">Додати відео</button>
+                                            </div>
+                                            <label for="user-name">Ваше ім'я та прізвище</label>
+                                            <input type="text" id="user-name" name="name">
+                                            <span class="message">Поле обов'язкове для заповнення</span>
+                                            <label for="email-address">Електронна пошта</label>
+                                            <input type="text" id="email-address" name="email">
+                                            <span class="message">Поле обов'язкове для заповнення</span>
+                                            <div class="send-message">
+                                                <input type="checkbox" id="send" name="send">
+                                                <label for="send">Повідомляти про відповіді по електронній пошті</label>
+                                            </div>
+                                            <div class="buttons-wrap">
+                                                <button class="cancel-form" type="reset">
+                                                    Скасувати
+                                                </button>
+                                                <button class="submit-form" type="submit">
+                                                    Залишити відгук
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+                        <!------------------>
+
                         <div class="add-rev-section">
                             <h3>Add you'r review about product</h3>
                             <button class="add-rev">Add&nbsp;review</button>

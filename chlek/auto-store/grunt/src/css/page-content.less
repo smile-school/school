@@ -469,6 +469,7 @@
                     }
 
                     .reviews {
+                        /*--Доробити--*/
                         .blind {
                             position: fixed;
                             top: 0;
@@ -477,8 +478,31 @@
                             bottom: 0;
                             background-color: rgba(0, 0, 0, .2);
                             z-index: 10;
+                            justify-content: center;
                             display: none;
+                            &.active{
+                                display: flex;
+                            }
+                            .form-title-wrapper{
+                                max-width: 500px;
+                                max-height: 900px;
+                                margin: 30px 0;
+                                padding: 15px;
+                                background-color: #FFFFFF;
+                                border-radius: 5px;
+                                form{
+                                    display: block;
+
+                                    input{
+                                        height: 40px;
+                                        width: 100px;
+                                        display: block;
+                                        box-sizing: border-box;
+                                    }
+                                }
+                            }
                         }
+                        /*----------*/
 
                         .add-rev-section {
                             padding: 0 0 30px;
