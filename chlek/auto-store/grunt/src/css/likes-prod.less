@@ -15,6 +15,11 @@
             z-index: 5;
             padding: 13.5px 17.5px;
             box-sizing: border-box;
+            opacity: 0;
+            transition: opacity 500ms ease-out;
+            &:hover {
+                opacity: 1;
+            }
 
             & > img {
                 display: block;
@@ -25,7 +30,6 @@
                     transform: scale(0);
                 }
             }
-
         }
 
         .prev {
@@ -79,6 +83,13 @@
         .prod-cards {
             margin: 13px -15px;
             display: flex;
+
+            &:hover {
+                .prev,
+                .next {
+                    opacity: 1;
+                }
+            }
 
             .card-wrap {
                 padding: 15px;
@@ -192,7 +203,6 @@
                         color: #FFFFFF;
                         padding-top: 2px;
 
-
                         &:hover {
                             background-color: #FF2D37;
                         }
@@ -208,7 +218,6 @@
                             border-left: 1px solid #E5E5E5;
                             border-right: 1px solid #E5E5E5;
                         }
-
                     }
                 }
 
