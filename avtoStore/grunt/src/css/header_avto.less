@@ -403,6 +403,7 @@ ul{
     flex-direction: row;
     align-items: flex-end;
     height: 52px;
+    position: relative;
 }
 .col-menu-how{
     display: flex;
@@ -463,6 +464,9 @@ ul{
     font-weight: 900;
     margin-right: 30px;
     white-space: nowrap;
+    span{
+        padding-right: 4px;
+    }
 }
 .menu-nav{
     display: flex;
@@ -494,6 +498,71 @@ ul{
       }
     }
 }
+.burger {
+    width: 70%;
+    min-height: 100%;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    z-index: 3;
+    display: none;
+}
+.burger::after,
+.burger::before,
+.burger span {
+    width: 35px;
+    height: 2px;
+    z-index: 3;
+    background-color: black;
+    transition: 0.5s all;
+    position: absolute;
+    right: 3px;
+}
+.burger::after {
+    content: "";
+    top: 9px;
+}
+.burger::before {
+    content: "";
+    top: 22px;
+}
+.burger span {
+    top: 35px;
+}
+.bur {
+    display: none;
+}
+.bur:checked ~ ul {
+    flex-direction: column;
+    align-items: center;
+    transition: 0.5s all;
+    min-height: 400px;
+    width: 300px;
+    font-size: 16px;
+    background-color: @white-color;
+    position: absolute;
+    right: 0;
+    top: 50px;
+    z-index: 20;
+}
+.bur:checked ~ ul li {
+
+}
+.bur:checked ~ ::after {
+    transform: rotate(90deg);
+    top: 29px;
+}
+.bur:checked ~ ::before {
+    transform: rotate(45deg);
+    width: 20px;
+    right: 18px;
+    top: 38px;
+}
+.bur:checked ~ label span {
+    transform: rotate(-45deg);
+    width: 20px;
+    top: 38px;
+}
 .home{
     position: relative;
     svg{
@@ -506,5 +575,36 @@ ul{
 
 @media screen  and (max-width: 980px){
     .menu-nav{
+        height: 0;
+        padding: 0;
+        overflow: hidden;
+        .menu-hover-bloc{
+            display: none;
+            right: 170px;
+            top: 0;
+            width: 400px;
+        }
+    }
+    .burger{
+        display: block;
+    }
+    #burger:checked{
+        & ~ .menu-nav{
+            overflow: visible;
+        }
+    }
+
+}
+@media screen  and (max-width: 650px){
+    .menu-nav{
+        .menu-hover-bloc{
+            width: 180px;
+            .col-menu-how{
+                justify-content: center;
+            }
+        }
+    }
+    .col-row{
+        flex-direction: column;
     }
 }

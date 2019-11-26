@@ -673,6 +673,7 @@ ul {
   flex-direction: row;
   align-items: flex-end;
   height: 52px;
+  position: relative;
 }
 .col-menu-how {
   display: flex;
@@ -730,6 +731,9 @@ ul {
   margin-right: 30px;
   white-space: nowrap;
 }
+.all-categories span {
+  padding-right: 4px;
+}
 .menu-nav {
   display: flex;
   flex-direction: row;
@@ -758,6 +762,68 @@ ul {
   fill: #fff;
   transform: rotate(180deg);
 }
+.burger {
+  width: 70%;
+  min-height: 100%;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  z-index: 3;
+  display: none;
+}
+.burger::after,
+.burger::before,
+.burger span {
+  width: 35px;
+  height: 2px;
+  z-index: 3;
+  background-color: black;
+  transition: 0.5s all;
+  position: absolute;
+  right: 3px;
+}
+.burger::after {
+  content: "";
+  top: 9px;
+}
+.burger::before {
+  content: "";
+  top: 22px;
+}
+.burger span {
+  top: 35px;
+}
+.bur {
+  display: none;
+}
+.bur:checked ~ ul {
+  flex-direction: column;
+  align-items: center;
+  transition: 0.5s all;
+  min-height: 400px;
+  width: 300px;
+  font-size: 16px;
+  background-color: #fff;
+  position: absolute;
+  right: 0;
+  top: 50px;
+  z-index: 20;
+}
+.bur:checked ~ ::after {
+  transform: rotate(90deg);
+  top: 29px;
+}
+.bur:checked ~ ::before {
+  transform: rotate(45deg);
+  width: 20px;
+  right: 18px;
+  top: 38px;
+}
+.bur:checked ~ label span {
+  transform: rotate(-45deg);
+  width: 20px;
+  top: 38px;
+}
 .home {
   position: relative;
 }
@@ -766,6 +832,36 @@ ul {
   position: absolute;
   right: 6px;
   transition: transform, 0.3s;
+}
+@media screen and (max-width: 980px) {
+  .menu-nav {
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  .menu-nav .menu-hover-bloc {
+    display: none;
+    right: 170px;
+    top: 0;
+    width: 400px;
+  }
+  .burger {
+    display: block;
+  }
+  #burger:checked ~ .menu-nav {
+    overflow: visible;
+  }
+}
+@media screen and (max-width: 650px) {
+  .menu-nav .menu-hover-bloc {
+    width: 180px;
+  }
+  .menu-nav .menu-hover-bloc .col-menu-how {
+    justify-content: center;
+  }
+  .col-row {
+    flex-direction: column;
+  }
 }
 .sidedar-product {
   padding-top: 50px;
@@ -1210,6 +1306,46 @@ button.mod-cart {
     width: 100%;
   }
 }
+@media screen and (max-width: 840px) {
+  .cart-towar {
+    flex-direction: column;
+  }
+  .check-img img {
+    width: 100%;
+  }
+  .search-input {
+    padding-left: 0;
+  }
+  .img-bloc-towar {
+    margin-right: 0;
+  }
+  .logo {
+    margin-right: 20px;
+  }
+  .my-cart > p {
+    white-space: nowrap;
+  }
+}
+@media screen and (max-width: 740px) {
+  .center-header {
+    flex-direction: column;
+  }
+  .logo {
+    margin-bottom: 30px;
+  }
+  .search-form {
+    width: 100%;
+  }
+  .my-cart {
+    align-self: flex-end;
+  }
+  .hover-cart-bloc {
+    z-index: 50;
+  }
+  .buton-def {
+    align-self: flex-end;
+  }
+}
 .top-footer {
   background-color: #181818;
 }
@@ -1262,4 +1398,20 @@ button.mod-cart {
 }
 .ul-footer-bloc a:hover {
   color: #FF2D37;
+}
+@media screen and (max-width: 960px) {
+  .ul-footer-bloc {
+    flex-wrap: wrap;
+  }
+  .ul-footer-bloc > li {
+    width: 50%;
+    margin-bottom: 20px;
+  }
+  .bottom-footer .wrapers {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .bottom-footer .wrapers img {
+    margin-bottom: 30px;
+  }
 }
