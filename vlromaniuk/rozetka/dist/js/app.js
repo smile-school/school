@@ -157,7 +157,7 @@
             submit.disabled = false
         }
     }
-    document.addEventListener('DOMContentLoaded', validateEmail);
+    //document.addEventListener('DOMContentLoaded', validateEmail);
     form.addEventListener('submit', function () {
         this.reset();
     });
