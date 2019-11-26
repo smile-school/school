@@ -273,46 +273,86 @@
         }
     }
 }
-.product-page__menu-container{
+
+.product-page__menu-container {
     position: relative;
-    .menu-open-button {
-        cursor: default;
-        &:hover ~ .main-menu-wrapper {
-            display: block;
+    display: inline-block;
+    padding-top: 20px;
+
+    &:hover {
+        .open-button__icon {
+            transform: rotate(180deg);
         }
     }
-    .main-menu-wrapper {
-        width: 300px;
-        border: 1px solid #ededed;
-        border-bottom: 3px solid #ccc;
-        border-top-left-radius: 3px;
-        border-bottom-left-radius: 3px;
-        background: #fff;
-        box-shadow: 3px 3px 7px 0 rgba(200, 200, 200, .5);
-    }
-    .hidden-menu{
-        display: none;
-        position: absolute;
-        top: 33px;
-        left: 0;
-        z-index: 20;
-    }
-    .menu-categories {
-        &__item {
-            padding: 10px 8px;
+
+    .menu {
+        &-open-button {
+            cursor: default;
+            font-size: 18px;
+
+            &:hover ~ .menu_hidden {
+                display: block;
+            }
+
+            .open-button__icon {
+                fill: @page-link-color;
+                transition: transform .2s ease-in-out;
+            }
         }
 
-        &__link-icon {
+        &_hidden {
             display: none;
+            position: absolute;
+            top: 56px;
+            left: 0;
+            z-index: 20;
+
+            &:hover {
+                display: block;
+            }
         }
 
-        &__link-arrow {
-            width: 5%;
-            height: 85%;
-        }
+        &-categories {
+            &__item {
+                padding: 10px 8px;
 
-        &__link-text {
-            font-size: 14px;
+                &__submenu {
+                    padding: 1px 1px 1px 300px;
+
+                    .submenu__column_popular {
+                        border-left: 1px solid @page-border-line-color;
+                        position: relative;
+
+                        &::after {
+                            .line-mixin(@width: 1px, @height: 100%, @top: 0, @left: calc(100% - 2px), @color: @page-border-line-color);
+                        }
+                    }
+
+                    .submenu__column {
+                        &:first-child,
+                        &:last-child {
+                            width: 23%;
+                        }
+
+                        &:nth-child(n+2):nth-child(-n+4) {
+                            width: 18%;
+                        }
+                    }
+                }
+            }
+
+            &__link-icon {
+                display: none;
+            }
+
+            &__link-arrow {
+                width: 5%;
+                height: 85%;
+            }
+
+            &__link-text {
+                font-size: 14px;
+            }
         }
     }
 }

@@ -14,7 +14,7 @@ body {
     position: relative;
 }
 
-.page-overlay{
+.page-overlay {
     position: fixed;
     display: none;
     top: 0;
@@ -40,16 +40,20 @@ main,
     max-width: @page-wrapper-width;
     margin: 0 auto;
 }
-h1{
+
+h1 {
     font-size: @h1-font-size;
     color: @heading-font-color;
 }
-h2{
+
+h2 {
     font-size: @h2-font-size;
 }
-h3{
+
+h3 {
     font-size: @h3-font-size;
 }
+
 a.link {
     text-decoration: none;
     transition: color .1s ease-in-out;
@@ -58,6 +62,10 @@ a.link {
 
 a.link:hover {
     color: @page-hover-color;
+}
+
+a.black-link {
+    color: @main-page-font-color;
 }
 
 ul {
@@ -130,19 +138,21 @@ ul {
             }
         }
 
-        & > .latter-link{
-            background-color: @latter-ico-background-color  ;
+        & > .latter-link {
+            background-color: @latter-ico-background-color;
 
-            .social-link__ico{
+            .social-link__ico {
                 background-image: url("@{image-url}latter_ico.svg");
             }
         }
     }
 }
-.border-right-bottom{
+
+.border-right-bottom {
     border-right: 1px solid @page-border-line-color;
     border-bottom: 1px solid @page-border-line-color;
 }
-.show{
+
+.show {
     display: block;
 }
