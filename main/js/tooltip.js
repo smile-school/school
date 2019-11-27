@@ -21,7 +21,7 @@
                 this.status = true;
                 if (this.status) {
                     setTimeout(function () {
-                        document.addEventListener('click', self.closeTooltipBody, false);
+ document.addEventListener('click', self.closeTooltipBody, false);
                     }, 100);
                 }
                 if (this.afterTooltip) this.afterTooltip(elem);

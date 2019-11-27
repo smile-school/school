@@ -10,7 +10,7 @@
             actForm.classList.add(acForm);
         });
 
-        for (var elem of exidForm) {
+        for (var elem in exidForm) {
             elem.addEventListener("click", function () {
                 actForm.classList.remove(acForm);
             })

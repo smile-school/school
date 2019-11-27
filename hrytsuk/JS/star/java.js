@@ -54,10 +54,4 @@
        ratings[i].addEventListener("click", tmp.setReting.bind(tmp));
      
     }
-
-
-
-
-
-
 })();
