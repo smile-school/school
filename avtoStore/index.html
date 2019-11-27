@@ -18,7 +18,7 @@
                 <ul class="ul-header">
                     <li class="acaunt-crete">
                         <span class="lock"><i class="fa fa-lock" aria-hidden="true"></i></span>
-                        <a href="#">Sign In </a>/
+                        <a href="#">Sign In </a><span class="slech">/</span>
                         <a href="#"> Create an Account</a>
                     </li>
                     <li class="country-li li-countrs">
@@ -77,11 +77,11 @@
                         <button class="search-button buton-def"><i class="fa fa-search" aria-hidden="true"></i>
                         </button>
                     </div>
-                    <button class="likes buton-def">
+                    <button class="likes buton-def dzb2">
                         <i class="fa fa-heart" aria-hidden="true"></i>
                     </button>
                     <div class="my-cart">
-                        <button class="bascet-button buton-def">
+                        <button class="bascet-button buton-def dzb">
                             <i class="fa fa-shopping-basket" aria-hidden="true"></i>
                         </button>
                         <p>My Cart <span>$0.00</span></p>
@@ -96,7 +96,8 @@
                                     <div class="info-hover-bloc">
                                         <h3>Carbon Fiber Steering Wheel</h3>
                                         <div class="details-bloc">
-                                            <p class="det-p">See Details</p>
+                                            <input type="checkbox" id="chec-edit" class="chec-edit">
+                                            <label for="chec-edit" class="det-p">See Details</label>
                                             <div class="edit-towar">
                                                 <span class="name-edit">Size <span>S</span></span>
                                                 <span class="name-edit">Color <span>Blue</span></span>
@@ -253,8 +254,8 @@
                         <div class="selection">
                             <div class="select sel-two">
                                 <label for="select-one">Size<span>*</span></label>
-                                <select id="select-one">
-                                    <option></option>
+                                <select id="select-one" class="select-twoo">
+                                    <option>-- Please Select --</option>
                                 </select>
                                 <span class="strel">
                                     <svg width="9" height="5" viewBox="0 0 9 5" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -275,15 +276,19 @@
                             </div>
                         </div>
                         <div class="cart-add">
-                            <span>Qty</span>
-                            <input type="text" class="count-input" value="1">
-                            <button class="add-cart">Add to Cart</button>
-                            <button class="btn-like likes">
-                                <i class="fa fa-heart" aria-hidden="true"></i>
-                            </button>
-                            <button class="btn-like likes">
-                                <i class="fa fa-refresh" aria-hidden="true"></i>
-                            </button>
+                            <div class="qty-inp">
+                                <label for="text-count">Qty</label>
+                                <input type="text" class="count-input" value="1" id="text-count">
+                            </div>
+                            <div class="bloc-btn-main">
+                                <button class="add-cart">Add to Cart</button>
+                                <button class="btn-like likes">
+                                    <i class="fa fa-heart" aria-hidden="true"></i>
+                                </button>
+                                <button class="btn-like likes">
+                                    <i class="fa fa-refresh" aria-hidden="true"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -596,7 +601,7 @@
         </div>
         <div class="bottom-footer">
             <div class="wrapers">
-                <img src="./img/payment-footer%201.png" alt="payment">
+                <img src="./img/payment-footer%201.png" alt="payment" class="foot-img">
                 <p>SM Autostore © 2019 Demo Store. All Rights Reserved. Designed by MagenTech.Com</p>
             </div>
         </div>

@@ -75,7 +75,7 @@
     justify-content: space-between;
     align-items: center;
     margin-top: 20px;
-    & > span{
+    & > label{
         margin-right: 6px;
     }
 }
@@ -97,11 +97,15 @@ button.add-cart{
     width: 90px;
     height: 44px;
     box-sizing: border-box;
-    padding-left: 40px;
+    text-align: center;
     margin-right: 5px;
     border-radius: 5px;
     border: 1px solid @line-bloc;
     outline: 0;
+}
+.bloc-btn-main{
+    flex-grow: 1;
+    display: flex;
 }
 .btn-like{
     background-color: @defolt-color;
@@ -375,6 +379,11 @@ button.mod-cart{
 .bloc-cart-towar{
     text-align: center;
 }
+button.dzb2{
+    &:hover{
+        border-color: @defolt-color;
+    }
+}
 .href-img-bloc{
     display: block;
     position: relative;
@@ -450,18 +459,19 @@ button.mod-cart{
     }
 }
 
-@media screen and (max-width: 1100px){
+@media screen and (max-width: 1150px){
     .sidedar-product{
         flex-direction: column;
     }
     .main-aside{
+        margin-top: 30px;
         width: 100%;
         .top-aside{
             width: 100%;
         }
     }
 }
-@media screen and (max-width: 840px){
+@media screen and (max-width: 860px){
     .cart-towar{
         flex-direction: column;
     }
@@ -486,6 +496,16 @@ button.mod-cart{
     }
 }
 @media screen  and (max-width: 740px){
+    .detailed-information{
+        flex-direction: column;
+    }
+    button.dzb{
+        border-bottom: none;
+        border-radius: 5px;
+    }
+    button.dzb2{
+        margin: 10px 0 ;
+    }
     .center-header{
         flex-direction: column;
     }
@@ -499,9 +519,73 @@ button.mod-cart{
         align-self: flex-end;
     }
     .hover-cart-bloc{
-        z-index: 50;
+        z-index: 100;
     }
     .buton-def{
         align-self: flex-end;
+    }
+    .slider-product{
+        &:hover{
+            .arrows{
+                display: none;
+            }
+        }
+        .item{
+            &:hover{
+                box-shadow: none;
+                height: auto;
+            }
+            .bloc-cart-towar{
+                &:hover{
+                    .add-to-cart{
+                        display: none;
+                    }
+                }
+            }
+            .add-to-cart{
+                transform: scale(0);
+                display: none;
+                opacity: 0;
+            }
+        }
+    }
+    .item{
+        height: 300px;
+        overflow: hidden;
+    }
+}
+@media screen and (max-width: 480px){
+    .my-cart{
+        &:hover{
+            .hover-cart-bloc{
+                display: none;
+            }
+        }
+    }
+    .slider-wrap{
+        .items{
+            img{
+                width: 100%;
+            }
+        }
+    }
+    .selection{
+        flex-direction: column;
+        .select-twoo{
+            margin-bottom: 20px;
+        }
+        .sel-two{
+            width: 75%;
+            .strel{
+                top: 42%;
+            }
+        }
+    }
+    .cart-add{
+        flex-direction: column;
+    }
+    .bloc-btn-main{
+        width: 100%;
+        margin-top: 10px;
     }
 }
