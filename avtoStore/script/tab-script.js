@@ -25,6 +25,32 @@
 
     tab();
 
+    function TochSlider() {
+        var self = this;
+        this.param = {
+            globBlock:document.querySelector('.glob-bloc-img'),
+            blocClick:document.querySelector('.bloc-click'),
+            elem : document.querySelector('.slider-wrap')
+        };
+
+        function elemClick() {
+            self.param.elem.addEventListener('click',function (event) {
+                if (event.target.tagName === 'IMG'){
+                    self.param.blocClick.style.left = event.target.offsetLeft + 'px';
+                    leaving(event.target);
+                }
+            })
+        }
+        function leaving(element) {
+           setTimeout(function () {
+               self.param.globBlock.src = './img/'+ element.dataset['slick'];
+
+           }, 300)
+        }
+
+        elemClick();
+    }
+    TochSlider();
 })();
 
 

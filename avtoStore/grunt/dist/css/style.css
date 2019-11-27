@@ -858,11 +858,6 @@ ul {
   right: 6px;
   transition: transform, 0.3s;
 }
-@media screen and (min-width: 980px) {
-  ul.menu-nav {
-    display: none;
-  }
-}
 @media screen and (max-width: 980px) {
   .menu-nav {
     height: 0;
@@ -946,6 +941,10 @@ ul {
 .reting li a {
   color: #282828;
   white-space: nowrap;
+}
+.glob-bloc-img {
+  display: flex;
+  width: 100%;
 }
 .price {
   font-size: 22px;
@@ -1054,7 +1053,11 @@ button.add-cart:hover {
 .slider-wrap {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  position: relative;
+  justify-content: center;
+}
+.slider-wrap .item:not(:first-of-type) {
+  margin-left: 10px;
 }
 .h3-towar-section {
   font-size: 22px;
@@ -1356,6 +1359,16 @@ button.dzb2:hover {
 .head-relate-products h3 span {
   color: #FF2D37;
 }
+.bloc-click {
+  width: 95px;
+  height: 95px;
+  position: absolute;
+  border: 1px solid #FF2D37;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  transition: left 500ms ease-out;
+}
 @media screen and (max-width: 1150px) {
   .sidedar-product {
     flex-direction: column;
@@ -1389,6 +1402,9 @@ button.dzb2:hover {
   }
 }
 @media screen and (max-width: 740px) {
+  .des {
+    width: 100%;
+  }
   .detailed-information {
     flex-direction: column;
   }
@@ -1441,8 +1457,13 @@ button.dzb2:hover {
   .my-cart:hover .hover-cart-bloc {
     display: none;
   }
+  .slider-wrap {
+    position: relative;
+    display: flex;
+  }
   .slider-wrap .items img {
-    width: 100%;
+    width: 75px;
+    height: 75px;
   }
   .selection {
     flex-direction: column;
@@ -1462,6 +1483,12 @@ button.dzb2:hover {
   .bloc-btn-main {
     width: 100%;
     margin-top: 10px;
+  }
+}
+@media screen and (max-width: 370px) {
+  .slider-wrap .items img {
+    width: 55px;
+    height: 55px;
   }
 }
 .top-footer {

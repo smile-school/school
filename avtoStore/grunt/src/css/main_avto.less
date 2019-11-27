@@ -30,6 +30,10 @@
         }
     }
 }
+.glob-bloc-img{
+    display: flex;
+    width: 100%;
+}
 .price{
     font-size:@font-side-section;
     padding-bottom: 14px;
@@ -137,7 +141,13 @@ button.add-cart{
 .slider-wrap{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    position: relative;
+    justify-content: center;
+    .item{
+        &:not(:first-of-type){
+            margin-left: 10px;
+        }
+    }
 }
 .h3-towar-section{
     font-size:@font-side-section;
@@ -458,7 +468,16 @@ button.dzb2{
         }
     }
 }
-
+.bloc-click {
+    width: 95px;
+    height: 95px;
+    position: absolute;
+    border: 1px solid #FF2D37;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    transition: left 500ms ease-out;
+}
 @media screen and (max-width: 1150px){
     .sidedar-product{
         flex-direction: column;
@@ -496,6 +515,9 @@ button.dzb2{
     }
 }
 @media screen  and (max-width: 740px){
+    .des{
+        width: 100%;
+    }
     .detailed-information{
         flex-direction: column;
     }
@@ -563,9 +585,12 @@ button.dzb2{
         }
     }
     .slider-wrap{
+        position: relative;
+        display: flex;
         .items{
             img{
-                width: 100%;
+                width: 75px;
+                height: 75px;
             }
         }
     }
@@ -587,5 +612,15 @@ button.dzb2{
     .bloc-btn-main{
         width: 100%;
         margin-top: 10px;
+    }
+}
+@media screen and (max-width: 370px){
+    .slider-wrap{
+        .items{
+            img{
+                width: 55px;
+                height: 55px;
+            }
+        }
     }
 }
