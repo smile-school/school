@@ -9,8 +9,10 @@
     <script src="javascript/jquery-3.4.1.min.js"></script>
     <script src="javascript/slick.min.js"></script>
     <script src="javascript/slider.js"></script>
+    <script src="javascript/add-review.js"></script>
 </head>
 <body>
+
 <header class="header">
     <div class="top-section">
         <div class="wrapper">
@@ -96,8 +98,8 @@
                             <div class="image-wrap"><img src="img/aosake.png" alt="" class="prod-photo"></div>
                             <div class="prod-about">
                                 <p>Carbon&nbsp;Fiber&nbsp;Steering Wheel</p>
-                                <label for="show-details" class="details">See Details</label>
                                 <input type="checkbox" id="show-details" class="show-details">
+                                <label for="show-details" class="details">See Details</label>
                                 <div class="prod-details">
                                     <span class="det-size">
                                         Size
@@ -543,21 +545,25 @@
                         <div class="selects">
                             <label>
                                 <span>size</span>
-                                <select name="size" id="size">
-                                    <option value="please-select">-- Please Select --</option>
-                                    <option value="13">13</option>
-                                    <option value="14">14</option>
-                                    <option value="15">15</option>
-                                </select>
+                                <div>
+                                    <select name="size" id="size">
+                                        <option value="please-select">-- Please Select --</option>
+                                        <option value="13">13</option>
+                                        <option value="14">14</option>
+                                        <option value="15">15</option>
+                                    </select>
+                                </div>
                             </label>
                             <label>
                                 <span>color</span>
-                                <select name="size" id="color">
-                                    <option value="Please Select">-- Please Select --</option>
-                                    <option value="black">black</option>
-                                    <option value="darkblue">darkblue</option>
-                                    <option value="brown">brown</option>
-                                </select>
+                                <div>
+                                    <select name="size" id="color">
+                                        <option value="Please Select">-- Please Select --</option>
+                                        <option value="black">black</option>
+                                        <option value="darkblue">darkblue</option>
+                                        <option value="brown">brown</option>
+                                    </select>
+                                </div>
                             </label>
                         </div>
                         <div class="buttons-wrap">
@@ -577,9 +583,9 @@
                 </div>
             </div>
             <div class="characteristics">
-                <input type="radio" name="characteristics" id="details" class="details">
+                <input type="radio" checked name="characteristics" id="details" class="details">
                 <input type="radio" name="characteristics" id="more" class="more">
-                <input type="radio" checked name="characteristics" id="reviews" class="reviews">
+                <input type="radio" name="characteristics" id="reviews" class="reviews">
                 <input type="radio" name="characteristics" id="custom" class="custom">
                 <div class="tabs-wrap">
                     <label for="details" class="det">details</label>
@@ -674,12 +680,11 @@
                     </div>
 
                     <div class="reviews">
-                        <!--Доробити-->
-                        <div class="blind active">
+                        <div class="blind">
                             <div class="form-wrapper">
                                 <div class="form-title-wrapper">
                                     <div class="title">
-                                        <h3>Написати відгук</h3>
+                                        <h3>Write review</h3>
                                         <button class="close-form-js">
                                             <svg width="25" height="25" viewBox="0 0 20 20" fill="#282828"
                                                  xmlns="http://www.w3.org/2000/svg">
@@ -689,32 +694,32 @@
                                     </div>
                                     <div class="form-wrap">
                                         <form action="#" class="add-review-form" method="post">
-                                            <label for="benefits" class="input-">Переваги</label>
+                                            <label for="benefits" class="input-">Benefits</label>
                                             <input type="text" id="benefits" name="benefits">
-                                            <label for="disadvantages">Недоліки</label>
+                                            <label for="disadvantages">Disadvantages</label>
                                             <input type="text" id="disadvantages" name="disadvantages">
-                                            <label for="review">Коментар</label>
+                                            <label for="review">Review</label>
                                             <textarea name="review" id="review" rows="5"></textarea>
-                                            <span class="message">Поле обов'язкове для заповнення</span>
-                                            <label for="youtube">Ссылка на видео с Youtube</label>
+                                            <span class="message">Minimal length of message is 60 symbols!</span>
+                                            <label for="youtube">Youtube's link to video</label>
                                             <input type="url" id="youtube" name="youtube">
-                                            <label for="user-name">Ваше ім'я та прізвище</label>
+                                            <label for="user-name">Your full name</label>
                                             <input type="text" id="user-name" name="name">
-                                            <span class="message">Поле обов'язкове для заповнення</span>
-                                            <label for="email-address">Електронна пошта</label>
+                                            <span class="message">The field is required!</span>
+                                            <label for="email-address">Email</label>
                                             <input type="text" id="email-address" name="email">
-                                            <span class="message">Поле обов'язкове для заповнення</span>
+                                            <span class="message">The field is required!</span>
                                             <div class="send-message">
                                                 <input type="checkbox" id="send" class="checkbox" name="send">
-                                                <label for="send">Повідомляти про відповіді по електронній пошті</label>
+                                                <label for="send">Send messages in email</label>
                                                 <i class="fas fa-check"></i>
                                             </div>
                                             <div class="buttons-wrap">
                                                 <button class="cancel-form" type="reset">
-                                                    Скасувати
+                                                    Cancel
                                                 </button>
                                                 <button class="submit-form" type="submit">
-                                                    Залишити відгук
+                                                    Add review
                                                 </button>
                                             </div>
                                         </form>
@@ -722,19 +727,17 @@
                                 </div>
                             </div>
                         </div>
-                        <!------------------>
-
                         <div class="add-rev-section">
                             <h3>Add you'r review about product</h3>
                             <button class="add-rev">Add&nbsp;review</button>
                         </div>
-                        <ul>
+                        <ul class="comments-wrapper">
                             <li>
                                 <div class="top-section">
                                     <h5 class="commentator-name">
                                         Bogdan Dovgopoly
                                     </h5>
-                                    <span class="time-comment small">yesterday</span>
+                                    <span class="time-comment">yesterday</span>
                                 </div>
                                 <div class="bottom-section">
                                     <p>Lorem ipsum dolor sit amet,
@@ -772,7 +775,7 @@
                                     <h5 class="commentator-name">
                                         Bogdan Dovgopoly
                                     </h5>
-                                    <span class="time-comment small">yesterday</span>
+                                    <span class="time-comment">yesterday</span>
                                 </div>
                                 <div class="bottom-section">
                                     <p>Lorem ipsum dolor sit amet,
@@ -817,7 +820,7 @@
                                     <h5 class="commentator-name">
                                         Bogdan Dovgopoly
                                     </h5>
-                                    <span class="time-comment small">yesterday</span>
+                                    <span class="time-comment">yesterday</span>
                                 </div>
                                 <div class="bottom-section">
                                     <p>Lorem ipsum dolor sit amet,
@@ -979,7 +982,6 @@
             </div>
         </div>
     </div>
-
 </div>
 
 <div class="wrapper">
@@ -1172,7 +1174,7 @@
                         </li>
                         <li><a href="#">Caps & Hats</a></li>
                         <li><a href="#">Hoodies & Sweatshirts</a></li>
-                        <li><a href="#">Jacket & Coats Jumpers</a></li>
+                        <li><a href="#">Jacket & Coats</a></li>
                         <li><a href="#">Jumpers & Cardigans</a></li>
                         <li><a href="#">Shoes, Boots & Trainers</a></li>
                         <li><a href="#">Underwear & Socks</a></li>

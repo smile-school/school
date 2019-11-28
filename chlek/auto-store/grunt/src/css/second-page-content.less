@@ -1,0 +1,100 @@
+.wrapper{
+    .main-container{
+        &.page{
+            flex-direction: column;
+            .links{
+                align-items: baseline;
+                padding: 7px 6px;
+                & > a {
+                    text-decoration: none;
+                    color: #888888;
+                    display: inline-block;
+                    padding-right: 10px;
+
+                    &:first-child {
+                        padding-right: 28px;
+                        position: relative;
+
+                        &:after {
+                            .pseudo-elements-mixin;
+                            .background-image-mixin(@image: "arrow-right.svg");
+                            width: 8px;
+                            height: 11px;
+                            top: 0;
+                            right: 12%;
+                        }
+                    }
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+            .container{
+                display: flex;
+            }
+            .aside-container{
+                width: 270px;
+                padding: 27px 30px 20px 0;
+
+                .aside-content-wrap{
+                    border: 1px solid #E5E5E5;
+                    border-radius: 0 0 5px 5px;
+                    & > div {
+                        & > p{
+                            color: #282828;
+                            font-weight: 500;
+                            line-height: 17px;
+                            width: 100%;
+                            text-transform: uppercase;
+                            margin-bottom: 10px;
+                        }
+                        &:not(:last-child){
+                            border: 1px solid #E5E5E5;
+                        }
+                    }
+                }
+
+                .color-choice{
+                    padding: 20px 20px 26px;
+                    display: flex;
+                    flex-wrap: wrap;
+                    border-bottom: 1px solid #E5E5E5;
+
+
+                    input{
+                        display: none;
+                    }
+                    label{
+                        width: 33px;
+                        height: 33px;
+                        border: 1px solid #E5E5E5;
+                        display: block;
+                        position: relative;
+                        box-sizing: border-box;
+                        margin: 0 4px 4px 0;
+                        &:after{
+                            .pseudo-elements-mixin;
+                           /* border: 1px solid #E5E5E5;*/
+                            top: 2px;
+                            left: 2px;
+                            right: 2px;
+                            bottom: 2px;
+                        }
+                    }
+                }
+                .price-choice{
+                    padding: 20px;
+                }
+
+            }
+            .content-wrap{
+                padding: 31px 0 20px;
+                box-sizing: border-box;
+                & > h3{
+                    font-size: 30px;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}

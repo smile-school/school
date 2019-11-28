@@ -131,12 +131,13 @@ header.header {
                         display: flex;
                         padding-left: 10px;
                         margin-right: 30px;
+                        align-items: center;
                     }
 
                     .country-flag {
+                        align-self: center;
                         display: block;
                         width: 20px;
-                        align-self: center;
                         margin-right: 8px;
                     }
 
@@ -159,6 +160,8 @@ header.header {
                             padding: 7px 3px 8px 6px;
                             color: #282828;
                             background-color: #F5F5F5;
+                            position: relative;
+
 
                             &:hover {
                                 background-color: #FFFFFF;
@@ -509,7 +512,6 @@ header.header {
                         }
 
                         .details {
-
                             background-color: #FFFFFF;
                             display: inline-block;
                             font-weight: lighter;
@@ -524,12 +526,22 @@ header.header {
                                 top: 15%;
                                 width: 9px;
                                 height: 5px;
-
+                                transition: all .5s ease-out;
                             }
                         }
 
                         .show-details {
                             display: none;
+                            &:checked{
+                                & ~ .prod-details{
+                                    display: none;
+                                }
+                                & ~ label{
+                                    &:after{
+                                        transform: rotate(180deg);
+                                    }
+                                }
+                            }
                         }
 
                         .prod-details {
@@ -646,12 +658,12 @@ header.header {
 
     nav.menu {
         border-bottom: 2px solid #FF2D37;
-        margin: 22px 0;
+        margin: 22px 0 0;
         max-height: 48px;
 
         .wrapper {
             .container-tab {
-                .flex-mixin;
+                .flex-mixin(@justify-content: flex-start);
                 padding: 0 15px;
                 @media (max-width: 992px) {
                     padding: 0 5px;

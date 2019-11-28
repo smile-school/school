@@ -28,9 +28,25 @@
         }
 
         build();
-
     }
-
+    function Change (){
+        var self = this;
+        this.options = {
+            showCurrency: document.querySelector('.currency-choice'),
+            currencyList: document.querySelector('.all-currency'),
+            showLanguage: document.querySelector('.language-choice'),
+            languageList: document.querySelector('.all-languages'),
+        };
+        function build() {
+            self.options.currencyList.addEventListener('click', change);
+            self.options.languageList.addEventListener('click', change);
+        }
+        function change(event) {
+            console.log(event.target);
+        }
+        build();
+    }
+    window.Change = Change;
     window.MySlider = MySlider;
 
 })();

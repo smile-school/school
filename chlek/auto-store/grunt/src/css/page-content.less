@@ -1,6 +1,6 @@
 .wrapper {
     .main-container {
-        padding: 15px;
+        padding: 16px 15px 15px;
         display: flex;
         margin-bottom: 40px;
         @media (max-width: 1200px) {
@@ -235,6 +235,11 @@
 
                                 &:first-of-type {
                                     margin-right: 30px;
+                                    & > span{
+                                        &:after{
+                                            left: 30px;
+                                        }
+                                    }
                                 }
 
                                 & > span {
@@ -242,20 +247,45 @@
                                     padding-left: 2px;
                                     margin-bottom: 6px;
                                     display: block;
+                                    position: relative;
+                                    &:after{
+                                        .pseudo-elements-mixin(@content: '*');
+                                        color: #FF2D37;
+                                        top: 0;
+                                        left: 38px;
+                                        font-size: 14px;
+                                    }
+                                }
+                                & > div{
+                                    position: relative;
+                                    &:after{
+                                        .pseudo-elements-mixin;
+                                        .background-image-mixin(@image: "arrow.png", @background-size: cover);
+                                        height: 5px;
+                                        width: 9px;
+                                        right: 10px;
+                                        top: 50%;
+                                        transform: translateY(-50%);
+                                    }
+                                    & > select {
+                                        width: 100%;
+                                        background-color: #FFFFFF;
+                                        border-radius: 5px;
+                                        border: 1px solid #E5E5E5;
+                                        height: 31px;
+                                        display: block;
+                                        box-sizing: border-box;
+                                        padding: 0 20px;
+                                        font-size: 13px;
+                                        color: #666666;
+                                        -webkit-appearance: none;
+                                        -moz-appearance: none;
+                                        appearance: none;
+
+                                    }
                                 }
 
-                                & > select {
-                                    width: 100%;
-                                    background-color: #FFFFFF;
-                                    border-radius: 5px;
-                                    border: 1px solid #E5E5E5;
-                                    height: 31px;
-                                    display: block;
-                                    box-sizing: border-box;
-                                    padding: 0 16px;
-                                    font-size: 13px;
-                                    color: #666666;
-                                }
+
                             }
                         }
 
@@ -497,10 +527,17 @@
                                     border-radius: 50%;
                                     border: none;
                                     background-color: #FFFFFF;
+                                    position: relative;
+                                    z-index: 5;
+                                    & > svg{
+                                        position: relative;
+                                        z-index: -1;
+                                    }
 
                                     &:hover {
                                         & > svg {
                                             fill: #FF2D37;
+
                                         }
                                     }
                                 }
@@ -529,6 +566,14 @@
 
                                     .message {
                                         display: none;
+                                        margin: -17px 0 7px;
+                                        font-size: 10px;
+                                        height: 10px;
+                                        padding-left: 5px;
+                                        &.active{
+                                            display: block;
+                                            color: #FF2D37;
+                                        }
                                     }
 
                                     & > input {
@@ -538,15 +583,18 @@
                                         display: block;
                                         box-sizing: border-box;
                                         border: 1px solid #E5E5E5;
-                                        margin-bottom: 15px;
+                                        margin-bottom: 20px;
+                                        padding: 5px 10px;
                                     }
 
                                     textarea {
+                                        padding: 10px;
                                         display: block;
                                         width: 100%;
                                         border: 1px solid #E5E5E5;
                                         border-radius: 5px;
-                                        margin-bottom: 10px;
+                                        margin-bottom: 20px;
+                                        box-sizing: border-box;
                                     }
                                 }
 
@@ -569,12 +617,13 @@
                                     & > i {
                                         position: absolute;
                                         left: 0;
-                                        bottom: 1px;
+                                        bottom: 3px;
                                         z-index: 5;
                                         font-size: 20px;
                                         color: #181818;
                                         display: none;
                                     }
+
 
                                     & > input.checkbox {
                                         display: none;
@@ -668,6 +717,10 @@
                                     margin: 0 -10px;
                                     .flex-mixin;
                                     border-bottom: 1px solid #E5E5E5;
+                                    & > span{
+                                        font-size: 13px;
+                                        line-height: 15px;
+                                    }
                                 }
 
                                 .bottom-section {
@@ -686,6 +739,10 @@
                                             font-weight: bold;
                                             font-size: 15px;
                                         }
+                                    }
+                                    & > iframe{
+                                        display: block;
+                                        width: 100%;
                                     }
                                 }
 
@@ -712,6 +769,11 @@
                                         button {
                                             border: none;
                                             background-color: #FFFFFF;
+                                            & > span{
+                                                display: inline-block;
+                                                width: 13px;
+                                                text-align: center;
+                                            }
 
                                             &:first-child {
                                                 margin-right: 10px;

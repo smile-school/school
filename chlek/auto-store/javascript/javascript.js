@@ -15,6 +15,8 @@
             }
         }
     );
+    var addReview = new AddReview();
+    var change = new Change();
 
     $('.prod-cards').slick({
         infinite: true,
@@ -46,5 +48,4 @@
             },
         ]
     });
-
 })();
