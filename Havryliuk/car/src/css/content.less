@@ -6,39 +6,39 @@
     height: 408px;
     display: flex;
     float: left;
-    background-color: #1c1c1c;
+    background-color: @headlight-color;
     background-size: 60%;
     p{
         padding: 25px 0 0 56px;
-        color: grey;
+        color: @text2-color;
         text-transform: capitalize;
     }
     h2{
         padding: 165px 0 0 56px;
     }
     &:first-child{
-        background: url("../../img/fars.png") no-repeat 100% 50%;
-        background-color: #303030;
+        background: url("@{path-img}fars.png") no-repeat 100% 50%;
+        background-color: @headlight-color1;
     }
     &:nth-child(2n){
-        background: url("../../img/stoppes.png") no-repeat 100% 50%;
-        background-color: #1c1c1c;
+        background: url("@{path-img}stoppes.png") no-repeat 100% 50%;
+        background-color: @headlight-color;
     }
     &:nth-child(3n){
-        background: url("../../img/disc2.png") no-repeat 100% 30%, url("../../img/disc.png") no-repeat 100% 50%;
-        background-color: #1c1c1c;
+        background: url("@{path-img}disc2.png") no-repeat 100% 30%, url("@{path-img}disc.png") no-repeat 100% 50%;
+        background-color: @headlight-color;
     }
     &:last-child{
-        background: url("../../img/chair.png") no-repeat 100% 50%;
-        background-color: #303030;
+        background: url("@{path-img}chair.png") no-repeat 100% 50%;
+        background-color: @headlight-color1;
     }
     &:nth-child(n){
         background-size: 50%;
     }
     &:hover{
-        background-color: #4d4d5d;
+        background-color: @headlight-hovered-color;
         h2,p{
-            color: red;
+            color: @text1-color;
         }
     }
 }
@@ -57,7 +57,7 @@
         font-size: 35px;
         letter-spacing: 1.75px;
         font-weight: 700;
-        color: white;
+        color: @price-color;
         text-align: center;
         width: 100%;
     }
@@ -86,16 +86,16 @@
             display: inline-block;
             height: 100%;
             width: 100%;
-            color: red;
+            color: @text1-color;
             line-height: 35px;
             &:hover{
-                background-color: #4d4d5d;
+                background-color: @headlight-hovered-color;
             }
         }
     }
 }
 .discounts{
-    background: url("../../img/bgimg.png") no-repeat center center;
+    background: url("@{path-img}bgimg.png") no-repeat center center;
     background-size: cover;
         height: 60vh;
     .sale_banner{
@@ -105,7 +105,7 @@
             width: 2px;
             height: 170px;
             margin-top: 250px;
-            background-color: white;
+            background-color: @banner-vertical-line-color;
         }
         .sales1{
             padding-right: 10%;
@@ -135,11 +135,11 @@
                 padding-top: 30px;
             }
             #button1,#button2{
-                background-color: #9c1c28;
-                color: white;
+                background-color: @button-color;
+                color: @button-txt-color;
                 border-radius: 19px;
                 text-transform: uppercase;
-                border: solid 1px #9c1c28;
+                border: solid 1px @button-color;
                 width: 190px;
                 height: 38px;
                 font-weight: 600;

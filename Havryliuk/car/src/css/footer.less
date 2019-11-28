@@ -3,13 +3,13 @@ footer{
     background-color: @bg-color;
     .footer_hr{
         width: 100%;
-        background-color: gray;
+        background-color: @text2-color;
         margin-top: 90px;
     }
 }
 .top_footer{
     display: flex;
-    color: black;
+    color: @bg-color;
     .top_footer_menu{
         width: calc(25%);
         h4{
@@ -24,10 +24,10 @@ footer{
             height: 5px;
             border: 0;
             float: left;
-            background-color: #9c1c28;
+            background-color: @button-color;
         }
         a{
-            color: #ff3448;
+            color: @text1-color;
             line-height: 40px;
             text-transform: capitalize;
             > i{
@@ -36,35 +36,35 @@ footer{
                 padding-left: 5%;
             }
             &:hover{
-                border-bottom: 1px solid #ff3448;
+                border-bottom: 1px solid @text1-color;
             }
         }
         .lorem{
-            color: #887979;
+            color: @text2-color;
             padding-top: 26px;
             text-align: justify;
         }
         .mail{
             width: 100%;
-            background-color: #282828;
+            background-color: @mail-input-color;
             border: 0;
             height: 37px;
             margin-top: 15px;
-            color: white;
+            color: @button-txt-color;
         }
         .submit{
-            background-color: #9c1c28;
-            color: white;
+            background-color: @button-color;
+            color: @button-txt-color;
             border-radius: 19px;
             text-transform: uppercase;
-            border: solid 1px #9c1c28;
+            border: solid 1px @button-color;
             height: 38px;
             margin-top: 34px;
             font-weight: 600;
             letter-spacing: 1.15px;
             width: 142px;
             &:hover{
-                background-color: red;
+                background-color: @text1-color;
             }
         }
     }
@@ -82,7 +82,7 @@ footer{
         padding-right: 10%;
         p{
             padding-top: 60px;
-            color: #887979;
+            color: @text3-color;
         }
     }
     h4{
@@ -105,12 +105,12 @@ footer{
         height: 100%;
         p{
             padding-top: 60px;
-            color: #887979;
+            color: @text3-color;
             line-height: 25px;
             font-size: 13px;
         }
         i{
-            color: #9c1c28;
+            color: @button-color;
             padding-right: 5px;
         }
     }
@@ -120,14 +120,14 @@ footer{
     p{
         padding-top: 47px;
         padding-bottom: 72px;
-        color: #887979;
+        color: @text3-color;
         width: 100%;
-        & span{
-            color: white;
+        span{
+            color: @button-txt-color;
         }
     }
     .bottom_footer_icons{
-        color: white;
+        color: @button-txt-color;
         padding-top: 47px;
         font-size: 30px;
         text-align: right;
@@ -141,7 +141,10 @@ footer{
             display: flex;
             flex-wrap: wrap;
         }
-        .top_footer_menu1,.top_footer_menu2,.top_footer_menu3,.top_footer_menu4{
+        .top_footer_menu1,
+        .top_footer_menu2,
+        .top_footer_menu3,
+        .top_footer_menu4{
             width: 24%;
         }
         #submit{
@@ -161,7 +164,10 @@ footer{
 @media only screen and (max-width: 500px){
     .top_footer {
         flex-flow: column;
-        .top_footer_menu1,.top_footer_menu2,.top_footer_menu3,.top_footer_menu4{
+        .top_footer_menu1,
+        .top_footer_menu2,
+        .top_footer_menu3,
+        .top_footer_menu4{
             width: 100%;
         }
         .top_footer_menu hr{
