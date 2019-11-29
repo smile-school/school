@@ -41,7 +41,7 @@ function getCourse() {
     if (list.length > 0) {
         return list.splice(array_rand(list, 1), 1)[0];
     } else {
-        alert('Курсов больше нет');
+        alert('You have reached the end of menu list...\nPlease, reload page.');
         return {};
     }
 }

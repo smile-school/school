@@ -12,15 +12,20 @@ footer{
     margin: 0 auto;
 }
 .top-footer .top-footer-img{
-    height: 120px;
-    position: absolute;
+    /*height: 120px;*/
+    /*position: absolute;*/
     bottom: 0;
     left: 4%;
     padding-left: 40px;
+    position: relative;
+    width: 20%;
+}
+.top-footer .top-footer-img img{
+    position: absolute;
+    bottom: -22px;
 }
 .top-footer .top-footer-title{
-    margin: 0 auto;
-    text-align: center;
+    width: max-content;
 }
 .top-footer .top-footer-title h2{
     font-size: 24px;
@@ -31,7 +36,8 @@ footer{
     margin-left: 5px;
 }
 .top-footer .top-footer-apps-download{
-    position: absolute;
+    /*position: absolute;*/
+    position: relative;
     bottom: 16%;
     right: 6%;
     padding-right: 35px;
@@ -138,7 +144,9 @@ footer{
     font-size: 23px;
     margin-top: 40px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
+    align-items: center;
 }
 
 .subscribe-banner-input-pole #email-input{
@@ -163,4 +171,29 @@ footer{
 .subscribe-banner-input-pole #email-submit:hover{
     background-color: #4096e3;
     cursor: pointer;
+}
+@media only screen and (max-width: 1570px) {
+
+}
+@media only screen and (max-width: 1470px) {
+    .subscribe-banner-input-pole #email-input{
+        margin-top: 10px;
+    }
+}
+@media only screen and (max-width: 1170px) {
+
+}
+@media only screen and (max-width: 1092px) {
+
+}
+@media only screen and (max-width: 992px) {
+
+}
+@media only screen and (max-width: 767px) {
+
+}
+@media only screen and (max-width: 676px) {
+    .subscribe-banner-input-pole #email-input{
+        width: 190px;
+    }
 }

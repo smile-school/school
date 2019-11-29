@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script src="js/knockout-3.5.1.js"></script>
-    <script src="js/lib.js"></script>
+    <script src="js/menu.js"></script>
     <style>
         body{
             font-family: sans-serif;
@@ -28,10 +28,8 @@
     </style>
 </head>
 <body>
-<h1 data-bind="text: info"></h1>
-<button id="setName" data-bind="click: setName">What is your name!</button>
-<button id="setLocation" data-bind="click: setLocation">What is you living?</button>
-<button id="addCource" data-bind="click: addCource">AddCource</button>
+<button id="addCource" data-bind="click: addCource">Claim dish</button>
+<span data-bind="total">Total: </span>
 <div class="wrapper">
     <table>
         <thead>
@@ -44,11 +42,11 @@
         </thead>
         <tbody data-bind="foreach: courseList">
         <tr>
-            <td data-bind="text: 'stol ' + $index() + 1"></td>
+            <td data-bind="text: 'Table ' + ($index()+1)"></td>
             <td data-bind="text: title"></td>
-            <td data-bind="text: price"></td>
+            <td class="money" id="money" data-bind="text: price"></td>
             <td data-bind="click: $root.removeCourse">
-                <button>x</button>
+                <button>Disclaim</button>
             </td>
         </tr>
         </tbody>
@@ -65,14 +63,14 @@
         </thead>
         <tbody data-bind="foreach: preRemoveCourse">
         <tr>
-            <td data-bind="text: 'stol ' + $index() + 1"></td>
+            <td data-bind="text: 'Table ' + $index()"></td>
             <td data-bind="text: title"></td>
             <td data-bind="text: price"></td>
             <td data-bind="click: $root.recoveryCourse">
-                <button>add</button>
+                <button>Get back</button>
             </td>
             <td data-bind="click: $root.removeRecoveryCourse">
-                <button>X</button>
+                <button>Remove</button>
             </td>
         </tr>
         </tbody>
@@ -83,29 +81,14 @@
 <script>
     function Course(title, price) {
         this.title = ko.observable(title);
-        this.price = ko.observable(price)
+        this.price = ko.observable(price);
     }
     function Customer() {
-        this.name = ko.observable('vasya');
-        this.location = ko.observable('Rivne');
-        this.info = ko.computed(function () {
-            return ' Hello ' + this.name() + ' from ' + this.location();
-        }, this);
-
         this.courseList = ko.observableArray([
-            new Course('HTML/CSS', 9150),
-            new Course('WebMastering', 13450),
-            new Course('JavaScript-ECMA', 15550),
-            new Course('PHP', 28009)
+            new Course('Croissane', 1.20),
+            new Course('Coffee', 1.5),
+            new Course('Milk', 0.25),
         ]);
-
-        this.setName = function () {
-            this.name(prompt('What is your name' , this.name()));
-        };
-
-        this.setLocation = function () {
-            this.location(prompt('What is your living' , this.location()));
-        };
 
         this.removeCourse = function (course) {
             this.courseList.remove(course);
@@ -127,7 +110,7 @@
             var newCource = getCourse();
             ('title' in newCource)
             && this.courseList.push(new Course(newCource.title, newCource.price))
-        }
+        };
     }
     ko.applyBindings(new Customer());
 </script>
