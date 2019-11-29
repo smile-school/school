@@ -20,7 +20,6 @@
         .wrapper{
             width: 350px;
             margin: 20px auto;
-            background-color: silver;
             padding: 20px;
             border-radius: 10px;
         }
@@ -29,8 +28,8 @@
             width: 100%;
             box-sizing: border-box;
             padding: 10px;
+            border: 1px solid silver;
             border-radius: 5px;
-            border: 0;
             margin-top: 5px;
         }
         input[type='checkbox']{
@@ -45,7 +44,7 @@
 <body>
 <div class="wrapper">
     <form action="" method="post" data-bind="submit: submitForm">
-        <div data-bind="foreach: form">
+        <div>
             <p>
                 <label> First Name <br>
                     <input type="text" data-bind="value:firstName">
@@ -84,12 +83,10 @@
 </div>
 <script>
     function Messages() {
-        this.form = ko.observableArray([{
-            firstName: ko.observable(''),
-            lastName: ko.observable(''),
-            email: ko.observable(''),
-            message: ko.observable(''),
-        }])
+        this.firstName= ko.observable('');
+        this.lastName= ko.observable('');
+        this.email= ko.observable('');
+        this.message= ko.observable('');
         this.submitForm = function (e) {
         };
         this.addMessage = function () {
@@ -97,11 +94,10 @@
         };
         this.showPrevMessage = ko.observable(false)
         this.messagePrev = ko.computed(function () {
-            var form = this.form()[0];
-            var html = form.firstName() ? '<p>First Name: ' + form.firstName() + '</p>' : '';
-            html += form.lastName() ? '<p>Last Name: ' + form.lastName() + '</p>': '';
-            html += form.email() ? '<p>Email: ' + form.email() + '</p>' : '' ;
-            html += form.message() ? '<p>Message: ' + form.message() + '</p>' : '';
+            var html = this.firstName() ? '<p>First Name: ' + this.firstName() + '</p>' : '';
+            html += this.lastName() ? '<p>Last Name: ' + this.lastName() + '</p>': '';
+            html += this.email() ? '<p>Email: ' + this.email() + '</p>' : '' ;
+            html += this.message() ? '<p>Message: ' + this.message() + '</p>' : '';
             return html
         }, this)
     }

@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/knockout-3.5.1.js"></script>
+    <script src="js/lib.js"></script>
+    <style>
+        body{
+            font-family: sans-serif;
+            font-size: 16px;
+            line-height: 1.2;
+        }
+        table{
+            margin: 20px auto;
+        }
+        th,
+        td{
+            border: 1px solid black;
+            padding: 10px;
+        }
+        .wrapper{
+            display: flex;
+        }
+        li{
+            list-style-type: none;
+        }
+        ul{
+            padding: 0;
+        }
+        .sale{
+            color: red;
+        }
+        .small-sale{
+            color: green;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <table>
+        <thead>
+        <tr>
+            <th>№</th>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Remove</th>
+        </tr>
+        </thead>
+        <tbody data-bind="foreach: courseList">
+        <tr>
+            <td data-bind="text: $index() + 1"></td>
+            <td data-bind="text: title"></td>
+            <td id="count" data-bind="text: price"></td>
+            <td data-bind="click: $root.removeCourse">
+                <button>x</button>
+            </td>
+        </tr>
+        </tbody>
+        <tfoot>
+            <td colspan="2">Total</td>
+            <td></td>
+            <td></td>
+        </tfoot>
+    </table>
+    <button data-bind="click: addCourse">set</button>
+</div>
+<script>
+    function Course(title, price) {
+        this.title = ko.observable(title);
+        this.price = ko.observable(price);
+    }
+    function Customer() {
+        this.courseList = ko.observableArray([
+        
+        ]);
+
+        this.setName = function () {
+            this.title = prompt('Enter Dish name', 'sup')
+            return this.title
+        };
+
+        this.removeCourse = function (course) {
+            this.courseList.remove(course);
+        }.bind(this);
+
+        this.addCourse = function () {
+            this.courseList.push(new Course(this.setName(), this.setRandomPrice()));
+        }
+        
+        this.setRandomPrice = function () {
+            this.price = Math.floor(Math.random() * 100)
+            return this.price
+        }
+        var count = document.querySelector('#count');
+    }
+    ko.applyBindings(new Customer());
+</script>
+</body>
+</html>
