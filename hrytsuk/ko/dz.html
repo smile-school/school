@@ -91,7 +91,7 @@
             new Course('JavaScript-ECMA',15900),
         ]);
         this.removeList = ko.observableArray([
-            new RemoveCourse('sasa',222),
+            new RemoveCourse('Штото',222),
 
         ]);
         this.setName = function () {
@@ -108,7 +108,8 @@
         };
         this.removeCourse = function (course) {
             var elem = this.courseList.remove(course);            // удалить валюту
-            this.removeList.push(new RemoveCourse(elem[0].title(),elem[0].price()));
+            // this.removeList.push(new RemoveCourse(elem[0].title(),elem[0].price()));
+            this.removeList.push(course);
         }.bind(this);
 
         this.removeOverCourse = function (delCours) {      //остаточно видаляєм з масива
@@ -117,7 +118,7 @@
 
         this.chanceCurse = function (delCourse) {
             var overDelCourse =  this.removeList.remove(delCourse);
-            this.courseList.push(new Course(overDelCourse[0].title(),overDelCourse[0].price()));    //повертаємо назад в головний масив з видалених!
+            this.courseList.push(delCourse);    //повертаємо назад в головний масив з видалених!
         }.bind(this);
 
     }

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="knockout-3.5.1.js"></script>
+    <style>
+        body{
+            font-family: sans-serif;
+            font-size: 18px;
+            line-height: 1.2;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .wraper{
+            width: 350px;
+            margin:40px auto;
+        }
+        input,textarea{
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        label{
+            margin-bottom: 20px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div class="wraper">
+    <form method="post" action="#" data-bind="submit:submitForm">
+        <!--    <input data-bind="textInput: test">     &lt;!&ndash; value, textInput - змінює в реальному часі , привязка к инпуту&ndash;&gt;-->
+        <div data-bind="foreach : form">
+            <p>
+                <label>First Name
+                    <input type="text" data-bind="value:firstName">
+                </label>
+            </p>
+            <p>
+                <label>Last Name
+                    <input type="text" data-bind="value: lastName">
+                </label>
+            </p>
+            <p>
+                <label>Email
+                    <input type="text" data-bind="value: email">
+                </label>
+            </p>
+            <p>
+                <label>Messege
+                    <textarea data-bind="value:message">
+
+            </textarea>
+                </label>
+            </p>
+
+        </div>
+        <p>
+            <label style="display: flex">show Preview Message
+                <input type="checkbox" data-bind="checked: showPrevMessage">
+            </label>
+        </p>
+        <button data-bind="click: addMessage">Add Message</button>
+    </form>
+</div>
+<div data-bind="visible :showPrevMessage ">
+    <div data-bind="html : messagePrev()">
+
+    </div>
+</div>
+
+</div>
+
+<script>
+    function Messages() {
+
+            this.firstName = ko.observable('');
+        this.lastName = ko.observable('');
+        this.email = ko.observable('');
+        this.message=ko.observable('');
+        }
+
+
+        this.submitForm = function () {
+
+        }
+        this.addMessage = function () {
+            console.log(this);
+        }
+        this.showPrevMessage = ko.observable(false);
+        this.messagePrev = ko.computed(function () {
+            var html = this.firstName() ? "<p>  First Name " +  this.firstName()+"</p>" : '';
+            html += this.lastName() ?  "<p>Last NAme " +  this.lastName()+"</p>" : '';
+             html += this.email() ?"<p> Emali " +  this.email()+"</p>": '';
+            html += this.message() ? "<p> Meseges " +  this.message()+"</p>": '';
+            return html;
+        }.bind();
+    }
+    ko.applyBindings(new Messages());
+</script>
+</body>
+</html>

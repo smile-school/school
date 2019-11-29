@@ -44,12 +44,14 @@
         <td data-bind="text:title"></td>
         <td data-bind="text:price"></td>
         <td>
-            <button data-bind="click: $root.removeCourse">Remove</button>
+            <button data-bind="click: $root.removeCourse">Remove Menu</button>
         </td>
     </tr>
     </tbody>
+    <div>
+        <p data-bind="text :rezult"></p>
+    </div>
 </table>
-
 
 
 
@@ -64,9 +66,13 @@
         var self = this;
         this.order = ko.observable('');
         this.customer = ko.observable('Rivne');
+        this.suma = ko.observable('');
         this.info = ko.computed(function () {
-            return 'Helo ' + this.order() + ' from ' + this.customer();    // вивод зміненого мені
+            return 'Helo ' + this.order()+ ',' + ' from ' + this.customer();    // вивод зміненого мені
         }, this);
+        this.rezult = ko.computed(function () {
+            return "Ви замовили " + this.order() + ' сума вашого замовлення склала ' +  this.suma() + 'грн';
+        },this);
         this.courseList = ko.observableArray([]);
 
         this.setMenu = function () {
@@ -75,25 +81,27 @@
             var arr = orders.split(' ');
 
             var arr2 = list;
+            var sum =0;
+            function counts(sum) {
+   
+            }
 
-            function rezult(arr, arr2) {
-                if (arr){
+
+            function rezult(arr, arr2,sum) {
                     for (var elem in arr2) {
                         for (var elem2 in arr) {
                             if (arr[elem2] === arr2[elem].title) {
-                                var el = self.courseList.push(new Course(arr[elem2], arr2[elem].price));
+                                 self.courseList.push(new Course(arr[elem2], arr2[elem].price));
+                                 // return sum += arr2[elem].price;
+                                sum += arr2[elem].price;
+                                counts(sum);
                             }
-
                         }
 
                     }
-                }
-                else {
-                    alert('asfsa');
-                }
+                // console.log(sum);
             }
-
-            rezult(arr, arr2);
+            rezult(arr, arr2,sum);
 
         };
         this.removeCourse = function (course) {
