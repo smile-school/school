@@ -10,6 +10,9 @@
     padding: 0 20px;
     position: relative;
 }
+main{
+    min-height: 100vh;
+}
 .product{
     margin-right: 18px;
 }
@@ -142,11 +145,10 @@ button.add-cart{
     display: flex;
     flex-direction: row;
     position: relative;
-    justify-content: center;
     .item{
-        &:not(:first-of-type){
-            margin-left: 10px;
-        }
+
+            margin-left: 40px;
+
     }
 }
 .h3-towar-section{
@@ -252,7 +254,7 @@ button.add-cart{
 }
 .white-li{
     border-right-color: @white-color;
-    border-left-color: @bordo;
+    border-left:4px solid @bordo;
 
 }
 .content-tabs{
@@ -440,6 +442,15 @@ button.dzb2{
         }
     .price-rod{
         font-weight: 600;
+        @media (max-width: 540px) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            .now-price{
+                padding-right: 0;
+            }
+        }
     }
     .now-price{
         color: @bordo;
