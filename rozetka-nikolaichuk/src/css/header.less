@@ -468,13 +468,11 @@ a.action__item-link {
 }
 
 .main-page__header {
+    .page-wrapper > .header-row:last-child{
+        padding-bottom: 12px;
+    }
     .main-page_hidden {
         display: none;
-    }
-
-    .header__links-container,
-    .header__city-chooser{
-        margin: 0 10px;
     }
 
     .city-chooser{
@@ -484,11 +482,28 @@ a.action__item-link {
         }
     }
 
-    .header__lang-switcher{
-        margin: 0 10px 0 auto;
+    .action__item-link__ico{
+        width: 41px;
+        height: 41px;
     }
 
-    .header__user{
-        margin-left: 5px;
+    .header {
+        &__links-container,
+        &__city-chooser {
+            margin: 0 10px;
+            padding: 5px 0 0;
+        }
+
+        &__lang-switcher {
+            margin: 0 10px 0 auto;
+        }
+
+        &__user {
+            margin-left: 5px;
+        }
+
+        &__actions-list__item {
+            margin: 0 5px;
+        }
     }
 }
