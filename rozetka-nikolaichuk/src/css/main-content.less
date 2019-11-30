@@ -10,30 +10,28 @@
             &_hidden{
                 position: absolute;
                 display: none;
-                top: -15px;
+                top: -10px;
                 left: -1px;
             }
             &-wrapper{
                 width: 301px;
-                padding-top: 15px;
+                padding-top: 10px;
                 border: 1px solid @menu-categories-border-color;
-                //border-bottom: 3px solid @menu-categories-border-bottom-color;
                 border-radius: 3px;
-                //border-top-left-radius: 3px;
-                //border-bottom-left-radius: 3px;
                 background: @page-background-color;
-                //box-shadow: 3px 3px 7px 0 rgba(200, 200, 200, .5);
-                .menu-categories__item__submenu{
-                    left: 299px;
-                    top: -16px;
-                    width: 1141px;
-                    height: calc(100% + 16px);
-                    border-bottom: 1px solid @menu-categories-border-color;
-                    box-shadow: none;
-                    padding-left: 9px;
-                    border-left: none;
-                    border-radius: 0 3px 3px 0;
-                    z-index: 20;
+                .menu{
+                    &-categories {
+                        z-index: 20;
+                    }
+                    &-categories__item__submenu{
+                        left: 0px;
+                        top: -11px;
+                        .container-mixin(@width: 1440px, @height: calc(100% + 11px));
+                        border: 1px solid @menu-categories-border-color;
+                        box-shadow: none;
+                        padding-left: 300px;
+                        border-radius: 3px;
+                    }
                 }
             }
             &_hover:hover ~ .menu_hidden{
