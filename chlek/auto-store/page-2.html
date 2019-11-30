@@ -516,40 +516,255 @@
                 <div class="aside-content-wrap">
                     <div class="color-choice">
                         <p>color</p>
-                        <input type="checkbox" name="color" id="black" value="#000000">
-                        <label for="black" class="color-input"></label>
-                        <input type="checkbox" name="color" id="brown" value="#945454">
-                        <label for="brown" class="color-input"></label>
-                        <input type="checkbox" name="color" id="grey" value="#8F8F8F">
-                        <label for="grey" class="color-input"></label>
-                        <input type="checkbox" name="color" id="green" value="#53A828">
-                        <label for="green" class="color-input"></label>
-                        <input type="checkbox" name="color" id="orange" value="#EB6703">
-                        <label for="orange" class="color-input"></label>
-                        <input type="checkbox" name="color" id="violet" value="#EF3DFF">
-                        <label for="violet" class="color-input"></label>
-                        <input type="checkbox" name="color" id="red" value="#FF0000">
-                        <label for="red" class="color-input"></label>
-                        <input type="checkbox" name="color" id="white" value="#FFFFFF">
-                        <label for="white" class="color-input"></label>
-                        <input type="checkbox" name="color" id="yellow" value="#FFD500">
-                        <label for="yellow" class="color-input"></label>
+                        <div>
+                            <input type="checkbox" name="color" id="black" value="#000000">
+                            <label for="black" class="color-input black"></label>
+                            <input type="checkbox" name="color" id="brown" value="#945454">
+                            <label for="brown" class="color-input brown"></label>
+                            <input type="checkbox" name="color" id="grey" value="#8F8F8F">
+                            <label for="grey" class="color-input grey"></label>
+                            <input type="checkbox" name="color" id="green" value="#53A828">
+                            <label for="green" class="color-input green"></label>
+                            <input type="checkbox" name="color" id="orange" value="#EB6703">
+                            <label for="orange" class="color-input orange"></label>
+                            <input type="checkbox" name="color" id="violet" value="#EF3DFF">
+                            <label for="violet" class="color-input violet"></label>
+                            <input type="checkbox" name="color" id="red" value="#FF0000">
+                            <label for="red" class="color-input red"></label>
+                            <input type="checkbox" name="color" id="white" value="#FFFFFF">
+                            <label for="white" class="color-input white"></label>
+                            <input type="checkbox" name="color" id="yellow" value="#FFD500">
+                            <label for="yellow" class="color-input yellow"></label>
+                        </div>
                     </div>
                     <div class="price-choice">
                         <p>price</p>
                         <div class="select-wrap">
+                            <label class="range-wrap">
+                                <input type="range" class="range" step="1" max="290" min="70" value="70" name="price">
+                                <input type="range" class="range" step="1" max="290" min="70" value="290" name="price">
+                            </label>
+                            <label class="price-wrap">
+                                <span>
+                                    $<input type="text" value="66.9">
+                                </span>
+                                <span>&nbsp;-&nbsp;</span>
+                                <span>
+                                    $<input type="text" value="290">
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="brand-choice">
+                        <p>brand</p>
+                        <div>
+                            <a href="#">Toyota&nbsp;<span>(4)</span></a>
+                            <a href="#">Mercedes&nbsp;<span>(4)</span></a>
+                            <a href="#">Kia&nbsp;<span>(2)</span></a>
+                            <a href="#">Audi&nbsp;<span>(4)</span></a>
+                        </div>
+                    </div>
+                    <div class="model-choice">
+                        <p>model</p>
+                        <div>
+                            <input type="checkbox" id="camry">
+                            <label for="camry">camry</label>
+                            <input type="checkbox" id="fortuner">
+                            <label for="fortuner">fortuner</label>
+                            <input type="checkbox" id="vios">
+                            <label for="vios">vios</label>
+                            <input type="checkbox" id="c300">
+                            <label for="c300">c300</label>
+                            <input type="checkbox" id="e250">
+                            <label for="e250">e250</label>
+                            <input type="checkbox" id="s500">
+                            <label for="s500">s500</label>
+                            <input type="checkbox" id="sorento">
+                            <label for="sorento">sorento</label>
+                            <input type="checkbox" id="optima">
+                            <label for="optima">optima</label>
+                            <input type="checkbox" id="a4">
+                            <label for="a4">a4</label>
+                            <input type="checkbox" id="a8">
+                            <label for="a8">a8</label>
+                        </div>
+                    </div>
+                    <div class="year-choice">
+                        <p>year</p>
+                        <div>
+                            <input type="checkbox" id="year-2011">
+                            <label for="year-2011">2011</label>
 
+                            <input type="checkbox" id="year-2013">
+                            <label for="year-2013">2013</label>
+
+                            <input type="checkbox" id="year-2015">
+                            <label for="year-2015">2015</label>
+
+                            <input type="checkbox" id="year-2017">
+                            <label for="year-2017">2017</label>
+
+                            <input type="checkbox" id="year-2018">
+                            <label for="year-2018">2018</label>
                         </div>
                     </div>
                 </div>
 
-                <!--<div class="banner-wrap">
+                <div class="title">
+                    <h5>Compare PRODUCTS</h5>
+                </div>
+                <div class="aside-content-wrap">
+                    <div class="section">
+                        <span class="small">Radio Transmitter Adapter</span>
+                        <button class="cancel">
+                            <svg width="11" height="11" viewBox="0 0 11 11" fill="#282828" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.04688 5.75L9.78125 8.48438C9.94531 8.64844 10.0273 8.84896 10.0273 9.08594C10.0273 9.32292 9.94531 9.53255 9.78125 9.71484L9.17969 10.3164C8.9974 10.4805 8.78776 10.5625 8.55078 10.5625C8.3138 10.5625 8.11328 10.4805 7.94922 10.3164L5.21484 7.58203L2.48047 10.3164C2.31641 10.4805 2.11589 10.5625 1.87891 10.5625C1.64193 10.5625 1.43229 10.4805 1.25 10.3164L0.648438 9.71484C0.484375 9.53255 0.402344 9.32292 0.402344 9.08594C0.402344 8.84896 0.484375 8.64844 0.648438 8.48438L3.38281 5.75L0.648438 3.01562C0.484375 2.85156 0.402344 2.65104 0.402344 2.41406C0.402344 2.17708 0.484375 1.96745 0.648438 1.78516L1.25 1.18359C1.43229 1.01953 1.64193 0.9375 1.87891 0.9375C2.11589 0.9375 2.31641 1.01953 2.48047 1.18359L5.21484 3.91797L7.94922 1.18359C8.11328 1.01953 8.3138 0.9375 8.55078 0.9375C8.78776 0.9375 8.9974 1.01953 9.17969 1.18359L9.78125 1.78516C9.94531 1.96745 10.0273 2.17708 10.0273 2.41406C10.0273 2.65104 9.94531 2.85156 9.78125 3.01562L7.04688 5.75Z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="section">
+                        <span class="small">Radio Transmitter Adapter</span>
+                        <button class="cancel">
+                            <svg width="11" height="11" viewBox="0 0 11 11" fill="#282828" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.04688 5.75L9.78125 8.48438C9.94531 8.64844 10.0273 8.84896 10.0273 9.08594C10.0273 9.32292 9.94531 9.53255 9.78125 9.71484L9.17969 10.3164C8.9974 10.4805 8.78776 10.5625 8.55078 10.5625C8.3138 10.5625 8.11328 10.4805 7.94922 10.3164L5.21484 7.58203L2.48047 10.3164C2.31641 10.4805 2.11589 10.5625 1.87891 10.5625C1.64193 10.5625 1.43229 10.4805 1.25 10.3164L0.648438 9.71484C0.484375 9.53255 0.402344 9.32292 0.402344 9.08594C0.402344 8.84896 0.484375 8.64844 0.648438 8.48438L3.38281 5.75L0.648438 3.01562C0.484375 2.85156 0.402344 2.65104 0.402344 2.41406C0.402344 2.17708 0.484375 1.96745 0.648438 1.78516L1.25 1.18359C1.43229 1.01953 1.64193 0.9375 1.87891 0.9375C2.11589 0.9375 2.31641 1.01953 2.48047 1.18359L5.21484 3.91797L7.94922 1.18359C8.11328 1.01953 8.3138 0.9375 8.55078 0.9375C8.78776 0.9375 8.9974 1.01953 9.17969 1.18359L9.78125 1.78516C9.94531 1.96745 10.0273 2.17708 10.0273 2.41406C10.0273 2.65104 9.94531 2.85156 9.78125 3.01562L7.04688 5.75Z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="section">
+                        <button class="button compare">Compare</button>
+                        <button class="button">Clear All</button>
+                    </div>
+
+                </div>
+
+                <div class="banner-wrap">
                     <img src="img/item-sidebar.png" alt="sidebar">
-                </div>-->
+                </div>
             </div>
             <div class="content-wrap">
                 <h3>Baby Car Seats</h3>
-            </div>
+                <input type="radio" id="show-cards-1" name="show-cards">
+                <input type="radio" id="show-cards-2" name="show-cards">
+                <div class="filter">
+                    <div class="filter-group left">
+                        <label for="show-cards-1">
+                            <svg width="19" height="13" viewBox="0 0 19 13" fill="#484848" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="5" height="3"/>
+                                <rect x="7" width="5" height="3"/>
+                                <rect x="14" width="5" height="3"/>
+                                <rect y="5" width="5" height="3"/>
+                                <rect x="7" y="5" width="5" height="3" />
+                                <rect x="14" y="5" width="5" height="3"/>
+                                <rect y="10" width="5" height="3"/>
+                                <rect x="7" y="10" width="5" height="3"/>
+                                <rect x="14" y="10" width="5" height="3"/>
+                            </svg>
+                        </label>
+                        <label for="show-cards-2">
+                            <svg width="19" height="13" viewBox="0 0 19 13" fill="#484848" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="5" height="3"/>
+                                <rect x="7" width="12" height="3"/>
+                                <rect y="5" width="5" height="3"/>
+                                <rect x="7" y="5" width="12" height="3"/>
+                                <rect y="10" width="5" height="3"/>
+                                <rect x="7" y="10" width="12" height="3"/>
+                            </svg>
+                        </label>
+                        <span class="small">Items 1-15 of 18</span>
+                    </div>
+                    <div class="filter-group right">
+                        <label>
+                            <span>Show</span>
+                            <select name="select" id="select-page">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                            </select>
+                            <span>ptr page</span>
+                        </label>
+                        <label>
+                            <span>Sort By</span>
+                            <select name="select" id="select-sort">
+                                <option value="1">Position</option>
+                                <option value="2">Price</option>
+                                <option value="3">Rating</option>
+                            </select>
+                        </label>
+                    </div>
+                </div>
+                <div class="product-cards-wrap">
+                    <div class="card-wrap">
+                        <div class="card-height-wrap">
+                            <div class="card">
+                                <div class="image-wrap">
+                                    <img src="img/design_in-car.png" alt="img">
+                                </div>
+                                <div class="button-wrap">
+                                    <button><img src="img/hart.png" alt=""></button>
+                                    <button>Add to Cart</button>
+                                    <button><img src="img/update.png" alt=""></button>
+                                </div>
+                                <p>Car Kit Hands Free Calling</p>
+                                <div class="rating-wrap">
+                                    <img src="img/star1.png" alt="image">
+                                </div>
+                                <h5><span>$55.00</span><span>$84.00</span></h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-wrap">
+                        <div class="card-height-wrap">
+                            <div class="card">
+                                <div class="image-wrap">
+                                    <img src="img/design_in-car.png" alt="img">
+                                </div>
+                                <div class="button-wrap">
+                                    <button><img src="img/hart.png" alt=""></button>
+                                    <button>Add to Cart</button>
+                                    <button><img src="img/update.png" alt=""></button>
+                                </div>
+                                <p>Car Kit Hands Free Calling</p>
+                                <div class="rating-wrap">
+                                    <img src="img/star1.png" alt="image">
+                                </div>
+                                <h5><span>$55.00</span><span>$84.00</span></h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-wrap">
+                        <div class="card-height-wrap">
+                            <div class="card">
+                                <div class="image-wrap">
+                                    <img src="img/design_in-car.png" alt="img">
+                                </div>
+                                <div class="button-wrap">
+                                    <button><img src="img/hart.png" alt=""></button>
+                                    <button>Add to Cart</button>
+                                    <button><img src="img/update.png" alt=""></button>
+                                </div>
+                                <p>Car Kit Hands Free Calling</p>
+                                <div class="rating-wrap">
+                                    <img src="img/star1.png" alt="image">
+                                </div>
+                                <h5><span>$55.00</span><span>$84.00</span></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         </div>
 
 
