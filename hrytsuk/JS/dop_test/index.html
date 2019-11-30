@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    function createElem(elem, attr,text) {
+        if (!elem) return false;   //якщо елемент неприйшов передаємо фолс пририваємо функцію
+        var el = document.createElement(elem);
+        if (attr){
+            for (var key in attr){
+                el.setAttribute(key,attr[key]);  //за допомогою цикла прохожусь по всім значенням
+            }
+
+        }
+        if (text){
+            el.textContent = text;
+        }
+       return el;                         //створити ще одну функцію для заповнення контентом
+    }
+   var myElem = createElem('div',{'data-bind' : 'text:arr','class':'wrap'},'text') ;
+    myElem.addEventListener('click',function () {
+        alert('asd');
+    });
+    document.querySelector('body').appendChild(myElem);
+
+   // var elem2 = createElem('div',{'class':'fol'},'aslkdjad');
+   // myElem.appendChild(elem2);
+</script>
+</body>
+</html>
