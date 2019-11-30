@@ -82,10 +82,9 @@
 
             var arr2 = list;
             var sum =0;
-            function counts(sum) {
-   
-            }
-
+            // function counts(sum) {
+            //
+            // }
 
             function rezult(arr, arr2,sum) {
                     for (var elem in arr2) {
@@ -93,8 +92,8 @@
                             if (arr[elem2] === arr2[elem].title) {
                                  self.courseList.push(new Course(arr[elem2], arr2[elem].price));
                                  // return sum += arr2[elem].price;
-                                sum += arr2[elem].price;
-                                counts(sum);
+                               return sum += arr2[elem].price;
+                                // counts(sum);
                             }
                         }
 
@@ -102,7 +101,6 @@
                 // console.log(sum);
             }
             rezult(arr, arr2,sum);
-
         };
         this.removeCourse = function (course) {
             var elem = this.courseList.remove(course);
