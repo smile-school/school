@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Select</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 18px;
+        }
+        .wrap{
+            width: 300px;
+            padding: 15px;
+            margin: 0 auto;
+        }
+        select{
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .mySelect{
+            width: 100%;
+        }
+        .mySelect .title{
+            border: 1px solid black;
+            padding: 10px;
+            cursor: pointer;
+            height: 15px;
+        }
+        .mySelect div.options{
+            border: 1px solid black;
+            border-top: none;
+        }
+        .mySelect div.options li{
+            list-style-type: none;
+            padding: 10px 10px 10px 30px;
+            cursor: pointer;
+        }
+        .mySelect div.options li:not(:last-child){
+            border-botton: 1px solid black;
+        }
+        .mySelect div.options li:hover{
+            background-color: lightgray;
+        }
+
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div class="mySelect">
+        <div class="title" data-selected="1"></div>
+        <div class="options">
+            <ul>
+                <li data-option="1">1</li>
+                <li data-option="2">2</li>
+                <li data-option="3">3</li>
+            </ul>
+        </div>
+    </div>
+    <select name="nn" class="select">
+        <option value="1">1</option>
+        <option value="2" selected>2</option>
+        <option value="3">3</option>
+    </select>
+</div>
+</body>
+<script>
+    function CustomSelect(options) {
+        this.options = options || {};
+        this.selector = this.createElement("div", {'class': 'mySelect'});
+        this.optionsList = this.options.select.children;
+
+        this.init = function () {
+            var firstOption = this.getOptionContent(this.getSelected());
+            this.selector.appendChild(this.createElement('div', setAttr(firstOption.attr, true, 'title'), firstOption.text));
+            this.selector.appendChild(buildOption.call(this, this.createElement("ul")));
+            console.log(this.selector);
+        };
+        function setAttr(attr, flag, classElem) {
+            var data = {};
+            for (var i = 0; i < attr.length; i++){
+                if (flag && !data['data-selected']){
+                    data['data-selected'] = attr.value.value;
+                } else if(flag && !data['data-option']){
+                    data['data-option'] = attr.value.value;
+                }
+                if(attr.selected && !flag) data['data-selected-option'] = '';
+            }
+            if (classElem){
+                data['class'] = classElem;
+            }
+            return data;
+        }
+        this.getSelected = function () {
+            for (var i = 0; i < this.optionsList.length; i++){
+                if (this.optionsList[i].selected){
+                    return 1;
+                }
+            }
+            return 0;
+        };
+        this.getOptionContent = function (index) {
+            var data = {};
+            data.attr = this.optionsList[index].attributes;
+            data.text = this.optionsList[index].textContent;
+            return data;
+        };
+        function buildOption(ul) {
+            for (var i = 0; i < this.optionsList.length; i++){
+                var option = this.getOptionContent(i);
+                ul.appendChild(createElem('li', setAttr(option.attr, fasle, option.text)));
+            }
+        };
+        this.init();
+    }
+    CustomSelect.prototype.createElement = createElem;
+
+    function createElem(elem, attr, text) {
+        if (!elem) return false;
+        var el = document.createElement(elem);
+        if (attr){
+            for(var key in attr){
+                el.setAttribute(key, attr[key]);
+            }
+        }
+        if(text){
+            el.textContent = text;
+        }
+        //console.log(el);
+        return el;
+    }
+
+    var mySelect = new CustomSelect({
+        select: document.querySelector(".select"),
+    });
+</script>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function createElem(elem, attr, text) {
+        if (!elem) return false;
+        var el = document.createElement(elem);
+        if (attr){
+            for(var key in attr){
+                el.setAttribute(key, attr[key]);
+            }
+        }
+        if(text){
+            el.textContent = text;
+        }
+        //console.log(el);
+        return el;
+    }
+    var myElem = createElem("div", {'data-bind': 'text: ttt', 'class': 'wrap'}, 'Some text');
+    myElem.addEventListener('click', function () {
+        alert("Hello");
+    });
+    document.querySelector('body').appendChild(myElem);
+    myElem.appendChild(createElem('div', {'data-bind': 'text', 'class': 'sss'}));
+</script>
+</body>
+</html>
