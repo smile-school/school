@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="school/knockout-3.5.1.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .wrapper{
+            width: 350px;
+            margin: 50px auto;
+            padding: 10px;
+            border: 1px solid lightgray;
+        }
+        input,
+        textarea{
+            width: 100%;
+            box-sizing: border-box;
+            padding: 5px;
+        }
+        label{
+            margin-bottom: 15px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <form action="" method="#" data-bind="submit:submitForm">
+        <div data-bind="foreach: form">
+            <p>
+                <label>First name
+                    <input title="text" data-bind="value: firstName">
+                </label>
+            </p>
+            <p>
+                <label>Last name
+                    <input type="text" data-bind="value: lastName">
+                </label>
+            </p>
+            <p>
+                <label>Email
+                    <input type="email" data-bind="value: email">
+                </label>
+            </p>
+            <p>
+                <label>
+                    <textarea data-bind="value: message"></textarea>
+                </label>
+            </p>
+        </div>
+        <p>
+            <label>
+                Show Preview message
+                <input type="checkbox" data-bind="checked: showPrevMessage">
+            </label>
+        </p>
+
+        <button data-bind="click: addMessage">Add message</button>
+    </form>
+    <div data-bind="visible: showPrevMessage">
+        <h2>Preview Message</h2>
+        <div data-bind="html: messagePrev"></div>
+    </div>
+</div>
+
+<script>
+    function Messages() {
+        this.form = ko.observableArray([
+            {
+                firstName: ko.observable('1111'),
+                lastName: ko.observable('11111111'),
+                email: ko.observable('1111'),
+                message: ko.observable('111111'),
+            }
+
+        ]);
+        this.submitForm = function () {
+            console.log()
+        };
+        this.submitForm = function () {
+
+        };
+        this.addMessage = function () {
+
+        };
+        this.showPrevMessage = ko.observable(false);
+        this.messagePrev = ko.computed(function () {
+            console.log(this);
+            var form = this.form()[0];
+            var html = '<p>' + form.firstName() + '</p>';
+            html += '<p>' +form.lastName() + '</p>';
+            html += '<p>' +form.email() + '</p>';
+            html += '<p>' +form.message() + '</p>';
+            return html;
+        },this)
+    }
+
+    ko.applyBindings(new Messages());
+</script>
+</body>
+</html>

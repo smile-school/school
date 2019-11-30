@@ -22,6 +22,14 @@
             border: 1px solid black;
             padding: 10px;
         }
+
+        .sale {
+            color: red;
+        }
+
+        .small-sale {
+            color: green;
+        }
     </style>
 
 </head>
@@ -38,6 +46,7 @@
         <th>№</th>
         <th>Title</th>
         <th>Price</th>
+        <th>Training</th>
         <th>Remove</th>
     </tr>
     </thead>
@@ -45,17 +54,42 @@
     <tr>
         <td data-bind="text: $index() + 1"></td>
         <td data-bind="text:title"></td>
-        <td data-bind="text:price"></td>
+        <td>
+            <p data-bind="text: new Intl.NumberFormat('ru-Ru').format(price()), style:{fontWeight: ((discount > 40) ? 'bold':'normal')}"></p>
+            <div data-bind="if: discount, css: sale()">
+                <p data-bind="html:discountText"></p>
+            </div>
+        </td>
+        <td>
+            <ul data-bind="foreach: reqs">
+                <li data-bind="text: $data"></li>
+            </ul>
+        </td>
         <td>
             <button data-bind="click: $root.removeCourse">Remove</button>
         </td>
     </tr>
     </tbody>
 </table>
+<p data-bind="with: anonser">
+   New course <strong data-bind="text: title"></strong>
+   Price <strong data-bind="text: price"></strong>
+    <br> <a data-bind="attr:{href: link, target: '_blank'}">Reed more</a>
+</p>
 <script>
-    function Course(title, price) {
+    var anonser = ko.observable(new Course('HTML/CSS 2', 9150));
+    anonser().link = 'https://www.google.com.ua/?hl=ru';
+    function Course(title, price, reqs, discount) {
         this.title = ko.observable(title);
         this.price = ko.observable(price);
+        this.reqs = (reqs) ? reqs : [];
+        this.discount = ko.observable((discount) ? discount : 0);
+        this.discountText = ko.computed(function () {
+            return "Discount " + this.discount() + '% <br> New price: ' + (this.price() - this.discount() / 100 * this.price());
+        }, this);
+        this.sale = function () {
+            return ((this.discount() > 40) ? 'sale' : 'small-sale');
+        }
     }
 
     function Custer() {
@@ -65,9 +99,10 @@
             return 'Hello ' + this.name() + ' from ' + this.location();
         }, this);
         this.courseList = ko.observableArray([
-            new Course('HTML/CSS', 9150),
-            new Course('WebMastering', 13400),
-            new Course('JavaScript', 15150),
+            new Course('HTML/CSS', 9150, [], 30),
+            new Course('WebMastering', 13400, ['HTML/CSS'], 50),
+            new Course('JavaScript', 15150, ['HTML/CSS', 'WebMastering'], 10),
+
         ]);
         this.setName = function () {
             this.name(prompt('What is your name', this.name()));
@@ -77,7 +112,7 @@
         };
         this.addCourse = function () {
             var newCourse = getCourse();
-            ('title' in newCourse) && this.courseList.push(new Course(newCourse.title, newCourse.price));
+            ('title' in newCourse) && this.courseList.push(new Course(newCourse.title, newCourse.price, newCourse.reqs));
         };
         this.removeCourse = function (course) {
             this.courseList.remove(course);
