@@ -31,6 +31,7 @@
 .wrappers{
     display: flex;
     flex-direction: row;
+    padding-bottom: 135px;
 }
 .color-filtr{
    & > ul{
@@ -356,12 +357,18 @@ button.hover-btn{
     justify-content: space-between;
     li{
         width: 30%;
+        height: 400px;
+        margin-bottom: 30px;
         .href-img-bloc{
             width: auto;
         }
         .item{
+            position: relative;
             &:hover{
-                height: 400px;
+                z-index: 30;
+                position: relative;
+                background-color: white;
+                height: 450px;
                 margin-bottom: 10px;
                 .info-cart-list{
                     border-bottom: none;
@@ -381,6 +388,52 @@ button.hover-btn{
             }
         }
     }
+    .bloc-cart-towar{
+        position: relative;
+        z-index: 20;
+    }
+}
+.mod-mark{
+    position: absolute;
+    left: -10px;
+    .figur{
+        width: 0;
+        height: 0;
+        border-top: 8px solid @bordo-shade;
+        border-left: 10px solid transparent;
+        align-self: flex-start;
+    }
+}
+.mod{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    flex-direction: column;
+    z-index: 29;
+    color: @white-color;
+    font-size:@font-size-standart ;
+    top: 10px;
+}
+.sale-list,.new-lists{
+    padding: 7px 14px;
+}
+.sale-list{
+    background-color: @bordo;
+}
+.new-list{
+    right: -10px;
+    .firure{
+        width: 0;
+        height: 0;
+        border-top: 8px solid @bacground-element2;
+        border-right: 10px solid transparent;
+        align-self: flex-end;
+    }
+}
+.new-lists{
+    background-color: @bacground-element;
 }
 .section-product{
     margin-top: 31px;
@@ -390,4 +443,21 @@ button.hover-btn{
     border-top: none;
     position: relative;
     top: -5px;
+}
+@media screen and (max-width: 970px){
+    .paremener-playback{
+        .sel-number{
+            padding-bottom: 15px;
+            margin-right: 0;
+            justify-content: space-between;
+        }
+    }
+    .sort-by{
+        flex-direction: column;
+    }
+}
+@media screen and (max-width: 780px){
+    .paremener-playback{
+        flex-direction: column;
+    }
 }

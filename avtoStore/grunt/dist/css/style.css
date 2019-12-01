@@ -832,7 +832,7 @@ ul {
   position: absolute;
   right: 0;
   top: 50px;
-  z-index: 20;
+  z-index: 60;
 }
 .bur:checked ~ ::after {
   transform: rotate(90deg);
@@ -1534,6 +1534,7 @@ button.dzb2:hover {
 .wrappers {
   display: flex;
   flex-direction: row;
+  padding-bottom: 135px;
 }
 .color-filtr > ul {
   display: flex;
@@ -1810,12 +1811,20 @@ button.hover-btn:hover {
 }
 .ul-list-product li {
   width: 30%;
+  height: 400px;
+  margin-bottom: 30px;
 }
 .ul-list-product li .href-img-bloc {
   width: auto;
 }
+.ul-list-product li .item {
+  position: relative;
+}
 .ul-list-product li .item:hover {
-  height: 400px;
+  z-index: 30;
+  position: relative;
+  background-color: white;
+  height: 450px;
   margin-bottom: 10px;
 }
 .ul-list-product li .item:hover .info-cart-list {
@@ -1831,6 +1840,53 @@ button.hover-btn:hover {
 .ul-list-product li .item .info-cart-towar > img {
   padding-bottom: 15px;
 }
+.ul-list-product .bloc-cart-towar {
+  position: relative;
+  z-index: 20;
+}
+.mod-mark {
+  position: absolute;
+  left: -10px;
+}
+.mod-mark .figur {
+  width: 0;
+  height: 0;
+  border-top: 8px solid #950C20;
+  border-left: 10px solid transparent;
+  align-self: flex-start;
+}
+.mod {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  flex-direction: column;
+  z-index: 29;
+  color: #fff;
+  font-size: 12px;
+  top: 10px;
+}
+.sale-list,
+.new-lists {
+  padding: 7px 14px;
+}
+.sale-list {
+  background-color: #FF2D37;
+}
+.new-list {
+  right: -10px;
+}
+.new-list .firure {
+  width: 0;
+  height: 0;
+  border-top: 8px solid #0055AC;
+  border-right: 10px solid transparent;
+  align-self: flex-end;
+}
+.new-lists {
+  background-color: #3599FF;
+}
 .section-product {
   margin-top: 31px;
 }
@@ -1839,6 +1895,21 @@ button.hover-btn:hover {
   border-top: none;
   position: relative;
   top: -5px;
+}
+@media screen and (max-width: 970px) {
+  .paremener-playback .sel-number {
+    padding-bottom: 15px;
+    margin-right: 0;
+    justify-content: space-between;
+  }
+  .sort-by {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 780px) {
+  .paremener-playback {
+    flex-direction: column;
+  }
 }
 .top-footer {
   background-color: #181818;
