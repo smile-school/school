@@ -7,23 +7,22 @@ main {
             display: flex;
             text-transform: capitalize;
             text-align: center;
-            color: #888888;
+            color: @txt2-color;
             position: relative;
             float: left;
             padding: 8px 0;
             font-size: 13px;
             line-height: 17px;
             p {
-                padding: 10px;
-
+                padding: 13px;
                 &:first-child:after {
-                    color: #959494;
+                    color: @txt2-color;
                     font-family: Font Awesome\ 5 Free;
                     font-weight: 900;
                     content: '\f078';
                     position: absolute;
-                    top: 17px;
-                    left: 55px;
+                    top: 20px;
+                    left: 56px;
                     font-size: 12px;
                     transform: rotate(-90deg);
                 }
@@ -47,8 +46,8 @@ main {
                             height: 40px;
                             width: 20px;
                             opacity: .95;
-                            border: 1px solid #CCCCCC;
-                            background-color: white;
+                            border: 1px solid @border-color;
+                            background-color: @basebg-color;
                             position: absolute;
                             padding: 2px 4px;
                             right: 10px;
@@ -116,13 +115,13 @@ main {
                     padding-bottom: 15px;
                 }
                 &-in-stock {
-                    color: #00BF67;
+                    color: @in-stock;
                     text-align: right;
                     position: relative;
                     padding-bottom: 15px;
                     &::before {
                         content: '';
-                        background: url("../ima/checked.svg") no-repeat;
+                        background: url("@{path-img}checked.svg") no-repeat;
                         position: absolute;
                         right: 55px;
                         top: 2px;
@@ -130,7 +129,7 @@ main {
                         height: 15px;
                     }
                     span {
-                        color: #CCCCCC;
+                        color: @txt3-color;
                         float: left;
                         text-transform: uppercase;
                     }
@@ -153,7 +152,7 @@ main {
                                 flex-flow: column;
                                 width: 45%;
                                 span {
-                                    color: red;
+                                    color: @button;
                                 }
                             }
                         }
@@ -166,7 +165,7 @@ main {
                             .item-quantity {
                                 padding: 11px 0;
                                 width: 94px;
-                                border: 1px solid #ccc;
+                                border: 1px solid @border-color;
                                 border-radius: 5px;
                                 text-align: center;
                             }
@@ -174,9 +173,9 @@ main {
                                 padding: 13px 67px 13px 66px;
                                 background-color: @button;
                                 border-radius: 5px;
-                                color: white;
+                                color: @base-color;
                                 &:hover {
-                                    background-color: black;
+                                    background-color: @base2-color;
                                 }
                             }
                         }
@@ -219,7 +218,7 @@ main {
                 width: 1px;
                 height: 100%;
                 position: absolute;
-                background-color: white;
+                background-color: @basebg-color;
                 right: -1px;
                 top: 0;
             }
@@ -242,7 +241,7 @@ main {
                     line-height: 21px;
                     text-transform: uppercase;
                     font-weight: bold;
-                    border: 1px solid #CCCCCC;
+                    border: 1px solid @border-color;
                     border-right: 0;
                     &:nth-child(1),&:nth-child(2),&:nth-child(3){
                         border-bottom: 0;
@@ -251,7 +250,7 @@ main {
             }
             .right-action-info-block{
                 padding: 25px 15px;
-                border: 1px solid #CCCCCC;
+                border: 1px solid @border-color;
                 p{
                     line-height: 23px;
                     font-size: 14px;
@@ -267,7 +266,7 @@ main {
             .aside-item-cart{
                 .aside-header{
                     background-color: @button;
-                    color: white;
+                    color: @base-color;
                     padding: 10px 25px;
                     border-radius: 5px 5px 0 0;
                     span{
@@ -276,13 +275,13 @@ main {
                     }
                 }
                 .aside-item-list{
-                    border: 1px solid #CCCCCC;
+                    border: 1px solid @border-color;
                     border-radius: 0 0 5px 5px;
                     padding: 0 20px;
                     margin-bottom: 30px;
                     .aside-item{
                         display: flex;
-                        border-bottom: 1px solid #CCCCCC;
+                        border-bottom: 1px solid @border-color;
                         &:last-child{
                             border-bottom: 0;
                         }
@@ -300,7 +299,7 @@ main {
                             a{
                                 text-decoration: none;
                                 text-transform: uppercase;
-                                color: black;
+                                color: @base2-color;
                                 &:hover{
                                     color: @button;
                                 }
@@ -372,17 +371,17 @@ main {
 
                     }
                     .arrow-next{
-                        background-image: url("../ima/arrow-1.svg");
+                        background-image: url("@{path-img}arrow-1.svg");
                         right: -10px;
-                        color: white;
+                        color: @base-color;
                     }
                     .arrow-back{
-                        background-image: url("../ima/arrow-2.svg");
+                        background-image: url("@{path-img}arrow-2.svg");
                         left: -10px;
                         fill: white;
                     }
                 .related-product-cart{
-                    border: 1px solid #CCCCCC;
+                    border: 1px solid @border-color;
                     display: flex;
                     flex-flow: column;
                     align-items: center;
@@ -403,7 +402,7 @@ main {
                         .related-product-img{
                             position: relative;
                             &::before{
-                                color: white;
+                                color: @base-color;
                                 font-family: Font Awesome\ 5 Free;
                                 font-weight: 900;
                                 content: '\f002';
@@ -430,13 +429,17 @@ main {
                         }
                         .related-product-cart-btns{
                             display: flex;
+                            width: 100%;
+                            .add-to-cart{
+                                width: 100%;
+                            }
                         }
                     }
                     .product-title{
                         padding-top: 25px;
                         text-decoration: none;
                         a{
-                            color: black;
+                            color: @base2-color;
                             &:hover{
                                 color: @button;
                             }
@@ -446,7 +449,7 @@ main {
                         color: @button;
                         padding-bottom: 25px;
                         span{
-                            color: grey;
+                            color: @txt3-color;
                             position: relative;
                             &::after{
                                 content: "";
@@ -455,27 +458,28 @@ main {
                                 width: 100%;
                                 left: 0;
                                 top: 8px;
-                                background-color: grey;
+                                background-color: @txt3-color;
 
                             }
                         }
                     }
                     .related-product-cart-btns{
-                        border: 1px solid #CCCCCC;
+                        border: 1px solid @border-color;
                         display: none;
                         .add-to-cart{
                             padding: 13px 54px;
-                            background-color: black;
-                            color: white;
+                            background-color: @base2-color;
+                            color: @base-color;
                             display: inline-block;
                             height: inherit;
-                            border-left: 1px solid #CCCCCC;
-                            border-right: 1px solid #CCCCCC;
+                            width: 100%;
+                            border-left: 1px solid @border-color;
+                            border-right: 1px solid @border-color;
                         }
                         .like-btn,.restart-cart{
                             position: relative;
                             padding: 12px 20px;
-                            background-color: black;
+                            background-color: @base2-color;
                             border-radius: 0;
                         }
                         .add-to-cart:hover,
@@ -497,7 +501,6 @@ main {
         padding: 13px 30px 13px 30px;
     }
 }
-
 @media only screen and (max-width: 1092px) {
     main {
         .wrapper .related-products .related-product-list {

@@ -1,8 +1,8 @@
 footer{
     margin-top: 50px;
     .top-footer{
-        background-color: #181818;
-        color: white;
+        background-color: @footerbg;
+        color: @base-color;
         line-height: 23px;
         padding: 75px 0;
         ul{
@@ -20,14 +20,14 @@ footer{
             }
         }
         h3{
-            color: white;
+            color: @base-color;
             font-size: 18px;
             text-transform: uppercase;
             padding-bottom: 23px;
         }
         a{
             text-transform: none;
-            color: white;
+            color: @base-color;
             position: relative;
             &:hover{
                 color: @button;
@@ -46,39 +46,37 @@ footer{
         .location,.phone,.mail,.schedule {
             position: relative;
             &::before {
-                color: red;
+                color: @button;
                 font-family: Font Awesome\ 5 Free;
                 font-weight: 900;
                 position: absolute;
                 left: 0;
+                top: 3px;
                 font-size: 15px;
                 z-index: 2;
                 cursor: pointer;
-                width: 25px;
-                height: 25px;
                 width: 35px;
                 height: 35px;
-                top: 3px;
                 content: "";
             }
         }
         .location::before{
-            background-image: url("../ima/footer/icon-image 1.svg");
+            background-image: url("@{path-img}footer/icon-image 1.svg");
         }
         .phone::before{
-            background-image: url("../ima/footer/icon-image 2.svg");
+            background-image: url("@{path-img}footer/icon-image 2.svg");
         }
         .mail::before{
-            background-image: url("../ima/footer/icon-image 3.svg");
+            background-image: url("@{path-img}footer/icon-image 3.svg");
         }
         .schedule::before{
-            background-image: url("../ima/footer/icon-image 4.svg");
+            background-image: url("@{path-img}footer/icon-image 4.svg");
         }
     }
     .bottom-footer{
-        background-color: #111;
+        background-color: @footerbgbottom;
         padding: 25px 0;
-        color:#BBBBBB;
+        color:@txt2-color;
         .bottom-wrap{
             display: flex;
             justify-content: space-between;

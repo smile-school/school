@@ -12,10 +12,15 @@ span{
     text-transform: capitalize;
 }
 h1,h2{
-    color: black;
+    color: @base2-color;
 }
 h3,h4,h5,h6{
     color: @button;
+}
+select{
+    border-radius: 5px;
+    background-color: @response-color;
+    padding: 5px;
 }
 .wrapper {
     display: block;
@@ -23,7 +28,9 @@ h3,h4,h5,h6{
     max-width: 1200px;
     padding: 0 15px;
 }
-input[type=button]{
+input[type=checkbox]{
+    display: none;
+}input[type=button]{
     display: none;
 }
 input[type=radio]{
@@ -41,14 +48,14 @@ label{
 .like-btn, .restart-cart {
     position: relative;
     padding: 13px 18px 13px;
-    background-color: black;
+    background-color: @base2bg-color;
     border-radius: 5px;
-    color: white;
+    color: @base-color;
     &:hover {
         background-color: @button;
     }
     &::before {
-        color: white;
+        color: @base-color;
         font-family: Font Awesome\ 5 Free;
         font-weight: 900;
         position: absolute;
