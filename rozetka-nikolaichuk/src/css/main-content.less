@@ -41,6 +41,12 @@
         .menu_hidden:hover{
             display: block;
         }
+        #menu-toggle{
+            display: none;
+            &:checked ~ .menu_hidden{
+                display: block;
+            }
+        }
     }
     &-content{
         width: calc(100% - 300px);
@@ -48,7 +54,6 @@
         padding: 40px 0 0 40px;
     }
     &-slider{
-        //position: relative;
         &__slider-wrapper{
             overflow: hidden;
             div{

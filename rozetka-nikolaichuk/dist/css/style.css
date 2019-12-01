@@ -392,6 +392,35 @@ ul {
   padding: 8px 19px;
   margin-right: 10px;
 }
+.header__logo {
+  margin-right: 10px;
+}
+.header__menu-toggle {
+  display: block;
+  margin-right: 20px;
+}
+.header__menu-toggle .menu-toggle {
+  display: inline-block;
+  padding: 8px 10px;
+  border-radius: 3px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: #fff;
+  cursor: pointer;
+}
+.header__menu-toggle .menu-toggle__icon {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+  fill: rgba(255, 255, 255, 0.5);
+}
+.header__menu-toggle .menu-toggle span {
+  vertical-align: middle;
+  font-size: 16px;
+  font-weight: bold;
+}
+.header__menu-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
 .header__actions-list,
 .header__actions-list__item {
   display: inline-block;
@@ -524,7 +553,7 @@ a.action__item-link {
   padding: 30px;
   color: #221f1f;
   font-size: 13px;
-  z-index: 10;
+  z-index: 20;
 }
 .city-chooser__wrapper__title {
   margin-bottom: 15px;
@@ -1013,6 +1042,12 @@ a.action__item-link {
   display: block;
 }
 .main-page-content .menu_hidden:hover {
+  display: block;
+}
+.main-page-content #menu-toggle {
+  display: none;
+}
+.main-page-content #menu-toggle:checked ~ .menu_hidden {
   display: block;
 }
 .main-content {
@@ -1780,7 +1815,7 @@ a.action__item-link {
 }
 .footer__application__left-block > .footer__application__img img {
   position: absolute;
-  bottom: -54px;
+  bottom: -55px;
   left: 0;
   width: 248px;
   height: 120px;
