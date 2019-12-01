@@ -422,6 +422,9 @@
                 }
                 .product-cards-wrap{
                     display: flex;
+                    flex-wrap: wrap;
+                    margin: 17px -15px 45px;
+
                     .card-wrap {
                         padding: 15px;
                         width: 33.33%;
@@ -436,7 +439,7 @@
                         .card-height-wrap {
                             max-height: 399px;
                             overflow: visible;
-                            margin-bottom: 45px;
+                            margin-bottom: 2px;
                         }
                     }
 
@@ -456,12 +459,15 @@
                         }
 
                         &:hover {
+                            z-index: 10;
                             &:after {
                                 top: -4px;
                                 right: -4px;
                                 left: -4px;
                                 bottom: -4px;
                                 box-shadow: 0 0 15px rgba(0, 0, 0, 0.35);
+                                z-index: -1;
+                                background-color: #FFFFFF;
                             }
 
                             .image-wrap {
