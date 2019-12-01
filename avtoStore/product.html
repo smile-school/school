@@ -8,6 +8,9 @@
     <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./font-awesome/css/font-awesome.min.css">
     <link href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <link rel="stylesheet" href="./grunt/dist/css/style.css">
 </head>
 <body>
@@ -258,8 +261,15 @@
                         </ul>
                     </div>
                 </div>
-                <div class="filter-block">
+                <div class="filter-block range-bloc">
                     <h3 class="title-filter">Prise</h3>
+                    <div id="slider-range"></div>
+                    <p class="input-renge">
+                        <label for="amount">$</label>
+                        <input type="text" id="amount" readonly>
+                        <label for="amount1">- $</label>
+                        <input type="text" id="amount1" readonly>
+                    </p>
                 </div>
                 <div class="filter-block">
                     <h3 class="title-filter">Prise</h3>
@@ -852,5 +862,6 @@
         </div>
     </div>
 </footer>
+<script src="script/slide-ui.js"></script>
 </body>
 </html>
