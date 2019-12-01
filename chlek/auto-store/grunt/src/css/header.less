@@ -9,7 +9,7 @@ header.header {
                 width: 436px;
                 display: flex;
                 position: relative;
-                @media (max-width: 500px) {
+                @media (max-width: @second-mobile-point) {
                     flex-direction: column;
                     align-items: flex-end;
                 }
@@ -18,7 +18,7 @@ header.header {
                     padding: 14px 7px 13px;
                     position: relative;
                     z-index: 5;
-                    @media (max-width: 500px) {
+                    @media (max-width: @second-mobile-point) {
                         padding: 7px;
                     }
 
@@ -29,7 +29,7 @@ header.header {
                             right: 2px;
                             top: 17px;
                             bottom: 16px;
-                            @media (max-width: 500px) {
+                            @media (max-width: @second-mobile-point) {
                                 display: none;
                             }
                         }
@@ -39,7 +39,7 @@ header.header {
                 .account-action {
                     width: 50%;
                     display: flex;
-                    @media (max-width: 500px) {
+                    @media (max-width: @second-mobile-point) {
                         width: 100%;
                         justify-content: flex-end;
                         padding-right: 15px;
@@ -52,7 +52,7 @@ header.header {
                             width: 32%;
                             padding-right: 15px;
                             position: relative;
-                            @media (max-width: 500px) {
+                            @media (max-width: @second-mobile-point) {
                                 width: 75px;
                             }
 
@@ -71,7 +71,7 @@ header.header {
                         display: inline-block;
                         text-decoration: none;
                         color: @header-top-sect-text-color;
-                        @media (max-width: 500px) {
+                        @media (max-width: @second-mobile-point) {
                             flex-grow: 0;
                             margin-right: 10px;
                         }
@@ -84,7 +84,7 @@ header.header {
                             display: inline-block;
                             margin-right: 15px;
                             line-height: 15px;
-                            @media (max-width: 500px) {
+                            @media (max-width: @second-mobile-point) {
                                 margin-right: 0;
                             }
                         }
@@ -95,9 +95,10 @@ header.header {
                     width: 27%;
                     max-height: 44px;
                     position: relative;
+                    z-index: 15;
                     color: @header-top-sect-text-color;
                     text-transform: uppercase;
-                    @media (max-width: 500px) {
+                    @media (max-width: @second-mobile-point) {
                         width: 118px;
 
                     }
@@ -110,13 +111,13 @@ header.header {
                         right: 23px;
                         top: 19px;
                         transition: all 300ms ease-out;
-                        @media (max-width: 500px) {
+                        @media (max-width: @second-mobile-point) {
                             top: 13px;
                         }
                     }
 
                     &:hover {
-                        color: #FF2D37;
+                        color: @hover-color;
 
                         &:before {
                             transform: rotate(180deg);
@@ -158,15 +159,15 @@ header.header {
                         .your-lang {
                             display: flex;
                             padding: 7px 3px 8px 6px;
-                            color: #282828;
-                            background-color: #F5F5F5;
+                            color: @your-lang-color;
+                            background-color: @your-lang-background-color;
                             position: relative;
 
 
                             &:hover {
-                                background-color: #FFFFFF;
-                                outline: 1px solid #FF2D37;
-                                color: #FF2D37;
+                                background-color: @your-lang-hover-background-color;
+                                outline: 1px solid @your-lang-outline-color;
+                                color: @your-lang-background-color;
                             }
 
                             &:not(:last-child) {
@@ -184,11 +185,11 @@ header.header {
 
                 .currency {
                     flex-grow: 1;
-                    color: #CCCCCC;
+                    color: @currency-color;
 
                     .currency-choice {
                         padding-left: 8px;
-                        @media (max-width: 500px) {
+                        @media (max-width: @second-mobile-point) {
                             padding-right: 30px;
                         }
                     }
@@ -201,14 +202,14 @@ header.header {
                         right: 18px;
                         top: 19px;
                         transition: all 300ms ease-out;
-                        @media (max-width: 500px) {
+                        @media (max-width: @second-mobile-point) {
                             right: 23px;
                             top: 13px;
                         }
                     }
 
                     &:hover {
-                        color: #FF2D37;
+                        color: @currency-hover-color;
 
                         &:before {
                             transform: rotate(180deg);
@@ -236,8 +237,8 @@ header.header {
                         & > li {
                             display: flex;
                             padding: 7px 3px 8px 10px;
-                            color: #282828;
-                            background-color: #F5F5F5;
+                            color: @body-text-color;
+                            background-color: @your-lang-background-color;
 
                             &:hover {
                                 .hover-point;
@@ -266,11 +267,11 @@ header.header {
             display: flex;
             box-sizing: border-box;
             padding: 0 15px;
-            @media (max-width: 1200px) {
+            @media (max-width: @first-desktop-point) {
                 padding: 0;
 
             }
-            @media (max-width: 767px) {
+            @media (max-width: @mobile-point) {
                 justify-content: space-between;
                 flex-wrap: wrap;
             }
@@ -279,15 +280,15 @@ header.header {
         .logo-wrap {
             width: 23%;
             margin-right: 24px;
-            @media (max-width: 992px) {
+            @media (max-width: @tablet-point) {
                 width: 19%;
                 padding: 0 5px;
                 order: -2;
             }
-            @media (max-width: 767px) {
+            @media (max-width: @mobile-point) {
                 width: 180px;
             }
-            @media (max-width: 500px) {
+            @media (max-width: @second-mobile-point) {
                 width: 150px;
                 align-self: flex-end;
                 margin-right: 0;
@@ -303,10 +304,10 @@ header.header {
             box-sizing: border-box;
             padding: 5px 21px 0 7px;
             width: 51%;
-            @media (max-width: 992px) {
+            @media (max-width: @tablet-point) {
                 flex-grow: 1;
             }
-            @media (max-width: 767px) {
+            @media (max-width: @mobile-point) {
                 padding: 5px;
                 margin-top: 15px;
             }
@@ -315,7 +316,7 @@ header.header {
                 box-sizing: border-box;
                 height: 100%;
                 display: flex;
-                @media (max-width: 767px) {
+                @media (max-width: @mobile-point) {
                     order: 1;
                     width: 100%;
                     height: 41px;
@@ -329,27 +330,27 @@ header.header {
                     width: calc(100% - 50px);
                     border-radius: 5px 0 0 5px;
                     border: 2px solid #C4C4C4;
-                    @media (max-width: 320px) {
+                    @media (max-width: @third-mobile-point) {
                         width: 100%;
                         border-radius: 5px;
                     }
 
                     &::placeholder {
                         text-indent: 105px;
-                        @media (max-width: 500px) {
+                        @media (max-width: @second-mobile-point) {
                             text-indent: 45px;
                         }
                     }
                 }
 
                 .search {
-                    background-color: #FF2D37;
+                    background-color: @search-color;
                     height: 100%;
                     border: none;
                     margin-left: -4px;
                     width: 54px;
                     border-radius: 0 5px 5px 0;
-                    @media (max-width: 320px) {
+                    @media (max-width: @third-mobile-point) {
                         display: none;
                     }
                 }
@@ -361,10 +362,10 @@ header.header {
             position: relative;
             flex-grow: 1;
             display: flex;
-            @media (max-width: 992px) {
+            @media (max-width: @tablet-point) {
                 flex-grow: 0;
             }
-            @media (max-width: 767px) {
+            @media (max-width: @mobile-point) {
                 order: -1;
                 height: 41px;
             }
@@ -374,14 +375,14 @@ header.header {
                 border: 2px solid #282828;
                 border-radius: 5px;
                 box-sizing: border-box;
-                background-color: #FFFFFF;
+                background-color: @button-color;
                 padding: 0;
             }
 
             .favour {
                 margin-right: 55px;
                 width: 43px;
-                @media (max-width: 1200px) {
+                @media (max-width: @first-desktop-point) {
                     margin-right: 20px;
                 }
 
@@ -412,12 +413,12 @@ header.header {
                 .right-section {
                     max-width: 125px;
                     padding: 0 16px;
-                    @media (max-width: 500px) {
+                    @media (max-width: @second-mobile-point) {
                         display: none;
                     }
 
                     .red-color {
-                        color: #FF2D37;
+                        color: @right-section-right;
                         margin: 0 auto;
                     }
                 }
@@ -427,8 +428,8 @@ header.header {
                     top: 0;
                     bottom: 0;
                     left: 44px;
-                    border-right: 2px solid #282828;
-                    @media (max-width: 500px) {
+                    border-right: 2px solid @border-color;
+                    @media (max-width: @second-mobile-point) {
                         display: none;
                     }
                 }
@@ -436,8 +437,8 @@ header.header {
                 &::after {
                     .pseudo-elements-mixin(@content: '0');
                     font-size: 13px;
-                    color: #FFFFFF;
-                    background-color: #FF2D37;
+                    color: @right-section-right;
+                    background-color: @buttons-background-color;
                     line-height: 24px;
                     top: 0;
                     left: 44px;
@@ -445,7 +446,7 @@ header.header {
                     width: 24px;
                     border-radius: 50%;
                     transform: translate(-50%, -50%);
-                    @media (max-width: 500px) {
+                    @media (max-width: @second-mobile-point) {
                         left: 40px;
                     }
                 }
@@ -464,7 +465,7 @@ header.header {
                 position: absolute;
                 top: 100%;
                 right: 0;
-                z-index: 10;
+                z-index: 15;
                 box-sizing: border-box;
                 display: none;
                 border-radius: 5px;
@@ -491,7 +492,7 @@ header.header {
                             width: 20px;
                             border-radius: 50%;
                             transform: translate(38%, 33%);
-                            background-color: white;
+                            background-color: @right-section-right;
                         }
                     }
 
@@ -512,7 +513,7 @@ header.header {
                         }
 
                         .details {
-                            background-color: #FFFFFF;
+                            background-color: @details-background-color;
                             display: inline-block;
                             font-weight: lighter;
                             margin-bottom: 11px;
@@ -532,12 +533,14 @@ header.header {
 
                         .show-details {
                             display: none;
-                            &:checked{
-                                & ~ .prod-details{
+
+                            &:checked {
+                                & ~ .prod-details {
                                     display: none;
                                 }
-                                & ~ label{
-                                    &:after{
+
+                                & ~ label {
+                                    &:after {
                                         transform: rotate(180deg);
                                     }
                                 }
@@ -577,7 +580,7 @@ header.header {
                             }
 
                             &:last-of-type {
-                                color: #FF2D37;
+                                color: @about-prod-bottoms-color;
                             }
                         }
 
@@ -603,9 +606,9 @@ header.header {
                             height: 28px;
                             border: none;
                             border-radius: 5px;
-                            background-color: #FF2D37;
+                            background-color: @update-background-color;
                             margin-right: 31px;
-                            color: #FFFFFF;
+                            color: @update-color;
                             font-size: 13px;
                         }
                     }
@@ -626,7 +629,7 @@ header.header {
                             }
 
                             &:last-of-type {
-                                color: #FF2D37;
+                                color: @buttons-background-color;
                                 font-size: 18px;
                             }
                         }
@@ -639,9 +642,9 @@ header.header {
                             height: 30px;
                             border: none;
                             text-transform: uppercase;
-                            color: #FFFFFF;
+                            color: @button-color;
                             border-radius: 5px;
-                            background-color: #FF2D37;
+                            background-color: @buttons-background-color;
                             padding: 0 39px;
                             font-size: 13px;
                             line-height: 15px;
@@ -667,7 +670,7 @@ header.header {
             .container-tab {
                 .flex-mixin(@justify-content: flex-start);
                 padding: 0 15px;
-                @media (max-width: 992px) {
+                @media (max-width: @tablet-point) {
                     padding: 0 5px;
                     position: relative;
                 }
@@ -678,31 +681,31 @@ header.header {
                     border-radius: 5px 5px 0 0;
                     margin: 0;
                     position: relative;
-                    @media (max-width: 1200px) {
+                    @media (max-width: @first-desktop-point) {
                         padding: 15px 17px 10px 10px;
                     }
-                    @media (max-width: 992px) {
+                    @media (max-width: @tablet-point) {
                         font-weight: 500;
                         font-size: 12px;
                         padding: 15px 15px 10px 8px;
                     }
-                    @media (max-width: 767px) {
+                    @media (max-width: @mobile-point) {
                         width: 100%;
                         &:not(.all-cats) {
-                            background-color: #F5F5F5;
+                            background-color: @menu-tab-background-color;
                             margin-bottom: 10px;
                             border-radius: 0;
 
                             &:hover {
-                                outline: 1px solid #FF2D37;
-                                background-color: #FFFFFF;
+                                outline: 1px solid @your-lang-outline-color;
+                                background-color: @menu-tab-hover-background-color;
                             }
                         }
                     }
 
                     &.home {
                         margin-right: 15px;
-                        @media (max-width: 1200px) {
+                        @media (max-width: @first-desktop-point) {
                             margin-right: 0;
                         }
                     }
@@ -720,16 +723,16 @@ header.header {
                     &.all-cats {
                         margin-right: 31px;
                         padding: 20px 133px 15px 18px;
-                        background-color: #ff2d37;
-                        color: #FFFFFF;
-                        @media (max-width: 1200px) {
+                        background-color: @buttons-background-color;
+                        color: @button-color;
+                        @media (max-width: @first-desktop-point) {
                             margin-right: 10px;
                             padding: 15px 133px 10px 18px;
                         }
-                        @media (max-width: 992px) {
+                        @media (max-width: @tablet-point) {
                             padding: 15px 49px 10px 18px;
                         }
-                        @media (max-width: 767px) {
+                        @media (max-width: @mobile-point) {
                             max-width: 166px;
                             box-sizing: border-box;
                         }
@@ -739,7 +742,7 @@ header.header {
                         & > span.row {
                             .pseudo-elements-mixin;
                             right: 20px;
-                            border-bottom: 2px solid #FFFFFF;
+                            border-bottom: 2px solid @button-color;
                             width: 15px;
                             opacity: 1;
                             transition: all 300ms ease-out;
@@ -747,14 +750,14 @@ header.header {
 
                         &:before {
                             top: 43%;
-                            @media (max-width: 992px) {
+                            @media (max-width: @tablet-point) {
                                 top: 38%;
                             }
                         }
 
                         &:after {
                             bottom: 36%;
-                            @media (max-width: 992px) {
+                            @media (max-width: @tablet-point) {
                                 bottom: 29%;
                             }
                         }
@@ -803,7 +806,7 @@ header.header {
 
                     .point {
                         width: 25%;
-                        color: #282828;
+                        color: @body-text-color;
 
                         & > ul {
                             padding: 0 10px;
@@ -813,7 +816,7 @@ header.header {
                                 margin-bottom: 10px;
 
                                 &:not(:first-child) {
-                                    background-color: #F5F5F5;
+                                    background-color: @point-background-color;
 
                                     &:hover {
                                         .hover-point;
@@ -838,10 +841,10 @@ header.header {
                             cursor: pointer;
                             position: relative;
                             z-index: 5;
-                            color: #282828;
+                            color: @body-text-color;
                             font-weight: normal;
                             padding: 5px;
-                            background-color: #F5F5F5;
+                            background-color: @point-background-color;
 
                             &:not(:last-child) {
                                 margin-bottom: 10px;
@@ -894,18 +897,18 @@ header.header {
                 .hamburger {
                     & > span {
                         display: none;
-                        color: #FFFFFF;
+                        color: @hamburger-color;
                         text-transform: uppercase;
                         font-size: 12px;
                         font-weight: 500;
                     }
 
-                    @media (max-width: 767px) {
+                    @media (max-width: @mobile-point) {
                         width: 100px;
                         height: 37px;
                         border-radius: 5px 5px 0 0;
                         margin-right: 5px;
-                        background-color: #FF2D37;
+                        background-color: @buttons-background-color;
                         padding: 15px 49px 10px 18px;
                         position: relative;
                         box-sizing: border-box;
@@ -956,13 +959,13 @@ header.header {
                     .hamb-wrap {
                         display: flex;
                         position: relative;
-                        @media (max-width: 767px) {
-                            border-top: 2px solid #FF2D37;
+                        @media (max-width: @mobile-point) {
+                            border-top: 2px solid @buttons-background-color;
                             position: absolute;
                             top: 100%;
                             right: 0;
                             flex-wrap: wrap;
-                            background-color: #FFFFFF;
+                            background-color: @buttons-text-color;
                             z-index: 15;
                             padding: 15px 25px;
                             width: 240px;
@@ -982,8 +985,8 @@ header.header {
                             }
 
                             &:hover {
-                                background-color: #ff2d37;
-                                color: #FFFFFF;
+                                background-color: @buttons-background-color;
+                                color: @buttons-text-color;
 
                                 & + .tab-points {
                                     display: flex;
