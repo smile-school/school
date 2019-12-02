@@ -590,6 +590,7 @@ header .main-header .wrapper .cart-menu .cart-popup-btn-hover .btn-wrapper .desc
   position: relative;
   padding-bottom: 5px;
   width: max-content;
+  display: block;
 }
 header .main-header .wrapper .cart-menu .cart-popup-btn-hover .btn-wrapper .description-txt .cart-details summary::-webkit-details-marker {
   display: none;
@@ -663,16 +664,20 @@ header .header-nav .wrapper {
   text-transform: uppercase;
   font-weight: bold;
 }
-header .header-nav .wrapper .all-categories {
+header .header-nav .wrapper .all-categories-menu {
+  width: 25%;
+  padding-right: 22px;
+}
+header .header-nav .wrapper .all-categories-menu .all-categories {
   background-color: #FF2D37;
   color: #FFF;
   border-radius: 5px 5px 0 0;
   position: relative;
 }
-header .header-nav .wrapper .all-categories p {
-  padding: 19px 132px 19px 16px;
+header .header-nav .wrapper .all-categories-menu .all-categories p {
+  padding: 19px 16px;
 }
-header .header-nav .wrapper .all-categories span {
+header .header-nav .wrapper .all-categories-menu .all-categories span {
   position: absolute;
   right: 25px;
   top: 30px;
@@ -681,14 +686,11 @@ header .header-nav .wrapper .all-categories span {
   background-color: #FFF;
   height: 2px;
 }
-header .header-nav .wrapper .all-categories span:nth-child(2) {
+header .header-nav .wrapper .all-categories-menu .all-categories span:nth-child(2) {
   top: 25px;
 }
-header .header-nav .wrapper .all-categories span:nth-child(3) {
+header .header-nav .wrapper .all-categories-menu .all-categories span:nth-child(3) {
   top: 20px;
-}
-header .header-nav .wrapper .navbar {
-  margin-left: 30px;
 }
 header .header-nav .wrapper .navbar ul {
   display: flex;
@@ -713,22 +715,22 @@ header .header-nav .wrapper .navbar ul li {
   list-style-type: none;
   font-weight: bold;
   text-transform: uppercase;
-  padding: 18px 15px 17px;
-  color: black;
   position: relative;
   margin-right: 1px;
 }
-header .header-nav .wrapper .navbar ul li a {
-  text-decoration: none;
-  color: black;
-  padding: 18px 15px 17px;
-}
 header .header-nav .wrapper .navbar ul li:hover {
   background-color: #FF2D37;
-  color: #FFF;
   border-radius: 5px 5px 0 0;
-  border-bottom: 3px solid #FF2D37;
   position: relative;
+}
+header .header-nav .wrapper .navbar ul li:hover a {
+  color: #FFF;
+}
+header .header-nav .wrapper .navbar ul li > a {
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+  padding: 18px 15px 20px;
 }
 header .header-nav .wrapper .navbar ul li:first-child .hidden-menu {
   display: none;
@@ -745,6 +747,7 @@ header .header-nav .wrapper .navbar ul li:first-child:hover .hidden-menu {
   flex-flow: column;
   border-radius: 0;
   border-bottom: none;
+  padding: 15px;
 }
 header .header-nav .wrapper .navbar ul li:first-child:hover .hidden-menu .first-col,
 header .header-nav .wrapper .navbar ul li:first-child:hover .hidden-menu .second-col {
@@ -770,18 +773,15 @@ header .header-nav .wrapper .navbar ul li:first-child:hover .hidden-menu .col-ju
 }
 @media only screen and (max-width: 1092px) {
   .all-categories {
-    width: 65px;
+    width: 100%;
     height: 50px;
-  }
-  .all-categories p {
-    display: none;
   }
 }
 @media only screen and (max-width: 992px) {
-  header .header-nav .wrapper .all-categories {
+  header .header-nav .wrapper .all-categories-menu {
     width: 100%;
   }
-  header .header-nav .wrapper .all-categories p {
+  header .header-nav .wrapper .all-categories-menu p {
     display: block;
     padding: 19px 112px 19px 25px;
   }
@@ -1721,6 +1721,19 @@ main .wrapper-main-content.product-page {
   width: 50px;
   text-align: center;
   font-weight: bold;
+}
+@media only screen and (max-width: 992px) {
+  .main-block .aside-block {
+    display: none;
+  }
+  .main-block .main-content .products-cart-block .product-cart .related-products.product-page .related-product-list {
+    justify-content: normal;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .main-block .main-content .main-content-header .responsive-view .what-to-show {
+    display: none;
+  }
 }
 footer {
   margin-top: 50px;

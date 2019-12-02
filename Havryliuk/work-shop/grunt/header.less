@@ -322,9 +322,11 @@ header{
                                         position: relative;
                                         padding-bottom: 5px;
                                         width: max-content;
+                                        display: block;
                                         &::-webkit-details-marker{
                                             display: none;
                                         }
+
                                     }
                                     summary::after{
                                         color: @txt1-color;
@@ -401,32 +403,36 @@ header{
             padding: 0 15px;
             text-transform: uppercase;
             font-weight: bold;
-            .all-categories{
-                background-color: @button;
-                color: @base-color;
-                border-radius: 5px 5px 0 0;
-                position: relative;
-                p{
-                    padding: 19px 132px 19px 16px;
-                }
-                span{
-                    position: absolute;
-                    right: 25px;
-                    top: 30px;
-                    border-bottom: 1px;
-                    width: 15px;
-                    background-color: @basebg-color;
-                    height: 2px;
-                    &:nth-child(2){
-                        top: 25px;
+            .all-categories-menu{
+                width: 25%;
+                padding-right: 22px;
+                .all-categories{
+                    background-color: @button;
+                    color: @base-color;
+                    border-radius: 5px 5px 0 0;
+                    position: relative;
+                    //padding: 0 121px 0 16px;
+                    p{
+                        padding: 19px 16px;
                     }
-                    &:nth-child(3){
-                        top: 20px;
+                    span{
+                        position: absolute;
+                        right: 25px;
+                        top: 30px;
+                        border-bottom: 1px;
+                        width: 15px;
+                        background-color: @basebg-color;
+                        height: 2px;
+                        &:nth-child(2){
+                            top: 25px;
+                        }
+                        &:nth-child(3){
+                            top: 20px;
+                        }
                     }
                 }
             }
             .navbar{
-                margin-left: 30px;
                 ul{
                     display: flex;
                     flex-wrap: wrap;
@@ -451,22 +457,23 @@ header{
                         list-style-type: none;
                         font-weight: bold;
                         text-transform: uppercase;
-                        padding: 18px 15px 17px;
-                        color: @base2-color;
                         position: relative;
                         margin-right: 1px;
-                         a{
+                         &:hover{
+                             background-color: @button;
+                             border-radius: 5px 5px 0 0;
+                             position: relative;
+                             a{
+                                 color: @base-color;
+                             }
+                         }
+                         &>a{
+                             display: inline-block;
                              text-decoration: none;
                              color: @base2-color;
-                             padding: 18px 15px 17px;
+                             padding: 18px 15px 20px;
+
                          }
-                        &:hover{
-                            background-color: @button;
-                            color: @base-color;
-                            border-radius: 5px 5px 0 0;
-                            border-bottom: 3px solid @button;
-                            position: relative;
-                        }
                         &:first-child .hidden-menu{
                             display: none;
                         }
@@ -482,6 +489,7 @@ header{
                             flex-flow: column;
                             border-radius: 0;
                             border-bottom: none;
+                            padding: 15px;
                             .first-col,.second-col{
                                 display: flex;
                                 justify-content: space-between;
@@ -512,16 +520,17 @@ header{
 }
 @media only screen and (max-width: 1092px) {
  .all-categories{
-     width: 65px;
+     //width: 65px;
+     width: 100%;
      height: 50px;
      p{
-         display: none;
+         //display: none;
      }
  }
 }
 @media only screen and (max-width: 992px) {
     header{
-        .header-nav .wrapper .all-categories{
+        .header-nav .wrapper .all-categories-menu{
             width: 100%;
             p{
                 display: block;
