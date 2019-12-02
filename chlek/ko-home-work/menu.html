@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style/menu.css">
+    <script src="js/knockout-3.5.1.js"></script>
+</head>
+<body>
+
+<div class="wrapper">
+    <h2>menu</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>Dish</th>
+            <th>Prise</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Borsch</td>
+            <td>10 UAH</td>
+        </tr>
+        <tr>
+            <td>Salad</td>
+            <td>5 UAH</td>
+        </tr>
+        <tr>
+            <td>Puree</td>
+            <td>8 UAH</td>
+        </tr>
+        <tr>
+            <td>Steak</td>
+            <td>20 UAH</td>
+        </tr>
+        </tbody>
+    </table>
+    <button data-bind="click: $root.enterDish">Add order</button>
+   <h3>To pending&nbsp;<span data-bind="html: getPrice"></span></h3>
+</div>
+<script src="js/menu.js"></script>
+</body>
+</html>
