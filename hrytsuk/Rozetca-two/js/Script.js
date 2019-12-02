@@ -10,11 +10,11 @@
             actForm.classList.add(acForm);
         });
 
-        for (var elem in exidForm) {
-            elem.addEventListener("click", function () {
+        exidForm.forEach(elem =>{
+            elem.addEventListener('click',function () {
                 actForm.classList.remove(acForm);
             })
-        }
+        });
 
     }
 
@@ -55,6 +55,21 @@
             var data = new FormData(this);
             Valid(data);
         }
+        function createElem(elem, attr,text) {
+            if (!elem) return false;
+            var el = document.createElement(elem);
+            if (attr){
+                for (var key in attr){
+                    el.setAttribute(key,attr[key]);
+                }
+
+            }
+            if (text){
+                el.textContent = text;
+            }
+            return el;
+        }
+
          function Valid(data) {
             var ul = document.querySelector(".coment-list");
 
@@ -93,33 +108,18 @@
 
 
             var li = document.createElement('li');
-            var div = document.createElement('div');
-            var p = document.createElement('p');
-            var span = document.createElement('span');
-            var dl = document.createElement('dl');
-            var dt = document.createElement('dt');
-            var dd = document.createElement('dd');
-            var button = document.createElement('button');
-
 
             ul.append(li);
 
-            var topComent = document.createElement('div');
-            topComent.classList.add('list-coment-bloc');
-
-            var comentBloc = document.createElement('div');
-            comentBloc.classList.add('top-coment-list', 'top-coment');
-
-            var pTop = document.createElement('p');
-            var nameList = document.createElement('span');
-            nameList.classList.add('name-list');
-            nameList.append(name);
-            var todauList = document.createElement('span');
-            todauList.classList.add('todau-list');
-            var time = document.createElement('time');
-            time.append(setDate);
+             var topComent = createElem('div',{'class':'list-coment-bloc'},undefined) ;
+             var comentBloc = createElem('div',{'class':'top-coment-list top-coment'},undefined) ;
+             var pTop = createElem('p',undefined,undefined);
+             var nameList =createElem('span',{'class':'name-list'},name);
+             var todauList = createElem('span',{'class':'todau-list'},undefined);
+             var time = createElem('time',undefined,setDate);
 
             todauList.appendChild(time);
+
             todauList.innerHTML+=  '<svg aria-hidden="true" height="16" width="16"><use xlink:href="#icon-report"'+
             'xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg>';
             pTop.appendChild(nameList);
@@ -139,9 +139,10 @@
                 '    </g>\n' +
                 '</svg>';
 
-            var reting = document.createElement('div');
-            reting.classList.add('reting');
-            reting.innerHTML+=starReting;
+            var reting =createElem('div',{'class':'reting'},starReting) ;
+
+            console.log(reting);
+            
             topComent.appendChild(reting);
             var interest = document.createElement('span');
             interest.classList.add('interest');
