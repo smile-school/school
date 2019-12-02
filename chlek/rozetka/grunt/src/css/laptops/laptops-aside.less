@@ -1,5 +1,5 @@
 .menu-left {
-    @media(max-width: 1025px){
+    @media(max-width: @second-desktop-break-point){
         display: none;
     }
 
@@ -95,7 +95,7 @@
                             &:before {
                                 background-color: @label-before-background-color;
                                 border-color: @label-before-border-color;
-                                background-image: url("../../../img/checked.svg");
+                                background-image: url("@{img-url}checked.svg");
                                 background-size: 10px 8px;
                                 background-repeat: no-repeat;
                                 background-position: center;
@@ -392,7 +392,6 @@
                 & > ul {
                     max-height: 400px;
                     overflow-y: auto;
-
                 }
             }
         }

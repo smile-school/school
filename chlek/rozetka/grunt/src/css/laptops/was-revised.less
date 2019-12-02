@@ -1,5 +1,4 @@
 .wrapper {
-
     .revised-prod {
         & > p {
             font-size: 20px;
@@ -9,7 +8,7 @@
 
         .revised {
             display: flex;
-            @media (max-width: 1279px) {
+            @media (max-width: @desktop-break-point) {
                 flex-wrap: wrap;
                 height: 327px;
                 overflow: hidden;
@@ -21,13 +20,13 @@
                 border-bottom: 1px solid #d2d2d2;
                 box-sizing: border-box;
                 position: relative;
-                @media (max-width: 1279px) {
+                @media (max-width: @desktop-break-point) {
                     width: 20%;
                 }
-                @media (max-width: 1025px) {
+                @media (max-width: @second-desktop-break-point) {
                     width: 25%;
                 }
-                @media (max-width: 767px) {
+                @media (max-width: @first-mobile-break-point) {
                     width: 50%;
                 }
 
@@ -125,10 +124,12 @@
             display: flex;
             box-sizing: border-box;
             padding: 60px 0;
-            &.laptop-page{
+
+            &.laptop-page {
                 padding: 48px 0 0;
             }
-            @media (max-width: 1279px) {
+
+            @media (max-width: @desktop-break-point) {
                 flex-wrap: wrap;
             }
 
@@ -138,7 +139,7 @@
                 margin-right: 4px;
                 background-color: @li-background-color;
                 border-radius: 3px;
-                @media (max-width: 1279px) {
+                @media (max-width: @desktop-break-point) {
                     margin-bottom: 8px;
                 }
 
@@ -251,15 +252,15 @@
         padding: 0 120px;
         background-color: @stores;
         margin: 0;
-        @media(max-width: 757px){
+        @media (max-width: @first-mobile-break-point) {
             padding: 0 16px;
         }
-        @media(max-width: 320px){
+        @media (max-width: @second-mobile-break-point) {
             padding: 0 5px;
         }
 
-        &.aps{
-            .content{
+        &.aps {
+            .content {
                 margin-top: 100px;
             }
         }
@@ -267,16 +268,14 @@
         .content {
             width: 100%;
             margin-top: 100px;
-
-
             height: 72px;
             box-sizing: border-box;
             display: flex;
-            @media(max-width: 1025px){
+            @media (max-width: @second-desktop-break-point) {
                 height: 124px;
                 justify-content: space-between;
             }
-            @media(max-width: 767px){
+            @media (max-width: @first-mobile-break-point) {
                 flex-direction: column;
                 height: 248px;
                 justify-content: flex-end;
@@ -287,20 +286,20 @@
         .image-store {
             width: 33.33%;
             align-self: flex-end;
-            @media (max-width: 1025px) {
+            @media (max-width: @second-desktop-break-point) {
                 width: 50%;
             }
-            @media(max-width: 767px){
+            @media (max-width: @first-mobile-break-point) {
                 width: 100%;
             }
 
             img {
                 width: 248px;
                 display: block;
-                @media(max-width: 1025px){
+                @media (max-width: @second-desktop-break-point) {
                     width: 320px;
                 }
-                @media(max-width: 767px){
+                @media (max-width: @first-mobile-break-point) {
                     width: 248px;
                     margin: 0 auto;
                 }
@@ -311,12 +310,12 @@
             display: flex;
             justify-content: space-between;
             width: 66.66%;
-            @media (max-width: 1025px) {
+            @media (max-width: @second-desktop-break-point) {
                 flex-direction: column;
                 justify-content: center;
                 width: 50%;
             }
-            @media(max-width: 767px){
+            @media (max-width: @first-mobile-break-point) {
                 width: 100%;
                 order: -1;
                 margin-bottom: 16px;
@@ -330,14 +329,14 @@
                 line-height: 24px;
                 text-align: center;
                 align-self: center;
-                @media (max-width: 1025px) {
+                @media (max-width: @second-desktop-break-point) {
                     text-align: left;
                     width: 100%;
                     padding-right: 0;
                     font-size: 20px;
                     margin-bottom: 16px;
                 }
-                @media(max-width: 767px){
+                @media (max-width: @first-mobile-break-point) {
                     text-align: center;
                 }
             }
@@ -346,10 +345,10 @@
                 display: flex;
                 max-width: 260px;
                 height: 100%;
-               @media(max-width: 1025px){
-                   height: 40px;
-               }
-                @media(max-width: 767px){
+                @media (max-width: @second-desktop-break-point) {
+                    height: 40px;
+                }
+                @media (max-width: @first-mobile-break-point) {
                     margin: 0 auto;
                 }
 
