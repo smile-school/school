@@ -707,11 +707,25 @@ input.action-form:checked ~ .darc-fon {
 input.action-form:checked ~ .enter-offece {
   transform: translate(-50%, -50%) scale(1);
 }
+.darc {
+  display: none;
+}
 input.asortiment-inp:checked ~ .left-bloc-menu {
   display: block;
 }
 input.asortiment-inp:checked ~ .darc-fonts {
   display: block;
+}
+input.asortiment-inp:checked ~ .darc {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: black;
+  opacity: 0.4;
+  z-index: 890;
 }
 .darc-fonts {
   position: fixed;
@@ -730,6 +744,7 @@ input.asortiment-inp:checked ~ .darc-fonts {
   z-index: 900;
   left: 50px;
   display: none;
+  width: 100%;
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.24);
 }
 .left-bloc-menu:after {
@@ -794,11 +809,10 @@ input.asortiment-inp:checked ~ .darc-fonts {
   top: 0;
   display: none;
   justify-content: space-between;
-  height: 514px;
   border-radius: 0 5px 5px 0;
   z-index: 990;
   padding: 15px;
-  width: 850px;
+  width: calc(100% - 280px);
   overflow: hidden;
   background-color: #ffffff;
 }
@@ -926,11 +940,15 @@ input.asortiment-inp:checked ~ .darc-fonts {
 }
 .header-mobile-menu .close-label {
   margin-left: 16px;
+  cursor: pointer;
 }
 .header-mobile-menu .close-label svg {
   width: 20px;
   height: 20px;
   fill: #a6a5a5;
+}
+.header-mobile-menu .close-label:hover svg {
+  fill: brown;
 }
 .header-mobile-menu ul.ul-language {
   display: flex;
@@ -1621,8 +1639,11 @@ input#act-viv-one1,
 input#act-viv-two1 {
   display: none;
 }
-input#act-viv-one1:checked ~ .catalog-price li {
+input.sel1:checked ~ .catalog-price li {
   width: 33%;
+}
+input.sel2:checked ~ .catalog-price li {
+  width: 50%;
 }
 .absolute-lab1,
 .absolute-lab2 {
@@ -2435,15 +2456,15 @@ button {
   .left-bloc-menu {
     left: 5px;
   }
-  .menu-aside-up {
-    width: 670px;
-  }
 }
 @media screen and (max-width: 1000px) {
   .menu-aside > li.li-on .menu-aside-up {
     display: none;
   }
   input.asortiment-inp:checked ~ .left-bloc-menu {
+    display: none;
+  }
+  input.asortiment-inp:checked:checked ~ .darc {
     display: none;
   }
   .title_product h1 {
@@ -2964,11 +2985,6 @@ button {
   .left-comment,
   .right-coment {
     width: 100%;
-  }
-}
-@media screen and (min-width: 1350px) {
-  .menu-aside-up {
-    width: 1000px;
   }
 }
 footer {

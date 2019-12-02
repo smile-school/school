@@ -935,6 +935,9 @@ input {
         }
     }
 }
+.darc{
+    display: none;
+}
 input{
     &.asortiment-inp{
         &:checked{
@@ -943,6 +946,17 @@ input{
             }
             & ~ .darc-fonts{
                 display: block;
+            }
+            & ~ .darc{
+                display: block;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: black;
+                opacity: 0.4;
+                z-index: 890;
             }
         }
     }
@@ -964,6 +978,7 @@ input{
     z-index: 900;
     left: 50px;
     display: none;
+    width: 100%;
     box-shadow: 0 2px 16px rgba(0, 0, 0, 0.24);
     &:after{
         position: absolute;
@@ -1052,11 +1067,10 @@ input{
     top: 0;
     display: none;
     justify-content: space-between;
-    height: 514px;
     border-radius: 0 5px 5px 0;
     z-index: 990;
     padding: 15px;
-    width: 850px;
+    width: calc(100% - 280px) ;
     overflow: hidden;
     background-color: @white-color;
 
@@ -1234,11 +1248,16 @@ input{
 
     .close-label {
         margin-left: 16px;
-
+        cursor: pointer;
         svg {
             width: 20px;
             height: 20px;
             fill: @gray-shade-fill;
+        }
+        &:hover{
+            svg{
+                fill: brown;
+            }
         }
     }
 

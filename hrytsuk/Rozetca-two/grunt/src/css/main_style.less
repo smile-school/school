@@ -760,23 +760,36 @@
         }
     }
 }
+.catalog-product{
+        #act-viv-two{
+            display: none;
+        }
+        #act-viv-one{
+            display: none;
+        }
 
+}
 
 
 input {
-    &#act-viv-one1,
-    &#act-viv-two1 {
-        display: none;
-    }
 
-    &#act-viv-one1 {
+    &.sel1 {
         &:checked {
             & ~ .catalog-price {
+                li{
+                    width: 50%;
+                }
+            }
+
+        }
+    }
+    &.sel2{
+        &:checked{
+            & ~ .catalog-price{
                 li{
                     width: 33%;
                 }
             }
-
         }
     }
 }
