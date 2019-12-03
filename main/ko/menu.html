@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/knockout-3.5.1.js"></script>
+</head>
+<body>
+<input data-bind="value:price">
+<button data-bind="click:addSumm">Add</button>
+<div data-bind="text:summ"></div>
+<script>
+    function Prise() {
+        this.price = ko.observable();
+        this.summ = ko.observable(0);
+        this.addSumm = function () {
+            this.summ(+(this.summ()) + +(this.price()));
+        }
+    }
+    ko.applyBindings(new Prise());
+</script>
+</body>
+</html>
