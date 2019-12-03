@@ -62,7 +62,7 @@
         </tbody>
         <tfoot>
             <td colspan="2">Total</td>
-            <td colspan="2" data-bind="text: total()"></td>
+            <td colspan="2" data-bind="text: total"></td>
         </tfoot>
     </table>
     <button data-bind="click: addCourse">set</button>
@@ -88,17 +88,17 @@
 
         this.addCourse = function () {
             this.courseList.push(new Course(this.setName(), this.setRandomPrice()));
+            this.addTotal()
         };
         var count = document.querySelectorAll('#count');
-        this.total = function () {
-            this.total = this.price;
-        };
-       
+        
         this.setRandomPrice = function () {
             this.price = Math.floor(Math.random() * 100);
             return this.price;
         };
         var count = document.querySelector('#count');
+        
+        this.total = ko.computed(0);
     };
     ko.applyBindings(new Customer());
 </script>

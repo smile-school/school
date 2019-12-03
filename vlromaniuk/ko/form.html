@@ -35,9 +35,35 @@
         input[type='checkbox']{
             width: 10px;
         }
+        
         label{
             padding-bottom: 15px;
             display: block;
+        }
+        .radio input{
+            display: none;
+            width: auto;
+        }
+        .radio input:checked + label{
+            background-color: gray;
+            color: white;
+        }
+        .radio label:hover{
+            background-color: lightgrey;
+        }
+        .radio label{
+            display: inline-block;
+            padding: 10px 15px;
+            border-radius: 50%;
+        }
+        .required{
+            color: red;
+        }
+        .massageList{
+            padding: 20px;
+        }
+        .massageList hr{
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -45,22 +71,35 @@
 <div class="wrapper">
     <form action="" method="post" data-bind="submit: submitForm">
         <div>
-            <p>
+            <p data-bind="css: {required: required() && !firstName()}">
                 <label> First Name <br>
                     <input type="text" data-bind="value:firstName">
                 </label>
             </p>
-            <p>
+            <p data-bind="css: {required: required() && !lastName()}">
                 <label> Last Name <br>
                     <input type="text" data-bind="value:lastName">
                 </label>
             </p>
-            <p>
+            <p data-bind="css: {required: required() && !email()}">
                 <label> email <br>
                     <input type="email" data-bind="value:email">
                 </label>
             </p>
-            <p>
+            <p class="radio">
+                <input data-bind="checked: rating" id="rating1" type="radio" name="rating" value="1" />
+                <label for="rating1">1</label>
+                <input data-bind="checked: rating" id="rating2" type="radio" name="rating" value="2" />
+                <label for="rating2">2</label>
+                <input data-bind="checked: rating" id="rating3" type="radio" name="rating" value="3" />
+                <label for="rating3">3</label>
+                <input data-bind="checked: rating" id="rating4" type="radio" name="rating" value="4" />
+                <label for="rating4">4</label>
+                <input data-bind="checked: rating" id="rating5" type="radio" name="rating" value="5" />
+                <label for="rating5">5</label>
+                
+            </p>
+            <p data-bind="css: {required: required() && !message()}">
                 <label> Message <br>
                     <textarea data-bind="value:message"></textarea>
                 </label>
@@ -79,24 +118,71 @@
         <h2>Message preview</h2>
         <div data-bind="html: messagePrev"></div>
     </div>
+    <div class="massageList" data-bind="foreach: messagesList">
+        <p data-bind="html: firstName"></p>
+        <p data-bind="html: lastName"></p>
+        <p data-bind="html: email"></p>
+        <p data-bind="html: message"></p>
+        <p data-bind="html: rating"></p>
+        <button data-bind="click: plusR, text: plusText"></button>
+        <button data-bind="click: minusR, text: minusText"></button>
+        <p data-bind="text: percentRating">Total ratings</p>
+        <hr>
+    </div>
     
 </div>
 <script>
+    function Message(firstName, lastName, email, message, rating,) {
+        this.firstName = ko.observable(firstName);
+        this.lastName = ko.observable(lastName);
+        this.email = ko.observable(email);
+        this.message = ko.observable(message);
+        this.rating = ko.observable(rating);
+        this.plusText = ko.observable(0);
+        this.minusText = ko.observable(0);
+        this.plusR = function () {
+            this.plusText(this.plusText() + 1)
+        };
+        this.minusR = function () {
+            this.minusText(this.minusText() + 1)
+        };
+        this.percentRating = ko.computed(function () {
+            return this.plusText() && this.minusText() ? Math.floor(this.plusText() / (this.plusText() + this.minusText()) * 100) + '%' : 0 ;
+        }, this)
+    }
+    
     function Messages() {
-        this.firstName= ko.observable('');
-        this.lastName= ko.observable('');
-        this.email= ko.observable('');
-        this.message= ko.observable('');
+        this.firstName = ko.observable('');
+        this.lastName = ko.observable('');
+        this.email = ko.observable('');
+        this.message = ko.observable('');
+        this.rating = ko.observable('');
+        this.messagesList = ko.observableArray([]);
+        
+        this.required = ko.observable(false);
         this.submitForm = function (e) {
         };
         this.addMessage = function () {
-         console.log(this)
+            if (this.firstName() && this.lastName() && this.email() && this.rating()){
+                this.messagesList.push(new Message('First Name ' + this.firstName() + '<br>Last Name ' + this.lastName() + '<br>Email: ' + this.email()+ '<<br>Message: ' + this.message() + '<br>Rating' + this.rating()));
+                this.required(false)
+            }else {
+                this.required(true)
+            }
+        };
+        this.clearForm = function () {
+          this.firstName('');
+          this.lastName('');
+          this.email('');
+          this.message('');
+          this.rating('');
         };
         this.showPrevMessage = ko.observable(false)
         this.messagePrev = ko.computed(function () {
             var html = this.firstName() ? '<p>First Name: ' + this.firstName() + '</p>' : '';
             html += this.lastName() ? '<p>Last Name: ' + this.lastName() + '</p>': '';
             html += this.email() ? '<p>Email: ' + this.email() + '</p>' : '' ;
+            html += this.rating() ? '<p>rating: ' + this.rating() + '</p>' : '' ;
             html += this.message() ? '<p>Message: ' + this.message() + '</p>' : '';
             return html
         }, this)
