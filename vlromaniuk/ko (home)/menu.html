@@ -62,8 +62,7 @@
         </tbody>
         <tfoot>
             <td colspan="2">Total</td>
-            <td></td>
-            <td></td>
+            <td colspan="2" data-bind="text: total()"></td>
         </tfoot>
     </table>
     <button data-bind="click: addCourse">set</button>
@@ -79,8 +78,8 @@
         ]);
 
         this.setName = function () {
-            this.title = prompt('Enter Dish name', 'sup')
-            return this.title
+            this.title = prompt('Enter Dish name', 'sup');
+            return this.title;
         };
 
         this.removeCourse = function (course) {
@@ -89,14 +88,18 @@
 
         this.addCourse = function () {
             this.courseList.push(new Course(this.setName(), this.setRandomPrice()));
-        }
-        
+        };
+        var count = document.querySelectorAll('#count');
+        this.total = function () {
+            this.total = this.price;
+        };
+       
         this.setRandomPrice = function () {
-            this.price = Math.floor(Math.random() * 100)
-            return this.price
-        }
+            this.price = Math.floor(Math.random() * 100);
+            return this.price;
+        };
         var count = document.querySelector('#count');
-    }
+    };
     ko.applyBindings(new Customer());
 </script>
 </body>
