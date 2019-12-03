@@ -1,5 +1,6 @@
 (function () {
 
+    var self = this;
     function Form() {
         var btn = document.querySelector("#actForm"),
             actForm = document.querySelector(".action-form-bloc"),
@@ -84,27 +85,29 @@
                 curr_month = date.getMonth() + 1,
                 curr_year = date.getFullYear(),
                 setDate = curr_year + "-" + curr_month + "-" + curr_date;
-            
-
+                // reting = 0.5;
 
              // var star = document.querySelectorAll('.rat');
-             // for (var elems in star){
-             //     elems.addEventListener('click',function (event) {
-             //         console.log(event.target);
+             // star.forEach(items=>{
+             //     items.addEventListener('click',function (event) {
+             //         itemss = +(event.target.dataset.rating) / 5;
+             //         return itemss;
              //     });
-             // }
-
-
+             // });
 
             data.forEach(function (item,key){
                 if (key === 'name') name = item;
-                else if(key ==='rating') rating = item;
+                else if(key ==='rating') rating = itemss;
                 else if (key === 'digniti') digniti = item;
                 else if (key === 'disadvantages') disadvantages = item;
                 else if (key === 'coment') coment = item;
                 else if (key === 'url-yotube') urlYotube = item.split('v=')[1];
 
             });
+
+
+
+
 
 
             var li = document.createElement('li');
@@ -206,6 +209,10 @@
             topComent.appendChild(comentFooter);
 
             li.appendChild(topComent);
+
+
+            var form = document.querySelector('.action-form-bloc');
+             form.classList.remove('acForm');
 
 
         }
