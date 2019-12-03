@@ -22,7 +22,12 @@
                 }
             }
             if (element.text) {
-                self.node.textContent = element.text;
+                if (element.text === "&nbsp;"){
+                    self.node.innerHTML = element.text;
+                }
+                else{
+                    self.node.textContent = element.text;
+                }
             }
         };
 
@@ -60,95 +65,101 @@
     var formRespond = document.querySelector("#form-respond"),
         buttonSubmit = formRespond.querySelector(".submitRespondBtn-js");
 
-    //buttonSubmit.addEventListener("click", parseForm);
-    formRespond.addEventListener("submit", addRespond);
+    buttonSubmit.addEventListener("click", validateForm);
+    //formRespond.addEventListener("submit", addRespond);
 
+    function validateForm(e) {
+        e.preventDefault();
+        if (true) addRespond();
+        else{
+            alert("error");
+        }
+    }
+
+    function isEmptyField(field) {
+        return field.value.trim();
+    }
 
     function addRespond(e) {
-        e.preventDefault();
         var container = document.querySelector(".responds-wrapper-js"),
             firstRespond = container.querySelector(".respond-js"),
-            respond = new Tree(getTreeObject());
-        respond = respond.getTreeHTML();
+            treeObject = new Tree(getTreeObject()),
+            respond = treeObject.getTreeHTML();
+            voteCounters.push(getCounter(respond));
         if (firstRespond) {
             container.insertBefore(respond, firstRespond);
         } else {
             container.appendChild(respond);
         }
-    }
-
-    function createElement(descriptor, classes = "", children = null, text = "", attributes = null) {
-        var element = {
-            descriptor: descriptor,
-        };
-        if (classes) {
-            element.classes = classes;
-        }
-        if (text) {
-            element.text = text;
-        }
-        if (attributes) {
-            element.attributes = attributes;
-        }
-        if (children) {
-            element.children = children;
-        }
-        return element;
-    }
-
-    function createSVG(idSVG, widthSVG, heightSVG) {
-        var use =
-                createElement("use", undefined, undefined, undefined, {"xlink:href": idSVG}),
-            svg =
-                createElement("svg", undefined, [use], undefined, {width: widthSVG, height: heightSVG});
-        return svg;
+        getRespondsCount();
+        closeFormRespond();
     }
 
     function getTreeObject() {
         var comment =
-                createElement("p", undefined, undefined, formRespond.comment.value.trim()),
+                service.createElement("p", undefined, undefined, formRespond.comment.value.trim()),
             userName =
-                createElement("span", "respond__heading__author", undefined, formRespond.user.value.trim()),
+                service.createElement("span", "respond__heading__author", undefined, formRespond.user.value.trim()),
+            percentCounter =
+                service.createElement("span", "respond__heading__likes__percent, percentVotes-js"),
             likes =
-                createElement("span", "respond__heading__likes"),
+                service.createElement("span", "respond__heading__likes", [percentCounter]),
             currentDate =
-                createElement("span", "respond__heading__date", undefined, new Date()),
+                service.createElement("span", "respond__heading__date", undefined, service.getCurrentDate()),
             respondHeader =
-                createElement("div", "respond__heading, clearfix-block", [userName, likes, currentDate]),
+                service.createElement("div", "respond__heading", [userName, likes, currentDate]),
             respondText =
-                createElement("div", "respond__text", [comment]),
+                service.createElement("div", "respond__text", [comment]),
             complaintSVG =
-                createSVG("#review-complaint", 17, 17),
+                service.createSVG("#review-complaint", 17, 17),
             complaintLink =
-                createElement("div", "respond__action-links__complaint-link", [complaintSVG]),
+                service.createElement("div", "respond__action-links__complaint-link", [complaintSVG]),
             replySVG =
-                createSVG("#review-reply-add", 12, 12),
+                service.createSVG("#review-reply-add", 12, 12),
             linkText =
-                createElement("span", undefined,undefined, "Ответить"),
+                service.createElement("span", undefined,undefined, "Ответить"),
             replyLink =
-                createElement("a", "respond__action-links__reply-link, link",[replySVG, linkText],undefined,{"href": "#"}),
+                service.createElement("a", "respond__action-links__reply-link, link",[replySVG, linkText],undefined,{"href": "#"}),
+            likeSVG =
+                service.createSVG("#positive-vote", "16","16"),
+            likeCounter =
+                service.createElement("span", "vote-link_positive__counter, positiveVote-js", undefined, "&nbsp;"),
+            dislikeSVG =
+                service.createSVG("#negative-vote", "16","16"),
+            dislikeCounter =
+                service.createElement("span", "vote-link_negative__counter, negativeVote-js",undefined,"&nbsp;"),
+            positiveVote =
+                service.createElement("div", "vote-link_positive, positiveBtn-js",[likeSVG, likeCounter]),
+            negativeVote =
+                service.createElement("div", "vote-link_negative, negativeBtn-js", [dislikeSVG, dislikeCounter]),
+            voteLinksBlock =
+                service.createElement("div", "respond__action-links__vote-links, clearfix-block", [positiveVote, negativeVote]),
             respondFooter =
-                createElement("div", "respond__action-links, clearfix-block", [replyLink, complaintLink]),
+                service.createElement("div", "respond__action-links, clearfix-block", [replyLink, complaintLink, voteLinksBlock]),
             root =
-                createElement("div", "product-responds__respond, respond-js", [respondHeader, respondText, respondFooter]),
+                service.createElement("div", "product-responds__respond, respond-js", [respondHeader, respondText, respondFooter]),
             advantages,
             disadvantages;
 
+        if (formRespond.ratingStar.value){
+            likes.children = service.createRatingStars(+formRespond.ratingStar.value).concat(percentCounter);
+                //createRatingStars(+formRespond.ratingStar.value).concat(percentCounter);
+        }
         if (formRespond.advantages.value.trim()) {
             var textElement =
-                    createElement("span", undefined, undefined, "Достоинства: "),
-                container = createElement("p");
+                    service.createElement("span", undefined, undefined, "Достоинства: "),
+                container = service.createElement("p");
             advantages =
-                createElement("span", undefined, undefined, formRespond.advantages.value.trim());
+                service.createElement("span", undefined, undefined, formRespond.advantages.value.trim());
             container.children = [textElement, advantages];
             respondText.children.push(container);
         }
         if (formRespond.disadvantages.value.trim()) {
             var textElement =
-                    createElement("span", undefined, undefined, "Недостатки: "),
-                container = createElement("p");
+                    service.createElement("span", undefined, undefined, "Недостатки: "),
+                container = service.createElement("p");
             disadvantages =
-                createElement("span", undefined, undefined, formRespond.disadvantages.value.trim());
+                service.createElement("span", undefined, undefined, formRespond.disadvantages.value.trim());
             container.children = [textElement, disadvantages];
             respondText.children.push(container);
         }

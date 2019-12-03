@@ -305,36 +305,41 @@
                 <div class="form-respond__content clearfix-block">
                     <div class="form-respond__stars-rating">
                         <div class="stars-rating__wrapper clearfix-block">
-                            <div class="stars-rating__star">
-                                <svg width="39" height="37">
-                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use>
-                                </svg>
-                                <p class="stars-rating__status">Плохой</p>
-                            </div>
-                            <div class="stars-rating__star">
-                                <svg width="39" height="37">
-                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use>
-                                </svg>
-                                <p class="stars-rating__status">Так себе</p>
-                            </div>
-                            <div class="stars-rating__star">
-                                <svg width="39" height="37">
-                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use>
-                                </svg>
-                                <p class="stars-rating__status">Нормальный</p>
-                            </div>
-                            <div class="stars-rating__star">
-                                <svg width="39" height="37">
-                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use>
-                                </svg>
-                                <p class="stars-rating__status">Хороший</p>
-                            </div>
-                            <div class="stars-rating__star">
+                            <input type="radio" name="ratingStar" id="rating_5" value="5">
+                            <label class="stars-rating__star" for="rating_5">
                                 <svg width="39" height="37">
                                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use>
                                 </svg>
                                 <p class="stars-rating__status">Отличный</p>
-                            </div>
+                            </label>
+                            <input type="radio" name="ratingStar" id="rating_4" value="4">
+                            <label for="rating_4" class="stars-rating__star">
+                                <svg width="39" height="37">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use>
+                                </svg>
+                                <p class="stars-rating__status">Хороший</p>
+                            </label>
+                            <input type="radio" name="ratingStar" id="rating_3" value="3">
+                            <label for="rating_3" class="stars-rating__star">
+                                <svg width="39" height="37">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use>
+                                </svg>
+                                <p class="stars-rating__status">Нормальный</p>
+                            </label>
+                            <input type="radio" name="ratingStar" id="rating_2" value="2">
+                            <label for="rating_2" class="stars-rating__star">
+                                <svg width="39" height="37">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use>
+                                </svg>
+                                <p class="stars-rating__status">Так себе</p>
+                            </label>
+                            <input type="radio" name="ratingStar" id="rating_1" value="1">
+                            <label for="rating_1" class="stars-rating__star">
+                                <svg width="39" height="37">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use>
+                                </svg>
+                                <p class="stars-rating__status">Плохой</p>
+                            </label>
                         </div>
                     </div>
                     <label class="form-respond__label" for="advantages">Достоинства</label>
@@ -342,10 +347,11 @@
                     <label class="form-respond__label" for="disadvantages">Недостатки</label>
                     <input class="form-respond__input" type="text" name="disadvantages" id="disadvantages">
                     <label class="form-respond__label" for="comment">Комментарий</label>
-                    <textarea class="form-respond__input textarea" name="comment" id="comment" required></textarea>
-                    <label class="form-respond__label" for="user-name">Ваше имя и фамилия</label>
+                    <textarea class="form-respond__input textarea comment-js" name="comment" id="comment"
+                              required></textarea>
+                    <label class="form-respond__label userName-js" for="user-name">Ваше имя и фамилия</label>
                     <input class="form-respond__input" type="text" name="user" id="user-name" required>
-                    <label class="form-respond__label" for="contact">Эл. почта или телефон</label>
+                    <label class="form-respond__label userEmail-js" for="contact">Эл. почта или телефон</label>
                     <input class="form-respond__input" type="text" name="contact" id="contact" required>
                     <button type="submit" class="form-respond__submit blue-button submitRespondBtn-js">Оставить отзыв
                     </button>
@@ -2517,7 +2523,7 @@
             <label class="tab__title" for="tab-info">Все о товаре</label>
             <input type="radio" name="product_tab" id="tab-respond" checked>
             <label class="tab__title" for="tab-respond">Отзывы
-                <span class="respond-count respondCounter-js">2</span>
+                <span class="respond-count respondCounter-js"></span>
             </label>
             <input type="radio" name="product_tab" id="tab-params">
             <label class="tab__title" for="tab-params">Характеристики</label>
@@ -2571,14 +2577,14 @@
                             <p class="product-responds__heading__title">
                                 Отзывы покупателей о Ноутбук Acer Aspire 5
                                 A515-54G (NX.HFREU.038) Pure Silver Суперцена!!!
-                                <span class="respond-count respondCounter-js">2</span>
+                                <span class="respond-count respondCounter-js"></span>
                             </p>
                             <button type="button" class="product-responds__heading__button gray-button openFormBtn-js">
                                 Написать отзыв
                             </button>
                         </div>
                         <div class="product-responds__respond respond-js">
-                            <div class="respond__heading clearfix-block">
+                            <div class="respond__heading">
                                 <span class="respond__heading__author">Аноним Анонимович</span>
                                 <span class="respond__heading__trade-status">
                                     <svg width="13" height="12">
@@ -2588,11 +2594,27 @@
                                     Уже купил
                                 </span>
                                 <span class="respond__heading__likes">
-                                    <svg width="70" height="14">
+                                    <svg class="active-star star-js" width="14" height="14">
                                         <use xmlns:xlink="http://www.w3.org/1999/xlink"
-                                             xlink:href="#g-rating-stars"></use>
+                                             xlink:href="#rating-star"></use>
                                     </svg>
-                                    <span class="percentVotes-js"></span>
+                                    <svg class="active-star star-js" width="14" height="14">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                             xlink:href="#rating-star"></use>
+                                    </svg>
+                                    <svg class="active-star star-js" width="14" height="14">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                             xlink:href="#rating-star"></use>
+                                    </svg>
+                                    <svg class="active-star star-js" width="14" height="14">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                             xlink:href="#rating-star"></use>
+                                    </svg>
+                                    <svg class="active-star star-js" width="14" height="14">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                             xlink:href="#rating-star"></use>
+                                    </svg>
+                                    <span class="respond__heading__likes__percent percentVotes-js"></span>
                                 </span>
                                 <span class="respond__heading__date">15 ноября 2019</span>
                             </div>
@@ -2645,7 +2667,7 @@
                             </div>
                         </div>
                         <div class="product-responds__respond respond-js">
-                            <div class="respond__heading clearfix-block">
+                            <div class="respond__heading">
                                 <span class="respond__heading__author">Аноним Анонимович</span>
                                 <span class="respond__heading__trade-status">
                                     <svg width="13" height="12">
@@ -2655,11 +2677,27 @@
                                     Уже купил
                                 </span>
                                 <span class="respond__heading__likes">
-                                    <svg width="70" height="14">
+                                    <svg class="active-star star-js" width="14" height="14">
                                         <use xmlns:xlink="http://www.w3.org/1999/xlink"
-                                             xlink:href="#g-rating-stars"></use>
+                                             xlink:href="#rating-star"></use>
                                     </svg>
-                                    <span class="percentVotes-js"></span>
+                                    <svg class="active-star star-js" width="14" height="14">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                             xlink:href="#rating-star"></use>
+                                    </svg>
+                                    <svg class="active-star star-js" width="14" height="14">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                             xlink:href="#rating-star"></use>
+                                    </svg>
+                                    <svg class="active-star star-js" width="14" height="14">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                             xlink:href="#rating-star"></use>
+                                    </svg>
+                                    <svg class="star-js" width="14" height="14">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                             xlink:href="#rating-star"></use>
+                                    </svg>
+                                    <span class="respond__heading__likes__percent percentVotes-js"></span>
                                 </span>
                                 <span class="respond__heading__date">7 ноября 2019</span>
                             </div>
@@ -4318,8 +4356,11 @@
         </symbol>
     </defs>
 </svg>
-<script src="./script/script.js"></script>
+<script src="./script/service.js"></script>
 <script src="./script/votesCounter.js"></script>
+<script src="./script/elementNode.js"></script>
+<script src="./script/tree.js"></script>
+<script src="./script/script.js"></script>
 <script src="./script/respondCreator.js"></script>
 </body>
 </html>

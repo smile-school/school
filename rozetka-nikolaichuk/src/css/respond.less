@@ -41,21 +41,32 @@
         .respond {
             &__heading {
                 margin-bottom: 10px;
+                .flex-mixin(@justify: space-between, @align: baseline);
 
                 &__author {
-                    float: left;
+                    display: inline-block;
                     font-weight: bold;
                     font-size: larger;
                     padding-right: 10px;
                 }
 
                 &__trade-status,
-                &__likes {
-                    float: left;
+                &__likes,
+                &__date{
                     font-size: smaller;
                 }
                 &__likes{
+                    .flex-mixin(@align: flex-end);
+                    &__percent{
+                        display: inline-block;
+                        margin-left: 15px;
+                    }
                     svg{
+                        width: 14px;
+                        height: 14px;
+                        fill: @form-respond-rating-star-fill;
+                    }
+                    .active-star{
                         fill: @form-respond-rating-star-fill-hover;
                     }
                     span{
@@ -63,14 +74,14 @@
                     }
                 }
 
-                &__date {
-                    float: right;
-                    font-size: smaller;
-                }
-
                 &__trade-status {
+                    display: inline-block;
                     color: @element-background-color;
                     padding-right: 20px;
+                }
+
+                &__date{
+                    margin-left: auto;
                 }
             }
 
@@ -149,6 +160,7 @@
                     .vote-link_positive__counter,
                     .vote-link_negative__counter {
                         font-size: 12px;
+                        margin: 0 5px;
                     }
 
                     .vote-link_negative {
@@ -158,6 +170,8 @@
                         svg {
                             fill: @icon-negative-fill-color;
                             color: @icon-red-color;
+                            width: 16px;
+                            height: 16px;
                         }
 
                         &:hover {
@@ -177,6 +191,8 @@
                         svg {
                             fill: @icon-positive-fill-color;
                             color: @icon-green-color;
+                            width: 16px;
+                            height: 16px;
                         }
 
                         &:hover {

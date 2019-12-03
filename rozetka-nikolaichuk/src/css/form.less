@@ -1,64 +1,86 @@
-.form-wrapper{
+.form-wrapper {
     width: 50%;
     margin: 0 auto;
     border-radius: 8px;
 }
-.form-respond{
+
+.form-respond {
     margin-top: 50px;
     background: @form-respond-background;
     border: 1px solid @button-gray-border-color;
     border-bottom: 0;
-    box-shadow: inset 0 -3px 0 0 #c5c5c5, 3px 3px 7px 0 rgba(200,200,200,.5);
+    box-shadow: inset 0 -3px 0 0 #c5c5c5, 3px 3px 7px 0 rgba(200, 200, 200, .5);
     border-radius: 8px;
     overflow: hidden;
     font-size: 15px;
-    &__heading{
+
+    &__heading {
         padding: 17px 25px;
         position: relative;
     }
-    &__stars-rating{
+
+    &__stars-rating {
         margin: 8px auto 20px;
         text-align: center;
-        .stars-rating{
-            &__wrapper{
+
+        .stars-rating {
+            &__wrapper {
                 display: inline-block;
                 transform: rotate(180deg);
+
+                input {
+                    display: none;
+                }
+
+                input[type=radio]:checked ~ .stars-rating__star > svg {
+                    fill: @form-respond-rating-star-fill-hover;
+                }
             }
-            &__star{
+
+            &__star {
                 display: inline-block;
                 width: 95px;
                 float: left;
                 transform: rotate(180deg);
-                svg{
+                cursor: pointer;
+
+                svg {
                     fill: @form-respond-rating-star-fill;
                 }
-                &:hover{
-                    svg{
+
+                &:hover {
+                    svg {
                         fill: @form-respond-rating-star-fill-hover;
                     }
-                    .stars-rating__status{
+
+                    .stars-rating__status {
                         color: @form-respond-rating-star-text-color-hover;
                     }
-                    ~ .stars-rating__star > svg{
+
+                    ~ .stars-rating__star > svg {
                         fill: @form-respond-rating-star-fill-hover;
                     }
                 }
             }
-            &__status{
+
+            &__status {
                 font-size: 10px;
                 padding-top: 5px;
                 color: @form-respond-rating-star-text-color;
             }
         }
     }
-    &__content{
+
+    &__content {
         padding: 17px 25px 25px;
     }
-    &__label{
+
+    &__label {
         display: inline-block;
         margin-bottom: 6px;
     }
-    &__input{
+
+    &__input {
         margin-bottom: 20px;
         width: 100%;
         padding: 5px;
@@ -69,18 +91,22 @@
         caret-color: @form-respond-input-caret-color;
         color: @page-font-color;
         transition: border-color .2s ease;
-        &:focus{
+
+        &:focus {
             border-color: @form-respond-input-border-color-hover;
         }
     }
-    .textarea{
+
+    .textarea {
         height: 140px;
     }
-    &__submit{
+
+    &__submit {
         float: right;
         width: 45%;
     }
-    &__cancel{
+
+    &__cancel {
         float: left;
         width: 45%;
     }

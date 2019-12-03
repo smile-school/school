@@ -282,12 +282,6 @@
         .flex-mixin(@justify: space-between, @align: stretch);
         height: 40px;
 
-        &:hover {
-            .open-button__icon {
-                transform: rotate(180deg);
-            }
-        }
-
         .main-menu-wrapper {
             width: 300px;
             border: 1px solid @menu-categories-border-color;
@@ -303,8 +297,13 @@
                 cursor: default;
                 font-size: 18px;
 
-                &:hover ~ .menu_hidden {
-                    display: block;
+                &:hover {
+                    & ~ .menu_hidden {
+                        display: block;
+                    }
+                    & > .open-button__icon{
+                        transform: rotate(180deg);
+                    }
                 }
 
                 .open-button__icon {
