@@ -1,12 +1,12 @@
 .sidedar-product {
-    padding-top: 50px;
+    padding-top: 19px;
     display: flex;
     flex-direction: row;
     overflow: hidden;
 }
 
 .wrapper {
-    max-width: 1200px;
+    max-width: 1170px;
     margin: 0 auto;
     padding: 0 20px;
     position: relative;
@@ -23,15 +23,18 @@ main {
 .reting {
     display: flex;
     flex-direction: row;
-    padding-bottom: 33px;
+    padding-bottom: 23px;
 
     li {
+        line-height: 15px;
+        font-size: @font-size-menu;
         &:not(:first-of-type) {
             padding: 0 10px;
         }
 
         &:last-of-type {
             border-left: 1px solid @coor-lin;
+            padding: 0 9px 0 11px;
         }
 
         a {
@@ -43,16 +46,23 @@ main {
 
 .glob-bloc-img {
     display: flex;
-    width: 100%;
+    width: 410px;
 }
 
 .price {
     font-size: @font-side-section;
-    padding-bottom: 14px;
-}
+    padding:0 0 21px 2px;
+    line-height: 20px;
+    span{
+        padding-left: 4px;
+    }
 
+}
+.about-tofor{
+    line-height: 21px;
+}
 .selection {
-    margin-top: 20px;
+    margin-top: 38px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -61,16 +71,17 @@ main {
 .select {
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 49%;
 
     &:first-of-type {
-        margin-right: 30px;
+        margin-right: 23px;
     }
 
     select {
         -moz-appearance: none;
         -webkit-appearance: none;
         appearance: none;
+        line-height: 15px;
         background-color: @white-color;
         border: 1px solid @line-bloc;
         box-sizing: border-box;
@@ -80,14 +91,15 @@ main {
     }
 
     .select-twoo {
-        padding: 0 25px 0 20px;
+        padding: 0 24px 0 14px;
     }
 
     label {
-        padding-bottom: 10px;
+        padding-bottom: 6px;
+        line-height: 17px;
 
         span {
-            padding-left: 5px;
+            padding-left: 3px;
             color: @bordo;
         }
     }
@@ -98,7 +110,8 @@ main {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-top: 20px;
+    margin:20px 6px 0 0;
+    line-height: 17px;
 
     & > label {
         margin-right: 6px;
@@ -107,7 +120,7 @@ main {
 
 button.add-cart {
     flex-grow: 1;
-    height: 44px;
+    height: 40px;
     background-color: @bordo;
     color: @white-color;
     text-transform: uppercase;
@@ -120,14 +133,19 @@ button.add-cart {
         background-color: @blac-shade;
     }
 }
-
+button.like-black{
+    height: 40px;
+    width: 40px;
+    box-sizing: border-box;
+}
 .count-input {
     width: 90px;
-    height: 44px;
+    height: 40px;
     box-sizing: border-box;
     text-align: center;
     margin-right: 5px;
     border-radius: 5px;
+    font-size: @font-size-h4;
     border: 1px solid @line-bloc;
     outline: 0;
 }
@@ -153,11 +171,11 @@ button.add-cart {
 
 .sel-two {
     position: relative;
-
+    padding-right: 15px;
     .strel {
         position: absolute;
-        right: 10px;
-        top: 49%;
+        right: 21px;
+        top: 51%;
     }
 }
 
@@ -174,18 +192,20 @@ button.add-cart {
     display: flex;
     flex-direction: row;
     position: relative;
-
+    .items{
+        &:not(:last-of-type){
+            margin-right: 10px;
+        }
+    }
     .item {
-
         margin-left: 40px;
-
     }
 }
 
 .h3-towar-section {
     font-size: @font-side-section;
     font-weight: normal;
-    padding-bottom: 10px;
+    padding-bottom: 11px;
 }
 
 .sku-towar {
@@ -196,19 +216,25 @@ button.add-cart {
 }
 
 .sku {
+    padding-left: 3px;
     color: @color-numenclat;
 }
 
 .span-fa-sku {
     color: @grean-color;
-
+    line-height: 15px;
+    padding-right: 13px;
     i {
-        padding-right: 5px;
+        width: 10px;
+        height: 10px;
+        padding-right: 8px;
     }
 }
 
 .main-aside {
     width: 270px;
+    line-height: 17px;
+    mix-blend-mode: normal;
 }
 
 .product-item {
@@ -217,10 +243,14 @@ button.add-cart {
 
     & > a {
         display: block;
-        padding-right: 10px;
+        padding-right: 9px;
     }
 }
-
+.check-img{
+    outline: 1px solid @line-bloc;
+    margin-left: 1px;
+    padding-bottom: 10px;
+}
 .top-aside {
     width: 270px;
     padding: 0 15px 20px 20px;
@@ -235,12 +265,12 @@ button.add-cart {
     align-items: flex-start;
 
     h3 {
+        padding:9px 0 6px;
         font-weight: normal;
-        padding-bottom: 7px;
     }
 
     img {
-        padding-bottom: 6px;
+        padding-bottom: 9px;
     }
 
     & > span {
@@ -251,11 +281,12 @@ button.add-cart {
     a {
         text-transform: uppercase;
         color: @defolt-color;
+        font-size: @font-size-h4;
     }
 }
 
 .top-h {
-    padding: 15px 0 15px 20px;
+    padding: 15px 0 12px 20px;
     background-color: @bordo;
     border-radius: 5px 5px 0 0;
 
@@ -268,7 +299,7 @@ button.add-cart {
 
 .ul-list-aside {
     li {
-        padding: 15px 0;
+        padding: 15px 0 19px 0;
 
         &:not(:first-of-type) {
             border-top: 1px solid @line-bloc;
@@ -294,8 +325,10 @@ button.add-cart {
     padding: 20px 0 20px 30px;
     text-transform: uppercase;
     cursor: pointer;
+    font-size: @social-font-size;
     border: 1px solid @line-bloc;
     font-weight: 900;
+    line-height: 21px;
 
     &:not(:first-of-type) {
         border-top: 0;
@@ -322,7 +355,11 @@ button.add-cart {
 
 .details-content {
     p {
-        padding-bottom: 20px;
+        padding-bottom: 22px;
+        line-height: 23px;
+        &:first-of-type{
+            padding-bottom: 24px;
+        }
     }
 }
 
@@ -752,7 +789,6 @@ button.dzb2 {
     .cart-add {
         flex-direction: column;
     }
-
     .bloc-btn-main {
         width: 100%;
         margin-top: 10px;

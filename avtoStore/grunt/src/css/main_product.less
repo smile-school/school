@@ -16,21 +16,33 @@
 
 .navigation {
     display: flex;
-    padding: 20px 0 15px 0;
+    padding: 19px 0 15px 6px;
     color: @coor-lin;
     text-transform: capitalize;
 
     p {
         &:first-of-type {
-            padding-right: 15px;
-        }
-
-        &:last-of-type {
-            padding-left: 15px;
+            padding-right: 32px;
         }
 
         span {
             font-weight: 900;
+        }
+    }
+    .home-navig{
+        position: relative;
+        &::after{
+            display: block;
+            content: '';
+            position: absolute;
+            background-image: url("../../../img/arrows.svg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 8px;
+            height: 11px;
+            top: 0;
+            right: 19%;
         }
     }
 }
