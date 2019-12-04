@@ -9,7 +9,6 @@
         document.querySelector('.form-overlay').style.display = 'block';
     }
 
-
     var form = document.querySelector('.form-send');
     var submit = document.querySelector('.go-review-btn');
 
@@ -28,7 +27,6 @@
             validForm(data);
         });
 
-
         function validForm(data) {
             var starCount = 0,
                 plus = '',
@@ -45,7 +43,6 @@
                 else if (key == 'email') email = item;
                 else if (key == 'rating') starCount = item;
             });
-
 
             function createData() {
                 Data = new Date();
@@ -68,7 +65,6 @@
                 }
             }
             createData();
-
 
             function createComent(data) {
                 var parent = document.querySelector('.all-reviews-wrap');
@@ -143,6 +139,4 @@
     form.addEventListener('submit', function () {
         this.reset();
     });
-
-
 })();

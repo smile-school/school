@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/knockout-3.5.1.js"></script>
+</head>
+<body>
+    <div class="wrap">
+<!--        <h1>Hello <span data-bind="text:name"></span> from <span data-bind="text:location"></span></h1>-->
+        <h1 data-bind="text: info"></h1>
+        <button id="setName" data-bind="click: setName">What is your name?</button>
+        <button id="setLocation" data-bind="click: setLocation">What is your location?</button>
+    </div>
+
+    <script>
+        // var custer = {
+        //     name:ko.observable('Vasya'),
+        //     location:ko.observable('Rivne')
+        // };
+        // document.querySelector('#setName').addEventListener('click', function () {
+        //    custer.name(prompt('What is your name?', custer.name()));
+        // });
+        // document.querySelector('#setLocation').addEventListener('click', function () {
+        //     custer.location(prompt('What is your location?', custer.location()));
+        // });
+        // ko.applyBindings(custer);
+
+
+        function Customer() {
+            this.name = ko.observable('Vasya');
+            this.location = ko.observable('Rivne');
+            this.info = ko.computed(function () {
+                return 'Hello ' + this.name() + ' from ' + this.location();
+            }, this);
+            this.setName = function () {
+                this.name(prompt('What is your name?', this.name()));
+            };
+            this.setLocation = function () {
+                this.location(prompt('What is your location?', this.location()));
+            }
+        }
+
+        ko.applyBindings(new Customer());
+    </script>
+</body>
+</html>
