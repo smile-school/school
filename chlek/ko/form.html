@@ -5,43 +5,51 @@
     <title>Title</title>
     <script src="school/knockout-3.5.1.js"></script>
     <style>
-        * {
+        body{
+            font-family: sans-serif;
+            font-size: 18px;
+            line-height: 1.2;
+        }
+        *{
             margin: 0;
             padding: 0;
         }
-
-        .wrapper {
+        .wrapper{
             width: 350px;
-            margin: 50px auto;
-            padding: 10px;
-            border: 1px solid lightgray;
+            margin: 20px auto;
         }
-
         input,
-        textarea {
+        textarea{
             width: 100%;
+            padding: 10px;
             box-sizing: border-box;
-            padding: 5px;
         }
-
-        label {
-            margin-bottom: 15px;
-            display: block;
-        }
-
-        input.radio {
+        .radio input{
             display: none;
+            width: auto;
         }
-
-        .rad {
+        .radio input:checked + label{
+            background-color: grey;
+            color: white;
+        }
+        .radio label{
             display: inline-block;
-            width: 25px;
-            margin: 5px;
+            padding: 10px;
+            cursor: pointer;
+            margin: 10px;
         }
-
-        .rating {
-            display: flex;
-            justify-content: center;
+        .radio label:hover{
+            background-color: lightgrey;
+        }
+        p{
+            margin-bottom: 15px;
+        }
+        .required{
+            color: red;
+        }
+        .messages > div{
+            padding: 15px;
+            border-bottom: 1px solid grey;
         }
     </style>
 </head>
