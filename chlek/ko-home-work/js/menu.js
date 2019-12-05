@@ -20,8 +20,9 @@ function CountPrice() {
         for (var key in this.prises) {
             if (key === dish) {
                 this.digitPrice += servings * this.prises[key];
-                this.price = ko.observable(this.digitPrice);
+                this.price(this.digitPrice);
                 this.allOrders[dish] = ko.observable(servings);
+                break;
             }
         }
         console.log(this.price());
