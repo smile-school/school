@@ -46,6 +46,18 @@
         .mySelect div.options li:hover{
             background-color: lightgray;
         }
+        li[data-selected-option]::before{
+            content: "";
+            display: block;
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            border-radius: 50%;
+            background-color: #f2fae3;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
 
     </style>
 </head>
@@ -71,13 +83,19 @@
 <script>
     function CustomSelect(options) {
         this.options = options || {};
-        this.selector = this.createElement("div", {'class': 'mySelect'});
+        this.selector = this.createElem("div", {'class': 'mySelect'});
         this.optionsList = this.options.select.children;
-
+        this.optionBox = this.createElem('div', {'class':'options'});
         this.init = function () {
             var firstOption = this.getOptionContent(this.getSelected());
-            this.selector.appendChild(this.createElement('div', setAttr(firstOption.attr, true, 'title'), firstOption.text));
-            this.selector.appendChild(buildOption.call(this, this.createElement("ul")));
+            this.selector.appendChild(this.createElement('div', setAttr(firstOption.attr, 'title', true), firstOption.text));
+            this.selector.appendChild(this.optionBox);
+            this.optionBox.appendChild(buildOption.call(this, this.createElem('ul')));
+            //this.selector.appendChild(this.createElement("div", {'class': 'options'}));
+            //this.selector.querySelector('.options').appendChild(buildOption.call(this, this.createElem("ul")));
+            this.selector.addEventListener('click', function () {
+                this.optionBox.classList.add('active');
+            }.bind(this));
             console.log(this.selector);
         };
         function setAttr(attr, flag, classElem) {
@@ -112,7 +130,7 @@
         function buildOption(ul) {
             for (var i = 0; i < this.optionsList.length; i++){
                 var option = this.getOptionContent(i);
-                ul.appendChild(createElem('li', setAttr(option.attr, fasle, option.text)));
+                ul.appendChild(createElem('li', setAttr(option.attr, false, option.text)));
             }
         };
         this.init();
