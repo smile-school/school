@@ -171,6 +171,21 @@ footer.footer {
                             text-decoration: none;
                             color: @buttons-text-color;
                         }
+                        &:hover{
+                            &:not(:first-child){
+                                padding-left: 15px;
+                                position: relative;
+                                & > a{
+                                    color: @buttons-background-color;
+                                }
+                                &:before{
+                                    .pseudo-elements-mixin(@content: '-');
+                                    color: @buttons-background-color;
+                                    left: 0;
+                                    top: 0;
+                                }
+                            }
+                        }
                     }
                 }
             }

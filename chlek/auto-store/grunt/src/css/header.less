@@ -167,7 +167,7 @@ header.header {
                             &:hover {
                                 background-color: @your-lang-hover-background-color;
                                 outline: 1px solid @your-lang-outline-color;
-                                color: @your-lang-background-color;
+                                color: @your-lang-hover-color;
                             }
 
                             &:not(:last-child) {
@@ -372,11 +372,18 @@ header.header {
 
             & > button {
                 height: 100%;
-                border: 2px solid #282828;
+                border: 2px solid #E5E5E5;
                 border-radius: 5px;
                 box-sizing: border-box;
                 background-color: @button-color;
                 padding: 0;
+                &:hover{
+                    border-color: #282828;
+                    cursor: pointer;
+                    &::before{
+                        border-color: #282828;
+                    }
+                }
             }
 
             .favour {
@@ -418,7 +425,7 @@ header.header {
                     }
 
                     .red-color {
-                        color: @right-section-right;
+                        color: @your-lang-outline-color;
                         margin: 0 auto;
                     }
                 }
@@ -428,7 +435,7 @@ header.header {
                     top: 0;
                     bottom: 0;
                     left: 44px;
-                    border-right: 2px solid @border-color;
+                    border-right: 2px solid #E5E5E5;
                     @media (max-width: @second-mobile-point) {
                         display: none;
                     }
@@ -469,6 +476,10 @@ header.header {
                 box-sizing: border-box;
                 display: none;
                 border-radius: 5px;
+                @media(max-width: @second-mobile-point){
+                    max-width: 300px;
+                    padding: 10px;
+                }
 
                 &:hover {
                     display: block;
@@ -510,6 +521,9 @@ header.header {
                             font-weight: lighter;
                             line-height: 17px;
                             margin-bottom: 43px;
+                            @media(max-width: @second-mobile-point){
+                                font-size: 13px;
+                            }
                         }
 
                         .details {
@@ -519,6 +533,9 @@ header.header {
                             margin-bottom: 11px;
                             position: relative;
                             padding-right: 13px;
+                            @media(max-width: @second-mobile-point){
+                                margin-right: 8px;
+                            }
 
                             &:after {
                                 .pseudo-elements-mixin;
@@ -648,6 +665,9 @@ header.header {
                             padding: 0 39px;
                             font-size: 13px;
                             line-height: 15px;
+                            @media(max-width: @second-mobile-point){
+                                padding: 0 32px;
+                            }
 
                             &:first-of-type {
                                 margin-right: 15px;
@@ -841,10 +861,15 @@ header.header {
                             cursor: pointer;
                             position: relative;
                             z-index: 5;
-                            color: @body-text-color;
                             font-weight: normal;
                             padding: 5px;
                             background-color: @point-background-color;
+                            & > a{
+                                color: @body-text-color;
+                                text-decoration: none;
+                                display: block;
+                                height: 100%;
+                            }
 
                             &:not(:last-child) {
                                 margin-bottom: 10px;
@@ -852,6 +877,9 @@ header.header {
 
                             &:hover {
                                 .hover-point;
+                                & > a{
+                                    color: @your-lang-hover-color;
+                                }
                             }
 
                             &:after {
