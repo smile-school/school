@@ -46,24 +46,42 @@
         .mySelect div.oprions li:hover{
             background-color: lightgray;
         }
+        .active{
+            display: block;
+        }
+        li[data-selected-option]{
+            position: relative;
+        }
+        li[data-selected-option]::before{
+           content: "";
+            display: block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            position: absolute;
+            background-color: #0b2e13;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 20px;
+        }
     </style>
 </head>
 <body>
 <div class="wrap">
-    <div class="mySelect" data-selected = '1'>
-        <div class="title">1</div>
-        <div class="oprions">
-            <ul>
-                <li data-option="1">1</li>
-                <li data-option="2">2</li>
-                <li data-option="3">3</li>
-            </ul>
-        </div>
-    </div>
+<!--    <div class="mySelect" data-selected = '1'>-->
+<!--        <div class="title">1</div>-->
+<!--        <div class="oprions">-->
+<!--            <ul>-->
+<!--                <li data-option="1">1</li>-->
+<!--                <li data-option="2">2</li>-->
+<!--                <li data-option="3">3</li>-->
+<!--            </ul>-->
+<!--        </div>-->
+<!--    </div>-->
     <select class="select" name="nn">
         <option value="1">1</option>
-        <option value="2" selected>2</option>
-        <option value="3" >3</option>
+        <option value="2" >2</option>
+        <option value="3" selected>3</option>
     </select>
 </div>
 <script>
@@ -71,17 +89,20 @@
        this.options = options || {};                                    //коли приймаємо пусте створюєи пстий обєкт
         this.selector = this.createElem('div',{'class':'mySelect'});   //батьківський елемент
         this.optionsList = this.options.select.children;                // доступаємся до всіх опций
-
+        this.optionBox = this.createElem('div',{'class':'options'});
        this.init = function () {
             var firstOption = this.getOptionContent(this.getSelected());    //визиваємо метод атрибутів вертає шндекс
-
+            this.selector.appendChild(this.optionBox);
             this.selector.appendChild(this.createElem('div',setAttr(firstOption.attr,'title',true),firstOption.text));
-
                 //викликаємо функцію передану build втрачається this call привязує і відразу визиває
-           this.selector.appendChild(buildOption.call(this,this.createElem('ul')));
+           this.optionBox.appendChild(buildOption.call(this,this.createElem('ul')));
+            this.selector.addEventListener('click', function (e) {
+                this.optionBox.classList.add('active');
+            }.bind(this));
+           this.options.select.parentElement.insertBefore(this.selector,this.options.select);  //виводимо дані
 
        };
-       function setAttr(attr,classElem,flag) {   //перевіряєм кількість атрибутів
+       function setAttr(attr,classElem,flag,text) {   //перевіряєм кількість атрибутів
            var data = {};
            for (var i=0;i< attr.length;i++){
                if (flag && !data['data-selected']){
@@ -113,7 +134,7 @@
 
             for(var i=0;i<this.optionsList.length;i++){
                 var option = this.getOptionContent(i);
-               ul.appendChild( createElem('li',setAttr(option.attr,false,option.text))) ;         // передаємо всі параметри наших li
+               ul.appendChild( createElem('li',setAttr(option.attr,undefined,false),option.text)) ;         // передаємо всі параметри наших li
             }
             return ul;       // ми передали все перемінній
        }
