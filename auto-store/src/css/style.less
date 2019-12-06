@@ -42,16 +42,15 @@ body {
 .header{
   .head {
     background-color: @darkColor;
+    padding: 14px 0;
   }
   .wrapper {
     position: relative;
     &.top-head{
       display: flex;
       justify-content: flex-end;
-      align-items: center;
       .login{
         font-size: 13px;
-        line-height: 15px;
         color: @darkTextColor;
         a{
           .link();
@@ -59,11 +58,14 @@ body {
           &:hover{
             color: @hoverLinkColor;
           }
+          &:nth-child(1){
+            margin-right: 4px;
+          }
         }
         &::before{
           content: '\f023';
-          font-size: 12px;
-          padding-right: 20px;
+          font-size: 13px;
+          padding-right: 16px;
           color: @hoverLinkColor;
           .fontFamilyAwesome900();
         }
@@ -73,26 +75,31 @@ body {
           background-color: @darkTextColor;
           height: 11px;
           display: inline-block;
-          margin-left: 20px;
+          margin-left: 19px;
+          margin-top: 3px;
+        }
+        &:nth-child(1){
+          margin: -2px 2px 0 0;
         }
       }
       .dropdown{
         display: flex;
         span.selected{
-          margin-left: 20px;
           text-transform: uppercase;
           color: @darkTextColor;
           position: relative;
-          font-size: 12px;
           display: flex;
-          padding: 17px 0 15px 0;
+          margin-left: 18px;
+          font-size: 13px;
           .hover();
           svg{
-            margin-right: 8.5px;
+            margin-right: 6.5px;
+            margin-top: 1px;
           }
           &::after{
             content: '\f078';
-            margin-left: 6px;
+            font-size: 9px;
+            margin: 1px 1px 0 5px;
             .fontFamilyAwesome900()
           }
           &:hover{
@@ -108,6 +115,9 @@ body {
         &.select-country{
           .hidden-select{
             right: 74px;
+          }
+          &:nth-child(1){
+            margin-left: 22px;
           }
         }
         &.select-currency{
@@ -160,8 +170,8 @@ body {
           background-color: @darkTextColor;
           height: 11px;
           display: inline-block;
-          margin-left: 20px;
-          margin-top: 17px;
+          margin-left: 18px;
+          margin-top: 3px;
         }
       }
     }
@@ -170,38 +180,43 @@ body {
     padding-top: 31px;
     display: flex;
     align-items: center;
+    .logo{
+      padding-left: 1px;
+    }
     form.search{
-      margin-left: 121px;
+      margin-left: 122px;
+      width: 100%;
+      display: flex;
       input[type="text"]{
-        height: 44px;
         background: @white;
-        font-size: 14px;
         line-height: 17px;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: normal;
         border: 2px solid @border;
         border-radius:  5px 0 0 5px;
         width: 516px;
-        padding-left: 10px;
+        padding: 11px 0 12px 109px;
         color: rgba(196, 196, 196, 0.8);
         box-sizing: border-box;
       }
       input[type='submit']{
-        margin-left: -6px;
-        width: 54px;
-        height: 44px;
+        margin-left: -2px;
         background: @hoverLinkColor;
         border: 0;
         border-radius: 0 5px 5px 0;
         cursor: pointer;
         .fontFamilyAwesome900();
         color: @white;
-        font-size: 12px;
+        font-size: 13px;
+        padding: 15px 21px;
       }
     }
   }
   .wishlist{
     margin-left: 30px;
-    width: 44px;
-    height: 44px;
+    padding: 11px;
+    font-size: 17px;
     border-radius: 5px;
     border: 2px solid @border;
     box-sizing: border-box;
@@ -226,19 +241,19 @@ body {
       }
     }
     i{
-      width: 44px;
-      height: 44px;
+      padding: 10px 12px;
       border-radius: 5px 0 0 4px;
       border: 2px solid @border;
       .button();
       box-sizing: border-box;
       position: relative;
+      font-size: 17px;
       &::after{
         content: attr(data-count);
         color: @white;
         position: absolute;
-        right: -12px;
-        top: -12px;
+        right: -13px;
+        top: -15px;
         background:@hoverLinkColor;
         font-size: 13px;
         width: 24px;
@@ -248,16 +263,17 @@ body {
       }
     }
     &>span{
-      width: 127px;
-      height: 44px;
+      min-width: 127px;
       border-radius: 0 5px 5px 0;
       border: 2px solid @border;
       border-left: 0;
       font-size: 13px;
+      padding: 0 0 2px 8px;
       .button();
       box-sizing: border-box;
       .count{
         color: @hoverLinkColor;
+        padding-left: 4px;
       }
     }
     .hidden{
@@ -409,21 +425,23 @@ body {
     }
   }
   .nav{
-    margin-top: 31px;
+    margin-top: 28px;
     border-bottom: 2px solid @hoverLinkColor;
     .wrapper{
       display: flex;
       .all-category{
         background-color: @hoverLinkColor;
         width: 270px;
-        height: 52px;
         border-radius: 5px 5px 0 0;
         text-transform: uppercase;
+        padding: 11px 0;
         .button();
         justify-content: space-between;
         span{
           color: @white;
-          padding-left: 18px;
+          padding-left: 19px;
+          font-size: 13px;
+          letter-spacing: 1px;
         }
         svg{
           padding-right: 18px;
@@ -432,19 +450,25 @@ body {
       .navigation{
         align-items: center;
         display: flex;
+
         &>ul{
           display: flex;
           text-transform: uppercase;
           list-style-type: none;
-          margin-left: 30px;
+          margin-left: 31px;
           &>li{
-            padding: 17px 19px;
+            padding: 18px 19px 15px;
             margin-left: 1px;
-            font-size: 14px;
+            font-size: 13px;
+            font-style: normal;
+            font-weight: bold;
+            text-transform: uppercase;
             border-radius: 5px 5px 0 0;
+            &:nth-child(5){
+              padding-left: 21px;
+            }
             a{
               color: @darkColor;
-              font-weight: bold;
               text-decoration: none;
             }
             &:first-child{
@@ -453,7 +477,8 @@ body {
               &::after{
                 content: '\f078';
                 .fontFamilyAwesome900();
-                margin-left: 6px;
+                margin-left: 3px;
+                font-size: 11px;
               }
             }
             &:hover{

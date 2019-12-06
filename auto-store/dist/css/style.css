@@ -16,6 +16,7 @@ body {
 }
 .header .head {
   background-color: #282828;
+  padding: 14px 0;
 }
 .header .wrapper {
   position: relative;
@@ -23,11 +24,9 @@ body {
 .header .wrapper.top-head {
   display: flex;
   justify-content: flex-end;
-  align-items: center;
 }
 .header .wrapper.top-head .login {
   font-size: 13px;
-  line-height: 15px;
   color: #CCCCCC;
 }
 .header .wrapper.top-head .login a {
@@ -37,10 +36,13 @@ body {
 .header .wrapper.top-head .login a:hover {
   color: #FF2D37;
 }
+.header .wrapper.top-head .login a:nth-child(1) {
+  margin-right: 4px;
+}
 .header .wrapper.top-head .login::before {
   content: '\f023';
-  font-size: 12px;
-  padding-right: 20px;
+  font-size: 13px;
+  padding-right: 16px;
   color: #FF2D37;
   font-family: "Font Awesome 5 Pro";
   font-weight: 900;
@@ -51,30 +53,35 @@ body {
   background-color: #CCCCCC;
   height: 11px;
   display: inline-block;
-  margin-left: 20px;
+  margin-left: 19px;
+  margin-top: 3px;
+}
+.header .wrapper.top-head .login:nth-child(1) {
+  margin: -2px 2px 0 0;
 }
 .header .wrapper.top-head .dropdown {
   display: flex;
 }
 .header .wrapper.top-head .dropdown span.selected {
-  margin-left: 20px;
   text-transform: uppercase;
   color: #CCCCCC;
   position: relative;
-  font-size: 12px;
   display: flex;
-  padding: 17px 0 15px 0;
+  margin-left: 18px;
+  font-size: 13px;
 }
 .header .wrapper.top-head .dropdown span.selected:hover {
   color: #FF2D37;
   cursor: pointer;
 }
 .header .wrapper.top-head .dropdown span.selected svg {
-  margin-right: 8.5px;
+  margin-right: 6.5px;
+  margin-top: 1px;
 }
 .header .wrapper.top-head .dropdown span.selected::after {
   content: '\f078';
-  margin-left: 6px;
+  font-size: 9px;
+  margin: 1px 1px 0 5px;
   font-family: "Font Awesome 5 Pro";
   font-weight: 900;
 }
@@ -87,6 +94,9 @@ body {
 }
 .header .wrapper.top-head .dropdown.select-country .hidden-select {
   right: 74px;
+}
+.header .wrapper.top-head .dropdown.select-country:nth-child(1) {
+  margin-left: 22px;
 }
 .header .wrapper.top-head .dropdown.select-currency .hidden-select {
   right: 0px;
@@ -136,33 +146,37 @@ body {
   background-color: #CCCCCC;
   height: 11px;
   display: inline-block;
-  margin-left: 20px;
-  margin-top: 17px;
+  margin-left: 18px;
+  margin-top: 3px;
 }
 .header .hat {
   padding-top: 31px;
   display: flex;
   align-items: center;
 }
+.header .hat .logo {
+  padding-left: 1px;
+}
 .header .hat form.search {
-  margin-left: 121px;
+  margin-left: 122px;
+  width: 100%;
+  display: flex;
 }
 .header .hat form.search input[type="text"] {
-  height: 44px;
   background: white;
-  font-size: 14px;
   line-height: 17px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: normal;
   border: 2px solid #C4C4C4;
   border-radius: 5px 0 0 5px;
   width: 516px;
-  padding-left: 10px;
+  padding: 11px 0 12px 109px;
   color: rgba(196, 196, 196, 0.8);
   box-sizing: border-box;
 }
 .header .hat form.search input[type='submit'] {
-  margin-left: -6px;
-  width: 54px;
-  height: 44px;
+  margin-left: -2px;
   background: #FF2D37;
   border: 0;
   border-radius: 0 5px 5px 0;
@@ -170,12 +184,13 @@ body {
   font-family: "Font Awesome 5 Pro";
   font-weight: 900;
   color: white;
-  font-size: 12px;
+  font-size: 13px;
+  padding: 15px 21px;
 }
 .header .wishlist {
   margin-left: 30px;
-  width: 44px;
-  height: 44px;
+  padding: 11px;
+  font-size: 17px;
   border-radius: 5px;
   border: 2px solid #C4C4C4;
   box-sizing: border-box;
@@ -202,8 +217,7 @@ body {
   border-color: black;
 }
 .header .cart i {
-  width: 44px;
-  height: 44px;
+  padding: 10px 12px;
   border-radius: 5px 0 0 4px;
   border: 2px solid #C4C4C4;
   display: flex;
@@ -212,13 +226,14 @@ body {
   align-items: center;
   box-sizing: border-box;
   position: relative;
+  font-size: 17px;
 }
 .header .cart i::after {
   content: attr(data-count);
   color: white;
   position: absolute;
-  right: -12px;
-  top: -12px;
+  right: -13px;
+  top: -15px;
   background: #FF2D37;
   font-size: 13px;
   width: 24px;
@@ -230,12 +245,12 @@ body {
   align-items: center;
 }
 .header .cart > span {
-  width: 127px;
-  height: 44px;
+  min-width: 127px;
   border-radius: 0 5px 5px 0;
   border: 2px solid #C4C4C4;
   border-left: 0;
   font-size: 13px;
+  padding: 0 0 2px 8px;
   display: flex;
   cursor: pointer;
   justify-content: center;
@@ -244,6 +259,7 @@ body {
 }
 .header .cart > span .count {
   color: #FF2D37;
+  padding-left: 4px;
 }
 .header .cart .hidden {
   position: absolute;
@@ -392,7 +408,7 @@ body {
   cursor: pointer;
 }
 .header .nav {
-  margin-top: 31px;
+  margin-top: 28px;
   border-bottom: 2px solid #FF2D37;
 }
 .header .nav .wrapper {
@@ -401,9 +417,9 @@ body {
 .header .nav .wrapper .all-category {
   background-color: #FF2D37;
   width: 270px;
-  height: 52px;
   border-radius: 5px 5px 0 0;
   text-transform: uppercase;
+  padding: 11px 0;
   display: flex;
   cursor: pointer;
   justify-content: center;
@@ -412,7 +428,9 @@ body {
 }
 .header .nav .wrapper .all-category span {
   color: white;
-  padding-left: 18px;
+  padding-left: 19px;
+  font-size: 13px;
+  letter-spacing: 1px;
 }
 .header .nav .wrapper .all-category svg {
   padding-right: 18px;
@@ -425,17 +443,22 @@ body {
   display: flex;
   text-transform: uppercase;
   list-style-type: none;
-  margin-left: 30px;
+  margin-left: 31px;
 }
 .header .nav .wrapper .navigation > ul > li {
-  padding: 17px 19px;
+  padding: 18px 19px 15px;
   margin-left: 1px;
-  font-size: 14px;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: bold;
+  text-transform: uppercase;
   border-radius: 5px 5px 0 0;
+}
+.header .nav .wrapper .navigation > ul > li:nth-child(5) {
+  padding-left: 21px;
 }
 .header .nav .wrapper .navigation > ul > li a {
   color: #282828;
-  font-weight: bold;
   text-decoration: none;
 }
 .header .nav .wrapper .navigation > ul > li:first-child {
@@ -446,7 +469,8 @@ body {
   content: '\f078';
   font-family: "Font Awesome 5 Pro";
   font-weight: 900;
-  margin-left: 6px;
+  margin-left: 3px;
+  font-size: 11px;
 }
 .header .nav .wrapper .navigation > ul > li:hover {
   background-color: #FF2D37;
