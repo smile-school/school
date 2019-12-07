@@ -944,9 +944,10 @@ aside.menu-left {
   padding: 15px 0;
   margin: -5px 0;
   box-sizing: border-box;
-  align-self: flex-start;
+  align-self: flex-end;
   position: sticky;
-  top: 0;
+  bottom: 0;
+  z-index: 20;
 }
 aside.menu-left .product-list {
   padding-bottom: 25px;
@@ -1070,7 +1071,7 @@ aside.menu-left .private-office button {
   display: block;
   width: 100%;
   padding: 8px 16px;
-  background-color: #f5f5f5;
+  background-color: #3e77aa;
   border: none;
   border-radius: 4px;
   margin-bottom: 14px;
@@ -1236,6 +1237,8 @@ aside.menu-left .links-wrapper > ul:last-child {
 }
 aside.menu-left .info-wrapper {
   padding: 16px 20px;
+  position: sticky;
+  bottom: 100%;
 }
 aside.menu-left .info-wrapper .cards {
   display: flex;
@@ -2014,6 +2017,10 @@ main.site-content .video-wrap > ul li > span {
   margin-bottom: 8px;
   height: 32px;
   overflow: hidden;
+}
+.wrapper .content-wrap .product-wrap .product .article-text > a {
+  text-decoration: none;
+  color: inherit;
 }
 .wrapper .content-wrap .product-wrap .product .rating-wrap {
   margin-bottom: 8px;
@@ -2922,6 +2929,10 @@ footer.footer .wrapper .different > p > span {
   padding: 0 8px;
   box-sizing: border-box;
   color: #3e77aa;
+}
+.about-product-tabs .wrapper .about-product-links > li > label > a {
+  text-decoration: none;
+  color: inherit;
 }
 .about-product-tabs .wrapper .about-product-links > li > label > span {
   color: #333333;

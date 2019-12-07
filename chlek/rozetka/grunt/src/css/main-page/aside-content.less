@@ -3,9 +3,11 @@ aside.menu-left {
     padding: 15px 0;
     margin: -5px 0;
     box-sizing: border-box;
-    align-self: flex-start;
+    align-self: flex-end;
     position: sticky;
-    top: 0;
+    bottom: 0;
+    z-index: 20;
+
 
     .product-list {
         padding-bottom: 25px;
@@ -169,7 +171,8 @@ aside.menu-left {
             display: block;
             width: 100%;
             padding: 8px 16px;
-            background-color: @aside-button-background-color;
+
+            background-color: @aside-link-color;
             border: none;
             border-radius: 4px;
             margin-bottom: 14px;
@@ -383,6 +386,8 @@ aside.menu-left {
 
     .info-wrapper {
         padding: 16px 20px;
+        position: sticky;
+        bottom: 100%;
 
         .cards {
             display: flex;
