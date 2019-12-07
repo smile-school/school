@@ -1,61 +1,31 @@
 (function () {
 
-    var self = this;
-    function Form() {
-        var btn = document.querySelector("#actForm"),
-            actForm = document.querySelector(".action-form-bloc"),
-            exidForm = document.querySelectorAll(".ehitForm"),
-            acForm = "acForm";
-
-        btn.addEventListener('click', function () {
-            actForm.classList.add(acForm);
-        });
-
-        exidForm.forEach(elem =>{
-            elem.addEventListener('click',function () {
-                actForm.classList.remove(acForm);
-            })
-        });
-
-    }
-
-    Form();
-
-        function setCount(spn) {
-            spn.innerHTML = this.counts + ++spn.textContent;
-        }
-
-        function Counter(elem, count) {
-            this.targetElem = elem;
-            this.counts = count;
-            for (var i = 0; i < elem.length; i++) {
-                this.targetElem[i].addEventListener("click", function () {
-                  if (this.classList.contains('buton-lice')){
-                      var spn = this.children[1];
-                      counter.setCount(spn);
-                  }
-                    if (this.classList.contains('buton-diz')){
-                        var spn2 = this.children[1];
-                        counter2.setCount(spn2);
-                    }
-                });
-
-            }
-        }
-        Counter.prototype.setCount = setCount;
-        var counter = new Counter(document.querySelectorAll('.buton-lice'), 0);
-        var counter2 = new Counter(document.querySelectorAll('.buton-diz'), 0);
-
 
 
     function formValid(a) {
-        var myForm = document.getElementById('comentForm');
-        myForm.addEventListener('submit', parsForm);
+        var self = this;
+        this.parament = {
+            ratings : 0,
+            myForm:document.querySelector('#comentForm'),
+            starInp:document.querySelector('.star-bloc'),
+        };
+
+
+        this.parament.myForm.addEventListener('submit', parsForm);
+
+
+        self.parament.starInp.addEventListener('click', ratingCounter) ;
+
+
+
         function parsForm(e) {
             e.preventDefault();
             var data = new FormData(this);
             Valid(data);
         }
+
+
+
         function createElem(elem, attr,text) {
             if (!elem) return false;
             var el = document.createElement(elem);
@@ -72,52 +42,39 @@
         }
 
          function Valid(data) {
-            var ul = document.querySelector(".coment-list");
+             this.elemForm = {};
 
-            var name = '',
-                digniti = '',
-                disadvantages = '',
-                coment = '',
-                rating = 1,
-                urlYotube = '',
-                date = new Date(),
+             data.forEach(function (item, key) {
+                 if (key === 'name') this.elemForm.name = item;
+                 else if (key === 'rating') this.elemForm.rating = self.parament.ratings;
+                 else if (key === 'digniti') this.elemForm.digniti = item;
+                 else if (key === 'disadvantages') this.elemForm.disadvantages = item;
+                 else if (key === 'coment') this.elemForm.coment = item;
+                 else if (key === 'url-yotube') this.elemForm.urlYotube = item.split('v=')[1];
+             });
+                console.log( self.parament.ratings);
+             AddedComent();
+         }
+         function AddedComent() {
+
+             var ul = document.querySelector(".coment-list");
+
+            var  date = new Date(),
                 curr_date = date.getDate(),
                 curr_month = date.getMonth() + 1,
                 curr_year = date.getFullYear(),
                 setDate = curr_year + "-" + curr_month + "-" + curr_date;
-                // reting = 0.5;
-
-             // var star = document.querySelectorAll('.rat');
-             // star.forEach(items=>{
-             //     items.addEventListener('click',function (event) {
-             //         itemss = +(event.target.dataset.rating) / 5;
-             //         return itemss;
-             //     });
-             // });
-
-            data.forEach(function (item,key){
-                if (key === 'name') name = item;
-                else if(key ==='rating') rating = itemss;
-                else if (key === 'digniti') digniti = item;
-                else if (key === 'disadvantages') disadvantages = item;
-                else if (key === 'coment') coment = item;
-                else if (key === 'url-yotube') urlYotube = item.split('v=')[1];
-
-            });
-
-
-
-
 
 
             var li = document.createElement('li');
 
-            ul.append(li);
+
+            ul.prepend(li);
 
              var topComent = createElem('div',{'class':'list-coment-bloc'},undefined) ;
              var comentBloc = createElem('div',{'class':'top-coment-list top-coment'},undefined) ;
              var pTop = createElem('p',undefined,undefined);
-             var nameList =createElem('span',{'class':'name-list'},name);
+             var nameList =createElem('span',{'class':'name-list'},this.elemForm.name);
              var todauList = createElem('span',{'class':'todau-list'},undefined);
              var time = createElem('time',undefined,setDate);
 
@@ -133,7 +90,7 @@
                  '    <g>\n' +
                  '        <defs>\n' +
                  '            <linearGradient gradientUnits="userSpaceOnUse" id="ratingFill_44730882">\n' +
-                 '                <stop stop-color="#ffa900" stop-opacity="1" offset="' + rating + '"></stop>\n' +
+                 '                <stop stop-color="#ffa900" stop-opacity="1" offset="' + 1 + '"></stop>\n' +
                  '                <stop attr.offset="100%" stop-color="#d2d2d2" stop-opacity="1"></stop>\n' +
                  '            </linearGradient>\n' +
                  '        </defs>\n' +
@@ -150,13 +107,13 @@
             topComent.appendChild(interest);
 
              var comentText = createElem('div',{'class':'coment-text'},undefined) ;
-            var coments = createElem('p',{'class':'coment'},coment) ;
+            var coments = createElem('p',{'class':'coment'},this.elemForm.coment) ;
             comentText.appendChild(coments);
 
             var characterBloc = createElem('dl',{'class':'character-bloc'}) ;
             var dt1 = createElem('dt',{'class':'character-bloc'},'Достоинства:') ;
 
-            var dd1 = createElem('dd',undefined,digniti) ;
+            var dd1 = createElem('dd',undefined,this.elemForm.digniti) ;
             characterBloc.appendChild(dt1);
             characterBloc.appendChild(dd1);
             comentText.appendChild(characterBloc);
@@ -165,16 +122,18 @@
             var characterBloc2 = characterBloc.cloneNode(false);
 
             var dt2 = createElem('dt',undefined,'Недостатки:') ;
-            var dd2 = createElem('dd',undefined,digniti) ;
+            var dd2 = createElem('dd',undefined,this.elemForm.disadvantages) ;
             characterBloc2.appendChild(dt2);
             characterBloc2.appendChild(dd2);
             comentText.appendChild(characterBloc2);
 
-             var ifreme = '<iframe width="560" height="315"  src="https://www.youtube.com/embed/' + urlYotube + '" frameborder="0"' +
-                 'allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
-            var video = createElem('div',{'class':'video'},ifreme) ;
+            if (this.elemForm.urlYotube){
+                var ifreme = '<iframe width="560" height="315"  src="https://www.youtube.com/embed/' + this.elemForm.urlYotube + '" frameborder="0"' +
+                    'allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+                var video = createElem('div',{'class':'video'},ifreme) ;
 
-            topComent.appendChild(video);
+                topComent.appendChild(video);
+            }
 
              var comentFooter = createElem('div',{'class':'coment-footer'},undefined) ;
              var svgRetur = '<svg aria-hidden="true" height="12" width="12">\n' +
@@ -210,12 +169,19 @@
 
             li.appendChild(topComent);
 
-
             var form = document.querySelector('.action-form-bloc');
              form.classList.remove('acForm');
 
 
         }
+       function ratingCounter(event) {
+           if (event.target.tagName === 'LABEL'){
+               self.parament.ratings = +(event.target.dataset.ret) / 5;
+               // self.options.checkedStar = event.target;
+               return  self.parament.ratings;
+
+           }
+       }
 
     }
 
