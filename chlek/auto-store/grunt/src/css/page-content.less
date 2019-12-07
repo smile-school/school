@@ -861,19 +861,24 @@
 
                     .about-wrap {
                         width: calc(100% - 90px);
-                        padding-left: 10px;
+                        padding: 2px 0 0 10px;
                         box-sizing: border-box;
                         @media (max-width: @tablet-point) {
                             padding-left: 5px;
                         }
 
-                        & > a{
+                        & > p{
                             display: block;
                             line-height: 20px;
                             text-transform: uppercase;
                             text-decoration: none;
                             color: @body-text-color;
                             cursor: pointer;
+                            margin-bottom: 5px;
+                            & > a{
+                                color: inherit;
+                                text-decoration: none;
+                            }
                         }
 
                         span.prod {
@@ -884,12 +889,14 @@
                         & > img {
                             display: block;
                             max-width: 100%;
+                            margin-bottom: 3px;
                         }
 
                         .price {
                             padding: 6px 0;
                             font-weight: 500;
-                            margin-bottom: 16px;
+                            margin-bottom: 19px;
+                            display: block;
                         }
                     }
                 }
