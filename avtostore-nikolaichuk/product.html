@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>AutoStore</title>
     <link rel="stylesheet" href="dist/css/style.css">
+    <script src="knockout-3.5.1.js"></script>
 </head>
 <body>
 <header></header>
@@ -19,14 +20,14 @@
                     <div class="filter-group__filter-items">
                         <ul class="colors-filter__wrapper">
                             <li class="color-filter color-black"></li>
-                            <li class="color-filter color-brown"></li>
+                            <!--<li class="color-filter color-brown"></li>
                             <li class="color-filter color-gray"></li>
                             <li class="color-filter color-green"></li>
                             <li class="color-filter color-orange"></li>
                             <li class="color-filter color-violet"></li>
                             <li class="color-filter color-red"></li>
                             <li class="color-filter color-white"></li>
-                            <li class="color-filter color-yellow"></li>
+                            <li class="color-filter color-yellow"></li>-->
                         </ul>
                     </div>
                 </div>
@@ -50,7 +51,7 @@
                                 <span class="brand-filter__title">Toyota</span>
                                 <span class="brand-filter__quantity">(4)</span>
                             </li>
-                            <li class="brand-filter">
+                            <!--<li class="brand-filter">
                                 <span class="brand-filter__title">Mercedes</span>
                                 <span class="brand-filter__quantity">(2)</span>
                             </li>
@@ -61,7 +62,7 @@
                             <li class="brand-filter">
                                 <span class="brand-filter__title">Audi</span>
                                 <span class="brand-filter__quantity">(4)</span>
-                            </li>
+                            </li>-->
                         </ul>
                     </div>
                 </div>
@@ -70,7 +71,7 @@
                     <div class="filter-group__filter-items">
                         <ul class="models-filter__wrapper">
                             <li class="model-filter">Camry</li>
-                            <li class="model-filter">Fortuner</li>
+                            <!--<li class="model-filter">Fortuner</li>
                             <li class="model-filter">Vios</li>
                             <li class="model-filter">C300</li>
                             <li class="model-filter">E250</li>
@@ -78,7 +79,7 @@
                             <li class="model-filter">Sorento</li>
                             <li class="model-filter">Optima</li>
                             <li class="model-filter">A4</li>
-                            <li class="model-filter">A8</li>
+                            <li class="model-filter">A8</li>-->
                         </ul>
                     </div>
                 </div>
@@ -87,10 +88,10 @@
                     <div class="filter-group__filter-items">
                         <ul>
                             <li class="year-filter">2011</li>
-                            <li class="year-filter">2013</li>
+                            <!--<li class="year-filter">2013</li>
                             <li class="year-filter">2015</li>
                             <li class="year-filter">2017</li>
-                            <li class="year-filter">2018</li>
+                            <li class="year-filter">2018</li>-->
                         </ul>
                     </div>
                 </div>
@@ -113,7 +114,7 @@
                         <div class="product-item__content__prices">$84.00</div>
                     </div>
                 </div>
-                <div class="product-item">
+                <!--<div class="product-item">
                     <div class="product-item__image">
                         <img src="./dist/ima/design_in-car_fm_radio.png" alt="car kit hands free calling">
                     </div>
@@ -172,11 +173,124 @@
                         </div>
                         <div class="product-item__content__prices">$84.00</div>
                     </div>
-                </div>
+                </div>-->
+            </div>
+            <div class="form-wrapper" id="addProduct">
+                    <h2>Add product</h2>
+                    <label>Title
+                        <input type="text" name="title" data-bind="value:title">
+                    </label>
+                    <label>Image
+                        <input type="text" name="image" data-bind="value:img">
+                    </label>
+                    <label>Price
+                        <input type="text" name="price" data-bind="value:price">
+                        Sale Price
+                        <input type="text" name="salePrice" data-bind="value:salePrice">
+                    </label>
+                    <label>New
+                        <input type="checkbox" name="new" data-bind="value:newAction">
+                    </label>
+                    <label>Sale
+                        <input type="checkbox" name="sale" data-bind="value:sale">
+                    </label>
+                    <div class="rating-wrapper">Rating
+                        <input type="radio" name="rating" id="r1" data-bind="checked: rating" value="1">
+                        <label>1</label>
+                        <input type="radio" name="rating" id="r2" data-bind="checked: rating" value="2">
+                        <label>2</label>
+                        <input type="radio" name="rating" id="r3" data-bind="checked: rating" value="3">
+                        <label>3</label>
+                        <input type="radio" name="rating" id="r4" data-bind="checked: rating" value="4">
+                        <label>4</label>
+                        <input type="radio" name="rating" id="r5" data-bind="checked: rating" value="5">
+                        <label>5</label>
+                    </div>
+                    <label>Color
+                        <select name="color" id="color" data-bind="options: colorOptions"></select>
+                        <button type="button" data-bind="click: function(){addAttribute('color');}">+</button>
+                    </label>
+                    <label>Brand
+                        <select name="brand" id="brand" data-bind="options: brandOptions">
+
+                        </select>
+                        <button type="button" data-bind="click: function(){addAttribute('brand');}">+</button>
+                    </label>
+                    <label>Model
+                        <select name="model" id="model" data-bind="options: modelOptions">
+
+                        </select>
+                        <button type="button" data-bind="click: function(){addAttribute('model');}">+</button>
+                    </label>
+                    <label>Year
+                        <select name="year" id="year" data-bind="options: yearOptions">
+
+                        </select>
+                        <button type="button" data-bind="click: function(){addAttribute('year');}">+</button>
+                    </label>
+                <button type="button" class="addBtn" data-bind="click: addProduct">Add product</button>
             </div>
         </div>
     </div>
 </main>
 <footer></footer>
+<script>
+    function Attributes() {
+        this.color = ko.observableArray([]);
+        this.brand = ko.observableArray([]);
+        this.model = ko.observableArray([]);
+        this.year = ko.observableArray([]);
+    }
+
+    function Product(title, img, price, salePrice, newAction, sale, rating, color, brand, model, year) {
+        this.title = ko.observable(title || '');
+        this.img = ko.observable(img || '');
+        this.price = ko.observable(price || '');
+        this.salePrice = ko.observable(salePrice || '');
+        this.newAction = ko.observable(newAction || false);
+        this.sale = ko.observable(sale || false);
+        this.rating = ko.observable(rating || '');
+        this.color = ko.observable(color || '');
+        this.brand = ko.observable(brand || '');
+        this.model = ko.observable(model || '');
+        this.year = ko.observable(year || '');
+    }
+
+    function AddProduct() {
+        this.title = product.title;
+        this.img = product.img;
+        this.price = product.price;
+        this.salePrice = product.salePrice;
+        this.newAction = product.newAction;
+        this.sale = product.sale;
+        this.rating = product.rating;
+        this.colorOptions = attributes.color;
+        this.brandOptions = attributes.brand;
+        this.modelOptions = attributes.model;
+        this.yearOptions = attributes.year;
+        this.addAttribute = function (nameAttribute) {
+            console.log(nameAttribute, this);
+            var value = prompt('Enter ' + nameAttribute);
+            console.log(this);
+            if(value){
+                this[nameAttribute + 'Options'].push(value);
+            }
+        }
+        this.addProduct = function () {
+
+        }
+    }
+
+    function ProductList() {
+        this.productList = ko.observableArray([]);
+    }
+
+    var attributes = new Attributes(),
+        product = new Product(),
+        addProduct = new AddProduct(),
+        productList = new ProductList();
+
+    ko.applyBindings(addProduct, document.querySelector('#addProduct'));
+</script>
 </body>
 </html>
