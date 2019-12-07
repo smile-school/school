@@ -1946,18 +1946,21 @@ header.header nav.menu .wrapper .container-tab .hamburger .hamb-wrap .menu-tab:h
   border-radius: 5px;
   border: none;
   box-sizing: border-box;
+  background-color: #282828;
 }
 .wrapper .main-container .container-content .add-prod .description .select-prop .buttons-wrap > button:not(:last-child) {
   margin-right: 5px;
 }
 .wrapper .main-container .container-content .add-prod .description .select-prop .buttons-wrap > button:not(:first-of-type) {
   width: 40px;
-  background-color: #282828;
   padding-top: 7px;
+}
+.wrapper .main-container .container-content .add-prod .description .select-prop .buttons-wrap > button:hover {
+  background-color: #FF2D37;
+  cursor: pointer;
 }
 .wrapper .main-container .container-content .add-prod .description .select-prop .buttons-wrap .add {
   width: 210px;
-  background-color: #FF2D37;
   color: #FFFFFF;
   text-transform: uppercase;
   line-height: 17px;
@@ -2551,10 +2554,6 @@ header.header nav.menu .wrapper .container-tab .hamburger .hamb-wrap .menu-tab:h
   border: 1px solid #E5E5E5;
 }
 .wrapper .container.likes-prod .prod-cards .card:hover:after {
-  top: -4px;
-  right: -4px;
-  left: -4px;
-  bottom: -4px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.35);
 }
 .wrapper .container.likes-prod .prod-cards .card:hover .image-wrap {
@@ -2605,7 +2604,6 @@ header.header nav.menu .wrapper .container-tab .hamburger .hamb-wrap .menu-tab:h
 .wrapper .container.likes-prod .prod-cards .card .button-wrap {
   position: relative;
   z-index: 5;
-  margin: 0 -3px;
   display: none;
 }
 .wrapper .container.likes-prod .prod-cards .card .button-wrap > button {
@@ -3469,10 +3467,6 @@ footer.footer .bottom-section .container .copyright > span {
   z-index: 10;
 }
 .wrapper .main-container.page .content-wrap .product-cards-wrap .card:hover:after {
-  top: -4px;
-  right: -4px;
-  left: -4px;
-  bottom: -4px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.35);
   z-index: -1;
   background-color: #FFFFFF;
@@ -3525,7 +3519,6 @@ footer.footer .bottom-section .container .copyright > span {
 .wrapper .main-container.page .content-wrap .product-cards-wrap .card .button-wrap {
   position: relative;
   z-index: 5;
-  margin: 0 -3px;
   display: none;
 }
 .wrapper .main-container.page .content-wrap .product-cards-wrap .card .button-wrap > button {
@@ -3580,4 +3573,79 @@ footer.footer .bottom-section .container .copyright > span {
 .wrapper .main-container.page .content-wrap .product-cards-wrap .card > h5 > span:last-child {
   color: #C5C5C5;
   text-decoration: line-through;
+}
+.wrapper .container-js {
+  flex-wrap: wrap;
+}
+.wrapper .container-js .form-wrap {
+  width: 100%;
+  margin: 25px 0;
+}
+.wrapper .container-js .form-wrap > h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.wrapper .container-js .form-wrap > .form {
+  width: 50%;
+  margin: 0 auto;
+  padding: 10px;
+}
+.wrapper .container-js .form-wrap > .form p {
+  margin-bottom: 5px;
+  font-weight: bold;
+  width: 100%;
+}
+.wrapper .container-js .form-wrap > .form > label {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.wrapper .container-js .form-wrap > .form > label > input,
+.wrapper .container-js .form-wrap > .form > label > select {
+  width: 100%;
+  box-sizing: border-box;
+  height: 30px;
+  margin-bottom: 20px;
+  border: 1px solid #E5E5E5;
+  background-color: #FFFFFF;
+}
+.wrapper .container-js .form-wrap > .form > label > select {
+  width: calc(100% - 30px);
+}
+.wrapper .container-js .form-wrap > .form > label button {
+  width: 30px;
+  height: 30px;
+}
+.wrapper .container-js .form-wrap > .form > button {
+  padding: 10px 30px;
+  margin: 0 auto;
+}
+.wrapper .container-js .form-wrap > .form > div {
+  padding: 10px 0;
+  margin-bottom: 20px;
+}
+.wrapper .container-js .form-wrap > .form > div > input {
+  display: none;
+}
+.wrapper .container-js .form-wrap > .form > div > input:checked + label {
+  background-color: #F5F5F5;
+}
+.wrapper .container-js .form-wrap > .form > div > label {
+  padding: 10px;
+  margin-right: 10px;
+  display: inline-block;
+  border: 1px solid #F5F5F5;
+}
+.wrapper .container-js .form-wrap > .form > div > label:hover {
+  background-color: #F5F5F5;
+}
+.wrapper .container-js .form-wrap > .form > div.action {
+  display: flex;
+}
+.wrapper .container-js .form-wrap > .form > div.action > label {
+  width: 50%;
+  display: block;
+}
+.wrapper .container-js .form-wrap > .form > div.action > p {
+  text-align: center;
 }

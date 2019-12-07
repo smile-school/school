@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="style/all.min.css">
     <script src="javascript/jquery-3.4.1.min.js"></script>
     <script src="javascript/slick.min.js"></script>
-    <script src="javascript/slider.js"></script>
-    <script src="javascript/add-review.js"></script>
+    <script src="javascript/knockout-3.5.1.js"></script>
+
 </head>
 <body>
 <header class="header">
@@ -508,7 +508,7 @@
             <a href="#" class="home">Home</a>
             <a href="#" class="home">Carbon Fiber Steering Wheel</a>
         </div>
-        <div class="container">
+        <div class="container container-js">
             <div class="aside-container">
                 <div class="title">
                     <h5>Shop By</h5>
@@ -519,22 +519,6 @@
                         <div>
                             <input type="checkbox" name="color" id="black" value="#000000">
                             <label for="black" class="color-input black"></label>
-                            <input type="checkbox" name="color" id="brown" value="#945454">
-                            <label for="brown" class="color-input brown"></label>
-                            <input type="checkbox" name="color" id="grey" value="#8F8F8F">
-                            <label for="grey" class="color-input grey"></label>
-                            <input type="checkbox" name="color" id="green" value="#53A828">
-                            <label for="green" class="color-input green"></label>
-                            <input type="checkbox" name="color" id="orange" value="#EB6703">
-                            <label for="orange" class="color-input orange"></label>
-                            <input type="checkbox" name="color" id="violet" value="#EF3DFF">
-                            <label for="violet" class="color-input violet"></label>
-                            <input type="checkbox" name="color" id="red" value="#FF0000">
-                            <label for="red" class="color-input red"></label>
-                            <input type="checkbox" name="color" id="white" value="#FFFFFF">
-                            <label for="white" class="color-input white"></label>
-                            <input type="checkbox" name="color" id="yellow" value="#FFD500">
-                            <label for="yellow" class="color-input yellow"></label>
                         </div>
                     </div>
                     <div class="price-choice">
@@ -713,7 +697,7 @@
                 <div class="product-cards-wrap">
                     <div class="card-wrap">
                         <div class="card-height-wrap">
-                            <div class="card">
+                            <div class="card sale new">
                                 <span class="sale-labe">sale<span>&nbsp;</span></span>
                                 <span class="new-labe">new<span>&nbsp;</span></span>
                                 <div class="image-wrap">
@@ -732,237 +716,75 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card-wrap">
-                        <div class="card-height-wrap">
-                            <div class="card new sale">
-                                <span class="sale-labe">sale<span>&nbsp;</span></span>
-                                <span class="new-labe">new<span>&nbsp;</span></span>
-                                <div class="image-wrap">
-                                    <img src="img/fm_radio_adapter.png" alt="img">
-                                </div>
-                                <div class="button-wrap">
-                                    <button><img src="img/hart.png" alt=""></button>
-                                    <button>Add to Cart</button>
-                                    <button><img src="img/update.png" alt=""></button>
-                                </div>
-                                <p>Car Kit Hands Free Calling</p>
-                                <div class="rating-wrap">
-                                    <img src="img/star1.png" alt="image">
-                                </div>
-                                <h5>$84.00</h5>
-                            </div>
-                        </div>
+
+                </div>
+            </div>
+            <div class="form-wrap" id="add-product">
+                <h3>Add product</h3>
+                <div class="form">
+                    <label>
+                        <p>Enter image url</p>
+                        <input type="text" id="image" name="image">
+                    </label>
+                    <label>
+                        <p>Enter product name</p>
+                        <input data-bind="text: title" type="text" id="prod-name" name="prod-name" >
+                    </label>
+                    <div>
+                        <p>Enter rating</p>
+                        <input data-bind="checked: rating" type="radio" id="rating-1" value="1" name="rating">
+                        <label for="rating-1">1</label>
+                        <input data-bind="checked: rating" type="radio" id="rating-2" value="2" name="rating">
+                        <label for="rating-2">2</label>
+                        <input data-bind="checked: rating" type="radio" id="rating-3" value="3" name="rating">
+                        <label for="rating-3">3</label>
+                        <input data-bind="checked: rating" type="radio" id="rating-4" value="4" name="rating">
+                        <label for="rating-4">4</label>
+                        <input data-bind="checked: rating" type="radio" id="rating-5" value="5" name="rating">
+                        <label for="rating-5">5</label>
                     </div>
-                    <div class="card-wrap">
-                        <div class="card-height-wrap">
-                            <div class="card new">
-                                <span class="sale-labe">sale<span>&nbsp;</span></span>
-                                <span class="new-labe">new<span>&nbsp;</span></span>
-                                <div class="image-wrap">
-                                    <img src="img/radio_transmitter.png" alt="img">
-                                </div>
-                                <div class="button-wrap">
-                                    <button><img src="img/hart.png" alt=""></button>
-                                    <button>Add to Cart</button>
-                                    <button><img src="img/update.png" alt=""></button>
-                                </div>
-                                <p>Car Kit Hands Free Calling</p>
-                                <div class="rating-wrap">
-                                    <img src="img/star1.png" alt="image">
-                                </div>
-                                <h5>$84.00</h5>
-                            </div>
-                        </div>
+                    <div class="action">
+                        <label for="new">
+                            <p>New</p>
+                            <input type="checkbox" id="new">
+                        </label>
+
+                        <label for="sale">
+                            <p>Sale</p>
+                            <input type="checkbox" id="sale">
+                        </label>
                     </div>
-                    <div class="card-wrap">
-                        <div class="card-height-wrap">
-                            <div class="card">
-                                <span class="sale-labe">sale<span>&nbsp;</span></span>
-                                <span class="new-labe">new<span>&nbsp;</span></span>
-                                <div class="image-wrap">
-                                    <img src="img/design_in-car.png" alt="img">
-                                </div>
-                                <div class="button-wrap">
-                                    <button><img src="img/hart.png" alt=""></button>
-                                    <button>Add to Cart</button>
-                                    <button><img src="img/update.png" alt=""></button>
-                                </div>
-                                <p>Car Kit Hands Free Calling</p>
-                                <div class="rating-wrap">
-                                    <img src="img/star1.png" alt="image">
-                                </div>
-                                <h5><span>$55.00</span><span>$84.00</span></h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-wrap">
-                        <div class="card-height-wrap">
-                            <div class="card new sale">
-                                <span class="sale-labe">sale<span>&nbsp;</span></span>
-                                <span class="new-labe">new<span>&nbsp;</span></span>
-                                <div class="image-wrap">
-                                    <img src="img/fm_radio_adapter.png" alt="img">
-                                </div>
-                                <div class="button-wrap">
-                                    <button><img src="img/hart.png" alt=""></button>
-                                    <button>Add to Cart</button>
-                                    <button><img src="img/update.png" alt=""></button>
-                                </div>
-                                <p>Car Kit Hands Free Calling</p>
-                                <div class="rating-wrap">
-                                    <img src="img/star1.png" alt="image">
-                                </div>
-                                <h5>$84.00</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-wrap">
-                        <div class="card-height-wrap">
-                            <div class="card new">
-                                <span class="sale-labe">sale<span>&nbsp;</span></span>
-                                <span class="new-labe">new<span>&nbsp;</span></span>
-                                <div class="image-wrap">
-                                    <img src="img/radio_transmitter.png" alt="img">
-                                </div>
-                                <div class="button-wrap">
-                                    <button><img src="img/hart.png" alt=""></button>
-                                    <button>Add to Cart</button>
-                                    <button><img src="img/update.png" alt=""></button>
-                                </div>
-                                <p>Car Kit Hands Free Calling</p>
-                                <div class="rating-wrap">
-                                    <img src="img/star1.png" alt="image">
-                                </div>
-                                <h5>$84.00</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-wrap">
-                        <div class="card-height-wrap">
-                            <div class="card">
-                                <span class="sale-labe">sale<span>&nbsp;</span></span>
-                                <span class="new-labe">new<span>&nbsp;</span></span>
-                                <div class="image-wrap">
-                                    <img src="img/design_in-car.png" alt="img">
-                                </div>
-                                <div class="button-wrap">
-                                    <button><img src="img/hart.png" alt=""></button>
-                                    <button>Add to Cart</button>
-                                    <button><img src="img/update.png" alt=""></button>
-                                </div>
-                                <p>Car Kit Hands Free Calling</p>
-                                <div class="rating-wrap">
-                                    <img src="img/star1.png" alt="image">
-                                </div>
-                                <h5><span>$55.00</span><span>$84.00</span></h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-wrap">
-                        <div class="card-height-wrap">
-                            <div class="card new sale">
-                                <span class="sale-labe">sale<span>&nbsp;</span></span>
-                                <span class="new-labe">new<span>&nbsp;</span></span>
-                                <div class="image-wrap">
-                                    <img src="img/fm_radio_adapter.png" alt="img">
-                                </div>
-                                <div class="button-wrap">
-                                    <button><img src="img/hart.png" alt=""></button>
-                                    <button>Add to Cart</button>
-                                    <button><img src="img/update.png" alt=""></button>
-                                </div>
-                                <p>Car Kit Hands Free Calling</p>
-                                <div class="rating-wrap">
-                                    <img src="img/star1.png" alt="image">
-                                </div>
-                                <h5>$84.00</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-wrap">
-                        <div class="card-height-wrap">
-                            <div class="card new">
-                                <span class="sale-labe">sale<span>&nbsp;</span></span>
-                                <span class="new-labe">new<span>&nbsp;</span></span>
-                                <div class="image-wrap">
-                                    <img src="img/design_in-car.png" alt="img">
-                                </div>
-                                <div class="button-wrap">
-                                    <button><img src="img/hart.png" alt=""></button>
-                                    <button>Add to Cart</button>
-                                    <button><img src="img/update.png" alt=""></button>
-                                </div>
-                                <p>Car Kit Hands Free Calling</p>
-                                <div class="rating-wrap">
-                                    <img src="img/star1.png" alt="image">
-                                </div>
-                                <h5><span>$55.00</span><span>$84.00</span></h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-wrap">
-                        <div class="card-height-wrap">
-                            <div class="card">
-                                <span class="sale-labe">sale<span>&nbsp;</span></span>
-                                <span class="new-labe">new<span>&nbsp;</span></span>
-                                <div class="image-wrap">
-                                    <img src="img/design_in-car.png" alt="img">
-                                </div>
-                                <div class="button-wrap">
-                                    <button><img src="img/hart.png" alt=""></button>
-                                    <button>Add to Cart</button>
-                                    <button><img src="img/update.png" alt=""></button>
-                                </div>
-                                <p>Car Kit Hands Free Calling</p>
-                                <div class="rating-wrap">
-                                    <img src="img/star1.png" alt="image">
-                                </div>
-                                <h5><span>$55.00</span><span>$84.00</span></h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-wrap">
-                        <div class="card-height-wrap">
-                            <div class="card">
-                                <span class="sale-labe">sale<span>&nbsp;</span></span>
-                                <span class="new-labe">new<span>&nbsp;</span></span>
-                                <div class="image-wrap">
-                                    <img src="img/design_in-car.png" alt="img">
-                                </div>
-                                <div class="button-wrap">
-                                    <button><img src="img/hart.png" alt=""></button>
-                                    <button>Add to Cart</button>
-                                    <button><img src="img/update.png" alt=""></button>
-                                </div>
-                                <p>Car Kit Hands Free Calling</p>
-                                <div class="rating-wrap">
-                                    <img src="img/star1.png" alt="image">
-                                </div>
-                                <h5><span>$55.00</span><span>$84.00</span></h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-wrap">
-                        <div class="card-height-wrap">
-                            <div class="card">
-                                <span class="sale-labe">sale<span>&nbsp;</span></span>
-                                <span class="new-labe">new<span>&nbsp;</span></span>
-                                <div class="image-wrap">
-                                    <img src="img/fm_radio_adapter.png" alt="img">
-                                </div>
-                                <div class="button-wrap">
-                                    <button><img src="img/hart.png" alt=""></button>
-                                    <button>Add to Cart</button>
-                                    <button><img src="img/update.png" alt=""></button>
-                                </div>
-                                <p>Car Kit Hands Free Calling</p>
-                                <div class="rating-wrap">
-                                    <img src="img/star1.png" alt="image">
-                                </div>
-                                <h5>$84.00</h5>
-                            </div>
-                        </div>
-                    </div>
+                    <label for="price">
+                        <p>Price</p>
+                        <input data-bind="text: price" type="text" id="price">
+                    </label>
+
+                    <label for="new-price">
+                        <p>New price</p>
+                        <input type="text" id="new-price">
+                    </label>
+
+                    <label>
+                        <p>Color</p>
+                        <select data-bind="options: colorOptions" name="color" id="color"></select>
+                        <button data-bind="click: function(){addAttribute('color');}">+</button>
+                    </label>
+                    <label>
+                        <p>Brand</p>
+                        <select data-bind="options: brandOptions" name="brand" id="brand"></select>
+                        <button data-bind="click: function(){addAttribute('brand');}">+</button>
+                    </label>
+                    <label>
+                        <p>Model</p>
+                        <select data-bind="options: modelOptions" name="brand" id="model"></select>
+                        <button data-bind="click: function(){addAttribute('model');}">+</button>
+                    </label>
+                    <label>
+                        <p>Year</p>
+                        <select data-bind="options: yearOptions" name="year" id="year"></select>
+                        <button>+</button>
+                    </label>
+                    <button>Add product</button>
                 </div>
             </div>
         </div>
@@ -1037,5 +859,6 @@
         </div>
     </div>
 </footer>
+<script src="javascript/ko.js"></script>
 </body>
 </html>
