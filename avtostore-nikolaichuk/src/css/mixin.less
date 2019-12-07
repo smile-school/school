@@ -8,3 +8,23 @@
     justify-content: @justify;
     align-items: @align;
 }
+.middle-mixin {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.absolute-position-mixin(@top: 50%; @left: 50%; @translateX: -50%; @translateY: -50%){
+    position: absolute;
+    top: @top;
+    left: @left;
+    transform: translate(@translateX, @translateY);
+}
+.background-image-mixin(@image; @widthImg: 0; @heightImg: 0; @position: center; @size: cover){
+    .geometric-mixin(@width: @widthImg, @height: @heightImg);
+    background-image: url('@{image-url}@{image}');
+    background-repeat: no-repeat;
+    background-position: @position;
+    background-size: @size;
+    background-color: inherit;
+}

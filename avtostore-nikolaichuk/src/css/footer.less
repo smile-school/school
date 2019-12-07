@@ -6,5 +6,47 @@
             padding-top: 73px;
             padding-bottom: 76px;
         }
+        &__contact-block{
+            float: left;
+            display: inline-block;
+            width: 400px;
+            .contact-block{
+                &__title{
+                    color: @footer-heading-color;
+                    font-weight: 500;
+                    padding-bottom: 23px;
+                    letter-spacing: 0;
+                }
+                &__list__item{
+                    width: 100%;
+                    display: inline-block;
+                    padding: 10px 0;
+                    span{
+                        display: inline-block;
+                        position: relative;
+                        color: @footer-item-color;
+                        margin-left: 41px;
+                        line-height: 23px;
+                        &::before{
+                            content: '';
+                            .absolute-position-mixin(@top: 50%, @left: -41px, @translateX: 0, @translateY: -50%);
+                        }
+                    }
+                    &:first-child span::before{
+                        .background-image-mixin(@image: 'icon-geo-pointer.png', @widthImg: 36px, @heightImg: 36px);
+                    }
+                    &:nth-child(2) span::before{
+                        .background-image-mixin(@image: 'icon-phone.png', @widthImg: 36px, @heightImg: 36px);
+                    }
+                    &:nth-child(3) span::before{
+                        .background-image-mixin(@image: 'icon-latter.png', @widthImg: 36px, @heightImg: 36px);
+                    }
+                    &:last-child span::before{
+                        .background-image-mixin(@image: 'icon-clock.png', @widthImg: 36px, @heightImg: 36px);
+                    }
+                }
+            }
+        }
     }
 }
+
