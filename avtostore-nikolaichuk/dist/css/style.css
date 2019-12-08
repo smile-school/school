@@ -45,15 +45,15 @@ a.link {
   text-decoration: none;
 }
 .col-1 {
-  width: calc((100% - 3*30px)/4);
+  width: calc((100% - 3 * 30px) / 4);
   display: inline-block;
 }
 .col-2 {
-  width: calc((100% - 30px)/2);
+  width: calc((100% - 30px) / 2);
   display: inline-block;
 }
 .col-3 {
-  max-width: calc((100% - 30px)*3/4);
+  width: calc(((100% - 3 * 30px) / 4) * 3 + 2 * 30px);
   display: inline-block;
 }
 .product-item__content {
@@ -365,6 +365,76 @@ a.link {
   left: 43px;
   transform: translate(0, -50%);
   background-color: #E5E5E5;
+}
+.header__navigation {
+  padding-top: 30px;
+}
+.header__navigation .categories__menu__item,
+.header__navigation .nav-menu__item {
+  cursor: pointer;
+  display: inline-block;
+  box-sizing: border-box;
+  line-height: 17px;
+  font-weight: bold;
+  padding: 18px;
+  border-radius: 5px 5px 0 0;
+}
+.header__navigation .categories__menu {
+  float: left;
+  position: relative;
+}
+.header__navigation .categories__menu__item {
+  width: 100%;
+  color: #FFFFFF;
+  background-color: #FF2D37;
+}
+.header__navigation .categories__menu__burger {
+  position: absolute;
+  top: 50%;
+  left: calc(100% - 20px);
+  transform: translate(-100%, -50%);
+  width: 15px;
+  height: 2px;
+  background-color: #FFFFFF;
+}
+.header__navigation .categories__menu__burger::before,
+.header__navigation .categories__menu__burger::after {
+  content: '';
+  width: 100%;
+  height: 2px;
+  background-color: #FFFFFF;
+}
+.header__navigation .categories__menu__burger::before {
+  position: absolute;
+  top: -3px;
+  left: 0;
+  transform: translate(0, -50%);
+}
+.header__navigation .categories__menu__burger::after {
+  position: absolute;
+  top: 5px;
+  left: 0;
+  transform: translate(0, -50%);
+}
+.header__navigation .nav-menu {
+  float: right;
+}
+.header__navigation .nav-menu__item:hover {
+  color: #FFFFFF;
+  background-color: #FF2D37;
+}
+header {
+  position: relative;
+}
+header::after {
+  content: '';
+  position: absolute;
+  top: calc(100% - 2px);
+  left: 0;
+  transform: translate(0, 0);
+  width: 100%;
+  height: 2px;
+  background-color: #FF2D37;
 }
 .products__content {
   width: 100%;
