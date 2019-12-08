@@ -1,0 +1,80 @@
+.breadcrambs{
+    padding: 18px 0;
+    padding-left: 6px;
+    margin-bottom: 16px;
+    color: @main-breadcrambs-color;
+    .link{
+        line-height: 17px;
+        letter-spacing: 0.02em;
+    }
+    i{
+        padding: 0 7px;
+    }
+}
+.product-info{
+    height: 1300px;
+}
+.float_right{
+    float: right;
+}
+.aside{
+    &__heading{
+       font-size: 17px;
+        font-weight: bold;
+        line-height: 20px;
+        letter-spacing: 0.02px;
+        text-transform: uppercase;
+        color: @main-elements-color;
+        background-color: @main-elements-background;
+        padding: 12px 22px;
+        border-radius: 5px 5px 0 0;
+    }
+    .featured-products{
+        box-sizing: border-box;
+        border: 1px solid @main-border-line-color;
+        border-top: none;
+        border-radius: 0 0 5px 5px;
+        margin-bottom: 30px;
+        &__item{
+            padding: 20px 10px 19px 20px;
+            position: relative;
+            .product-link{
+                cursor: pointer;
+                display: inline-block;
+                &__image{
+                    float: left;
+                    margin-right: 8px;
+                }
+                &__title{
+                    text-transform: uppercase;
+                    line-height: 20px;
+                    font-size: 13px;
+                    letter-spacing: 0.02em;
+                }
+                &__rating{
+                    display: inline-block;
+                    .background-image-mixin(@image: 'star5.png', @widthImg: 83px, @heightImg: 14px);
+                    margin-bottom: 6px;
+                    margin-top: 7px;
+                }
+                &__price{
+                    font-size: 15px;
+                    font-weight: 700;
+                }
+                &:hover > .product-link__title{
+                    color: @page-hover-color;
+                }
+            }
+            &:not(:last-child)::after{
+                content: '';
+                .geometric-mixin(@width: 85%, @height: 1px);
+                .absolute-position-mixin(@top: 100%, @left: 50%);
+                background-color: @main-border-line-color;
+            }
+        }
+    }
+    .sidebar-item > .link{
+        display: inline-block;
+        .background-image-mixin(@image: 'item-sidebar.jpg', @widthImg: 270px, @heightImg: 422px);
+    }
+}
