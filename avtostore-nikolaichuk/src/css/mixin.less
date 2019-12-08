@@ -10,7 +10,7 @@
     align-items: @align;
 }
 
-.middle-mixin {
+.middle-mixin() {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -31,4 +31,11 @@
     background-position: @position;
     background-size: @size;
     background-color: inherit;
+}
+
+.hover-mixin(){
+    &:hover{
+        color: @main-elements-color;
+        background-color: @page-hover-color;
+    }
 }
