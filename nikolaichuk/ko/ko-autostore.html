@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AutoStore</title>
+    <script src="../js/knockout-3.5.1.js"></script>
+    <link rel="stylesheet" href="../css/autostore.css">
+</head>
+<body>
+<header></header>
+<main class="products__content">
+    <div class="page-wrapper clearfix-block">
+        <div class="filters">
+            <div class="filters-block">
+                <h2 class="filters-block__title">Shop By</h2>
+                <div class="filters-block__filter-group">
+                    <div class="filter-group__name">color</div>
+                    <div class="filter-group__filter-items">
+                        <ul class="colors-filter__wrapper">
+                            <li class="color-filter" style="background-color: #000000"></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="filters-block__filter-group">
+                    <div class="filter-group__name">price</div>
+                    <div class="filter-group__filter-items price-slider__wrapper">
+                        <div class="price-slider__slider"></div>
+                        <div class="price-slider__controls">
+                            <span>$</span>
+                            <input type="text" class="price-slider__controls__input price-min" value="66.9" />
+                            <span>-$</span>
+                            <input type="text" class="price-slider__controls__input price-max" value="290"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="filters-block__filter-group">
+                    <div class="filter-group__name">brand</div>
+                    <div class="filter-group__filter-items">
+                        <ul class="brands-filter__wrapper">
+                            <li class="brand-filter">
+                                <span class="brand-filter__title">Toyota</span>
+                                <span class="brand-filter__quantity">(4)</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="filters-block__filter-group">
+                    <div class="filter-group__name">model</div>
+                    <div class="filter-group__filter-items">
+                        <ul class="models-filter__wrapper">
+                            <li class="model-filter">Camry</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="filters-block__filter-group">
+                    <div class="filter-group__name">year</div>
+                    <div class="filter-group__filter-items">
+                        <ul>
+                            <li class="year-filter">2011</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="filters-block"></div>
+        </div>
+        <div class="search-result__wrapper">
+            <h1 class="search-result__heading">Baby Car Seats</h1>
+            <div class="search-result__controls"></div>
+            <div class="search-result__products">
+                <div class="product-item">
+                    <div class="product-item__image">
+                        <img src="../ima/car_kit_hands_free_calling.png"/>
+                    </div>
+                    <div class="product-item__content">
+                        <div class="product-item__content__title">Car Kit Hands Free Calling</div>
+                        <div class="product-item__content__rating">
+                            <img src="../ima/star5.png"/>
+                        </div>
+                        <div class="product-item__content__prices">$84.00</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-wrapper" id="addProduct">
+                    <h2>Add product</h2>
+                <div class="col-1">
+                    <label for="title">Title</label>
+                    <label for="image">Image</label>
+                    <label for="price">Price</label>
+                    <label for="salePrice">Sale Price</label>
+                    <label for="color">Color</label>
+                    <label for="brand">Brand</label>
+                    <label for="model">Model</label>
+                    <label for="year">Year</label>
+                </div>
+                <div class="col-2">
+                    <input type="text" name="title" id="title" data-bind="value:title">
+                    <input type="text" name="image" id="image" data-bind="value:img">
+                    <input type="text" name="price" id="price" data-bind="value:price">
+                    <input type="text" name="salePrice" id="salePrice" data-bind="value:salePrice">
+                    <div>
+                        <select name="color" id="color" data-bind="options: colorOptions"></select>
+                        <button type="button" data-bind="click: function(){addAttribute('color');}">+</button>
+                    </div>
+                    <div>
+                        <select name="brand" id="brand" data-bind="options: brandOptions"></select>
+                        <button type="button" data-bind="click: function(){addAttribute('brand');}">+</button>
+                    </div>
+                    <div>
+                        <select name="model" id="model" data-bind="options: modelOptions"></select>
+                        <button type="button" data-bind="click: function(){addAttribute('model');}">+</button>
+                    </div>
+                    <div>
+                        <select name="year" id="year" data-bind="options: yearOptions"></select>
+                        <button type="button" data-bind="click: function(){addAttribute('year');}">+</button>
+                    </div>
+                </div>
+                <label>New
+                    <input type="checkbox" name="new" id="new" data-bind="value:newAction">
+                </label>
+                <label>Sale
+                    <input type="checkbox" name="sale" id="sale" data-bind="value:sale">
+                </label>
+                <div class="rating-wrapper">Rating
+                    <input type="radio" name="rating" id="r1" data-bind="checked: rating" value="1">
+                    <label>1</label>
+                    <input type="radio" name="rating" id="r2" data-bind="checked: rating" value="2">
+                    <label>2</label>
+                    <input type="radio" name="rating" id="r3" data-bind="checked: rating" value="3">
+                    <label>3</label>
+                    <input type="radio" name="rating" id="r4" data-bind="checked: rating" value="4">
+                    <label>4</label>
+                    <input type="radio" name="rating" id="r5" data-bind="checked: rating" value="5">
+                    <label>5</label>
+                </div>
+                <button type="button" class="addBtn" data-bind="click: addProduct">Add product</button>
+                    <!--<label>Title
+                        <input type="text" name="title" id="title" data-bind="value:title">
+                    </label>
+                    <label>Image
+                        <input type="text" name="image" id="image" data-bind="value:img">
+                    </label>
+                    <label>Price
+                        <input type="text" name="price" id="price" data-bind="value:price">
+                        Sale Price
+                        <input type="text" name="salePrice" id="salePrice" data-bind="value:salePrice">
+                    </label>-->
+
+                    <!--<label>Color
+                        <select name="color" id="color" data-bind="options: colorOptions"></select>
+                        <button type="button" data-bind="click: function(){addAttribute('color');}">+</button>
+                    </label>
+                    <label>Brand
+                        <select name="brand" id="brand" data-bind="options: brandOptions"></select>
+                        <button type="button" data-bind="click: function(){addAttribute('brand');}">+</button>
+                    </label>
+                    <label>Model
+                        <select name="model" id="model" data-bind="options: modelOptions"></select>
+                        <button type="button" data-bind="click: function(){addAttribute('model');}">+</button>
+                    </label>
+                    <label>Year
+                        <select name="year" id="year" data-bind="options: yearOptions"></select>
+                        <button type="button" data-bind="click: function(){addAttribute('year');}">+</button>
+                    </label>-->
+            </div>
+        </div>
+    </div>
+</main>
+<footer></footer>
+<script>
+    function Attributes() {
+        this.color = ko.observableArray([]);
+        this.brand = ko.observableArray([]);
+        this.model = ko.observableArray([]);
+        this.year = ko.observableArray([]);
+    }
+
+    function Product(title, img, price, salePrice, newAction, sale, rating, color, brand, model, year) {
+        this.title = ko.observable(title || '');
+        this.img = ko.observable(img || '');
+        this.price = ko.observable(price || '');
+        this.salePrice = ko.observable(salePrice || '');
+        this.newAction = ko.observable(newAction || false);
+        this.sale = ko.observable(sale || false);
+        this.rating = ko.observable(rating || '');
+        this.color = ko.observable(color || '');
+        this.brand = ko.observable(brand || '');
+        this.model = ko.observable(model || '');
+        this.year = ko.observable(year || '');
+    }
+
+    function AddProduct() {
+        this.title = product.title;
+        this.img = product.img;
+        this.price = product.price;
+        this.salePrice = product.salePrice;
+        this.newAction = product.newAction;
+        this.sale = product.sale;
+        this.rating = product.rating;
+        this.colorOptions = attributes.color;
+        this.brandOptions = attributes.brand;
+        this.modelOptions = attributes.model;
+        this.yearOptions = attributes.year;
+        this.addAttribute = function (nameAttribute) {
+            console.log(nameAttribute, this);
+            var value = prompt('Enter ' + nameAttribute);
+            console.log(this);
+            if(value){
+                this[nameAttribute + 'Options'].push(value);
+            }
+        }
+        this.addProduct = function () {
+
+        }
+    }
+
+    function ProductList() {
+        this.productList = ko.observableArray([]);
+    }
+
+    var attributes = new Attributes(),
+        product = new Product(),
+        addProduct = new AddProduct(),
+        productList = new ProductList();
+
+    ko.applyBindings(addProduct, document.querySelector('#addProduct'));
+</script>
+</body>
+</html>
