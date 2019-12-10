@@ -12,14 +12,14 @@
 <header></header>
 <main class="products__content">
     <div class="page-wrapper clearfix-block">
-        <div class="filters">
+        <div class="filters" id="filters">
             <div class="filters-block">
                 <h2 class="filters-block__title">Shop By</h2>
                 <div class="filters-block__filter-group">
                     <div class="filter-group__name">color</div>
                     <div class="filter-group__filter-items">
-                        <ul class="colors-filter__wrapper">
-                            <li class="color-filter" style="background-color: #000000"></li>
+                        <ul class="colors-filter__wrapper" data-bind="foreach: color">
+                            <li class="color-filter" style="background-color: #000000" data-bind="attr:{style: 'background-color:' + $data}"></li>
                         </ul>
                     </div>
                 </div>
@@ -38,9 +38,9 @@
                 <div class="filters-block__filter-group">
                     <div class="filter-group__name">brand</div>
                     <div class="filter-group__filter-items">
-                        <ul class="brands-filter__wrapper">
+                        <ul class="brands-filter__wrapper" data-bind="foreach: brand">
                             <li class="brand-filter">
-                                <span class="brand-filter__title">Toyota</span>
+                                <span class="brand-filter__title" data-bind="text: $data">Toyota</span>
                                 <span class="brand-filter__quantity">(4)</span>
                             </li>
                         </ul>
@@ -49,16 +49,16 @@
                 <div class="filters-block__filter-group">
                     <div class="filter-group__name">model</div>
                     <div class="filter-group__filter-items">
-                        <ul class="models-filter__wrapper">
-                            <li class="model-filter">Camry</li>
+                        <ul class="models-filter__wrapper" data-bind="foreach: model">
+                            <li class="model-filter" data-bind="text: $data">Camry</li>
                         </ul>
                     </div>
                 </div>
                 <div class="filters-block__filter-group">
                     <div class="filter-group__name">year</div>
                     <div class="filter-group__filter-items">
-                        <ul>
-                            <li class="year-filter">2011</li>
+                        <ul data-bind="foreach: year">
+                            <li class="year-filter" data-bind="text: $data">2011</li>
                         </ul>
                     </div>
                 </div>
@@ -68,17 +68,17 @@
         <div class="search-result__wrapper">
             <h1 class="search-result__heading">Baby Car Seats</h1>
             <div class="search-result__controls"></div>
-            <div class="search-result__products">
-                <div class="product-item">
+            <div class="search-result__products" data-bind="foreach:productList" id="productList">
+                <div class="product-item" data-bind="css:{sale: sale, new: newAction}">
                     <div class="product-item__image">
-                        <img src="../ima/car_kit_hands_free_calling.png"/>
+                        <img  data-bind="attr:{src:img, alt:title}">
                     </div>
                     <div class="product-item__content">
-                        <div class="product-item__content__title">Car Kit Hands Free Calling</div>
-                        <div class="product-item__content__rating">
-                            <img src="../ima/star5.png"/>
+                        <div class="product-item__content__title" data-bind="text: title"></div>
+                        <div class="product-item__content__rating" data-bind="text: rating">
+
                         </div>
-                        <div class="product-item__content__prices">$84.00</div>
+                        <div class="product-item__content__prices" data-bind="html: prices"></div>
                     </div>
                 </div>
             </div>
@@ -188,6 +188,13 @@
         this.brand = ko.observable(brand || '');
         this.model = ko.observable(model || '');
         this.year = ko.observable(year || '');
+        this.prices = ko.computed(function () {
+            var html = '<span>' + this.price() + '</span>';
+            if(this.sale()){
+                html += '<span>' + this.salePrice() + '</span>';
+            }
+            return html;
+        }, this);
     }
 
     function AddProduct() {
@@ -225,6 +232,14 @@
         productList = new ProductList();
 
     ko.applyBindings(addProduct, document.querySelector('#addProduct'));
+    ko.applyBindings(attributes, document.querySelector('#filters'));
+    ko.applyBindings(productList,document.querySelector('#productList'));
+    productList.productList.subscribe(function (value) {
+        console.log(value[0].title);
+    });
+    productList.productList.push(
+        new Product('Car cit', '../ima/car_kit.png', 50, 40, false, false, 5, 'red', 'BMW', 'X5', '2019')
+    );
 </script>
 </body>
 </html>
