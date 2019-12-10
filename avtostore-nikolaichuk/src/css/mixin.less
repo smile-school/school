@@ -38,9 +38,29 @@
     .background-image-mixin(@image: 'star5.png', @widthImg: 83px, @heightImg: 14px);
 }
 
-.hover-mixin(){
+.hover-mixin(@page-main-color;){
+    &:hover{
+        color: @main-elements-color;
+        background-color: @page-main-color;
+    }
+}
+.hover-mixin(@page-hover-color;){
     &:hover{
         color: @main-elements-color;
         background-color: @page-hover-color;
     }
+}
+.hover-text-mixin(){
+    &:hover{
+        color: @page-hover-color;
+    }
+}
+.button-mixin(@width; @height; @background){
+    width: @width;
+    height: @height;
+    display: inline-block;
+    border-radius: 5px;
+    color: @main-elements-color;
+    cursor: pointer;
+    background-color: @background;
 }
