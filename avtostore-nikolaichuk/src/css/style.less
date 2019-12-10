@@ -1,7 +1,7 @@
 .breadcrambs{
-    padding: 18px 0;
+    padding: 17px 0;
     padding-left: 6px;
-    margin-bottom: 16px;
+    margin-bottom: 17px;
     color: @main-breadcrambs-color;
     .link{
         line-height: 17px;
@@ -13,6 +13,169 @@
 }
 .product-info{
     height: 1300px;
+    display: inline-block;
+    box-sizing: border-box;
+    &__slider{
+        //width: calc(100% - 460px);
+        float: left;
+        width: 410px;
+        height: 515px;
+        display: inline-block;
+        box-sizing: border-box;
+    }
+    &__content{
+        float: right;
+        box-sizing: border-box;
+        display: inline-block;
+        width: 430px;
+        margin-left: 30px;
+        .product {
+            &-card {
+                width: 100%;
+                &__title {
+                    font-size: 19px;
+                    line-height: 26px;
+                    text-transform: uppercase;
+                    font-weight: normal;
+                }
+
+                &__code {
+                    font-size: 13px;
+                    color: @product-card-code-color;
+                    float: left;
+                    letter-spacing: 0.02em;
+                    padding: 16px 0 0 2px;
+                }
+
+                &__status {
+                    float: right;
+                    font-size: 13px;
+                    color: @product-card-status-color;
+                    padding: 16px 0;
+                    letter-spacing: 0.02em;
+
+                    i {
+                        color: @main-elements-color;
+                        font-size: 9px;
+                        position: relative;
+
+                        &::after {
+                            content: '';
+                            .geometric-mixin(@width: 10px, @height: 10px);
+                            .absolute-position-mixin(@top: 30%, @left: 18%, @translateX: -42%, @translateY: -45%);
+                            background-color: @product-card-status-color;
+                            z-index: -1;
+                        }
+                    }
+                }
+
+                &__rating {
+                    padding-top: 2px;
+
+                    .rating__stars {
+                        .rating-stars-mixin();
+                    }
+
+                    .review-link,
+                    .add-review-link {
+                        font-size: 13px;
+                        padding-left: 6px;
+                        letter-spacing: 0.02em;
+                    }
+
+                    .review-link {
+                        padding-right: 12px;
+                        border-right: 1px solid @product-card-review-line-color;
+                    }
+                }
+
+                &__price {
+                    padding: 27px 0 20px;
+                    font-weight: 500;
+                    font-size: 24px;
+                    line-height: 20px;
+                    color: @product-card-price-color;
+                }
+
+                &__description {
+                    line-height: 21px;
+                }
+            }
+            &__actions{
+                &__size-select,
+                &__color-select{
+                    display: inline-block;
+                    padding-top: 15px;
+                    padding-bottom: 6px;
+                    box-sizing: border-box;
+                    width: calc(50% - 15px);
+                    p{
+                        line-height: 17px;
+                        padding-bottom: 5px;
+                    }
+                    span{
+                        color: @main-elements-background;
+                    }
+                    input{
+                        .geometric-mixin(@width: calc(100% - 20px), @height: 30px);
+                        border: 1px solid @main-border-line-color;
+                        border-radius: 5px;
+                        padding-left: 20px;
+                    }
+                }
+                &__size-select{
+                    float: left;
+                    margin-right: 15px;
+                }
+                &__color-select{
+                    margin-left: 15px;
+                }
+                &__buttons-wrapper{
+                    margin-top: 13px;
+                    .flex-mixin(@justify: space-between, @align: strech);
+                }
+                &__quantity{
+                    .geometric-mixin(@width: 125px, @height: 40px);
+                    input{
+                        display: inline-block;
+                        border: 1px solid @main-border-line-color;
+                        .geometric-mixin(@width: 70%, @height: 40px);
+                        border-radius: 5px;
+                        text-align: center;
+                    }
+                    span{
+                        line-height: 17px;
+                    }
+                }
+                &__add-btn{
+                    width: 210px;
+                    background-color: @main-elements-background;
+                    text-align: center;
+                    text-transform: uppercase;
+                    line-height: 40px;
+                    letter-spacing: 0.02em;
+                    &:hover{
+                        background-color: @page-main-color;
+                    }
+                }
+                &__addWish-btn,
+                &__compare-btn{
+                    width: 40px;
+                    background-color: @page-main-color;
+                    position: relative;
+                    i{
+                        .middle-mixin();
+                    }
+                    &:hover{
+                        background-color: @main-elements-background;
+                    }
+                }
+                &__compare-btn{
+
+                }
+            }
+        }
+    }
 }
 .float_right{
     float: right;
@@ -36,7 +199,7 @@
         border-radius: 0 0 5px 5px;
         margin-bottom: 30px;
         &__item{
-            padding: 20px 10px 19px 20px;
+            padding: 23px 12px 16px 20px;
             position: relative;
             .product-link{
                 cursor: pointer;
@@ -68,7 +231,7 @@
             &:not(:last-child)::after{
                 content: '';
                 .geometric-mixin(@width: 85%, @height: 1px);
-                .absolute-position-mixin(@top: 100%, @left: 50%);
+                .absolute-position-mixin(@top: calc(100% + 1px), @left: 50%);
                 background-color: @main-border-line-color;
             }
         }
