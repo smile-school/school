@@ -10,18 +10,16 @@
             starInp:document.querySelector('.star-bloc'),
         };
 
-
         this.parament.myForm.addEventListener('submit', parsForm);
 
-
-        self.parament.starInp.addEventListener('click', ratingCounter) ;
+        this.parament.starInp.addEventListener('click', ratingCounter) ;
 
 
 
         function parsForm(e) {
             e.preventDefault();
             var data = new FormData(this);
-            Valid(data);
+            validForms(data);
         }
 
 
@@ -41,42 +39,85 @@
             return el;
         }
 
+
+        function ratingCounter(event) {
+            if (event.target.tagName === 'LABEL'){
+                self.parament.elements = +(event.target.dataset.ret) / 5;
+                // self.options.checkedStar = event.target;
+                return self.parament.elements;
+
+            }
+        }
+
+        function validForms(data) {
+            var validationEmail = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+
+            var  elementForm = {
+                textComent: document.querySelector('#comment-input'),
+                nameComent: document.querySelector('#name-input'),
+                emailComent: document.querySelector('#email-input'),
+                benefitsComent: document.querySelector('#digniti-input'),
+                disadvadComent: document.querySelector('#disadvantages-input'),
+                youtubeUrl: document.querySelector('#yotube-input'),
+            };
+
+            if (!validationEmail.test(elementForm.emailComent.value)) {
+                elementForm.emailComent.classList.add('erors');
+                // elementForm.emailComent.nextElementSibling.classList.add('erors');
+            }
+            if (elementForm.nameComent.value.length < 1 || elementForm.nameComent.value.length > 40) {
+                elementForm.nameComent.classList.add('erors');
+                // elementForm.nameComent.nextElementSibling.classList.add('erors');
+            }
+            if (elementForm.textComent.value.length < 10 || elementForm.textComent.value.length > 140) {
+                elementForm.textComent.classList.add('erors');
+                elementForm.textComent.nextElementSibling.classList.add('erors');
+            }
+            if (validationEmail.test(elementForm.emailComent.value) &&
+                elementForm.nameComent.value.length > 1 &&
+                elementForm.nameComent.value.length < 40 &&
+                elementForm.textComent.value.length > 10) {
+                remoteForm(elementForm);
+                Valid(data)
+            }
+
+        }
+
          function Valid(data) {
              this.elemForm = {};
 
              data.forEach(function (item, key) {
                  if (key === 'name') this.elemForm.name = item;
-                 else if (key === 'rating') this.elemForm.rating = self.parament.ratings;
+                 else if (key === 'rating') this.elemForm.rating = self.parament.elements;
                  else if (key === 'digniti') this.elemForm.digniti = item;
                  else if (key === 'disadvantages') this.elemForm.disadvantages = item;
                  else if (key === 'coment') this.elemForm.coment = item;
                  else if (key === 'url-yotube') this.elemForm.urlYotube = item.split('v=')[1];
              });
-                console.log( self.parament.ratings);
-             AddedComent();
-         }
-         function AddedComent() {
+                // console.log(self.parament.elements);
+             AddedComent(data);
 
-             var ul = document.querySelector(".coment-list");
+         }
+
+         function AddedComent(e) {
 
             var  date = new Date(),
                 curr_date = date.getDate(),
                 curr_month = date.getMonth() + 1,
                 curr_year = date.getFullYear(),
-                setDate = curr_year + "-" + curr_month + "-" + curr_date;
+                setDate = curr_year + "-" + curr_month + "-" + curr_date,
 
+             li = document.createElement('li'),
 
-            var li = document.createElement('li');
-
-
+             ul = document.querySelector(".coment-list");
             ul.prepend(li);
 
-             var topComent = createElem('div',{'class':'list-coment-bloc'},undefined) ;
-             var comentBloc = createElem('div',{'class':'top-coment-list top-coment'},undefined) ;
-             var pTop = createElem('p',undefined,undefined);
-             var nameList =createElem('span',{'class':'name-list'},this.elemForm.name);
-             var todauList = createElem('span',{'class':'todau-list'},undefined);
-             var time = createElem('time',undefined,setDate);
+             var topComent = createElem('div',{'class':'list-coment-bloc'},undefined),
+                 comentBloc = createElem('div',{'class':'top-coment-list top-coment'},undefined),
+                 pTop = createElem('p',undefined,undefined),
+                nameList =createElem('span',{'class':'name-list'},this.elemForm.name),
+                 todauList = createElem('span',{'class':'todau-list'},undefined),
+                 time = createElem('time',undefined,setDate);
 
             todauList.appendChild(time);
 
@@ -90,7 +131,7 @@
                  '    <g>\n' +
                  '        <defs>\n' +
                  '            <linearGradient gradientUnits="userSpaceOnUse" id="ratingFill_44730882">\n' +
-                 '                <stop stop-color="#ffa900" stop-opacity="1" offset="' + 1 + '"></stop>\n' +
+                 '                <stop stop-color="#ffa900" stop-opacity="1" offset="' + this.elemForm.rating + '"></stop>\n' +
                  '                <stop attr.offset="100%" stop-color="#d2d2d2" stop-opacity="1"></stop>\n' +
                  '            </linearGradient>\n' +
                  '        </defs>\n' +
@@ -102,35 +143,44 @@
             var reting = createElem('div',{'class':'reting'},star) ;
 
 
-            topComent.appendChild(reting);
-            var interest = createElem('span',{'class':'interest'},undefined) ;
+             if (this.elemForm.rating){
+                 topComent.appendChild(reting);
+             }
+             var interest = createElem('span',{'class':'interest'},undefined) ;
             topComent.appendChild(interest);
 
-             var comentText = createElem('div',{'class':'coment-text'},undefined) ;
-            var coments = createElem('p',{'class':'coment'},this.elemForm.coment) ;
+             var comentText = createElem('div',{'class':'coment-text'},undefined),
+             coments = createElem('p',{'class':'coment'},this.elemForm.coment) ;
             comentText.appendChild(coments);
 
-            var characterBloc = createElem('dl',{'class':'character-bloc'}) ;
-            var dt1 = createElem('dt',{'class':'character-bloc'},'Достоинства:') ;
+            var characterBloc = createElem('dl',{'class':'character-bloc'}),
+             dt1 = createElem('dt',{'class':'character-bloc'},'Достоинства:'),
+             dd1 = createElem('dd',undefined,this.elemForm.digniti);
 
-            var dd1 = createElem('dd',undefined,this.elemForm.digniti) ;
-            characterBloc.appendChild(dt1);
-            characterBloc.appendChild(dd1);
+            if (this.elemForm.digniti){
+                characterBloc.appendChild(dt1);
+                characterBloc.appendChild(dd1);
+            }
+
             comentText.appendChild(characterBloc);
             topComent.appendChild(comentText);
 
-            var characterBloc2 = characterBloc.cloneNode(false);
+            var characterBloc2 = characterBloc.cloneNode(false),
 
-            var dt2 = createElem('dt',undefined,'Недостатки:') ;
-            var dd2 = createElem('dd',undefined,this.elemForm.disadvantages) ;
-            characterBloc2.appendChild(dt2);
-            characterBloc2.appendChild(dd2);
+            dt2 = createElem('dt',undefined,'Недостатки:'),
+             dd2 = createElem('dd',undefined,this.elemForm.disadvantages) ;
+
+            if (this.elemForm.disadvantages){
+                characterBloc2.appendChild(dt2);
+                characterBloc2.appendChild(dd2);
+            }
+
             comentText.appendChild(characterBloc2);
 
             if (this.elemForm.urlYotube){
                 var ifreme = '<iframe width="560" height="315"  src="https://www.youtube.com/embed/' + this.elemForm.urlYotube + '" frameborder="0"' +
-                    'allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
-                var video = createElem('div',{'class':'video'},ifreme) ;
+                             'allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+                 video = createElem('div',{'class':'video'},ifreme) ;
 
                 topComent.appendChild(video);
             }
@@ -174,15 +224,19 @@
 
 
         }
-       function ratingCounter(event) {
-           if (event.target.tagName === 'LABEL'){
-               self.parament.ratings = +(event.target.dataset.ret) / 5;
-               // self.options.checkedStar = event.target;
-               return  self.parament.ratings;
 
-           }
-       }
+        function remoteForm(data) {
+            for (var key in data){
+                data[key].value = "";
+                console.log(data[key].value);
 
+                if (data[key].classList.contains('erors')) {
+                    data[key].classList.remove('erors');
+                }
+            }
+
+
+        }
     }
 
 
