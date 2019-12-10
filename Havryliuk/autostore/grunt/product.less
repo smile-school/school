@@ -1,0 +1,440 @@
+main .wrapper-main-content.product-page {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+}
+.main-block{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    padding-top: 9px;
+    .aside-block{
+        width: 25%;
+        padding-right: 22px;
+        .aside-navigation {
+            margin-bottom: 44px;
+            .aside-item-cart {
+                display: flex;
+                flex-flow: column;
+                .aside-header {
+                    background-color: @button;
+                    color: @base-color;
+                    border-radius: 5px 5px 0 0;
+                    position: relative;
+                    padding: 14px 0 11px 17px;
+                    span {
+                        text-transform: uppercase;
+                        font-weight: 500;
+                        font-size: 18px;
+                        line-height: 21px;
+                        letter-spacing: 0.02em;
+                    }
+                }
+                .aside-item-list {
+                    border: 1px solid @border-color;
+                    h3{
+                        font-weight: 500;
+                        font-size: 14px;
+                        line-height: 17px;
+                        text-transform: uppercase;
+                        letter-spacing: 0.02em;
+                        //padding: 15px 0;
+                        padding-right: 18px;
+                        width: 100%;
+                        color: @base2-color;
+                    }
+                    .aside-color-bar {
+                        border-bottom: 1px solid @border-color;
+                        padding: 19px 10px 27px 19px;
+                        p {
+                            text-transform: uppercase;
+                            padding: 15px 5px;
+                        }
+                        .choose-color {
+                            display: inline-block;
+                            padding-top: 9px;
+                            li {
+                                border: 1px solid @border-color;
+                                padding: 2px;
+                                margin: 4px 4px 0 0;
+                                width: max-content;
+                                display: flex;
+                                flex-flow: row;
+                                flex-wrap: wrap;
+                                float: left;
+                                cursor: pointer;
+                                span {
+                                    width: 25px;
+                                    height: 25px;
+                                }
+                                &:nth-child(1) span {
+                                    background-color: @base2-color;
+                                }
+                                &:nth-child(2) span {
+                                    background-color: brown;
+                                }
+                                &:nth-child(3) span {
+                                    background-color: grey;
+                                }
+                                &:nth-child(4) span {
+                                    background-color: green;
+                                }
+                                &:nth-child(5) span {
+                                    background-color: orange;
+                                }
+                                &:nth-child(6) span {
+                                    background-color: purple;
+                                }
+                                &:nth-child(7) span {
+                                    background-color: @button;
+                                }
+                                &:nth-child(8) span {
+                                    background-color: white;
+                                }
+                                &:nth-child(9) span {
+                                    background-color: yellow;
+                                }
+                            }
+                        }
+                    }
+                    .aside-price-bar{
+                        &-scroll{
+                            border-bottom: 1px solid @border-color;
+                            padding:20px 19px 29px;
+                        }
+                        &-category{
+                            border-bottom: 1px solid @border-color;
+                            padding: 19px 10px 23px 19px;
+                            display: flex;
+                            flex-flow: column;
+                            .choose-brand{
+                                padding-top: 17px;
+                                li{
+                                    padding: 7px 0;
+                                    &:nth-child(2n+1){
+                                        padding: 6px 0;
+                                    }
+                                }
+                                a{
+                                    text-decoration: none;
+                                    text-transform: capitalize;
+                                    color: black;
+                                    font-size: 13px;
+                                }
+                            }
+                        }
+                    }
+                    .aside-chose-model,
+                    .aside-year-category{
+                        display: flex;
+                        flex-wrap: wrap;
+                        padding: 19px 10px 28px 19px;
+                        border-bottom: 1px solid @border-color;
+                        ul{
+                            padding-top: 13px;
+                            li{
+                                list-style-type: none;
+                                border: 1px solid @border-color;
+                                font-size: 12px;
+                                line-height: 14px;
+                                letter-spacing: .02em;
+                                border-radius: 5px;
+                                padding: 10px;
+                                margin: 4px 5px 0 0;
+                                float: left;
+                                a{
+                                    text-transform: capitalize;
+                                    color: @base2-color;
+                                }
+                            }
+                        }
+                    }
+                    .compare{
+                        padding: 0 14px 0 18px;
+                        border-bottom: 1px solid @border-color;
+                        text-decoration: none;
+                        text-transform: capitalize;
+                        list-style-type: none;
+                        font-size: 13px;
+                        line-height: 15px;
+                        letter-spacing: 0.02em;
+
+                        li {
+                            position: relative;
+                            padding: 21px 0 24px;
+                            a{
+                                text-decoration: none;
+                                color: @base2-color;
+                                text-transform: capitalize;
+                                &:hover{
+                                    color: @button;
+                                }
+                            }
+                            &::after{
+                                position: absolute;
+                                right: 0;
+                                content: '\f00d';
+                                font-family: Font Awesome\ 5 Free;
+                                color: @base2-color;
+                                font-weight: 900;
+                                font-size: 15px;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                    .comapre-result{
+                        padding: 20px 8px 20px 20px;
+                        border-bottom: 1px solid @border-color;
+                        display: flex;
+                        flex-flow: row wrap;
+                        justify-content: space-between;
+                        .submitCompare{
+                            font-size: 14px;
+                            line-height: 17px;
+                            padding: 4px 19px;
+                            background-color: @button;
+                            color: @base-color;
+                            border-radius: 5px;
+                            border: none;
+                            &:hover{
+                                opacity: .5;
+                                cursor: pointer;
+                            }
+                        }
+                        .resetCompare{
+                            background-color: @base-color;
+                            border: none;
+                            font-size: 14px;
+                            line-height: 17px;
+                            &:hover{
+                                cursor: pointer;
+                                color: @button;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .main-content{
+        display: flex;
+        flex-flow: row;
+        &-header{
+            .header-title h2{
+                text-transform: capitalize;
+                padding: 2px 6px;
+                font-size: 30px;
+                line-height: 36px;
+                letter-spacing: 0.02em;
+                font-weight: normal;
+            }
+            .responsive-view{
+                background-color: @response-color;
+                border: 1px solid @border-color;
+                border-radius: 5px;
+                padding: 5px 0 9px 11px;
+                margin: 21px 0 0 6px;
+                display: flex;
+                flex-flow: row;
+                justify-content: space-between;
+                .type-of-view{
+                    margin-top: 5px;
+                    display: flex;
+                    input[type=radio]:checked + label{
+                        background-color: @button;
+                        border: 1px solid @button;
+                        &::after{
+                            color: @base-color;
+                        }
+                    }
+                    p{
+                        margin-left: 15px;
+                        font-size: 13px;
+                        line-height: 30px;
+                        width: max-content;
+                    }
+                }
+                .type-of-view label{
+                    position: relative;
+                    width: 33px;
+                    height: 33px;
+                    margin-right: 3px;
+                    vertical-align: sub;
+                    border: 1px solid @view-btn;
+                    border-radius: 5px;
+                    display: inline-block;
+                    &:checked{
+                        background-color: @button;
+                    }
+                    &::after {
+                        color: @view-btn;
+                        font-family: Font Awesome\ 5 Free;
+                        font-weight: 900;
+                        position: absolute;
+                        font-size: 20px;
+                        top: 20%;
+                        left: 20%;
+                    }
+                    &:nth-child(2)::after {
+                        content: '\f00a';
+                    }
+                    &:nth-child(4)::after {
+                        content: '\f03a';
+                    }
+                }
+            }
+            .what-to-show{
+                display: flex;
+                flex-flow: row;
+                justify-content: space-between;
+                font-size: 13px;
+                line-height: 15px;
+                padding: 5px 15px 0 27px;
+                width: 50%;
+                .quantity-to-show{
+                    position: relative;
+                    &::before{
+                        position: absolute;
+                        content: '\f078';
+                        color: @base2-color;
+                        left: 73px;
+                        top: 8px;
+                        font-family: Font Awesome\ 5 Free;
+                        font-weight: 900;
+                        font-size: 10px;
+                        z-index: 1;
+                    }
+                    .quantity{
+                        padding: 7px 24px 7px 1px;
+                    }
+                }
+                .sort-by-show{
+                    position: relative;
+                    margin: 0 15px;
+                    padding: 0 0 0 5px;
+                    font-size: 13px;
+                    line-height: 15px;
+                    &::before,
+                    &::after{
+                        position: absolute;
+                        color: @base2-color;
+                        font-family: Font Awesome\ 5 Free;
+                        font-weight: 900;
+                        z-index: 1;
+                    }
+                    &::before{
+                        content: '\f078';
+                        right: 26px;
+                        top: 8px;
+                        font-size: 10px;
+                    }
+                    &::after{
+                        content: '\f30c';
+                        right: 0;
+                        top: 8px;
+                        font-size: 20px;
+                    }
+                    .position{
+                        padding: 7px 57px 7px 2px;
+                        text-transform: capitalize;
+                    }
+                }
+            }
+        }
+    }
+    .related-products.product-page{
+        padding: 31px 0 0 6px;
+        margin-bottom: 18px;
+        .related-product-list .related-product-cart,
+        .related-product-list .related-product-cart:hover{
+            position: relative;
+            .sale,
+            .new{
+                font-size: 12px;
+                position: absolute;
+                top: 15px;
+                color: @base-color;
+                text-transform: uppercase;
+                z-index: 1;
+                &::before,
+                &::after{
+                    position: absolute;
+                    content: '';
+                    bottom: -7px;
+                    width: 0;
+                    height: 0;
+                    border-top: 7px solid transparent;
+                }
+            }
+            .sale{
+                padding: 8px 16px;
+                left: -10px;
+                background-color: @button;
+                &::before{
+                    background-color: @sale-flag-color;
+                    left: 0;
+                    border-left: 10px solid @basebg-color;
+                }
+            }
+            .new {
+                padding: 8px 15px;
+                right: -10px;
+                background-color: @new-color;
+                &::before {
+                    background-color: @new-flag-color;
+                    right: 0;
+                    border-right: 10px solid @base-color;
+                }
+            }
+        }
+    }
+}
+#price-range{
+    text-align: center;
+    font-size: 14px;
+}
+#price,#price2{
+    border: 1px solid @border-color;
+    border-radius: 5px;
+    padding: 8px;
+    width: 50px;
+    text-align: center;
+    font-weight: bold;
+}
+@media only screen and (max-width: 992px) {
+    .main-block{
+        .aside-block{
+        display: none;
+        }
+        .main-content .related-products.product-page .related-product-list{
+            justify-content: normal;
+        }
+    }
+}
+@media only screen and (max-width: 767px) {
+    .main-block .main-content .main-content-header .responsive-view {
+        .what-to-show {
+            display: none;
+        }
+    }
+}
+div.addProduct{
+    input[type=text]{
+        width: 100%;
+    }
+    select{
+        width: 100%;
+    }
+    label{
+        margin: 15px 0;
+        width: 100%;
+        display: block;
+        select{
+            float: left;
+        }
+        input{
+            float: right;
+        }
+
+    }
+}
