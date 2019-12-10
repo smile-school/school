@@ -496,7 +496,7 @@ ul {
 }
 .search-input {
   padding-top: 2px;
-  padding-left: 116px;
+  padding-left: 3px;
   border: 2px solid #C4C4C4;
   border-right: none;
   outline: 0;
@@ -688,7 +688,7 @@ ul {
   outline: 0;
 }
 .bascet-button {
-  margin-left: -2px;
+  margin-left: -1px;
   border: 2px solid #E5E5E5;
   border-left: 1px;
   border-radius: 0;
@@ -759,6 +759,7 @@ ul {
   display: flex;
   flex-direction: row;
   align-items: center;
+  cursor: pointer;
   justify-content: space-between;
   background-color: #FF2D37;
   border-radius: 5px 5px 0 0;
@@ -769,9 +770,54 @@ ul {
   font-weight: 900;
   margin-right: 30px;
   white-space: nowrap;
+  position: relative;
+}
+.all-categories:hover .categories-hover-bloc {
+  height: auto;
+  opacity: 1;
+  overflow: visible;
 }
 .all-categories span {
   padding-right: 4px;
+}
+.all-categories .categories-hover-bloc {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  z-index: 600;
+  width: 100%;
+  padding: 15px 15px;
+  box-sizing: border-box;
+  background-color: #FF2D37;
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+.all-categories .categories-hover-bloc li {
+  width: 100%;
+}
+.all-categories .categories-hover-bloc li:not(:first-of-type) {
+  padding-top: 7px;
+}
+.all-categories .categories-hover-bloc a {
+  color: #fff;
+  position: relative;
+  width: 100%;
+  display: block;
+  transition: all 0.3s;
+}
+.all-categories .categories-hover-bloc a::after {
+  content: "\2013";
+  position: absolute;
+  left: 0;
+  z-index: 620;
+  transform: scale(0);
+}
+.all-categories .categories-hover-bloc a:hover {
+  padding-left: 10px;
+}
+.all-categories .categories-hover-bloc a:hover::after {
+  transform: scale(1);
 }
 .menu-nav {
   display: flex;
@@ -898,6 +944,11 @@ ul {
   right: 6px;
   transition: transform, 0.3s;
 }
+@media screen and (max-width: 1150px) {
+  .menu-nav > li > a {
+    padding: 15px 16px 15px 16px;
+  }
+}
 @media screen and (max-width: 980px) {
   .menu-nav {
     height: 0;
@@ -909,6 +960,12 @@ ul {
     right: 170px;
     top: 0;
     width: 400px;
+  }
+  .menu-nav > li > a {
+    padding-left: 0;
+  }
+  .menu-nav > li:first-of-type + li a {
+    padding-left: 16px;
   }
   .burger {
     display: block;
@@ -1171,7 +1228,7 @@ button.like-black {
 }
 .top-aside {
   width: 270px;
-  padding: 0 15px 20px 20px;
+  padding: 0 15px 0 20px;
   box-sizing: border-box;
   border: 1px solid #E5E5E5;
   border-radius: 0 0 5px 5px;
@@ -1217,7 +1274,7 @@ button.like-black {
   display: block;
 }
 .advertising {
-  margin-top: 30px;
+  margin-top: 28px;
 }
 .detailed-information {
   display: flex;
@@ -1225,7 +1282,7 @@ button.like-black {
   margin-top: 63px;
 }
 .li-defain {
-  padding: 20px 0 20px 30px;
+  padding: 22px 0 18px 30px;
   text-transform: uppercase;
   cursor: pointer;
   font-size: 18px;
@@ -1249,6 +1306,9 @@ button.like-black {
   position: relative;
   left: -1px;
   z-index: -1;
+  line-height: 23px;
+  min-height: 614px;
+  width: calc(100% - 276px);
 }
 .details-content p {
   padding-bottom: 22px;
@@ -1260,9 +1320,6 @@ button.like-black {
 .more-info img {
   float: left;
   padding-right: 30px;
-}
-.content-tabs {
-  min-height: 600px;
 }
 .tab-content {
   display: none;
@@ -1276,7 +1333,7 @@ button.like-black {
 .related-products {
   display: flex;
   flex-direction: column;
-  padding-top: 100px;
+  margin: 113px 0 60px 0;
 }
 .slider-product {
   display: flex;
@@ -1336,6 +1393,7 @@ button.mod-cart {
 }
 .item {
   height: 400px;
+  border: 1px solid #E5E5E5;
 }
 .item:not(:first-of-type) {
   margin-left: 20px;
@@ -1346,6 +1404,23 @@ button.mod-cart {
 }
 .item:hover .add-to-cart {
   display: flex;
+  height: 40px;
+  box-sizing: border-box;
+}
+.item:hover .add-to-cart .btn-like {
+  border-radius: 0;
+  height: 100%;
+  width: 40px;
+  min-width: 40px;
+}
+.item:hover .add-to-cart .btn-like:first-of-type {
+  margin-right: 1px;
+}
+.item:hover .add-to-cart .btn-like:last-of-type {
+  margin-left: 1px;
+}
+.item:hover .add-to-cart .mod-cart {
+  border-radius: 0;
 }
 .item:hover .href-img-bloc::after,
 .item:hover .href-img-bloc::before {
@@ -1408,6 +1483,9 @@ button.dzb2:hover {
   z-index: 1;
   cursor: pointer;
 }
+.info-cart-towar {
+  border-top: 1px solid #E5E5E5;
+}
 .info-cart-towar .name-towar {
   text-transform: uppercase;
   color: #282828;
@@ -1418,6 +1496,8 @@ button.dzb2:hover {
 }
 .info-cart-towar .price-rod {
   font-weight: 600;
+  font-size: 18px;
+  line-height: 23px;
 }
 @media (max-width: 540px) {
   .info-cart-towar .price-rod {
@@ -1441,20 +1521,24 @@ button.dzb2:hover {
 .head-relate-products {
   text-transform: uppercase;
   text-align: center;
-  padding-bottom: 30px;
+  padding-bottom: 34px;
 }
 .head-relate-products h4 {
   font-weight: normal;
   color: #FF2D37;
 }
 .head-relate-products h3 {
-  padding-top: 7px;
+  padding-top: 9px;
   font-weight: 900;
   font-size: 36px;
   color: #282828;
+  line-height: 23px;
 }
 .head-relate-products h3 span {
   color: #FF2D37;
+}
+.head-relate-products h3 span:first-of-type {
+  padding-right: 14px;
 }
 .bloc-click {
   width: 95px;
@@ -1479,6 +1563,15 @@ button.dzb2:hover {
   }
 }
 @media screen and (max-width: 860px) {
+  .slider-product {
+    overflow-x: auto;
+  }
+  .slider-product .item:hover {
+    box-shadow: none;
+  }
+  .slider-product .item a > img {
+    width: 180px;
+  }
   .cart-towar {
     flex-direction: column;
   }
@@ -1505,6 +1598,10 @@ button.dzb2:hover {
   .detailed-information {
     flex-direction: column;
   }
+  .detailed-information .content-tabs {
+    padding: 20px 5px 20px 5px;
+    width: 99%;
+  }
   button.dzb {
     border-bottom: none;
     border-radius: 5px;
@@ -1530,12 +1627,21 @@ button.dzb2:hover {
   .buton-def {
     align-self: flex-end;
   }
+  .slider-product .price-rod {
+    white-space: nowrap;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .slider-product .price-rod span:first-of-type {
+    padding-right: 5px;
+  }
   .slider-product:hover .arrows {
     display: none;
   }
   .slider-product .item:hover {
     box-shadow: none;
-    height: auto;
+    height: 302px;
   }
   .slider-product .item .bloc-cart-towar:hover .add-to-cart {
     display: none;
@@ -1547,7 +1653,6 @@ button.dzb2:hover {
   }
   .item {
     height: 300px;
-    overflow: hidden;
   }
 }
 @media screen and (max-width: 480px) {
@@ -2176,7 +2281,7 @@ button.hover-btn:hover {
 .top-footer .wrapers {
   max-width: 1170px;
   margin: 0 auto;
-  padding: 75px 20px;
+  padding: 75px 20px 75px 20px;
 }
 .ul-footer-bloc {
   display: flex;
@@ -2184,25 +2289,44 @@ button.hover-btn:hover {
   justify-content: space-between;
   align-items: flex-start;
 }
+.ul-footer-bloc > li:first-of-type {
+  width: 32%;
+}
+.ul-footer-bloc > li:last-of-type {
+  box-sizing: border-box;
+  padding-left: 99px;
+}
+.ul-footer-bloc > li.free-bloc-footer {
+  padding-left: 110px;
+}
 .bloc-footer h3 {
   text-transform: uppercase;
   color: #fff;
-  margin-bottom: 23px;
+  margin-bottom: 19px;
   font-size: 18px;
+  line-height: 23px;
 }
 .bloc-footer ul {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-.bloc-footer ul li:not(:first-of-type) {
-  padding-top: 15px;
+.bloc-footer ul:not(.mod-footer) li:not(:first-of-type) {
+  padding-top: 12px;
+}
+.bloc-footer .opacini-none {
+  position: relative;
+  width: 170px;
+}
+.bloc-footer .mod-footer li:not(:first-of-type) {
+  padding-top: 18px;
 }
 .bloc-footer a {
   color: #DDDDDD;
   display: flex;
   flex-direction: row;
   align-items: center;
+  line-height: 23px;
 }
 .bottom-footer {
   background-color: #111111;
@@ -2214,14 +2338,39 @@ button.hover-btn:hover {
 .bottom-footer .wrapers {
   max-width: 1170px;
   margin: 0 auto;
-  padding: 25px 20px;
+  padding: 21px 20px 25px 20px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
+.ul-footer-bloc a {
+  transition: all 0.3s;
+  position: relative;
+}
+.ul-footer-bloc a::after {
+  content: "\2013	";
+  position: absolute;
+  left: 0;
+  transform: scale(0);
+}
 .ul-footer-bloc a:hover {
   color: #FF2D37;
+  padding-left: 10px;
+}
+.ul-footer-bloc a:hover::after {
+  transform: scale(1);
+}
+@media screen and (max-width: 1150px) {
+  .ul-footer-bloc > li {
+    padding: 0;
+  }
+  .ul-footer-bloc > li.free-bloc-footer {
+    padding: 0;
+  }
+  .ul-footer-bloc > li:last-of-type {
+    padding-left: 0;
+  }
 }
 @media screen and (max-width: 960px) {
   .ul-footer-bloc {
@@ -2233,6 +2382,9 @@ button.hover-btn:hover {
   }
   .ul-footer-bloc > li:first-of-type {
     width: 100%;
+  }
+  .ul-footer-bloc a::after {
+    display: none;
   }
   .bottom-footer .wrapers {
     flex-direction: column;

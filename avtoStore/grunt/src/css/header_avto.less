@@ -261,7 +261,7 @@ ul {
 
 .search-input {
     padding-top: 2px;
-    padding-left: 116px;
+    padding-left: 3px;
     border: 2px solid @line-gray;
     border-right: none;
     outline: 0;
@@ -493,7 +493,7 @@ ul {
 
 .bascet-button {
     &:extend(.likes);
-    margin-left: -2px;
+    margin-left: -1px;
     border: 2px solid @line-bloc;
     border-left: 1px;
     border-radius: 0;
@@ -579,6 +579,7 @@ ul {
     display: flex;
     flex-direction: row;
     align-items: center;
+    cursor: pointer;
     justify-content: space-between;
     background-color: @bordo;
     border-radius: 5px 5px 0 0;
@@ -589,9 +590,56 @@ ul {
     font-weight: 900;
     margin-right: 30px;
     white-space: nowrap;
+    position: relative;
+    &:hover{
+        .categories-hover-bloc{
+            height: auto;
+            opacity: 1;
+            overflow: visible;
+        }
+    }
 
     span {
         padding-right: 4px;
+    }
+    .categories-hover-bloc{
+        position: absolute;
+        top: 50px;
+        left: 0;
+        z-index:600;
+        width: 100%;
+        padding: 15px 15px;
+        box-sizing: border-box;
+        background-color: @bordo;
+        height: 0;
+        opacity: 0;
+        overflow: hidden;
+        li{
+            width: 100%;
+            &:not(:first-of-type){
+                padding-top: 7px;
+            }
+        }
+        a{
+            color: @white-color;
+            position: relative;
+            width: 100%;
+            display: block;
+            transition: all .3s;
+            &::after{
+                content: "\2013";
+                position: absolute;
+                left: 0;
+                z-index: 620;
+                transform: scale(0);
+            }
+            &:hover{
+                padding-left: 10px;
+                &::after{
+                    transform: scale(1);
+                }
+            }
+        }
     }
 }
 
@@ -762,22 +810,39 @@ ul {
         transition: transform, .3s;
     }
 }
+@media screen  and (max-width: 1150px){
+   .menu-nav{
+       & >  li{
+           &>a{
+               padding: 15px 16px 15px 16px;
+           }
+       }
+   }
 
-@media screen  and (min-width: 980px) {
 
 }
-
 @media screen  and (max-width: 980px) {
     .menu-nav {
         height: 0;
         padding: 0;
         overflow: hidden;
-
         .menu-hover-bloc {
             display: none;
             right: 170px;
             top: 0;
             width: 400px;
+        }
+        & > li{
+            & > a{
+                padding-left: 0;
+            }
+            &:first-of-type{
+              & + li{
+                    a{
+                        padding-left: 16px;
+                    }
+                }
+            }
         }
     }
 
