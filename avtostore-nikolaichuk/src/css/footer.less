@@ -63,6 +63,17 @@
                     padding: 10px 0;
                     color: @footer-item-color;
                     letter-spacing: 0.02em;
+                    position: relative;
+                    transition: transform .2s ease-in-out;
+                    &:hover{
+                        transform: translateX(12px);
+                        a::before{
+                            content: '';
+                            .absolute-position-mixin(@left: -6px);
+                            .geometric-mixin(@width: 6px, @height: 1px);
+                            background-color: @page-hover-color;
+                        }
+                    }
                 }
             }
         }

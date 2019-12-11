@@ -100,8 +100,6 @@
                 }
 
                 &:hover .link {
-                    color: @page-hover-color;
-
                     span {
                         color: @header-top-menu-color;
                     }
@@ -288,6 +286,9 @@
             float: right;
             &__item{
                 .hover-mixin(@page-hover-color;);
+                &:hover > a{
+                    color: @main-elements-color;
+                }
             }
         }
     }
