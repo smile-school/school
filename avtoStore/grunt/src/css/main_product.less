@@ -447,17 +447,29 @@ button.hover-btn {
 
         .item {
             position: relative;
-
+            &::after{
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0px;
+                right: 0;
+                z-index: -1;
+                box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.6);
+                display: none;
+            }
             &:hover {
                 z-index: 30;
                 position: relative;
                 background-color: white;
-                height: 450px;
                 margin-bottom: 10px;
 
                 .info-cart-list {
                     border-bottom: none;
                     z-index: 30;
+                }
+                &::after{
+                    display: block;
                 }
             }
 
@@ -614,7 +626,6 @@ button.hover-btn {
 }
 
 .info-cart-list {
-    border: 1px solid @border;
     border-top: none;
     position: relative;
     top: -5px;
@@ -728,7 +739,7 @@ button.hover-btn {
                 overflow: visible;
 
                 &:hover {
-                    height: 500px;
+
                 }
             }
         }

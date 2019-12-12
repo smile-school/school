@@ -596,6 +596,7 @@ ul {
             height: auto;
             opacity: 1;
             overflow: visible;
+            color: @bordo;
         }
     }
 
@@ -610,10 +611,11 @@ ul {
         width: 100%;
         padding: 15px 15px;
         box-sizing: border-box;
-        background-color: @bordo;
+        background-color: @white-color;
         height: 0;
         opacity: 0;
         overflow: hidden;
+        box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.6);
         li{
             width: 100%;
             &:not(:first-of-type){
@@ -621,11 +623,14 @@ ul {
             }
         }
         a{
-            color: @white-color;
+            color: @defolt-color;
             position: relative;
             width: 100%;
             display: block;
             transition: all .3s;
+            &:hover{
+                color: @bordo;
+            }
             &::after{
                 content: "\2013";
                 position: absolute;
@@ -768,14 +773,24 @@ ul {
     flex-direction: column;
     align-items: center;
     transition: 0.5s all;
-    min-height: 400px;
-    width: 300px;
+   height: auto;
+    width: 100%;
     font-size: 16px;
     background-color: @white-color;
     position: absolute;
     right: 0;
     top: 50px;
     z-index: 990;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.6);
+    border-top: 0;
+    & > li{
+        width: 100%;
+
+        a{
+            display: flex;
+            justify-content: center;
+        }
+    }
 }
 
 .bur:checked ~ ul li {
@@ -826,15 +841,40 @@ ul {
         height: 0;
         padding: 0;
         overflow: hidden;
+        .home-li {
+            &:hover {
+                .menu-hover-bloc {
+
+                }
+            }
+        }
         .menu-hover-bloc {
-            display: none;
-            right: 170px;
-            top: 0;
-            width: 400px;
+            position: relative;
+            box-shadow: none;
+            display: block;
+            width: 100%;
+            height: 0;
+            overflow: hidden;
+            padding: 0;
+            transition: all .3s;
+            h3{
+                text-align: center;
+            }
+
+        }
+        .modef-hover-bloc{
+            border-bottom: 2px solid @bordo;
+            border-top: 2px solid @bordo;
+            height: auto;
+            overflow: visible;
+            padding: 20px 0;
+
         }
         & > li{
+
             & > a{
                 padding-left: 0;
+                border-radius: 0;
             }
             &:first-of-type{
               & + li{

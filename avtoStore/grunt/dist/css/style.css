@@ -776,6 +776,7 @@ ul {
   height: auto;
   opacity: 1;
   overflow: visible;
+  color: #FF2D37;
 }
 .all-categories span {
   padding-right: 4px;
@@ -788,10 +789,11 @@ ul {
   width: 100%;
   padding: 15px 15px;
   box-sizing: border-box;
-  background-color: #FF2D37;
+  background-color: #fff;
   height: 0;
   opacity: 0;
   overflow: hidden;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.6);
 }
 .all-categories .categories-hover-bloc li {
   width: 100%;
@@ -800,11 +802,14 @@ ul {
   padding-top: 7px;
 }
 .all-categories .categories-hover-bloc a {
-  color: #fff;
+  color: #282828;
   position: relative;
   width: 100%;
   display: block;
   transition: all 0.3s;
+}
+.all-categories .categories-hover-bloc a:hover {
+  color: #FF2D37;
 }
 .all-categories .categories-hover-bloc a::after {
   content: "\2013";
@@ -911,14 +916,23 @@ ul {
   flex-direction: column;
   align-items: center;
   transition: 0.5s all;
-  min-height: 400px;
-  width: 300px;
+  height: auto;
+  width: 100%;
   font-size: 16px;
   background-color: #fff;
   position: absolute;
   right: 0;
   top: 50px;
   z-index: 990;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.6);
+  border-top: 0;
+}
+.bur:checked ~ ul > li {
+  width: 100%;
+}
+.bur:checked ~ ul > li a {
+  display: flex;
+  justify-content: center;
 }
 .bur:checked ~ ::after {
   transform: rotate(90deg);
@@ -956,13 +970,28 @@ ul {
     overflow: hidden;
   }
   .menu-nav .menu-hover-bloc {
-    display: none;
-    right: 170px;
-    top: 0;
-    width: 400px;
+    position: relative;
+    box-shadow: none;
+    display: block;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    padding: 0;
+    transition: all 0.3s;
+  }
+  .menu-nav .menu-hover-bloc h3 {
+    text-align: center;
+  }
+  .menu-nav .modef-hover-bloc {
+    border-bottom: 2px solid #FF2D37;
+    border-top: 2px solid #FF2D37;
+    height: auto;
+    overflow: visible;
+    padding: 20px 0;
   }
   .menu-nav > li > a {
     padding-left: 0;
+    border-radius: 0;
   }
   .menu-nav > li:first-of-type + li a {
     padding-left: 16px;
@@ -1046,6 +1075,9 @@ main {
 .reting li a {
   color: #282828;
   white-space: nowrap;
+}
+.reting li a:hover {
+  color: #FF2D37;
 }
 .glob-bloc-img {
   display: flex;
@@ -1254,6 +1286,9 @@ button.like-black {
   color: #282828;
   font-size: 14px;
 }
+.product-info-list a:hover {
+  color: #FF2D37;
+}
 .top-h {
   padding: 15px 0 12px 20px;
   background-color: #FF2D37;
@@ -1391,16 +1426,14 @@ button.like-black {
 button.mod-cart {
   background-color: #282828;
 }
+.item-hover-efect:hover {
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.6);
+}
 .item {
-  height: 400px;
   border: 1px solid #E5E5E5;
 }
 .item:not(:first-of-type) {
   margin-left: 20px;
-}
-.item:hover {
-  height: 440px;
-  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.6);
 }
 .item:hover .add-to-cart {
   display: flex;
@@ -1641,7 +1674,6 @@ button.dzb2:hover {
   }
   .slider-product .item:hover {
     box-shadow: none;
-    height: 302px;
   }
   .slider-product .item .bloc-cart-towar:hover .add-to-cart {
     display: none;
@@ -1650,9 +1682,6 @@ button.dzb2:hover {
     transform: scale(0);
     display: none;
     opacity: 0;
-  }
-  .item {
-    height: 300px;
   }
 }
 @media screen and (max-width: 480px) {
@@ -2030,16 +2059,29 @@ button.hover-btn:hover {
 .ul-list-product li .item {
   position: relative;
 }
+.ul-list-product li .item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0px;
+  right: 0;
+  z-index: -1;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.6);
+  display: none;
+}
 .ul-list-product li .item:hover {
   z-index: 30;
   position: relative;
   background-color: white;
-  height: 450px;
   margin-bottom: 10px;
 }
 .ul-list-product li .item:hover .info-cart-list {
   border-bottom: none;
   z-index: 30;
+}
+.ul-list-product li .item:hover::after {
+  display: block;
 }
 .ul-list-product li .item .name-towar {
   padding: 25px 0 15px;
@@ -2148,7 +2190,6 @@ button.hover-btn:hover {
   margin-top: 31px;
 }
 .info-cart-list {
-  border: 1px solid #E5E5E5;
   border-top: none;
   position: relative;
   top: -5px;
@@ -2240,9 +2281,6 @@ button.hover-btn:hover {
   }
   .ul-list-product li .item {
     overflow: visible;
-  }
-  .ul-list-product li .item:hover {
-    height: 500px;
   }
 }
 @media screen and (max-width: 560px) {
