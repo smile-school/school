@@ -142,11 +142,20 @@
         label {
             padding: 1px 8px;
             box-sizing: border-box;
+            width: 40px;
             height: 32px;
             display: flex;
             justify-content: center;
             align-items: center;
+            cursor: pointer;
+            position: relative;
 
+            svg{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+            }
             &:first-of-type {
                 background-color: @white-color;
                 border-right: 1px solid @border-color-registr;;
@@ -157,11 +166,7 @@
             }
 
             &:last-of-type {
-                background-color: @gray-fill;
-
-                svg {
-                    fill: @white-fill;
-                }
+                fill: #3e77aa;
             }
         }
     }
