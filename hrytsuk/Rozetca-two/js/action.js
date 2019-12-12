@@ -22,6 +22,7 @@
     Form();
 
 
+
     function setCount(spn) {
         spn.innerHTML = this.counts + ++spn.textContent;
     }
@@ -46,5 +47,7 @@
     Counter.prototype.setCount = setCount;
     var counter = new Counter(document.querySelectorAll('.buton-lice'), 0);
     var counter2 = new Counter(document.querySelectorAll('.buton-diz'), 0);
+
+
 
 })();

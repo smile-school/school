@@ -8,6 +8,7 @@
             ratings : 0,
             myForm:document.querySelector('#comentForm'),
             starInp:document.querySelector('.star-bloc'),
+            comentCou : document.querySelector('.number-ret'),
         };
 
         this.parament.myForm.addEventListener('submit', parsForm);
@@ -63,15 +64,12 @@
 
             if (!validationEmail.test(elementForm.emailComent.value)) {
                 elementForm.emailComent.classList.add('erors');
-                // elementForm.emailComent.nextElementSibling.classList.add('erors');
             }
             if (elementForm.nameComent.value.length < 1 || elementForm.nameComent.value.length > 40) {
                 elementForm.nameComent.classList.add('erors');
-                // elementForm.nameComent.nextElementSibling.classList.add('erors');
             }
             if (elementForm.textComent.value.length < 10 || elementForm.textComent.value.length > 140) {
                 elementForm.textComent.classList.add('erors');
-                elementForm.textComent.nextElementSibling.classList.add('erors');
             }
             if (validationEmail.test(elementForm.emailComent.value) &&
                 elementForm.nameComent.value.length > 1 &&
@@ -94,7 +92,7 @@
                  else if (key === 'coment') this.elemForm.coment = item;
                  else if (key === 'url-yotube') this.elemForm.urlYotube = item.split('v=')[1];
              });
-                // console.log(self.parament.elements);
+                 console.log(self.parament.elements);
              AddedComent(data);
 
          }
@@ -202,14 +200,14 @@
              var butonLice = createElem('button',{'class':'answer-bottom buton-lice'},svgLice);
 
 
-            var like1 = createElem('span',{'class':'like'},'0');
+            var like1 = createElem('span',{'class':'like1'},1);
 
             butonLice.appendChild(like1);
             comentLice.appendChild(butonLice);
 
              var butonDiz = createElem('button',{'class':'answer-bottom lice buton-diz'});
             butonDiz.innerHTML+=svgLice;
-             var like2 = createElem('span',{'class':'like'},0);
+             var like2 = createElem('span',{'class':'like2'},1);
 
             butonDiz.appendChild(like2);
             comentLice.appendChild(butonDiz);
@@ -228,14 +226,16 @@
         function remoteForm(data) {
             for (var key in data){
                 data[key].value = "";
-                console.log(data[key].value);
 
                 if (data[key].classList.contains('erors')) {
                     data[key].classList.remove('erors');
                 }
             }
+            countComent();
 
-
+        }
+        function countComent() {
+            +(self.parament.comentCou.innerHTML)++;
         }
     }
 
