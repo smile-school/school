@@ -5,18 +5,10 @@
             bigImageClass: '.show-img',
             frameClass: '.frame',
             clickElemClass: '.images-small',
-            events: {
-                beforeLoad: function () {
-                    console.log("My slider start to load.");
-                },
-                afterLoad: function () {
-                    console.log("My slider is load.");
-                },
-            }
         }
     );
+
     var addReview = new AddReview();
-    var change = new Change();
 
     $('.prod-cards').slick({
         infinite: true,
@@ -33,7 +25,7 @@
                     slidesToScroll: 1,
                     infinite: true,
                     autoplay: true,
-                    autoplaySpeed: 5000,
+                    autoplaySpeed: 10000,
                 }
             },
             {
@@ -43,7 +35,7 @@
                     slidesToScroll: 1,
                     infinite: true,
                     autoplay: true,
-                    autoplaySpeed: 5000,
+                    autoplaySpeed: 10000,
                 }
             },
             {
@@ -53,7 +45,7 @@
                     slidesToScroll: 1,
                     infinite: true,
                     autoplay: true,
-                    autoplaySpeed: 5000,
+                    autoplaySpeed: 10000,
                 }
             },
         ]

@@ -1239,6 +1239,9 @@ header.header .bottom-section .buttons-wrap .shopping .about-prod-bottoms .top .
   color: #FFFFFF;
   font-size: 13px;
 }
+header.header .bottom-section .buttons-wrap .shopping .about-prod-bottoms .top .update:hover {
+  background-color: #282828;
+}
 header.header .bottom-section .buttons-wrap .shopping .about-prod-bottoms .bottom {
   justify-content: space-between;
   padding: 17px 25px 16px;
@@ -1269,6 +1272,9 @@ header.header .bottom-section .buttons-wrap .shopping .about-prod-bottoms .but-w
   padding: 0 39px;
   font-size: 13px;
   line-height: 15px;
+}
+header.header .bottom-section .buttons-wrap .shopping .about-prod-bottoms .but-wrap > button:hover {
+  background-color: #282828;
 }
 @media (max-width: 500px) {
   header.header .bottom-section .buttons-wrap .shopping .about-prod-bottoms .but-wrap > button {
@@ -1338,8 +1344,10 @@ header.header nav.menu .wrapper .container-tab .menu-tab.home {
     margin-right: 0;
   }
 }
-header.header nav.menu .wrapper .container-tab .menu-tab > span {
+header.header nav.menu .wrapper .container-tab .menu-tab > a {
   text-transform: uppercase;
+  color: inherit;
+  text-decoration: none;
 }
 header.header nav.menu .wrapper .container-tab .menu-tab:hover > ul {
   display: block;
@@ -1349,6 +1357,27 @@ header.header nav.menu .wrapper .container-tab .menu-tab.all-cats {
   padding: 20px 133px 15px 18px;
   background-color: #FF2D37;
   color: #FFFFFF;
+  position: relative;
+}
+header.header nav.menu .wrapper .container-tab .menu-tab.all-cats > input {
+  display: none;
+}
+header.header nav.menu .wrapper .container-tab .menu-tab.all-cats > input:checked ~ ul {
+  display: block;
+}
+header.header nav.menu .wrapper .container-tab .menu-tab.all-cats > label {
+  display: none;
+}
+@media (max-width: 767px) {
+  header.header nav.menu .wrapper .container-tab .menu-tab.all-cats > label {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+  }
 }
 @media (max-width: 1200px) {
   header.header nav.menu .wrapper .container-tab .menu-tab.all-cats {
@@ -1399,11 +1428,13 @@ header.header nav.menu .wrapper .container-tab .menu-tab.all-cats > span {
   top: 52%;
   line-height: 0;
   transform: translateY(-20%);
+  text-transform: uppercase;
 }
 header.header nav.menu .wrapper .container-tab .menu-tab.all-cats:hover:before,
 header.header nav.menu .wrapper .container-tab .menu-tab.all-cats:hover:after,
 header.header nav.menu .wrapper .container-tab .menu-tab.all-cats:hover > span.row {
   transform: translateX(200%);
+  text-transform: uppercase;
   opacity: 0;
 }
 header.header nav.menu .wrapper .container-tab .menu-tab.all-cats:hover:after {
@@ -1511,12 +1542,36 @@ header.header nav.menu .wrapper .container-tab .tab-points.contacts > li .small 
   display: block;
   align-self: center;
 }
+@media (max-width: 767px) {
+  header.header nav.menu .wrapper .container-tab .hamburger {
+    position: relative;
+  }
+}
 header.header nav.menu .wrapper .container-tab .hamburger > span {
   display: none;
   color: #FFFFFF;
   text-transform: uppercase;
   font-size: 12px;
   font-weight: 500;
+}
+header.header nav.menu .wrapper .container-tab .hamburger > input {
+  display: none;
+}
+header.header nav.menu .wrapper .container-tab .hamburger > input:checked ~ .hamb-wrap {
+  display: flex;
+}
+header.header nav.menu .wrapper .container-tab .hamburger > label {
+  display: none;
+}
+@media (max-width: 767px) {
+  header.header nav.menu .wrapper .container-tab .hamburger > label {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
 }
 @media (max-width: 767px) {
   header.header nav.menu .wrapper .container-tab .hamburger {
@@ -1528,9 +1583,6 @@ header.header nav.menu .wrapper .container-tab .hamburger > span {
     padding: 15px 49px 10px 18px;
     position: relative;
     box-sizing: border-box;
-  }
-  header.header nav.menu .wrapper .container-tab .hamburger:hover .hamb-wrap {
-    display: flex;
   }
   header.header nav.menu .wrapper .container-tab .hamburger::before,
   header.header nav.menu .wrapper .container-tab .hamburger::after,
@@ -1604,6 +1656,11 @@ header.header nav.menu .wrapper .container-tab .hamburger .hamb-wrap .menu-tab:h
 }
 header.header nav.menu .wrapper .container-tab .hamburger .hamb-wrap .menu-tab:hover + .tab-points {
   display: flex;
+}
+@media (max-width: 767px) {
+  header.header nav.menu .wrapper .container-tab .hamburger .hamb-wrap .menu-tab:hover + .tab-points {
+    display: none;
+  }
 }
 header.header nav.menu .wrapper .container-tab .hamburger .hamb-wrap .menu-tab:hover::after {
   transform: rotate(180deg);
@@ -1695,6 +1752,37 @@ header.header nav.menu .wrapper .container-tab .hamburger .hamb-wrap .menu-tab:h
 }
 .wrapper .main-container .container-content .add-prod .photos-wrapper .images-big {
   outline: 1px solid #E5E5E5;
+  box-sizing: border-box;
+  position: relative;
+}
+.wrapper .main-container .container-content .add-prod .photos-wrapper .images-big > button {
+  position: absolute;
+  z-index: 10;
+  display: none;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  width: 79px;
+  font-size: 40px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.2);
+  font-weight: 300;
+}
+.wrapper .main-container .container-content .add-prod .photos-wrapper .images-big > button > svg {
+  position: relative;
+  z-index: -1;
+}
+.wrapper .main-container .container-content .add-prod .photos-wrapper .images-big > button.big-next {
+  right: 0;
+}
+.wrapper .main-container .container-content .add-prod .photos-wrapper .images-big > button.big-prev {
+  left: 0;
+}
+.wrapper .main-container .container-content .add-prod .photos-wrapper .images-big > button:hover > svg {
+  fill: #FF2D37;
+}
+.wrapper .main-container .container-content .add-prod .photos-wrapper .images-big:hover > button {
+  display: block;
 }
 .wrapper .main-container .container-content .add-prod .photos-wrapper .images-big .show-img {
   display: block;
@@ -1706,9 +1794,74 @@ header.header nav.menu .wrapper .container-tab .hamburger .hamb-wrap .menu-tab:h
   opacity: 0;
 }
 .wrapper .main-container .container-content .add-prod .photos-wrapper .images-small {
-  display: flex;
   padding: 10px 0;
   position: relative;
+  max-width: 410px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.wrapper .main-container .container-content .add-prod .photos-wrapper .images-small .slick-wrap {
+  display: flex;
+  transition: margin-left 500ms ease-out;
+}
+.wrapper .main-container .container-content .add-prod .photos-wrapper .images-small .slick-wrap > img {
+  display: block;
+  max-width: 95px;
+  margin-right: 10px;
+}
+@media (max-width: 992px) {
+  .wrapper .main-container .container-content .add-prod .photos-wrapper .images-small .slick-wrap > img {
+    max-width: 80px;
+  }
+}
+@media (max-width: 500px) {
+  .wrapper .main-container .container-content .add-prod .photos-wrapper .images-small .slick-wrap > img {
+    max-width: 68px;
+  }
+}
+@media (max-width: 992px) {
+  .wrapper .main-container .container-content .add-prod .photos-wrapper .images-small {
+    max-width: 350px;
+  }
+}
+@media (max-width: 500px) {
+  .wrapper .main-container .container-content .add-prod .photos-wrapper .images-small {
+    max-width: 302px;
+  }
+}
+.wrapper .main-container .container-content .add-prod .photos-wrapper .images-small > button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 27px;
+  height: 50px;
+  background: #FFFFFF;
+  border: 1px solid #CCCCCC;
+  box-sizing: border-box;
+  color: #888888;
+  display: none;
+  z-index: 20;
+}
+.wrapper .main-container .container-content .add-prod .photos-wrapper .images-small > button:hover {
+  background-color: #FF2D37;
+  border-color: #FF2D37;
+  color: #FFFFFF;
+}
+.wrapper .main-container .container-content .add-prod .photos-wrapper .images-small > button > i {
+  position: relative;
+  z-index: -1;
+}
+.wrapper .main-container .container-content .add-prod .photos-wrapper .images-small > button.next {
+  right: 5px;
+}
+.wrapper .main-container .container-content .add-prod .photos-wrapper .images-small > button.next {
+  right: 10px;
+}
+.wrapper .main-container .container-content .add-prod .photos-wrapper .images-small > button.prev {
+  left: 10px;
+}
+.wrapper .main-container .container-content .add-prod .photos-wrapper .images-small:hover > button {
+  display: block;
 }
 .wrapper .main-container .container-content .add-prod .photos-wrapper .images-small .frame {
   width: 95px;
@@ -1731,21 +1884,6 @@ header.header nav.menu .wrapper .container-tab .hamburger .hamb-wrap .menu-tab:h
   .wrapper .main-container .container-content .add-prod .photos-wrapper .images-small .frame {
     width: 68px;
     height: 68px;
-  }
-}
-.wrapper .main-container .container-content .add-prod .photos-wrapper .images-small > img {
-  display: block;
-  max-width: 95px;
-  margin-right: 10px;
-}
-@media (max-width: 992px) {
-  .wrapper .main-container .container-content .add-prod .photos-wrapper .images-small > img {
-    max-width: 80px;
-  }
-}
-@media (max-width: 500px) {
-  .wrapper .main-container .container-content .add-prod .photos-wrapper .images-small > img {
-    max-width: 68px;
   }
 }
 .wrapper .main-container .container-content .add-prod .description {

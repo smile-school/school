@@ -72,6 +72,41 @@
 
                     .images-big {
                         outline: 1px solid #E5E5E5;
+                        box-sizing: border-box;
+                        position: relative;
+                        & > button{
+                            position: absolute;
+                            z-index: 10;
+                            display: none;
+                            height: 100%;
+                            top: 0;
+                            bottom: 0;
+                            width: 79px;
+                            font-size: 40px;
+                            border: none;
+                            background-color: rgba(255, 255, 255, .2);
+                            font-weight: 300;
+                            & > svg{
+                                position: relative;
+                                z-index: -1;
+                            }
+                            &.big-next{
+                                right: 0;
+                            }
+                            &.big-prev{
+                                left: 0;
+                            }
+                            &:hover{
+                                & > svg{
+                                    fill: #FF2D37;
+                                }
+                            }
+                        }
+                        &:hover{
+                            & > button{
+                                display: block;
+                            }
+                        }
 
                         .show-img {
                             display: block;
@@ -86,9 +121,69 @@
                     }
 
                     .images-small {
-                        display: flex;
                         padding: 10px 0;
                         position: relative;
+                        max-width: 410px;
+                        overflow: hidden;
+                        box-sizing: border-box;
+                        .slick-wrap{
+                            display: flex;
+                            transition: margin-left 500ms ease-out;
+                            & > img {
+                                display: block;
+                                max-width: 95px;
+                                margin-right: 10px;
+                                @media (max-width: @tablet-point) {
+                                    max-width: 80px;
+                                }
+                                @media (max-width: @second-mobile-point) {
+                                    max-width: 68px;
+                                }
+                            }
+                        }
+                        @media(max-width: @tablet-point){
+                            max-width: 350px;
+                        }
+                        @media(max-width: @second-mobile-point){
+                            max-width: 302px;
+                        }
+                        & > button{
+                            position: absolute;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            width: 27px;
+                            height: 50px;
+                            background: #FFFFFF;
+                            border: 1px solid #CCCCCC;
+                            box-sizing: border-box;
+                            color: #888888;
+                            display: none;
+                            z-index: 20;
+                            &:hover{
+                                background-color: #FF2D37;
+                                border-color: #FF2D37;
+                                color: #FFFFFF;
+                            }
+                            & > i{
+                                position: relative;
+                                z-index: -1;
+                            }
+                            &.next{
+                                right: 5px;
+                            }
+                            &.next{
+                                right: 10px;
+                            }
+                            &.prev{
+                                left: 10px;
+                            }
+                        }
+                        &:hover{
+                            & > button{
+                                display: block;
+                            }
+                        }
+
 
                         .frame {
                             width: 95px;
@@ -107,18 +202,6 @@
                             @media (max-width: @second-mobile-point) {
                                 width: 68px;
                                 height: 68px;
-                            }
-                        }
-
-                        & > img {
-                            display: block;
-                            max-width: 95px;
-                            margin-right: 10px;
-                            @media (max-width: @tablet-point) {
-                                max-width: 80px;
-                            }
-                            @media (max-width: @second-mobile-point) {
-                                max-width: 68px;
                             }
                         }
                     }

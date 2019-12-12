@@ -513,12 +513,16 @@
                 <div class="title">
                     <h5>Shop By</h5>
                 </div>
-                <div class="aside-content-wrap">
+                <div class="aside-content-wrap" id="filter">
                     <div class="color-choice">
                         <p>color</p>
                         <div>
-                            <input type="checkbox" name="color" id="black" value="#000000">
-                            <label for="black" class="color-input black"></label>
+                           <ul>
+                               <li>
+                                   <input type="checkbox" name="color" id="black" value="#000000" data-bind="attr:{style: 'background-color': $data}">
+                                   <label for="black" class="color-input black"></label>
+                               </li>
+                           </ul>
                         </div>
                     </div>
                     <div class="price-choice">
@@ -541,11 +545,9 @@
                     </div>
                     <div class="brand-choice">
                         <p>brand</p>
-                        <div>
-                            <a href="#">Toyota&nbsp;<span>(4)</span></a>
-                            <a href="#">Mercedes&nbsp;<span>(4)</span></a>
-                            <a href="#">Kia&nbsp;<span>(2)</span></a>
-                            <a href="#">Audi&nbsp;<span>(4)</span></a>
+                        <div data-bind="foreach: brand">
+                           <!-- <a href="#">Toyota&nbsp;<span>(4)</span></a>-->
+                            <a href="#" data-bind="text: $data"></a>
                         </div>
                     </div>
                     <div class="model-choice">

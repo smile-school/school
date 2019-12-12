@@ -18,8 +18,6 @@
         this.brand = ko.observable(brand || '');
         this.model = ko.observable(model || '');
         this.year = ko.observable(year || '');
-
-
     }
 
     function AddProduct() {
@@ -36,15 +34,16 @@
         this.yearOptions = attributes.year;
         this.addAttribute = function (nameAttribute) {
             console.log(nameAttribute);
-           var value =  prompt('Enter' + nameAttribute);
-           if (value){
+            var value = prompt('Enter' + nameAttribute);
+            if (value) {
                 this[nameAttribute + 'Options'].push(value);
-           }
+            }
         };
         this.addProduct = function () {
 
         };
     }
+
     function ProductList() {
         this.productList = ko.observable([])
     }
@@ -52,7 +51,10 @@
     var attributes = new Attributes(),
         product = new Product(),
         addProduct = new AddProduct(),
-        productList = new ProductList()
-        parentCont = document.querySelector('#add-product');
-        ko.applyBindings(addProduct, parentCont);
+        productList = new ProductList(),
+    parentCont = document.querySelector('#add-product');
+    ko.applyBindings(addProduct, parentCont);
+    ko.applyBindings(attributes, document.querySelector('#filter'));
+    ko.applyBindings(productList, document.querySelector('#prodList'));
+
 })();
