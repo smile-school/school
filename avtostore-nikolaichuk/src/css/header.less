@@ -285,6 +285,9 @@
                     .absolute-position-mixin(@top: calc(100% - 3px), @left: 110px);
                     background-color: @main-background;
                     cursor: pointer;
+                    &:hover{
+                        color: @page-hover-color;
+                    }
                 }
                 .mini-cart {
                     &__image {
@@ -476,12 +479,51 @@
 
         .nav-menu {
             float: right;
-
+            position: relative;
             &__item {
                 .hover-mixin(@page-hover-color;);
 
                 &:hover > a {
                     color: @main-elements-color;
+                }
+                &:first-child:hover ~ .submenu-container{
+                    .flex-mixin(@justify: space-between, @align: stretch);
+                }
+            }
+
+            .submenu-container{
+                display: none;
+                .absolute-position-mixin(@top: calc(100% - 3px), @left: 0, @translateX: 0, @translateY: 0);
+                padding: 26px 20px 33px;
+                width: 100%;
+                flex-wrap: wrap;
+                z-index: 2;
+                border: 1px solid @main-border-line-color;
+                box-sizing: border-box;
+                box-shadow: 0px 0px 10px @submenu-box-shadow;
+                background-color: @main-background;
+                &:hover{
+                    .flex-mixin(@justify: space-between, @align: stretch);
+                }
+                .nav-links-menu{
+                    width: calc((100% - 20px)/2);
+                    display: inline-block;
+                    &__heading{
+                        font-size: 15px;
+                        font-weight: 500;
+                        line-height: 18px;
+                        text-transform: uppercase;
+                        padding-bottom: 10px;
+                    }
+                    &__item{
+                        display: inline-block;
+                        font-size: 12px;
+                        line-height: 14px;
+                        padding-bottom: 9px;
+                    }
+                    &:nth-child(n+3){
+                        padding-top: 25px;
+                    }
                 }
             }
         }
