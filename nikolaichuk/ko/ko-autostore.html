@@ -29,9 +29,9 @@
                         <div class="price-slider__slider"></div>
                         <div class="price-slider__controls">
                             <span>$</span>
-                            <input type="text" class="price-slider__controls__input price-min" value="66.9" />
+                            <input type="text" class="price-slider__controls__input price-min" value="0" />
                             <span>-$</span>
-                            <input type="text" class="price-slider__controls__input price-max" value="290"/>
+                            <input type="text" class="price-slider__controls__input price-max" value="0"/>
                         </div>
                     </div>
                 </div>
@@ -85,14 +85,14 @@
             <div class="form-wrapper" id="addProduct">
                     <h2>Add product</h2>
                 <div class="col-1">
-                    <label for="title">Title</label>
-                    <label for="image">Image</label>
-                    <label for="price">Price</label>
+                    <label for="title" data-bind="css:{required: title() === '' && required}">Title</label>
+                    <label for="image" data-bind="css:{required: img() === '' && required}">Image</label>
+                    <label for="price" data-bind="css:{required: price() === '' && required}">Price</label>
                     <label for="salePrice">Sale Price</label>
-                    <label for="color">Color</label>
-                    <label for="brand">Brand</label>
-                    <label for="model">Model</label>
-                    <label for="year">Year</label>
+                    <label for="color" data-bind="css:{required: color() === undefined && required}">Color</label>
+                    <label for="brand" data-bind="css:{required: brand() === undefined && required}">Brand</label>
+                    <label for="model" data-bind="css:{required: model() === undefined && required}">Model</label>
+                    <label for="year" data-bind="css:{required: year() === undefined && required}">Year</label>
                 </div>
                 <div class="col-2">
                     <input type="text" name="title" id="title" data-bind="value:title">
@@ -100,19 +100,19 @@
                     <input type="text" name="price" id="price" data-bind="value:price">
                     <input type="text" name="salePrice" id="salePrice" data-bind="value:salePrice">
                     <div>
-                        <select name="color" id="color" data-bind="options: colorOptions"></select>
+                        <select name="color" id="color" data-bind="options: colorOptions, optionsCaption: 'Choose color', value: color"></select>
                         <button type="button" data-bind="click: function(){addAttribute('color');}">+</button>
                     </div>
                     <div>
-                        <select name="brand" id="brand" data-bind="options: brandOptions"></select>
+                        <select name="brand" id="brand" data-bind="options: brandOptions, optionsCaption: 'Choose brand', value: brand"></select>
                         <button type="button" data-bind="click: function(){addAttribute('brand');}">+</button>
                     </div>
                     <div>
-                        <select name="model" id="model" data-bind="options: modelOptions"></select>
+                        <select name="model" id="model" data-bind="options: modelOptions, optionsCaption: 'Choose model', value: model"></select>
                         <button type="button" data-bind="click: function(){addAttribute('model');}">+</button>
                     </div>
                     <div>
-                        <select name="year" id="year" data-bind="options: yearOptions"></select>
+                        <select name="year" id="year" data-bind="options: yearOptions, optionsCaption: 'Choose year', value: year"></select>
                         <button type="button" data-bind="click: function(){addAttribute('year');}">+</button>
                     </div>
                 </div>
@@ -169,6 +169,14 @@
 </main>
 <footer></footer>
 <script>
+
+    function setFilterPrice(maxPrice) {
+        var max = document.querySelector('.price-max');
+        if (maxPrice > +max.value){
+            //console.log(product[key]());
+            max.value = +maxPrice;
+        }
+    }
     function Attributes() {
         this.color = ko.observableArray([]);
         this.brand = ko.observableArray([]);
@@ -206,9 +214,13 @@
         this.sale = product.sale;
         this.rating = product.rating;
         this.colorOptions = attributes.color;
+        this.color = ko.observable();
         this.brandOptions = attributes.brand;
+        this.brand = ko.observable();
         this.modelOptions = attributes.model;
+        this.model = ko.observable();
         this.yearOptions = attributes.year;
+        this.year = ko.observable();
         this.addAttribute = function (nameAttribute) {
             console.log(nameAttribute, this);
             var value = prompt('Enter ' + nameAttribute);
@@ -217,13 +229,52 @@
                 this[nameAttribute + 'Options'].push(value);
             }
         }
+        this.required = ko.observable(false);
         this.addProduct = function () {
-
+            if(this.title() && this.img() && this.price() && this.color() && this.brand() && this.model() && this.year()){
+                productList.productList.push(new Product(this.title(), this.img(), this.price(), this.salePrice(), this.newAction(),
+                this.sale(), this.rating(), this.color(), this.brand(). this.model(), this.year()));
+                this.required(false);
+                this.clearForm();
+            }
+            else {
+                this.required(true);
+            }
+        };
+        this.clearForm = function () {
+            this.title('');
+            this.img('');
+            this.price('');
+            this.salePrice('');
+            this.newAction(false);
+            this.sale(false);
+            this.rating('');
+            this.model('');
+            this.color(undefined);
+            this.brand('');
+            this.year('');
         }
     }
 
     function ProductList() {
         this.productList = ko.observableArray([]);
+        this.addProduct = function (product) {
+            var max = document.querySelector('.price-max');
+            console.log(max);
+            for (var key in product){
+                if (key == 'price'){
+                    setFilterPrice(product[key]());
+                    /*if (+product[key]() > +max.value){
+                        console.log(product[key]());
+                        max.value = +product[key]();
+                    }*/
+                }
+                if(key === 'color' || key === 'brand' || key === 'model' || key === 'year'){
+                    if (attributes[key]().indexOf(product[key]()) === -1) attributes[key].push(product[key]());
+                }
+            }
+            if(product) this.productList.push(product)
+        }
     }
 
     var attributes = new Attributes(),
@@ -234,12 +285,28 @@
     ko.applyBindings(addProduct, document.querySelector('#addProduct'));
     ko.applyBindings(attributes, document.querySelector('#filters'));
     ko.applyBindings(productList,document.querySelector('#productList'));
-    productList.productList.subscribe(function (value) {
-        console.log(value[0].title);
-    });
-    productList.productList.push(
+
+    /*productList.productList.subscribe(function (value) {
+        //console.log(value[0].title);
+        var max = document.querySelector('price-max');
+        for (var i = 0; i < value.length; i++){
+            for (var key in value[i]){
+                if (key == 'price'){
+                    if (+value[i][key]() > + max.value){
+                        priceFilter.slider('option', 'max', value[i][key]());
+                        priceFilter.slider('value', 1, value[i][key]());
+                        document.querySelector('price-max').value(value[i][key]());
+                    }
+                }
+            }
+        }
+    });*/
+    /*productList.productList.push(
         new Product('Car cit', '../ima/car_kit.png', 50, 40, false, false, 5, 'red', 'BMW', 'X5', '2019')
-    );
+    );*/
+    productList.addProduct(new Product('Car cit', '../ima/car_kit.png', 50, 80, false, false, 5, 'red', 'BMW', 'X5', '2019'));
+    productList.addProduct(new Product('Car cit', '../ima/car_kit.png', 150, 40, false, false, 5, 'black', 'Toyota', 'Corolla', '2012'));
+    productList.addProduct(new Product('Car cit', '../ima/car_kit.png', 50, 100, false, false, 5, 'green', 'Mazda', '6', '2017'));
 </script>
 </body>
 </html>
