@@ -40,6 +40,15 @@ $(function() {
         this.brand = ko.observable(brand || '');
         this.model = ko.observable(model || '');
         this.year= ko.observable(year || '');
+        this.prices = ko.computed(function () {
+            var html ='<p class="for-sale" data-bind="prices">$' + this.price() + '</p>';
+            if(this.sale()){
+                html += '<span>' + this.salePrice() + '</span>';
+            } else {
+
+            }
+            return html;
+        }, this);
     }
 
     function ProductList() {
@@ -62,20 +71,32 @@ $(function() {
         this.yearOptions = attributes.year;
         this.addAttribute = function (nameAttribute) {
             console.log(nameAttribute);
-            var value = Product('Enter ' + nameAttribute);
+            var value = prompt('Enter ' + nameAttribute);
             console.log(this);
             if(value){
                 this[nameAttribute + 'Options'].push(value);
             }
-        }
+        };
         this.addProduct = function () {
 
-        }
+        };
     }
 
     var attributes = new Attributes(),
         product = new Product(),
         addProduct = new AddProduct(),
         productList = new ProductList();
+
     ko.applyBindings(addProduct, document.querySelector('#addProduct'));
+    ko.applyBindings(attributes, document.querySelector('#filters'));
+    ko.applyBindings(productList, document.querySelector('#productList'));
+
+    productList.productList.subscribe( function () {
+        console.log(this);
+    });
+    console.log(productList);
+    productList.productList.push(
+        new Product('title', 'ima/related/2.png', 50, 0, false, true, 2, 'red', 'bmw', 'x5', '2019'),
+        new Product('title22', 'ima/related/2.png', 500, 100, false, true, 5, 'red', 'bmw', 'x5', '2019')
+    )
 });

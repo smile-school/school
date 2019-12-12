@@ -420,9 +420,6 @@ main {
                 flex-flow: wrap;
                 justify-content: space-between;
                 position: relative;
-                .related-product-cart-extended{
-                    height: 431px;
-                }
                 &:hover .arrow{
                     opacity: 1;
                 }
@@ -461,6 +458,7 @@ main {
                     .related-product-img{
                         border-bottom: 1px solid @border-color;
                         position: relative;
+                        max-width: 100%;
                     }
                     p:last-child{
                         padding-bottom: 30px;
@@ -474,9 +472,7 @@ main {
                         padding-bottom: 20px;
                     }
                     &:hover{
-                        height: 440px;
                         max-width: max-content;
-                        box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.6);
                         .acordeon{
                             height: 160px;
                         }
@@ -511,6 +507,7 @@ main {
                         .related-product-cart-btns{
                             display: flex;
                             width: 100%;
+                            z-index: 1;
                             .add-to-cart{
                                 width: 100%;
                             }
@@ -522,6 +519,7 @@ main {
                         font-size: 14px;
                         a{
                             color: @base2-color;
+                            cursor: pointer;
                             &:hover{
                                 color: @button;
                             }
@@ -549,21 +547,23 @@ main {
                         display: none;
                         .add-to-cart{
                             text-transform: uppercase;
-                            //padding: 12px 50px;
-                            padding: 12px 46px;
                             background-color: @base2-color;
                             color: @base-color;
-                            display: inline-block;
                             height: inherit;
                             width: 100%;
                             border-left: 1px solid @border-color;
                             border-right: 1px solid @border-color;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
                         }
                         .like-btn,.restart-cart{
                             position: relative;
-                            padding: 12px 18px;
                             background-color: @base2-color;
                             border-radius: 0;
+                            min-width: 40px;
+                            height: 40px;
+                            display: block;
                         }
                         .add-to-cart:hover,
                         .like-btn:hover,
@@ -573,6 +573,7 @@ main {
                     }
                     .rating{
                         padding: 15px 0;
+                        cursor: pointer;
                     }
                 }
             }

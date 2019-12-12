@@ -38,7 +38,6 @@ main .wrapper-main-content.product-page {
                         line-height: 17px;
                         text-transform: uppercase;
                         letter-spacing: 0.02em;
-                        //padding: 15px 0;
                         padding-right: 18px;
                         width: 100%;
                         color: @base2-color;
@@ -289,7 +288,7 @@ main .wrapper-main-content.product-page {
                 justify-content: space-between;
                 font-size: 13px;
                 line-height: 15px;
-                padding: 5px 15px 0 27px;
+                padding: 5px 0px 0 11px;
                 width: 50%;
                 .quantity-to-show{
                     position: relative;
@@ -303,6 +302,10 @@ main .wrapper-main-content.product-page {
                         font-weight: 900;
                         font-size: 10px;
                         z-index: 1;
+
+                    }
+                    &:first-child::before{
+                        left: 89px;
                     }
                     .quantity{
                         padding: 7px 24px 7px 1px;
@@ -314,6 +317,7 @@ main .wrapper-main-content.product-page {
                     padding: 0 0 0 5px;
                     font-size: 13px;
                     line-height: 15px;
+                    z-index: 2;
                     &::before,
                     &::after{
                         position: absolute;
@@ -345,9 +349,56 @@ main .wrapper-main-content.product-page {
     .related-products.product-page{
         padding: 31px 0 0 6px;
         margin-bottom: 18px;
+        .related-product-cart-extended{
+            position: relative;
+            max-height: 400px;
+            margin-bottom: 32px;
+        }
+        .related-product-list .related-product-cart:hover{
+            &::before{
+                content: '';
+                width: 100%;
+                height:100%;
+                z-index: 1;
+                box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.6);
+                position: absolute;
+            }
+            &::after{
+                position: absolute;
+                right: 0;
+                content: '\f002';
+                font-family: Font Awesome\ 5 Free;
+                color: @base-color;
+                background-color: @button;
+                left: calc(50% - 25px);
+                top: calc(29% - 25px);
+                width: 25px;
+                height: 25px;
+                border-radius: 50%;
+                font-weight: 900;
+                font-size: 23px;
+                cursor: pointer;
+                padding: 15px;
+                z-index: 10;
+            }
+            p:last-child{
+                padding-bottom: 20px;
+            }
+
+        }
         .related-product-list .related-product-cart,
         .related-product-list .related-product-cart:hover{
             position: relative;
+            .product-title{
+                padding-top: 23px;
+                cursor: pointer;
+                z-index: 10;
+            }
+            .rating{
+                padding-bottom: 16px;
+                cursor: pointer;
+                z-index: 10;
+            }
             .sale,
             .new{
                 font-size: 12px;
@@ -356,34 +407,30 @@ main .wrapper-main-content.product-page {
                 color: @base-color;
                 text-transform: uppercase;
                 z-index: 1;
-                &::before,
-                &::after{
+                &::before{
                     position: absolute;
-                    content: '';
-                    bottom: -7px;
-                    width: 0;
-                    height: 0;
-                    border-top: 7px solid transparent;
+                    width: 10px;
+                    height: 7px;
+                    top: 100%;
+                    content: "";
                 }
             }
             .sale{
-                padding: 8px 16px;
+                padding: 9px 15px;
                 left: -10px;
                 background-color: @button;
                 &::before{
-                    background-color: @sale-flag-color;
+                    background: url("@{path-img}Vector1.png") no-repeat;
                     left: 0;
-                    border-left: 10px solid @basebg-color;
                 }
             }
             .new {
-                padding: 8px 15px;
+                padding: 9px 14px;
                 right: -10px;
                 background-color: @new-color;
                 &::before {
-                    background-color: @new-flag-color;
+                    background: url("@{path-img}Vector2.png") no-repeat;
                     right: 0;
-                    border-right: 10px solid @base-color;
                 }
             }
         }
