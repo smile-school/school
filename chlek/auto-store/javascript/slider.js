@@ -37,14 +37,12 @@
                 return;
             } else if (this.classList.contains('next-js') && (slick === maxMarginLeft)) {
                 return;
-            }
-            else if(this.classList.contains('prev-js') && (!slick || slick !== '0px') && self.options.framePosition === 0){
+            } else if (this.classList.contains('prev-js') && (!slick || slick !== '0px') && self.options.framePosition === 0) {
                 self.options.position += (event) ? direction * (+childs[0].clientWidth + 10) : 0;
                 self.options.slickWrap.style.marginLeft = self.options.position + 'px';
                 changeSlide(event);
                 return;
-            }
-            else if (this.classList.contains('prev-js') && maxLeftPosit === self.options.frame.style.left && self.options.frame.style.left !== '0px') {
+            } else if (this.classList.contains('prev-js') && maxLeftPosit === self.options.frame.style.left && self.options.frame.style.left !== '0px') {
                 self.options.framePosition += direction * (+childs[0].clientWidth + 10);
             } else if (maxLeftPosit === self.options.frame.style.left) {
                 self.options.position += (event) ? direction * (+childs[0].clientWidth + 10) : 0;
