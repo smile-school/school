@@ -1,11 +1,13 @@
 .filter-block {
-    padding: 19px 15px 30px 20px;
+    padding: 19px 15px 26px 20px;
     border: 1px solid @line-bloc;
     border-top: none;
 
     h3 {
         text-transform: uppercase;
         margin-bottom: 14px;
+        font-size: 14px;
+        line-height: 17px;
     }
 
     input {
@@ -13,6 +15,18 @@
     }
 
 }
+.prise-bloc{
+    padding-top: 22px;
+}
+.prise-h3{
+    padding-bottom: 10px;
+}
+.filter-block{
+    .model-filtr{
+        margin-bottom: 12px;
+    }
+}
+
 
 .navigation {
     display: flex;
@@ -50,7 +64,7 @@
 .wrappers {
     display: flex;
     flex-direction: row;
-    padding-bottom: 135px;
+    padding:20px 0 100px;
 }
 
 .color-filtr {
@@ -192,7 +206,7 @@
 
         & > li {
             padding: 9px;
-            margin: 4px 4px 0 0;
+            margin: 3px 3px 0 0;
             border: 1px solid @line-bloc;
             box-sizing: border-box;
             border-radius: 5px;
@@ -225,7 +239,7 @@
 }
 
 .radio-transmiter {
-    padding: 25px 0 20px 20px;
+    padding: 25px 10px 20px 20px;
     border: 1px solid @line-bloc;
     position: relative;
 
@@ -240,7 +254,7 @@
 
 .delet-transmiter {
     position: absolute;
-    right: 0;
+    right: 7px;
     top: 50%;
     transform: translate(-50%, -50%);
     background-color: @white-color;
@@ -271,7 +285,7 @@
         background-color: @bordo;
         text-transform: uppercase;
         color: @white-color;
-        padding: 5px 20px;
+        padding: 5px 18px;
         border-radius: 5px;
         line-height: 17px;
     }
@@ -283,6 +297,9 @@
             color: @bordo;
         }
     }
+    &.mod-transmit{
+        padding: 20px  20px 20px;
+    }
 }
 
 button.hover-btn {
@@ -292,7 +309,7 @@ button.hover-btn {
 }
 
 .bloc-img {
-    margin-top: 45px;
+    margin-top: 43px;
 }
 
 .content-product {
@@ -437,8 +454,7 @@ button.hover-btn {
     justify-content: space-between;
 
     li {
-        width: 30%;
-        height: 400px;
+        width: 31%;
         margin-bottom: 30px;
 
         .href-img-bloc {
@@ -446,13 +462,14 @@ button.hover-btn {
         }
 
         .item {
+            min-height: 400px;
             position: relative;
             &::after{
                 content: "";
                 position: absolute;
                 top: 0;
                 left: 0;
-                bottom: 0px;
+                bottom: 0;
                 right: 0;
                 z-index: -1;
                 box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.6);
@@ -462,7 +479,6 @@ button.hover-btn {
                 z-index: 30;
                 position: relative;
                 background-color: white;
-                margin-bottom: 10px;
 
                 .info-cart-list {
                     border-bottom: none;
@@ -478,12 +494,12 @@ button.hover-btn {
             }
 
             .price-rod {
-                padding-bottom: 30px;
+                padding-bottom: 17px;
             }
 
             .info-cart-towar {
                 & > img {
-                    padding-bottom: 15px;
+                    padding-bottom: 8px;
                 }
             }
         }
@@ -518,19 +534,27 @@ button.hover-btn {
     z-index: 29;
     color: @white-color;
     font-size: @font-size-standart;
-    top: 10px;
+    top: 13px;
 }
 
 .sale-list, .new-lists {
-    padding: 7px 14px;
+    padding: 3px 14px;
+    line-height: 23px;
 }
 
 .sale-list {
     background-color: @bordo;
 }
 
+.top-h{
+
+}
+.top-title-filtr{
+    font-size: 18px;
+
+}
 .new-list {
-    right: -10px;
+    right: -12px;
 
     .firure {
         width: 0;
@@ -574,10 +598,12 @@ button.hover-btn {
 .ui-slider-handle {
     &.ui-corner-all {
         &.ui-state-default {
-            top: -12px;
+            top: -9px;
             border-radius: 50%;
             border: 4px solid black;
             background-color: white;
+            width: 0.8em;
+            height: 0.8em;
         }
     }
 }
@@ -604,7 +630,7 @@ button.hover-btn {
 
 .ui-slider {
     margin: 10px 0 15px;
-    width: 85%;
+    width: 91%;
 }
 
 .range-bloc {

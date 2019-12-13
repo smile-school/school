@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./font-awesome/css/font-awesome.min.css">
     <link href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="script/jquery-3.4.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <link rel="stylesheet" href="./grunt/dist/css/style.css">
 </head>
@@ -221,7 +221,7 @@
     <div class="wrapper">
         <button class="btn-active-filtr action-filtr">Filter</button>
         <div class="navigation">
-            <p>home</p><span>></span>
+            <p class="home-navig">home</p>
             <p>carbon fiber steering wheel</p>
         </div>
         <div class="wrappers">
@@ -288,8 +288,8 @@
                         <input type="text" id="amount1" readonly>
                     </p>
                 </div>
-                <div class="filter-block">
-                    <h3 class="title-filter">Prise</h3>
+                <div class="filter-block prise-bloc">
+                    <h3 class="title-filter prise-h3">Prise</h3>
                     <div class="model-product">
                         <ul>
                             <li>
@@ -312,7 +312,7 @@
                     </div>
                 </div>
                 <div class="filter-block">
-                    <h3 class="title-filter">Model</h3>
+                    <h3 class="title-filter model-filtr">Model</h3>
                     <div class="model-bloc">
                         <ul class="model-bloc-list">
                             <li>
@@ -386,7 +386,7 @@
                 </div>
                 <div class="botom-aside">
                     <div class="top-h center-aside">
-                        <h3 class="top-title-filtr">Shop By</h3>
+                        <h3 class="top-title-filtr">Compare PRODUCTS</h3>
                     </div>
                     <div class="compare">
                         <div class="compare-product">
@@ -402,7 +402,7 @@
                                     <i class="fa fa-times" aria-hidden="true"></i>
                                 </button>
                             </div>
-                            <div class="radio-transmiter btn-transmit">
+                            <div class="radio-transmiter btn-transmit mod-transmit">
                                 <button class="comprare hover-btn">Comp Are</button>
                                 <button class="clear_all">Clear All</button>
                             </div>
@@ -463,7 +463,7 @@
                                     <option value="12">12</option>
                                     <option value="13">13</option>
                                     <option value="14">14</option>
-                                    <option value="15">15</option>
+                                    <option value="15" selected>15</option>
                                 </select>
                                 </span>
                                 <span>ptr page</span>
@@ -532,11 +532,148 @@
                             </li>
                             <li>
                                 <div class="item">
-                                    <div class="mod mod-mark"><span class="sale-list">Sale</span><span class="figur"></span></div>
                                     <div class="new-list mod"><span class="new-lists">New</span><span class="firure"></span></div>
                                     <div class="bloc-cart-towar">
                                         <a href="#" class="href-img-bloc">
-                                            <img src="./img/radio-adapt.jpg" alt="desing">
+                                            <img src="./img/car-hang.jpg" alt="desing">
+                                        </a>
+                                        <div class="info-cart-list">
+                                        <div class="add-to-cart">
+                                            <button class="btn-like likes"> <i class="fa fa-heart" aria-hidden="true"></i></button>
+                                            <button class="add-cart mod-cart">add to cart</button>
+                                            <button class="btn-like likes"><i class="fa fa-refresh" aria-hidden="true"></i>
+                                            </button>
+                                        </div>
+                                        <div class="info-cart-towar">
+                                            <a href="#" class="name-towar"><p class="name-towar">Car Kit Hands Free Calling</p></a>
+                                            <img src="./img/star1.svg" alt="star">
+                                            <p class="price-rod">$84.00</p>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item">
+                                    <div class="bloc-cart-towar">
+                                        <a href="#" class="href-img-bloc">
+                                            <img src="./img/car-hang.jpg" alt="adapt">
+                                        </a>
+                                        <div class="info-cart-list">
+                                        <div class="add-to-cart">
+                                            <button class="btn-like likes"> <i class="fa fa-heart" aria-hidden="true"></i></button>
+                                            <button class="add-cart mod-cart">add to cart</button>
+                                            <button class="btn-like likes"><i class="fa fa-refresh" aria-hidden="true"></i>
+                                            </button>
+                                        </div>
+                                        <div class="info-cart-towar">
+                                            <a href="#" class="name-towar"><p class="name-towar">Car Kit Hands Free Calling</p></a>
+                                            <img src="./img/star1.svg" alt="star">
+                                            <p class="price-rod">$84.00</p>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item">
+                                    <div class="mod mod-mark"><span class="sale-list">Sale</span><span class="figur"></span></div>
+                                    <div class="new-list mod"><span class="new-lists">New</span><span class="firure"></span></div>
+                                    <div class="bloc-cart-towar">
+                                        <a href="#" class="href-img-bloc" >
+                                            <img src="./img/desing.jpg" alt="desing">
+                                        </a>
+                                        <div class="info-cart-list">
+                                        <div class="add-to-cart">
+                                            <button class="btn-like likes"> <i class="fa fa-heart" aria-hidden="true"></i></button>
+                                            <button class="add-cart mod-cart">add to cart</button>
+                                            <button class="btn-like likes"><i class="fa fa-refresh" aria-hidden="true"></i>
+                                            </button>
+                                        </div>
+                                        <div class="info-cart-towar">
+                                            <a href="#" class="name-towar"><p class="name-towar">Car Kit Hands Free Calling</p></a>
+                                            <img src="./img/star1.svg" alt="star">
+                                            <p class="price-rod"><span class="now-price">$55.00</span><span class="old-price">$84.00</span></p>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item">
+                                    <div class="new-list mod"><span class="new-lists">New</span><span class="firure"></span></div>
+                                    <div class="bloc-cart-towar">
+                                        <a href="#" class="href-img-bloc">
+                                            <img src="./img/car-hang.jpg" alt="desing">
+                                        </a>
+                                        <div class="info-cart-list">
+                                        <div class="add-to-cart">
+                                            <button class="btn-like likes"> <i class="fa fa-heart" aria-hidden="true"></i></button>
+                                            <button class="add-cart mod-cart">add to cart</button>
+                                            <button class="btn-like likes"><i class="fa fa-refresh" aria-hidden="true"></i>
+                                            </button>
+                                        </div>
+                                        <div class="info-cart-towar">
+                                            <a href="#" class="name-towar"><p class="name-towar">Car Kit Hands Free Calling</p></a>
+                                            <img src="./img/star1.svg" alt="star">
+                                            <p class="price-rod">$84.00</p>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item">
+                                    <div class="bloc-cart-towar">
+                                        <a href="#" class="href-img-bloc">
+                                            <img src="./img/car-hang.jpg" alt="adapt">
+                                        </a>
+                                        <div class="info-cart-list">
+                                        <div class="add-to-cart">
+                                            <button class="btn-like likes"> <i class="fa fa-heart" aria-hidden="true"></i></button>
+                                            <button class="add-cart mod-cart">add to cart</button>
+                                            <button class="btn-like likes"><i class="fa fa-refresh" aria-hidden="true"></i>
+                                            </button>
+                                        </div>
+                                        <div class="info-cart-towar">
+                                            <a href="#" class="name-towar"><p class="name-towar">Car Kit Hands Free Calling</p></a>
+                                            <img src="./img/star1.svg" alt="star">
+                                            <p class="price-rod">$84.00</p>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item">
+                                    <div class="mod mod-mark"><span class="sale-list">Sale</span><span class="figur"></span></div>
+                                    <div class="new-list mod"><span class="new-lists">New</span><span class="firure"></span></div>
+                                    <div class="bloc-cart-towar">
+                                        <a href="#" class="href-img-bloc" >
+                                            <img src="./img/desing.jpg" alt="desing">
+                                        </a>
+                                        <div class="info-cart-list">
+                                        <div class="add-to-cart">
+                                            <button class="btn-like likes"> <i class="fa fa-heart" aria-hidden="true"></i></button>
+                                            <button class="add-cart mod-cart">add to cart</button>
+                                            <button class="btn-like likes"><i class="fa fa-refresh" aria-hidden="true"></i>
+                                            </button>
+                                        </div>
+                                        <div class="info-cart-towar">
+                                            <a href="#" class="name-towar"><p class="name-towar">Car Kit Hands Free Calling</p></a>
+                                            <img src="./img/star1.svg" alt="star">
+                                            <p class="price-rod"><span class="now-price">$55.00</span><span class="old-price">$84.00</span></p>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item">
+                                    <div class="new-list mod"><span class="new-lists">New</span><span class="firure"></span></div>
+                                    <div class="bloc-cart-towar">
+                                        <a href="#" class="href-img-bloc">
+                                            <img src="./img/car-hang.jpg" alt="desing">
                                         </a>
                                         <div class="info-cart-list">
                                         <div class="add-to-cart">
@@ -606,147 +743,7 @@
                                     <div class="new-list mod"><span class="new-lists">New</span><span class="firure"></span></div>
                                     <div class="bloc-cart-towar">
                                         <a href="#" class="href-img-bloc">
-                                            <img src="./img/radio-adapt.jpg" alt="desing">
-                                        </a>
-                                        <div class="info-cart-list">
-                                        <div class="add-to-cart">
-                                            <button class="btn-like likes"> <i class="fa fa-heart" aria-hidden="true"></i></button>
-                                            <button class="add-cart mod-cart">add to cart</button>
-                                            <button class="btn-like likes"><i class="fa fa-refresh" aria-hidden="true"></i>
-                                            </button>
-                                        </div>
-                                        <div class="info-cart-towar">
-                                            <a href="#" class="name-towar"><p class="name-towar">Car Kit Hands Free Calling</p></a>
-                                            <img src="./img/star1.svg" alt="star">
-                                            <p class="price-rod">$84.00</p>
-                                        </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="item">
-                                    <div class="bloc-cart-towar">
-                                        <a href="#" class="href-img-bloc">
-                                            <img src="./img/car-hang.jpg" alt="adapt">
-                                        </a>
-                                        <div class="info-cart-list">
-                                        <div class="add-to-cart">
-                                            <button class="btn-like likes"> <i class="fa fa-heart" aria-hidden="true"></i></button>
-                                            <button class="add-cart mod-cart">add to cart</button>
-                                            <button class="btn-like likes"><i class="fa fa-refresh" aria-hidden="true"></i>
-                                            </button>
-                                        </div>
-                                        <div class="info-cart-towar">
-                                            <a href="#" class="name-towar"><p class="name-towar">Car Kit Hands Free Calling</p></a>
-                                            <img src="./img/star1.svg" alt="star">
-                                            <p class="price-rod">$84.00</p>
-                                        </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="item">
-                                    <div class="mod mod-mark"><span class="sale-list">Sale</span><span class="figur"></span></div>
-                                    <div class="new-list mod"><span class="new-lists">New</span><span class="firure"></span></div>
-                                    <div class="bloc-cart-towar">
-                                        <a href="#" class="href-img-bloc" >
-                                            <img src="./img/desing.jpg" alt="desing">
-                                        </a>
-                                        <div class="info-cart-list">
-                                        <div class="add-to-cart">
-                                            <button class="btn-like likes"> <i class="fa fa-heart" aria-hidden="true"></i></button>
-                                            <button class="add-cart mod-cart">add to cart</button>
-                                            <button class="btn-like likes"><i class="fa fa-refresh" aria-hidden="true"></i>
-                                            </button>
-                                        </div>
-                                        <div class="info-cart-towar">
-                                            <a href="#" class="name-towar"><p class="name-towar">Car Kit Hands Free Calling</p></a>
-                                            <img src="./img/star1.svg" alt="star">
-                                            <p class="price-rod"><span class="now-price">$55.00</span><span class="old-price">$84.00</span></p>
-                                        </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="item">
-                                    <div class="mod mod-mark"><span class="sale-list">Sale</span><span class="figur"></span></div>
-                                    <div class="new-list mod"><span class="new-lists">New</span><span class="firure"></span></div>
-                                    <div class="bloc-cart-towar">
-                                        <a href="#" class="href-img-bloc">
-                                            <img src="./img/radio-adapt.jpg" alt="desing">
-                                        </a>
-                                        <div class="info-cart-list">
-                                        <div class="add-to-cart">
-                                            <button class="btn-like likes"> <i class="fa fa-heart" aria-hidden="true"></i></button>
-                                            <button class="add-cart mod-cart">add to cart</button>
-                                            <button class="btn-like likes"><i class="fa fa-refresh" aria-hidden="true"></i>
-                                            </button>
-                                        </div>
-                                        <div class="info-cart-towar">
-                                            <a href="#" class="name-towar"><p class="name-towar">Car Kit Hands Free Calling</p></a>
-                                            <img src="./img/star1.svg" alt="star">
-                                            <p class="price-rod">$84.00</p>
-                                        </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="item">
-                                    <div class="bloc-cart-towar">
-                                        <a href="#" class="href-img-bloc">
-                                            <img src="./img/car-hang.jpg" alt="adapt">
-                                        </a>
-                                        <div class="info-cart-list">
-                                        <div class="add-to-cart">
-                                            <button class="btn-like likes"> <i class="fa fa-heart" aria-hidden="true"></i></button>
-                                            <button class="add-cart mod-cart">add to cart</button>
-                                            <button class="btn-like likes"><i class="fa fa-refresh" aria-hidden="true"></i>
-                                            </button>
-                                        </div>
-                                        <div class="info-cart-towar">
-                                            <a href="#" class="name-towar"><p class="name-towar">Car Kit Hands Free Calling</p></a>
-                                            <img src="./img/star1.svg" alt="star">
-                                            <p class="price-rod">$84.00</p>
-                                        </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="item">
-                                    <div class="mod mod-mark"><span class="sale-list">Sale</span><span class="figur"></span></div>
-                                    <div class="new-list mod"><span class="new-lists">New</span><span class="firure"></span></div>
-                                    <div class="bloc-cart-towar">
-                                        <a href="#" class="href-img-bloc" >
-                                            <img src="./img/desing.jpg" alt="desing">
-                                        </a>
-                                        <div class="info-cart-list">
-                                        <div class="add-to-cart">
-                                            <button class="btn-like likes"> <i class="fa fa-heart" aria-hidden="true"></i></button>
-                                            <button class="add-cart mod-cart">add to cart</button>
-                                            <button class="btn-like likes"><i class="fa fa-refresh" aria-hidden="true"></i>
-                                            </button>
-                                        </div>
-                                        <div class="info-cart-towar">
-                                            <a href="#" class="name-towar"><p class="name-towar">Car Kit Hands Free Calling</p></a>
-                                            <img src="./img/star1.svg" alt="star">
-                                            <p class="price-rod"><span class="now-price">$55.00</span><span class="old-price">$84.00</span></p>
-                                        </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="item">
-                                    <div class="mod mod-mark"><span class="sale-list">Sale</span><span class="figur"></span></div>
-                                    <div class="new-list mod"><span class="new-lists">New</span><span class="firure"></span></div>
-                                    <div class="bloc-cart-towar">
-                                        <a href="#" class="href-img-bloc">
-                                            <img src="./img/radio-adapt.jpg" alt="desing">
+                                            <img src="./img/car-hang.jpg" alt="desing">
                                         </a>
                                         <div class="info-cart-list">
                                         <div class="add-to-cart">
@@ -778,9 +775,10 @@
                     <li>
                         <div class="bloc-footer">
                             <h3>CONTACT US</h3>
-                            <ul>
+                            <ul class="mod-footer">
                                 <li><a href="#">
-                                    <img src="./img/map.svg" alt="map"> 5611 Wellington Road, Suite 115, Gainesville, VA 20155
+                                    <img src="./img/map.svg" alt="map"> 5611 Wellington Road, Suite 115, Gainesville, VA
+                                    20155
                                 </a></li>
                                 <li><a href="#">
                                     <img src="./img/phone.svg" alt="phone">888 9344 6000 - 888 1234 6789
@@ -814,11 +812,11 @@
                                     Paris - France
                                 </a></li>
                                 <li><a href="#">
-                                    London - England                            </a></li>
+                                    London - England </a></li>
                             </ul>
                         </div>
                     </li>
-                    <li>
+                    <li class="free-bloc-footer">
                         <div class="bloc-footer">
                             <h3>CUSTOMER SERVICE</h3>
                             <ul>
@@ -865,6 +863,7 @@
                                 <li><a href="#">
                                     Underwear & Socks
                                 </a></li>
+                                <li class="opacini-none"></li>
                             </ul>
                         </div>
                     </li>
