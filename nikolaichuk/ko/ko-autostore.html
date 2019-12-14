@@ -278,7 +278,7 @@
                     <div class="product-item__controls">
                         <a href="#" class="wish-list_btn"></a>
                         <a href="#" class="link cart_btn">add to cart</a>
-                        <a href="#" class="compare_btn" data-bind="click: $root.addCompare, css {active: compaired}"></a>
+                        <a href="#" class="compare_btn" data-bind="click: $root.addCompare, css:{active: compaired}"></a>
                     </div>
                     <div class="product-item__content">
                         <div class="product-item__content__title" data-bind="text: title"></div>
@@ -486,12 +486,12 @@
             if(product) this.productList.push(product)
         };
         this.addCompare = function (product) {
-            console.log(product);
             if (!product.compaired()){
                 console.log(product.compaired());
                 compare.compareList.push(product);
                 product.compaired(true);
             }
+            console.log(product.compaired());
         }
     }
 
