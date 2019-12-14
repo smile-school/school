@@ -7,9 +7,199 @@
     <title>AutoStore</title>
     <script src="../js/knockout-3.5.1.js"></script>
     <link rel="stylesheet" href="../css/autostore.css">
+    <link rel="stylesheet" href="../css/header.css">
 </head>
 <body>
-<header></header>
+<header>
+    <div class="header__stretch">
+        <div class="page-wrapper">
+            <div class="header__top-menu action-menu">
+                <div class="action-menu__signIn">
+                    <!--<i class="fas fa-lock"></i>-->
+                    <a href="#" class="link" title="Sign In">
+                        Sign In <span>/</span> Create an Account
+                    </a>
+                </div>
+                <!--<div class="action-menu__lang-chooser">
+                    <span class="current">french</span>
+                    <i class="fas fa-angle-down"></i>
+                    <div class="dropdown-list">
+                        <ul>
+                            <li class="dropdown-list__item">
+                                <img src="./dist/ima/UK.svg" alt="Eng">
+                                <span>English</span>
+                            </li>
+                            <li class="dropdown-list__item">
+                                <img src="./dist/ima/Ger.svg" alt="Ger">
+                                <span>German</span>
+                            </li>
+                            <li class="dropdown-list__item">
+                                <img src="./dist/ima/Belg.svg" alt="Bel">
+                                <span>Belgium</span>
+                            </li>
+                            <li class="dropdown-list__item">
+                                <img src="./dist/ima/Arg.svg" alt="Arg">
+                                <span>Argentina</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="action-menu__currency-chooser">
+                    <span class="current">usd</span>
+                    <i class="fas fa-angle-down"></i>
+                    <div class="dropdown-list">
+                        <ul>
+                            <li class="dropdown-list__item">EUR – Euro</li>
+                            <li class="dropdown-list__item">GBP – Pound</li>
+                        </ul>
+                    </div>
+                </div>-->
+            </div>
+        </div>
+    </div>
+    <div class="page-wrapper">
+        <div class="header__main">
+            <div class="col-1">
+                <a href="#" class="link logo-link" title="Auto Store">
+                </a>
+            </div>
+            <div class="col-2 search__container">
+                <input type="text" class="search__input" placeholder="Search products...">
+                <span class="search__button"></span>
+            </div>
+            <div class="col-1 cart-block clearfix-block">
+                <div class="wish-list"></div>
+                <div class="cart">
+                    <span class="shopping-basket">
+                        <img src="../ima/cart.png" height="17" width="22"/>
+                    </span>
+                    <span class="cart__total">My Cart
+                        <span>$205.00</span>
+                    </span>
+                    <span class="cart__counter">1</span>
+                </div>
+                <div class="mini-cart">
+                    <ul>
+                    <div class="mini-cart__details clearfix-block">
+                        <a href="#" class="link mini-cart__image">
+                            <img src="./dist/ima/aosake_leather_steering_wheels.png">
+                        </a>
+                        <span>x</span>
+                        <div class="mini-cart__params">
+                            <a href="#" class="link mini-cart__title">Carbon Fiber Steering Wheel</a>
+                            <input type="checkbox" name="details" id="details">
+                            <label for="details" class="mini-cart__details-toggle">
+                                <span>See Details</span>
+                            </label>
+                            <div class="mini-cart__details-block">
+                                <span class="mini-cart__details-name">Size</span><span>S</span>
+                                <span class="mini-cart__details-name">Color</span><span>Blue</span>
+                            </div>
+                        </div>
+                    </div>
+                    </ul>
+                    <div class="mini-cart__counter">
+                        <span>Qty:</span>
+                        <input type="text" value="1">
+                        <span class="mini-cart__update-btn">Update</span>
+                        <span class="mini-cart__counter__sum">$205.00</span>
+                    </div>
+                    <div class="mini-cart__total clearfix-block">
+                        <span>cart subtotal:</span>
+                        <span>205.00</span>
+                    </div>
+                    <div class="mini-cart__buttons clearfix-block">
+                        <div class="mini-cart__view-btn">view cart</div>
+                        <div class="mini-cart__checkout-btn">checkout</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--<div class="header__navigation clearfix-block">
+            <div class="col-1 categories__menu">
+                <div class="categories__menu__item">
+                    All Categories
+                </div>
+                <span class="categories__menu__burger"></span>
+            </div>
+            <div class="col-3 nav-menu">
+                <ul>
+                    <li class="nav-menu__item">
+                        Home
+                        <i class="fas fa-angle-down"></i>
+                    </li>
+                    <li class="nav-menu__item">
+                        <a href="#" class="link" title="Deals">Deals</a>
+                    </li>
+                    <li class="nav-menu__item">
+                        <a href="#" class="link" title="Under $100">Under $100</a>
+                    </li>
+                    <li class="nav-menu__item">
+                        <a href="#" class="link" title="New Arrivals">New Arrivals</a>
+                    </li>
+                    <li class="nav-menu__item">
+                        <a href="#" class="link" title="Blog">Blog</a>
+                    </li>
+                    <li class="nav-menu__item">
+                        <a href="#" class="link" title="About Us">About Us</a>
+                    </li>
+                    <li class="nav-menu__item">
+                        <a href="#" class="link" title="Contact Us">Contact Us</a>
+                    </li>
+                    <div class="submenu-container">
+                        <ul class="nav-links-menu">
+                            <li class="nav-links-menu__heading">
+                                layouts
+                            </li>
+                            <li><a href="#" class="link nav-links-menu__item">Homepage Style 1</a></li>
+                            <li><a href="#" class="link nav-links-menu__item">Homepage Style 2</a></li>
+                            <li><a href="#" class="link nav-links-menu__item">Homepage Style 3</a></li>
+                            <li><a href="#" class="link nav-links-menu__item">Homepage Style 4</a></li>
+                            <li><a href="#" class="link nav-links-menu__item">Homepage Style 5</a></li>
+                            <li><a href="#" class="link nav-links-menu__item">Homepage Style 6</a></li>
+                            <li><a href="#" class="link nav-links-menu__item">Homepage Style 7</a></li>
+                            <li><a href="#" class="link nav-links-menu__item">Homepage Style 8</a></li>
+                            <li><a href="#" class="link nav-links-menu__item">Boxed Layout</a></li>
+                            <li><a href="#" class="link nav-links-menu__item">Right To Left</a> </li>
+                            <li><a href="#" class="link nav-links-menu__item">HOT LISTING LAYOUTS</a></li>
+                            <li><a href="#" class="link nav-links-menu__item">Without Sidebar</a></li>
+                            <li><a href="#" class="link nav-links-menu__item">Left Sidebar</a></li>
+                            <li><a href="#" class="link nav-links-menu__item">Right Sidebar</a></li>
+                            <li><a href="#" class="link nav-links-menu__item">Left - Right Sidebar</a></li>
+                        </ul>
+                        <ul class="nav-links-menu">
+                            <li class="nav-links-menu__heading">
+                                listing layouts
+                            </li>
+                            <li><a href="#" class="link nav-links-menu__item">Without Sidebar</a></li>
+                            <li><a href="#" class="link nav-links-menu__item">Left Sidebar</a></li>
+                            <li><a href="#" class="link nav-links-menu__item">Right Sidebar</a></li>
+                            <li><a href="#" class="link nav-links-menu__item">Left - Right Sidebar</a></li>
+                        </ul>
+                        <ul class="nav-links-menu">
+                            <li class="nav-links-menu__heading">
+                                detail layouts
+                            </li>
+                            <li><a href="#" class="link nav-links-menu__item">Product Detail - Full</a></li>
+                            <li><a href="#" class="link nav-links-menu__item">Product Detail - Left Sidebar</a></li>
+                            <li><a href="#" class="link nav-links-menu__item">Product Detail - Right Sidebar</a></li>
+                            <li><a href="#" class="link nav-links-menu__item">Thumb Horizontal</a></li>
+                            <li><a href="#" class="link nav-links-menu__item">Thumb Vertical</a></li>
+                        </ul>
+                        <ul class="nav-links-menu">
+                            <li class="nav-links-menu__heading">
+                                tab types
+                            </li>
+                            <li><a href="#" class="link nav-links-menu__item">Vertical</a></li>
+                            <li><a href="#" class="link nav-links-menu__item">Horizontal</a></li>
+                            <li><a href="#" class="link nav-links-menu__item">Accordion</a></li>
+                        </ul>
+                    </div>
+                </ul>
+            </div>
+        </div>-->
+    </div>
+</header>
 <main class="products__content">
     <div class="page-wrapper clearfix-block">
         <div class="filters" id="filters">
@@ -40,8 +230,8 @@
                     <div class="filter-group__filter-items">
                         <ul class="brands-filter__wrapper" data-bind="foreach: brand">
                             <li class="brand-filter">
-                                <span class="brand-filter__title" data-bind="text: $data">Toyota</span>
-                                <span class="brand-filter__quantity">(4)</span>
+                                <span class="brand-filter__title" data-bind="text: $data"></span>
+                                <span class="brand-filter__quantity">()</span>
                             </li>
                         </ul>
                     </div>
@@ -50,7 +240,7 @@
                     <div class="filter-group__name">model</div>
                     <div class="filter-group__filter-items">
                         <ul class="models-filter__wrapper" data-bind="foreach: model">
-                            <li class="model-filter" data-bind="text: $data">Camry</li>
+                            <li class="model-filter" data-bind="text: $data"></li>
                         </ul>
                     </div>
                 </div>
@@ -58,12 +248,32 @@
                     <div class="filter-group__name">year</div>
                     <div class="filter-group__filter-items">
                         <ul data-bind="foreach: year">
-                            <li class="year-filter" data-bind="text: $data">2011</li>
+                            <li class="year-filter" data-bind="text: $data"></li>
                         </ul>
                     </div>
                 </div>
             </div>
-            <div class="filters-block"></div>
+            <div class="compare-block">
+                <h2 class="compare-block__title">Compare products</h2>
+                <ul class="compare-list">
+                    <li class="compare-list__item">
+                        <span>Radio Transmitter Adapter</span>
+                        <span>x</span>
+                    </li>
+                    <li class="compare-list__item">
+                        <span>Radio Transmitter Adapter</span>
+                        <span>x</span>
+                    </li>
+                    <li class="compare-list__item">
+                        <span>Radio Transmitter Adapter</span>
+                        <span>x</span>
+                    </li>
+                </ul>
+                <div class="compare-controls">
+                    <div class="compare_btn">compare</div>
+                    <div class="clear_btn">Clear all</div>
+                </div>
+            </div>
         </div>
         <div class="search-result__wrapper">
             <h1 class="search-result__heading">Baby Car Seats</h1>
@@ -73,12 +283,21 @@
                     <div class="product-item__image">
                         <img  data-bind="attr:{src:img, alt:title}">
                     </div>
+                    <div class="product-item__controls">
+                        <div class="wish-list_btn"></div>
+                        <div class="cart_btn">add to cart</div>
+                        <div class="compare_btn"></div>
+                    </div>
                     <div class="product-item__content">
                         <div class="product-item__content__title" data-bind="text: title"></div>
-                        <div class="product-item__content__rating" data-bind="text: rating">
-
-                        </div>
+                        <div class="product-item__content__rating" data-bind="text: rating"></div>
                         <div class="product-item__content__prices" data-bind="html: prices"></div>
+                        <div class="product-item__content__info">
+                            Brand: <span data-bind="text: brand"></span>;
+                            Model: <span data-bind="text: model"></span>;
+                            Color: <span data-bind="text: color"></span>;
+                            Year: <span data-bind="text: year"></span>;
+                        </div>
                     </div>
                 </div>
             </div>
@@ -197,9 +416,9 @@
         this.model = ko.observable(model || '');
         this.year = ko.observable(year || '');
         this.prices = ko.computed(function () {
-            var html = '<span>' + this.price() + '</span>';
+            var html = '<span>$' + this.price() + '</span>';
             if(this.sale()){
-                html += '<span>' + this.salePrice() + '</span>';
+                html += '<span>$' + this.salePrice() + '</span>';
             }
             return html;
         }, this);
@@ -233,7 +452,7 @@
         this.addProduct = function () {
             if(this.title() && this.img() && this.price() && this.color() && this.brand() && this.model() && this.year()){
                 productList.productList.push(new Product(this.title(), this.img(), this.price(), this.salePrice(), this.newAction(),
-                this.sale(), this.rating(), this.color(), this.brand(). this.model(), this.year()));
+                this.sale(), this.rating(), this.color(), this.brand(), this.model(), this.year()));
                 this.required(false);
                 this.clearForm();
             }
@@ -304,8 +523,8 @@
     /*productList.productList.push(
         new Product('Car cit', '../ima/car_kit.png', 50, 40, false, false, 5, 'red', 'BMW', 'X5', '2019')
     );*/
-    productList.addProduct(new Product('Car cit', '../ima/car_kit.png', 50, 80, false, false, 5, 'red', 'BMW', 'X5', '2019'));
-    productList.addProduct(new Product('Car cit', '../ima/car_kit.png', 150, 40, false, false, 5, 'black', 'Toyota', 'Corolla', '2012'));
+    productList.addProduct(new Product('Car Kit Hands Free Calling', '../ima/car_kit.png', 50, 80, false, false, 5, 'red', 'BMW', 'X5', '2019'));
+    productList.addProduct(new Product('Design in car fm radio', '../ima/car_fm_radio.png', 150, 40, false, false, 5, 'black', 'Toyota', 'Corolla', '2012'));
     productList.addProduct(new Product('Car cit', '../ima/car_kit.png', 50, 100, false, false, 5, 'green', 'Mazda', '6', '2017'));
 </script>
 </body>
