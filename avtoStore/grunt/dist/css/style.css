@@ -549,7 +549,7 @@ ul {
   position: absolute;
   top: 100%;
   border: 1px solid lightgray;
-  z-index: 1;
+  z-index: 31;
   background-color: white;
   display: none;
   width: 354px;
@@ -1316,13 +1316,15 @@ button.like-black {
   flex-direction: row;
   margin-top: 63px;
 }
-.li-defain {
+.li-defain > span {
   padding: 22px 0 18px 30px;
+  width: 100%;
+  display: block;
   text-transform: uppercase;
   cursor: pointer;
+  font-weight: 900;
   font-size: 18px;
   border: 1px solid #E5E5E5;
-  font-weight: 900;
   line-height: 21px;
 }
 .li-defain:not(:first-of-type) {
@@ -1330,6 +1332,11 @@ button.like-black {
 }
 .detail-ul {
   width: 200px;
+}
+.detail-ul .acordeon p {
+  font-weight: normal;
+  font-size: 14px;
+  text-transform: full-width;
 }
 .white-li {
   border-right-color: #fff;
@@ -1628,12 +1635,14 @@ button.dzb2:hover {
   .des {
     width: 100%;
   }
-  .detailed-information {
-    flex-direction: column;
+  .detailed-information .menu-left-defailed {
+    width: 100%;
+  }
+  .detailed-information .detail-ul {
+    width: 100%;
   }
   .detailed-information .content-tabs {
-    padding: 20px 5px 20px 5px;
-    width: 99%;
+    display: none;
   }
   button.dzb {
     border-bottom: none;

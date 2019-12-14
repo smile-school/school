@@ -23,9 +23,22 @@
                 item.classList.contains(tabName) ? item.classList.add('is-active') : item.classList.remove('is-active');
             });
         }
+
+        // function mediaScrean() {
+        //     var liTab = document.querySelectorAll('.li-defain'),
+        //         divTab = document.querySelectorAll('.tab-content');
+        //
+        //
+        //     if (window.matchMedia("(max-width: 740px)").matches){
+        //         console.log(divTab.getAttribute());
+        //     }
+        // }
+        // mediaScrean();
     }
 
     tab();
+
+
 
     function TochSlider() {
         var self = this;
@@ -54,16 +67,7 @@
         elemClick();
     }
 
-    // function mediaScrean() {
-    //     var liTab = document.querySelectorAll('.li-defain'),
-    //         divTab = document.querySelectorAll('.tab-content');
-    //
-    //
-    //     if (window.matchMedia("(max-width: 740px)").matches){
-    //         console.log(divTab.getAttribute());
-    //     }
-    // }
-    // mediaScrean();
+
 
     TochSlider();
 })();
