@@ -202,8 +202,8 @@
 </header>
 <main class="products__content">
     <div class="page-wrapper clearfix-block">
-        <div class="filters" id="filters">
-            <div class="filters-block">
+        <div class="filters">
+            <div class="filters-block" id="filters">
                 <h2 class="filters-block__title">Shop By</h2>
                 <div class="filters-block__filter-group">
                     <div class="filter-group__name">color</div>
@@ -253,25 +253,17 @@
                     </div>
                 </div>
             </div>
-            <div class="compare-block">
+            <div class="compare-block" id="compare">
                 <h2 class="compare-block__title">Compare products</h2>
-                <ul class="compare-list">
+                <ul class="compare-list" data-bind="foreach: compareList">
                     <li class="compare-list__item">
-                        <span>Radio Transmitter Adapter</span>
-                        <span>x</span>
-                    </li>
-                    <li class="compare-list__item">
-                        <span>Radio Transmitter Adapter</span>
-                        <span>x</span>
-                    </li>
-                    <li class="compare-list__item">
-                        <span>Radio Transmitter Adapter</span>
-                        <span>x</span>
+                        <span data-bind="text:title">Radio Transmitter Adapter</span>
+                        <span data-bind="click: $root.removeCompare">x</span>
                     </li>
                 </ul>
-                <div class="compare-controls">
+                <div class="compare-controls" data-bind="visible: compareList().length > 0">
                     <div class="compare_btn">compare</div>
-                    <div class="clear_btn">Clear all</div>
+                    <div class="clear_btn" data-bind="click: removeAll">Clear all</div>
                 </div>
             </div>
         </div>
@@ -284,9 +276,9 @@
                         <img  data-bind="attr:{src:img, alt:title}">
                     </div>
                     <div class="product-item__controls">
-                        <div class="wish-list_btn"></div>
-                        <div class="cart_btn">add to cart</div>
-                        <div class="compare_btn"></div>
+                        <a href="#" class="wish-list_btn"></a>
+                        <a href="#" class="link cart_btn">add to cart</a>
+                        <a href="#" class="compare_btn" data-bind="click: $root.addCompare, css {active: compaired}"></a>
                     </div>
                     <div class="product-item__content">
                         <div class="product-item__content__title" data-bind="text: title"></div>
@@ -300,6 +292,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
             <div class="form-wrapper" id="addProduct">
                     <h2>Add product</h2>
@@ -336,10 +329,10 @@
                     </div>
                 </div>
                 <label>New
-                    <input type="checkbox" name="new" id="new" data-bind="value:newAction">
+                    <input type="checkbox" name="new" id="new" data-bind="checked: newAction">
                 </label>
                 <label>Sale
-                    <input type="checkbox" name="sale" id="sale" data-bind="value:sale">
+                    <input type="checkbox" name="sale" id="sale" data-bind="checked: sale">
                 </label>
                 <div class="rating-wrapper">Rating
                     <input type="radio" name="rating" id="r1" data-bind="checked: rating" value="1">
@@ -354,34 +347,6 @@
                     <label>5</label>
                 </div>
                 <button type="button" class="addBtn" data-bind="click: addProduct">Add product</button>
-                    <!--<label>Title
-                        <input type="text" name="title" id="title" data-bind="value:title">
-                    </label>
-                    <label>Image
-                        <input type="text" name="image" id="image" data-bind="value:img">
-                    </label>
-                    <label>Price
-                        <input type="text" name="price" id="price" data-bind="value:price">
-                        Sale Price
-                        <input type="text" name="salePrice" id="salePrice" data-bind="value:salePrice">
-                    </label>-->
-
-                    <!--<label>Color
-                        <select name="color" id="color" data-bind="options: colorOptions"></select>
-                        <button type="button" data-bind="click: function(){addAttribute('color');}">+</button>
-                    </label>
-                    <label>Brand
-                        <select name="brand" id="brand" data-bind="options: brandOptions"></select>
-                        <button type="button" data-bind="click: function(){addAttribute('brand');}">+</button>
-                    </label>
-                    <label>Model
-                        <select name="model" id="model" data-bind="options: modelOptions"></select>
-                        <button type="button" data-bind="click: function(){addAttribute('model');}">+</button>
-                    </label>
-                    <label>Year
-                        <select name="year" id="year" data-bind="options: yearOptions"></select>
-                        <button type="button" data-bind="click: function(){addAttribute('year');}">+</button>
-                    </label>-->
             </div>
         </div>
     </div>
@@ -392,10 +357,10 @@
     function setFilterPrice(maxPrice) {
         var max = document.querySelector('.price-max');
         if (maxPrice > +max.value){
-            //console.log(product[key]());
             max.value = +maxPrice;
         }
     }
+
     function Attributes() {
         this.color = ko.observableArray([]);
         this.brand = ko.observableArray([]);
@@ -416,12 +381,17 @@
         this.model = ko.observable(model || '');
         this.year = ko.observable(year || '');
         this.prices = ko.computed(function () {
-            var html = '<span>$' + this.price() + '</span>';
+            var html = '';
             if(this.sale()){
-                html += '<span>$' + this.salePrice() + '</span>';
+                html += '<span class="full-price">$' + this.salePrice() + '</span>';
+               html += '<span class="old-price">$' + this.price() + '</span>';
+            }
+            else{
+                html += '<span class="full-price">$' + this.price() + '</span>'
             }
             return html;
         }, this);
+        this.compaired = ko.observable(false);
     }
 
     function AddProduct() {
@@ -451,12 +421,14 @@
         this.required = ko.observable(false);
         this.addProduct = function () {
             if(this.title() && this.img() && this.price() && this.color() && this.brand() && this.model() && this.year()){
+
+                setFilterPrice(this.sale() ? this.salePrice() : this.price());
+
                 productList.productList.push(new Product(this.title(), this.img(), this.price(), this.salePrice(), this.newAction(),
                 this.sale(), this.rating(), this.color(), this.brand(), this.model(), this.year()));
                 this.required(false);
                 this.clearForm();
-            }
-            else {
+            } else {
                 this.required(true);
             }
         };
@@ -472,6 +444,25 @@
             this.color(undefined);
             this.brand('');
             this.year('');
+        }
+    }
+
+    function Compare() {
+        this.compareList = ko.observableArray([]);
+        this.removeCompare = function (product) {
+            product.compaired(false);
+            this.compareList.remove(product);
+        }.bind(this);
+        this.removeAll = function () {
+            if(this.compareList().length){
+                this.setCompairedStatus();
+                this.compareList.removeAll();
+            }
+        }.bind(this);
+        this.setCompairedStatus = function () {
+            for(var i = 0; i < this.compareList().length; i++){
+                this.compareList()[i].compaired(false);
+            }
         }
     }
 
@@ -493,10 +484,19 @@
                 }
             }
             if(product) this.productList.push(product)
+        };
+        this.addCompare = function (product) {
+            console.log(product);
+            if (!product.compaired()){
+                console.log(product.compaired());
+                compare.compareList.push(product);
+                product.compaired(true);
+            }
         }
     }
 
     var attributes = new Attributes(),
+        compare = new Compare(),
         product = new Product(),
         addProduct = new AddProduct(),
         productList = new ProductList();
@@ -504,6 +504,7 @@
     ko.applyBindings(addProduct, document.querySelector('#addProduct'));
     ko.applyBindings(attributes, document.querySelector('#filters'));
     ko.applyBindings(productList,document.querySelector('#productList'));
+    ko.applyBindings(compare, document.querySelector("#compare"));
 
     /*productList.productList.subscribe(function (value) {
         //console.log(value[0].title);
