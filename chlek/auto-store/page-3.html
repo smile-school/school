@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no">
-    <title>Title</title>
+    <title>Page 3</title>
+    <script src="javascript/knockout-3.5.1.js"></script>
+    <script src="javascript/jquery-3.4.1.js"></script>
+    <script src="javascript/jquery-ui.js"></script>
     <link rel="stylesheet" href="grunt/dist/css/style.css">
     <link rel="stylesheet" href="style/all.min.css">
-    <script src="javascript/jquery-3.4.1.min.js"></script>
-    <script src="javascript/slick.min.js"></script>
-    <script src="javascript/knockout-3.5.1.js"></script>
+
 
 </head>
 <body>
@@ -139,6 +140,8 @@
         <div class="wrapper">
             <div class="container-tab">
                 <div class="all-cats menu-tab"><span>all&nbsp;categories</span><span class="row">&nbsp;</span>
+                    <label for="all-cat-open">&nbsp;</label>
+                    <input type="checkbox" id="all-cat-open">
                     <ul class="tab-points all-cate">
                         <li><a href="index.html">Index</a></li>
                         <li><a href="page-2.html">Page-2</a></li>
@@ -158,8 +161,10 @@
                 <div class="hamburger">
                     <span class="row"></span>
                     <span class="text">menu</span>
+                    <label for="hamb"></label>
+                    <input type="checkbox" id="hamb">
                     <div class="hamb-wrap">
-                        <div class="menu-tab home"><span>home</span></div>
+                        <div class="menu-tab home"><a href="#">home</a></div>
                         <ul class="tab-points home">
                             <li class="point">
                                 <ul>
@@ -209,7 +214,7 @@
 
                         </ul>
 
-                        <div class="menu-tab deals"><span>Deals</span></div>
+                        <div class="menu-tab deals"><a href="#">Deals</a></div>
                         <ul class="tab-points deals">
                             <li class="point">
                                 <ul>
@@ -258,7 +263,7 @@
 
                         </ul>
 
-                        <div class="menu-tab under"><span>under $100</span></div>
+                        <div class="menu-tab under"><a href="#">under $100</a></div>
                         <ul class="tab-points under">
                             <li class="point">
                                 <ul>
@@ -300,7 +305,7 @@
 
                         </ul>
 
-                        <div class="menu-tab arrivals"><span>new arrivals</span></div>
+                        <div class="menu-tab arrivals"><a href="#">new arrivals</a></div>
                         <ul class="tab-points arrivals">
                             <li class="point">
                                 <ul>
@@ -354,7 +359,7 @@
 
                         </ul>
 
-                        <div class="menu-tab blog"><span>blog</span></div>
+                        <div class="menu-tab blog"><a href="#">blog</a></div>
                         <ul class="tab-points blog">
                             <li class="point">
                                 <ul>
@@ -409,7 +414,7 @@
 
                         </ul>
 
-                        <div class="menu-tab about-us"><span>about us</span></div>
+                        <div class="menu-tab about-us"><a href="#">about us</a></div>
                         <ul class="tab-points about-us">
                             <li class="point">
                                 <ul>
@@ -468,7 +473,7 @@
                             </li>
                         </ul>
 
-                        <div class="menu-tab contacts"><span>contact us</span></div>
+                        <div class="menu-tab contacts"><a href="#">contact us</a></div>
                         <ul class="tab-points contacts">
                             <li>
                                 <img src="img/icon1.png" alt="">
@@ -509,7 +514,7 @@
             <a href="#" class="home">Carbon Fiber Steering Wheel</a>
         </div>
         <div class="container container-js">
-            <div class="aside-container">
+            <div class="aside-container" id="filters-wrap">
                 <div class="title">
                     <h5>Shop By</h5>
                 </div>
@@ -517,10 +522,9 @@
                     <div class="color-choice">
                         <p>color</p>
                         <div>
-                           <ul>
+                           <ul data-bind="foreach: color">
                                <li>
-                                   <input type="checkbox" name="color" id="black" value="#000000" data-bind="attr:{style: 'background-color': $data}">
-                                   <label for="black" class="color-input black"></label>
+                                   <a class="color" href="#" data-bind="attr: {style: &#39;background-color:&#39; + $data}">&nbsp;</a>
                                </li>
                            </ul>
                         </div>
@@ -528,17 +532,14 @@
                     <div class="price-choice">
                         <p>price</p>
                         <div class="select-wrap">
-                            <label class="range-wrap">
-                                <input type="range" class="range" step="1" max="290" min="70" value="70" name="price">
-                                <input type="range" class="range" step="1" max="290" min="70" value="290" name="price">
-                            </label>
+                            <div id="select-wrap">&nbsp;</div>
                             <label class="price-wrap">
                                 <span>
-                                    $<input type="text" value="66.9">
+                                    $<input id="priceProd" type="text">
                                 </span>
                                 <span>&nbsp;-&nbsp;</span>
                                 <span>
-                                    $<input type="text" value="290">
+                                    $<input id="priceProd2" type="text" value="290">
                                 </span>
                             </label>
                         </div>
@@ -546,52 +547,20 @@
                     <div class="brand-choice">
                         <p>brand</p>
                         <div data-bind="foreach: brand">
-                           <!-- <a href="#">Toyota&nbsp;<span>(4)</span></a>-->
-                            <a href="#" data-bind="text: $data"></a>
+                            <a class="inp brand" href="#">Toyota&nbsp;<span>(4)</span></a>
+                            <a class="inp brand" href="#" data-bind="text: $data"></a>
                         </div>
                     </div>
                     <div class="model-choice">
                         <p>model</p>
-                        <div>
-                            <input type="checkbox" id="camry">
-                            <label for="camry">camry</label>
-                            <input type="checkbox" id="fortuner">
-                            <label for="fortuner">fortuner</label>
-                            <input type="checkbox" id="vios">
-                            <label for="vios">vios</label>
-                            <input type="checkbox" id="c300">
-                            <label for="c300">c300</label>
-                            <input type="checkbox" id="e250">
-                            <label for="e250">e250</label>
-                            <input type="checkbox" id="s500">
-                            <label for="s500">s500</label>
-                            <input type="checkbox" id="sorento">
-                            <label for="sorento">sorento</label>
-                            <input type="checkbox" id="optima">
-                            <label for="optima">optima</label>
-                            <input type="checkbox" id="a4">
-                            <label for="a4">a4</label>
-                            <input type="checkbox" id="a8">
-                            <label for="a8">a8</label>
+                        <div data-bind="foreach: model">
+                            <a data-bind="text: $data" class="inp model" href="#">camry</a>
                         </div>
                     </div>
                     <div class="year-choice">
                         <p>year</p>
-                        <div>
-                            <input type="checkbox" id="year-2011">
-                            <label for="year-2011">2011</label>
-
-                            <input type="checkbox" id="year-2013">
-                            <label for="year-2013">2013</label>
-
-                            <input type="checkbox" id="year-2015">
-                            <label for="year-2015">2015</label>
-
-                            <input type="checkbox" id="year-2017">
-                            <label for="year-2017">2017</label>
-
-                            <input type="checkbox" id="year-2018">
-                            <label for="year-2018">2018</label>
+                        <div data-bind="foreach: year">
+                            <a class="inp year" data-bind="text: $data" href="#">2012</a>
                         </div>
                     </div>
                 </div>
@@ -696,8 +665,8 @@
                         </label>
                     </div>
                 </div>
-                <div class="product-cards-wrap">
-                    <div class="card-wrap">
+                <div class="product-cards-wrap" data-bind="foreach: productList" id="products">
+                    <!--<div class="card-wrap">
                         <div class="card-height-wrap">
                             <div class="card sale new">
                                 <span class="sale-labe">sale<span>&nbsp;</span></span>
@@ -717,8 +686,28 @@
                                 <h5><span>$55.00</span><span>$84.00</span></h5>
                             </div>
                         </div>
+                    </div>-->
+                    <div class="card-wrap">
+                        <div class="card-height-wrap">
+                            <div class="card"><!--Add new or sale-->
+                                <span class="sale-labe">sale<span>&nbsp;</span></span>
+                                <span class="new-labe">new<span>&nbsp;</span></span>
+                                <div class="image-wrap">
+                                    <img data-bind="attr:{src:img, alt:title}" alt="img">
+                                </div>
+                                <div class="button-wrap">
+                                    <button><img src="img/hart.png" alt=""></button>
+                                    <button>Add to Cart</button>
+                                    <button><img src="img/update.png" alt=""></button>
+                                </div>
+                                <p data-bind="text: title"><a href="#"></a></p>
+                                <div class="rating-wrap">
+                                    <!--<img src="img/star1.png" alt="image">-->
+                                </div>
+                                <h5 data-bind="html: prices"></h5>
+                            </div>
+                        </div>
                     </div>
-
                 </div>
             </div>
             <div class="form-wrap" id="add-product">
@@ -726,11 +715,11 @@
                 <div class="form">
                     <label>
                         <p>Enter image url</p>
-                        <input type="text" id="image" name="image">
+                        <input id="image" type="text" id="image" name="image" data-bind="value: img">
                     </label>
                     <label>
                         <p>Enter product name</p>
-                        <input data-bind="text: title" type="text" id="prod-name" name="prod-name" >
+                        <input id="title" data-bind="value: title" type="text" id="prod-name" name="prod-name" >
                     </label>
                     <div>
                         <p>Enter rating</p>
@@ -748,45 +737,45 @@
                     <div class="action">
                         <label for="new">
                             <p>New</p>
-                            <input type="checkbox" id="new">
+                            <input data-bind="value: newAction" type="checkbox" id="new" value="newAction">
                         </label>
 
                         <label for="sale">
                             <p>Sale</p>
-                            <input type="checkbox" id="sale">
+                            <input data-bind="value: salePrice" type="checkbox" id="sale" value="salePrice">
                         </label>
                     </div>
                     <label for="price">
                         <p>Price</p>
-                        <input data-bind="text: price" type="text" id="price">
+                        <input data-bind="value: price" type="text" id="price">
                     </label>
 
                     <label for="new-price">
-                        <p>New price</p>
-                        <input type="text" id="new-price">
+                        <p>Sale price</p>
+                        <input data-bind="value: salePrice" type="text" id="new-price" >
                     </label>
 
                     <label>
                         <p>Color</p>
-                        <select data-bind="options: colorOptions" name="color" id="color"></select>
-                        <button data-bind="click: function(){addAttribute('color');}">+</button>
+                        <select data-bind="options: colorOptions, optionsCaption: &#39;Choose color&#39;" name="color" id="color"></select>
+                        <button data-bind="click: function(){addAttribute(&#39;color&#39;);}">+</button>
                     </label>
                     <label>
                         <p>Brand</p>
-                        <select data-bind="options: brandOptions" name="brand" id="brand"></select>
-                        <button data-bind="click: function(){addAttribute('brand');}">+</button>
+                        <select data-bind="options: brandOptions, optionsCaption: &#39;Choose brand&#39;" name="brand" id="brand"></select>
+                        <button data-bind="click: function(){addAttribute(&#39;brand&#39;);}">+</button>
                     </label>
                     <label>
                         <p>Model</p>
-                        <select data-bind="options: modelOptions" name="brand" id="model"></select>
-                        <button data-bind="click: function(){addAttribute('model');}">+</button>
+                        <select data-bind="options: modelOptions, optionsCaption: &#39;Choose model&#39;" name="brand" id="model"></select>
+                        <button data-bind="click: function(){addAttribute(&#39;model&#39;);}">+</button>
                     </label>
                     <label>
                         <p>Year</p>
-                        <select data-bind="options: yearOptions" name="year" id="year"></select>
-                        <button>+</button>
+                        <select data-bind="options: yearOptions, optionsCaption: &#39;Choose year&#39;" name="year" id="year"></select>
+                        <button data-bind="click: function(){addAttribute(&#39;year&#39;);}">+</button>
                     </label>
-                    <button>Add product</button>
+                    <button data-bind="click: addProduct()">Add product</button>
                 </div>
             </div>
         </div>
@@ -861,6 +850,7 @@
         </div>
     </div>
 </footer>
-<script src="javascript/ko.js"></script>
+<script src="javascript/ko-page.js"></script>
+<script src="javascript/jquery-ui.js"></script>
 </body>
 </html>

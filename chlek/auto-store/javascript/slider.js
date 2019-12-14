@@ -35,7 +35,7 @@
 
             if (this.classList.contains('prev-js') && (!slick || slick === '0px') && self.options.framePosition === 0) {
                 return;
-            } else if (this.classList.contains('next-js') && (slick === maxMarginLeft)) {
+            } else if (this.classList.contains('next-js') && (slick === maxMarginLeft) && self.options.frame.style.left === maxLeftPosit) {
                 return;
             } else if (this.classList.contains('prev-js') && (!slick || slick !== '0px') && self.options.framePosition === 0) {
                 self.options.position += (event) ? direction * (+childs[0].clientWidth + 10) : 0;

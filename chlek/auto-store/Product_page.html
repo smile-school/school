@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<!-- saved from url=(0060)file:///home/yurii/Downloads/Telegram%20Desktop/product.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Product_page</title>
+    <link rel="stylesheet" href="file:///home/yurii/Downloads/Telegram%20Desktop/css/style.css">
+
+    <link rel="stylesheet" href="file:///home/yurii/Downloads/Telegram%20Desktop/css/jquery-ui.css">
+
+    <script src="file:///home/yurii/Downloads/Telegram%20Desktop/js/jquery-ui.js"></script>
+    <script src="file:///home/yurii/Downloads/Telegram%20Desktop/js/knockout-3.5.1.js"></script>
+    <style>
+        .form{
+            width: 800px;
+            margin: 0 auto;
+            display: block;
+        }
+        .form input[type=checkbox]{
+            display: block;
+            margin: 10px;
+        }
+        .form input[type=radio]{
+            display: block;
+            margin: 10px;
+        }
+        .form label{
+            padding: 10px 0 5px 0;
+        }
+    </style>
+    <link rel="stylesheet" href="style/test.css">
+</head>
+<body>
+
+    <main>
+    <div class="wrapper wrapper-main-content product-page">
+        <div class="navigation">
+            <p>home</p>
+            <p>carbon fiber steering wheel</p>
+        </div>
+        <div class="main-block">
+            <div class="aside-block">
+                <div class="aside-navigation">
+                    <div class="aside-item-cart" id="filters">
+                        <div class="aside-header">
+                            <span>shop by</span>
+                        </div>
+                        <div class="aside-item-list">
+                            <div class="aside-color-bar">
+                                <h3>color</h3>
+                                <ul class="choose-color" data-bind="foreach: color">
+                                    <li>
+                                        <span data-bind="attr: {style: &#39;background-color:&#39; + $data}">&nbsp;</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="aside-price-bar-scroll" id="options">
+                                <h3>price</h3>
+                                <div id="slider_price" class="slider_price"></div>
+                                    <form class="price-range" id="price-range" method="post">
+                                        <label for="price">
+                                            $
+                                            <input type="text" name="price" id="price" class="display-price" maxlength="10">
+                                        </label>
+                                        <label for="price2">
+                                            - $
+                                            <input type="text" name="price" id="price2" class="display-price" maxlength="10">
+                                        </label>
+                                    </form>
+                            </div>
+                            <h3>price</h3>
+                            <div class="aside-price-bar-category" data-bind="foreach: brand">
+                                <input id="toyota" type="checkbox" class="checkbox">
+                                <label for="toyota" data-bind="text: $data"></label>
+                            </div>
+                            <h3>model</h3>
+                            <div class="aside-chose-model" data-bind="foreach: model">
+                                <input id="camry" type="checkbox" class="checkbox">
+                                <label for="camry" data-bind="text: $data"></label>
+
+                            </div>
+                            <h3>Year</h3>
+                            <div class="aside-year-category" data-bind="foreach: year">
+                                <input id="2011" type="checkbox">
+                                <label for="2011" data-bind="text: $data"></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="aside-navigation">
+                    <div class="aside-item-cart">
+                        <div class="aside-header">
+                            <span>compare products</span>
+                        </div>
+                        <div class="aside-item-list">
+                            <div class="compare">
+                                <p><a href="file:///home/yurii/Downloads/Telegram%20Desktop/product.html#">radio transmitter adapter</a></p>
+                            </div>
+                            <div class="comapre-result">
+                                <input class="submitCompare" type="submit" value="COMPARE" id="compare">
+                                <input class="resetCompare" type="reset" value="Clear all" id="clearAll">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="aside-navigation">
+                    <div class="aside-banner">
+                        <img src="file:///home/yurii/Downloads/Telegram%20Desktop/ima/Aside.png" alt="banner">
+                    </div>
+                </div>
+            </div>
+            <div class="main-content">
+                <div class="main-content-header">
+                    <div class="header-title">
+                        <h2>baby car seats</h2>
+                    </div>
+                    <div class="responsive-view">
+                        <div class="type-of-view">
+                            <input type="radio" name="tableView" id="View1" checked="">
+                            <label for="View1" class="tableView"></label>
+                            <input type="radio" name="tableView" id="View2">
+                            <label for="View2" class="listView"></label>
+                            <span>Items 1-15 of 18</span>
+                        </div>
+                        <div class="what-to-show">
+                            <div class="quantity-to-show">
+                                <label for="quantity">Show
+                                    <select name="quantity-of-items-to-show" id="quantity">
+                                        <option value="12">12</option>
+                                    </select>&nbsp;ptr page
+                                </label>
+                            </div>
+                            <div class="sort-by-show">
+                                <label for="position">Sort By
+                                    <select name="quantity-of-items-to-show" id="position" class="position">
+                                        <option value="position">position</option>
+                                    </select>&nbsp;
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="related-products product-page">
+                    <!--------------------------------------------------------->
+                    <input type="button" id="add-to-cart" class="add-to-cart">
+                    <input type="button" id="restart-cart" class="restart-cart">
+                    <div class="related-product-list" data-bind="foreach: productList" id="productList">
+
+                        <div class="related-product-cart-extended">
+                            <div class="related-product-cart">
+                                <img class="related-product-img" alt="" data-bind="attr:{src:img, alt:title}">
+                                <div class="related-product-cart-btns">
+                                    <label for="like-btn" class="like-btn"></label>
+                                    <label for="add-to-cart" class="add-to-cart">add to cart</label>
+                                    <label for="restart-cart" class="restart-cart"></label>
+                                </div>
+                                <p class="product-title" data-bind="text:title"><a href="file:///home/yurii/Downloads/Telegram%20Desktop/product.html#"></a></p>
+                                <img class="rating" src="file:///home/yurii/Downloads/Telegram%20Desktop/ima/star5.png" alt="">
+                                <p data-bind="html: prices"></p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div id="form" class="form" style="display: flex; flex-direction: column">
+            <label for="title">Title</label>
+            <input type="text" id="title" data-bind="value: title">
+            <label for="image">image</label>
+            <input type="text" id="image" data-bind="value: img">
+            <label for="pprice">price</label>
+            <input type="text" id="pprice" data-bind="value: price">
+            <label for="sale-price">Sale price</label>
+            <input type="text" id="sale-price" data-bind="value: salePrice">
+            <div class="block" style="display: flex; flex-direction: row">
+                <label for="new">New</label>
+                <input type="checkbox" id="new" data-bind="value: newAction" value="newAction">
+                <label for="sale">Sale</label>
+                <input type="checkbox" id="sale" data-bind="value: salePrice" value="salePrice">
+            </div>
+            <p>Rating</p>
+            <div class="block" style="display: flex; flex-direction: row">
+                <label for="r1">1</label>
+                <input data-bind="checked: rating" value="1" type="radio" id="r1" name="rating">
+                <label for="r2">2</label>
+                <input data-bind="checked: rating" value="2" type="radio" id="r2" name="rating">
+                <label for="r3">3</label>
+                <input data-bind="checked: rating" value="3" type="radio" id="r3" name="rating">
+                <label for="r4">4</label>
+                <input data-bind="checked: rating" value="4" type="radio" id="r4" name="rating">
+                <label for="r5">5</label>
+                <input data-bind="checked: rating" value="5" type="radio" id="r5" name="rating">
+            </div>
+            <label for="color">Color</label>
+            <select name="color" id="color" data-bind="options: colorOptions, optionsCaption: &#39;Choose color&#39;"></select>
+            <button data-bind="click: function(){addAttribute(&#39;color&#39;);}">+</button>
+
+            <label for="brand">Brand</label>
+            <select name="color" id="brand" data-bind="options: brandOptions, optionsCaption: &#39;Choose brand&#39;"></select>
+            <button data-bind="click: function(){addAttribute(&#39;brand&#39;);}">+</button>
+
+            <label for="model">Model</label>
+            <select name="model" id="model" data-bind="options: modelOptions, optionsCaption: &#39;Choose model&#39;"></select>
+            <button data-bind="click: function(){addAttribute(&#39;model&#39;);}">+</button>
+
+            <label for="year">Year</label>
+            <select name="year" id="year" data-bind="options: yearOptions, optionsCaption: &#39;Choose year&#39;"></select>
+            <button data-bind="click: function(){addAttribute(&#39;year&#39;);}">+</button>
+
+            <button style="margin-top: 30px" data-bind="click: addProduct()">Add product</button>
+        </div>
+    </main>
+    <script src="file:///home/yurii/Downloads/Telegram%20Desktop/js/jquery-slider-range.js"></script>
+    <script src="file:///home/yurii/Downloads/Telegram%20Desktop/js/appKo.js"></script>
+
+
+</body></html>
