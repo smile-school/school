@@ -214,7 +214,6 @@
             }
 
             &__button {
-                cursor: pointer;
                 .geometric-mixin(@width: 54px, @height: 44px);
                 background-color: @main-elements-background;
                 color: @main-elements-color;
@@ -416,7 +415,7 @@
             &__counter {
                 .flex-mixin(@justify: space-between, @align: baseline);
                 padding: 22px 0 16px;
-                span:first-child{
+                label{
                     font-size: 13px;
                     font-weight: 500;
                     margin-right: 8px;
@@ -606,6 +605,7 @@
             }
             &__item {
                 font-size: 14px;
+                margin-right: 1px;
                 .hover-mixin(@page-hover-color;);
 
                 &:hover {
