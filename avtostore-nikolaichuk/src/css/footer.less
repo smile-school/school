@@ -6,6 +6,10 @@
         &-wrapper{
             padding-top: 76px;
             padding-bottom: 76px;
+            @media(max-width: @laptop-large){
+                padding-left:  @page-content-padding;
+                padding-right: @page-content-padding;
+            }
         }
         &__contact-block{
             float: left;
@@ -78,15 +82,31 @@
     &__copyright{
         padding: 25px 0;
         background-color: @footer-copyright-background;
+        @media(max-width: @laptop-large){
+            padding-left: @page-content-padding;
+            padding-right: @page-content-padding;
+        }
+        @media(max-width: @laptop-small){
+            text-align: center;
+        }
         &__pay-system{
             float: left;
-            .background-image-mixin(@image: 'payment.png',@widthImg: 370px, @heightImg: 32px)
+            .background-image-mixin(@image: 'payment.png',@widthImg: 370px, @heightImg: 32px);
+            @media(max-width: @laptop-small){
+                float: none;
+                display: inline-block;
+            }
         }
         &__content{
             float: right;
             color: @footer-copyright-color;
             font-size: 13px;
             line-height: 23px;
+            @media(max-width: @laptop-small){
+                float: none;
+                .col-4-width();
+                padding-top: 8px;
+            }
         }
     }
 }

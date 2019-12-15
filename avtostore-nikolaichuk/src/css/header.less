@@ -6,6 +6,12 @@
 
     &__top-menu.action-menu {
         .flex-mixin(@justify: flex-end);
+        @media(max-width: @laptop-large){
+            padding: 0 @page-content-padding;
+        }
+        @media(max-width: @mobile){
+            flex-wrap: wrap;
+        }
     }
 
     &__top-menu {
@@ -19,6 +25,9 @@
                 display: inline-block;
                 padding: 15px 19px;
                 cursor: pointer;
+                @media (max-width: @mobile){
+                    padding: 10px 20px;
+                }
             }
 
             &__currency-chooser,
@@ -90,6 +99,11 @@
             }
 
             &__signIn {
+                @media(max-width: @mobile){
+                    width: 100%;
+                    text-align: right;
+                    padding-right: 0;
+                }
                 i {
                     color: @main-elements-background;
                 }
@@ -101,6 +115,11 @@
                 &:hover .link {
                     span {
                         color: @header-top-menu-color;
+                    }
+                }
+                &::after{
+                    @media(max-width: @mobile){
+                        display: none;
                     }
                 }
             }
@@ -128,6 +147,26 @@
     &__main {
         .flex-mixin(@justify: space-between, @align: flex-end);
         padding-top: 30px;
+        max-width: 100%;
+        @media(max-width: @laptop-large){
+            padding-left: @page-content-padding;
+            padding-right: @page-content-padding;
+        }
+        @media(max-width: @laptop-small){
+            flex-wrap: wrap;
+        }
+
+        .logo-wrapper{
+            .col-1-width();
+            @media(max-width: @laptop-small){
+                .col-2-width();
+            }
+            @media(max-width: @mobile){
+                .col-4-width();
+                padding-bottom: 15px;
+                text-align: center;
+            }
+        }
 
         .logo-link {
             display: inline-block;
@@ -137,6 +176,10 @@
         .search {
             &__container {
                 position: relative;
+                .col-2-width();
+                @media(max-width: @mobile){
+                    .col-4-width();
+                }
             }
 
             &__input {
@@ -187,6 +230,18 @@
 
         .cart-block {
             position: relative;
+            .col-1-width();
+            @media(max-width: @laptop-small){
+                .col-2-width();
+                padding-top: 25px;
+                margin-left: auto;
+                text-align: right;
+            }
+            @media(max-width: @mobile){
+                .col-4-width();
+                margin: 0;
+                text-align: center;
+            }
         }
 
         .wish-list,
@@ -206,6 +261,12 @@
             .geometric-mixin(@width: 44px, @height: 44px);
             position: relative;
             float: left;
+            @media(max-width: @laptop-small){
+                float: none;
+            }
+            @media(max-width: @mobile){
+                float: left;
+            }
 
             i {
                 font-size: 18px;
@@ -218,6 +279,14 @@
             min-width: 171px;
             position: relative;
             float: right;
+            @media(max-width: @laptop-small){
+                margin-left: 15px;
+                min-width: 200px;
+            }
+            @media(max-width: @mobile){
+                margin-left: 0;
+                width: calc(100% - 50px);
+            }
 
             i {
                 .absolute-position-mixin(@left: 22px);
@@ -266,12 +335,12 @@
 
         .mini-cart {
             display: none;
-            .absolute-position-mixin(@top: 100%, @left: -84px, @translateX: 0, @translateY: 0);
+            .absolute-position-mixin(@top: 100%, @left: calc(100% - 354px), @translateX: 0, @translateY: 0);
             width: 354px;
             background-color: @main-background;
             border: 1px solid @main-border-line-color;
             box-sizing: border-box;
-            box-shadow: 0px 0px 10px @mini-cart-box-shadow;
+            box-shadow: 0 0 10px @mini-cart-box-shadow;
             padding: 25px;
             z-index: 2;
             &:hover{
@@ -436,6 +505,10 @@
 
     &__navigation {
         padding-top: 30px;
+        @media(max-width: @laptop-large){
+            padding-left: @page-content-padding;
+            padding-right: @page-content-padding;
+        }
 
         .categories__menu,
         .nav-menu {
@@ -454,10 +527,17 @@
         .categories__menu {
             float: left;
             position: relative;
+            .col-1-width();
+            @media(max-width: @tablet){
+                .col-2-width();
+            }
 
             label{
                 cursor: pointer;
                 position: relative;
+                @media(max-width: @laptop-small){
+                    font-size: 12px;
+                }
             }
             input[type="checkbox"]{
                 display: none;
@@ -499,7 +579,7 @@
                 z-index: 2;
                 border: 1px solid @main-border-line-color;
                 box-sizing: border-box;
-                box-shadow: 0px 0px 10px @submenu-box-shadow;
+                box-shadow: 0 0 10px @submenu-box-shadow;
                 background-color: @main-background;
             }
             &__category-title{
@@ -520,6 +600,10 @@
         .nav-menu {
             float: right;
             position: relative;
+            .col-3-width();
+            @media(max-width: @laptop-large){
+                display: none;
+            }
             &__item {
                 font-size: 14px;
                 .hover-mixin(@page-hover-color;);
@@ -553,7 +637,7 @@
                 z-index: 2;
                 border: 1px solid @main-border-line-color;
                 box-sizing: border-box;
-                box-shadow: 0px 0px 10px @submenu-box-shadow;
+                box-shadow: 0 0 10px @submenu-box-shadow;
                 background-color: @main-background;
                 &:hover{
                     .flex-mixin(@justify: space-between, @align: stretch);

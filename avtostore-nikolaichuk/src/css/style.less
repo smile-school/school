@@ -1,4 +1,10 @@
+.page-content{
+    @media(max-width: @laptop-large){
+        padding: 0 @page-content-padding;
+    }
+}
 .breadcrambs {
+    .col-4-width();
     padding: 17px 0 17px 6px;
     margin-bottom: 17px;
     color: @main-breadcrambs-color;
@@ -15,6 +21,7 @@
 .product-info {
     display: inline-block;
     box-sizing: border-box;
+    .col-3-width();
 
     &__slider-wrapper {
         width: calc(100% - 460px);
@@ -218,6 +225,7 @@
 }
 
 .products-related {
+    .col-4-width();
     &__heading {
         text-align: center;
 
@@ -272,6 +280,7 @@
 }
 
 .aside {
+    .col-1-width();
     &__heading {
         font-size: 17px;
         font-weight: bold;

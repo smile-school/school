@@ -79,3 +79,19 @@
     font-weight: @weight;
     font-display: swap;
 }
+.col-1-width(@padding: @padding-width){
+    width: calc((100% - 3 * @padding) / 4);
+    display: inline-block;
+}
+.col-2-width(@padding: @padding-width){
+    width: calc((100% - @padding) / 2);
+    display: inline-block;
+}
+.col-3-width(@padding: @padding-width){
+    width: calc(((100% - 3 * @padding) / 4) * 3 + 2 * @padding);
+    display: inline-block;
+}
+.col-4-width(){
+    width: 100%;
+    display: inline-block;
+}
