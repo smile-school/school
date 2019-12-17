@@ -8,6 +8,9 @@
     padding: 17px 0 17px 6px;
     margin-bottom: 17px;
     color: @main-breadcrambs-color;
+    @media(max-width: @laptop-large){
+        padding: 17px @page-content-padding;
+    }
 
     .link {
         line-height: 17px;
@@ -25,12 +28,21 @@
     @media(max-width: @tablet){
         .col-4-width();
     }
+    &-wrapper{
+        @media(max-width: @tablet){
+            .flex-mixin(@direction: column, @justify: flex-start);
+        }
+    }
 
     &__slider-wrapper {
         width: calc(100% - 460px);
         float: left;
-        //height: 515px;
         display: inline-block;
+        @media(max-width: @tablet){
+            .col-4-width();
+            float: none;
+            order: 2;
+        }
 
         &__slider {
             margin-bottom: 6px;
@@ -44,9 +56,19 @@
 
             &-controls {
                 .flex-mixin(@justify: space-between);
+                .slider-controls__mini-slide{
+                    display: inline-block;
+                    width: calc(25% - 10px);
+                    box-sizing: border-box;
+                    border: 1px solid @main-border-line-color;
+                    @media(max-width: @laptop-small){
+                        width: calc(25% - 5px);
+                    }
+                }
 
                 img {
-                    border: 1px solid @main-border-line-color;
+                    .geometric-mixin(@width: 100%, @height: auto);
+                    display: block;
                     box-sizing: border-box;
                 }
             }
@@ -58,7 +80,14 @@
         box-sizing: border-box;
         display: inline-block;
         width: 430px;
-        margin-left: 30px;
+        margin-left: @padding-width;
+        @media(max-width: @tablet){
+            float: none;
+            .col-4-width();
+            order: 1;
+            margin: 0;
+            padding-bottom: 30px;
+        }
 
         .product {
             &-card {
@@ -247,6 +276,9 @@
             font-weight: bold;
             text-transform: uppercase;
             position: relative;
+            @media(max-width: @mobile){
+                line-height: 40px;
+            }
 
             &::before,
             &::after {
@@ -277,7 +309,6 @@
             display: inline-block;
             box-sizing: border-box;
             border: 1px solid @main-border-line-color;
-            //width: calc((100% - 3 * @padding-width) / 4);
             .col-1-width();
             @media(max-width: @laptop-small){
                 .col-1-width(@padding: @padding-width-small);
@@ -444,4 +475,8 @@
             }
         }
     }
+}
+#colors,
+#sizes{
+    background: @main-background;
 }
