@@ -295,9 +295,17 @@ body {
 }
 .wrapper {
   max-width: 1380px;
-  padding: 0 15px;
+  padding: 0 25px;
   margin: 0 auto;
   box-sizing: border-box;
+  z-index: 1;
+}
+header {
+  max-width: 1380px;
+  margin: 0 auto;
+}
+header a {
+  text-decoration: none;
 }
 .header-top {
   display: flex;
@@ -308,12 +316,6 @@ body {
 .logo {
   display: block;
   margin-top: 10px;
-}
-.wrapp {
-  padding: 0 25px;
-}
-.wrapp a {
-  text-decoration: none;
 }
 .param-header {
   display: flex;
@@ -359,17 +361,14 @@ ul.compte li.flag > a:first-child {
 }
 .mond-automobile {
   display: flex;
-  max-width: 1380px;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
   position: relative;
   height: 263px;
   background: url("../../../img/bacground-menu.png") no-repeat;
 }
-.shadow-top {
-  width: 100%;
-  height: 100%;
+.mond-automobile::after {
+  content: "";
   background: url("../../../img/shadow.png") no-repeat;
   position: absolute;
   top: 0;
@@ -381,8 +380,123 @@ ul.compte li.flag > a:first-child {
   font-size: 41px;
   font-weight: 400;
   line-height: 40px;
+  text-align: center;
   text-transform: uppercase;
   letter-spacing: 2.87px;
   color: #ffffff;
-  z-index: 1;
+  z-index: 2;
+}
+.top-menu {
+  background-color: #182d47;
+}
+.bloc-menu-search {
+  padding: 4px 10px;
+  display: flex;
+  flex-direction: row;
+}
+.ul-nav {
+  display: flex;
+  flex-direction: row;
+}
+.ul-nav > li {
+  list-style-type: none;
+  display: flex;
+  position: relative;
+}
+.ul-nav > li:not(:last-of-type) {
+  border-right: 1px solid #f5f5f5;
+}
+.ul-nav > li a {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  position: relative;
+  color: #ffffff;
+  padding: 16px 30px;
+  font-size: 13px;
+  font-weight: 900;
+  line-height: 15px;
+  text-transform: uppercase;
+  transition: all 0.3s;
+}
+.ul-nav > li a.present,
+.ul-nav > li a.servise {
+  line-height: 33px;
+}
+.ul-nav > li a::after {
+  content: "";
+  width: 0;
+  height: 4px;
+  background-color: #eb2645;
+  position: absolute;
+  bottom: -4px;
+  transition: width 0.3s;
+}
+.ul-nav > li a span {
+  position: relative;
+}
+.ul-nav > li a span::before {
+  content: "";
+  background: url("../../../img/figure.png");
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 9px;
+  height: 5px;
+  opacity: 0;
+}
+.ul-nav > li a:hover {
+  background-color: #ffffff;
+  color: #182d47;
+}
+.ul-nav > li a:hover::after {
+  width: 100%;
+}
+.ul-nav > li a:hover span::before {
+  opacity: 1;
+}
+.search-bloc {
+  margin-right: -25px;
+  display: flex;
+  min-height: 100%;
+  min-width: 310px;
+  flex: 1 auto;
+  padding: 5px 0 6px;
+}
+.search-bloc > button {
+  height: 100%;
+  width: 50px;
+  background-color: #ffffff;
+  outline: 0;
+  border: 0;
+  color: #eb2645;
+  box-sizing: border-box;
+}
+.search-bloc > input {
+  outline: 0;
+  border: 0;
+  font-weight: 700;
+  color: #afb1b3;
+  letter-spacing: 0.14px;
+  flex-grow: 1;
+}
+.content {
+  padding: 0 25px;
+}
+.way-top {
+  padding: 20px 0;
+}
+.way-ul {
+  display: flex;
+  flex-direction: row;
+}
+.way-ul li a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: #9a9d9f;
+  line-height: 33px;
+  letter-spacing: 0.12px;
 }
