@@ -107,20 +107,22 @@
         }
         &__pay-system{
             float: left;
-            width: 45%;
             img{
-                .geometric-mixin(@width: 100%, @height: auto);
+                //.geometric-mixin(@width: 100%, @height: auto);
+                @media(max-width: @mobile){
+                    width: 70%;
+                }
             }
             @media(max-width: @laptop-small){
                 float: none;
-                width: 50%;
+                //width: 50%;
             }
         }
         &__content{
             float: right;
             color: @footer-copyright-color;
             font-size: 13px;
-            line-height: 23px;
+            line-height: 35px;
             @media(max-width: @laptop-small){
                 float: none;
                 .col-4-width();

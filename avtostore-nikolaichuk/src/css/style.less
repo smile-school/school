@@ -4,13 +4,9 @@
     }
 }
 .breadcrambs {
-    .col-4-width();
     padding: 17px 0 17px 6px;
     margin-bottom: 17px;
     color: @main-breadcrambs-color;
-    @media(max-width: @laptop-large){
-        padding: 17px @page-content-padding;
-    }
 
     .link {
         line-height: 17px;
@@ -25,7 +21,7 @@
     display: inline-block;
     box-sizing: border-box;
     .col-3-width();
-    @media(max-width: @tablet){
+    @media(max-width: @laptop-small){
         .col-4-width();
     }
     &-wrapper{
@@ -39,9 +35,12 @@
         float: left;
         display: inline-block;
         @media(max-width: @tablet){
-            .col-4-width();
+            width: 65%;
             float: none;
             order: 2;
+        }
+        @media(max-width: @mobile){
+            width: 80%;
         }
 
         &__slider {
@@ -199,6 +198,9 @@
                 &__buttons-wrapper {
                     margin-top: 13px;
                     .flex-mixin(@justify: space-between, @align: stretch);
+                    @media(max-width: @mobile){
+                        justify-content: space-around;
+                    }
                 }
 
                 &__quantity {
@@ -286,6 +288,9 @@
                 .geometric-mixin(@width: 8px, @height: 8px);
                 background-color: @main-elements-background;
                 border-radius: 50%;
+                @media(max-width: @mobile){
+                    display: none;
+                }
             }
 
             &::before {
@@ -314,7 +319,8 @@
                 .col-1-width(@padding: @padding-width-small);
             }
             @media(max-width: @mobile){
-                .col-4-width();
+                width: 65%;
+                margin: 0 auto;
             }
         }
     }
@@ -325,7 +331,7 @@
 }
 
 .aside {
-    @media(max-width: @tablet){
+    @media(max-width: @laptop-small){
         float: none;
         display: block;
         .col-4-width();
@@ -351,7 +357,7 @@
         border-top: none;
         border-radius: 0 0 5px 5px;
         margin-bottom: 30px;
-        @media(max-width: @tablet){
+        @media(max-width: @laptop-small){
             .flex-mixin(@align: flex-end);
         }
         @media(max-width: @mobile){
@@ -369,7 +375,7 @@
                 width: 20%;
             }
             @media(max-width: @mobile){
-                .col-3-width(@padding-width-small);
+                width: 50%;
                 display: block;
                 margin: 0 auto;
                 padding-bottom: 15px;
