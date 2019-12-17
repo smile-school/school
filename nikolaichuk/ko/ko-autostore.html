@@ -69,49 +69,53 @@
             </div>
             <div class="col-1 cart-block clearfix-block">
                 <div class="wish-list"></div>
+                <div class="cart-wrapper" id="minicart">
                 <div class="cart">
                     <span class="shopping-basket">
                         <img src="../ima/cart.png" height="17" width="22"/>
                     </span>
                     <span class="cart__total">My Cart
-                        <span>$205.00</span>
+                        <span data-bind="text: totalCart"></span>
                     </span>
-                    <span class="cart__counter">1</span>
+                    <span class="cart__counter" data-bind="text:totalQty"></span>
                 </div>
-                <div class="mini-cart">
+                <div class="mini-cart" data-bind="visible: cartList().length > 0">
                     <ul>
-                    <div class="mini-cart__details clearfix-block">
-                        <a href="#" class="link mini-cart__image">
-                            <img src="./dist/ima/aosake_leather_steering_wheels.png">
-                        </a>
-                        <span>x</span>
-                        <div class="mini-cart__params">
-                            <a href="#" class="link mini-cart__title">Carbon Fiber Steering Wheel</a>
-                            <input type="checkbox" name="details" id="details">
-                            <label for="details" class="mini-cart__details-toggle">
-                                <span>See Details</span>
-                            </label>
-                            <div class="mini-cart__details-block">
-                                <span class="mini-cart__details-name">Size</span><span>S</span>
-                                <span class="mini-cart__details-name">Color</span><span>Blue</span>
+                        <li data-bind="foreach:cartList">
+                            <div class="mini-cart__details clearfix-block">
+                                <a href="#" class="link mini-cart__image">
+                                    <img data-bind="attr:{src: img, alt: title}"/>
+                                </a>
+                                <span data-bind="click: $root.removeCart">x</span>
+                                <div class="mini-cart__params">
+                                    <a href="#" class="link mini-cart__title" data-bind="text:title"></a>
+                                    <input type="checkbox" name="details" id="details">
+                                    <label for="details" class="mini-cart__details-toggle">
+                                        <span>See Details</span>
+                                    </label>
+                                    <div class="mini-cart__details-block">
+                                        <span class="mini-cart__details-name" data-bind="if:color() != ''">Color</span><span data-bind="text: color"></span>
+                                        <span class="mini-cart__details-name" data-bind="if:brand() != ''">Brand</span><span data-bind="text:brand"></span>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
+                            <div class="mini-cart__counter">
+                                <span>Qty:</span>
+                                <input type="text" data-bind="value:qty">
+                                <span class="mini-cart__update-btn">Update</span>
+                                <span class="mini-cart__counter__sum" data-bind="text:$data.sale() ? salePrice() : price()"></span>
+                            </div>
+                        </li>
                     </ul>
-                    <div class="mini-cart__counter">
-                        <span>Qty:</span>
-                        <input type="text" value="1">
-                        <span class="mini-cart__update-btn">Update</span>
-                        <span class="mini-cart__counter__sum">$205.00</span>
-                    </div>
                     <div class="mini-cart__total clearfix-block">
                         <span>cart subtotal:</span>
-                        <span>205.00</span>
+                        <span data-bind="text: totalCart"></span>
                     </div>
                     <div class="mini-cart__buttons clearfix-block">
                         <div class="mini-cart__view-btn">view cart</div>
                         <div class="mini-cart__checkout-btn">checkout</div>
                     </div>
+                </div>
                 </div>
             </div>
         </div>
@@ -277,7 +281,7 @@
                     </div>
                     <div class="product-item__controls">
                         <a href="#" class="wish-list_btn"></a>
-                        <a href="#" class="link cart_btn">add to cart</a>
+                        <a href="#" class="link cart_btn" data-bind="click: $root.addCart">add to cart(<span data-bind="text:qty"></span>)</a>
                         <a href="#" class="compare_btn" data-bind="click: $root.addCompare, css:{active: compaired}"></a>
                     </div>
                     <div class="product-item__content">
@@ -380,6 +384,7 @@
         this.brand = ko.observable(brand || '');
         this.model = ko.observable(model || '');
         this.year = ko.observable(year || '');
+        this.qty = ko.observable(0);
         this.prices = ko.computed(function () {
             var html = '';
             if(this.sale()){
@@ -466,6 +471,15 @@
         }
     }
 
+    function Cart() {
+        this.cartList = ko.observableArray([]);
+        this.totalQty = ko.observable(0);
+        this.totalCart = ko.observable(0);
+        this.removeCart = function () {
+
+        }
+    }
+
     function ProductList() {
         this.productList = ko.observableArray([]);
         this.addProduct = function (product) {
@@ -492,6 +506,26 @@
                 product.compaired(true);
             }
             console.log(product.compaired());
+        };
+        this.addCart = function (product) {
+            //console.log(product);
+            //cart.cartList.push(product);
+            var status = false;
+            var i = 0;
+            for(; i < cart.cartList().length; i++){
+                if(cart.cartList()[i] === product){
+                    status = true;
+                    break;
+                }
+            }
+            product.qty(product.qty() + 1);
+            cart.totalQty(cart.totalQty() + 1);
+            if(!status){
+                cart.cartList.push(product);
+                //console.log(cart.cartList());
+            }
+            //cart.cartList()[i].qty(cart.cartList()[i].qty() + 1);
+            //console.log(cart.cartList()[i].qty());
         }
     }
 
@@ -500,11 +534,13 @@
         product = new Product(),
         addProduct = new AddProduct(),
         productList = new ProductList();
+        cart = new Cart();
 
     ko.applyBindings(addProduct, document.querySelector('#addProduct'));
     ko.applyBindings(attributes, document.querySelector('#filters'));
     ko.applyBindings(productList,document.querySelector('#productList'));
     ko.applyBindings(compare, document.querySelector("#compare"));
+    ko.applyBindings(cart, document.querySelector('#minicart'));
 
     /*productList.productList.subscribe(function (value) {
         //console.log(value[0].title);
