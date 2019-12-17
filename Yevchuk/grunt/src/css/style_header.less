@@ -1,0 +1,260 @@
+.wrapper-container{
+  max-width: 1170px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+.top-navbar{
+  background: @black;
+
+  ul{
+    display: flex;
+    justify-content: flex-end;
+    align-content: center;
+    padding: 14px 0;
+    margin-right: 3px;
+    li{
+      box-sizing: border-box;
+      &:hover span{
+        color: @rad;
+      }
+      &:first-of-type{
+        margin-right: 19px;
+        span:first-of-type{
+          margin-right: 7px;
+        }
+        span:last-of-type{
+          margin-left: 3px;
+        }
+      }
+      &:first-of-type img:first-of-type{
+        margin-right: 18px;
+      }
+      &:nth-of-type(2){
+        position: relative;
+        margin: 0 22px;
+        img:first-of-type{
+          margin-right: 10px;
+        }
+        img:last-of-type{
+          margin-left: 5px;
+        }
+      }
+      &:nth-of-type(2)::after{
+        content: '';
+        display: block;
+        height: 11px;
+        width: 0;
+        border-left: 1px solid @gray;
+        position: absolute;
+        left: -20px;
+        top: 3px;
+
+      }
+      &:last-of-type{
+        margin-left: 17px;
+        img{
+          margin-left: 3px;
+        }
+      }
+      &:nth-of-type(2)::before{
+        content: '';
+        display: block;
+        height: 11px;
+        width: 0;
+        border-left: 1px solid @gray;
+        position: absolute;
+        right: -20px;
+        top: 3px;
+      }
+
+
+      a{
+        font-size: 13px;
+        box-sizing: border-box;
+        color: @gray;
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+}
+.middle-nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 31.5px  0;
+  & > img{
+    margin-right: 67px;
+  }
+  .hurt-button{
+    padding: 11px;
+    outline: none;
+    border: 2px solid @gray;
+    border-radius: 5px;
+    background: none;
+    margin-left: -25px;
+    &:hover{
+      border-color: @black;
+    }
+  }
+  .search-form{
+    display: flex;
+    min-width: 575px;
+    padding: 2px;
+
+    input{
+      flex-grow: 1;
+      border: 2px solid @gray;
+      border-right: 0;
+      border-radius: 5px 0 0 5px;
+      padding: 11px;
+
+      &::placeholder{
+        color: @transparent-gray;
+      }
+    }
+    button{
+      padding: 13px 19px 11px 19px;
+      background: @rad;
+      outline: none;
+      border: 2px solid @rad;
+      border-radius: 0 5px 5px 0;
+    }
+  }
+  .cart-container{
+    display: flex;
+    cursor:pointer;
+    &:hover button,
+    &:hover .cart{
+      border-color: @black;
+    }
+
+    button{
+      border: 2px solid @gray;
+      border-radius: 5px 0 0 5px;
+      padding: 10px;
+      outline: none;
+      background: @white;
+      position: relative;
+
+      .count{
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background-color: @rad;
+        color: @white;
+        font-size: 13px;
+        line-height: 15px;
+        right: -12px;
+        top: -12px;
+      }
+    }
+    .cart{
+      border: 2px solid @gray;
+      border-radius: 0 5px 5px 0;
+      border-left: none;
+      padding: 12px 17px;
+      font-size: 13px;
+      line-height: 15px;
+      display: flex;
+      align-items: center;
+      .cart-price{
+        color: @rad;
+        margin-left: 7px;
+      }
+    }
+  }
+}
+.navbar-bottom{
+  border-bottom: 2px solid @rad;
+
+  .navbar-bottom-container{
+    display: flex;
+    align-items: center;
+
+    .drop-down-menu{
+      padding: 16px 18.5px;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 17px;
+      display: flex;
+      align-items: center;
+      color: @white;
+      border-radius: 5px 5px 0 0;
+      background-color: @rad;
+      cursor: pointer;
+      margin-right: 30px;
+      .all-categories{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .burger-icon{
+        display: block;
+        border: 1px solid @white;
+        width: 16px;
+        margin-left: 98px;
+        position: relative;
+
+        &::after{
+          content: '';
+          display: block;
+          position: absolute;
+          left: -1px;
+          width: 14px;
+          top: -5px;
+          border: 1px solid @white;
+        }
+
+        &::before{
+          content: '';
+          display: block;
+          position: absolute;
+          left: -1px;
+          width: 14px;
+          bottom: -5px;
+          border: 1px solid @white;
+        }
+      }
+    }
+
+    .navbar-menu{
+      display: flex;
+
+      li{
+        margin: 4px 20px 0 20px;
+        box-sizing: border-box;
+        padding: 2px 0;
+        align-self: center;
+        &:nth-of-type(3){
+          margin-right: 17px;
+        }
+        &:nth-of-type(4){
+          margin-right: 17px;
+        }
+        &:first-of-type {
+          //margin-right: 5px;
+          img{
+            margin-left: 5px;
+            fill: @black;
+          }
+        }
+        a{
+          font-weight: bold;
+          font-size: 14px;
+          line-height: 17px;
+          display: flex;
+          align-items: center;
+          text-align: center;
+          text-transform: uppercase;
+          color: @black;
+
+        }
+      }
+    }
+  }
+}
