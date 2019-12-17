@@ -462,7 +462,7 @@ ul.compte li.flag > a:first-child {
   display: flex;
   min-height: 100%;
   min-width: 310px;
-  flex: 1 auto;
+  margin-left: 142px;
   padding: 5px 0 6px;
 }
 .search-bloc > button {
@@ -484,19 +484,108 @@ ul.compte li.flag > a:first-child {
 }
 .content {
   padding: 0 25px;
+  display: flex;
+  flex-direction: column;
 }
 .way-top {
-  padding: 20px 0;
+  padding: 10px 0;
 }
 .way-ul {
   display: flex;
   flex-direction: row;
 }
+.way-ul li {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
 .way-ul li a {
   text-decoration: none;
   text-transform: uppercase;
   font-size: 12px;
+  display: block;
   color: #9a9d9f;
+  font-weight: 700;
   line-height: 33px;
   letter-spacing: 0.12px;
+  position: relative;
+  padding: 0 15px 0 9px;
+}
+.way-ul li:first-of-type a {
+  padding-left: 0;
+}
+.way-ul li:last-of-type a {
+  color: #eb2645;
+  line-height: 33.22px;
+}
+.way-ul li:not(:last-of-type) a::after {
+  content: "\003E";
+  color: #eb2645;
+  position: absolute;
+  right: 0;
+  width: 6px;
+  height: 5px;
+  font-weight: bold;
+  font-size: 15px;
+}
+.parametr-data {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.paralis-des {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+.paralis-des > span {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14px;
+}
+ul.caption {
+  display: flex;
+  align-items: center;
+}
+ul.caption li {
+  list-style-type: none;
+}
+ul.caption li a {
+  position: relative;
+  text-decoration: none;
+  font-size: 15px;
+  color: #182d47;
+  font-weight: 400;
+  padding-top: 4px;
+}
+ul.caption li:first-of-type a {
+  padding-left: 33px;
+}
+ul.caption li:first-of-type a span {
+  line-height: 28px;
+}
+ul.caption li:first-of-type a::after {
+  content: "";
+  background: url("../../../img/Forme_8.svg") no-repeat;
+  width: 18px ;
+  height: 20px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+ul.caption li:last-of-type {
+  margin-left: 47px;
+}
+ul.caption li:last-of-type a {
+  padding-left: 35px;
+  line-height: 24px;
+}
+ul.caption li:last-of-type a::after {
+  content: "";
+  background: url("../../../img/Forme_9.svg") no-repeat;
+  width: 26px ;
+  height: 18px;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
