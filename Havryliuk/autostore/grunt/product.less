@@ -346,45 +346,50 @@ main .wrapper-main-content.product-page {
             }
         }
     }
+    .related-products,
     .related-products.product-page{
         padding: 31px 0 0 6px;
         margin-bottom: 18px;
-        .related-product-cart-extended{
-            position: relative;
-            max-height: 400px;
-            margin-bottom: 32px;
-        }
-        .related-product-list .related-product-cart:hover{
-            &::before{
-                content: '';
-                width: 100%;
-                height:100%;
-                z-index: 1;
-                box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.6);
-                position: absolute;
-            }
-            &::after{
-                position: absolute;
-                right: 0;
-                content: '\f002';
-                font-family: Font Awesome\ 5 Free;
-                color: @base-color;
-                background-color: @button;
-                left: calc(50% - 25px);
-                top: calc(29% - 25px);
-                width: 25px;
-                height: 25px;
-                border-radius: 50%;
-                font-weight: 900;
-                font-size: 23px;
-                cursor: pointer;
-                padding: 15px;
-                z-index: 10;
-            }
-            p:last-child{
-                padding-bottom: 20px;
-            }
 
+        .related-product-list {
+            .related-product-cart-extended{
+                position: relative;
+                max-height: 400px;
+                margin-bottom: 32px;
+            }
+            .related-product-cart:hover {
+                &::before {
+                    content: '';
+                    width: 100%;
+                    height: 100%;
+                    z-index: 1;
+                    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.6);
+                    position: absolute;
+                }
+
+                &::after {
+                    position: absolute;
+                    right: 0;
+                    content: '\f002';
+                    font-family: Font Awesome\ 5 Free;
+                    color: @base-color;
+                    background-color: @button;
+                    left: calc(50% - 25px);
+                    top: calc(29% - 25px);
+                    width: 25px;
+                    height: 25px;
+                    border-radius: 50%;
+                    font-weight: 900;
+                    font-size: 23px;
+                    cursor: pointer;
+                    padding: 15px;
+                    z-index: 10;
+                }
+
+                p:last-child {
+                    padding-bottom: 20px;
+                }
+            }
         }
         .related-product-list .related-product-cart,
         .related-product-list .related-product-cart:hover{

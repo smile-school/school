@@ -50,6 +50,9 @@ main {
                             background-color: @basebg-color;
                             position: absolute;
                             padding: 2px 6px;
+                            .hovered{
+                                display: none;
+                            }
                             &.arr2{
                                 left: 10px;
                                 top: 25px;
@@ -60,6 +63,13 @@ main {
                             }
                             &:hover{
                                 border: 1px solid @button;
+                                background-color: @button;
+                                .base{
+                                    display: none;
+                                }
+                                .hovered{
+                                    display: block;
+                                }
                             }
                             img{
                                 border: 0;
@@ -583,6 +593,9 @@ main {
 @media only screen and (max-width: 1170px) {
     main .wrapper-main-content .product-cart .product-review .action-inputs .selections .action-inputs-bottom_cart .add-to-cart {
         padding: 13px 30px 13px 30px;
+    }
+    .main-block .main-content-header .what-to-show .quantity-to-show span{
+        display: none;
     }
 }
 @media only screen and (max-width: 1092px) {

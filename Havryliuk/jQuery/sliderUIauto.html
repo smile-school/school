@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQueryUI</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/sliderauto.js"></script>
+    <link rel="stylesheet" href="sliderauto.css">
+</head>
+<body>
+<div class="content">
+    <div class="box image-collection">
+        <input class="laptop-radio" type="radio" name="laptop-radio" id="img1">
+        <input class="laptop-radio" type="radio" name="laptop-radio" id="img2" checked>
+        <input class="laptop-radio" type="radio" name="laptop-radio" id="img3">
+        <input class="laptop-radio" type="radio" name="laptop-radio" id="img4">
+        <input class="laptop-radio" type="radio" name="laptop-radio" id="img5">
+        <input class="laptop-radio" type="radio" name="laptop-radio" id="img6">
+        <input class="laptop-radio" type="radio" name="laptop-radio" id="img7">
+        <input class="laptop-radio" type="radio" name="laptop-radio" id="img8">
+        <div class="image-perform">
+<!--            <img itemprop="image" src="./ima/gal/base/acdelco_335_professional_3%201.png" alt="">-->
+<!--            <img itemprop="image" src="./ima/gal/base/acura_z38-1092_alternator_3%202.png" alt="">-->
+<!--            <img itemprop="image" src="./ima/gal/base/aosake_leather_steering_wheels_3%201.png" alt="">-->
+<!--            <img itemprop="image" src="./ima/gal/base/carbon_fiber_steering_wheel_3%201.png" alt="">-->
+        </div>
+        <div class="image-gallery">
+            <div class="item">
+            <label class="img-gal-prod" for="img1">
+                <img id="prod1" itemprop="image" src="./ima/gal/mini/acdelco_335_professional_3%201.png" alt="">
+            </label>
+            </div>
+            <div class="item">
+            <label class="img-gal-prod" for="img2">
+                <img id="prod2" itemprop="image" src="./ima/gal/mini/acura_z38-1092_alternator_3%202.png" alt="">
+            </label>
+                </div>
+            <div class="item">
+            <label class="img-gal-prod" for="img3">
+                <img id="prod3" itemprop="image" src="./ima/gal/mini/aosake_leather_steering_wheels_3%201.png" alt="">
+            </label>
+                </div>
+            <div class="item">
+            <label class="img-gal-prod" for="img4">
+                <img id="prod4" itemprop="image" src="./ima/gal/mini/carbon_fiber_steering_wheel_3%201.png" alt="">
+            </label>
+                </div>
+            <div class="item">
+            <label class="img-gal-prod" for="img5">
+                <img id="prod5" itemprop="image" src="./ima/gal/mini/acdelco_335_professional_3%201.png" alt="">
+            </label>
+                </div>
+            <div class="item">
+            <label class="img-gal-prod" for="img6">
+                <img id="prod6" itemprop="image" src="./ima/gal/mini/acura_z38-1092_alternator_3%202.png" alt="">
+            </label>
+                </div>
+            <div class="item">
+            <label class="img-gal-prod" for="img7">
+                <img id="prod7" itemprop="image" src="./ima/gal/mini/aosake_leather_steering_wheels_3%201.png" alt="">
+            </label>
+            </div>
+            <div class="item">
+            <label class="img-gal-prod" for="img8">
+                <img id="prod8" itemprop="image" src="./ima/gal/mini/carbon_fiber_steering_wheel_3%201.png" alt="">
+            </label>
+            </div>
+            <a href="#" class="gallery-arrow arr2">
+                <img src="ima/arrow-gal-2.png" class="base" alt="">
+                <img src="ima/arrow-1.png" class="hovered" alt="">
+            </a>
+            <a href="#" class="gallery-arrow arr1">
+                <img src="ima/arrow-gal-1.png" class="base" alt="">
+                <img src="ima/arrow-2.png" class="hovered" alt="">
+            </a>
+        </div>
+        <div class="item">
+            <div>
+                <img src="ima/oil-1.jpg" height="400" width="400" />
+                <h3>Название товара 0</h3>
+            </div>
+            <p class="price">452 US</p>
+            <a class="btn">В конзину</a>
+        </div>
+    </div>
+</div>
+<button id="next">next</button>
+<button id="prev">prev</button>
+<script>
+    var slider = $('.box').smilecarousel({
+        delay: 2000,
+        toShow: 3,
+        currentSlide: 2,
+        afterSlide: function () {
+            console.log(this, 'after');
+        },
+        beforeSlide: function () {
+            console.log(this, 'before');
+        }
+    });
+    // console.log(slider);
+    $('#next').on('click', function () {
+        slider.smilecarousel('toNext');
+    });
+    $('#prev').on('click', function () {
+        slider.smilecarousel('toPrev');
+    });
+
+</script>
+</body>
+</html>

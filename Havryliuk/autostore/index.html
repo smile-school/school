@@ -100,6 +100,17 @@
                                 <span>&nbsp;</span>
                                 <span>&nbsp;</span>
                             </p>
+                            <ul class="all-categories-accordeon">
+                                <li><a href="#">Homepage Style 1</a></li>
+                                <li><a href="#">Homepage Style 2</a></li>
+                                <li><a href="#">Homepage Style 3</a></li>
+                                <li><a href="#">Homepage Style 4</a></li>
+                                <li><a href="#">Homepage Style 5</a></li>
+                                <li><a href="#">Homepage Style 6</a></li>
+                                <li><a href="#">Homepage Style 7</a></li>
+                                <li><a href="#">Homepage Style 8</a></li>
+                                <li><a href="#">Homepage Style 9</a></li>
+                            </ul>
                         </div>
                     </div>
                     <div class="navbar">
@@ -155,9 +166,9 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li><a href="product.html">deals</a></li>
-                                <li><a href="product-ko1.html">under $100</a></li>
-                                <li><a href="#">new arrivals</a></li>
+                                <li><a href="#">deals</a></li>
+                                <li><a href="product.html">under $100</a></li>
+                                <li><a href="productKO.html">new arrivals</a></li>
                                 <li><a href="#">blog</a></li>
                                 <li><a href="#">about us</a></li>
                                 <li><a href="#">contact us</a></li>
@@ -201,8 +212,14 @@
                             <label class="img-gal-prod" for="img4">
                                 <img id="prod4" itemprop="image" src="./ima/gal/mini/carbon_fiber_steering_wheel_3%201.png" alt="">
                             </label>
-                            <a href="#" class="gallery-arrow arr2"><img src="ima/arrow-gal-2.png"  alt=""></a>
-                            <a href="#" class="gallery-arrow arr1"><img src="ima/arrow-gal-1.png"  alt=""></a>
+                            <a href="#" class="gallery-arrow arr2">
+                                <img src="ima/arrow-gal-2.png" class="base" alt="">
+                                <img src="ima/arrow-1.png" class="hovered" alt="">
+                            </a>
+                            <a href="#" class="gallery-arrow arr1">
+                                <img src="ima/arrow-gal-1.png" class="base" alt="">
+                                <img src="ima/arrow-2.png" class="hovered" alt="">
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -228,12 +245,20 @@
                                     <label for="size" class="select">Size&nbsp;<span>*</span></label>
                                     <select id="size" class="size">
                                         <option>-- Please Select --</option>
+                                        <option>x1</option>
+                                        <option>x2</option>
+                                        <option>x3</option>
+                                        <option>x4</option>
                                     </select>
                                 </div>
                                 <div class="select-color">
                                     <label for="color" class="select">Color&nbsp;<span>*</span></label>
                                     <select id="color" class="color">
                                         <option>-- Please Select --</option>
+                                        <option>red</option>
+                                        <option>black</option>
+                                        <option>white</option>
+                                        <option>purple</option>
                                     </select>
                                 </div>
                             </div>
@@ -361,19 +386,19 @@
                 <div class="related-product-list">
                     <a href="#" class="arrow arrow-next" data-go-to="next"></a>
                     <a href="#" class="arrow arrow-back" data-go-to="prev"></a>
-                    <div class="related-product-cart-extended">
-                        <div class="related-product-cart">
-                            <img class="related-product-img" src="ima/related/1.png" alt=""/>
-                            <div class="related-product-cart-btns">
-                                <label for="like-btn" class="like-btn"></label>
-                                <label for="add-to-cart" class="add-to-cart">add to cart</label>
-                                <label for="restart-cart" class="restart-cart"></label>
+                        <div class="related-product-cart-extended">
+                            <div class="related-product-cart">
+                                <img class="related-product-img" src="ima/related/1.png" alt=""/>
+                                <div class="related-product-cart-btns">
+                                    <label for="like-btn" class="like-btn"></label>
+                                    <label for="add-to-cart" class="add-to-cart">add to cart</label>
+                                    <label for="restart-cart" class="restart-cart"></label>
+                                </div>
+                                <p class="product-title"><a href="#">Car Kit Hands Free Calling</a></p>
+                                <img class="rating" src="ima/star5.png" alt=""/>
+                                <p class="for-sale">$55.00<span>$84.00</span></p>
                             </div>
-                            <p class="product-title"><a href="#">Car Kit Hands Free Calling</a></p>
-                            <img class="rating" src="ima/star5.png" alt=""/>
-                            <p class="for-sale">$55.00<span>$84.00</span></p>
                         </div>
-                    </div>
                     <div class="related-product-cart-extended">
                         <div class="related-product-cart">
                             <img class="related-product-img" src="ima/related/2.png" alt=""/>
@@ -476,7 +501,24 @@
         </div>
     </footer>
 <script>
-
+    var slider = $('.box').smilecarousel({
+        delay: 2000,
+        toShow: 3,
+        currentSlide: 2,
+        afterSlide: function () {
+            console.log(this, 'after');
+        },
+        beforeSlide: function () {
+            console.log(this, 'before');
+        }
+    });
+    // console.log(slider);
+    $('#next').on('click', function () {
+        slider.smilecarousel('toNext');
+    });
+    $('#prev').on('click', function () {
+        slider.smilecarousel('toPrev');
+    });
 </script>
 </body>
 </html>
