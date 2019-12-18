@@ -4,7 +4,7 @@
     flex-direction: column;
 }
 .way-top{
-    padding: 10px 0;
+    padding: 10px 0 7px ;
 }
 .way-ul{
     .flex-row-betwen;
@@ -61,11 +61,17 @@
     font-size: 14px;
     font-weight: 400;
     line-height: 20px;
-    & > span{
-        font-weight: 700;
+    & > span.paral{
+        font-family: "Proxima Nova Rg";
+        font-weight: bold;
         text-transform: uppercase;
         letter-spacing: 0.14px;
     }
+
+}
+.date-congres{
+    padding: 2px 0 0 4px;
+
 }
 ul.caption{
     display: flex;
@@ -98,7 +104,7 @@ ul.caption{
             }
         }
         &:last-of-type{
-            margin-left: 47px;
+            margin-left: 59px;
             a{
                 padding-left: 35px;
                 line-height: 24px;
@@ -114,4 +120,123 @@ ul.caption{
             }
         }
     }
+}
+.title-content{
+    padding: 10px 0 21px 1px;
+    border-bottom: 1px solid @border-color;
+}
+.h2-title-content{
+    font-size: @f-size-title;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0.35px;
+    text-transform: capitalize;
+}
+aside.left-aside{
+    width: 25%;
+    padding-right: 48px;
+    box-sizing: border-box;
+}
+.title-4{
+    padding: 24px 0 15px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: @f-size-label;
+    letter-spacing: 0.14px;
+}
+.adide-bloc{
+    padding: 18px 35px 16px 21px;
+    background-color: @greey-shade;
+    border: 1px solid @border-color;
+    font-size: @f-size-menu;
+    font-weight: 700;
+    position: relative;
+    box-sizing: border-box;
+    margin-bottom: 9px;
+}
+.aside-close-btn{
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translate(-50%, -50%);
+    width: 12px;
+    height: 12px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    &::after{
+       .btn-strel;
+        transform: rotate(-45deg);
+    }
+    &::before{
+        .btn-strel;
+        transform: rotate(45deg);
+    }
+    &:hover{
+        &::after,&::before{
+            background-color: @bloc-color;
+        }
+    }
+}
+.categorise{
+    padding: 3px 19px;
+    background-color: @bloc-color;
+    color: #ffffff;
+}
+.filtr{
+    padding: 11px 0;
+    text-transform: uppercase;
+    line-height: 27px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.14px;
+    box-sizing: border-box;
+    &:not(:last-of-type){
+        border-bottom: 1px solid @color-white;
+    }
+}
+.filter-checked{
+    margin-bottom: 20px;
+}
+.ul-filter{
+    li{
+        list-style-type: none;
+        & > input[type=checkbox]{
+            display: none;
+        }
+        label{
+            display: block;
+            padding: 7px 49px 12px;
+            border-bottom: 1px solid @border-color;
+            position: relative;
+            margin-bottom: 9px;
+            span.frame-shecked{
+                border: 1px solid @shade-gray-3;
+                box-sizing: border-box;
+                position: absolute;
+                display: block;
+                width: 20px;
+                height: 20px;
+                top: 50%;
+                left: 20px;
+                transform: translateY(-70%);
+            }
+            span.text-checbox{
+                line-height: 22px;
+            }
+            span.quantity{
+                position: absolute;
+                top: 50%;
+                right: 16px;
+                transform: translateY(-65%);
+            }
+        }
+    }
+}
+.realize{
+    background-color: @color-bacground;
+    color: @color-white;
+    line-height: 20px;
+    padding: 39px 19px;
+    letter-spacing: 0.14px;
 }
