@@ -121,6 +121,10 @@ ul.caption{
         }
     }
 }
+.content-products{
+    display: flex;
+
+}
 .title-content{
     padding: 10px 0 21px 1px;
     border-bottom: 1px solid @border-color;
@@ -191,9 +195,18 @@ aside.left-aside{
     font-weight: 700;
     letter-spacing: 0.14px;
     box-sizing: border-box;
+    position: relative;
     &:not(:last-of-type){
         border-bottom: 1px solid @color-white;
     }
+    //&::after{
+    //    content: url("../../../img/caret.svg");
+    //    position: absolute;
+    //    right: 0;
+    //    width: 7px;
+    //    height: 7px;
+    //    fill: @color-white;
+    //}
 }
 .filter-checked{
     margin-bottom: 20px;
@@ -239,4 +252,238 @@ aside.left-aside{
     line-height: 20px;
     padding: 39px 19px;
     letter-spacing: 0.14px;
+}
+.top-reliz{
+    display: flex;
+    margin-bottom: 17px;
+    .reliz-title{
+        line-height: 22px;
+        font-size: 16px;
+        letter-spacing: 0.16px;
+        font-weight: 700;
+        padding: 1px 0 0 22px;
+    }
+}
+.text-realize{
+    font-size: @f-size-label;
+    padding-left: 3px;
+    letter-spacing: 0.14px;
+    margin-bottom: 25px;
+}
+.domload-realiz{
+    text-decoration: none;
+    color: @color-white;
+    padding-left: 24px;
+    display: block;
+    margin-bottom: 10px;
+    position: relative;
+    &::after{
+        content: "";
+        background: url("../../../img/domload.png") no-repeat;
+        position: absolute;
+        top: 1px;
+        left: 2px;
+        height: 34px;
+        width: 8px;
+    }
+}
+.main-product{
+    width: 75%;
+}
+.filter-main-top{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid @border-color;
+}
+.produits{
+    align-self: center;
+    font-weight: 700;
+    line-height: 27px;
+    text-transform: uppercase;
+    letter-spacing: 0.16px;
+    padding-top: 8px;
+    font-size: @f-size-chec-nav;
+    span.count-prod{
+        color: @bloc-color;
+    }
+}
+.filtr{
+    padding: 12px 0 4px;
+    display: flex;
+    label.filtrs-check{
+        align-self: center;
+        padding-top: 3px;
+        position: relative;
+        &::after{
+            display: block;
+            content: '';
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            height: 5px;
+            width: 9px;
+            transform: translateY(-25%);
+            background-image: url("../../../img/rechangle16.png");
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        select{
+            border: none;
+            background: #FFFFFF;
+            color: #182d47;
+            font-size: 14px;
+            line-height: 27px;
+            letter-spacing: 0.14px;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            display: block;
+            padding-right: 32px;
+            box-sizing: border-box;
+            position: relative;
+        }
+        &.two-first{
+            margin-left: 25px;
+            &::after{
+                right: 21px;
+            }
+        }
+    }
+}
+
+.corect-show{
+    display: flex;
+    button{
+        width: 36px;
+        height: 36px;
+        background: none;
+        outline: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        border-radius: 50%;
+        border: 1px solid @border-color;
+        position: relative;
+        cursor: pointer;
+        &:first-of-type{
+            margin-right: 4px;
+        }
+    }
+}
+.wrap-product{
+    display: flex;
+    flex-direction: column;
+}
+.cart-product{
+    border-bottom: 1px solid @border-color;
+    padding: 29px 0;
+    box-sizing: border-box;
+    display: flex;
+    position: relative;
+}
+.img-product{
+    padding: 5px;
+    box-sizing: border-box;
+    border: 1px solid @border-color;
+    width: 136px;
+    margin-right: 15px;
+    & > a{
+        display: block;
+    }
+    img{
+        width: 100%;
+    }
+}
+.info-product{
+    padding: 17px;
+    flex-grow: 1;
+    .en-stock{
+        font-size: @f-size-min;
+        font-weight: 700;
+        line-height: 16px;
+        letter-spacing: 0.3px;
+        text-transform: uppercase;
+        color: @shade-gray-fb;
+        padding-left: 15px;
+        position: relative;
+        &::after{
+            content: "";
+            width: 8px;
+            height: 8px;
+            background-color: @green-shade;
+            position: absolute;
+            left: 0;
+            border-radius: 50%;
+            top: 3px;
+        }
+        &.red-stoc{
+            &::after{
+                background-color:@bloc-color ;
+            }
+        }
+    }
+}
+.title-product{
+    margin-bottom: 15px;
+    a{
+        color: @bloc-color2;
+        font-size:@f-size ;
+        font-weight: 700;
+        line-height: 22px;
+        letter-spacing: 0.18px;
+        text-decoration: none;
+    }
+}
+.voirl-product{
+    padding: 19px 0 0 15px;
+    p{
+        font-size: @f-size-label;
+        line-height: 16px;
+        letter-spacing: 0.14px;
+        margin-bottom: 13px;
+        text-align: right;
+        span{
+            font-size: @f-size;
+            font-weight: 700;
+            letter-spacing: 0.18px;
+        }
+    }
+}
+.voi-product-btn{
+    color: @color-white;
+    letter-spacing: 0.14px;
+    background-color: @bloc-color;
+    border: none;
+    outline: 0;
+    width: 100%;
+    display: block;
+    text-transform: uppercase;
+    line-height: 42px;
+    font-size: @f-size-label;
+    font-weight: 700;
+    padding: 0 27px;
+}
+.houveau{
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 80px solid #eb2645;
+    border-right: 80px solid transparent;
+    top: 0;
+    left: 0;
+    & > span.nouve{
+        display: block;
+        color: @color-white;
+        font-size: @f-size-min;
+        font-weight: 700;
+        line-height: 11.31px;
+        position: absolute;
+        left: 0;
+        bottom: 45px;
+        text-transform: uppercase;
+        letter-spacing: 0.12px;
+        transform: rotate(-45deg);
+    }
 }
