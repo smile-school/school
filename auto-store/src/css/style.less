@@ -12,7 +12,9 @@
 body {
   font-family: Rubik;
 }
-
+.scarousel_item_wrapper{
+  display: flex;
+}
 .wrapper {
   max-width: 1170px;
   display: block;
@@ -1273,13 +1275,17 @@ body {
               overflow: hidden;
 
               .img {
-                width: 1000px;
+                display: flex;
+                margin-right: -10px;
+                .item.item-scarousel{
+
+                }
 
                 img {
-                  width: 95px;
-                  margin-right: 10px;
+                  max-width: 95px;
                   border: 1px solid @border;
                   box-sizing: border-box;
+                  display: block;
 
                   &:hover {
                     border-color: @hoverLinkColor;
@@ -1288,16 +1294,20 @@ body {
                 }
               }
 
-              .right {
+              .right-prev, .left-prev {
                 border: 1px solid @darkTextColor;
                 background-color: @white;
-                width: 24px;
-                height: 46px;
                 position: absolute;
                 right: 10px;
                 transform: translateY(50%);
                 text-align: center;
                 cursor: pointer;
+                width: 27px;
+                height: 49px;
+                top: 8px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
 
                 &:hover {
                   background-color: @hoverLinkColor;
@@ -1309,9 +1319,11 @@ body {
                 }
 
                 i {
-                  transform: translateY(100%);
                   color: @darkTextColor;
                 }
+              }
+              .left-prev{
+                left: 10px;
               }
             }
           }
@@ -1682,6 +1694,12 @@ body {
           font-size: 49px;
           display: none;
           z-index: 7;
+          border: none;
+          background: transparent;
+          i{
+            background: @white;
+            border-radius: 50%;
+          }
         }
         .left{
           left: 2px;
@@ -1689,8 +1707,7 @@ body {
         .right{
           right: 0;
         }
-        .container{
-          width: 9999px;
+        .scarousel_item_wrapper{
           display: flex;
         }
         .cart{

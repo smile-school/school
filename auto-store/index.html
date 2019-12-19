@@ -209,8 +209,52 @@ Argentina</span>
                         <img src="dist/ima/img1.png" alt="im">
                     </div>
                     <div class="preview">
-                        <div class="img"><img src="dist/ima/image_p2.png" alt="im1"><img src="dist/ima/image_p3.png" alt="3"><img src="dist/ima/image_p4.png" alt="im4"><img src="dist/ima/image_p5.png" alt="im5"><span class="right"><i class="fas fa-chevron-right"></i></span>
+                        <div class="img">
+                            <div class="item">
+                                <img src="dist/ima/image_p2.png" alt="im1">
+                            </div>
+                            <div class="item">
+                                <img src="dist/ima/image_p3.png" alt="im1">
+                            </div>
+                            <div class="item">
+                                <img src="dist/ima/image_p4.png" alt="im1">
+                            </div>
+                            <div class="item">
+                                <img src="dist/ima/image_p5.png" alt="im1">
+                            </div>
+                            <div class="item">
+                                <img src="dist/ima/image_p2.png" alt="im1">
+                            </div>
+                            <div class="item">
+                                <img src="dist/ima/image_p3.png" alt="im1">
+                            </div>
+                            <div class="item">
+                                <img src="dist/ima/image_p4.png" alt="im1">
+                            </div>
+                            <div class="item">
+                                <img src="dist/ima/image_p5.png" alt="im1">
+                            </div>
                         </div>
+                        <div class="overlay"></div>
+                        <button class="right-prev"><i class="fas fa-chevron-right"></i></button>
+                        <button class="left-prev"><i class="fas fa-chevron-left"></i></button>
+                        <script>
+                            var sliderPreview = $('.preview>.img').smilecarousel({
+                                delay: 500,
+                                toShow: 4,
+                                toSlide: 1,
+                                afterSlide: function () {
+                                    console.log(this)
+                                }
+                            });
+                            $('.left-prev').on('click', function () {
+                                sliderPreview.smilecarousel('toNext');
+                            });
+                            $('.right-prev').on('click', function () {
+                                sliderPreview.smilecarousel('toPrev')
+                            });
+                            console.log(sliderPreview)
+                        </script>
                     </div>
                 </div>
                 <div class="card-info">
@@ -473,7 +517,7 @@ Argentina</span>
             <div class="title">YOU MAY LIKE THIS PRODUCTS</div>
             <p class="related-product">RELATED PRODUCTS</p>
             <div class="product-wrapper">
-                <div class="container">
+                <div class="containers">
                     <div class="cart">
                         <div class="img">
                             <img src="dist/ima/car_kit_hands_free_calling_2%201.png" alt="">
@@ -641,7 +685,90 @@ Argentina</span>
                     </div>
                     <div class="cart">
                         <div class="img">
-                            <img src="dist/ima/radio_transmitter_adapter%201.png" alt="">
+                            <img src="dist/ima/car_kit_hands_free_calling_2%201.png" alt="">
+                        </div>
+                        <div class="product-actions">
+                            <div class="buy">
+                                <a class="wishlist" href="#">
+                                    <i class="fas fa-heart" aria-hidden="true"></i>
+                                </a>
+                                <a class="add-to-cart" href="#">
+                                    add to cart
+                                </a>
+                                <a class="compare" href="#">
+                                    <i class="fas fa-sync" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                            <div class="product-item-name">
+                                <a href="#" class="product-item-link">
+                                    Car Kit Hands Free Calling
+                                </a>
+                            </div>
+                            <div class="product-rating">
+                            <span class="rating">
+                                <div class="star">
+                                    <div class="overflow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 73 12" enable-background="new 0 0 73 12" xml:space="preserve">
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601" points="6.5,0 8,5 13,5 9,7.7 10,12 6.5,9.2 3,12 4,7.7 0,5 5,5"/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601" points="66.5,0 68,5 73,5 69,7.7 70,12 66.5,9.2 63,12 64,7.7 60,5 65,5 "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601" points="21.5,0 23,5 28,5 24,7.7 25,12 21.5,9.2 18,12 19,7.7 15,5 20,5 "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601" points="51.5,0 53,5 58,5 54,7.7 55,12 51.5,9.2 48,12 49,7.7 45,5 50,5 "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601" points="36.5,0 38,5 43,5 39,7.7 40,12 36.5,9.2 33,12 34,7.7 30,5 35,5 "/>
+</svg>
+                                </div>
+                                </div>
+                            </span>
+                            </div>
+                            <div class="price">
+                                <div data-type-currency="$" class="full-price">84.00</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart">
+                        <div class="img">
+                            <img src="dist/ima/design_in-car_fm_radio_3%201.png" alt="">
+                        </div>
+                        <div class="product-actions">
+                            <div class="buy">
+                                <a class="wishlist" href="#">
+                                    <i class="fas fa-heart" aria-hidden="true"></i>
+                                </a>
+                                <a class="add-to-cart" href="#">
+                                    add to cart
+                                </a>
+                                <a class="compare" href="#">
+                                    <i class="fas fa-sync" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                            <div class="product-item-name">
+                                <a href="#" class="product-item-link">
+                                    Car Kit Hands Free Calling
+                                </a>
+                            </div>
+                            <div class="product-rating">
+                            <span class="rating">
+                                <div class="star">
+                                    <div class="overflow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 73 12" enable-background="new 0 0 73 12" xml:space="preserve">
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601" points="6.5,0 8,5 13,5 9,7.7 10,12 6.5,9.2 3,12 4,7.7 0,5 5,5"/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601" points="66.5,0 68,5 73,5 69,7.7 70,12 66.5,9.2 63,12 64,7.7 60,5 65,5 "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601" points="21.5,0 23,5 28,5 24,7.7 25,12 21.5,9.2 18,12 19,7.7 15,5 20,5 "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601" points="51.5,0 53,5 58,5 54,7.7 55,12 51.5,9.2 48,12 49,7.7 45,5 50,5 "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601" points="36.5,0 38,5 43,5 39,7.7 40,12 36.5,9.2 33,12 34,7.7 30,5 35,5 "/>
+</svg>
+                                </div>
+                                </div>
+                            </span>
+                            </div>
+                            <div class="price">
+                                <div data-type-currency="$" class="sale-price">55.00</div>
+                                <div data-type-currency="$" class="full-price">84.00</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart">
+                        <div class="img">
+                            <img src="dist/ima/fm_radio_adapter_car_hands-free%201.png" alt="">
                         </div>
                         <div class="product-actions">
                             <div class="buy">
@@ -683,6 +810,130 @@ Argentina</span>
                     <div class="cart">
                         <div class="img">
                             <img src="dist/ima/radio_transmitter_adapter%201.png" alt="">
+                        </div>
+                        <div class="product-actions">
+                            <div class="buy">
+                                <a class="wishlist" href="#">
+                                    <i class="fas fa-heart" aria-hidden="true"></i>
+                                </a>
+                                <a class="add-to-cart" href="#">
+                                    add to cart
+                                </a>
+                                <a class="compare" href="#">
+                                    <i class="fas fa-sync" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                            <div class="product-item-name">
+                                <a href="#" class="product-item-link">
+                                    Car Kit Hands Free Calling
+                                </a>
+                            </div>
+                            <div class="product-rating">
+                            <span class="rating">
+                                <div class="star">
+                                    <div class="overflow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 73 12" enable-background="new 0 0 73 12" xml:space="preserve">
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601" points="6.5,0 8,5 13,5 9,7.7 10,12 6.5,9.2 3,12 4,7.7 0,5 5,5"/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601" points="66.5,0 68,5 73,5 69,7.7 70,12 66.5,9.2 63,12 64,7.7 60,5 65,5 "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601" points="21.5,0 23,5 28,5 24,7.7 25,12 21.5,9.2 18,12 19,7.7 15,5 20,5 "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601" points="51.5,0 53,5 58,5 54,7.7 55,12 51.5,9.2 48,12 49,7.7 45,5 50,5 "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601" points="36.5,0 38,5 43,5 39,7.7 40,12 36.5,9.2 33,12 34,7.7 30,5 35,5 "/>
+</svg>
+                                </div>
+                                </div>
+                            </span>
+                            </div>
+                            <div class="price">
+                                <div data-type-currency="$" class="full-price">84.00</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart">
+                        <div class="img">
+                            <img src="dist/ima/car_kit_hands_free_calling_2%201.png" alt="">
+                        </div>
+                        <div class="product-actions">
+                            <div class="buy">
+                                <a class="wishlist" href="#">
+                                    <i class="fas fa-heart" aria-hidden="true"></i>
+                                </a>
+                                <a class="add-to-cart" href="#">
+                                    add to cart
+                                </a>
+                                <a class="compare" href="#">
+                                    <i class="fas fa-sync" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                            <div class="product-item-name">
+                                <a href="#" class="product-item-link">
+                                    Car Kit Hands Free Calling
+                                </a>
+                            </div>
+                            <div class="product-rating">
+                            <span class="rating">
+                                <div class="star">
+                                    <div class="overflow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 73 12" enable-background="new 0 0 73 12" xml:space="preserve">
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601" points="6.5,0 8,5 13,5 9,7.7 10,12 6.5,9.2 3,12 4,7.7 0,5 5,5"/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601" points="66.5,0 68,5 73,5 69,7.7 70,12 66.5,9.2 63,12 64,7.7 60,5 65,5 "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601" points="21.5,0 23,5 28,5 24,7.7 25,12 21.5,9.2 18,12 19,7.7 15,5 20,5 "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601" points="51.5,0 53,5 58,5 54,7.7 55,12 51.5,9.2 48,12 49,7.7 45,5 50,5 "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601" points="36.5,0 38,5 43,5 39,7.7 40,12 36.5,9.2 33,12 34,7.7 30,5 35,5 "/>
+</svg>
+                                </div>
+                                </div>
+                            </span>
+                            </div>
+                            <div class="price">
+                                <div data-type-currency="$" class="full-price">84.00</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart">
+                        <div class="img">
+                            <img src="dist/ima/design_in-car_fm_radio_3%201.png" alt="">
+                        </div>
+                        <div class="product-actions">
+                            <div class="buy">
+                                <a class="wishlist" href="#">
+                                    <i class="fas fa-heart" aria-hidden="true"></i>
+                                </a>
+                                <a class="add-to-cart" href="#">
+                                    add to cart
+                                </a>
+                                <a class="compare" href="#">
+                                    <i class="fas fa-sync" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                            <div class="product-item-name">
+                                <a href="#" class="product-item-link">
+                                    Car Kit Hands Free Calling
+                                </a>
+                            </div>
+                            <div class="product-rating">
+                            <span class="rating">
+                                <div class="star">
+                                    <div class="overflow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 73 12" enable-background="new 0 0 73 12" xml:space="preserve">
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601" points="6.5,0 8,5 13,5 9,7.7 10,12 6.5,9.2 3,12 4,7.7 0,5 5,5"/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601" points="66.5,0 68,5 73,5 69,7.7 70,12 66.5,9.2 63,12 64,7.7 60,5 65,5 "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601" points="21.5,0 23,5 28,5 24,7.7 25,12 21.5,9.2 18,12 19,7.7 15,5 20,5 "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601" points="51.5,0 53,5 58,5 54,7.7 55,12 51.5,9.2 48,12 49,7.7 45,5 50,5 "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601" points="36.5,0 38,5 43,5 39,7.7 40,12 36.5,9.2 33,12 34,7.7 30,5 35,5 "/>
+</svg>
+                                </div>
+                                </div>
+                            </span>
+                            </div>
+                            <div class="price">
+                                <div data-type-currency="$" class="sale-price">55.00</div>
+                                <div data-type-currency="$" class="full-price">84.00</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart">
+                        <div class="img">
+                            <img src="dist/ima/fm_radio_adapter_car_hands-free%201.png" alt="">
                         </div>
                         <div class="product-actions">
                             <div class="buy">
@@ -771,7 +1022,7 @@ Argentina</span>
                 </button>
             </div>
             <script>
-                var slider = $('.container').smilecarousel({
+                var slider = $('.containers').smilecarousel({
                     delay: 500,
                     toShow: 4,
                     toSlide: 1,

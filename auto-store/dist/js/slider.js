@@ -64,7 +64,7 @@
             if (this.options.beforeSlide) this.options.beforeSlide()
             this.itemWrap.animate({'margin-left': -(this.options.currentSlide * this.options.itemWidth) + 'px'}, this.options.delay, function () {
 
-            })
+            });
         },
         _setArrow: function () {
             if (this.options.currentSlide == this.options.countSlide - this.options.toShow){
@@ -72,17 +72,17 @@
             } else if (this.options.currentSlide == 0){
                 this.prev.addClass('disable')
             } else{
-                this.next.removeClass('disable')
+                this.next.removeClass('disable');
                 this.prev.removeClass('disable')
             };
         },
         toNext: function () {
-            this._getCurrentSlide( true)
+            this._getCurrentSlide( true);
             this._setArrow();
             this._go();
         },
         toPrev: function () {
-            this._getCurrentSlide( false)
+            this._getCurrentSlide( false);
             this._setArrow();
             this._go();
         }
