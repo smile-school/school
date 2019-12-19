@@ -91,13 +91,11 @@
                                 <span data-bind="click: $root.removeCart">x</span>
                                 <div class="mini-cart__params">
                                     <a href="#" class="link mini-cart__title" data-bind="text:title"></a>
-                                    <input type="checkbox" name="details" id="details">
-                                    <label for="details" class="mini-cart__details-toggle">
-                                        <span>See Details</span>
-                                    </label>
+                                    <span>See Details</span>
                                     <div class="mini-cart__details-block">
-                                        <span class="mini-cart__details-name" data-bind="if:color() != ''">Color</span><span data-bind="text: color"></span>
+                                        <span class="mini-cart__details-name" data-bind="if:color() != ''">Color</span><span data-bind="text:color"></span>
                                         <span class="mini-cart__details-name" data-bind="if:brand() != ''">Brand</span><span data-bind="text:brand"></span>
+                                        <span class="mini-cart__details-name" data-bind="if:model() != ''">Model</span><span data-bind="text:model"></span>
                                     </div>
                                 </div>
                             </div>
@@ -122,89 +120,6 @@
                 </div>
             </div>
         </div>
-        <!--<div class="header__navigation clearfix-block">
-            <div class="col-1 categories__menu">
-                <div class="categories__menu__item">
-                    All Categories
-                </div>
-                <span class="categories__menu__burger"></span>
-            </div>
-            <div class="col-3 nav-menu">
-                <ul>
-                    <li class="nav-menu__item">
-                        Home
-                        <i class="fas fa-angle-down"></i>
-                    </li>
-                    <li class="nav-menu__item">
-                        <a href="#" class="link" title="Deals">Deals</a>
-                    </li>
-                    <li class="nav-menu__item">
-                        <a href="#" class="link" title="Under $100">Under $100</a>
-                    </li>
-                    <li class="nav-menu__item">
-                        <a href="#" class="link" title="New Arrivals">New Arrivals</a>
-                    </li>
-                    <li class="nav-menu__item">
-                        <a href="#" class="link" title="Blog">Blog</a>
-                    </li>
-                    <li class="nav-menu__item">
-                        <a href="#" class="link" title="About Us">About Us</a>
-                    </li>
-                    <li class="nav-menu__item">
-                        <a href="#" class="link" title="Contact Us">Contact Us</a>
-                    </li>
-                    <div class="submenu-container">
-                        <ul class="nav-links-menu">
-                            <li class="nav-links-menu__heading">
-                                layouts
-                            </li>
-                            <li><a href="#" class="link nav-links-menu__item">Homepage Style 1</a></li>
-                            <li><a href="#" class="link nav-links-menu__item">Homepage Style 2</a></li>
-                            <li><a href="#" class="link nav-links-menu__item">Homepage Style 3</a></li>
-                            <li><a href="#" class="link nav-links-menu__item">Homepage Style 4</a></li>
-                            <li><a href="#" class="link nav-links-menu__item">Homepage Style 5</a></li>
-                            <li><a href="#" class="link nav-links-menu__item">Homepage Style 6</a></li>
-                            <li><a href="#" class="link nav-links-menu__item">Homepage Style 7</a></li>
-                            <li><a href="#" class="link nav-links-menu__item">Homepage Style 8</a></li>
-                            <li><a href="#" class="link nav-links-menu__item">Boxed Layout</a></li>
-                            <li><a href="#" class="link nav-links-menu__item">Right To Left</a> </li>
-                            <li><a href="#" class="link nav-links-menu__item">HOT LISTING LAYOUTS</a></li>
-                            <li><a href="#" class="link nav-links-menu__item">Without Sidebar</a></li>
-                            <li><a href="#" class="link nav-links-menu__item">Left Sidebar</a></li>
-                            <li><a href="#" class="link nav-links-menu__item">Right Sidebar</a></li>
-                            <li><a href="#" class="link nav-links-menu__item">Left - Right Sidebar</a></li>
-                        </ul>
-                        <ul class="nav-links-menu">
-                            <li class="nav-links-menu__heading">
-                                listing layouts
-                            </li>
-                            <li><a href="#" class="link nav-links-menu__item">Without Sidebar</a></li>
-                            <li><a href="#" class="link nav-links-menu__item">Left Sidebar</a></li>
-                            <li><a href="#" class="link nav-links-menu__item">Right Sidebar</a></li>
-                            <li><a href="#" class="link nav-links-menu__item">Left - Right Sidebar</a></li>
-                        </ul>
-                        <ul class="nav-links-menu">
-                            <li class="nav-links-menu__heading">
-                                detail layouts
-                            </li>
-                            <li><a href="#" class="link nav-links-menu__item">Product Detail - Full</a></li>
-                            <li><a href="#" class="link nav-links-menu__item">Product Detail - Left Sidebar</a></li>
-                            <li><a href="#" class="link nav-links-menu__item">Product Detail - Right Sidebar</a></li>
-                            <li><a href="#" class="link nav-links-menu__item">Thumb Horizontal</a></li>
-                            <li><a href="#" class="link nav-links-menu__item">Thumb Vertical</a></li>
-                        </ul>
-                        <ul class="nav-links-menu">
-                            <li class="nav-links-menu__heading">
-                                tab types
-                            </li>
-                            <li><a href="#" class="link nav-links-menu__item">Vertical</a></li>
-                            <li><a href="#" class="link nav-links-menu__item">Horizontal</a></li>
-                            <li><a href="#" class="link nav-links-menu__item">Accordion</a></li>
-                        </ul>
-                    </div>
-                </ul>
-            </div>
-        </div>-->
     </div>
 </header>
 <main class="products__content">
@@ -426,7 +341,7 @@
             if(value){
                 this[nameAttribute + 'Options'].push(value);
             }
-        }
+        };
         this.required = ko.observable(false);
         this.addProduct = function () {
             if(this.title() && this.img() && this.price() && this.color() && this.brand() && this.model() && this.year()){
@@ -544,8 +459,6 @@
             }
         }
         this.addCart = function (product) {
-            //console.log(product);
-            //cart.cartList.push(product);
             var status = false;
             var i = 0;
             for(; i < cart.cartList().length; i++){
@@ -555,13 +468,9 @@
                 }
             }
             product.qty(product.qty() + 1);
-            //cart.totalQty(cart.totalQty() + 1);
             if(!status){
                 cart.cartList.push(product);
-                //console.log(cart.cartList());
             }
-            //cart.cartList()[i].qty(cart.cartList()[i].qty() + 1);
-            //console.log(cart.cartList()[i].qty());
         }
     }
 
