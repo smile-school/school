@@ -68,7 +68,9 @@
                 <span class="search__button"></span>
             </div>
             <div class="col-1 cart-block clearfix-block">
-                <div class="wish-list"></div>
+                <div class="wish-list" id="favorite" data-bind="css:{active: favList().length > 0}">
+                    <span class="cart__counter" data-bind="text:favList().length">0</span>
+                </div>
                 <div class="cart-wrapper" id="minicart">
                 <div class="cart">
                     <span class="shopping-basket">
@@ -102,8 +104,9 @@
                             <div class="mini-cart__counter">
                                 <span>Qty:</span>
                                 <input type="text" data-bind="value:qty">
-                                <span class="mini-cart__update-btn">Update</span>
-                                <span class="mini-cart__counter__sum" data-bind="text:$data.sale() ? salePrice() : price()"></span>
+                                <span class="mini-cart__update-btn" data-bind="click:function() {qty(qty() + 1)}">+</span>
+                                <span class="mini-cart__update-btn" data-bind="click:function(product) {qty() > 1 ? qty(qty() - 1) : $root.removeCart(product)}">-</span>
+                                <span class="mini-cart__counter__sum" data-bind="text:$data.sale() ? salePrice() * qty() : price() * qty()"></span>
                             </div>
                         </li>
                     </ul>
@@ -280,7 +283,7 @@
                         <img  data-bind="attr:{src:img, alt:title}">
                     </div>
                     <div class="product-item__controls">
-                        <a href="#" class="wish-list_btn"></a>
+                        <a href="#" class="wish-list_btn" data-bind="click: $root.addFavorite, css:{wish: favorite}"></a>
                         <a href="#" class="link cart_btn" data-bind="click: $root.addCart">add to cart(<span data-bind="text:qty"></span>)</a>
                         <a href="#" class="compare_btn" data-bind="click: $root.addCompare, css:{active: compaired}"></a>
                     </div>
@@ -397,6 +400,7 @@
             return html;
         }, this);
         this.compaired = ko.observable(false);
+        this.favorite = ko.observable(false);
     }
 
     function AddProduct() {
@@ -471,13 +475,32 @@
         }
     }
 
+    function Favorites() {
+        this.favList = ko.observableArray([]);
+    }
+
     function Cart() {
         this.cartList = ko.observableArray([]);
-        this.totalQty = ko.observable(0);
-        this.totalCart = ko.observable(0);
-        this.removeCart = function () {
-
-        }
+        this.totalQty = ko.computed(function () {
+            var totalQty = 0,
+                list = this.cartList();
+            for(var key in list){
+                totalQty += list[key].qty();
+            }
+            return totalQty;
+        },this);
+        this.totalCart = ko.computed(function () {
+            var totalCart = 0,
+                list = this.cartList();
+            for(var key in list){
+                totalCart += list[key].sale() ? list[key].salePrice() * list[key].qty() : list[key].price() * list[key].qty();
+            }
+            return totalCart;
+        },this);
+        this.removeCart = function (product) {
+            product.qty(0);
+            this.cartList.remove(product);
+        }.bind(this);
     }
 
     function ProductList() {
@@ -507,6 +530,19 @@
             }
             console.log(product.compaired());
         };
+        this.addFavorite = function (product) {
+            console.log(product);
+            if(!product.favorite()){
+                favorite.favList.push(product);
+                product.favorite(true);
+                console.log(favorite.favList().length);
+            }
+            else{
+                console.log('remove');
+                favorite.favList.remove(product);
+                product.favorite(false);
+            }
+        }
         this.addCart = function (product) {
             //console.log(product);
             //cart.cartList.push(product);
@@ -519,7 +555,7 @@
                 }
             }
             product.qty(product.qty() + 1);
-            cart.totalQty(cart.totalQty() + 1);
+            //cart.totalQty(cart.totalQty() + 1);
             if(!status){
                 cart.cartList.push(product);
                 //console.log(cart.cartList());
@@ -531,6 +567,7 @@
 
     var attributes = new Attributes(),
         compare = new Compare(),
+        favorite = new Favorites(),
         product = new Product(),
         addProduct = new AddProduct(),
         productList = new ProductList();
@@ -541,6 +578,7 @@
     ko.applyBindings(productList,document.querySelector('#productList'));
     ko.applyBindings(compare, document.querySelector("#compare"));
     ko.applyBindings(cart, document.querySelector('#minicart'));
+    ko.applyBindings(favorite, document.querySelector("#favorite"))
 
     /*productList.productList.subscribe(function (value) {
         //console.log(value[0].title);
@@ -560,9 +598,9 @@
     /*productList.productList.push(
         new Product('Car cit', '../ima/car_kit.png', 50, 40, false, false, 5, 'red', 'BMW', 'X5', '2019')
     );*/
-    productList.addProduct(new Product('Car Kit Hands Free Calling', '../ima/car_kit.png', 50, 80, false, false, 5, 'red', 'BMW', 'X5', '2019'));
-    productList.addProduct(new Product('Design in car fm radio', '../ima/car_fm_radio.png', 150, 40, false, false, 5, 'black', 'Toyota', 'Corolla', '2012'));
-    productList.addProduct(new Product('Car cit', '../ima/car_kit.png', 50, 100, false, false, 5, 'green', 'Mazda', '6', '2017'));
+    productList.addProduct(new Product('Car Kit Hands Free Calling', '../ima/car_kit.png', 80, 50, false, false, 5, 'red', 'BMW', 'X5', '2019'));
+    productList.addProduct(new Product('Design in car fm radio', '../ima/car_fm_radio.png', 150, 0, false, false, 5, 'black', 'Toyota', 'Corolla', '2012'));
+    productList.addProduct(new Product('Car cit', '../ima/car_kit.png', 100, 50, false, true, 5, 'green', 'Mazda', '6', '2017'));
 </script>
 </body>
 </html>
