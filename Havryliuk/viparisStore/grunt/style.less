@@ -1,0 +1,67 @@
+
+* {
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+    color: @base2-color;
+    &:hover{
+        color: @hover;
+        cursor: pointer;
+    }
+    &.active{
+            color: #eb2645;
+    }
+}
+li{
+    list-style-type: none;
+}
+body{
+    background-color: lightgrey;
+    font-family: 'Pontano Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Pontano Sans'), local('PontanoSans-Regular'), url(https://fonts.gstatic.com/s/pontanosans/v7/qFdD35GdgYR8EzR6oBLDHa3axT8I.ttf) format('truetype');
+}
+.wrapper {
+    display: block;
+    margin: 0 auto;
+    max-width: 1380px;
+    background-color: @base-color;
+    //padding: 0 50px;
+}
+input[type=radio]{
+    display: none;
+}
+input[type=checkbox]{
+    display: none;
+}
+// input[type=button]{
+//    display: none;
+//}
+select, option {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: 1px solid @border-color;
+    background-color: @response-color;
+    position: relative;
+}
+label{
+    cursor: pointer;
+    position: relative;
+}
+.row{
+    margin: 0 -50px;
+}
+.col1{
+    width: 100%;
+}
+.col2{
+    width: 50%;
+}
+.col3{
+    width: 33.33%;
+}
+.col4{
+    width: 25%;
+}

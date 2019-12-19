@@ -1,0 +1,136 @@
+.footer-contact{
+    background-color: @hover;
+    ul{
+        display: flex;
+        justify-content: center;
+    }
+    li{
+        padding: 30px;
+        display: flex;
+        align-self: center;
+    }
+    a{
+        text-transform: uppercase;
+        color: @base-color;
+        height: 100%;
+        margin-left: 16px;
+        &:hover{
+            color: @base-color;
+            text-decoration: underline;
+        }
+    }
+}
+.footer-info{
+    background-color: @banner;
+    padding-top: 52px;
+    display: flex;flex-flow: row;
+    .left-infos{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .left-info{
+        text-align: center;
+        margin-bottom: 42px;
+        h4{
+            color: @base-color;
+            text-transform: uppercase;
+        }
+        hr{
+            border: none;
+            background-color: @hover;
+            width: 18px;
+            height: 3px;
+            margin: 10px auto;
+        }
+        a{
+            color: @txt2-color;
+            &:hover{
+                color: @base-color;
+                text-decoration: underline;
+                transition: .5s linear;
+            }
+        }
+    }
+    p{
+        color: @txt2-color;
+    }
+    .subscription,
+    .about-us{
+        padding-right: 55px;
+        h3,h4{
+            color: @base-color;
+            padding-bottom: 10px;
+        }
+        .email{
+            margin: 19px 0 30px 0;
+            position: relative;
+            input[type=text]{
+                padding: 16px 5px 16px 20px;
+                background-color: @base-color;
+                width: 100%;
+            }
+            button{
+                position: absolute;
+                right: 5px;
+                top: 5px;
+                background-color: @hover;
+                color: @base-color;
+                border: 0;
+                height: 42px;
+                width: 42px;
+                cursor: pointer;
+                font-weight: 700;
+            }
+        }
+        .social{
+            padding-top: 22px;
+            span{
+                display: inline-block;
+                text-align: center;
+                background-color: @social;
+                border-radius: 50%;
+                width: 30px;
+                height: 30px;
+                padding: 8px 6px;
+                margin-right: 13px;
+                &:hover{
+                    background-color: @base-color;
+                    transition: .2s linear;
+                }
+            }
+        }
+    }
+    .about-us a{
+        padding-top: 10px;
+        display: inline-block;
+        width: 100%;
+        color: #b59c84;
+        &:hover{
+            color: #b59c84;
+            text-decoration: underline;
+        }
+    }
+}
+.bottom-footer{
+    background-color: @banner;
+    padding-top: 39px;
+    .wrapper{
+        margin: 0 50px;
+        padding: 25px 0;
+        border-top: 1px solid @footerHr;
+        background-color: @banner;
+        color: @txt4-color;
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+        ul{
+            display: flex;
+            li{
+                padding: 0 20px;
+            }
+        }
+        a{
+            color: @txt4-color;
+        }
+    }
+}
