@@ -12,7 +12,11 @@
 <header class="header">
     <div class="top-section">
         <div class="wrapper header-top">
+
             <div class="logotype-wrap col-1">
+                <button class="hamb-menu-but">
+                    <span class="row">&nbsp;</span>
+                </button>
                 <a href="#">
                     <svg xmlns="http://www.w3.org/2000/svg"
                          xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -22,20 +26,24 @@
                     </svg>
                 </a>
             </div>
-            <ul class="header-exp col-3">
+            <ul class="header-exp col-2">
                 <li class="section">
                     <a href="#" class="log-in">mon compte</a>
                 </li>
-                <li class="section">
+                <li class="section like-prod">
                     <a href="#" class="like">liste d'achats</a>
+                    <button class="likes-but"><span>&nbsp;</span></button>
                 </li>
                 <li class="section language">
                     <a href="#" class="language-select">&nbsp;</a>
                     <a href="#" class="language-select">&nbsp;</a>
                 </li>
-                <li class="section basket">
+                <li class="search">
+                    <button class="search-form"><span>&nbsp;</span></button>
+                </li>
+                <li class="section cart">
                     <span class="number">10</span>
-                    <a href="#" class="shop-basket">&nbsp;</a>
+                    <a href="#" class="shop-cart">&nbsp;</a>
                 </li>
             </ul>
         </div>
@@ -91,7 +99,7 @@
                 Palais des Congrès de Paris
             </span>&nbsp;
             <span class="date">
-                du 01/10/2016 au 16/11/2016
+                du&nbsp;01/10/2016&nbsp;au&nbsp;16/11/2016
             </span>
         </p>
         <div class="filter-links">
@@ -104,45 +112,47 @@
     </h3>
     <div class="content">
         <div class="aside col-1">
-            <p>votre Sélection</p>
-            <div class="point">
-                <span>Vendeur n°1</span>
-                <button class="close">&nbsp;</button>
-            </div>
-            <div class="point second">
-                <span>Vendeur numéro trois sur&nbsp;2&nbsp;deux&nbsp;lignes</span>
-                <button class="close">&nbsp;</button>
-            </div>
-            <div class="point filters">
-                <p>Catégories</p>
-                <p>prix</p>
-                <p>Vendeur</p>
-            </div>
-            <div class="labels-filter-wrap">
-                <label>
-                    <input type="checkbox">
-                    <span class="check-box">&nbsp;</span>
+            <div class="filters-wrap">
+                <p class="filter-title">votre Sélection</p>
+                <div class="point">
                     <span>Vendeur n°1</span>
-                    <span class="number-wrap">(<span class="number">12</span>)</span>
-                </label>
-                <label>
-                    <input type="checkbox" checked>
-                    <span class="check-box">&nbsp;</span>
-                    <span>Vendeur numéro 2</span>
-                    <span class="number-wrap">(<span class="number">28</span>)</span>
-                </label>
-                <label>
-                    <input type="checkbox" checked>
-                    <span class="check-box">&nbsp;</span>
-                    <span>Vendeur numéro trois sur 2&nbsp;deux lignes</span>
-                    <span class="number-wrap">(<span class="number">17</span>)</span>
-                </label>
-                <label>
-                    <input type="checkbox">
-                    <span class="check-box">&nbsp;</span>
-                    <span>Vendeur n°4</span>
-                    <span class="number-wrap">(<span class="number">53</span>)</span>
-                </label>
+                    <button class="close">&nbsp;</button>
+                </div>
+                <div class="point second">
+                    <span>Vendeur numéro trois sur&nbsp;2&nbsp;deux&nbsp;lignes</span>
+                    <button class="close">&nbsp;</button>
+                </div>
+                <div class="point filters">
+                    <p>Catégories</p>
+                    <p>prix</p>
+                    <p>Vendeur</p>
+                </div>
+                <div class="labels-filter-wrap">
+                    <label>
+                        <input type="checkbox">
+                        <span class="check-box">&nbsp;</span>
+                        <span>Vendeur n°1</span>
+                        <span class="number-wrap">(<span class="number">12</span>)</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" checked>
+                        <span class="check-box">&nbsp;</span>
+                        <span>Vendeur numéro 2</span>
+                        <span class="number-wrap">(<span class="number">28</span>)</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" checked>
+                        <span class="check-box">&nbsp;</span>
+                        <span>Vendeur numéro trois sur 2&nbsp;deux lignes</span>
+                        <span class="number-wrap">(<span class="number">17</span>)</span>
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        <span class="check-box">&nbsp;</span>
+                        <span>Vendeur n°4</span>
+                        <span class="number-wrap">(<span class="number">53</span>)</span>
+                    </label>
+                </div>
             </div>
             <div class="information">
                 <p class="title-text">
@@ -156,10 +166,14 @@
                 </p>
                 <p class="more">Télécharger le gabarit du plan</p>
             </div>
+            <button class="filters-button"><span>Filtrer par</span></button>
         </div>
         <div class="main-cont col-3">
             <div class="filter-wrap">
                 <p><span>137</span> Produits</p>
+                <button class="filters-open">
+                    Prix
+                </button>
                 <div class="filters">
                     <label>
                         <select name="pages" id="pages">
@@ -211,14 +225,16 @@
                 <div class="image-wrap">
                     <img src="img/Calque_37.png" alt="">
                 </div>
-                <div class="title-wrap">
-                    <p><a href="#">Branchement intermittent 240 V</a></p>
-                    <span>En stock</span>
-                    <span class="rupture">En rupture de stock</span>
-                </div>
-                <div class="buttons-wrap">
-                    <p>A partir de <span>00,00 € HT</span></p>
-                    <button>voir le produit</button>
+                <div class="info-wrap">
+                    <div class="title-wrap">
+                        <p><a href="#">Branchement intermittent 240 V</a></p>
+                        <span>En stock</span>
+                        <span class="rupture">En rupture de stock</span>
+                    </div>
+                    <div class="buttons-wrap">
+                        <p>A partir de <span>00,00&nbsp;€&nbsp;HT</span></p>
+                        <button>voir le produit</button>
+                    </div>
                 </div>
             </div>
             <div class="card-wrap rupture">
@@ -226,29 +242,16 @@
                 <div class="image-wrap">
                     <img src="img/Calque_38.png" alt="">
                 </div>
-                <div class="title-wrap">
-                    <p><a href="#">Branchement intermittent 240 V</a></p>
-                    <span class="stock">En stock</span>
-                    <span class="rupture">En rupture de stock</span>
-                </div>
-                <div class="buttons-wrap">
-                    <p>A partir de <span>00,00 € HT</span></p>
-                    <button>voir le produit</button>
-                </div>
-            </div>
-            <div class="card-wrap">
-                <span>&nbsp;</span>
-                <div class="image-wrap">
-                    <img src="img/Calque_39.png" alt="">
-                </div>
-                <div class="title-wrap">
-                    <p><a href="#">Transformateur électrique</a></p>
-                    <span>En stock</span>
-                    <span class="rupture">En rupture de stock</span>
-                </div>
-                <div class="buttons-wrap">
-                    <p>A partir de <span>00,00 € HT</span></p>
-                    <button>voir le produit</button>
+                <div class="info-wrap">
+                    <div class="title-wrap">
+                        <p><a href="#">Branchement intermittent 240 V</a></p>
+                        <span class="stock">En stock</span>
+                        <span class="rupture">En rupture de stock</span>
+                    </div>
+                    <div class="buttons-wrap">
+                        <p>A partir de <span>00,00&nbsp;€&nbsp;HT</span></p>
+                        <button>voir le produit</button>
+                    </div>
                 </div>
             </div>
             <div class="card-wrap">
@@ -256,14 +259,16 @@
                 <div class="image-wrap">
                     <img src="img/Calque_39.png" alt="">
                 </div>
-                <div class="title-wrap">
-                    <p><a href="#">Transformateur électrique</a></p>
-                    <span>En stock</span>
-                    <span class="rupture">En rupture de stock</span>
-                </div>
-                <div class="buttons-wrap">
-                    <p>A partir de <span>00,00 € HT</span></p>
-                    <button>voir le produit</button>
+                <div class="info-wrap">
+                    <div class="title-wrap">
+                        <p><a href="#">Transformateur électrique</a></p>
+                        <span>En stock</span>
+                        <span class="rupture">En rupture de stock</span>
+                    </div>
+                    <div class="buttons-wrap">
+                        <p>A partir de <span>00,00&nbsp;€&nbsp;HT</span></p>
+                        <button>voir le produit</button>
+                    </div>
                 </div>
             </div>
             <div class="card-wrap">
@@ -271,14 +276,33 @@
                 <div class="image-wrap">
                     <img src="img/Calque_39.png" alt="">
                 </div>
-                <div class="title-wrap">
-                    <p><a href="#">Transformateur électrique</a></p>
-                    <span>En stock</span>
-                    <span class="rupture">En rupture de stock</span>
+                <div class="info-wrap">
+                    <div class="title-wrap">
+                        <p><a href="#">Transformateur électrique</a></p>
+                        <span>En stock</span>
+                        <span class="rupture">En rupture de stock</span>
+                    </div>
+                    <div class="buttons-wrap">
+                        <p>A partir de <span>00,00&nbsp;€&nbsp;HT</span></p>
+                        <button>voir le produit</button>
+                    </div>
                 </div>
-                <div class="buttons-wrap">
-                    <p>A partir de <span>00,00 € HT</span></p>
-                    <button>voir le produit</button>
+            </div>
+            <div class="card-wrap">
+                <span>&nbsp;</span>
+                <div class="image-wrap">
+                    <img src="img/Calque_39.png" alt="">
+                </div>
+                <div class="info-wrap">
+                    <div class="title-wrap">
+                        <p><a href="#">Transformateur électrique</a></p>
+                        <span>En stock</span>
+                        <span class="rupture">En rupture de stock</span>
+                    </div>
+                    <div class="buttons-wrap">
+                        <p>A partir de <span>00,00&nbsp;€&nbsp; HT</span></p>
+                        <button>voir le produit</button>
+                    </div>
                 </div>
             </div>
             <div class="paginator">
@@ -315,8 +339,8 @@
                 </span>
                 <div class="devis-text">
                     <p>Devis</p>
-                    <p>Aucun produit ne correspond à votre recherche
-                        Un&nbsp;besoin sur mesure ou une demande de prestation
+                    <p>Aucun&nbsp;produit&nbsp;ne&nbsp;correspond&nbsp;à&nbsp;votre recherche
+                        Un&nbsp;besoin&nbsp;sur&nbsp;mesure&nbsp;ou&nbsp;une&nbsp;demande de&nbsp;prestation
                     </p>
                 </div>
                 <div class="demandez">
@@ -339,7 +363,7 @@
     <div class="wrapper">
         <div class="top-footer-section">
             <ul class="contacts-info">
-                <li><p>Besoin d'aide ?</p></li>
+                <li><p>Besoin&nbsp;d'aide&nbsp;?</p></li>
                 <li><a href="#">faq</a></li>
                 <li><a href="#">tchat</a></li>
                 <li><a href="#">appeler</a></li>
@@ -350,48 +374,66 @@
             <li class="footer-column">
                 <div class="column-sect">
                     <div class="row">
-                        <p>premier salon</p>
+                        <p>premier&nbsp;salon</p>
                         <span>Les informations clés</span>
                     </div>
                     <div class="row">
-                        <p>Service exposants</p>
+                        <p>Service&nbsp;exposants</p>
                         <span>Les conseils <br/> de nos experts</span>
                     </div>
                 </div>
                 <div class="column-sect">
                     <div class="row">
-                        <p>Liste d’achats</p>
+                        <p>Liste&nbsp;d’achats</p>
                         <span>Réservez avant <br> de commander</span>
                     </div>
                     <div class="row">
-                        <p>Devenir prestataire</p>
+                        <p>Devenir&nbsp;prestataire</p>
                         <span>Donnez de la visibilité<br/>à vos produits</span>
                     </div>
                 </div>
             </li>
             <li class="footer-column">
-               <div class="column-sect">
-                   <div class="row">
-                       <p>Lettre d’information</p>
-                       <span>Etre alerté des avantages & nouveautés</span>
-                       <label>
-                           <input type="text" placeholder="Votre adresse mail">
-                           <button>ok</button>
-                       </label>
-                   </div>
-                   <div class="row">
-                       <p>Viparis social</p>
-                       <span>Restez connecter sur les réseaux sociaux</span>
-                       <div class="social">
-                           <a href="#">&nbsp;</a>
-                           <a href="#">&nbsp;</a>
-                           <a href="#">&nbsp;</a>
-                       </div>
-                   </div>
-               </div>
+                <div class="column-sect">
+                    <div class="row">
+                        <p>Lettre d’information</p>
+                        <span>Etre alerté des avantages & nouveautés</span>
+                        <label>
+                            <input type="text" placeholder="Votre adresse mail">
+                            <button>ok</button>
+                        </label>
+                    </div>
+                    <div class="row">
+                        <p>Viparis social</p>
+                        <span>Restez connecter sur les réseaux sociaux</span>
+                        <div class="social">
+                            <a href="#">&nbsp;</a>
+                            <a href="#">&nbsp;</a>
+                            <a href="#">&nbsp;</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="column-sect">
+                    <div class="row">
+                        <p>Sites du groupe</p>
+                        <span>Découvrez notre groupe</span>
+                        <a href="#">viparis.com </a> <a href="#">venuesinparis.com</a>
+                    </div>
+                </div>
             </li>
         </ul>
+        <div class="bottom-footer-section">
+            <span>© Viparis 2016</span>
+            <ul>
+                <li><a href="#">A propos de Viparis</a></li>
+                <li><a href="#">Crédits & mentions légales</a></li>
+                <li><a href="#">Cookies</a></li>
+                <li><a href="#">CGV - CGU</a></li>
+            </ul>
+        </div>
+        <button class="page-up">&nbsp;</button>
     </div>
+
 </footer>
 </body>
 </html>
