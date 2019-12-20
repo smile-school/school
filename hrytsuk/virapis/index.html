@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <meta name="viewport" content="width=device-width, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://kit.fontawesome.com/61ebcc7c53.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="Proxima-nova/stylesheet.css">
     <link rel="stylesheet" href="grunt/dist/css/style.css">
@@ -11,6 +12,7 @@
 <body>
     <header>
         <div class="top-header">
+            <button class="btn-drop-down"><i class="fas fa-bars"></i></button>
             <div class="wrapper">
                 <div class="header-top">
                         <a href="#" class="logo">
@@ -18,19 +20,28 @@
                         </a>
                     <div class="param-header">
                         <ul class="compte">
-                            <li><a href="#">
-                                <i class="fas fa-user"></i>Mon Compte
+                            <li><a href="#" class="mon-compte">
+                               Mon Compte
                             </a></li>
-                            <li><a href="#">
-                                <i class="fas fa-heart"></i>LISTE D`ACHATS
+                            <li><a href="#" class="liste-achats">
+                                LISTE D`ACHATS
                             </a></li>
                             <li class="flag">
                                 <a href="#"><img src="./img/fran.png" alt="france"></a>
                                 <a href="#"><img src="./img/gb.svg" alt="gb"></a>
                             </li>
                         </ul>
+                        <ul class="list-btn-top">
+                            <li><a href="#">
+                                <img src="./img/Slice_1.png" alt="slice">
+                            </a></li>
+                            <li><a href="#">
+                                <img src="./img/Loupe.png" alt="loupe">
+                            </a></li>
+                        </ul>
                         <span class="bloc-shop">
                             <a href="#" class="shop">
+                             <span class="counts">10</span>
                             <i class="fas fa-shopping-cart"></i>
                             </a>
                         </span>
@@ -66,7 +77,7 @@
             </div>
         </div>
     </header>
-    <main>
+    <main class="main">
         <div class="wrapper">
             <div class="content">
                 <div class="way-top">
@@ -99,6 +110,7 @@
                 </div>
                 <div class="content-products">
                     <aside class="left-aside">
+                        <div class="filter-aside">
                         <h4 class="title-4">votre Sélection</h4>
                         <div class="adide-bloc">
                             <span>Vendeur n°1</span>
@@ -122,32 +134,32 @@
                         <div class="filter-checked">
                             <ul class="ul-filter">
                                 <li>
-                                    <input type="checkbox" name="ven1" id="vend1">
                                     <label for="vend1">
+                                        <input type="checkbox" name="ven1" id="vend1">
                                         <span class="frame-shecked"></span>
                                         <span class="text-checbox">Vendeur n°1</span>
                                         <span class="quantity">(12)</span>
                                     </label>
                                 </li>
                                 <li>
-                                    <input type="checkbox" name="ven2" id="vend2">
                                     <label for="vend2">
+                                        <input type="checkbox" name="ven2" id="vend2" checked>
                                         <span class="frame-shecked"></span>
                                         <span class="text-checbox">Vendeur numéro 2</span>
                                         <span class="quantity">(28)</span>
                                     </label>
                                 </li>
                                 <li>
-                                    <input type="checkbox" name="ven3" id="vend3">
                                     <label for="vend3">
+                                        <input type="checkbox" name="ven3" id="vend3" checked>
                                         <span class="frame-shecked"></span>
                                         <span class="text-checbox">Vendeur numéro trois sur 2 deux lignes</span>
                                         <span class="quantity">(17)</span>
                                     </label>
                                 </li>
                                 <li>
-                                    <input type="checkbox" name="ven4" id="vend4">
                                     <label for="vend4">
+                                        <input type="checkbox" name="ven4" id="vend4">
                                         <span class="frame-shecked"></span>
                                         <span class="text-checbox">VVendeur n°4</span>
                                         <span class="quantity">(53)</span>
@@ -155,13 +167,17 @@
                                 </li>
                             </ul>
                         </div>
+                        </div>
                         <div class="realize">
                             <div class="top-reliz">
                                 <img src="./img/Forme_10.svg" alt="forme">
                                 <h3 class="reliz-title">Réalisez le plan de vote stand</h3>
                             </div>
                             <p class="text-realize">Les produits électriques nécessitent que vous complétiez le plan à transmettre lors de la commande pour réaliser l'installation.</p>
-                            <a href="#" class="text-realize domload-realiz">Télécharger le gabarit du plan</a>
+                            <a href="#" class=" domload-realiz">Télécharger le gabarit du plan</a>
+                        </div>
+                        <div class="filter-rar">
+                            <a href="#">Filtrer par</a>
                         </div>
                     </aside>
                     <div class="main-product">
@@ -359,21 +375,21 @@
             <div class="wrapper">
                 <div class="footer-group-info">
                     <div class="list-bloc-footer">
-                        <h3>premier salon</h3>
+                        <h3><span>premier salon</span></h3>
                         <p>Les informations clés</p>
                     </div>
                     <div class="list-bloc-footer mod-list-bloc">
-                        <h3>Liste d’achats</h3>
+                        <h3><span>Liste d’achats</span></h3>
                         <p>Réservez avant<br>
                             de commander</p>
                     </div>
                     <div class="list-bloc-footer free-list">
-                        <h3>Service exposants</h3>
+                        <h3><span>Service exposants</span></h3>
                         <p>Les conseils<br>
                             de nos experts</p>
                     </div>
                     <div class="list-bloc-footer mod-list-bloc devenir">
-                        <h3>Devenir prestataire</h3>
+                        <h3><span>Devenir prestataire</span></h3>
                         <p>Donnez de la visibilité<br>
                             à vos produits</p>
                     </div>

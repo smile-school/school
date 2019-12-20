@@ -161,6 +161,7 @@ aside.left-aside{
 .aside-close-btn{
     position: absolute;
     top: 50%;
+    cursor: pointer;
     right: 10px;
     transform: translate(-50%, -50%);
     width: 12px;
@@ -223,10 +224,8 @@ aside.left-aside{
 .ul-filter{
     li{
         list-style-type: none;
-        & > input[type=checkbox]{
-            display: none;
-        }
         label{
+            cursor: pointer;
             display: block;
             padding: 7px 49px 12px;
             border-bottom: 1px solid @border-color;
@@ -251,6 +250,13 @@ aside.left-aside{
                 top: 50%;
                 right: 16px;
                 transform: translateY(-65%);
+            }
+            & > input[type=checkbox]{
+                display: none;
+                &:checked + .frame-shecked{
+                        background:url("../../../img/recnal.png") 2px 6px no-repeat;
+                    }
+
             }
         }
     }
@@ -467,6 +473,7 @@ aside.left-aside{
     border: none;
     outline: 0;
     width: 100%;
+    cursor: pointer;
     display: block;
     text-transform: uppercase;
     line-height: 42px;
@@ -629,5 +636,136 @@ aside.left-aside{
     img{
         align-self: center;
         display: flex;
+    }
+}
+.filter-rar{
+    width: 47%;
+    box-sizing: border-box;
+    box-shadow: 0 0 0 @border-color;
+    border: 1px solid @color-bacground;
+    display: flex;
+    align-items: center;
+    padding-left: 16px;
+    a{
+        display: block;
+        color: @color-bacground;
+        font-size: @f-size-label;
+        font-weight: 700;
+        line-height: 27px;
+        text-transform: uppercase;
+        letter-spacing: 0.14px;
+        text-decoration: none;
+    }
+}
+
+@media screen  and (max-width: 1024px){
+    .way-top{
+        display: none;
+    }
+    main.main{
+        .wrapper{
+            padding: 0 8px;
+            .content{
+                padding: 0;
+                .parametr-data{
+                    flex-direction: column;
+                    padding-top: 13px;
+                }
+            }
+        }
+    }
+    .caption-date{
+        padding: 10px 0 0 5px;
+    }
+    .title-content{
+        padding-top: 18px;
+        border-bottom: none;
+    }
+    .content-products{
+        display: flex;
+        flex-direction: column;
+        padding-top: 10px;
+    }
+    .filter-aside{
+    display: none;
+    }
+    aside.left-aside{
+        width: 100%;
+        display: flex;
+        height: 67px;
+        padding: 0 5px;
+        justify-content: space-between;
+      .realize{
+          padding: 0;
+          width: 50%;
+          box-sizing: border-box;
+          height: 100%;
+          .top-reliz{
+              padding: 10px 0 5px 16px;
+              margin-bottom: 0;
+              img{
+                  padding-top: 7px;
+                  position: absolute;
+              }
+              h3{
+                  padding-left: 68px;
+              }
+          }
+          .text-realize{
+              display: none;
+          }
+          .domload-realiz{
+              text-align: center;
+              width: 57%;
+              margin: 0 auto;
+              padding-left: 15px;
+              &::after{
+                  left: 14px;
+              }
+          }
+      }
+    }
+    .main-product{
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 4px;
+    }
+    .produits{
+        padding-top: 20px;
+    }
+    .filtr{
+        padding: 35px 0 0;
+    }
+    .cart-product{
+        &:first-of-type{
+            padding: 0;
+            .info-product{
+                padding: 14px;
+            }
+            .voirl-product{
+                padding-top: 15px;
+            }
+        }
+        &:not(:first-of-type){
+            padding: 54px 0 3px;
+        }
+    }
+    .wrap-product{
+        .cart-product{
+            &:last-of-type{
+                padding-bottom: 29px;
+            }
+        }
+    }
+    .page-switch{
+        padding-top: 35px;
+        margin-bottom: 51px;
+
+    }
+    .switch{
+        padding-left: 0;
+    }
+    .devis-bloc{
+        margin: 0 auto;
     }
 }

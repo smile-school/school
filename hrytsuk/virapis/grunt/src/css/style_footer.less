@@ -82,12 +82,11 @@
  .list-bloc-footer{
      width: 50%;
      box-sizing: border-box;
+     position: relative;
      &:first-of-type{
-         h3{
-             padding-left: 27px;
-         }
+         padding-left: 25px;
          p{
-             padding-left: 30px;
+             padding-left: 3px;
          }
      }
      h3{
@@ -98,6 +97,21 @@
          line-height: 20px;
          text-transform: uppercase;
          padding-bottom: 19px;
+
+         span{
+             position: relative;
+             &::after{
+                 content: "";
+                 display: block;
+                 width: 18px;
+                 height: 3px;
+                 background-color:@bloc-color ;
+                 z-index: 1;
+                 position: absolute;
+                 left: 44%;
+                 bottom: -12px;
+             }
+         }
      }
      p{
          color: @shade-gray2;
@@ -105,25 +119,17 @@
          font-weight: 400;
          line-height: 20px;
      }
-     &:first-of-type{
-
-     }
      &.mod-list-bloc{
          text-align: center;
          h3{
              padding-left: 49px;
+             padding-bottom: 22px;
          }
          p{
              padding-left: 47px;
          }
-         &.devenir{
-             h3{
-                 padding-top: 7px;
-             }
-         }
      }
      &.free-list{
-         padding-top: 6px;
          p{
              padding-left: 52px;
          }
@@ -220,7 +226,7 @@
 }
 .sites-du{
     p{
-        padding-bottom: 23px;
+        padding-bottom: 16px;
     }
     ul{
         li{
