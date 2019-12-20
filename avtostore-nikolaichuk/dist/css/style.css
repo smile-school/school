@@ -681,15 +681,7 @@ a.link:hover {
   float: right;
   display: inline-block;
   width: calc(100% - 126px);
-}
-.header__main .mini-cart__details .mini-cart__params input[type="checkbox"] {
-  display: none;
-}
-.header__main .mini-cart__details .mini-cart__params input[type="checkbox"]:checked ~ .mini-cart__details-toggle > i {
-  transform: rotate(180deg);
-}
-.header__main .mini-cart__details .mini-cart__params input[type="checkbox"]:checked ~ .mini-cart__details-block {
-  visibility: visible;
+  text-align: left;
 }
 .header__main .mini-cart__details .mini-cart__title {
   text-transform: uppercase;
@@ -703,6 +695,12 @@ a.link:hover {
 }
 .header__main .mini-cart__details .mini-cart__details-toggle i {
   transition: transform 0.3s ease-in-out;
+}
+.header__main .mini-cart__details .mini-cart__details-toggle:hover > i {
+  transform: rotate(180deg);
+}
+.header__main .mini-cart__details .mini-cart__details-toggle:hover + .mini-cart__details-block {
+  visibility: visible;
 }
 .header__main .mini-cart__details .mini-cart__details-block {
   display: inline-block;
@@ -859,6 +857,9 @@ a.link:hover {
   position: relative;
   width: calc((100% - 3 * 30px) / 4);
   display: inline-block;
+  /*&:hover > .categories__menu__list{
+                display: block;
+            }*/
 }
 @media (max-width: 768px) {
   .header__navigation .categories__menu {
@@ -873,21 +874,36 @@ a.link:hover {
     left: 0;
   }
 }
-.header__navigation .categories__menu:hover > .categories__menu__list {
-  display: block;
-}
 .header__navigation .categories__menu__toggle {
   cursor: pointer;
   position: relative;
+  display: none;
+}
+@media (max-width: 599px) {
+  .header__navigation .categories__menu__toggle {
+    display: block;
+  }
+}
+.header__navigation .categories__menu__block {
+  cursor: pointer;
+  position: relative;
+}
+.header__navigation .categories__menu__block:hover + .categories__menu__list {
+  display: block;
 }
 @media (max-width: 992px) {
-  .header__navigation .categories__menu__toggle {
+  .header__navigation .categories__menu__block {
     font-size: 12px;
   }
 }
 @media (max-width: 768px) {
-  .header__navigation .categories__menu__toggle {
+  .header__navigation .categories__menu__block {
     font-size: 14px;
+  }
+}
+@media (max-width: 599px) {
+  .header__navigation .categories__menu__block {
+    display: none;
   }
 }
 .header__navigation .categories__menu input[type="checkbox"] {

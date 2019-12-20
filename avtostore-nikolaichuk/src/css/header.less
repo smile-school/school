@@ -397,20 +397,7 @@
                         float: right;
                         display: inline-block;
                         width: calc(100% - 126px);
-
-                        input[type="checkbox"] {
-                            display: none;
-
-                            &:checked {
-                                & ~ .mini-cart__details-toggle > i {
-                                    transform: rotate(180deg);
-                                }
-
-                                & ~ .mini-cart__details-block {
-                                    visibility: visible;
-                                }
-                            }
-                        }
+                        text-align: left;
                     }
 
                     &__title {
@@ -427,6 +414,16 @@
                         i {
                             transition: transform .3s ease-in-out;
                         }
+
+                        &:hover{
+                            & > i{
+                                transform: rotate(180deg);
+                            }
+                            & + .mini-cart__details-block{
+                                visibility: visible;
+                            }
+                        }
+
                     }
 
                     &__details-block {
@@ -570,18 +567,32 @@
                 top: 0;
                 left: 0;
             }
-            &:hover > .categories__menu__list{
+            /*&:hover > .categories__menu__list{
                 display: block;
-            }
+            }*/
 
-            &__toggle {
+            &__toggle{
                 cursor: pointer;
                 position: relative;
+                display: none;
+                @media(max-width: @mobile){
+                    display: block;
+                }
+            }
+            &__block {
+                cursor: pointer;
+                position: relative;
+                &:hover + .categories__menu__list{
+                    display: block;
+                }
                 @media (max-width: @laptop-small) {
                     font-size: 12px;
                 }
                 @media (max-width: @tablet) {
                     font-size: 14px;
+                }
+                @media(max-width: @mobile){
+                    display: none;
                 }
             }
 
