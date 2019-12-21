@@ -570,40 +570,65 @@ ul.compte li.flag > a:first-child {
   .logo img {
     width: 75%;
   }
+  .top-menu {
+    position: fixed;
+    top: 0;
+    z-index: 600;
+    width: 500px;
+    transform: translateX(-600px);
+  }
+  .bloc-menu-search {
+    flex-direction: column;
+    padding: 0;
+  }
+  .menu-nav {
+    width: 100%;
+    padding: 30px 0;
+  }
+  .ul-nav {
+    flex-direction: column;
+  }
+  .ul-nav > li a {
+    padding: 8px 15px;
+  }
+  .ul-nav > li a.servise,
+  .ul-nav > li a.present {
+    line-height: 15px;
+  }
+  .ul-nav > li:not(:last-of-type) {
+    border-right: none;
+  }
+  .search-bloc {
+    display: none;
+  }
+  .mond-automobile {
+    height: 188px;
+  }
 }
-.top-menu {
-  position: fixed;
-  top: 0;
-  z-index: 600;
-  width: 500px;
-  transform: translateX(-600px);
-}
-.bloc-menu-search {
-  flex-direction: column;
-  padding: 0;
-}
-.menu-nav {
-  width: 100%;
-  padding: 30px 0;
-}
-.ul-nav {
-  flex-direction: column;
-}
-.ul-nav > li a {
-  padding: 8px 15px;
-}
-.ul-nav > li a.servise,
-.ul-nav > li a.present {
-  line-height: 15px;
-}
-.ul-nav > li:not(:last-of-type) {
-  border-right: none;
-}
-.search-bloc {
-  display: none;
-}
-.mond-automobile {
-  height: 188px;
+@media screen and (max-width: 767px) {
+  .param-header .shop {
+    width: 55px;
+  }
+  .like-header-top {
+    display: none;
+  }
+  .top-header .wrapper {
+    padding: 0 25px 0 8px;
+  }
+  .logo {
+    padding-left: 41px;
+  }
+  .logo img {
+    width: 94%;
+  }
+  .head-top {
+    font-size: 24px;
+    line-height: 20px;
+    letter-spacing: 1.69px;
+  }
+  .mond-automobile {
+    height: 145px;
+  }
 }
 .content {
   padding: 0 25px;
@@ -964,6 +989,12 @@ aside.left-aside {
 .filtr label.filtrs-check.two-first::after {
   right: 21px;
 }
+.filtr label.filtrs-check.prix select {
+  padding-right: 0;
+}
+.filtr .prix {
+  display: none;
+}
 .corect-show {
   display: flex;
 }
@@ -1234,7 +1265,7 @@ aside.left-aside {
   box-sizing: border-box;
   box-shadow: 0 0 0 #e6e6e6;
   border: 1px solid #1a3456;
-  display: flex;
+  display: none;
   align-items: center;
   padding-left: 16px;
 }
@@ -1249,6 +1280,9 @@ aside.left-aside {
   text-decoration: none;
 }
 @media screen and (max-width: 1024px) {
+  .filter-rar {
+    display: flex;
+  }
   .way-top {
     display: none;
   }
@@ -1325,16 +1359,22 @@ aside.left-aside {
     padding: 35px 0 0;
   }
   .cart-product:first-of-type {
-    padding: 0;
+    padding: 0 0 26px 0;
   }
   .cart-product:first-of-type .info-product {
-    padding: 14px;
+    padding: 13px;
   }
   .cart-product:first-of-type .voirl-product {
     padding-top: 15px;
   }
   .cart-product:not(:first-of-type) {
-    padding: 54px 0 3px;
+    padding: 29px 0 28px;
+  }
+  .cart-product .info-product {
+    padding: 15px;
+  }
+  .cart-product .voirl-product {
+    padding: 18px 0 0 15px;
   }
   .wrap-product .cart-product:last-of-type {
     padding-bottom: 29px;
@@ -1350,7 +1390,79 @@ aside.left-aside {
     margin: 0 auto;
   }
   .content-products {
-    margin-bottom: 51px;
+    margin-bottom: 50px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .paralis-des {
+    display: flex;
+    flex-direction: column;
+  }
+  ul.caption {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  ul.caption li:last-of-type {
+    margin-left: 0;
+  }
+  ul.caption li:last-of-type a::after {
+    top: 5px;
+  }
+  .caption-date {
+    padding: 11px 0 0 2px;
+  }
+  .title-content {
+    padding: 34px 0 8px 1px;
+  }
+  .h2-title-content {
+    font-size: 22px;
+  }
+  aside.left-aside {
+    flex-direction: column;
+    height: auto;
+  }
+  aside.left-aside .realize {
+    width: 100%;
+    padding-bottom: 14px;
+    margin-bottom: 11px;
+  }
+  aside.left-aside .realize .top-reliz {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
+  aside.left-aside .realize .top-reliz img {
+    display: none;
+  }
+  aside.left-aside .realize .top-reliz .reliz-title {
+    padding: 19px 0 0 0;
+  }
+  aside.left-aside .realize .domload-realiz {
+    width: 81%;
+    padding-left: 0;
+  }
+  .filter-rar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .filter-rar a {
+    padding: 11px 0;
+  }
+  .filtr label.prix {
+    display: block;
+  }
+  .filtr label:not(:first-of-type) {
+    display: none;
+  }
+  .filtr .corect-show {
+    display: none;
+  }
+  .voi-product-btn {
+    display: none;
+  }
+  .title-product a {
+    font-size: 16px;
   }
 }
 .footer {
