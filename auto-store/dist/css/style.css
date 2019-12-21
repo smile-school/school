@@ -1068,6 +1068,18 @@ body {
   max-width: 410px;
   border: 1px solid #C4C4C4;
   box-sizing: border-box;
+  position: relative;
+}
+.main .wrapper .body .card .product-info .gallery > .img .arrow {
+  display: block;
+  width: 50px;
+  height: 50px;
+  background: red;
+  position: absolute;
+  top: 50%;
+}
+.main .wrapper .body .card .product-info .gallery > .img .arrow.next {
+  right: 0;
 }
 .main .wrapper .body .card .product-info .gallery > .img img {
   width: 100%;
@@ -1079,9 +1091,18 @@ body {
   width: 410px;
   overflow: hidden;
 }
+.main .wrapper .body .card .product-info .gallery .preview .slick-track {
+  display: flex;
+}
 .main .wrapper .body .card .product-info .gallery .preview .img {
   display: flex;
   margin-right: -10px;
+}
+.main .wrapper .body .card .product-info .gallery .preview .img .scarousel_item_wrapper {
+  position: relative;
+}
+.main .wrapper .body .card .product-info .gallery .preview .img .item {
+  width: 95px;
 }
 .main .wrapper .body .card .product-info .gallery .preview .img img {
   max-width: 95px;
@@ -1090,7 +1111,6 @@ body {
   display: block;
 }
 .main .wrapper .body .card .product-info .gallery .preview .img img:hover {
-  border-color: #FF2D37;
   cursor: pointer;
 }
 .main .wrapper .body .card .product-info .gallery .preview .right-prev,
@@ -1124,6 +1144,16 @@ body {
 }
 .main .wrapper .body .card .product-info .gallery .preview .left-prev {
   left: 10px;
+}
+.main .wrapper .body .card .product-info .gallery .preview .overlay {
+  width: 95px;
+  height: 95px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1px solid #FF2D37;
+  box-sizing: border-box;
+  transition: all 0.3s ease-in;
 }
 .main .wrapper .body .card .product-info .card-info {
   padding-left: 31px;

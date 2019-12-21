@@ -12,6 +12,7 @@
     <script src="dist/js/jquery-3.4.1.min.js"></script>
     <script src="dist/js/jquery-ui.js"></script>
     <script src="dist/js/slider.js"></script>
+    <script src="dist/js/slick.min.js"></script>
 </head>
 <body>
  <div class="header">
@@ -207,6 +208,8 @@ Argentina</span>
                 <div class="gallery">
                     <div class="img">
                         <img src="dist/ima/img1.png" alt="im">
+                        <a class="arrow next" href="#"></a>
+                        <a class="arrow prev" href="#"></a>
                     </div>
                     <div class="preview">
                         <div class="img">
@@ -239,21 +242,20 @@ Argentina</span>
                         <button class="right-prev"><i class="fas fa-chevron-right"></i></button>
                         <button class="left-prev"><i class="fas fa-chevron-left"></i></button>
                         <script>
-                            var sliderPreview = $('.preview>.img').smilecarousel({
-                                delay: 500,
+                            var sliderPrev = $('.preview > .img').smilecarousel({
+                                delay: 300,
                                 toShow: 4,
                                 toSlide: 1,
-                                afterSlide: function () {
-                                    console.log(this)
-                                }
-                            });
-                            $('.left-prev').on('click', function () {
-                                sliderPreview.smilecarousel('toNext');
+                                overlay: $('.overlay'),
+                                fullSizeImg: $('.gallery > .img > img'),
+                                fullSizeGal: $('.gallery > .img'),
                             });
                             $('.right-prev').on('click', function () {
-                                sliderPreview.smilecarousel('toPrev')
+                                sliderPrev.smilecarousel('toNext')
                             });
-                            console.log(sliderPreview)
+                            $('.left-prev').on('click', function () {
+                                sliderPrev.smilecarousel('toPrev')
+                            });
                         </script>
                     </div>
                 </div>
@@ -1023,20 +1025,16 @@ Argentina</span>
             </div>
             <script>
                 var slider = $('.containers').smilecarousel({
-                    delay: 500,
+                    delay: 300,
                     toShow: 4,
                     toSlide: 1,
-                    afterSlide: function () {
-                        console.log(this)
-                    }
-                });
-                $('.left').on('click', function () {
-                    slider.smilecarousel('toNext')
                 });
                 $('.right').on('click', function () {
+                    slider.smilecarousel('toNext')
+                });
+                $('.left').on('click', function () {
                     slider.smilecarousel('toPrev')
                 });
-                console.log(slider)
             </script>
         </div>
     </div>

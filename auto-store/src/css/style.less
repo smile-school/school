@@ -1261,6 +1261,18 @@ body {
               max-width: 410px;
               border: 1px solid @border;
               box-sizing: border-box;
+              position: relative;
+              .arrow {
+                display: block;
+                width: 50px;
+                height: 50px;
+                background: red;
+                position: absolute;
+                top: 50%;
+                }
+                .arrow.next {
+                right: 0;
+              }
 
               img {
                 width: 100%;
@@ -1273,12 +1285,17 @@ body {
               position: relative;
               width: 410px;
               overflow: hidden;
-
+              .slick-track{
+                display: flex;
+              }
               .img {
                 display: flex;
                 margin-right: -10px;
-                .item.item-scarousel{
-
+                .scarousel_item_wrapper{
+                  position: relative;
+                }
+                .item{
+                  width: 95px;
                 }
 
                 img {
@@ -1286,9 +1303,8 @@ body {
                   border: 1px solid @border;
                   box-sizing: border-box;
                   display: block;
-
                   &:hover {
-                    border-color: @hoverLinkColor;
+                    //border-color: @hoverLinkColor;
                     cursor: pointer;
                   }
                 }
@@ -1324,6 +1340,16 @@ body {
               }
               .left-prev{
                 left: 10px;
+              }
+              .overlay{
+                width: 95px;
+                height: 95px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                border: 1px solid #FF2D37;
+                box-sizing: border-box;
+                transition: all .3s ease-in;
               }
             }
           }
