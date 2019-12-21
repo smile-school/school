@@ -207,7 +207,7 @@ Argentina</span>
                 <div class="product-info">
                 <div class="gallery">
                     <div class="img">
-                        <img src="dist/ima/img1.png" alt="im">
+                        <img src="dist/ima/image_p2.png" data-img="0" alt="im">
                         <a class="arrow next" href="#"></a>
                         <a class="arrow prev" href="#"></a>
                     </div>
@@ -238,18 +238,63 @@ Argentina</span>
                                 <img src="dist/ima/image_p5.png" alt="im1">
                             </div>
                         </div>
-                        <div class="overlay"></div>
                         <button class="right-prev"><i class="fas fa-chevron-right"></i></button>
                         <button class="left-prev"><i class="fas fa-chevron-left"></i></button>
                         <script>
+                            var gallery = $('.gallery'),
+                                imageProduct = gallery.find('.img > img'),
+                                overlay = $('<div class="overlay"></div>'),
+                                arrowNext = gallery.find('a.next'),
+                                arrowPre = gallery.find('a.prev');
                             var sliderPrev = $('.preview > .img').smilecarousel({
                                 delay: 300,
                                 toShow: 4,
                                 toSlide: 1,
-                                overlay: $('.overlay'),
-                                fullSizeImg: $('.gallery > .img > img'),
-                                fullSizeGal: $('.gallery > .img'),
+                                handlerItem: function (e) {
+                                    var src = e.target.getAttribute('src'),
+                                        index = e.currentTarget.getAttribute('data-item');
+                                    if (src){
+                                        imageProduct.attr({'src' : src, 'data-img': index});
+                                        imageProduct.data('img', index);
+                                        overlay.css('left', e.target.parentElement.offsetLeft)
+                                    }
+                                },
+                                overlay: overlay,
                             });
+                            var sliderPrevOption = sliderPrev.smilecarousel('option'),
+                                sliderWidth = sliderPrevOption.sliderWidth,
+                                sliderItem = sliderPrevOption.itemWidth,
+                                sliderCount = sliderPrevOption.countSlide;
+                            function galleryGo(){
+                                var slide = '';
+                                if($(this).hasClass('next')){
+                                    slide = sliderPrev.find('[data-item=' + (+imageProduct.data('img') + 1) +']');
+                                    if(+imageProduct.data('img') < sliderCount - 1){
+                                        go();
+                                    }
+                                    if ((sliderItem * imageProduct.data('img') -Math.abs(parseInt(sliderPrev.find('.scarousel_item_wrapper').css('marginLeft')))) >= sliderWidth) {
+                                        sliderPrev.smilecarousel('toNext')
+                                    }
+                                } else {
+                                    slide = sliderPrev.find('[data-item=' + (+imageProduct.data('img') - 1) +']');
+                                    if(imageProduct.data('img') > 0){
+                                        go();
+                                    }
+                                    Math.abs(sliderPrev.find('.scarousel_item_wrapper').css('marginLeft'));
+                                    if(sliderItem * imageProduct.data('img') < Math.abs(parseInt(sliderPrev.find('.scarousel_item_wrapper').css('marginLeft')))){
+                                        sliderPrev.smilecarousel('toPrev');
+                                    }
+                                }
+                                function go() {
+                                    imageProduct.attr({'src': slide.find('img').attr('src'), 'data-img': slide.data('item')});
+                                    imageProduct.data('img', slide.data('item'));
+                                    overlay.css('left', slide[0].offsetLeft);
+                                }
+                                return false;
+                            }
+
+                            arrowNext.on('click', galleryGo);
+                            arrowPre.on('click', galleryGo);
                             $('.right-prev').on('click', function () {
                                 sliderPrev.smilecarousel('toNext')
                             });
@@ -270,12 +315,12 @@ Argentina</span>
                             <div class="star">
                                 <div class="overflow">
                                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 73 12" enable-background="new 0 0 73 12" xml:space="preserve">
-    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601" points="6.5,0 8,5 13,5 9,7.7 10,12 6.5,9.2 3,12 4,7.7 0,5 5,5"/>
-    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601" points="66.5,0 68,5 73,5 69,7.7 70,12 66.5,9.2 63,12 64,7.7 60,5 65,5 "/>
-    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601" points="21.5,0 23,5 28,5 24,7.7 25,12 21.5,9.2 18,12 19,7.7 15,5 20,5 "/>
-    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601" points="51.5,0 53,5 58,5 54,7.7 55,12 51.5,9.2 48,12 49,7.7 45,5 50,5 "/>
-    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601" points="36.5,0 38,5 43,5 39,7.7 40,12 36.5,9.2 33,12 34,7.7 30,5 35,5 "/>
-</svg>
+                                        <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601" points="6.5,0 8,5 13,5 9,7.7 10,12 6.5,9.2 3,12 4,7.7 0,5 5,5"/>
+                                        <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601" points="66.5,0 68,5 73,5 69,7.7 70,12 66.5,9.2 63,12 64,7.7 60,5 65,5 "/>
+                                        <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601" points="21.5,0 23,5 28,5 24,7.7 25,12 21.5,9.2 18,12 19,7.7 15,5 20,5 "/>
+                                        <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601" points="51.5,0 53,5 58,5 54,7.7 55,12 51.5,9.2 48,12 49,7.7 45,5 50,5 "/>
+                                        <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601" points="36.5,0 38,5 43,5 39,7.7 40,12 36.5,9.2 33,12 34,7.7 30,5 35,5 "/>
+                                    </svg>
                                 </div>
                             </div>
                         </span>
@@ -340,7 +385,7 @@ Argentina</span>
                         <div class="contents">
 
                             <div class="ui-tabpanel" data-bind="visible: selected() == 'tab1' || init() == 1">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis auto mr reprehenderit in voluptateveli esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim veniam, quis nostrud exercitation ullamc laboris nisi ut aliquip ex eacommod consequat. Duis reprehenderit iesse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sede eiusmod tempor incididunt ut labore et doloreme gna aliqua. Duis aute irure dolor in reprehenderit in voluptatevelit esse pariatur.</p>
+                                <p>dfffff ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis auto mr reprehenderit in voluptateveli esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim veniam, quis nostrud exercitation ullamc laboris nisi ut aliquip ex eacommod consequat. Duis reprehenderit iesse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sede eiusmod tempor incididunt ut labore et doloreme gna aliqua. Duis aute irure dolor in reprehenderit in voluptatevelit esse pariatur.</p>
                                     <p>Duis aute irure reprehenderit in voluptateveli esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim vexercitation ullamco laboris nisi ut aliquip ex eacommod consequat. Duis reprehenderit in voluptate velit. esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
                                     <p>
                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis auto mr reprehenderit in voluptateveli esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim veniam, quis nostrud exercitation ullamc laboris nisi ut aliquip ex eacommod consequat. Duis reprehenderit iesse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
