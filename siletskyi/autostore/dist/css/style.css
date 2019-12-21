@@ -805,17 +805,87 @@ main .main-slider-wrap .product-list {
   margin: 0 -9px;
   display: flex;
   flex-wrap: wrap;
+  position: relative;
+}
+main .main-slider-wrap .product-list:hover > .slider-btn {
+  display: block;
+}
+main .main-slider-wrap .product-list .slider-btn {
+  display: none;
+  position: absolute;
+  top: 50%;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #FF2D37;
+  z-index: 10;
+}
+main .main-slider-wrap .product-list .slider-btn::before {
+  font-family: Font Awesome\ 5 Free;
+  content: '\f078';
+  font-size: 36px;
+  font-weight: 900;
+  color: #fff;
+  position: absolute;
+  top: 8px;
+}
+main .main-slider-wrap .product-list .next-btn {
+  right: 0;
+}
+main .main-slider-wrap .product-list .next-btn::before {
+  transform: rotate(-90deg);
+  right: 6px;
+}
+main .main-slider-wrap .product-list .prev-btn {
+  left: 0;
+}
+main .main-slider-wrap .product-list .prev-btn::before {
+  transform: rotate(90deg);
+  left: 6px;
 }
 main .main-slider-wrap .product-list .product-item {
   padding: 15px;
   width: 25%;
+  position: relative;
+}
+main .main-slider-wrap .product-list .product-item .prod-search-btn {
+  top: 27%;
+  left: 40%;
+}
+main .main-slider-wrap .product-list .product-item .prod-search-btn::before {
+  color: #fff;
+  font-family: Font Awesome\ 5 Free;
+  font-weight: 700;
+  content: '\f002';
+  position: absolute;
+  left: calc(50% - 8px);
+  top: calc(50% - 8px);
+  font-size: 18px;
 }
 main .main-slider-wrap .product-list .product-item .product-btn {
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
   position: absolute;
-  background: #950c20;
+  display: flex;
+}
+main .main-slider-wrap .product-list .product-item .product-btn .product-btn-item {
+  background: #282828;
+  color: #fff;
+  height: 40px;
+  display: inline-block;
+  text-align: center;
+  line-height: 40px;
+}
+main .main-slider-wrap .product-list .product-item .product-btn .product-btn-item:hover {
+  background: #FF2D37;
+}
+main .main-slider-wrap .product-list .product-item .product-btn .product-btn-small {
+  width: 40px;
+}
+main .main-slider-wrap .product-list .product-item .product-btn .product-btn-long {
+  flex-grow: 1;
+  margin: 0 1px;
 }
 main .main-slider-wrap .product-list .product-item .product-info {
   text-align: center;
@@ -866,6 +936,9 @@ main .main-slider-wrap .product-list .product-item > div::after {
 }
 main .main-slider-wrap .product-list .product-item:hover {
   z-index: 1;
+}
+main .main-slider-wrap .product-list .product-item:hover .slider-btn {
+  display: block;
 }
 main .main-slider-wrap .product-list .product-item:hover > div {
   border: none;
