@@ -8,7 +8,8 @@
 .aside.float_left{
     .col-1-width();
     box-sizing: border-box;
-    .filters-block{
+    .filters-block,
+    .compare-block {
         box-sizing: border-box;
         margin-bottom: 45px;
         &__title{
@@ -17,8 +18,10 @@
             padding: 14px 20px;
             font-weight: 500;
             border-radius: 5px 5px 0 0;
-            letter-spacing: 0.02em;
+            //letter-spacing: 0.02em;
         }
+    }
+    .filters-block{
         &__filter-group{
             padding: 19px 0 30px 21px;
             border: 1px solid @main-border-line-color;
@@ -126,23 +129,124 @@
             }
         }
     }
+    .compare-block{
+        &__product-list {
+            .compare-product {
+                &__item {
+                    padding: 20px 15px 20px 21px;
+                    border: 1px solid @main-border-line-color;
+                    border-top: none;
+
+                    &__title {
+                        font-size: 13px;
+                        line-height: 15px;
+                    }
+
+                    .product {
+                        &__title {
+                            float: left;
+                        }
+
+                        &__button-remove {
+                            float: right;
+                        }
+                    }
+                }
+            }
+        }
+        &__controls{
+            padding: 22px 15px 21px 21px;
+            border: 1px solid @main-border-line-color;
+            border-top: none;
+            border-radius: 0 0 5px 5px;
+            &__compare-btn{
+                float: left;
+                .button-mixin(@width: 103px, @height: 26px, @background: @main-elements-background);
+                .hover-mixin(@page-main-color;);
+                text-decoration: none;
+            }
+            &__clear{
+                float: right;
+                line-height: 26px;
+            }
+        }
+    }
 }
 .search-result{
     &__wrapper{
         float: right;
-        width: calc(75% - 30px/4);
-        margin-left: 15px;
+        .col-3-width();
         display: inline-block;
         box-sizing: border-box;
+    }
+    &__heading{
+        margin-bottom: 22px;
+    }
+    &__controls{
+        border: 1px solid @main-border-line-color;
+        background-color: @product-search-controls-background;
+        border-radius: 5px;
+        .flex-mixin(@justify: space-between, @align: flex-start);
+        font-size: 13px;
+        line-height: 15px;
+        color: @product-search-controls-text-color;
+        padding: 11px 15px 10px 11px;
+        select{
+            border: 1px solid @main-border-line-color;
+            border-radius: 5px;
+            box-sizing: border-box;
+            background-color: @product-search-controls-background;
+            height: 31px;
+            padding: 0 11px 0 6px;
+            cursor: pointer;
+        }
+        .view__control{
+            flex-grow: 1;
+            .flex-mixin(@justify: flex-start);
+            &_btn{
+                display: inline-block;
+                .geometric-mixin(@width: 33px, @height: 33px);
+                border: 1px solid @product-search-controls-text-color;
+                border-radius: 5px;
+                box-sizing: border-box;
+                position: relative;
+                margin-right: 3px;
+                & > .view__control_icon{
+                    width: 100%;
+                    display: inline-block;
+                    padding: 10px 7px;
+                    box-sizing: border-box;
+                    .middle-mixin();
+                    img{
+                        .geometric-mixin(@width: 100%, @height: auto);
+                        fill: @product-search-controls-text-color;
+                    }
+                }
+            }
+            span{
+                margin-left: 15px;
+            }
+        }
+        .qty__control{
+            #quantity{
+                min-width: 49px;
+                margin: 0 5px 0 7px;
+            }
+        }
+        .sort__control{
+            margin-left: 40px;
+            #sort{
+                margin: 0 8px;
+                min-width: 120px;
+            }
+        }
     }
     &__products{
         .flex-mixin(@justify: space-between, @align: stretch);
         flex-wrap: wrap;
-        .product-item{
-            cursor: pointer;
-            width: calc(100%/3 - 60px/3);
-            box-sizing: border-box;
-            //border: 1px solid @main-border-line-color;
+        .search-item{
+            width: calc((100% - 2 * @padding-width - 5px)/3);
+            margin-bottom: 31px;
         }
     }
 }
