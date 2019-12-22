@@ -23,16 +23,13 @@
             letter-spacing: 0.12px;
             position: relative;
             padding: 0 15px 0 9px;
+            &:hover{
+                color:@bloc-color ;
+            }
         }
         &:first-of-type{
             a{
                 padding-left: 0;
-            }
-        }
-        &:last-of-type{
-            a{
-                color:@bloc-color ;
-                line-height: 33.22px;
             }
         }
         &:not(:last-of-type){
@@ -62,7 +59,6 @@
     font-weight: 400;
     line-height: 20px;
     & > span.paral{
-        font-family: "Proxima Nova Rg";
         font-weight: bold;
         text-transform: uppercase;
         letter-spacing: 0.14px;
@@ -73,9 +69,13 @@
     padding: 2px 0 0 4px;
 
 }
+.caption-date{
+    width: 60%;
+}
 ul.caption{
     display: flex;
     align-items: center;
+    justify-content: flex-end;
     li{
         list-style-type: none;
         a{
@@ -85,6 +85,9 @@ ul.caption{
             color: @bloc-color2;
             font-weight: 400;
             padding-top: 4px;
+            &:hover{
+                color: @bloc-color;
+            }
         }
         &:first-of-type{
             a{
@@ -292,15 +295,19 @@ aside.left-aside{
     display: block;
     margin-bottom: 10px;
     position: relative;
-    &::after{
-        content: "";
-        background: url("../../../img/domload.png") no-repeat;
-        position: absolute;
-        top: 1px;
-        left: 2px;
-        height: 34px;
-        width: 8px;
+    .streal-domload{
+        position: relative;
+        &::after{
+            content: "";
+            background: url("../../../img/domload.png") no-repeat;
+            position: absolute;
+            top: 1px;
+            left: -16px;
+            height: 34px;
+            width: 8px;
+        }
     }
+
 }
 .main-product{
     width: 75%;
@@ -420,6 +427,11 @@ aside.left-aside{
         width: 100%;
     }
 }
+.cart-bloc-info{
+    display: flex;
+    justify-content: space-between;
+    flex-grow:1;
+}
 .info-product{
     padding: 17px;
     flex-grow: 1;
@@ -432,6 +444,7 @@ aside.left-aside{
         color: @shade-gray-fb;
         padding-left: 15px;
         position: relative;
+        white-space: nowrap;
         &::after{
             content: "";
             width: 8px;
@@ -469,9 +482,11 @@ aside.left-aside{
         margin-bottom: 13px;
         text-align: right;
         span{
-            font-size: @f-size;
-            font-weight: 700;
-            letter-spacing: 0.18px;
+            &:last-of-type{
+                font-size: @f-size;
+                font-weight: 700;
+                letter-spacing: 0.18px;
+            }
         }
     }
 }
@@ -666,8 +681,26 @@ aside.left-aside{
         text-decoration: none;
     }
 }
+@media screen  and (max-width: 1140px){
+    ul.caption{
+        li{
+            &:last-of-type{
+                margin-left: 20px;
+            }
+        }
+    }
+}
 
 @media screen  and (max-width: 1024px){
+    ul.caption{
+        width: 100%;
+        justify-content: flex-start;
+        li{
+            &:last-of-type{
+                margin-left: 59px;
+            }
+        }
+    }
     .filter-rar{
         display: flex;
     }
@@ -688,6 +721,7 @@ aside.left-aside{
     }
     .caption-date{
         padding: 10px 0 0 5px;
+        width: 100%;
     }
     .title-content{
         padding-top: 18px;
@@ -791,6 +825,25 @@ aside.left-aside{
     }
 }
 @media screen  and (max-width: 767px){
+    .cart-product{
+        .info-product{
+            flex-grow: 0;
+            padding: 0;
+        }
+        .voirl-product{
+            padding: 0;
+        }
+        &:first-of-type{
+            padding: 33px 0 26px 0;
+            .info-product{
+                flex-grow: 0;
+                padding: 0;
+            }
+        }
+        &:last-of-type{
+            display: none;
+        }
+    }
     .paralis-des{
         display: flex;
         flex-direction: column;
@@ -806,6 +859,20 @@ aside.left-aside{
                         top: 5px;
                     }
                 }
+            }
+        }
+    }
+    .cart-bloc-info{
+        display: flex;
+        flex-direction: column;
+        width: calc(100% - 151px);
+        justify-content: end;
+        .voirl-product{
+            align-self: flex-start;
+            p{
+                text-align: left;
+                display: flex;
+                flex-direction: column;
             }
         }
     }
@@ -869,8 +936,11 @@ aside.left-aside{
         display: none;
     }
     .title-product{
+        padding-top: 5px;
+        margin-bottom: 11px;
         a{
             font-size: @f-size-chec-nav;
         }
     }
+
 }
