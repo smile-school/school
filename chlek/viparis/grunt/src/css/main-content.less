@@ -1,4 +1,37 @@
 .wrapper {
+
+    .close-menu,
+    .filters-close {
+        width: 30px;
+        height: 30px;
+        border: 1px solid #182d47;
+        position: absolute;
+        right: 20px;
+        top: 25px;
+        display: none;
+        background-color: #ffffff;
+        z-index: 15;
+        padding: 2px;
+
+        &:after,
+        &:before {
+            display: block;
+            content: '';
+            height: 2px;
+            background-color: #182d47;
+            position: relative;
+            z-index: -1;
+        }
+
+        &:after {
+            transform: rotate(45deg) translate(-23%, -330%);
+        }
+
+        &:before {
+            transform: rotate(-45deg) translate(-23%, 330%);
+        }
+    }
+
     &.banner-menu {
         position: relative;
 
@@ -60,8 +93,76 @@
             display: flex;
             justify-content: space-between;
 
-            @media (max-width: 960px) {
+            .logo-menu {
                 display: none;
+                @media (max-width: 960px) {
+                    display: block;
+                    width: 165px;
+                    position: absolute;
+                    left: 20px;
+                    top: 20px;
+                    & > svg {
+                        width: 100%;
+                    }
+                }
+            }
+
+            .close-menu {
+                display: none;
+                @media (max-width: 960px) {
+                    display: block;
+                }
+            }
+
+            @media (max-width: 960px) {
+                display: inline-flex;
+                position: fixed;
+                top: 0;
+                left: -115%;
+                bottom: 0;
+                z-index: 10;
+                flex-direction: column;
+                height: auto;
+                background-color: #ffffff;
+                box-shadow: 0 8px 16px 4px #182d47;
+                box-sizing: border-box;
+                padding: 70px 0 0;
+                width: 320px;
+
+                .logo-menu {
+
+                }
+
+
+                & > ul {
+                    flex-direction: column;
+                    align-self: flex-start;
+                    width: 100%;
+                    background-color: #FFFFFF;
+                    height: auto;
+                    padding: 20px 0 10px;
+                    position: relative;
+
+                    li {
+                        padding: 10px 40px 10px 40px;
+                        width: 100%;
+                        border-bottom: 1px solid #182d47;
+
+                        & > a {
+                            display: block;
+                            width: 100%;
+                            color: #182d47;
+                            text-align: center;
+                            cursor: pointer;
+                        }
+
+                        &:last-child {
+                            &:hover {
+                                border: none;
+                            }
+                        }
+                    }
+                }
             }
 
             & > ul {
@@ -71,6 +172,15 @@
                 box-sizing: border-box;
                 height: 100%;
                 max-width: 905px;
+                @media (max-width: 960px) {
+                    flex-direction: column;
+                    align-self: flex-start;
+                    width: 100%;
+                    background-color: #FFFFFF;
+                    height: auto;
+                    padding: 20px 0 10px;
+                    position: relative;
+                }
 
                 li {
                     padding: 5px 30px;
@@ -79,8 +189,25 @@
                     margin-top: 4px;
                     color: #FFFFFF;
                     position: relative;
+
+                    &:hover {
+                        color: #182d47;
+                        background-color: #FFFFFF;
+                        border-bottom: 4px solid #eb2645;
+                    }
+
                     @media (max-width: 1150px) {
                         padding: 5px 15px;
+                    }
+                    @media (max-width: 960px) {
+                        padding: 10px 40px 10px 40px;
+                        width: 100%;
+                        border-bottom: 1px solid #182d47;
+                        &:last-child {
+                            &:hover {
+                                border: none;
+                            }
+                        }
                     }
 
                     &:not(:last-child) {
@@ -106,12 +233,13 @@
                         font-weight: bold;
                         align-self: center;
                         letter-spacing: 0.33px;
-                    }
-
-                    &:hover {
-                        color: #182d47;
-                        background-color: #FFFFFF;
-                        border-bottom: 4px solid #eb2645;
+                        @media (max-width: 960px) {
+                            display: block;
+                            width: 100%;
+                            color: #182d47;
+                            text-align: center;
+                            cursor: pointer;
+                        }
                     }
                 }
             }
@@ -202,7 +330,6 @@
 
                 &:hover {
                     color: #eb2645;
-                    /*font-weight: 700;*/
                 }
             }
         }
@@ -328,9 +455,23 @@
 
                 .filters-wrap {
                     @media (max-width: 960px) {
-                        width: 50%;
-                        position: absolute;
-                        left: -100%;
+                        position: fixed;
+                        z-index: 10;
+                        top: 0;
+                        bottom: 0;
+                        left: -115%;
+                        background-color: #ffffff;
+                        padding: 10px;
+                        width: 320px;
+                        box-shadow: 0 8px 16px 4px #182d47;
+                        box-sizing: border-box;
+                    }
+                    .filters-close{
+                        @media(max-width: 960px){
+                            display: block;
+                            right: 12px;
+                            top: 12px;
+                        }
                     }
                 }
 
@@ -574,6 +715,12 @@
                     box-sizing: border-box;
                     @media (max-width: 960px) {
                         display: flex;
+                        position: relative;
+                        z-index: 5;
+                        & > span {
+                            position: relative;
+                            z-index: -1;
+                        }
                     }
                     @media (max-width: 767px) {
                         justify-content: center;
