@@ -2,10 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Title</title>
-    <link href="https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,500i,700,700i,900,900i&display=swap"
+          rel="stylesheet">
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="grunt/dist/css/style.css">
@@ -14,10 +16,26 @@
 <header>
     <div class="top-navbar">
         <div class="wrapper-container">
-            <ul>
-                <li><a href="#"><img src="img/svg/lock.svg" alt="#"><span>Sign In</span> / <span>Create an Account</span></a></li>
-                <li><a href="#"><img src="img/svg/french.svg" alt="#"><span>FRENCH </span><img src="img/svg/arro-dovn.svg" alt=""></a></li>
-                <li><a href="#"><span>USD </span><img src="img/svg/arro-dovn.svg" alt="#"></a></li>
+            <ul class="top-nav-list">
+                <li><a href="#"><img src="img/svg/lock.svg" alt="#"><span>Sign In</span> /
+                    <span>Create an Account</span></a></li>
+                <li>
+                    <a href="#"><img src="img/svg/french.svg" alt="#"><span>FRENCH </span><i
+                            class="fa fa-chevron-down"></i></a>
+                    <ul class="lang-popup-container">
+                        <li><a href="#"><img src="img/svg/english.svg" alt="">English</a></li>
+                        <li><a href="#"><img src="img/svg/german.svg" alt="">German</a></li>
+                        <li><a href="#"><img src="img/svg/belgium.png" alt="">Belgium</a></li>
+                        <li><a href="#"><img src="img/svg/argentina.svg" alt="">Argentina</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><span>USD </span><i class="fa fa-chevron-down"></i></a>
+                    <ul class="currency-popup-container">
+                        <li><a href="#">EUR – Euro</a></li>
+                        <li><a href="#">GBP – Pound</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </div>
@@ -34,6 +52,40 @@
                 <div class="cart">
                     <span>My Cart</span><span class="cart-price">$0.00</span>
                 </div>
+                <div class="open-cart-popup">
+                    <div class="cart-item-container">
+                        <div class="cart-item-block">
+                            <div class="item-img-container">
+                                <img class="cart-item-img" src="img/steering-wheel.png" alt="">
+                                <img class="close-icon" src="img/svg/close-icon.png" alt="">
+                            </div>
+                            <div class="item-description">
+                                <h2>Carbon Fiber Steering Wheel</h2>
+                                <div class="details">
+                                    <input type='checkbox' id="details">
+                                    <label for="details">See Details<i class="fa fa-chevron-down"></i></label>
+                                    <div class="drop-down-param">
+                                        <span class="param">Size <span class="param-value">S</span></span>
+                                        <span class="param">Color <span class="param-value">Blue</span></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="qty-container">
+                            <span class="qty-span">Qty: </span>
+                            <input type="text" name="qty" value="1">
+                            <button>Update</button>
+                            <span>$205.00</span>
+                        </div>
+                    </div>
+                    <div class="subtotal-container">
+                        <span>CART SUBTOTAL:</span><span>205.00</span>
+                    </div>
+                    <div class="cart-button-contaainer">
+                        <button>View cart</button>
+                        <button>Checkout</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -41,9 +93,64 @@
         <div class="navbar-bottom-container wrapper-container">
             <div class="drop-down-menu">
                 <div class="all-categories">ALL CATEGORIES <span class="burger-icon"></span></div>
+                <div class="popup-categories">
+                    <ul>
+                        <li><a href="#">CATEGORIES 1</a></li>
+                        <li><a href="#">CATEGORIES 2</a></li>
+                        <li><a href="#">CATEGORIES 3</a></li>
+                        <li><a href="#">CATEGORIES 4</a></li>
+                        <li><a href="#">CATEGORIES 5</a></li>
+                        <li><a href="#">CATEGORIES 6</a></li>
+                        <li><a href="#">CATEGORIES 7</a></li>
+                        <li><a href="#">CATEGORIES 8</a></li>
+                    </ul>
+                </div>
             </div>
             <ul class="navbar-menu">
-                <li><a href="#">home <img src="img/svg/arrow-down-black.svg" alt=""></a></li>
+                <li>
+                    <a href="#">home <i class="fa fa-chevron-down"></i></a>
+                    <div class="home-popup">
+                        <ul>
+                            <li>LAYOUTS</li>
+                            <li><a href="#">Homepage Style 1</a></li>
+                            <li><a href="#">Homepage Style 2</a></li>
+                            <li><a href="#">Homepage Style 3</a></li>
+                            <li><a href="#">Homepage Style 4</a></li>
+                            <li><a href="#">Homepage Style 5</a></li>
+                            <li><a href="#">Homepage Style 6</a></li>
+                            <li><a href="#">Homepage Style 7</a></li>
+                            <li><a href="#">Homepage Style 8</a></li>
+                            <li><a href="#">Boxed Layout</a></li>
+                            <li><a href="#">Right To LeftHOT</a></li>
+                            <li><a href="#">LISTING LAYOUTS</a></li>
+                            <li><a href="#">Without Sidebar</a></li>
+                            <li><a href="#">Left Sidebar</a></li>
+                            <li><a href="#">Right Sidebar</a></li>
+                            <li><a href="#">Left - Right Sidebar</a></li>
+                        </ul>
+                        <ul>
+                            <li>LISTING LAYOUTS</li>
+                            <li><a href="#">Without Sidebar</a></li>
+                            <li><a href="#">Left Sidebar</a></li>
+                            <li><a href="#">Right Sidebar</a></li>
+                            <li><a href="#">Left - Right Sidebar</a></li>
+                        </ul>
+                        <ul>
+                            <li>DETAIL LAYOUTS</li>
+                            <li><a href="#">Product Detail - Full</a></li>
+                            <li><a href="#"> Product Detail - Left Sidebar</a></li>
+                            <li><a href="#"> Product Detail - Right Sidebar</a></li>
+                            <li><a href="#">Thumb Horizontal</a></li>
+                            <li><a href="#">Thumb Vertical</a></li>
+                        </ul>
+                        <ul>
+                            <li>TAB TYPES</li>
+                            <li><a href="#"> Vertical</a></li>
+                            <li><a href="#">Horizontal</a></li>
+                            <li><a href="#">Accordion</a></li>
+                        </ul>
+                    </div>
+                </li>
                 <li><a href="#">deals</a></li>
                 <li><a href="#">under $100</a></li>
                 <li><a href="#">new arrivals</a></li>
@@ -55,12 +162,14 @@
     </div>
 </header>
 <main>
+
     <div class="navigate-container wrapper-container">
         <ul class="navigate">
             <li><a href="#">Home <img src="img/svg/arro-dovn.svg" alt=""></a></li>
             <li><a href="#">Carbon Fiber Steering Wheel</a></li>
         </ul>
     </div>
+
     <div class="content-container wrapper-container">
         <div class="content">
             <div class="open-good-container">
@@ -81,12 +190,119 @@
                     <div class="serial-container">
                         <span>SKU: MT-7485102</span><span><i class="fa fa-check-square"></i>In stock</span>
                     </div>
-                </div>
-                <div class="rating-comtainer">
-
+                    <div class="rating-container">
+                        <ul>
+                            <li><span></span></li>
+                            <li><span>1</span> Review</li>
+                            <li>Add Your Review</li>
+                        </ul>
+                    </div>
+                    <p class="price">$53.00</p>
+                    <p class="good-specification-description">
+                        Dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit
+                        praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor
+                        cum soluta nobis eleifend option into nihil imperdiet doming id quod mazim placerat facer possim
+                        assum est notare.
+                    </p>
+                    <div class="select-container">
+                        <label>
+                            <span>Size</span>
+                            <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                            <select name="size">
+                                <option>--Please Select--</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                        </label>
+                        <label>
+                            <span>Color</span>
+                            <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                            <select name="color">
+                                <option>--Please Select--</option>
+                                <option value="green">green</option>
+                                <option value="blue">blue</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div class="item-qty-container">
+                        <span>Qty</span>
+                        <input type="text" name="good-qty" placeholder="1">
+                        <button class="add-to-card">Add to cart</button>
+                        <button><i class="fa fa-heart"></i></button>
+                        <button class="compare"><i class="fa fa-refresh"></i></button>
+                    </div>
                 </div>
             </div>
+            <div class="more-information-container">
+                <input type="radio" name="more" id="more1" checked>
+                <input type="radio" name="more" id="more2">
+                <input type="radio" name="more" id="more3">
+                <input type="radio" name="more" id="more4">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <label for="more1">Details</label>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <label for="more2">More Information</label>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <label for="more3">Reviews</label>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <label for="more4">Custom Tab</label>
+                        </a>
+                    </li>
+                </ul>
+                <div class="popup-text">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis auto mr reprehenderit in voluptateveli esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim veniam, quis nostrud exercitation ullamc laboris nisi ut aliquip ex eacommod consequat. Duis reprehenderit iesse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sede eiusmod tempor incididunt ut labore et doloreme gna aliqua. Duis aute irure dolor in reprehenderit in voluptatevelit esse pariatur.
+                    </p>
+                    <p>
+                        Duis aute irure reprehenderit in voluptateveli esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim vexercitation ullamco laboris nisi ut aliquip ex eacommod consequat. Duis reprehenderit in voluptate velit. esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis auto mr reprehenderit in voluptateveli esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim veniam, quis nostrud exercitation ullamc laboris nisi ut aliquip ex eacommod consequat. Duis reprehenderit iesse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis auto mr reprehenderit in voluptateveli esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim veniam, quis nostrud exercitation ullamc laboris nisi ut aliquip ex eacommod consequat. Duis reprehenderit iesse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                    </p>
+                </div>
+                <div class="popup-text">
+                    <p>
+                        Duis reprehenderit iesse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sede eiusmod tempor incididunt ut labore et doloreme gna aliqua. Duis aute irure dolor in reprehenderit in voluptatevelit esse pariatur.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis auto mr reprehenderit in voluptateveli esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim veniam, quis nostrud exercitation ullamc laboris nisi ut aliquip ex eacommod consequat. Duis reprehenderit iesse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis auto mr reprehenderit in voluptateveli esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim veniam, quis nostrud exercitation ullamc laboris nisi ut aliquip ex eacommod consequat. Duis reprehenderit iesse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                    </p>
+                </div>
+                <div class="popup-text reviews-form">
+
+                </div>
+                <div class="popup-text">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, natus? sede eiusmod tempor incididunt ut labore et doloreme gna aliqua. Duis aute irure dolor in reprehenderit in voluptatevelit esse pariatur.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis auto mr reprehenderit in voluptateveli esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim veniam, quis nostrud exercitation ullamc laboris nisi ut aliquip ex eacommod consequat. Duis reprehenderit iesse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis auto mr reprehenderit in voluptateveli esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim veniam, quis nostrud exercitation ullamc laboris nisi ut aliquip ex eacommod consequat. Duis reprehenderit iesse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                    </p>
+                </div>
+
+            </div>
         </div>
+
         <div class="asside">
             <h3 class="asside-tittle">Featured Products</h3>
             <ul class="goods-list">
@@ -155,6 +371,69 @@
             <img src="img/sidebar-banner.png" alt="" class="asside-banner">
         </div>
     </div>
+    <div class="related-products-container">
+        <h4>YOU MAY LIKE THIS PRODUCTS</h4>
+        <h2>RELATED PRODUCTS</h2>
+        <div class="slider-container">
+            <ul>
+                <span class="prev-slide"><i class="fa fa-chevron-left"></i></span>
+                <span class="next-slide"><i class="fa fa-chevron-right"></i></span>
+                <li>
+                    <a href="#"><img src="img/transmiter1.png" alt=""><span class="popup-search"><i class="fa fa-search"></i></span></a>
+                    <div class="good-card-description">
+                        <div class="card-popup-button-container">
+                            <button><i class="fa fa-heart"></i></button>
+                            <button>Add to Cart</button>
+                            <button class="compare"><i class="fa fa-refresh"></i></button>
+                        </div>
+                        <a href="#" class="item-tittle">Car Kit Hands Free Calling</a>
+                        <span><img src="img/svg/star.svg" alt=""></span>
+                        <a href="#" class="price-container"><span class="price">$84.00</span></a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#"><img src="img/munometr.png" alt=""><span class="popup-search"><i class="fa fa-search"></i></span></a>
+                    <div class="good-card-description">
+                        <div class="card-popup-button-container">
+                            <button><i class="fa fa-heart"></i></button>
+                            <button>Add to Cart</button>
+                            <button class="compare"><i class="fa fa-refresh"></i></button>
+                        </div>
+                        <a href="#" class="item-tittle">Car Kit Hands Free Calling</a>
+                        <span><img src="img/svg/star.svg" alt=""></span>
+                        <a href="#" class="price-container"><span class="price new-price">$55.00</span><span class="old-price">$84.00</span></a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#"><img src="img/transmitter2.png" alt=""><span class="popup-search"><i class="fa fa-search"></i></span></a>
+                    <div class="good-card-description">
+                        <div class="card-popup-button-container">
+                            <button><i class="fa fa-heart"></i></button>
+                            <button>Add to Cart</button>
+                            <button class="compare"><i class="fa fa-refresh"></i></button>
+                        </div>
+                        <a href="#" class="item-tittle">Car Kit Hands Free Calling</a>
+                        <span><img src="img/svg/star.svg" alt=""></span>
+                        <a href="#" class="price-container"><span class="price">$84.00</span></a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#"><img src="img/cam.png" alt=""><span class="popup-search"><i class="fa fa-search"></i></span></a>
+                    <div class="good-card-description">
+                        <div class="card-popup-button-container">
+                            <button><i class="fa fa-heart"></i></button>
+                            <button>Add to Cart</button>
+                            <button class="compare"><i class="fa fa-refresh"></i></button>
+                        </div>
+                        <a href="#" class="item-tittle">Car Kit Hands Free Calling</a>
+                        <span><img src="img/svg/star.svg" alt=""></span>
+                        <a href="#" class="price-container"><span class="price">$84.00</span></a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
 </main>
+
 </body>
 </html>
