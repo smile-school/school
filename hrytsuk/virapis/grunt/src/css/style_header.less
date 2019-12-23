@@ -91,6 +91,14 @@ ul.compte{
                 &:first-child{
                     margin-right: 5px;
                 }
+                &:last-child{
+                    img{
+                        webkit-filter: grayscale(90%);
+                        -moz-filter: grayscale(90%);
+                        -o-filter: grayscale(90%);
+                        filter: grayscale(90%);
+                    }
+                }
             }
         }
     }
@@ -240,6 +248,7 @@ ul.compte{
     position: absolute;
     background: none;
     border: none;
+    cursor: pointer;
     outline: 0;
     left: 14px;
     top: 21px;
@@ -279,6 +288,26 @@ ul.compte{
         padding-left: 0;
     }
 
+    .close-menu-btn{
+        position: absolute;
+        justify-content: center;
+        align-items: center;
+        right: 0;
+        top: 5px;
+        width: 46px;
+        height: 50px;
+        border: none;
+        outline: 0;
+        display: none;
+        cursor: pointer;
+        background: none;
+        font-size:@f-h1-size ;
+        color: @color-white;
+        &:hover{
+            color: @bloc-color;
+        }
+    }
+
 }
 
 @media screen and (max-width: 1024px){
@@ -310,12 +339,24 @@ ul.compte{
     position: fixed;
     top: 0;
     z-index: 600;
-    width: 500px;
-    transform: translateX(-600px);
+    width: 100%;
+    transition: all .3s;
+    &.close{
+        transform: translateX(-100%);
+    }
+    &.open{
+        transform: translateX(0);
+    }
+
+
+}
+.close-menu-btn{
+    display: flex;
 }
 .bloc-menu-search{
     flex-direction: column;
     padding: 0;
+    position: relative;
 }
 .menu-nav{
     width: 100%;
