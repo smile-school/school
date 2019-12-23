@@ -1,52 +1,62 @@
-.products__content{
+.products__content {
     width: 100%;
     background-color: @main-background;
 }
-.float_left{
+
+.float_left {
     float: left;
 }
-.aside.float_left{
+
+.aside.float_left {
     .col-1-width();
     box-sizing: border-box;
+
     .filters-block,
     .compare-block {
         box-sizing: border-box;
         margin-bottom: 45px;
-        &__title{
+
+        &__title {
             color: @main-elements-color;
             background-color: @main-elements-background;
             padding: 14px 20px;
             font-weight: 500;
             border-radius: 5px 5px 0 0;
-            //letter-spacing: 0.02em;
         }
     }
-    .filters-block{
-        &__filter-group{
+
+    .filters-block {
+        &__filter-group {
             padding: 19px 0 30px 21px;
             border: 1px solid @main-border-line-color;
             border-top: none;
+
             &:first-of-type .colors-filter__wrapper {
                 font-size: 0;
             }
-            &:last-child{
+
+            &:last-child {
                 border-radius: 0 0 5px 5px;
             }
-            .filter-group{
-                &__name{
+
+            .filter-group {
+                &__name {
                     color: @main-heading-color;
                     text-transform: uppercase;
                     font-weight: 500;
                     padding-bottom: 16px;
                 }
-                &__filter-items.price-slider{
+
+                &__filter-items.price-slider {
                     height: 70px;
                 }
-                &__filter-items{
-                    .color-filter{
+
+                &__filter-items {
+                    .color-filter {
                         display: inline-block;
                     }
-                    .color-filter a{
+
+                    .color-filter a {
                         .geometric-mixin(@width: 33px, @height: 33px);
                         box-sizing: border-box;
                         display: inline-block;
@@ -57,18 +67,21 @@
                         margin-bottom: 4px;
                         background-clip: content-box;
                         transition: all .2s ease-in-out;
-                        &:nth-child(n+7){
+
+                        &:nth-child(n+7) {
                             margin-bottom: 0;
                         }
-                        &:hover{
+
+                        &:hover {
                             border-color: @page-hover-color;
                         }
                     }
 
-                    .price-slider__controls{
+                    .price-slider__controls {
                         display: inline-block;
                         text-align: center;
-                        .price-slider__controls__input{
+
+                        .price-slider__controls__input {
                             display: inline-block;
                             letter-spacing: 0.02em;
                             color: @product-filter-price-input-color;
@@ -82,28 +95,34 @@
                             .geometric-mixin(@width: 50px, @height: 35px)
                         }
                     }
-                    .brands-filter__wrapper{
+
+                    .brands-filter__wrapper {
                         padding-top: 13px;
                     }
-                    .brand-filter{
+
+                    .brand-filter {
                         padding-bottom: 16px;
                         font-size: 13px;
                         letter-spacing: 0.01em;
-                        &:last-child{
+
+                        &:last-child {
                             padding-bottom: 0;
                         }
                     }
+
                     .models-filter__wrapper,
-                    .year-filter__wrapper{
+                    .year-filter__wrapper {
                         padding-top: 5px;
                         padding-right: 12px;
                         font-size: 0;
-                        li{
+
+                        li {
                             display: inline-block;
                         }
                     }
+
                     .model-filter a,
-                    .year-filter a{
+                    .year-filter a {
                         display: inline-block;
                         text-decoration: none;
                         font-size: 12px;
@@ -116,10 +135,12 @@
                         margin-bottom: 6px;
                         line-height: 14px;
                         transition: all .2s ease-in-out;
-                        &:nth-child(n+7){
+
+                        &:nth-child(n+7) {
                             margin-bottom: 0;
                         }
-                        &:hover{
+
+                        &:hover {
                             color: @main-elements-color;
                             background-color: @page-hover-color;
                             border-color: @page-hover-color;
@@ -129,7 +150,8 @@
             }
         }
     }
-    .compare-block{
+
+    .compare-block {
         &__product-list {
             .compare-product {
                 &__item {
@@ -154,35 +176,45 @@
                 }
             }
         }
-        &__controls{
+
+        &__controls {
             padding: 22px 15px 21px 21px;
             border: 1px solid @main-border-line-color;
             border-top: none;
             border-radius: 0 0 5px 5px;
-            &__compare-btn{
+
+            &__compare-btn {
                 float: left;
                 .button-mixin(@width: 103px, @height: 26px, @background: @main-elements-background);
                 .hover-mixin(@page-main-color;);
                 text-decoration: none;
             }
-            &__clear{
+
+            &__clear {
                 float: right;
                 line-height: 26px;
             }
         }
     }
 }
-.search-result{
-    &__wrapper{
+
+.search-result {
+    &__wrapper {
         float: right;
         .col-3-width();
         display: inline-block;
         box-sizing: border-box;
+        #grid_view:checked ~ .search-result__controls > .view__control > .grid-view,
+        #rows_view:checked ~ .search-result__controls > .view__control > .rows-view{
+            background-color: @page-hover-color;
+        }
     }
-    &__heading{
+
+    &__heading {
         margin-bottom: 22px;
     }
-    &__controls{
+
+    &__controls {
         border: 1px solid @main-border-line-color;
         background-color: @product-search-controls-background;
         border-radius: 5px;
@@ -191,7 +223,8 @@
         line-height: 15px;
         color: @product-search-controls-text-color;
         padding: 11px 15px 10px 11px;
-        select{
+
+        select {
             border: 1px solid @main-border-line-color;
             border-radius: 5px;
             box-sizing: border-box;
@@ -200,10 +233,12 @@
             padding: 0 11px 0 6px;
             cursor: pointer;
         }
-        .view__control{
+
+        .view__control {
             flex-grow: 1;
             .flex-mixin(@justify: flex-start);
-            &_btn{
+
+            &_btn {
                 display: inline-block;
                 .geometric-mixin(@width: 33px, @height: 33px);
                 border: 1px solid @product-search-controls-text-color;
@@ -211,43 +246,52 @@
                 box-sizing: border-box;
                 position: relative;
                 margin-right: 3px;
-                & > .view__control_icon{
+
+                & > .view__control_icon {
                     width: 100%;
                     display: inline-block;
                     padding: 10px 7px;
                     box-sizing: border-box;
                     .middle-mixin();
-                    img{
+
+                    img {
                         .geometric-mixin(@width: 100%, @height: auto);
                         fill: @product-search-controls-text-color;
                     }
                 }
             }
-            span{
+
+            span {
                 margin-left: 15px;
             }
         }
-        .qty__control{
-            #quantity{
+
+        .qty__control {
+            #quantity {
                 min-width: 49px;
                 margin: 0 5px 0 7px;
             }
         }
-        .sort__control{
+
+        .sort__control {
             margin-left: 40px;
-            #sort{
+
+            #sort {
                 margin: 0 8px;
                 min-width: 120px;
             }
         }
     }
-    &__products{
+
+    &__products {
         .flex-mixin(@justify: space-between, @align: stretch);
         flex-wrap: wrap;
-        .search-item{
-            width: calc((100% - 2 * @padding-width - 5px)/3);
+        margin-top: 31px;
+        margin-bottom: 136px;
+
+        .search-item {
+            width: calc((100% - 2 * @padding-width) / 3);
             margin-bottom: 31px;
         }
     }
 }
-
