@@ -546,6 +546,12 @@ aside.left-aside{
         background: none;
         outline: none;
         cursor: pointer;
+        &:hover{
+            border-color: @bloc-color;
+            svg{
+                fill: @bloc-color;
+            }
+        }
         &.gou-switch{
             margin-left: 20px;
         }
@@ -556,7 +562,6 @@ aside.left-aside{
 }
 .list-page-switch{
     display: flex;
-
     li{
         display: flex;
         justify-content: center;
@@ -575,6 +580,38 @@ aside.left-aside{
             letter-spacing: 22.4px;
             display: block;
             text-align: center;
+        }
+    }
+}
+.list-page-mobile{
+    display: none;
+    position: relative;
+    &::after{
+        content: "/";
+        position: absolute;
+        left: 36%;
+        top: 10px;
+        font-size: 18px;
+        transform: rotateX(-50%);
+
+    }
+    li{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 15px;
+        a{
+            color: #182d47;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 16px;
+            letter-spacing: 22.4px;
+            display: block;
+            text-align: center;
+            text-decoration: none;
+        }
+        .action-page-href{
+            color:@bloc-color ;
         }
     }
 }
@@ -825,6 +862,18 @@ aside.left-aside{
     }
 }
 @media screen  and (max-width: 767px){
+    .filter-main-top{
+        padding: 32px 0 8px;
+    }
+    .filtr{
+        padding: 0 5px 0 0;
+    }
+    .produits{
+        padding: 0;
+    }
+    .page-switch{
+        padding: 19px;
+    }
     .cart-product{
         .info-product{
             flex-grow: 0;
@@ -940,6 +989,58 @@ aside.left-aside{
         margin-bottom: 11px;
         a{
             font-size: @f-size-chec-nav;
+        }
+    }
+    .list-page-switch{
+        display: none;
+    }
+    .list-page-mobile{
+        display: flex;
+    }
+    .demandez{
+        display: none;
+    }
+    .calculatot-border{
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    .devis-information{
+        width: 100%;
+        & > p{
+            font-size:@f-size-label ;
+            text-align: center;
+            letter-spacing: 0.14px;
+        }
+        h4{
+            text-align: center;
+        }
+    }
+    .besoin-daide{
+        display: flex;
+        flex-direction: column;
+        .besoin-list{
+            width: 100%;
+            flex-wrap: wrap;
+            li{
+                padding-left: 0;
+                width: 50%;
+               a{
+                   display: flex;
+                   justify-content: flex-start;
+                   padding: 9px 0 0 11px;
+               }
+                &.faq,&.appele,&.contact{
+                    padding-left: 0;
+                }
+            }
+        }
+        .title-besoin{
+            padding-bottom: 3px;
+        }
+    }
+    .footer-top{
+        .wrapper{
+            padding: 0 8px;
         }
     }
 
