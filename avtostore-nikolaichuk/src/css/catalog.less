@@ -56,10 +56,6 @@
                     letter-spacing: 0.02em;
                 }
 
-                &__filter-items.price-slider {
-                    height: 70px;
-                }
-
                 &__filter-items {
                     .color-filter {
                         display: inline-block;
@@ -86,22 +82,42 @@
                         }
                     }
 
-                    .price-slider__controls {
-                        display: inline-block;
-                        text-align: center;
-
-                        .price-slider__controls__input {
-                            display: inline-block;
-                            letter-spacing: 0.02em;
-                            color: @product-filter-price-input-color;
-                            font-weight: 500;
-                            box-sizing: border-box;
-                            border: 1px solid @main-border-line-color;
-                            border-radius: 5px;
-                            padding: 9px;
-                            line-height: 14px;
-                            cursor: pointer;
-                            .geometric-mixin(@width: 50px, @height: 35px)
+                    .price-slider{
+                        &__slider{
+                            padding: 8px 23px 9px 5px;
+                            #slider-range{
+                                div{
+                                    height: 6px;
+                                    background-color: @main-elements-background;
+                                }
+                                span{
+                                    .geometric-mixin(@width: 18px, @height: 18px);
+                                    border-radius: 50%;
+                                    border: 3px solid @page-main-color;
+                                    box-sizing: border-box;
+                                    background-color: @main-background;
+                                    top: -6px;
+                                }
+                            }
+                        }
+                        &__controls{
+                            display: block;
+                            text-align: center;
+                            padding: 5px 0;
+                            text-align: center;
+                            .price-slider__controls__input {
+                                display: inline-block;
+                                letter-spacing: 0.02em;
+                                color: @product-filter-price-input-color;
+                                font-weight: 500;
+                                box-sizing: border-box;
+                                border: 1px solid @main-border-line-color;
+                                border-radius: 5px;
+                                padding: 9px;
+                                line-height: 14px;
+                                cursor: pointer;
+                                .geometric-mixin(@width: 50px, @height: 35px)
+                            }
                         }
                     }
 
@@ -210,6 +226,21 @@
         }
     }
 }
+
+/*#slider-range{
+    div{
+        height: 6px;
+        background-color: @main-elements-background;
+    }
+    span{
+        .geometric-mixin(@width: 18px, @height: 18px);
+        border-radius: 50%;
+        border: 3px solid @page-main-color;
+        box-sizing: border-box;
+        background-color: @main-background;
+        top: -6px;
+    }
+}*/
 
 .search-result{
     &__wrapper {

@@ -1147,7 +1147,7 @@ a.link:hover {
   transform: translate(0, 0);
   width: 100%;
   padding: 0 20px 10px;
-  z-index: 2;
+  z-index: 3;
   border: 1px solid #E5E5E5;
   box-sizing: border-box;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
@@ -1991,9 +1991,6 @@ a.link:hover {
   padding-bottom: 17px;
   letter-spacing: 0.02em;
 }
-.aside.float_left .filters-block__filter-group .filter-group__filter-items.price-slider {
-  height: 70px;
-}
 .aside.float_left .filters-block__filter-group .filter-group__filter-items .color-filter {
   display: inline-block;
 }
@@ -2016,8 +2013,25 @@ a.link:hover {
 .aside.float_left .filters-block__filter-group .filter-group__filter-items .color-filter a:hover {
   border-color: #FF2D37;
 }
+.aside.float_left .filters-block__filter-group .filter-group__filter-items .price-slider__slider {
+  padding: 8px 23px 9px 5px;
+}
+.aside.float_left .filters-block__filter-group .filter-group__filter-items .price-slider__slider #slider-range div {
+  height: 6px;
+  background-color: #FF2D37;
+}
+.aside.float_left .filters-block__filter-group .filter-group__filter-items .price-slider__slider #slider-range span {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 3px solid #282828;
+  box-sizing: border-box;
+  background-color: #FFFFFF;
+  top: -6px;
+}
 .aside.float_left .filters-block__filter-group .filter-group__filter-items .price-slider__controls {
-  display: inline-block;
+  display: block;
+  padding: 5px 0;
   text-align: center;
 }
 .aside.float_left .filters-block__filter-group .filter-group__filter-items .price-slider__controls .price-slider__controls__input {
@@ -2136,6 +2150,20 @@ a.link:hover {
   float: right;
   line-height: 26px;
 }
+/*#slider-range{
+    div{
+        height: 6px;
+        background-color: @main-elements-background;
+    }
+    span{
+        .geometric-mixin(@width: 18px, @height: 18px);
+        border-radius: 50%;
+        border: 3px solid @page-main-color;
+        box-sizing: border-box;
+        background-color: @main-background;
+        top: -6px;
+    }
+}*/
 .search-result__wrapper {
   float: right;
   width: calc(((100% - 3 * 30px) / 4) * 3 + 2 * 30px);

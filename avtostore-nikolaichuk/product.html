@@ -5,12 +5,286 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>AutoStore</title>
+    <link rel="stylesheet" href="dist/css/jquery-ui.css">
     <link rel="stylesheet" href="dist/css/style.css">
+    <script src="scripts/jquery-3.4.1.js"></script>
+    <script src="scripts/jquery-ui.js"></script>
+    <script src="scripts/jquery-range-slider.js"></script>
 </head>
 <body>
-<header></header>
+<header>
+    <div class="header__stretch">
+        <div class="page-wrapper">
+            <div class="header__top-menu action-menu">
+                <div class="action-menu__signIn">
+                    <i class="fas fa-lock"></i>
+                    <a href="#" class="link" title="Sign In">
+                        Sign In <span>/</span> Create an Account
+                    </a>
+                </div>
+                <div class="action-menu__lang-chooser">
+                    <span class="current">french</span>
+                    <i class="fas fa-angle-down"></i>
+                    <div class="dropdown-list">
+                        <ul>
+                            <li class="dropdown-list__item">
+                                <img src="./dist/ima/UK.svg" alt="Eng">
+                                <span>English</span>
+                            </li>
+                            <li class="dropdown-list__item">
+                                <img src="./dist/ima/Ger.svg" alt="Ger">
+                                <span>German</span>
+                            </li>
+                            <li class="dropdown-list__item">
+                                <img src="./dist/ima/Belg.svg" alt="Bel">
+                                <span>Belgium</span>
+                            </li>
+                            <li class="dropdown-list__item">
+                                <img src="./dist/ima/Arg.svg" alt="Arg">
+                                <span>Argentina</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="action-menu__currency-chooser">
+                    <span class="current">usd</span>
+                    <i class="fas fa-angle-down"></i>
+                    <div class="dropdown-list">
+                        <ul>
+                            <li class="dropdown-list__item">EUR – Euro</li>
+                            <li class="dropdown-list__item">GBP – Pound</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header__wrapper">
+        <div class="page-wrapper">
+            <div class="header__main">
+                <div class="logo-wrapper">
+                    <a href="#" class="link logo-link" title="Auto Store">
+                    </a>
+                </div>
+                <div class="search__container">
+                    <input type="text" class="search__input" placeholder="Search products...">
+                    <a href="#" class="search__button">
+                        <i class="fas fa-search"></i>
+                    </a>
+                </div>
+                <div class="cart-block clearfix-block">
+                    <div class="wish-list">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="cart">
+                        <i class="fas fa-shopping-basket"></i>
+                        <span class="cart__total">My Cart
+                        <span>$205.00</span>
+                    </span>
+                        <span class="cart__counter">1</span>
+                    </div>
+                    <div class="mini-cart">
+                        <div class="mini-cart__details clearfix-block">
+                            <a href="#" class="link mini-cart__image">
+                                <img src="./dist/ima/aosake_leather_steering_wheels.png"
+                                     alt="aosake leather steering wheels">
+                            </a>
+                            <i class="fas fa-times-circle"></i>
+                            <div class="mini-cart__params">
+                                <a href="#" class="link mini-cart__title">Carbon Fiber Steering Wheel</a>
+                                <div class="mini-cart__details-toggle">
+                                    <span>See Details</span>
+                                    <i class="fas fa-angle-down"></i>
+                                </div>
+                                <div class="mini-cart__details-block">
+                                    <span class="mini-cart__details-name">Size</span><span>S</span>
+                                    <span class="mini-cart__details-name">Color</span><span>Blue</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mini-cart__counter">
+                            <label for="cart-counter">Qty:</label>
+                            <input type="text" value="1" id="cart-counter">
+                            <span class="mini-cart__update-btn">Update</span>
+                            <span class="mini-cart__counter__sum">$205.00</span>
+                        </div>
+                        <div class="mini-cart__total clearfix-block">
+                            <span>cart subtotal:</span>
+                            <span>205.00</span>
+                        </div>
+                        <div class="mini-cart__buttons clearfix-block">
+                            <div class="mini-cart__view-btn">view cart</div>
+                            <div class="mini-cart__checkout-btn">checkout</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header__navigation clearfix-block">
+                <div class="categories__menu">
+                    <input type="checkbox" id="burger-toggle">
+                    <label for="burger-toggle" class="categories__menu__toggle">
+                        <span class="categories__menu__item">
+                            All Categories
+                        </span>
+                        <span class="categories__menu__burger"></span>
+                    </label>
+                    <div class="categories__menu__block">
+                        <span class="categories__menu__item">
+                            All Categories
+                        </span>
+                        <span class="categories__menu__burger"></span>
+                    </div>
+                    <ul class="categories__menu__list">
+                        <li class="categories__menu__category-title">
+                            Category group
+                        </li>
+                        <li class="categories__menu__category">
+                            <a href="./index.html" class="link">INDEX PAGE</a>
+                        </li>
+                        <li class="categories__menu__category">
+                            <a href="./product.html" class="link">PRODUCT PAGE</a>
+                        </li>
+                        <li class="categories__menu__category">
+                            <a href="#" class="link">Category name</a>
+                        </li>
+                        <li class="categories__menu__category">
+                            <a href="#" class="link">Category name</a>
+                        </li>
+                        <li class="categories__menu__category">
+                            <a href="#" class="link">Category name</a>
+                        </li>
+                        <li class="categories__menu__category-title">
+                            Category group
+                        </li>
+                        <li class="categories__menu__category">
+                            <a href="#" class="link">Category name</a>
+                        </li>
+                        <li class="categories__menu__category">
+                            <a href="#" class="link">Category name</a>
+                        </li>
+                        <li class="categories__menu__category-title">
+                            Category group
+                        </li>
+                        <li class="categories__menu__category">
+                            <a href="#" class="link">Category name</a>
+                        </li>
+                        <li class="categories__menu__category">
+                            <a href="#" class="link">Category name</a>
+                        </li>
+                        <li class="categories__menu__category">
+                            <a href="#" class="link">Category name</a>
+                        </li>
+                        <li class="categories__menu__category">
+                            <a href="#" class="link">Category name</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="nav-menu">
+                    <ul>
+                        <li class="nav-menu__item">
+                            Home
+                            <i class="fas fa-angle-down"></i>
+                        </li>
+                        <li class="submenu-container">
+                            <ul class="nav-links-menu">
+                                <li class="nav-links-menu__heading">
+                                    layouts
+                                </li>
+                                <li class="nav-links-menu__item"><a href="#" class="link">Homepage Style 1</a></li>
+                                <li class="nav-links-menu__item"><a href="#" class="link nav-links-menu__item">Homepage
+                                    Style 2</a></li>
+                                <li class="nav-links-menu__item"><a href="#" class="link nav-links-menu__item">Homepage
+                                    Style 3</a></li>
+                                <li class="nav-links-menu__item"><a href="#" class="link nav-links-menu__item">Homepage
+                                    Style 4</a></li>
+                                <li class="nav-links-menu__item"><a href="#" class="link nav-links-menu__item">Homepage
+                                    Style 5</a></li>
+                                <li class="nav-links-menu__item"><a href="#" class="link nav-links-menu__item">Homepage
+                                    Style 6</a></li>
+                                <li class="nav-links-menu__item"><a href="#" class="link nav-links-menu__item">Homepage
+                                    Style 7</a></li>
+                                <li class="nav-links-menu__item"><a href="#" class="link nav-links-menu__item">Homepage
+                                    Style 8</a></li>
+                                <li class="nav-links-menu__item"><a href="#" class="link nav-links-menu__item">Boxed
+                                    Layout</a></li>
+                                <li class="nav-links-menu__item"><a href="#" class="link nav-links-menu__item">Right To
+                                    Left</a></li>
+                                <li class="nav-links-menu__item"><a href="#" class="link nav-links-menu__item">HOT
+                                    LISTING
+                                    LAYOUTS</a></li>
+                                <li class="nav-links-menu__item"><a href="#" class="link nav-links-menu__item">Without
+                                    Sidebar</a></li>
+                                <li class="nav-links-menu__item"><a href="#" class="link nav-links-menu__item">Left
+                                    Sidebar</a></li>
+                                <li class="nav-links-menu__item"><a href="#" class="link nav-links-menu__item">Right
+                                    Sidebar</a></li>
+                                <li class="nav-links-menu__item"><a href="#" class="link nav-links-menu__item">Left -
+                                    Right
+                                    Sidebar</a></li>
+                            </ul>
+                            <ul class="nav-links-menu">
+                                <li class="nav-links-menu__heading">
+                                    listing layouts
+                                </li>
+                                <li class="nav-links-menu__item"><a href="#" class="link">Without Sidebar</a></li>
+                                <li class="nav-links-menu__item"><a href="#" class="link">Left Sidebar</a></li>
+                                <li class="nav-links-menu__item"><a href="#" class="link">Right Sidebar</a></li>
+                                <li class="nav-links-menu__item"><a href="#" class="link">Left - Right Sidebar</a></li>
+                            </ul>
+                            <ul class="nav-links-menu">
+                                <li class="nav-links-menu__heading">
+                                    detail layouts
+                                </li>
+                                <li class="nav-links-menu__item"><a href="#" class="link">Product Detail - Full</a></li>
+                                <li class="nav-links-menu__item"><a href="#" class="link">Product Detail - Left
+                                    Sidebar</a>
+                                </li>
+                                <li class="nav-links-menu__item"><a href="#" class="link">Product Detail - Right
+                                    Sidebar</a>
+                                </li>
+                                <li class="nav-links-menu__item"><a href="#" class="link">Thumb Horizontal</a></li>
+                                <li class="nav-links-menu__item"><a href="#" class="link">Thumb Vertical</a></li>
+                            </ul>
+                            <ul class="nav-links-menu">
+                                <li class="nav-links-menu__heading">
+                                    tab types
+                                </li>
+                                <li class="nav-links-menu__item"><a href="#" class="link">Vertical</a></li>
+                                <li class="nav-links-menu__item"><a href="#" class="link">Horizontal</a></li>
+                                <li class="nav-links-menu__item"><a href="#" class="link">Accordion</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-menu__item">
+                            <a href="#" class="link" title="Deals">Deals</a>
+                        </li>
+                        <li class="nav-menu__item">
+                            <a href="#" class="link" title="Under $100">Under $100</a>
+                        </li>
+                        <li class="nav-menu__item">
+                            <a href="#" class="link" title="New Arrivals">New Arrivals</a>
+                        </li>
+                        <li class="nav-menu__item">
+                            <a href="#" class="link" title="Blog">Blog</a>
+                        </li>
+                        <li class="nav-menu__item">
+                            <a href="#" class="link" title="About Us">About Us</a>
+                        </li>
+                        <li class="nav-menu__item">
+                            <a href="#" class="link" title="Contact Us">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
 <main>
     <div class="page-wrapper products__content clearfix-block">
+        <div class="breadcrambs">
+            <a href="#" class="link" title="home">Home</a>
+            <i class="fas fa-angle-right"></i>
+            <a href="#" class="link" title="Carbon Fiber">Carbon Fiber Steering Wheel</a>
+        </div>
         <div class="aside float_left">
             <div class="filters-block">
                 <h2 class="filters-block__title">Shop By</h2>
@@ -51,12 +325,14 @@
                 <div class="filters-block__filter-group">
                     <div class="filter-group__name">price</div>
                     <div class="filter-group__filter-items price-slider__wrapper">
-                        <div class="price-slider__slider"></div>
+                        <div class="price-slider__slider">
+                            <div id="slider-range"></div>
+                        </div>
                         <div class="price-slider__controls">
                             <span>$</span>
-                            <input type="text" class="price-slider__controls__input price-min" value="66.9" />
+                            <input type="text" id="price-min" class="price-slider__controls__input price-min"/>
                             <span>-$</span>
-                            <input type="text" class="price-slider__controls__input price-max" value="290"/>
+                            <input type="text" id="price-max" class="price-slider__controls__input price-max"/>
                         </div>
                     </div>
                 </div>
@@ -716,29 +992,134 @@
         </div>
     </div>
 </main>
-<footer></footer>
+<footer>
+    <div class="footer__content">
+        <div class="page-wrapper footer__content-wrapper clearfix-block">
+            <div class="footer__content__contact-block">
+                <h2 class="contact-block__title">contact us</h2>
+                <ul class="contact-block__list">
+                    <li class="contact-block__list__item">
+                        <span>5611 Wellington Road, Suite 115, Gainesville, VA 20155</span>
+                    </li>
+                    <li class="contact-block__list__item">
+                        <span>888 9344 6000 - 888 1234 6789</span>
+                    </li>
+                    <li class="contact-block__list__item">
+                        <span>autostore@magentech.com</span>
+                    </li>
+                    <li class="contact-block__list__item">
+                        <span>7 Days a week from 10-00 am to 6-00 pm</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__content__links-block">
+                <div class="footer__content__links-block-col">
+                    <h2 class="links-block__title">store location</h2>
+                    <ul class="links-block__list">
+                        <li class="links-block__list__item">
+                            <a href="#" class="link">Los Angeles - USA</a>
+                        </li>
+                        <li class="links-block__list__item">
+                            <a href="#" class="link">New York - USA</a>
+                        </li>
+                        <li class="links-block__list__item">
+                            <a href="#" class="link">California - USA</a>
+                        </li>
+                        <li class="links-block__list__item">
+                            <a href="#" class="link">Bangkok - Thailand</a>
+                        </li>
+                        <li class="links-block__list__item">
+                            <a href="#" class="link">Paris - France</a>
+                        </li>
+                        <li class="links-block__list__item">
+                            <a href="#" class="link">London - England</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer__content__links-block-col">
+                    <h2 class="links-block__title">customer service</h2>
+                    <ul class="links-block__list">
+                        <li class="links-block__list__item">
+                            <a href="#" class="link">Customer Service</a>
+                        </li>
+                        <li class="links-block__list__item">
+                            <a href="#" class="link">Shipping & Returns</a>
+                        </li>
+                        <li class="links-block__list__item">
+                            <a href="#" class="link">Track Your Order</a>
+                        </li>
+                        <li class="links-block__list__item">
+                            <a href="#" class="link">Help Center</a>
+                        </li>
+                        <li class="links-block__list__item">
+                            <a href="#" class="link">Store Location</a>
+                        </li>
+                        <li class="links-block__list__item">
+                            <a href="#" class="link">Customer Feedback</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer__content__links-block-col">
+                    <h2 class="links-block__title">information</h2>
+                    <ul class="links-block__list">
+                        <li class="links-block__list__item">
+                            <a href="#" class="link">Caps & Hats</a>
+                        </li>
+                        <li class="links-block__list__item">
+                            <a href="#" class="link">Hoodies & Sweatshirts</a>
+                        </li>
+                        <li class="links-block__list__item">
+                            <a href="#" class="link">Jacket & Coats</a>
+                        </li>
+                        <li class="links-block__list__item">
+                            <a href="#" class="link">Jumpers & Cardigans</a>
+                        </li>
+                        <li class="links-block__list__item">
+                            <a href="#" class="link">Shoes, Boots & Trainers</a>
+                        </li>
+                        <li class="links-block__list__item">
+                            <a href="#" class="link">Underwear & Socks</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer__copyright clearfix-block">
+        <div class="page-wrapper">
+            <a href="#" class="link footer__copyright__pay-system">
+                <img src="./dist/ima/payment.png" alt="">
+            </a>
+            <div class="footer__copyright__content">
+                <span>SM Autostore © 2019 Demo Store.</span>
+                <span>All Rights Reserved.</span>
+                <a href="#" class="link">Designed by MagenTech.Com</a>
+            </div>
+        </div>
+    </div>
+</footer>
 <svg style="display: none">
     <defs id="symbols">
         <symbol viewBox="0 0 19 14" id="table-view">
-            <rect width="5" height="3" fill="currentColor"/>
-            <rect x="7" width="5" height="3" fill="currentColor"/>
-            <rect x="14" width="5" height="3" fill="currentColor"/>
-            <rect y="5" width="5" height="3" fill="currentColor"/>
-            <rect x="7" y="5" width="5" height="3" fill="currentColor"/>
-            <rect x="14" y="5" width="5" height="3" fill="currentColor"/>
-            <rect y="10" width="5" height="3" fill="currentColor"/>
-            <rect x="7" y="10" width="5" height="3" fill="currentColor"/>
-            <rect x="14" y="10" width="5" height="3" fill="currentColor"/>
+            <rect width="5" height="3" fill="currentColor"></rect>
+            <rect x="7" width="5" height="3" fill="currentColor"></rect>
+            <rect x="14" width="5" height="3" fill="currentColor"></rect>
+            <rect y="5" width="5" height="3" fill="currentColor"></rect>
+            <rect x="7" y="5" width="5" height="3" fill="currentColor"></rect>
+            <rect x="14" y="5" width="5" height="3" fill="currentColor"></rect>
+            <rect y="10" width="5" height="3" fill="currentColor"></rect>
+            <rect x="7" y="10" width="5" height="3" fill="currentColor"></rect>
+            <rect x="14" y="10" width="5" height="3" fill="currentColor"></rect>
         </symbol>
         <symbol viewBox="0 0 19 14" id="list-view">
-            <rect width="5" height="3" fill="currentColor"/>
-            <rect x="7" width="12" height="3" fill="currentColor"/>
-            <rect y="5" width="5" height="3" fill="currentColor"/>
-            <rect x="7" y="5" width="12" height="3" fill="currentColor"/>
-            <rect y="10" width="5" height="3" fill="currentColor"/>
-            <rect x="7" y="10" width="12" height="3" fill="currentColor"/>
+            <rect width="5" height="3" fill="currentColor"></rect>
+            <rect x="7" width="12" height="3" fill="currentColor"></rect>
+            <rect y="5" width="5" height="3" fill="currentColor"></rect>
+            <rect x="7" y="5" width="12" height="3" fill="currentColor"></rect>
+            <rect y="10" width="5" height="3" fill="currentColor"></rect>
+            <rect x="7" y="10" width="12" height="3" fill="currentColor"></rect>
         </symbol>
-    </defs>
+    </defs>`
 </svg>
 <script src="./scripts/script.js"></script>
 </body>

@@ -1,77 +1,93 @@
-.rowsView-js{
-    .product-item{
+.rowsView-js {
+    .product-item {
         .flex-mixin(@justify: space-between, @align: stretch);
         padding: 15px;
-        &__image{
+
+        &__image {
             width: 45%;
         }
-        &__content{
+
+        &__content {
             width: 50%;
             .flex-mixin(@direction: column, @justify: space-between);
         }
-        &__control-buttons{
+
+        &__control-buttons {
             order: 2;
             position: relative;
             width: 100%;
             .flex-mixin(@justify: space-between, @align: stretch);
             border: none;
+
             .product-item {
-                &__wish-list-btn{
+                &__wish-list-btn {
                     margin-right: 15px;
                     border-radius: 5px;
                 }
+
                 &__compare-btn {
                     margin-left: 15px;
                     border-radius: 5px;
                 }
-                &__add-cart-btn{
+
+                &__add-cart-btn {
                     border: none;
                     border-radius: 5px;
                 }
             }
         }
-        &__text-content{
+
+        &__text-content {
             order: 1;
             border: none;
             width: 100%;
             padding: 0;
             flex-grow: 1;
-            &__title{
+
+            &__title {
                 font-size: 19px;
                 line-height: 26px;
             }
-            &__rating{
+
+            &__rating {
                 height: 25px;
-                img{
+
+                img {
                     height: 100%;
                 }
             }
-            &__prices{
+
+            &__prices {
                 font-size: 24px;
                 padding: 20px 0;
             }
-            &__description{
+
+            &__description {
                 display: block;
             }
         }
-        &::after{
+
+        &::after {
             display: none;
         }
-        &:hover{
+
+        &:hover {
             border: 1px solid @main-border-line-color;
             box-shadow: 0 0 15px @product-box-shadow;
+
             .product-item__text-content {
                 transform: none;
             }
         }
     }
 }
+
 .product-item {
     box-sizing: border-box;
     border: 1px solid @main-border-line-color;
     .flex-mixin(@direction: column, @justify: flex-start);
     position: relative;
-    @media(max-width: @mobile){
+    @media (max-width: @mobile) {
         margin-bottom: 31px;
     }
 
@@ -182,7 +198,8 @@
                 text-decoration: line-through;
             }
         }
-        &__description{
+
+        &__description {
             display: none;
             line-height: 21px;
         }
@@ -209,8 +226,9 @@
             border: 1px solid @main-border-line-color;
             box-shadow: 0 0 15px @product-box-shadow;
         }
+
         .product-item__image,
-        .product-item__content{
+        .product-item__content {
             z-index: 2;
         }
 
@@ -229,15 +247,16 @@
         }
 
         .product-sale,
-        .product-new{
+        .product-new {
             z-index: 3;
         }
     }
 }
 
-.product{
-    &-action{
+.product {
+    &-action {
         z-index: 1;
+
         span {
             font-size: 12px;
             text-transform: uppercase;
@@ -246,6 +265,7 @@
             .middle-mixin();
         }
     }
+
     &-sale {
         .geometric-mixin(@width: 60px, @height: 29px);
         background-color: @main-elements-background;
@@ -258,12 +278,13 @@
             background-color: transparent;
         }
     }
-    &-new{
+
+    &-new {
         .geometric-mixin(@width: 55px, @height: 29px);
         background-color: @product-status-new-background;
         .absolute-position-mixin(@top: 13px, @left: 100%, @translateX: calc(-100% + 11px), @translateY: 0);
 
-        &::after{
+        &::after {
             content: '';
             .background-image-mixin(@image: 'new.png', @widthImg: 10px, @heightImg: 8px, @size: 100%);
             .absolute-position-mixin(@top: 100%, @left: 100%, @translateX: -100%, @translateY: 0);
