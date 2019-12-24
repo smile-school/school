@@ -1,0 +1,262 @@
+main{
+  display: flex;
+  flex-direction: column;
+  padding: 0 50px;
+  .brad-crams-container{
+    display: flex;
+
+    li{
+      padding: 9px 0 3px 0;
+      margin-right: 8px;
+      &:last-of-type a{
+        font-weight: 700;
+        color: @red;
+      }
+      a{
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 33px;
+        text-transform: uppercase;
+        letter-spacing: -0.1px;
+        color: @crams;
+        display: flex;
+        align-items: center;
+
+        &:hover{
+          color: @red;
+        }
+        i{
+          color: @red;
+          font-size: 10px;
+          font-weight: 300;
+          line-height: 33px;
+          margin-right: 9px;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+  .date-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+    .left-date-container{
+      p{
+        padding-top: 7px;
+        font-weight: 400;
+        letter-spacing: -0.4px;
+        color: @font;
+        span{
+          font-size: 14px;
+          font-weight: 700;
+          letter-spacing: -0.4px;
+          line-height: 20px;
+          text-transform: uppercase;
+          margin-right: 4px;
+        }
+      }
+    }
+    .right-date-container{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-grow: 1;
+      max-width: 545px;
+      li{
+        a{
+          display: inline-block;
+          color: @font;
+          font-size: 15px;
+          font-weight: 400;
+          line-height: 24px;
+          letter-spacing: 0.0px;
+          padding-top: 5px;
+        }
+
+        &:first-of-type img{
+          margin-right: 15px;
+        }
+        &:last-of-type img{
+          margin-right: 9px;
+        }
+
+      }
+    }
+  }
+  .content-tittle{
+    font-size: 35px;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: -0.15px;
+    color: @font;
+    margin-top: 11px;
+    &:first-letter{
+      letter-spacing: -2px;
+    }
+  }
+  .content-wrapper{
+    margin-top: 23px;
+    padding-top: 11px;
+    border-top: 1px solid @main-border;
+    display: flex;
+    justify-content: space-between;
+    .products-container{
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      max-width: 960px;
+      .sort-container{
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .sort-tittle{
+          display: block;
+          padding-top: 3px;
+          font-size: 16px;
+          font-weight: 700;
+          line-height: 27px;
+          text-transform: uppercase;
+          letter-spacing: -0.25px;
+          span{
+            color:@red;
+          }
+        }
+        .sort-block{
+          flex-grow: 1;
+          max-width: 332px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          div:first-of-type{
+            padding-top: 3px;
+            select{
+              background-color: @white;
+              padding-right: 4px;
+              border: none;
+
+              &:last-of-type{
+                margin-left: 21px;
+                padding-left: 7px;
+                padding-right: 0;
+              }
+            }
+          }
+          div:last-of-type {
+            button{
+              background-color: @white;
+              outline: none;
+              border-radius: 50%;
+              height: 36px;
+              width: 36px;
+              border: 1px solid @main-border;
+              margin-left: 3px;
+            }
+          }
+        }
+      }
+      .product-list{
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        margin-top: 7px;
+        li{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-grow: 1;
+          border-top: 1px solid @main-border;
+          padding: 30px 0;
+          &:last-of-type{
+            border-bottom: 1px solid @main-border;
+          }
+
+          .good-left-block{
+            max-width: 435px;
+            flex-grow: 1;
+            display: flex;
+            .img-block{
+              max-width: 136px;
+              max-height: 136px;
+              flex-grow: 1;
+              border: 1px solid @main-border;
+              padding: 7px 14px 15px 8px;
+              box-sizing: border-box;
+              margin-right: 30px;
+              img{
+              }
+            }
+            .description-block{
+              h3{
+                color: #182d47;
+                font-size: 18px;
+                font-weight: 700;
+                line-height: 22px;
+                letter-spacing: -0.1px;
+                margin-top: 16px;
+              }
+              & > span{
+                color: #afb1b3;
+                font-size: 12px;
+                font-weight: 700;
+                line-height: 16px;
+                text-transform: uppercase;
+                letter-spacing: -0.3px;
+                display: flex;
+                align-items: center;
+                margin-top: 10px;
+                span{
+                  display: inline-block;
+                  width: 8px;
+                  height: 8px;
+                  background-color: @green;
+                  border-radius: 50%;
+                  margin-right: 7px;
+                }
+                .unstock{
+                  background-color: @red;
+                }
+              }
+            }
+          }
+          .good-price-container{
+            display: flex;
+            flex-direction: column;
+            align-self: flex-start;
+            text-align: right;
+            max-width: 172px;
+            flex-grow: 1;
+            p{
+              color: @font;
+              font-size: 14px;
+              font-weight: 400;
+              line-height: 16px;
+              font-family: "Proxima Nova - Regular", sans-serif;
+              letter-spacing: 0.14px;
+              margin-top: 20px;
+             span{
+               font-family: "Proxima Nova Rg", sans-serif;
+               font-size: 18px;
+               font-weight: 700;
+               letter-spacing: 0.18px;
+             }
+            }
+            a{
+              text-align: center;
+              height: 40px;
+              color: @white;
+              background-color: @red;
+              font-size: 14px;
+              font-weight: 700;
+              line-height: 42px;
+              text-transform: uppercase;
+              letter-spacing: -0.3px;
+              margin-top: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
