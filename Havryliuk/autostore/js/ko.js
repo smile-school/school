@@ -26,6 +26,10 @@ $(function() {
         }
     }
 
+    function Cart() {
+        this.cartList = ko.observableArray([]);
+    }
+
     function Compare() {
         this.compareList = ko.observableArray([]);
         this.removeCompare = function (product) {
@@ -64,6 +68,7 @@ $(function() {
         this.brand = ko.observable(brand || '');
         this.model = ko.observable(model || '');
         this.year= ko.observable(year || '');
+        this.qty = ko.observable(1);
         this.prices = ko.computed(function () {
             var html =  '';
             if (!this.sale()){
@@ -90,12 +95,27 @@ $(function() {
                 }
             }
             if(product) this.productList.push(product);
-        }
+        };
         this.addCompare = function (product) {
             if(!product.compaired()){
                 compare.compareList.push(product);
                 product.compaired(true);
             }
+        };
+        this.addCart = function (product) {
+            var status = false;
+            for(var i = 0; i < cart.cartList().length; i++){
+                if(cart.cartList()[i] === product) {
+                    status = true;
+                    break;
+                }
+            }
+            if(!status){
+                cart.cartList.push(product);
+            } else {
+                cart.cartList()[i].qty(cart.cartList()[i].qty() + 1);
+            }
+            console.log(cart.cartList());
         }
     }
 
@@ -163,26 +183,8 @@ $(function() {
     ko.applyBindings(attributes, document.querySelector('#filters'));
     ko.applyBindings(productList, document.querySelector('#productList'));
     ko.applyBindings(compare, document.querySelector('#compare'));
+    ko.applyBindings(compare, document.querySelector('#mini-cart'));
 
-    /* productList.productList.subscribe(function (value) {
-        for (var i = 0; i < value.length; i++){
-            for (var key in value[i]){
-                if (key == 'price'){
-                   if (value[i][key]() > +priceFilter.slider('option', 'max')){
-                       priceFilter.slider('option', 'max', value[i][key]());
-                       priceFilter.slider(value, 1 , value[i][key]());
-                       $('#price2').val(value[i][key]());
-                   }
-                }
-            }
-        }
-     });*/
-
-    /*productList.productList.push(
-        new Product('title', 'ima/gal/base/acdelco_335_professional_3 1.png', 40 ,30, false, false, 4,'red', 'bmw', 'x5', 2015),
-        new Product('title', 'ima/gal/base/acdelco_335_professional_3 1.png', 40 ,30, false, false, 4,'red', 'bmw', 'x5', 2015),
-        new Product('title', 'ima/gal/base/acdelco_335_professional_3 1.png', 40 ,30, false, false, 4,'red', 'bmw', 'x5', 2015),
-    );*/
     productList.addProduct(new Product('title', 'ima/related/1.png', 40 ,30, false, false, 4,'red', 'bmw', 'x5', 2015));
     productList.addProduct(new Product('Audi', 'ima/related/2.png', 400 ,98, false, false, 5,'black', 'huiaudi', 's8', 2019));
     productList.addProduct(new Product('Audi', 'ima/related/3.png', 200 ,100, false, true, 5,'green', 'audi', 's8', 2020));

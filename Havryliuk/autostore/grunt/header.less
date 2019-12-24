@@ -153,18 +153,18 @@ header{
         .wrapper{
             display: flex;
             flex-flow: row;
-            padding: 31px 15px 22px;
+            padding: 31px 15px 23px;
                 .header-logo{
                     width: 25%;
                 }
                 .search-pole{
                     width: 50%;
                     position: relative;
-                    padding: 4px 0 4px 10px;
+                    padding: 4px 7px 4px 8px;
                     input{
                         &:nth-child(1){
                             width: 100%;
-                            padding: 13px 115px;
+                            padding: 13px 112px;
                             font-size: 14px;
                             line-height: 15px;
                             border: 2px solid @border2-color;
@@ -185,10 +185,10 @@ header{
                         border-radius: 0 5px 5px 0;
                         border: 2px solid @button;
                         position: absolute;
-                        right: 0;
+                        right: 7px;
                         top: 4px;
                         width: 54px;
-                        height: 44px;
+                        height: 45px;
                             &::before{
                                 color: @base-color;
                                 font-family: Font Awesome\ 5 Free;
@@ -207,8 +207,8 @@ header{
                     }
             }
             .cart-menu{
-                width: 26%;
-                padding: 4px 1px 4px 30px;
+                width: 25%;
+                padding: 4px 1px 4px 22px;
                 display: flex;
                 justify-content: space-between;
                 position: relative;
@@ -252,7 +252,7 @@ header{
                         background-color: @button;
                         border-radius: 50%;
                         position: absolute;
-                        top: -25%;
+                        top: -10px;
                         left: 33px;
                         width: 24px;
                         height: 24px;
@@ -263,7 +263,7 @@ header{
                         }
                     }
                     .basket{
-                        padding: 11px;
+                        padding: 13px 10px 10px;
                         border: 2px solid @border-color;
                         border-right: 0;
                         border-radius: 5px 0 0 5px;
@@ -508,6 +508,7 @@ header{
                 ul{
                     display: flex;
                     flex-wrap: wrap;
+                    padding-left:10px;
                     .arrow-anim {
                         &:hover a>span::after {
                             transform: rotate(-180deg);
@@ -543,7 +544,7 @@ header{
                              display: inline-block;
                              text-decoration: none;
                              color: black;
-                             padding: 22px 16px 15px 16px;
+                             padding: 22px 15px 15px 16px;
                              font-size: 13px;
                              line-height: 17px;
                              letter-spacing: 0.7px;
@@ -586,7 +587,23 @@ header{
                                 width: 50%;
                             }
                         }
+                        &:nth-of-type(2) a{
+                            padding-left: 25px;
+                        }
+                        &:nth-of-type(3) a{
+                            padding-left: 13px;
+                        }                 
+                        &:nth-of-type(4) a,
+                        &:nth-of-type(5) a{
+                            padding-left: 13px;
+                        }
+                        &:nth-of-type(6) a,
+                        &:nth-of-type(7) a{
+                            padding-left: 14px;
+                        }
+
                     }
+                    
                 }
             }
         }

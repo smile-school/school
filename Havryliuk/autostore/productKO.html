@@ -34,6 +34,9 @@
         .active{
             background-color: red; !important;
         }
+        .comapre-result{
+            flex-flow: column wrap; !important;
+        }
     </style>
 </head>
 <body>
@@ -84,10 +87,10 @@
                     </a>
                     <p>My Cart&nbsp;<span>&nbsp;</span></p>
                     <div class="cart-popup-btn-hover">
-                        <div class="btn-wrapper">
+                        <div class="btn-wrapper" id="mini-cart">
                             <div class="description">
                                 <div class="description-img">
-                                    <img src="ima/steering_wheels.png"  alt="">
+                                    <img src="ima/gal/mini/carbon_fiber_steering_wheel_3%201.png"  alt="">
                                 </div>
                                 <div class="description-txt">
                                     <div class="cart-title">
@@ -286,7 +289,7 @@
 
                             </ul>
                             <div class="compare-control" data-bind="visible:compareList">
-                                <a href="#" data-bind="click: $root.compareAll"></a>ів
+                                <a href="#" data-bind="click: $root.compareAll" style="color: white; background-color: red">compare all</a>
 
                             </div>
                         </div>
@@ -330,7 +333,7 @@
                     </div>
                 </div>
                 <div class="related-products product-page">
-                    <input type="button" id="add-to-cart" class="add-to-cart">
+                    <input type="button" id="add-to-cart" class="add-to-cart" data-bind="$root.addCart">
                     <input type="button" id="restart-cart" class="restart-cart">
                     <div class="related-product-list" data-bind="foreach: productList" id="productList">
 
