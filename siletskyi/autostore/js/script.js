@@ -59,6 +59,7 @@
         sliderPrev.smilecarousel('toPrev')
     });
 })();
+
 (function () {
     var slider = $('.product-list-wrap').smilecarousel({
         delay: 300,
@@ -71,4 +72,18 @@
     $('.prev-btn-bottom').on('click', function () {
         slider.smilecarousel('toPrev')
     });
+})();
+
+(function () {
+    var price = $( "#price" ).slider({
+        range: true,
+        min: 66,
+        max: 290,
+        values: [ 66.9, 290],
+        slide: function( event, ui ) {
+            $( "#min-price" ).val(ui.values[0]);
+            $("#max-price").val(ui.values[1]); }
+    });
+    $( "#min-price" ).val($( "#price" ).slider( "values", 0 ));
+    $("#max-price").val($("#price").slider( "values", 1 ));
 })();
