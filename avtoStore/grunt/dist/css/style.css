@@ -332,7 +332,7 @@ ul {
   width: 1px;
   height: 11px;
   position: absolute;
-  left: 0;
+  left: 9px;
   background-color: #CCCCCC;
 }
 .ul-header li:last-of-type {
@@ -949,13 +949,14 @@ ul {
   width: 20px;
   top: 38px;
 }
-.home {
+.home-hom {
   position: relative;
 }
-.home svg {
+.home-hom svg {
   fill: #282828;
   position: absolute;
-  right: 6px;
+  right: -15px;
+  top: 3px;
   transition: transform, 0.3s;
 }
 @media screen and (max-width: 1150px) {
@@ -1005,7 +1006,7 @@ ul {
 }
 @media screen and (max-width: 650px) {
   .menu-nav .menu-hover-bloc {
-    width: 180px;
+    width: 100%;
   }
   .menu-nav .menu-hover-bloc .col-menu-how {
     justify-content: center;
@@ -1013,14 +1014,14 @@ ul {
   .col-row {
     flex-direction: column;
   }
+  .col-menu-how {
+    width: 100%;
+  }
   .all-categories {
     display: none;
   }
   .bur:checked ~ ul.menu-nav {
     width: 100%;
-  }
-  .bur:checked ~ ul.menu-nav .home-li:hover .menu-hover-bloc {
-    display: none;
   }
 }
 @media screen and (max-width: 480px) {
@@ -1484,6 +1485,9 @@ button.mod-cart {
 }
 .bloc-cart-towar {
   text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 button.dzb2:hover {
   border-color: #282828;
@@ -1740,7 +1744,7 @@ button.dzb2:hover {
   }
 }
 .filter-block {
-  padding: 19px 15px 26px 20px;
+  padding: 21px 15px 27px 20px;
   border: 1px solid #E5E5E5;
   border-top: none;
 }
@@ -1793,7 +1797,7 @@ button.dzb2:hover {
 .wrappers {
   display: flex;
   flex-direction: row;
-  padding: 20px 0 100px;
+  padding: 20px 0 103px;
 }
 .color-filtr > ul {
   display: flex;
@@ -2073,37 +2077,47 @@ button.hover-btn:hover {
 }
 .ul-list-product li {
   width: 31%;
-  margin-bottom: 30px;
+  margin-bottom: 34px;
 }
 .ul-list-product li .href-img-bloc {
   width: auto;
+  padding: 1px;
 }
 .ul-list-product li .item {
-  min-height: 400px;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 .ul-list-product li .item::after {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
-  bottom: 0;
+  bottom: -34px;
   right: 0;
   z-index: -1;
-  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.6);
-  display: none;
 }
 .ul-list-product li .item:hover {
-  z-index: 30;
+  z-index: 40;
   position: relative;
   background-color: white;
+  border: none;
 }
 .ul-list-product li .item:hover .info-cart-list {
   border-bottom: none;
-  z-index: 30;
+}
+.ul-list-product li .item:hover .info-cart-list .add-to-cart {
+  position: absolute;
+  width: 100%;
 }
 .ul-list-product li .item:hover::after {
-  display: block;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.6);
+}
+.ul-list-product li .item:hover .info-cart-towar {
+  transform: translateY(40px);
+  z-index: 40;
+  border-bottom: none;
 }
 .ul-list-product li .item .name-towar {
   padding: 25px 0 15px;
@@ -2117,6 +2131,7 @@ button.hover-btn:hover {
 .ul-list-product .bloc-cart-towar {
   position: relative;
   z-index: 20;
+  height: 100%;
 }
 .mod-mark {
   position: absolute;
@@ -2285,7 +2300,7 @@ button.hover-btn:hover {
     z-index: 900;
     background-color: #fff;
     transition: all 0.4s;
-    transform: translateX(-100%);
+    transform: translateX(-110%);
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.9);
   }
   .mod-aside.filter-aside {
@@ -2307,11 +2322,11 @@ button.hover-btn:hover {
   .ul-list-product li .price-rod .old-price {
     padding-left: 5px;
   }
-  .ul-list-product li .item {
-    overflow: visible;
-  }
 }
 @media screen and (max-width: 560px) {
+  .main-aside {
+    width: 100%;
+  }
   .ul-list-product {
     flex-direction: column;
     align-items: center;
@@ -2319,9 +2334,6 @@ button.hover-btn:hover {
   .ul-list-product li {
     width: 90%;
     margin-bottom: 150px;
-  }
-  .ul-list-product li .item:hover {
-    height: auto;
   }
   .paremener-playback {
     flex-direction: column;
@@ -2336,9 +2348,6 @@ button.hover-btn:hover {
 @media screen and (max-width: 420px) {
   .ul-list-product li {
     margin-bottom: 50px;
-  }
-  .ul-list-product li .item:hover {
-    height: auto;
   }
 }
 .top-footer {

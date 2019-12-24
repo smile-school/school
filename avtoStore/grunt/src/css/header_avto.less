@@ -55,7 +55,7 @@ ul {
                 width: 1px;
                 height: 11px;
                 position: absolute;
-                left: 0;
+                left: 9px;
                 background-color: @gray-shade;
             }
         }
@@ -815,13 +815,14 @@ ul {
     top: 38px;
 }
 
-.home {
+.home-hom {
     position: relative;
 
     svg {
         fill: @defolt-color;
         position: absolute;
-        right: 6px;
+        right: -15px;
+        top: 3px;
         transition: transform, .3s;
     }
 }
@@ -901,7 +902,7 @@ ul {
 @media screen  and (max-width: 650px) {
     .menu-nav {
         .menu-hover-bloc {
-            width: 180px;
+            width: 100%;
 
             .col-menu-how {
                 justify-content: center;
@@ -912,7 +913,9 @@ ul {
     .col-row {
         flex-direction: column;
     }
-
+    .col-menu-how{
+        width: 100%;
+    }
     .all-categories {
         display: none;
     }
@@ -922,13 +925,7 @@ ul {
             & ~ ul.menu-nav {
                 width: 100%;
 
-                .home-li {
-                    &:hover {
-                        .menu-hover-bloc {
-                            display: none;
-                        }
-                    }
-                }
+
             }
         }
     }
