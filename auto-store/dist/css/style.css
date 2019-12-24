@@ -177,7 +177,7 @@ body {
   font-weight: normal;
   border: 2px solid #C4C4C4;
   border-radius: 5px 0 0 5px;
-  width: 516px;
+  width: 100%;
   padding: 11px 0 12px 109px;
   color: rgba(196, 196, 196, 0.8);
   box-sizing: border-box;
@@ -497,6 +497,7 @@ body {
 }
 .header .nav .wrapper .navigation > ul > li:hover .hidden {
   display: flex;
+  z-index: 10;
 }
 .header .nav .wrapper .navigation > ul > li .hidden {
   position: absolute;
@@ -1931,97 +1932,91 @@ body {
   color: #BBBBBB;
   margin-top: -5px;
 }
-@media screen and (max-width: 1024px) {
-  /* style.css | http://localhost/school/school/auto-store/dist/css/style.css */
+@media screen and (max-width: 1066px) {
   .wrapper {
     padding: 0 15px;
   }
-  .header .hat form.search {
-    /* margin-left: 122px; */
-    margin-left: 30px;
-  }
-  .header .hat form.search input[type="text"] {
-    /* width: 516px; */
-    flex-grow: 1;
-    width: 100%;
-  }
-  .header .cart {
-    /* margin-left: 56px; */
-    margin-left: 30px;
-  }
+  /* style.css | http://localhost/school/school/auto-store/dist/css/style.css */
   .header .nav .wrapper .navigation > ul > li {
     /* padding: 18px 21px 16px 20px; */
-    padding: 15px 20px 10px 20px;
+    padding: 18px 12px 16px 12px;
   }
-  .header .nav .wrapper .all-category {
-    /* width: 270px; */
-    width: 200px;
-  }
-  .main .wrapper .body .card .product-info .gallery .preview .img .item {
-    padding-right: 10px;
-  }
-  /* style.css | http://localhost/school/school/auto-store/dist/css/style.css */
   .main .wrapper .body .aside {
+    /* padding-left: 25px; */
     /* max-width: 268px; */
-    /* width: 100%; */
-    width: 25%;
+    padding-left: 14px;
+    max-width: 240px;
   }
-  .main .wrapper .body .card {
-    /* max-width: 75%; */
-    max-width: 72%;
+  .main .wrapper .body .aside .feature-card .card .info a {
+    /* font-size: 14px; */
+    font-size: 13px;
   }
-  .main .wrapper .body .card .product-info .gallery > .img {
-    /* max-width: 410px; */
-    max-width: 350px;
-  }
-  .main .wrapper .body .card .product-info .gallery .preview {
-    /* width: 410px; */
-    width: 350px;
-  }
-  .main .wrapper .body .card .product-info .card-info .prop {
-    /* padding-top: 37px; */
-    padding-top: 14px;
-  }
-  .main .wrapper .body .card .product-info .card-info .add-to-card .add {
-    /* padding: 12px 61px; */
-    padding: 12px 30px;
-  }
-  .main .wrapper .body .card .product-info .card-info .add-to-card input[type="text"] {
-    /* width: 72px; */
-    width: 36px;
-  }
-  .main .wrapper .gallery-bottom .product-wrapper {
-    /* margin: 0 -15px; */
-    margin: 0 auto;
+  .header .hat form.search input[type="text"] {
     width: 100%;
   }
-  /* Элемент | http://localhost/school/school/auto-store/# */
+  .footer .wrapper .content div:nth-child(4) ul {
+    /* padding-left: 88px; */
+    padding-left: 40px;
+  }
+  .footer .wrapper .content div:nth-child(4) .title {
+    /* padding-left: 88px; */
+    padding-left: 40px;
+  }
+  .footer .wrapper .content div.nav .title {
+    /* font-size: 18px; */
+    font-size: 17px;
+  }
+  .footer .wrapper .content .contact-us {
+    /* width: 34%; */
+    width: 35%;
+  }
+  .footer .wrapper .content div:nth-child(3) .title {
+    /* padding-left: 44px; */
+    padding-left: 20px;
+  }
+  .footer .wrapper .content div:nth-child(3) ul {
+    /* padding-left: 45px; */
+    padding-left: 20px;
+  }
+  /* Элемент | http://localhost/school/school/auto-store/ */
   .promo > img:nth-child(1) {
     display: block;
     width: 100%;
   }
   /* style.css | http://localhost/school/school/auto-store/dist/css/style.css */
-  .footer .wrapper .content .contact-us {
-    width: 30%;
-  }
-  .footer .wrapper .content div:nth-child(3) .title {
-    padding-left: 0;
-  }
-  .footer .wrapper .content div:nth-child(3) ul {
-    padding-left: 0;
-  }
-  .footer .wrapper .content div:nth-child(4) .title {
-    padding-left: 0;
-  }
-  .footer .wrapper .content div:nth-child(4) ul {
-    padding-left: 0;
+  .footer .wrapper .content {
+    justify-content: space-between;
+    flex-wrap: wrap;
   }
   .footer .wrapper .content div.nav {
     /* width: 22%; */
-    width: 24%;
+    width: 30%;
+    padding: 0 43px;
+  }
+  .footer .wrapper .content .contact-us {
+    /* width: 35%; */
+    width: 51%;
+    padding-left: 48px;
+  }
+  .footer .wrapper .content div:nth-child(4) ul {
+    /* padding-left: 40px; */
+    padding-left: 0;
+  }
+  .footer .wrapper .content div:nth-child(4) .title {
+    /* padding-left: 40px; */
+    padding-left: 0;
+  }
+  /* style.css | http://localhost/school/school/auto-store/dist/css/style.css */
+  .main .wrapper .body .card .product-info .card-info .add-to-card .add {
+    /* padding: 12px 61px; */
+    padding: 12px 25px;
+  }
+  .main .wrapper .body .card .product-info .card-info .add-to-card input[type="text"] {
+    /* width: 72px; */
+    width: 12px;
   }
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1024px) {
   #menu__toggle {
     opacity: 0;
   }
@@ -2163,11 +2158,11 @@ body {
   }
   .main .wrapper .body .card {
     /* max-width: 72%; */
-    max-width: 75%;
     max-width: 100%;
   }
   .main .wrapper .body .aside {
     width: 100%;
+    display: none;
   }
   .main .wrapper .body {
     flex-direction: column;
@@ -2193,5 +2188,162 @@ body {
   }
   .main .wrapper .body .aside .promo {
     display: none;
+  }
+  /* style.css | http://localhost/school/school/auto-store/dist/css/style.css */
+  .header .hat form.search {
+    /* margin-left: 122px; */
+    margin-left: 26px;
+    justify-content: flex-end;
+  }
+  .header .hat form.search input[type="text"] {
+    /* width: 50%; */
+    width: 0;
+    padding: 0;
+    border: 0;
+  }
+  .header .cart {
+    /* margin-left: 56px; */
+    margin-left: 30px;
+  }
+  /* Элемент | http://localhost/school/school/auto-store/ */
+  .header .hat form.search input[type="submit"] {
+    border-radius: 5px;
+  }
+}
+@media screen and (max-width: 767px) {
+  /* Элемент | http://localhost/school/school/auto-store/ */
+  .login {
+    display: none;
+  }
+  /* Элемент | http://localhost/school/school/auto-store/ */
+  .header .hat form.search {
+    display: none;
+  }
+  /* Элемент | http://localhost/school/school/auto-store/ */
+  .header .wishlist {
+    display: none;
+  }
+  /* Элемент | http://localhost/school/school/auto-store/ */
+  div.wrapper:nth-child(2) > div:nth-child(4) > span:nth-child(2) {
+    display: none;
+  }
+  /* Элемент | http://localhost/school/school/auto-store/ */
+  .header .cart i {
+    border-radius: 5px;
+  }
+  /* style.css | http://localhost/school/school/auto-store/dist/css/style.css */
+  .main .wrapper .body .card .product-info .card-info {
+    padding-left: 0;
+  }
+  .header .cart i::after {
+    display: none;
+  }
+  .header .cart:hover .hidden {
+    display: none;
+  }
+  .header .nav .wrapper .all-category {
+    /* width: 270px; */
+    width: 187px;
+  }
+  .main .wrapper .gallery-bottom p.related-product {
+    /* font-size: 36px; */
+    font-size: 22px;
+  }
+  .main .wrapper .gallery-bottom p.related-product::before,
+  .main .wrapper .gallery-bottom p.related-product::after {
+    /* margin: 0 9px 10px 12px; */
+    margin: 0 10px 4px 12px;
+  }
+  .footer .wrapper .content .contact-us .title {
+    /* font-size: 18px; */
+    font-size: 21px;
+  }
+  .footer .wrapper .content .contact-us .title li {
+    /* font-size: 14px; */
+    /* padding: 24px 37px 4px; */
+    font-size: 13px;
+    padding: 10px 37px 4px;
+  }
+  .footer .wrapper .content div.nav {
+    /* padding: 0 43px; */
+    padding: 0 34px 0 53px;
+    width: 100%;
+  }
+  .footer .wrapper .content div:nth-child(3) .title {
+    /* padding-left: 20px; */
+    padding-left: 0;
+  }
+  .footer .wrapper .content div:nth-child(3) ul {
+    /* padding-left: 20px; */
+    padding-left: 0;
+  }
+  .footer .wrapper .content .contact-us {
+    /* padding-left: 48px; */
+    padding-left: 18px;
+    padding-bottom: 50px;
+  }
+  .main .wrapper .body .card .product-info .card-info .add-to-card .add {
+    /* padding: 12px 25px; */
+    padding: 12px 23px;
+  }
+  .footer .payment .wrapper {
+    flex-direction: column;
+  }
+  .main .wrapper .body .card .product-info .card-info .add-to-card .add {
+    /* font-size: 14px; */
+    font-size: 13px;
+  }
+  /* Элемент | http://localhost/school/school/auto-store/ */
+  div.wrapper:nth-child(2) {
+    /* flex-direction: revert; */
+    justify-content: space-between;
+  }
+  /* Элемент | http://localhost/school/school/auto-store/ */
+  .gallery {
+    width: 100%;
+  }
+  /* Элемент | http://localhost/school/school/auto-store/ */
+  .main .wrapper .body .card .product-info .gallery .preview {
+    width: 100%;
+  }
+  /* Элемент | http://localhost/school/school/auto-store/ */
+  .product-tabs {
+    padding: 0;
+  }
+  /* Элемент | http://localhost/school/school/auto-store/ */
+  .product-wrapper {
+    width: 100%;
+  }
+  /* Элемент | http://localhost/school/school/auto-store/ */
+  .contact-us {
+    width: 100%;
+  }
+  /* Элемент | http://localhost/school/school/auto-store/ */
+  .payment > div:nth-child(1) > div:nth-child(1) > img:nth-child(1) {
+    width: 100%;
+    padding: 10px 0;
+  }
+  /* Элемент | http://localhost/school/school/auto-store/ */
+  .product-info {
+    flex-direction: column;
+  }
+  /* Элемент | http://localhost/school/school/auto-store/ */
+  .card-info {
+    /* padding: 1\[0 0; */
+    /* padding: 1\[p0 0; */
+    /* padding: 1\[px0 0; */
+    padding: 10px 0;
+  }
+  /* style.css | http://localhost/school/school/auto-store/dist/css/style.css */
+  .footer .wrapper .content .contact-us {
+    width: 100%;
+  }
+  .footer .wrapper .content .contact-us .title li:nth-child(1)::before {
+    /* top: 32px; */
+    top: 16px;
+  }
+  .footer .wrapper .content .contact-us .title li::before {
+    /* top: 15px; */
+    top: 2px;
   }
 }
