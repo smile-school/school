@@ -131,7 +131,8 @@
                     <div class="filter-group__name">color</div>
                     <div class="filter-group__filter-items">
                         <ul class="colors-filter__wrapper" data-bind="foreach: color">
-                            <li class="color-filter" style="background-color: #000000" data-bind="attr:{style: 'background-color:' + $data}"></li>
+                            <li class="color-filter" style="background-color: #000000" data-bind="attr:{style: 'background-color:' + $data},
+                                click:function(data, e){$root.setFilter(data,e,'color')}"></li>
                         </ul>
                     </div>
                 </div>
@@ -151,9 +152,9 @@
                     <div class="filter-group__name">brand</div>
                     <div class="filter-group__filter-items">
                         <ul class="brands-filter__wrapper" data-bind="foreach: brand">
-                            <li class="brand-filter">
+                            <li class="brand-filter" data-bind="click:function(data, e){$root.setFilter(data,e,'brand')}">
                                 <span class="brand-filter__title" data-bind="text: $data"></span>
-                                <span class="brand-filter__quantity">()</span>
+                                (<span class="brand-filter__quantity" data-bind="text: $root.countBrand($data)"></span>)
                             </li>
                         </ul>
                     </div>
@@ -193,7 +194,7 @@
             <h1 class="search-result__heading">Baby Car Seats</h1>
             <div class="search-result__controls"></div>
             <div class="search-result__products" data-bind="foreach:productList" id="productList">
-                <div class="product-item" data-bind="css:{sale: sale, new: newAction}">
+                <div class="product-item" data-bind="css:{sale: sale, new: newAction}, visible: visible">
                     <div class="product-item__image">
                         <img  data-bind="attr:{src:img, alt:title}">
                     </div>
@@ -288,6 +289,27 @@
         this.brand = ko.observableArray([]);
         this.model = ko.observableArray([]);
         this.year = ko.observableArray([]);
+        this.countBrand = function (brand) {
+            console.log(brand, productList);
+            var count = 0,
+                products = productList.productList();
+            for (var i = 0; i < products.length; i++){
+                if(products[i].brand() === brand) count++;
+            }
+            return count;
+        };
+        this.setFilter = function (data, e, filter) {
+            var products = productList.productList();
+            for(var  i = 0; i < products.length; i++){
+                /*if (products[i][filter]() !== data){
+                    products[i].visible(false);
+                }
+                else{
+                    products[i].visible(true);
+                }*/
+                products[i].visible(!(products[i][filter]() !== data));
+            }
+        }
     }
 
     function Product(title, img, price, salePrice, newAction, sale, rating, color, brand, model, year) {
@@ -316,6 +338,7 @@
         }, this);
         this.compaired = ko.observable(false);
         this.favorite = ko.observable(false);
+        this.visible = ko.observable(false);
     }
 
     function AddProduct() {
