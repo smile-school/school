@@ -36,11 +36,14 @@
                 self.menuTop.addClass('close');
             }
         });
-        // $(document).mouseup(function (e) {
-        //   if (!self.menuTop.is(e.target) && self.menuTop.has(e.target).length ===0){
-        //       self.menuTop.addClass('close');
-        //   }
-        // });
+
+        $(document).mouseup(function (e) {
+          if (!$('.top-menu').is(e.target) && $('.top-menu').has(e.target).length ===0){
+              $('.top-menu').removeClass('open');
+              $('.top-menu').addClass('close');
+
+          }
+        });
 
 
     }
