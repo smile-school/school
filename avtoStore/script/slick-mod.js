@@ -1,6 +1,6 @@
 $('.product-slick').slick({
     infinite: true,
-    speed: 500,
+    speed: 700,
     slidesToShow: 4,
     slidesToScroll: 1,
     prevArrow: '<a href="#" class="arrows forward"></a>',
@@ -22,5 +22,14 @@ $('.product-slick').slick({
                 infinite: true,
             }
         },
+        {
+            breakpoint: 321,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                infinite: true,
+            }
+        },
     ]
+
 });
