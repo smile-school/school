@@ -773,12 +773,16 @@ span.big {
   }
 }
 .wrapper.banner-menu nav.menu > ul li {
-  padding: 5px 30px;
-  display: flex;
+  padding: 5px 23px;
   box-sizing: border-box;
   margin-top: 4px;
   color: #FFFFFF;
   position: relative;
+  vertical-align: middle;
+  max-width: 152px;
+  max-height: 100%;
+  flex-shrink: 0;
+  flex-grow: 0;
 }
 .wrapper.banner-menu nav.menu > ul li:hover {
   color: #182d47;
@@ -812,7 +816,6 @@ span.big {
 .wrapper.banner-menu nav.menu > ul li > a {
   color: inherit;
   text-transform: uppercase;
-  display: block;
   text-align: center;
   text-decoration: none;
   font-size: 13px;
@@ -820,6 +823,9 @@ span.big {
   font-weight: bold;
   align-self: center;
   letter-spacing: 0.33px;
+  height: 100%;
+  display: inline-flex;
+  align-items: center;
 }
 @media (max-width: 960px) {
   .wrapper.banner-menu nav.menu > ul li > a {
@@ -1120,6 +1126,57 @@ span.big {
   color: #ffffff;
   padding: 2px 19px;
 }
+.wrapper.main-content .content .aside .point.filters > input {
+  display: none;
+}
+.wrapper.main-content .content .aside .point.filters > input#categ:checked ~ div.categ {
+  display: block;
+}
+.wrapper.main-content .content .aside .point.filters > input#categ:checked ~ p.categ:after {
+  transform: rotate(180deg);
+}
+.wrapper.main-content .content .aside .point.filters > input#prix:checked ~ div.prix {
+  display: block;
+}
+.wrapper.main-content .content .aside .point.filters > input#prix:checked ~ p.prix:after {
+  transform: rotate(180deg);
+}
+.wrapper.main-content .content .aside .point.filters > input#vendeur:checked ~ div.vendeur {
+  display: block;
+}
+.wrapper.main-content .content .aside .point.filters > input#vendeur:checked ~ p.vendeur:after {
+  transform: rotate(180deg);
+}
+.wrapper.main-content .content .aside .point.filters > div {
+  display: none;
+}
+.wrapper.main-content .content .aside .point.filters > div > a {
+  display: block;
+  text-decoration: none;
+  font-size: 14px;
+  padding: 8px 10px;
+  line-height: 20px;
+  font-weight: normal;
+  border-bottom: 1px solid #ffffff;
+  text-transform: uppercase;
+  position: relative;
+  color: #ffffff;
+}
+.wrapper.main-content .content .aside .point.filters > div > a:before {
+  display: none;
+  content: '-';
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 2px;
+  transform: translateY(-50%);
+}
+.wrapper.main-content .content .aside .point.filters > div > a:hover:before {
+  display: block;
+}
+.wrapper.main-content .content .aside .point.filters > div.vendeur > a:last-child {
+  border: none;
+}
 .wrapper.main-content .content .aside .point.filters > p {
   padding: 11px 0;
   text-transform: uppercase;
@@ -1128,8 +1185,28 @@ span.big {
   font-weight: 700;
   letter-spacing: 0.14px;
   box-sizing: border-box;
+  position: relative;
+  z-index: 5;
 }
-.wrapper.main-content .content .aside .point.filters > p:not(:last-child) {
+.wrapper.main-content .content .aside .point.filters > p:after {
+  display: inline-block;
+  content: '';
+  border: 4.5px solid transparent;
+  border-top: 4.5px solid #ffffff;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transition: all 0.3s ease-out;
+}
+.wrapper.main-content .content .aside .point.filters > p > label {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 5;
+}
+.wrapper.main-content .content .aside .point.filters > p:not(:last-of-type) {
   border-bottom: 1px solid #ffffff;
 }
 .wrapper.main-content .content .aside .labels-filter-wrap {
@@ -1414,11 +1491,15 @@ span.big {
   letter-spacing: 0.14px;
   -webkit-appearance: none;
   -moz-appearance: none;
+  -ms-appearance: none;
   appearance: none;
   display: block;
   padding-right: 32px;
   box-sizing: border-box;
   position: relative;
+}
+.wrapper.main-content .content .main-cont .filter-wrap .filters > label > select::-ms-expand {
+  display: none;
 }
 .wrapper.main-content .content .main-cont .filter-wrap .filters .view-wraps {
   padding-left: 10px;
@@ -1755,7 +1836,6 @@ span.big {
   align-self: center;
 }
 .wrapper.main-content .content .main-cont .devis .devis-text {
-  /*flex-grow: 1;*/
   padding: 8px;
   margin-bottom: 4px;
   width: 70%;
