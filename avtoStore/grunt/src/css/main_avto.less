@@ -65,7 +65,7 @@ main {
     line-height: 21px;
 }
 .selection {
-    margin-top: 38px;
+    margin-top: 45px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -253,7 +253,6 @@ button.like-black{
 .check-img{
     outline: 1px solid @line-bloc;
     margin-left: 1px;
-    padding-bottom: 10px;
     position: relative;
 }
 .arrow{
@@ -416,6 +415,7 @@ button.like-black{
         font-weight: 900;
         font-size: @social-font-size;
         border: 1px solid @line-bloc;
+        border-right-color: transparent;
         line-height: 21px;
         position: relative;
         &::after{
@@ -461,17 +461,21 @@ button.like-black{
 }
 
 .white-li {
-    border-right-color: @white-color;
     border-left: 4px solid @bordo;
-
+    & > span{
+      background-color: @white-color;
+        border-right: 2px solid @white-color;
+        z-index: 3;
+    }
 }
-
+.menu-left-defailed{
+    margin-right: -1px;
+}
 .content-tabs {
     padding: 30px;
     border: 1px solid @line-bloc;
     position: relative;
     left: -1px;
-    z-index: -1;
     line-height: 23px;
     min-height: 614px;
     width: calc(100% - 276px);
@@ -513,7 +517,7 @@ button.like-black{
 .related-products {
     display: flex;
     flex-direction: column;
-    margin: 113px 0 60px 0;
+    margin: 113px 0 0 0;
 }
 
 .slider-product {
@@ -521,7 +525,7 @@ button.like-black{
     flex-direction: row;
     justify-content: space-between;
     box-sizing: border-box;
-    margin:0 -15px 20px;
+    margin:0 0 38px;
     position: relative;
     height: 480px;
     &:hover {
@@ -670,6 +674,55 @@ button.mod-cart {
         padding-right: 4px;
     }
 }
+.form-bloc{
+    width: 80%;
+    margin: 0 auto;
+}
+.form-coment{
+    display: flex;
+    flex-direction: column;
+    label{
+        font-size: 14px;
+        font-weight: bold;
+        margin-bottom: 8px;
+        display: block;
+    }
+   & > input{
+       box-sizing: border-box;
+       border: 1px solid @line-bloc;
+       margin-bottom: 20px;
+       height: 30px;
+       width: 100%;
+       border-radius: 5px;
+       display: block;
+       padding: 5px 10px;
+    }
+    & > textarea{
+        border-radius: 5px;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+        padding: 8px;
+        display: block;
+        width: 100%;
+        border: 1px solid @line-bloc;
+    }
+    .btn-bloc{
+        display: flex;
+        justify-content: space-between;
+    }
+    .btn-form{
+        width: 40%;
+        height: 40px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        background-color: #282828;
+        color: #FFFFFF;
+        &:hover{
+            background-color: @bordo;
+        }
+    }
+}
 
 .bloc-cart-towar {
     text-align: center;
@@ -707,7 +760,6 @@ button.dzb2 {
         cursor: pointer;
         display: none;
     }
-
     &::before {
         content: "";
         background-color: #FF2D37;
@@ -807,7 +859,7 @@ button.dzb2 {
     position: absolute;
     border: 1px solid #FF2D37;
     top: 0;
-    left: 104px;
+    left: 0;
     box-sizing: border-box;
     transition: left 500ms ease-out;
 }
@@ -999,9 +1051,12 @@ button.dzb2 {
 }
 
 @media screen and (max-width: 480px) {
-    .bloc-click{
-        width: 75px;
-        height: 75px;
+    .overlay{
+        width: 79px;
+        height: 79px;
+    }
+    .preview{
+        width: 100%;
     }
     .my-cart {
         &:hover {
@@ -1056,7 +1111,7 @@ button.dzb2 {
                 height: 55px;
             }
         }
-        .bloc-click{
+        .overlay{
             width: 55px;
             height: 55px;
         }

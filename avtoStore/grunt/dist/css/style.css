@@ -1181,7 +1181,7 @@ main {
   line-height: 21px;
 }
 .selection {
-  margin-top: 38px;
+  margin-top: 45px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -1344,7 +1344,6 @@ button.like-black {
 .check-img {
   outline: 1px solid #E5E5E5;
   margin-left: 1px;
-  padding-bottom: 10px;
   position: relative;
 }
 .arrow {
@@ -1486,6 +1485,7 @@ button.like-black {
   font-weight: 900;
   font-size: 18px;
   border: 1px solid #E5E5E5;
+  border-right-color: transparent;
   line-height: 21px;
   position: relative;
 }
@@ -1521,15 +1521,21 @@ button.like-black {
   text-transform: full-width;
 }
 .white-li {
-  border-right-color: #fff;
   border-left: 4px solid #FF2D37;
+}
+.white-li > span {
+  background-color: #fff;
+  border-right: 2px solid #fff;
+  z-index: 3;
+}
+.menu-left-defailed {
+  margin-right: -1px;
 }
 .content-tabs {
   padding: 30px;
   border: 1px solid #E5E5E5;
   position: relative;
   left: -1px;
-  z-index: -1;
   line-height: 23px;
   min-height: 614px;
   width: calc(100% - 276px);
@@ -1557,14 +1563,14 @@ button.like-black {
 .related-products {
   display: flex;
   flex-direction: column;
-  margin: 113px 0 60px 0;
+  margin: 113px 0 0 0;
 }
 .slider-product {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   box-sizing: border-box;
-  margin: 0 -15px 20px;
+  margin: 0 0 38px;
   position: relative;
   height: 480px;
 }
@@ -1695,6 +1701,55 @@ button.mod-cart {
 .navig > span {
   padding-right: 4px;
 }
+.form-bloc {
+  width: 80%;
+  margin: 0 auto;
+}
+.form-coment {
+  display: flex;
+  flex-direction: column;
+}
+.form-coment label {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  display: block;
+}
+.form-coment > input {
+  box-sizing: border-box;
+  border: 1px solid #E5E5E5;
+  margin-bottom: 20px;
+  height: 30px;
+  width: 100%;
+  border-radius: 5px;
+  display: block;
+  padding: 5px 10px;
+}
+.form-coment > textarea {
+  border-radius: 5px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  padding: 8px;
+  display: block;
+  width: 100%;
+  border: 1px solid #E5E5E5;
+}
+.form-coment .btn-bloc {
+  display: flex;
+  justify-content: space-between;
+}
+.form-coment .btn-form {
+  width: 40%;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: #282828;
+  color: #FFFFFF;
+}
+.form-coment .btn-form:hover {
+  background-color: #FF2D37;
+}
 .bloc-cart-towar {
   text-align: center;
   height: 100%;
@@ -1819,7 +1874,7 @@ button.dzb2:hover {
   position: absolute;
   border: 1px solid #FF2D37;
   top: 0;
-  left: 104px;
+  left: 0;
   box-sizing: border-box;
   transition: left 500ms ease-out;
 }
@@ -1955,9 +2010,12 @@ button.dzb2:hover {
   }
 }
 @media screen and (max-width: 480px) {
-  .bloc-click {
-    width: 75px;
-    height: 75px;
+  .overlay {
+    width: 79px;
+    height: 79px;
+  }
+  .preview {
+    width: 100%;
   }
   .my-cart:hover .hover-cart-bloc {
     display: none;
@@ -1997,7 +2055,7 @@ button.dzb2:hover {
     width: 55px;
     height: 55px;
   }
-  .slider-wrap .bloc-click {
+  .slider-wrap .overlay {
     width: 55px;
     height: 55px;
   }
