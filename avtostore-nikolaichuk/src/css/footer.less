@@ -81,14 +81,18 @@
                     padding: 10px 0;
                     color: @footer-item-color;
                     position: relative;
-                    transition: transform .2s ease-in-out;
-                    &:hover{
-                        transform: translateX(12px);
-                        a::before{
-                            content: '';
-                            .absolute-position-mixin(@left: -6px);
-                            .geometric-mixin(@width: 6px, @height: 1px);
-                            background-color: @page-hover-color;
+                    a.link{
+                        transition: transform .2s ease-in-out;
+                        display: inline-block;
+                        &:hover{
+                            transition: transform .2s ease-in-out;
+                            transform: translateX(12px);
+                            &::before{
+                                content: '';
+                                .absolute-position-mixin(@left: -6px);
+                                .geometric-mixin(@width: 6px, @height: 1px);
+                                background-color: @page-hover-color;
+                            }
                         }
                     }
                 }
@@ -108,7 +112,6 @@
         &__pay-system{
             float: left;
             img{
-                //.geometric-mixin(@width: 100%, @height: auto);
                 @media(max-width: @mobile){
                     width: 70%;
                 }

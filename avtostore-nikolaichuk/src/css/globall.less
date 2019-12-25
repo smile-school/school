@@ -62,3 +62,23 @@ a.link{
     color: @main-elements-color;
     cursor: pointer;
 }
+.select-container{
+    display: inline-block;
+    position: relative;
+    select {
+        border: 1px solid @main-border-line-color;
+        border-radius: 5px;
+        box-sizing: border-box;
+        background-color: @product-search-controls-background;
+        height: 31px;
+        cursor: pointer;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+    i{
+        .absolute-position-mixin(@left: calc(100% - 11px), @translateX: -100%);
+        cursor: pointer;
+        pointer-events: none;
+    }
+}
