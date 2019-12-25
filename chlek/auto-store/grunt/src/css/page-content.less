@@ -184,7 +184,6 @@
                             }
                         }
 
-
                         .frame {
                             width: 95px;
                             height: 95px;
@@ -464,6 +463,11 @@
                             .det {
                                 display: block;
                             }
+                            & > label{
+                                &:nth-of-type(1){
+                                    border-left: 4px solid #FF2D37;
+                                }
+                            }
                         }
                     }
 
@@ -480,6 +484,11 @@
                         & ~ .details {
                             .more {
                                 display: block;
+                            }
+                            & > label{
+                                &:nth-of-type(2){
+                                    border-left: 4px solid #FF2D37;
+                                }
                             }
                         }
                     }
@@ -498,6 +507,11 @@
                             .reviews {
                                 display: block;
                             }
+                            & > label{
+                                &:nth-of-type(3){
+                                    border-left: 4px solid #FF2D37;
+                                }
+                            }
                         }
                     }
 
@@ -515,6 +529,12 @@
                             .custom {
                                 display: block;
                             }
+                            & > label{
+                                &:last-of-type{
+                                    border-left: 4px solid #FF2D37;
+                                    border-bottom: 1px solid #E5E5E5;
+                                }
+                            }
                         }
                     }
                 }
@@ -531,6 +551,7 @@
                         width: 100%;
                         border-right: 1px solid #E5E5E5;
                         margin-bottom: -1px;
+                        display: none;
                     }
 
                     & > label {
@@ -565,11 +586,38 @@
                         width: 100%;
                     }
 
+                    & > label {
+                        display: none;
+                        box-sizing: border-box;
+                        font-size: 18px;
+                        line-height: 21px;
+                        font-weight: bold;
+                        text-transform: uppercase;
+                        padding: 20px 1px 20px 28px;
+                        margin-right: -1px;
+                        @media (max-width: @tablet-point) {
+                            padding: 20px 1px 20px 14px;
+                        }
+                        @media (max-width: @mobile-point) {
+                            margin-right: 0;
+                            display: block;/**/
+                        }
+
+                        &:not(:last-child) {
+                            border-bottom: 1px solid #E5E5E5;
+                        }
+                    }
+
                     & > div {
                         display: none;
                         padding: 30px 20px 38px 29px;
                         @media (max-width: @tablet-point) {
                             padding: 30px 15px 30px 20px;
+                        }
+                        @media (max-width: @mobile-point) {
+                            &:not(:last-of-type){
+                                border-bottom: 1px solid #E5E5E5;
+                            }
                         }
 
                         & > p {
@@ -581,8 +629,31 @@
                         }
                     }
 
+
+
+                    & > label {
+                        display: none;
+                        box-sizing: border-box;
+                        font-size: 18px;
+                        line-height: 21px;
+                        font-weight: bold;
+                        text-transform: uppercase;
+                        padding: 20px 1px 20px 28px;
+                        margin-right: -1px;
+                        @media (max-width: @tablet-point) {
+                            padding: 20px 1px 20px 14px;
+                        }
+                        @media (max-width: @mobile-point) {
+                            margin-right: 0;
+                            display: block;
+                        }
+
+                        &:not(:last-of-type) {
+                            border-bottom: 1px solid #E5E5E5;
+                        }
+                    }
+
                     .reviews {
-                        /*--Доробити--*/
 
                         .blind {
                             position: fixed;

@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no">
     <title>Page 3</title>
     <script src="javascript/knockout-3.5.1.js"></script>
     <script src="javascript/jquery-3.4.1.js"></script>
     <script src="javascript/jquery-ui.js"></script>
     <link rel="stylesheet" href="grunt/dist/css/style.css">
     <link rel="stylesheet" href="style/all.min.css">
-
-
+    <!--<script src="javascript/ko-page.js"></script>-->
 </head>
 <body>
 <header class="header">
@@ -82,7 +82,8 @@
                     </div>
                 </div>
                 <div class="buttons-wrap">
-                    <button class="favour">
+                    <button class="favour" id="favour" data-bind="css:{active: favList().length > 0}">
+                        <span class="cart__counter" data-bind="text:favList().length">0</span>
                         <img src="img/favour.png" alt="favour">
                     </button>
                     <button class="my-card">
@@ -90,46 +91,56 @@
                             <img src="img/basket.png" alt="basket">
                         </span>
                         <span class="right-section small">
-                            My&nbsp;Card&nbsp;<span class="red-color">$0.00</span>
+                            My&nbsp;Card&nbsp;<span class="red-color" data-bind="text: totalCart">&nbsp;</span>
                         </span>
+                        <span class="total" data-bind="text: totalCart"></span>
                     </button>
-                    <div class="shopping">
-                        <div class="about-shopping">
-                            <div class="image-wrap"><img src="img/aosake.png" alt="" class="prod-photo"></div>
-                            <div class="prod-about">
-                                <p>Carbon&nbsp;Fiber&nbsp;Steering Wheel</p>
-                                <input type="checkbox" id="show-details" class="show-details">
-                                <label for="show-details" class="details">See Details</label>
-                                <div class="prod-details">
-                                    <span class="det-size">
-                                        Size
-                                        <span class="size">S</span>
-                                    </span>
-                                    <span class="det-color">
-                                        Color
-                                        <span class="color">Blue</span>
-                                    </span>
+                    <div class="shopping" id="shopping-cart" data-bind="visible: cartList().length > 0">
+                        <ul>
+                            <li data-bind="foreach:cartList">
+                                <div class="about-shopping">
+                                    <div class="image-wrap">
+                                        <img data-bind="attr:{src: img, alt: title}" class="prod-photo">
+                                        <span data-bind="click: $root.removeCart">x</span>
+                                    </div>
+                                    <div class="prod-about">
+                                        <p data-bind="text:title"></p>
+                                        <input type="checkbox" id="show-details" class="show-details">
+                                        <label for="show-details" class="details">See Details</label>
+                                        <div class="prod-details">
+                                    <span class="mini-cart_details-name"
+                                          data-bind="if:color() != ''">Color</span><span
+                                                data-bind="text:color"></span>
+                                            <span class="mini-cart_details-name"
+                                                  data-bind="if:brand() != ''">Brand</span><span
+                                                data-bind="text:brand"></span>
+                                            <span class="mini-cart_details-name"
+                                                  data-bind="if:model() != ''">Model</span><span
+                                                data-bind="text:model"></span>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="about-prod-bottoms">
-                            <div class="top section">
-                                <span>Qty:</span>
-                                <label for="qty">
-                                    <input type="text" class="qty" id="qty" value="1">
-                                </label>
-                                <button class="update">Update</button>
-                                <span>$205.00</span>
-                            </div>
-                            <div class="section bottom">
-                                <span class="subtotal">Cardsubtotal:</span>
-                                <span class="subtotal">205.00</span>
-                            </div>
-                            <div class="but-wrap">
-                                <button>View&nbsp;cart</button>
-                                <button>Checkout</button>
-                            </div>
-                        </div>
+                                <div class="about-prod-bottoms">
+                                    <div class="top section">
+                                        <span>Qty:</span>
+                                        <label for="qty">
+                                            <input type="text" class="qty" id="qty" value="1" data-bind="value:qty">
+                                        </label>
+                                        <button class="update" data-bind="click:function() {qty(qty() + 1)}">+</button>
+                                        <button class="update" data-bind="click:function(product) {qty() > 1 ? qty(qty() - 1) : $root.removeCart(product)}">+</button>
+                                        <span data-bind="text:$data.sale() ? salePrice() * qty() : price() * qty()"></span>
+                                    </div>
+                                    <div class="section bottom">
+                                        <span class="subtotal">Cardsubtotal:</span>
+                                        <span class="subtotal" data-bind="text: totalCart"></span>
+                                    </div>
+                                    <div class="but-wrap">
+                                        <button>View&nbsp;cart</button>
+                                        <button>Checkout</button>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -522,11 +533,12 @@
                     <div class="color-choice">
                         <p>color</p>
                         <div>
-                           <ul data-bind="foreach: color">
-                               <li>
-                                   <a class="color" href="#" data-bind="attr: {style: &#39;background-color:&#39; + $data}">&nbsp;</a>
-                               </li>
-                           </ul>
+                            <ul data-bind="foreach: color">
+                                <li>
+                                    <a class="color" href="#"
+                                       data-bind="attr: {style: &#39;background-color:&#39; + $data}">&nbsp;</a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                     <div class="price-choice">
@@ -565,13 +577,14 @@
                     </div>
                 </div>
 
-                <div class="title">
-                    <h5>Compare PRODUCTS</h5>
-                </div>
-                <div class="aside-content-wrap">
-                    <div class="section">
-                        <span class="small">Radio Transmitter Adapter</span>
-                        <button class="cancel">
+
+                <div class="aside-content-wrap" id="compareProd">
+                    <div class="title">
+                        <h5>Compare PRODUCTS</h5>
+                    </div>
+                    <div class="section" data-bind="foreach: compareList">
+                        <span class="small" data-bind="text:title">Radio Transmitter Adapter</span>
+                        <button class="cancel" data-bind="click: $root.removeCompare">
                             <svg width="11" height="11" viewBox="0 0 11 11" fill="#282828"
                                  xmlns="http://www.w3.org/2000/svg">
                                 <path d="M7.04688 5.75L9.78125 8.48438C9.94531 8.64844 10.0273 8.84896 10.0273 9.08594C10.0273 9.32292 9.94531 9.53255 9.78125 9.71484L9.17969 10.3164C8.9974 10.4805 8.78776 10.5625 8.55078 10.5625C8.3138 10.5625 8.11328 10.4805 7.94922 10.3164L5.21484 7.58203L2.48047 10.3164C2.31641 10.4805 2.11589 10.5625 1.87891 10.5625C1.64193 10.5625 1.43229 10.4805 1.25 10.3164L0.648438 9.71484C0.484375 9.53255 0.402344 9.32292 0.402344 9.08594C0.402344 8.84896 0.484375 8.64844 0.648438 8.48438L3.38281 5.75L0.648438 3.01562C0.484375 2.85156 0.402344 2.65104 0.402344 2.41406C0.402344 2.17708 0.484375 1.96745 0.648438 1.78516L1.25 1.18359C1.43229 1.01953 1.64193 0.9375 1.87891 0.9375C2.11589 0.9375 2.31641 1.01953 2.48047 1.18359L5.21484 3.91797L7.94922 1.18359C8.11328 1.01953 8.3138 0.9375 8.55078 0.9375C8.78776 0.9375 8.9974 1.01953 9.17969 1.18359L9.78125 1.78516C9.94531 1.96745 10.0273 2.17708 10.0273 2.41406C10.0273 2.65104 9.94531 2.85156 9.78125 3.01562L7.04688 5.75Z"/>
@@ -587,9 +600,9 @@
                             </svg>
                         </button>
                     </div>
-                    <div class="section">
+                    <div class="section" data-bind="visible: compareList().length > 0">
                         <button class="button compare">Compare</button>
-                        <button class="button">Clear All</button>
+                        <button class="button" data-bind="click: removeAll">Clear All</button>
                     </div>
 
                 </div>
@@ -600,6 +613,7 @@
             </div>
             <div class="content-wrap">
                 <h3>Baby Car Seats</h3>
+
                 <input type="radio" checked id="show-cards-1" name="show-cards">
                 <input type="radio" id="show-cards-2" name="show-cards">
                 <div class="filter">
@@ -665,29 +679,8 @@
                         </label>
                     </div>
                 </div>
-                <div class="product-cards-wrap" data-bind="foreach: productList" id="products">
-                    <!--<div class="card-wrap">
-                        <div class="card-height-wrap">
-                            <div class="card sale new">
-                                <span class="sale-labe">sale<span>&nbsp;</span></span>
-                                <span class="new-labe">new<span>&nbsp;</span></span>
-                                <div class="image-wrap">
-                                    <img src="img/design_in-car.png" alt="img">
-                                </div>
-                                <div class="button-wrap">
-                                    <button><img src="img/hart.png" alt=""></button>
-                                    <button>Add to Cart</button>
-                                    <button><img src="img/update.png" alt=""></button>
-                                </div>
-                                <p>Car Kit Hands Free Calling</p>
-                                <div class="rating-wrap">
-                                    <img src="img/star1.png" alt="image">
-                                </div>
-                                <h5><span>$55.00</span><span>$84.00</span></h5>
-                            </div>
-                        </div>
-                    </div>-->
-                    <div class="card-wrap">
+                <div class="product-cards-wrap" data-bind="foreach: productList()" id="products">
+                    <div class="card-wrap" data-bind="css:{sale: sale, new: newAction}">
                         <div class="card-height-wrap">
                             <div class="card"><!--Add new or sale-->
                                 <span class="sale-labe">sale<span>&nbsp;</span></span>
@@ -696,11 +689,24 @@
                                     <img data-bind="attr:{src:img, alt:title}" alt="img">
                                 </div>
                                 <div class="button-wrap">
-                                    <button><img src="img/hart.png" alt=""></button>
-                                    <button>Add to Cart</button>
-                                    <button><img src="img/update.png" alt=""></button>
+                                    <button data-bind="click: $root.addFavorite, css:{wish: favorite}"><img src="img/hart.png" alt=""></button>
+                                    <button data-bind="click: $root.addCart">
+                                        Add to Cart
+                                    <span data-bind="text:qty"></span>
+                                    </button>
+                                    <button data-bind="click: $root.addCompare, css:{active: compaired}">
+                                        <img src="img/update.png" alt="">
+                                    </button>
                                 </div>
                                 <p data-bind="text: title"><a href="#"></a></p>
+                                <div class="product-rating" data-bind="text: rating"></div>
+                                <div class="product-prices" data-bind="html: prices"></div>
+                                <div class="product-info">
+                                    Brand: <span data-bind="text: brand"></span>;
+                                    Model: <span data-bind="text: model"></span>;
+                                    Color: <span data-bind="text: color"></span>;
+                                    Year: <span data-bind="text: year"></span>;
+                                </div>
                                 <div class="rating-wrap">
                                     <!--<img src="img/star1.png" alt="image">-->
                                 </div>
@@ -713,13 +719,13 @@
             <div class="form-wrap" id="add-product">
                 <h3>Add product</h3>
                 <div class="form">
-                    <label>
+                    <label data-bind="css:{required: title() === '' && required}">
                         <p>Enter image url</p>
-                        <input id="image" type="text" id="image" name="image" data-bind="value: img">
+                        <input id="image" type="text" name="image" data-bind="value:img">
                     </label>
-                    <label>
+                    <label data-bind="css:{required: title() === '' && required}">
                         <p>Enter product name</p>
-                        <input id="title" data-bind="value: title" type="text" id="prod-name" name="prod-name" >
+                        <input id="title" data-bind="value: title" type="text" name="prod-name">
                     </label>
                     <div>
                         <p>Enter rating</p>
@@ -737,45 +743,49 @@
                     <div class="action">
                         <label for="new">
                             <p>New</p>
-                            <input data-bind="value: newAction" type="checkbox" id="new" value="newAction">
+                            <input data-bind="checked: newAction" type="checkbox" id="new" value="newAction">
                         </label>
 
                         <label for="sale">
                             <p>Sale</p>
-                            <input data-bind="value: salePrice" type="checkbox" id="sale" value="salePrice">
+                            <input data-bind="checked: sale" type="checkbox" id="sale" value="salePrice">
                         </label>
                     </div>
-                    <label for="price">
+                    <label for="price" data-bind="css:{required: price() === '' && required}">
                         <p>Price</p>
-                        <input data-bind="value: price" type="text" id="price">
+                        <input data-bind="value:price" type="text" id="price">
                     </label>
 
                     <label for="new-price">
                         <p>Sale price</p>
-                        <input data-bind="value: salePrice" type="text" id="new-price" >
+                        <input data-bind="value: salePrice" type="text" id="new-price">
                     </label>
 
-                    <label>
+                    <label data-bind="css:{required: color() === undefined && required}">
                         <p>Color</p>
-                        <select data-bind="options: colorOptions, optionsCaption: &#39;Choose color&#39;" name="color" id="color"></select>
-                        <button data-bind="click: function(){addAttribute(&#39;color&#39;);}">+</button>
+                        <select data-bind="options: colorOptions, optionsCaption: 'Choose color', value: color" name="color"
+                                id="color"></select>
+                        <button data-bind="click: function(){addAttribute('color');}">+</button>
                     </label>
-                    <label>
+                    <label data-bind="css:{required: brand() === undefined && required}">
                         <p>Brand</p>
-                        <select data-bind="options: brandOptions, optionsCaption: &#39;Choose brand&#39;" name="brand" id="brand"></select>
-                        <button data-bind="click: function(){addAttribute(&#39;brand&#39;);}">+</button>
+                        <select data-bind="options: brandOptions, optionsCaption: 'Choose brand', value: brand"
+                                id="brand"></select>
+                        <button data-bind="click: function(){addAttribute('brand');}">+</button>
                     </label>
-                    <label>
+                    <label data-bind="css:{required: model() === undefined && required}">
                         <p>Model</p>
-                        <select data-bind="options: modelOptions, optionsCaption: &#39;Choose model&#39;" name="brand" id="model"></select>
-                        <button data-bind="click: function(){addAttribute(&#39;model&#39;);}">+</button>
+                        <select data-bind="options: modelOptions, optionsCaption: 'Choose model', value: model" name="brand"
+                                id="model"></select>
+                        <button data-bind="click: function(){addAttribute('model');}">+</button>
                     </label>
-                    <label>
+                    <label data-bind="css:{required: year() === undefined && required}">
                         <p>Year</p>
-                        <select data-bind="options: yearOptions, optionsCaption: &#39;Choose year&#39;" name="year" id="year"></select>
-                        <button data-bind="click: function(){addAttribute(&#39;year&#39;);}">+</button>
+                        <select data-bind="options: yearOptions, optionsCaption: 'Choose year', value: year"
+                                id="year"></select>
+                        <button data-bind="click: function(){addAttribute('year');}">+</button>
                     </label>
-                    <button data-bind="click: addProduct()">Add product</button>
+                    <button data-bind="click: addProduct">Add product</button>
                 </div>
             </div>
         </div>

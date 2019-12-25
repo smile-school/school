@@ -3709,6 +3709,9 @@ header.header nav.menu .wrapper .container-tab .hamburger .hamb-wrap .menu-tab:h
 .wrapper .main-container .container-content .characteristics input.details:checked ~ .details .det {
   display: block;
 }
+.wrapper .main-container .container-content .characteristics input.details:checked ~ .details > label:nth-of-type(1) {
+  border-left: 4px solid #FF2D37;
+}
 .wrapper .main-container .container-content .characteristics input.more:checked ~ .tabs-wrap label.more {
   border-left: 4px solid #FF2D37;
   background-color: #FFFFFF;
@@ -3717,6 +3720,9 @@ header.header nav.menu .wrapper .container-tab .hamburger .hamb-wrap .menu-tab:h
 }
 .wrapper .main-container .container-content .characteristics input.more:checked ~ .details .more {
   display: block;
+}
+.wrapper .main-container .container-content .characteristics input.more:checked ~ .details > label:nth-of-type(2) {
+  border-left: 4px solid #FF2D37;
 }
 .wrapper .main-container .container-content .characteristics input.reviews:checked ~ .tabs-wrap label.reviews {
   border-left: 4px solid #FF2D37;
@@ -3727,6 +3733,9 @@ header.header nav.menu .wrapper .container-tab .hamburger .hamb-wrap .menu-tab:h
 .wrapper .main-container .container-content .characteristics input.reviews:checked ~ .details .reviews {
   display: block;
 }
+.wrapper .main-container .container-content .characteristics input.reviews:checked ~ .details > label:nth-of-type(3) {
+  border-left: 4px solid #FF2D37;
+}
 .wrapper .main-container .container-content .characteristics input.custom:checked ~ .tabs-wrap label.custom {
   border-left: 4px solid #FF2D37;
   background-color: #FFFFFF;
@@ -3735,6 +3744,10 @@ header.header nav.menu .wrapper .container-tab .hamburger .hamb-wrap .menu-tab:h
 }
 .wrapper .main-container .container-content .characteristics input.custom:checked ~ .details .custom {
   display: block;
+}
+.wrapper .main-container .container-content .characteristics input.custom:checked ~ .details > label:last-of-type {
+  border-left: 4px solid #FF2D37;
+  border-bottom: 1px solid #E5E5E5;
 }
 .wrapper .main-container .container-content .characteristics .tabs-wrap {
   width: 200px;
@@ -3752,6 +3765,7 @@ header.header nav.menu .wrapper .container-tab .hamburger .hamb-wrap .menu-tab:h
     width: 100%;
     border-right: 1px solid #E5E5E5;
     margin-bottom: -1px;
+    display: none;
   }
 }
 .wrapper .main-container .container-content .characteristics .tabs-wrap > label {
@@ -3791,6 +3805,31 @@ header.header nav.menu .wrapper .container-tab .hamburger .hamb-wrap .menu-tab:h
     width: 100%;
   }
 }
+.wrapper .main-container .container-content .characteristics .details > label {
+  display: none;
+  box-sizing: border-box;
+  font-size: 18px;
+  line-height: 21px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 20px 1px 20px 28px;
+  margin-right: -1px;
+}
+@media (max-width: 992px) {
+  .wrapper .main-container .container-content .characteristics .details > label {
+    padding: 20px 1px 20px 14px;
+  }
+}
+@media (max-width: 767px) {
+  .wrapper .main-container .container-content .characteristics .details > label {
+    margin-right: 0;
+    display: block;
+    /**/
+  }
+}
+.wrapper .main-container .container-content .characteristics .details > label:not(:last-child) {
+  border-bottom: 1px solid #E5E5E5;
+}
 .wrapper .main-container .container-content .characteristics .details > div {
   display: none;
   padding: 30px 20px 38px 29px;
@@ -3800,14 +3839,40 @@ header.header nav.menu .wrapper .container-tab .hamburger .hamb-wrap .menu-tab:h
     padding: 30px 15px 30px 20px;
   }
 }
+@media (max-width: 767px) {
+  .wrapper .main-container .container-content .characteristics .details > div:not(:last-of-type) {
+    border-bottom: 1px solid #E5E5E5;
+  }
+}
 .wrapper .main-container .container-content .characteristics .details > div > p {
   line-height: 23px;
 }
 .wrapper .main-container .container-content .characteristics .details > div > p:not(:last-of-type) {
   padding-bottom: 33px;
 }
-.wrapper .main-container .container-content .characteristics .details .reviews {
-  /*--Доробити--*/
+.wrapper .main-container .container-content .characteristics .details > label {
+  display: none;
+  box-sizing: border-box;
+  font-size: 18px;
+  line-height: 21px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 20px 1px 20px 28px;
+  margin-right: -1px;
+}
+@media (max-width: 992px) {
+  .wrapper .main-container .container-content .characteristics .details > label {
+    padding: 20px 1px 20px 14px;
+  }
+}
+@media (max-width: 767px) {
+  .wrapper .main-container .container-content .characteristics .details > label {
+    margin-right: 0;
+    display: block;
+  }
+}
+.wrapper .main-container .container-content .characteristics .details > label:not(:last-of-type) {
+  border-bottom: 1px solid #E5E5E5;
 }
 .wrapper .main-container .container-content .characteristics .details .reviews .blind {
   position: fixed;

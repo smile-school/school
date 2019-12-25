@@ -7,12 +7,14 @@
             clickElement: document.querySelector(option.clickElemClass),
             slickWrap: document.querySelector('.slick-wrap'),
             position: 0,
-            framePosition: 0
+            framePosition: 0,
+            counter: 0,
         };
 
         function build() {
             self.options.clickElement.addEventListener('click', move);
             slickBuild();
+            sliderMedia();
         }
 
         function getElem(selector, all) {
@@ -20,52 +22,60 @@
         }
 
         function slickBuild() {
-            var buttons = getElem('.but', 'all');
-            buttons.forEach(function (item) {
-                item.addEventListener('click', slick);
+            var ibgButtons = getElem('.big-but', 'all'),
+                smallButtons = getElem('.small-but', 'all');
+            ibgButtons.forEach(function (item) {
+                item.addEventListener('click', bigSlick);
+            });
+            smallButtons.forEach(function (item) {
+                item.addEventListener('click', smallSlick);
             });
         }
 
-        function slick(event) {
-            var direction = (this.classList.contains('prev-js')) ? 1 : -1,
-                slick = self.options.slickWrap.style.marginLeft,
+        function bigSlick(event) {
+            var direction = (this.classList.contains('prev-js')) ? -1 : 1,
                 childs = self.options.slickWrap.children,
-                maxMarginLeft = -(childs.length * (childs[0].clientWidth + 10) - (childs[0].clientWidth + 10) * 4) + 'px',
-                maxLeftPosit = (childs[0].clientWidth + 10) * 3 + 'px';
-
-            if (this.classList.contains('prev-js') && (!slick || slick === '0px') && self.options.framePosition === 0) {
-                return;
-            } else if (this.classList.contains('next-js') && (slick === maxMarginLeft) && self.options.frame.style.left === maxLeftPosit) {
-                return;
-            } else if (this.classList.contains('prev-js') && (!slick || slick !== '0px') && self.options.framePosition === 0) {
-                self.options.position += (event) ? direction * (+childs[0].clientWidth + 10) : 0;
+            maxFrameRight = (childs[0].clientWidth + 10) * 3;
+            if (self.options.counter === 0 && direction < 0) return;
+            else if (self.options.counter === (childs.length - 1) && direction > 0) return;
+            else if (self.options.framePosition < maxFrameRight && direction > 0) {
+                self.options.framePosition += direction * (childs[0].clientWidth + 10);
+            } else if (self.options.framePosition <= maxFrameRight && direction < 0 && self.options.framePosition > 0) {
+                self.options.framePosition += direction * (childs[0].clientWidth + 10);
+            } else if ((self.options.framePosition === 0 && direction < 0) || (self.options.framePosition === maxFrameRight && direction > 0)) {
+                self.options.position -= direction * (childs[0].clientWidth + 10);
                 self.options.slickWrap.style.marginLeft = self.options.position + 'px';
-                changeSlide(event);
-                return;
-            } else if (this.classList.contains('prev-js') && maxLeftPosit === self.options.frame.style.left && self.options.frame.style.left !== '0px') {
-                self.options.framePosition += direction * (+childs[0].clientWidth + 10);
-            } else if (maxLeftPosit === self.options.frame.style.left) {
-                self.options.position += (event) ? direction * (+childs[0].clientWidth + 10) : 0;
-                self.options.slickWrap.style.marginLeft = self.options.position + 'px';
+            } else if (self.options.framePosition < 0 || self.options.framePosition > maxFrameRight) {
+                self.options.framePosition += direction * (childs[0].clientWidth + 10);
             }
-            self.options.framePosition += (event && maxLeftPosit !== self.options.frame.style.left) ? direction * (+childs[0].clientWidth + 10) : 0;
-            self.options.frame.style.left = -self.options.framePosition + 'px';
-            changeSlide(event);
+            self.options.frame.style.left = self.options.framePosition + 'px';
+            self.options.counter += direction;
+            show(childs[self.options.counter]);
         }
 
-        function changeSlide(event) {
-            var imageName = self.options.slideShow.src.split('/').slice(-1),
-                image = document.querySelector('[data-image = "' + imageName[0] + '"]'),
-                imageNewName;
-            imageNewName = (event.target.classList.contains('next-js')) ?
-                image.nextElementSibling : image.previousElementSibling;
-            show(imageNewName);
+        function smallSlick(event) {
+            var direction = (this.classList.contains('small-prev-js')) ? 1 : -1,
+                childs = self.options.slickWrap.children,
+                childShow = 4,
+                maxLeft = (childs[0].clientWidth + 10) * (childs.length) - (childs[0].clientWidth + 10) * childShow;
+            if (self.options.position === 0 && this.classList.contains('small-prev-js')) return;
+            else if (self.options.position === -maxLeft && this.classList.contains('small-next-js')) return;
+            self.options.position += direction * (childs[0].clientWidth + 10);
+            self.options.slickWrap.style.marginLeft = self.options.position + 'px';
+            self.options.framePosition += direction * (childs[0].clientWidth + 10);
+            self.options.frame.style.left = self.options.framePosition + 'px';
         }
 
         function move(event) {
             if (event.target.tagName === 'IMG') {
+                for (var key in self.options.slickWrap.children) {
+                    if (event.target === self.options.slickWrap.children[key]) {
+                        self.options.counter = +key;
+                        break;
+                    }
+                }
                 self.options.frame.style.left = event.target.offsetLeft + 'px';
-                self.options.framePosition = -event.target.offsetLeft;
+                self.options.framePosition = event.target.offsetLeft;
                 show(event.target);
                 return self.options.framePosition;
             }
@@ -77,6 +87,21 @@
                 self.options.slideShow.src = 'img/' + elem.dataset['image'];
                 self.options.slideShow.classList.remove('active');
             }, 250);
+        }
+
+        function sliderMedia() {
+            var mediaTablet = window.matchMedia("(max-width: 992px)"),
+                mediaMobile = window.matchMedia("(max-width: 500px)");
+
+            mediaTablet.addEventListener('change', reset);
+            mediaMobile.addEventListener('change',reset);
+        }
+
+        function reset() {
+            self.options.position = 0;
+            self.options.framePosition = 0;
+            self.options.frame.style.left = 0 + 'px';
+            self.options.slickWrap.style.marginLeft = 0 + 'px';
         }
 
         build();
