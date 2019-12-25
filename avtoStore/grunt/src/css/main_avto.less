@@ -91,6 +91,7 @@ main {
         border-radius: 5px;
         height: 30px;
         color: @color-size;
+        cursor: pointer;
     }
 
     .select-twoo {
@@ -131,7 +132,7 @@ button.add-cart {
     border: none;
     border-radius: 5px;
     white-space: nowrap;
-
+    cursor: pointer;
     &:hover {
         background-color: @blac-shade;
     }
@@ -256,17 +257,81 @@ button.like-black{
     position: relative;
 }
 .arrow{
-    width: 40px;
-    height: 40px;
-    background-color: red;
-    position: absolute;
     top: 50%;
+    border: 1px solid #CCCCCC;
+    background-color: white;
+    position: absolute;
+    text-align: center;
+    cursor: pointer;
+    width: 27px;
+    height: 49px;
+    outline: 0;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .3s;
+    &:hover{
+        background-color:@bordo ;
+        border-color: @bordo;
+        i{
+            color: @white-color;
+        }
+    }
+    i{
+        color: #CCCCCC;
+    }
     &.next{
         right: 0;
     }
     &.prev{
         left: 0;
     }
+}
+.check-img{
+    &:hover{
+        .arrow{
+            opacity: 1;
+        }
+    }
+}
+.preview{
+    padding-top: 10px;
+    position: relative;
+    width: 410px;
+    overflow: hidden;
+}
+.prevs{
+    border: 1px solid #CCCCCC;
+    background-color: white;
+    position: absolute;
+    text-align: center;
+    cursor: pointer;
+    width: 27px;
+    height: 49px;
+    top: 8px;
+    outline: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(50%);
+    transition: background-color .3s;
+    &:hover{
+        background-color:@bordo ;
+        border-color: @bordo;
+        i{
+            color: @white-color;
+        }
+    }
+    i{
+        color: #CCCCCC;
+    }
+}
+.right-prev{
+    right: 10px;
+}
+.left-prev{
+    left: 10px;
 }
 .top-aside {
     width: 270px;
@@ -345,7 +410,6 @@ button.like-black{
 
     & > span{
         padding: 22px 0 18px 30px;
-        width: 100%;
         display: block;
         text-transform: uppercase;
         cursor: pointer;
@@ -353,6 +417,24 @@ button.like-black{
         font-size: @social-font-size;
         border: 1px solid @line-bloc;
         line-height: 21px;
+        position: relative;
+        &::after{
+            position: absolute;
+            content: "\21D3	";
+            top: 0;
+            right: 20px;
+            color: @border;
+            font-size: @font-size-unteres;
+            transition: all .3s;
+            display: none;
+        }
+        &:hover{
+            &::after{
+                color: @bordo;
+                top: 4px;
+            }
+        }
+
     }
 
 
@@ -365,12 +447,17 @@ button.like-black{
 .detail-ul {
     width: 200px;
     .acordeon{
+        height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: all .5s;
         p{
             font-weight: normal;
             font-size: 14px;
             text-transform: full-width;
         }
     }
+
 }
 
 .white-li {
@@ -435,9 +522,8 @@ button.like-black{
     justify-content: space-between;
     box-sizing: border-box;
     margin-bottom: 20px;
-    height: 440px;
     position: relative;
-
+    height: 460px;
     &:hover {
         .arrows {
             display: block;
@@ -478,7 +564,6 @@ button.like-black{
     display: none;
     flex-direction: row;
     align-items: center;
-
     .btn-like {
         &:first-of-type {
             margin-left: 0;
@@ -500,8 +585,34 @@ button.mod-cart {
 }
 
 .item-hover-efect{
+    position: relative;
+    &::after{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+    }
     &:hover{
-        box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.6);
+        border-color: transparent;
+        &::after{
+            box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.6);
+            bottom: -40px;
+        }
+        .info-cart-towar{
+            transform: translateY(40px);
+        }
+    }
+    .add-to-cart{
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+    .content-cart{
+        position: relative;
+        padding-bottom: 20px;
     }
 }
 .item {
@@ -512,9 +623,6 @@ button.mod-cart {
     }
 
     &:hover {
-        //height: 440px;
-        //box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.6);
-
         .add-to-cart {
             display: flex;
             height: 40px;
@@ -568,6 +676,7 @@ button.mod-cart {
     height: 100%;
     display: flex;
     flex-direction: column;
+    position: relative;
     .info-cart-towar{
 
     }
@@ -582,7 +691,7 @@ button.dzb2 {
 .href-img-bloc {
     display: block;
     position: relative;
-
+    padding: 2px;
     img {
         width: 100%;
     }
@@ -680,14 +789,28 @@ button.dzb2 {
         }
     }
 }
-
-.bloc-click {
+.scarousel_item_wrapper {
+    display: flex;
+    .arrow{
+        display: none;
+    }
+    .items{
+        padding: 1px;
+        cursor: pointer;
+        img{
+            width: 100%;
+            border: 1px solid @line-bloc;
+            padding: 1px;
+        }
+    }
+}
+.overlay {
     width: 95px;
     height: 95px;
     position: absolute;
     border: 1px solid #FF2D37;
     top: 0;
-    left: 0;
+    left: 104px;
     box-sizing: border-box;
     transition: left 500ms ease-out;
 }
@@ -706,19 +829,35 @@ button.dzb2 {
         }
     }
 }
-
-@media screen and (max-width: 860px) {
-    .slider-product{
-        overflow-x: auto;
-        .item{
-            &:hover{
+@media screen and (max-width: 1024px){
+    .item-hover-efect{
+        &:hover{
+            border-color: transparent;
+            &::after{
                 box-shadow: none;
             }
-           a > img{
-                width: 180px;
+            .info-cart-towar{
+                transform: translateY(0);
+            }
+        }
+        .add-to-cart{
+            display: none;
+        }
+        .content-cart{
+            position: relative;
+            padding-bottom: 20px;
+        }
+    }
+    .item {
+        &:hover {
+            .add-to-cart {
+                display: none;
             }
         }
     }
+}
+
+@media screen and (max-width: 860px) {
     .cart-towar {
         flex-direction: column;
     }
@@ -749,7 +888,17 @@ button.dzb2 {
     }
 }
 
-@media screen  and (max-width: 740px) {
+@media screen  and (max-width: 768px) {
+    .li-defain{
+       & >  span{
+           &::after{
+               display: block;
+           }
+       }
+    }
+    .white-li{
+        border-left: none;
+    }
     .des {
         width: 100%;
     }
@@ -799,6 +948,18 @@ button.dzb2 {
         align-self: flex-end;
     }
 
+    .detail-ul{
+        .acordeon{
+            flex-direction: column;
+            &.show{
+                height: auto;
+                overflow: visible;
+                opacity: 1;
+                transition: all .5s;
+                padding: 15px;
+            }
+        }
+    }
     .slider-product {
         .price-rod{
             white-space: nowrap;
@@ -838,10 +999,6 @@ button.dzb2 {
             }
         }
     }
-
-    .item {
-
-    }
 }
 
 @media screen and (max-width: 480px) {
@@ -871,14 +1028,14 @@ button.dzb2 {
 
     .selection {
         flex-direction: column;
-
         .select-twoo {
             margin-bottom: 20px;
+            cursor: pointer;
         }
 
         .sel-two {
             width: 75%;
-
+            cursor: pointer;
             .strel {
                 top: 42%;
             }

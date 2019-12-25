@@ -265,6 +265,94 @@ template {
 [hidden] {
   display: none;
 }
+/* Slider */
+.slick-slider {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+.slick-list {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+.slick-list:focus {
+  outline: none;
+}
+.slick-list.dragging {
+  cursor: pointer;
+  cursor: hand;
+}
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.slick-track {
+  position: relative;
+  left: 0;
+  top: 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.slick-track:before,
+.slick-track:after {
+  content: "";
+  display: table;
+}
+.slick-track:after {
+  clear: both;
+}
+.slick-loading .slick-track {
+  visibility: hidden;
+}
+.slick-slide {
+  float: left;
+  height: 100%;
+  min-height: 1px;
+  display: none;
+}
+[dir="rtl"] .slick-slide {
+  float: right;
+}
+.slick-slide img {
+  display: block;
+}
+.slick-slide.slick-loading img {
+  display: none;
+}
+.slick-slide.dragging img {
+  pointer-events: none;
+}
+.slick-initialized .slick-slide {
+  display: block;
+}
+.slick-loading .slick-slide {
+  visibility: hidden;
+}
+.slick-vertical .slick-slide {
+  display: block;
+  height: auto;
+  border: 1px solid transparent;
+}
+.slick-arrow.slick-hidden {
+  display: none;
+}
 body {
   font-family: 'Rubik', sans-serif;
   font-size: 14px;
@@ -1120,6 +1208,7 @@ main {
   border-radius: 5px;
   height: 30px;
   color: #666666;
+  cursor: pointer;
 }
 .select .select-twoo {
   padding: 0 24px 0 14px;
@@ -1153,6 +1242,7 @@ button.add-cart {
   border: none;
   border-radius: 5px;
   white-space: nowrap;
+  cursor: pointer;
 }
 button.add-cart:hover {
   background-color: #181818;
@@ -1261,17 +1351,77 @@ button.like-black {
   position: relative;
 }
 .arrow {
-  width: 40px;
-  height: 40px;
-  background-color: red;
-  position: absolute;
   top: 50%;
+  border: 1px solid #CCCCCC;
+  background-color: white;
+  position: absolute;
+  text-align: center;
+  cursor: pointer;
+  width: 27px;
+  height: 49px;
+  outline: 0;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+.arrow:hover {
+  background-color: #FF2D37;
+  border-color: #FF2D37;
+}
+.arrow:hover i {
+  color: #fff;
+}
+.arrow i {
+  color: #CCCCCC;
 }
 .arrow.next {
   right: 0;
 }
 .arrow.prev {
   left: 0;
+}
+.check-img:hover .arrow {
+  opacity: 1;
+}
+.preview {
+  padding-top: 10px;
+  position: relative;
+  width: 410px;
+  overflow: hidden;
+}
+.prevs {
+  border: 1px solid #CCCCCC;
+  background-color: white;
+  position: absolute;
+  text-align: center;
+  cursor: pointer;
+  width: 27px;
+  height: 49px;
+  top: 8px;
+  outline: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(50%);
+  transition: background-color 0.3s;
+}
+.prevs:hover {
+  background-color: #FF2D37;
+  border-color: #FF2D37;
+}
+.prevs:hover i {
+  color: #fff;
+}
+.prevs i {
+  color: #CCCCCC;
+}
+.right-prev {
+  right: 10px;
+}
+.left-prev {
+  left: 10px;
 }
 .top-aside {
   width: 270px;
@@ -1333,7 +1483,6 @@ button.like-black {
 }
 .li-defain > span {
   padding: 22px 0 18px 30px;
-  width: 100%;
   display: block;
   text-transform: uppercase;
   cursor: pointer;
@@ -1341,12 +1490,33 @@ button.like-black {
   font-size: 18px;
   border: 1px solid #E5E5E5;
   line-height: 21px;
+  position: relative;
+}
+.li-defain > span::after {
+  position: absolute;
+  content: "\21D3	";
+  top: 0;
+  right: 20px;
+  color: #E5E5E5;
+  font-size: 28px;
+  transition: all 0.3s;
+  display: none;
+}
+.li-defain > span:hover::after {
+  color: #FF2D37;
+  top: 4px;
 }
 .li-defain:not(:first-of-type) {
   border-top: 0;
 }
 .detail-ul {
   width: 200px;
+}
+.detail-ul .acordeon {
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.5s;
 }
 .detail-ul .acordeon p {
   font-weight: normal;
@@ -1398,8 +1568,8 @@ button.like-black {
   justify-content: space-between;
   box-sizing: border-box;
   margin-bottom: 20px;
-  height: 440px;
   position: relative;
+  height: 460px;
 }
 .slider-product:hover .arrows {
   display: block;
@@ -1448,8 +1618,36 @@ button.like-black {
 button.mod-cart {
   background-color: #282828;
 }
+.item-hover-efect {
+  position: relative;
+}
+.item-hover-efect::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
 .item-hover-efect:hover {
+  border-color: transparent;
+}
+.item-hover-efect:hover::after {
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.6);
+  bottom: -40px;
+}
+.item-hover-efect:hover .info-cart-towar {
+  transform: translateY(40px);
+}
+.item-hover-efect .add-to-cart {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.item-hover-efect .content-cart {
+  position: relative;
+  padding-bottom: 20px;
 }
 .item {
   border: 1px solid #E5E5E5;
@@ -1502,6 +1700,7 @@ button.mod-cart {
   height: 100%;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 button.dzb2:hover {
   border-color: #282828;
@@ -1509,6 +1708,7 @@ button.dzb2:hover {
 .href-img-bloc {
   display: block;
   position: relative;
+  padding: 2px;
 }
 .href-img-bloc img {
   width: 100%;
@@ -1598,13 +1798,28 @@ button.dzb2:hover {
 .head-relate-products h3 span:first-of-type {
   padding-right: 14px;
 }
-.bloc-click {
+.scarousel_item_wrapper {
+  display: flex;
+}
+.scarousel_item_wrapper .arrow {
+  display: none;
+}
+.scarousel_item_wrapper .items {
+  padding: 1px;
+  cursor: pointer;
+}
+.scarousel_item_wrapper .items img {
+  width: 100%;
+  border: 1px solid #E5E5E5;
+  padding: 1px;
+}
+.overlay {
   width: 95px;
   height: 95px;
   position: absolute;
   border: 1px solid #FF2D37;
   top: 0;
-  left: 0;
+  left: 104px;
   box-sizing: border-box;
   transition: left 500ms ease-out;
 }
@@ -1620,16 +1835,28 @@ button.dzb2:hover {
     width: 100%;
   }
 }
-@media screen and (max-width: 860px) {
-  .slider-product {
-    overflow-x: auto;
+@media screen and (max-width: 1024px) {
+  .item-hover-efect:hover {
+    border-color: transparent;
   }
-  .slider-product .item:hover {
+  .item-hover-efect:hover::after {
     box-shadow: none;
   }
-  .slider-product .item a > img {
-    width: 180px;
+  .item-hover-efect:hover .info-cart-towar {
+    transform: translateY(0);
   }
+  .item-hover-efect .add-to-cart {
+    display: none;
+  }
+  .item-hover-efect .content-cart {
+    position: relative;
+    padding-bottom: 20px;
+  }
+  .item:hover .add-to-cart {
+    display: none;
+  }
+}
+@media screen and (max-width: 860px) {
   .cart-towar {
     flex-direction: column;
   }
@@ -1649,7 +1876,13 @@ button.dzb2:hover {
     white-space: nowrap;
   }
 }
-@media screen and (max-width: 740px) {
+@media screen and (max-width: 768px) {
+  .li-defain > span::after {
+    display: block;
+  }
+  .white-li {
+    border-left: none;
+  }
   .des {
     width: 100%;
   }
@@ -1686,6 +1919,16 @@ button.dzb2:hover {
   }
   .buton-def {
     align-self: flex-end;
+  }
+  .detail-ul .acordeon {
+    flex-direction: column;
+  }
+  .detail-ul .acordeon.show {
+    height: auto;
+    overflow: visible;
+    opacity: 1;
+    transition: all 0.5s;
+    padding: 15px;
   }
   .slider-product .price-rod {
     white-space: nowrap;
@@ -1732,9 +1975,11 @@ button.dzb2:hover {
   }
   .selection .select-twoo {
     margin-bottom: 20px;
+    cursor: pointer;
   }
   .selection .sel-two {
     width: 75%;
+    cursor: pointer;
   }
   .selection .sel-two .strel {
     top: 42%;
@@ -2499,9 +2744,6 @@ button.hover-btn:hover {
   }
   .ul-footer-bloc .bloc-footer {
     text-align: center;
-  }
-  .slider-product {
-    overflow: auto;
   }
   .head-relate-products h3 {
     font-size: 16px;

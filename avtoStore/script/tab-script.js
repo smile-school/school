@@ -24,50 +24,22 @@
             });
         }
 
-        // function mediaScrean() {
-        //     var liTab = document.querySelectorAll('.li-defain'),
-        //         divTab = document.querySelectorAll('.tab-content');
-        //
-        //
-        //     if (window.matchMedia("(max-width: 740px)").matches){
-        //         console.log(divTab.getAttribute());
-        //     }
-        // }
-        // mediaScrean();
     }
 
     tab();
 
 
 
-    function TochSlider() {
-        var self = this;
-        this.param = {
-            globBlock: document.querySelector('.glob-bloc-img'),
-            blocClick: document.querySelector('.bloc-click'),
-            elem: document.querySelector('.slider-wrap')
-        };
+    function acordeon() {
+        var acord = document.querySelectorAll('.acordeon-active');
+            for (var i=0;i<acord.length; i++){
+                acord[i].addEventListener('click', function (e) {
+                    this.nextElementSibling.classList.toggle('show');
+                })
+            }
 
-        function elemClick() {
-            self.param.elem.addEventListener('click', function (event) {
-                if (event.target.tagName === 'IMG') {
-                    self.param.blocClick.style.left = event.target.offsetLeft + 'px';
-                    leavingF(event.target);
-                }
-            })
-        }
-
-        function leavingF(element) {
-            setTimeout(function () {
-                self.param.globBlock.src = './img/' + element.dataset['slick'];
-
-            }, 300)
-        }
-
-        elemClick();
     }
+    acordeon();
 
 
-
-    TochSlider();
 })();

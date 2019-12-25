@@ -11,6 +11,7 @@
     <link href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" rel="stylesheet"/>
     <link rel="stylesheet" href="./grunt/dist/css/style.css">
     <script src="script/jquery-3.4.1.min.js"></script>
+    <script src="script/jquery-ui.js"></script>
     <script src="script/slick.min.js"></script>
     <script src="script/slider.js"></script>
 </head>
@@ -229,30 +230,36 @@
         <div class="sidedar-product">
             <section class="product">
                 <div class="cart-towar">
-                    <div class="img-bloc-towar gallery">
-                        <div class="check-img img">
-                            <img class="glob-bloc-img" src="./img/c2.png" alt="croup">
-                            <a href="#" class="arrow next"></a>
-                            <a href="#" class="arrow prev"></a>
+                    <div class="gallery img-bloc-towar">
+                        <div class="img check-img">
+                            <img class="glob-bloc-img" src="./img/c2.png" data-img="1" alt="croup">
+                            <a href="#" class="arrow next"><i class="fas fa-chevron-right"></i></a>
+                            <a href="#" class="arrow prev"><i class="fas fa-chevron-left"></i></a>
                         </div>
                         <div class="slide-prod preview">
-                            <div class="slider-wrap img">
-                                <div class="bloc-click"></div>
+                            <div class="img slider-wrap">
+<!--                                <div class="bloc-click overlay"></div>-->
                                 <div class="items">
-                                    <img src="./img/acdelco.jpg" alt="acdel" data-slick='c3.png'>
+                                    <img src="./img/c3.png" alt="acdel" data-slick='c3.png'>
                                 </div>
                                 <div class="items">
-                                    <img src="./img/acura.jpg" alt="croup" data-slick='c2.png'>
+                                    <img src="./img/c2.png" alt="croup" data-slick='c2.png'>
                                 </div>
                                 <div class="items">
-                                    <img src="./img/helm1.jpg" alt="helm" data-slick='c1.png'>
+                                    <img src="./img/c1.png" alt="helm" data-slick='c1.png'>
                                 </div>
                                 <div class="items">
-                                    <img src="./img/helm2.jpg" alt="helm" data-slick='c4.png'>
+                                    <img src="./img/c4.png" alt="helm" data-slick='c4.png'>
+                                </div>
+                                <div class="items">
+                                    <img src="./img/c2.png" alt="helm" data-slick='c4.png'>
+                                </div>
+                                <div class="items">
+                                    <img src="./img/c4.png" alt="helm" data-slick='c4.png'>
                                 </div>
                             </div>
-                            <button class="right-prev"><i class="fas fa-chevron-right"></i></button>
-                            <button class="left-prev"><i class="fas fa-chevron-left"></i></button>
+                            <button class="right-prev prevs"><i class="fas fa-chevron-right"></i></button>
+                            <button class="left-prev prevs"><i class="fas fa-chevron-left"></i></button>
                         </div>
                     </div>
                     <div class="iformation-towar">
@@ -285,6 +292,10 @@
                                     <label for="select-one">Size<span>*</span></label>
                                     <select id="select-one" class="select-twoo">
                                         <option>-- Please Select --</option>
+                                        <option>-- select one --</option>
+                                        <option>-- select one --</option>
+                                        <option>-- select two --</option>
+                                        <option>-- select free --</option>
                                     </select>
                                     <span class="strel">
                                     <svg width="9" height="5" viewBox="0 0 9 5" fill="none"
@@ -297,6 +308,9 @@
                                 <div class="select sel-two">
                                     <label for="select-twoo">Color<span>*</span></label>
                                     <select id="select-twoo" class="select-twoo">
+                                        <option>-- Please Select --</option>
+                                        <option>-- Please Select --</option>
+                                        <option>-- Please Select --</option>
                                         <option>-- Please Select --</option>
                                     </select>
                                     <span class="strel">
@@ -330,7 +344,7 @@
                     <div class="menu-left-defailed">
                         <ul class="detail-ul tabs">
                             <li class="li-defain white-li tab" data-tab-name="tab-1">
-                                <span>Details</span>
+                                <span class="acordeon-active">Details</span>
                                 <div class="acordeon">
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
                                         ut labore et dolore magna aliqua. Duis auto mr reprehenderit in voluptateveli esse
@@ -360,7 +374,7 @@
                                 </div>
                             </li>
                             <li class="li-defain tab" data-tab-name="tab-2">
-                              <span>More Information</span>
+                              <span class="acordeon-active">More Information</span>
                                 <div class="acordeon">
                                     <img src="./img/desing.jpg" alt="des" class="des">
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
@@ -375,11 +389,11 @@
                                 </div>
                             </li>
                             <li class="li-defain tab" data-tab-name="tab-3">
-                                <span>Reviews</span>
+                                <span class="acordeon-active">Reviews</span>
                                 <div class="acordeon"></div>
                             </li>
                             <li class="li-defain tab" data-tab-name="tab-4">
-                               <span>Custom Tab</span>
+                               <span class="acordeon-active">Custom Tab</span>
                                 <div class="acordeon">
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
                                         ut labore et dolore magna aliqua. Duis auto mr reprehenderit in voluptateveli esse
@@ -555,7 +569,7 @@
                 <h4>YOU MAY LIKE THIS PRODUCTS</h4>
                 <h3><span>&bull;</span>&nbsp;RELATED PRODUCTS&nbsp;<span>&bull;</span></h3>
             </div>
-            <div class="slider-product">
+            <div class="slider-product product-slick">
                 <a href="#" class="arrows forward"></a>
                 <a href="#" class="arrows back"></a>
                 <div class="item item-hover-efect">
@@ -563,35 +577,39 @@
                         <a href="#" class="href-img-bloc">
                             <img src="./img/car-hang.jpg" alt="adapt">
                         </a>
-                        <div class="add-to-cart mod-btn-cart">
-                            <button class="btn-like likes"><i class="fa fa-heart" aria-hidden="true"></i></button>
-                            <button class="add-cart mod-cart">add to cart</button>
-                            <button class="btn-like likes"><i class="fa fa-refresh" aria-hidden="true"></i>
-                            </button>
-                        </div>
-                        <div class="info-cart-towar">
-                            <a href="#" class="name-towar"><p class="name-towar">Car Kit Hands Free Calling</p></a>
-                            <img src="./img/star1.svg" alt="star">
-                            <p class="price-rod">$84.00</p>
-                        </div>
+                        <div class="content-cart">
+                            <div class="add-to-cart mod-btn-cart">
+                                <button class="btn-like likes"><i class="fa fa-heart" aria-hidden="true"></i></button>
+                                <button class="add-cart mod-cart">add to cart</button>
+                                <button class="btn-like likes"><i class="fa fa-refresh" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                            <div class="info-cart-towar">
+                                <a href="#" class="name-towar"><p class="name-towar">Car Kit Hands Free Calling</p></a>
+                                <img src="./img/star1.svg" alt="star">
+                                <p class="price-rod">$84.00</p>
+                            </div>
                     </div>
+                </div>
                 </div>
                 <div class="item item-hover-efect">
                     <div class="bloc-cart-towar">
                         <a href="#" class="href-img-bloc">
                             <img src="./img/desing.jpg" alt="desing">
                         </a>
-                        <div class="add-to-cart mod-btn-cart">
-                            <button class="btn-like likes"><i class="fa fa-heart" aria-hidden="true"></i></button>
-                            <button class="add-cart mod-cart">add to cart</button>
-                            <button class="btn-like likes"><i class="fa fa-refresh" aria-hidden="true"></i>
-                            </button>
-                        </div>
-                        <div class="info-cart-towar">
-                            <a href="#" class="name-towar"><p class="name-towar">Car Kit Hands Free Calling</p></a>
-                            <img src="./img/star1.svg" alt="star">
-                            <p class="price-rod"><span class="now-price">$55.00</span><span
-                                    class="old-price">$84.00</span></p>
+                        <div class="content-cart">
+                            <div class="add-to-cart mod-btn-cart">
+                                <button class="btn-like likes"><i class="fa fa-heart" aria-hidden="true"></i></button>
+                                <button class="add-cart mod-cart">add to cart</button>
+                                <button class="btn-like likes"><i class="fa fa-refresh" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                            <div class="info-cart-towar">
+                                <a href="#" class="name-towar"><p class="name-towar">Car Kit Hands Free Calling</p></a>
+                                <img src="./img/star1.svg" alt="star">
+                                <p class="price-rod"><span class="now-price">$55.00</span><span
+                                        class="old-price">$84.00</span></p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -600,34 +618,38 @@
                         <a href="#" class="href-img-bloc">
                             <img src="./img/radio-adapt.jpg" alt="desing">
                         </a>
-                        <div class="add-to-cart mod-btn-cart">
-                            <button class="btn-like likes"><i class="fa fa-heart" aria-hidden="true"></i></button>
-                            <button class="add-cart mod-cart">add to cart</button>
-                            <button class="btn-like likes"><i class="fa fa-refresh" aria-hidden="true"></i>
-                            </button>
+                        <div class="content-cart">
+                            <div class="add-to-cart mod-btn-cart">
+                                <button class="btn-like likes"><i class="fa fa-heart" aria-hidden="true"></i></button>
+                                <button class="add-cart mod-cart">add to cart</button>
+                                <button class="btn-like likes"><i class="fa fa-refresh" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                            <div class="info-cart-towar">
+                                <a href="#" class="name-towar"><p class="name-towar">Car Kit Hands Free Calling</p></a>
+                                <img src="./img/star1.svg" alt="star">
+                                <p class="price-rod">$84.00</p>
+                            </div>
                         </div>
-                        <div class="info-cart-towar">
-                            <a href="#" class="name-towar"><p class="name-towar">Car Kit Hands Free Calling</p></a>
-                            <img src="./img/star1.svg" alt="star">
-                            <p class="price-rod">$84.00</p>
-                        </div>
-                    </div>
+                </div>
                 </div>
                 <div class="item item-hover-efect">
                     <div class="bloc-cart-towar">
                         <a href="#" class="href-img-bloc">
                             <img src="./img/radio-fram.jpg" alt="frame">
                         </a>
-                        <div class="add-to-cart mod-btn-cart">
-                            <button class="btn-like likes"><i class="fa fa-heart" aria-hidden="true"></i></button>
-                            <button class="add-cart mod-cart">add to cart</button>
-                            <button class="btn-like likes"><i class="fa fa-refresh" aria-hidden="true"></i>
-                            </button>
-                        </div>
-                        <div class="info-cart-towar">
-                            <a href="#" class="name-towar"><p class="name-towar">Car Kit Hands Free Calling</p></a>
-                            <img src="./img/star1.svg" alt="star">
-                            <p class="price-rod">$84.00</p>
+                        <div class="content-cart">
+                            <div class="add-to-cart mod-btn-cart">
+                                <button class="btn-like likes"><i class="fa fa-heart" aria-hidden="true"></i></button>
+                                <button class="add-cart mod-cart">add to cart</button>
+                                <button class="btn-like likes"><i class="fa fa-refresh" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                            <div class="info-cart-towar">
+                                <a href="#" class="name-towar"><p class="name-towar">Car Kit Hands Free Calling</p></a>
+                                <img src="./img/star1.svg" alt="star">
+                                <p class="price-rod">$84.00</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -746,7 +768,7 @@
         </div>
     </div>
 </footer>
-<!--<script src="./script/tab-script.js"></script>-->
+<script src="./script/tab-script.js"></script>
 <script src="script/slider-top.js"></script>
 <script src="./script/menu-acordeon.js"></script>
 <script src="script/slick-mod.js"></script>
