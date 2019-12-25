@@ -194,7 +194,7 @@
                 position: relative;
                 .col-2-width();
                 @media (max-width: @mobile) {
-                    width: 85%;
+                    width: 95%;
                     margin: 0 auto;
                 }
             }
@@ -254,7 +254,7 @@
                 text-align: right;
             }
             @media (max-width: @mobile) {
-                width: 85%;
+                width: 95%;
                 margin: 0 auto;
                 text-align: center;
             }
@@ -359,7 +359,12 @@
             box-sizing: border-box;
             box-shadow: 0 0 10px @mini-cart-box-shadow;
             padding: 25px;
-            z-index: 2;
+            z-index: 4;
+            @media(max-width: @mobile-small){
+                width: 100%;
+                left: 0;
+                padding-right: 10px;
+            }
 
             &:hover {
                 display: block;
@@ -455,6 +460,9 @@
                     .geometric-mixin(@width: 75px, @height: 29px);
                     text-align: center;
                     font-size: 11px;
+                    @media(max-width: @mobile-small){
+                        min-width: 40px;
+                    }
                 }
 
                 .mini-cart__update-btn {
@@ -463,11 +471,17 @@
                     font-size: 13px;
                     text-transform: none;
                     margin: 0 15px;
+                    @media (max-width: @mobile-small){
+                        margin: 0 5px;
+                    }
                 }
 
                 &__sum {
                     color: @main-elements-background;
                     margin-left: auto;
+                    @media(max-width: @mobile-small){
+                        margin-left: 8px;
+                    }
                 }
             }
 
@@ -667,7 +681,7 @@
                 .absolute-position-mixin(@top: 100%, @left: 0, @translateX: 0, @translateY: 0);
                 width: 100%;
                 padding: 0 20px 10px;
-                z-index: 3;
+                z-index: 4;
                 border: 1px solid @main-border-line-color;
                 box-sizing: border-box;
                 box-shadow: 0 0 10px @submenu-box-shadow;
