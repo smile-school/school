@@ -182,48 +182,42 @@
                 topComent.appendChild(video);
             }
 
-             var comentFooter = createElem('div',{'class':'coment-footer'},undefined) ;
-             var svgRetur = '<svg aria-hidden="true" height="12" width="12">\n' +
+             var comentFooter = createElem('div',{'class':'coment-footer'},undefined),
+                 svgRetur = '<svg aria-hidden="true" height="12" width="12">\n' +
                  '                                            <use xlink:href="#icon-return"\n' +
                  '                                                 xmlns:xlink="http://www.w3.org/1999/xlink"></use>\n' +
-                 '                                        </svg>';
-             var answerButon = createElem('button',{'class':'answer-bottom'},svgRetur+'Ответить') ;
+                 '                                        </svg>',
+                 answerButon = createElem('button',{'class':'answer-bottom'},svgRetur+'Ответить') ;
 
-            comentFooter.appendChild(answerButon);
+                 comentFooter.appendChild(answerButon);
 
-             var comentLice = createElem('div',{'class':'coment-lice'},undefined) ;
-             var svgLice = '<svg aria-hidden="true" height="16" width="16">\n' +
+             var comentLice = createElem('div',{'class':'coment-lice'},undefined),
+                 svgLice = '<svg aria-hidden="true" height="16" width="16">\n' +
                  '                                                <use xlink:href="#icon-thumb-up"\n' +
                  '                                                     xmlns:xlink="http://www.w3.org/1999/xlink"></use>\n' +
-                 '                                            </svg>';
+                 '                                            </svg>',
 
-             var butonLice = createElem('button',{'class':'answer-bottom buton-lice'},svgLice);
+                 butonLice = createElem('button',{'class':'answer-bottom buton-lice'},svgLice);
 
 
             var like1 = createElem('span',{'class':'like1'},0);
-
             butonLice.appendChild(like1);
             comentLice.appendChild(butonLice);
             butonLice.addEventListener('click',counterLike(butonLice));
 
              var butonDiz = createElem('button',{'class':'answer-bottom lice buton-diz'});
-            butonDiz.innerHTML+=svgLice;
+                 butonDiz.innerHTML+=svgLice;
              var like2 = createElem('span',{'class':'like2'},0);
+                 butonDiz.appendChild(like2);
+                 butonDiz.addEventListener('click',counterLike(butonDiz));
+                 comentLice.appendChild(butonDiz);
+                comentFooter.appendChild(comentLice);
 
-
-            butonDiz.appendChild(like2);
-             butonDiz.addEventListener('click',counterLike(butonDiz));
-             comentLice.appendChild(butonDiz);
-            comentFooter.appendChild(comentLice);
-
-            topComent.appendChild(comentFooter);
-
-            li.appendChild(topComent);
+                 topComent.appendChild(comentFooter);
+                 li.appendChild(topComent);
 
             var form = document.querySelector('.action-form-bloc');
              form.classList.remove('acForm');
-
-
         }
 
         function remoteForm(data) {
