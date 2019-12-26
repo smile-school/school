@@ -295,7 +295,84 @@
         }
     }
 
-    &__details-tabs {
+    &__details-tabs{
+        margin-top: 70px;
+        margin-bottom: 100px;
+        position: relative;
+        .details-tabs__text{
+            float: right;
+            display: inline-block;
+            box-sizing: border-box;
+            width: calc(100% - 200px);
+            min-height: 675px;
+            border: 1px solid @main-border-line-color;
+        }
+        input[type="radio"]{
+            display: none;
+        }
+        #tab1:checked ~ .tab1-title,
+        #tab2:checked ~ .tab2-title,
+        #tab3:checked ~ .tab3-title,
+        #tab4:checked ~ .tab4-title{
+            &::before {
+                content: '';
+                .absolute-position-mixin(@top: 0, @left: -1px, @translateX: 0, @translateY: 0);
+                .geometric-mixin(@width: 4px, @height: 100%);
+                background-color: @page-hover-color;
+            }
+            &::after{
+                content: '';
+                .absolute-position-mixin(@top: 0, @left: 100%, @translateX: 0, @translateY: 0);
+                .geometric-mixin(@width: 1px, @height: 100%);
+                background-color: @main-background;
+            }
+        }
+
+        #tab1:checked ~ .details-tabs__text > .tab1-content,
+        #tab2:checked ~ .details-tabs__text > .tab2-content,
+        #tab3:checked ~ .details-tabs__text > .tab3-content,
+        #tab4:checked ~ .details-tabs__text > .tab4-content{
+            display: inline-block;
+        }
+        .details-tab{
+            &__heading{
+                float: left;
+                display: inline-block;
+                font-size: @h2-font-size;
+                font-weight: bold;
+                text-transform: uppercase;
+                line-height: 21px;
+                cursor: pointer;
+                .hover-text-mixin();
+                width: 200px;
+                position: relative;
+                border-bottom: 1px solid @main-border-line-color;
+                border-left: 1px solid @main-border-line-color;
+                box-sizing: border-box;
+                padding: 20px 0 20px 30px;
+                z-index: 1;
+                background-color: @main-background;
+                &:first-of-type{
+                    border-top: 1px solid @main-border-line-color;
+                }
+            }
+            &__content{
+                display: none;
+                min-height: 100%;
+                box-sizing: border-box;
+                padding: 31px 20px 20px 31px;
+                line-height: 23px;
+                p{
+                    margin: 40px 0;
+                    &:first-child{
+                        margin-top: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    /*&__details-tabs {
         width: 100%;
         min-height: 675px;
         margin-top: 70px;
@@ -361,7 +438,7 @@
                 }
             }
         }
-    }
+    }*/
 }
 
 .products-related {
