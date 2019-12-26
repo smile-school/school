@@ -19,6 +19,7 @@
             toggle.classList.add('active-js');
             setView(toggle);
         }
+        return false;
     }
 
     function setView(toggle) {
