@@ -95,7 +95,6 @@ header{
                         .currency-var{
                             margin: 11px;
                             width: 110px;
-                            padding: 8px 0;
                             background-color: @top-header-link-bgcolor;
                             color: @base2-color;
                             &:hover{
@@ -103,8 +102,10 @@ header{
                                 color: @button;
                                 background-color: @basebg-color;
                             }
-                            p{
-                                padding-left: 5px;
+
+                            a{
+                                display: inherit;
+                                padding: 8px 0 8px 5px;
                             }
                         }
                     }
@@ -112,7 +113,8 @@ header{
                         display: none;
                     }
                 }
-                .select-currency, .select-language{
+                .select-currency,
+                .select-language{
                     &::after{
                         color:  @top-header-color;
                         font-family: Font Awesome\ 5 Free;
@@ -158,13 +160,14 @@ header{
                     width: 25%;
                 }
                 .search-pole{
-                    width: 50%;
+                    display: flex;
+                    flex-grow: 1;
                     position: relative;
                     padding: 4px 7px 4px 8px;
                     input{
                         &:nth-child(1){
                             width: 100%;
-                            padding: 13px 112px;
+                            padding: 13px 20px;
                             font-size: 14px;
                             line-height: 15px;
                             border: 2px solid @border2-color;
@@ -304,7 +307,7 @@ header{
                     border: 1px solid @border-color;
                     z-index: 3;
                     background-color: @basebg-color;
-                    width: 354px;
+                    width: max-content;
                     right: 0;
                     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.6);
                     .btn-wrapper{
@@ -371,6 +374,7 @@ header{
                             input[type = text]{
                                 border-radius: 5px;
                                 padding: 5px;
+                                margin: 0 2px;
                                 border: 1px solid @top-header-color;
                                 width: 76px;
                                 text-align: center;
@@ -381,6 +385,7 @@ header{
                                 color: @base-color;
                                 border-radius: 5px;
                                 padding: 7px 19px;
+                                margin: 0 2px;
                                 cursor: pointer;
                                 &:hover{
                                     background-color: @base2-color;
@@ -410,7 +415,11 @@ header{
                                 background-color: @button;
                                 border-radius: 5px;
                                 color: @base-color;
-                                padding: 8px 32px;
+                                padding: 8px 0;
+                                margin: 0 2px;
+                                width: 48%;
+                                display: flex;
+                                justify-content: center;
                                 cursor: pointer;
                                 &:hover{
                                     background-color: @base2-color;
@@ -430,7 +439,7 @@ header{
             font-weight: bold;
             .all-categories-menu{
                 width: 25%;
-                padding: 5px 22px 0 0;
+                padding: 4px 22px 0 0;
                 .all-categories{
                     background-color: @button;
                     color: @base-color;
@@ -462,9 +471,9 @@ header{
                         position: absolute;
                         width: 100%;
                         z-index: 5;
-                        background-color: #FFF;
-                        border: 1px solid #FF2D37;
-                        color: black;
+                        background-color: @base-color;
+                        border: 1px solid @button;
+                        color: @base2-color;
                         font-weight: normal;
                         padding: 10px 20px;
                         line-height: 40px;
@@ -505,6 +514,55 @@ header{
                 }
             }
             .navbar{
+                position: relative;
+                .burger{
+                    display: none;
+                    background-color:@hover;
+                    position: relative;
+                    width: 100px;
+                    height: 49px;
+                    padding: 18px;
+                    margin-top: 4px;
+                    border-top-left-radius: 5px;
+                    border-top-right-radius: 5px;
+                    color: @base-color;
+                    span{
+                        position: absolute;
+                        right: 10px;
+                        top: 28px;
+                        border-bottom: 1px;
+                        width: 15px;
+                        background-color: @basebg-color;
+                        height: 2px;
+                        &:nth-child(2){
+                            top: 24px;
+                        }
+                        &:nth-child(3){
+                            top: 20px;
+                        }
+                    }
+                    &:hover {
+                        span {
+                            transition: all .3s ease;
+
+                            &:nth-of-type(1) {
+                                transform: rotate(40deg);
+                                transform-origin: left bottom;
+                                top: 20px;
+                            }
+
+                            &:nth-of-type(2) {
+                                transform: scale(0);
+                            }
+
+                            &:nth-of-type(3) {
+                                transform: rotate(-40deg);
+                                transform-origin: left top;
+                                top: 30px;
+                            }
+                        }
+                    }
+                }
                 ul{
                     display: flex;
                     flex-wrap: wrap;
@@ -544,7 +602,7 @@ header{
                              display: inline-block;
                              text-decoration: none;
                              color: black;
-                             padding: 22px 15px 15px 16px;
+                             padding: 21px 15px 15px 16px;
                              font-size: 13px;
                              line-height: 17px;
                              letter-spacing: 0.7px;
@@ -601,51 +659,128 @@ header{
                         &:nth-of-type(7) a{
                             padding-left: 14px;
                         }
-
                     }
-                    
                 }
             }
         }
     }
 }
-@media only screen and (max-width: 1092px) {
- .all-categories{
-     width: 100%;
-     height: 50px;
- }
-}
-@media only screen and (max-width: 992px) {
-    header{
-        .header-nav .wrapper .all-categories-menu{
-            width: 100%;
-            p{
-                display: block;
-                padding: 19px 112px 19px 25px;
-            }
+@media only screen and (max-width: 1080px) {
+    header .header-nav .wrapper .navbar ul li{
+        margin: 0;
+        & > a {
+            padding: 22px 10px 14px 10px;
         }
-        .main-header{
-            .wrapper{
-                .navbar{
-                    margin: 0;
-                    nav{
+    }
+    header .main-header .wrapper .cart-menu {
+    padding-left: 15px;
+    }
+}
+@media only screen and (max-width: 967px) {
+    header{
+        .main-header .wrapper .cart-menu {
+            flex-grow: 2;
+        }
+        .header-nav .wrapper{
+            .navbar{
+                width: 50%;
+                &:hover .burger{
+                    transition: all .3s ease;
+                    &:nth-child(2){
+                        transform: rotate(-35deg);
+                        transform-origin: left bottom;
+                    }
+                    &:nth-child(3){
+                        transform: scale(0);
+                    }
+                    &:nth-child(4){
+                        transform: rotate(35deg);
+                        transform-origin: left top;
+                    }
+                    & + ul{
+                        display: block;
+                        top: 100%;
+                        height: auto;
+                        z-index: 3;
+                        li{
+                            a{
+                                padding-left: 10px;
+                                font-size: 16px;
+                                font-weight: normal;
+                            }
+                            &:hover {
+                                background-color: white;
+
+                                a {
+                                    color: red;
+                                }
+                            }
+                        }
+                    }
+                }
+                .burger {
+                    display: block;
+                    width: 100%;
+                    background-color: @button;
+                    color: @base-color;
+                    border-radius: 5px 5px 0 0;
+                    position: relative;
+                    cursor: pointer;
+                    font-size: 13px;
+                    padding: 18px 5px;
+                }
+                ul{
+                    display: none;
+                    position: absolute;
+                    background:@base-color;
+                    width: 100%;
+                    border: 1px solid @hover;
+                    z-index: 1;
+                    .arrow-anim a > span{
                         display: none;
                     }
                 }
-                .search-pole {
-                    width: 45%;
+            }
+            .all-categories-menu {
+                width: 50%;
+                p {
+                    display: block;
+                    padding: 19px 112px 19px 25px;
                 }
-                .cart-menu{
-                    width: 30%;
+            }
+            .navbar{
+                margin: 0;
+                ul{
+                    display: none;
                 }
+            }
+            .search-pole {
+                width: 45%;
+            }
+            .cart-menu{
+                width: 30%;
             }
         }
     }
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 768px) {
     header{
+        .header-nav .wrapper{
+            .all-categories-menu{
+                padding-right: 2px;
+                .all-categories{
+                    p{
+                        padding: 18px 5px 14px;
+                        font-size: 13px;
+                    }
+                    span{
+                        right: 5px;
+                    }
+                }
+            }
+        }
         .main-header{
-            .wrapper{
+            & > .wrapper{
                 flex-flow: column;
                 .header-logo{
                     width: 100%;
@@ -653,6 +788,10 @@ header{
                 }
                 .search-pole{
                     width: 100%;
+                    padding: 4px 0;
+                    label{
+                        right: 0;
+                    }
                 }
                 .cart-menu{
                     width: 100%;
@@ -667,8 +806,11 @@ header{
         }
     }
 }
-@media only screen and (max-width: 460px) {
+@media only screen and (max-width: 500px) {
     .top-header .wrapper p{
         display: none;
+    }
+    header .main-header .wrapper .cart-menu .cart-popup-btn-hover {
+        width: min-content;
     }
 }

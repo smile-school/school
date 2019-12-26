@@ -11,6 +11,7 @@
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/jquery-ui.js"></script>
     <script src="js/slider.js"></script>
+    <script src="js/knockout-3.5.1.js"></script>
 </head>
 <body>
     <header>
@@ -19,8 +20,8 @@
                 <div class="select-currency">
                     <div class="currency-checked">usd</div>
                     <div class="currency" id="currency">
-                        <div class="currency-var"><p>EUR - Euro</div>
-                        <div class="currency-var"><p>GBP - Pound</p></div>
+                        <div class="currency-var"><a href="#">EUR - Euro</a></div>
+                        <div class="currency-var"><a href="#">GBP - Pound</a></div>
                     </div>
                 </div>
                 <div class="select-language">
@@ -117,7 +118,12 @@
                         </div>
                     </div>
                     <div class="navbar">
-                        <nav>
+                        <div class="burger">
+                            <p>Menu</p>
+                            <span>&nbsp;</span>
+                            <span>&nbsp;</span>
+                            <span>&nbsp;</span>
+                        </div>
                             <ul>
                                 <li class="arrow-anim"><a href="#">home<span>&nbsp;</span></a>
                                     <ul>
@@ -176,7 +182,6 @@
                                 <li><a href="#">about us</a></li>
                                 <li><a href="#">contact us</a></li>
                             </ul>
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -219,9 +224,7 @@
                             </div>
                             <button class="right-prev"><i class="fas fa-chevron-right"></i></button>
                             <button class="left-prev"><i class="fas fa-chevron-left"></i></button>
-                            
                         </div>
-                    
                 </div>
                 <div class="product-review">
                     <p class="product-review-title">carbon fiber steering wheel</p>
@@ -230,7 +233,7 @@
                         <img src="ima/staraside.png" alt="rating"/>
                         <a href="#"><span>&nbsp;1&nbsp;&nbsp;Review</span></a>
                         <span>&nbsp;|&nbsp;&nbsp;</span>
-                        <a href="#reviews"><span>Add Your Review</span></a>
+                        <a href="#coment"><span>Add Your Review</span></a>
                     </div>
                     <div class="product-price">
                         <span>$53.00</span>
@@ -263,15 +266,20 @@
                                 </div>
                             </div>
                             <div class="action-inputs-bottom_cart">
-                                <label for="item-quantity1">Qty</label>
-                                <input type="text" id="item-quantity1" class="item-quantity" placeholder="1">
-                                <a class="add-to-cart" href="#">add to cart</a>
-                                <a class="wishlist" href="#">
-                                    <i class="fas fa-heart" aria-hidden="true"></i>
-                                </a>
-                                <a class="compare" href="#">
-                                    <i class="fas fa-sync" aria-hidden="true"></i>
-                                </a>
+                                <div class="qty">
+                                    <label for="item-quantity1">Qty</label>
+                                    <input type="text" id="item-quantity1" class="item-quantity" placeholder="1">
+                                </div>
+                                <div class="cart-btns">
+                                    <a class="add-to-cart" href="#">add to cart</a>
+                                    <a class="wishlist" href="#">
+                                        <i class="fas fa-heart" aria-hidden="true"></i>
+                                    </a>
+                                    <a class="compare" href="#">
+                                        <i class="fas fa-sync" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -285,93 +293,127 @@
                 <div class="left-action-info-btn">
                     <label for="radio1" class="main-info-menu">details</label>
                     <label for="radio2" class="main-info-menu">more information</label>
-                    <label for="radio3" class="main-info-menu" id="reviews">reviews</label>
+                    <label for="radio3" class="main-info-menu">reviews</label>
                     <label for="radio4" class="main-info-menu">custom tab</label>
                 </div>
-                <div class="right-action-info-block">
-                    <div class="details">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis auto mr reprehenderit in voluptateveli esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim veniam, quis nostrud exercitation ullamc laboris nisi ut aliquip ex eacommod consequat. Duis reprehenderit iesse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sede eiusmod tempor incididunt ut labore et doloreme gna aliqua. Duis aute irure dolor in reprehenderit in voluptatevelit esse pariatur.</p>
-                        <p>Duis aute irure reprehenderit in voluptateveli esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim vexercitation ullamco laboris nisi ut aliquip ex eacommod consequat. Duis reprehenderit in voluptate velit. esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis auto mr reprehenderit in voluptateveli esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim veniam, quis nostrud exercitation ullamc laboris nisi ut aliquip ex eacommod consequat. Duis reprehenderit iesse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident. Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis auto mr reprehenderit in voluptateveli esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim veniam, quis nostrud exercitation ullamc laboris nisi ut aliquip ex eacommod consequat. Duis reprehenderit iesse cillum dolore eu fugiat nulla pariatur. Excepteur sint.</p>
+                <div class="right-action-info-block" id='coment'>
+                    <div class="details-extended">
+                        <div class="info-head">
+                            <label for="radio1" class="main-info-menu">details</label>
+                        </div>
+                        <div class="details">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis auto mr reprehenderit in voluptateveli esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim veniam, quis nostrud exercitation ullamc laboris nisi ut aliquip ex eacommod consequat. Duis reprehenderit iesse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sede eiusmod tempor incididunt ut labore et doloreme gna aliqua. Duis aute irure dolor in reprehenderit in voluptatevelit esse pariatur.</p>
+                            <p>Duis aute irure reprehenderit in voluptateveli esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim vexercitation ullamco laboris nisi ut aliquip ex eacommod consequat. Duis reprehenderit in voluptate velit. esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis auto mr reprehenderit in voluptateveli esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim veniam, quis nostrud exercitation ullamc laboris nisi ut aliquip ex eacommod consequat. Duis reprehenderit iesse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident. Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis auto mr reprehenderit in voluptateveli esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim veniam, quis nostrud exercitation ullamc laboris nisi ut aliquip ex eacommod consequat. Duis reprehenderit iesse cillum dolore eu fugiat nulla pariatur. Excepteur sint.</p>
+                        </div>
                     </div>
-                    <div class="more-info">
-                        <p>Excepteur sint occaecat cupidatat non proident. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sede eiusmod tempor incididunt ut labore et doloreme gna aliqua. Duis aute irure dolor in reprehenderit in voluptatevelit esse pariatur. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis auto mr reprehenderit in voluptateveli esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim veniam, quis nostrud exercitation ullamc laboris nisi ut aliquip ex eacommod consequat. Duis reprehenderit iesse cillum dolore eu fugiat nulla pariatur. </p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis auto mr reprehenderit in voluptateveli esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim veniam, quis nostrud exercitation ullamc laboris nisi ut aliquip ex eacommod consequat. Duis reprehenderit iesse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident. Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
-                        <p>Duis aute irure reprehenderit in voluptateveli esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim vexercitation ullamco laboris nisi ut aliquip ex eacommod consequat. Duis reprehenderit in voluptate velit. esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis auto mr reprehenderit in voluptateveli esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim veniam, quis nostrud exercitation ullamc laboris nisi ut aliquip ex eacommod consequat. Duis reprehenderit iesse cillum dolore eu fugiat nulla pariatur. Excepteur sint.</p>
+                    <div class="more-info-extended">
+                        <div class="info-head">
+                            <label for="radio2" class="main-info-menu">more information</label>
+                        </div>
+                        <div class="more-info">
+                            <p>Excepteur sint occaecat cupidatat non proident. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sede eiusmod tempor incididunt ut labore et doloreme gna aliqua. Duis aute irure dolor in reprehenderit in voluptatevelit esse pariatur. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis auto mr reprehenderit in voluptateveli esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim veniam, quis nostrud exercitation ullamc laboris nisi ut aliquip ex eacommod consequat. Duis reprehenderit iesse cillum dolore eu fugiat nulla pariatur. </p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis auto mr reprehenderit in voluptateveli esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim veniam, quis nostrud exercitation ullamc laboris nisi ut aliquip ex eacommod consequat. Duis reprehenderit iesse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident. Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
+                            <p>Duis aute irure reprehenderit in voluptateveli esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim vexercitation ullamco laboris nisi ut aliquip ex eacommod consequat. Duis reprehenderit in voluptate velit. esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis auto mr reprehenderit in voluptateveli esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim veniam, quis nostrud exercitation ullamc laboris nisi ut aliquip ex eacommod consequat. Duis reprehenderit iesse cillum dolore eu fugiat nulla pariatur. Excepteur sint.</p>
+                        </div>
                     </div>
-                    <div class="reviews">
-                            <div class="leave-feedback">
-                                <h3>Let people know what you think about or shop and products</h3>
-                                <button class="feedback-btn">Leave&nbsp;feedback</button>
-                            </div>                    
-                            <ul class="feedbacks-wrapper">
-                                <li>
-                                    <div class="feedback-header">
-                                        <h4>Dean Winchester</h4>
-                                        <span class="tt-dd">today</span>
-                                    </div>
-                                    <div class="feedback-content">
-                                        <p>Lorem ipsum dolor sit amet consectetur 
-                                            adipisicing elit. Expedita ea dolorum 
-                                            porro dolore vero ad in, quam, deserunt, 
-                                            aliquid obcaecati fugit pariatur error 
-                                            totam accusantium repudiandae ratione 
-                                            molestias ut illum.
-                                        </p>
-                                        <p class="bold">Advantage:</p>
-                                        <p>Lorem ipsum dolor sit amet</p>
-                                        <p class="bold">Disadvantages:</p>
-                                        <p>Lorem ipsum dolor sit amet</p>
-                                    </div>
-                                    <div class="react">
-                                        <button class="like">
-                                            <i class="far fa-thumbs-up"></i>
-                                            <span>&nbsp;</span>
-                                        </button>
-                                        <button class="dislike">
-                                            <i class="far fa-thumbs-down"></i>
-                                            <span>&nbsp;</span>
-                                        </button>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="feedback-header">
-                                        <h4>John Sallivan</h4>
-                                        <span class="tt-dd">yesterday</span>
-                                    </div>
-                                    <div class="feedback-content">
-                                        <p>Lorem ipsum dolor sit amet consectetur 
-                                            adipisicing elit. Expedita ea dolorum 
-                                            porro dolore vero ad in, quam, deserunt, 
-                                            aliquid obcaecati fugit pariatur error 
-                                            totam accusantium repudiandae ratione 
-                                            molestias ut illum.
-                                        </p>
-                                        <p class="bold">Advantage:</p>
-                                        <p>Lorem ipsum dolor sit amet</p>
-                                        <p class="bold">Disadvantages:</p>
-                                        <p>Lorem ipsum dolor sit amet</p>
-                                    </div>
-                                    <div class="react">
-                                        <button class="like">
-                                            <i class="far fa-thumbs-up"></i>
-                                            <span>&nbsp;</span>
-                                        </button>
-                                        <button class="dislike">
-                                            <i class="far fa-thumbs-down"></i>
-                                            <span>&nbsp;</span>
-                                        </button>
-                                    </div>
-                                </li>
-                            </ul>
+                    <div class="reviews-extended">
+                        <div class="info-head">
+                            <label for="radio3" class="main-info-menu" name="reviews">reviews</label>
+                        </div>
+                        <div class="reviews">
+                                <div class="leave-feedback">
+                                    <h3>Let people know what you think about or shop and products</h3>
+                                    <button class="feedback-btn">Leave&nbsp;feedback</button>
+                                </div>
+                                <div class="overlay"></div>
+                            <form id="formFeedback" action="" method="get" class="" data-bind="submit:submitForm">
+                                <div class="close">X</div>
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" data-bind="value:name">
+                                <label for="advantages">Advantages</label>
+                                <input type="text" id="advantages">
+                                <label for="disadvantages">Disadvantages</label>
+                                <input type="text" id="disadvantages">
+                                <label for="text">Message</label>
+                                <textarea name="message" id="comment" cols="30" rows="10"
+                                          data-bind="value:comment"></textarea>
+                                <button id="submitForm" value="send" data-bind="click: addMessage">Send</button>
+                            </form>
+                                <ul class="feedbacks-wrapper">
+                                    <li data-bind="foreach:messagesList">
+                                        <div class="feedback-header">
+                                            <h4 data-bind="text: name">Dean Winchester</h4>
+                                            <span class="tt-dd">today</span>
+                                        </div>
+                                        <div class="feedback-content">
+                                            <p data-bind="text: comment">Lorem ipsum dolor sit amet consectetur
+                                                adipisicing elit. Expedita ea dolorum
+                                                porro dolore vero ad in, quam, deserunt,
+                                                aliquid obcaecati fugit pariatur error
+                                                totam accusantium repudiandae ratione
+                                                molestias ut illum.
+                                            </p>
+                                            <p class="bold">Advantage:</p>
+                                            <p data-bind="text: advantages">Lorem ipsum dolor sit amet</p>
+                                            <p class="bold">Disadvantages:</p>
+                                            <p data-bind="text: disadvantages">Lorem ipsum dolor sit amet</p>
+                                        </div>
+                                        <div class="react">
+                                            <button class="like">
+                                                <i class="far fa-thumbs-up"></i>
+                                                <span>&nbsp;</span>
+                                            </button>
+                                            <button class="dislike">
+                                                <i class="far fa-thumbs-down"></i>
+                                                <span>&nbsp;</span>
+                                            </button>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="feedback-header">
+                                            <h4>John Sallivan</h4>
+                                            <span class="tt-dd">yesterday</span>
+                                        </div>
+                                        <div class="feedback-content">
+                                            <p>Lorem ipsum dolor sit amet consectetur
+                                                adipisicing elit. Expedita ea dolorum
+                                                porro dolore vero ad in, quam, deserunt,
+                                                aliquid obcaecati fugit pariatur error
+                                                totam accusantium repudiandae ratione
+                                                molestias ut illum.
+                                            </p>
+                                            <p class="bold">Advantage:</p>
+                                            <p>Lorem ipsum dolor sit amet</p>
+                                            <p class="bold">Disadvantages:</p>
+                                            <p>Lorem ipsum dolor sit amet</p>
+                                        </div>
+                                        <div class="react">
+                                            <button class="like">
+                                                <i class="far fa-thumbs-up"></i>
+                                                <span>&nbsp;</span>
+                                            </button>
+                                            <button class="dislike">
+                                                <i class="far fa-thumbs-down"></i>
+                                                <span>&nbsp;</span>
+                                            </button>
+                                        </div>
+                                    </li>
+                                </ul>
+                        </div>
                     </div>
-                    <div class="custom-tab">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis auto mr reprehenderit in voluptateveli esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim veniam, quis nostrud exercitation ullamc laboris nisi ut aliquip ex eacommod consequat. Duis reprehenderit iesse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident. Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
-                        <p>Excepteur sint occaecat cupidatat non proident. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sede eiusmod tempor incididunt ut labore et doloreme gna aliqua. Duis aute irure dolor in reprehenderit in voluptatevelit esse pariatur. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis auto mr reprehenderit in voluptateveli esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim veniam, quis nostrud exercitation ullamc laboris nisi ut aliquip ex eacommod consequat. Duis reprehenderit iesse cillum dolore eu fugiat nulla pariatur. </p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis auto mr reprehenderit in voluptateveli esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim veniam, quis nostrud exercitation ullamc laboris nisi ut aliquip ex eacommod consequat. Duis reprehenderit iesse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident. Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
-                        <p>Duis aute irure reprehenderit in voluptateveli esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim vexercitation ullamco laboris nisi ut aliquip ex eacommod consequat. Duis reprehenderit in voluptate velit. esse cillum dolore eu fugiat nulla pariatur.</p>
+                    <div class="custom-tab-extended">
+                        <div class="info-head">
+                            <label for="radio4" class="main-info-menu">custom tab</label>
+                        </div>
+                        <div class="custom-tab">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis auto mr reprehenderit in voluptateveli esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim veniam, quis nostrud exercitation ullamc laboris nisi ut aliquip ex eacommod consequat. Duis reprehenderit iesse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident. Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
+                            <p>Excepteur sint occaecat cupidatat non proident. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sede eiusmod tempor incididunt ut labore et doloreme gna aliqua. Duis aute irure dolor in reprehenderit in voluptatevelit esse pariatur. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis auto mr reprehenderit in voluptateveli esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim veniam, quis nostrud exercitation ullamc laboris nisi ut aliquip ex eacommod consequat. Duis reprehenderit iesse cillum dolore eu fugiat nulla pariatur. </p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis auto mr reprehenderit in voluptateveli esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim veniam, quis nostrud exercitation ullamc laboris nisi ut aliquip ex eacommod consequat. Duis reprehenderit iesse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident. Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
+                            <p>Duis aute irure reprehenderit in voluptateveli esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim vexercitation ullamco laboris nisi ut aliquip ex eacommod consequat. Duis reprehenderit in voluptate velit. esse cillum dolore eu fugiat nulla pariatur.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -440,7 +482,7 @@
             </div>
         </div>
         <div class="wrapper">
-            <div class="related-products">
+            <div class="related-products bottom">
                 <div class="related-products-title">
                     <h4>YOU MAY LIKE THIS PRODUCTS</h4>
                     <h2>RELATED PRODUCTS</h2>
@@ -449,7 +491,7 @@
                     <a class="arrow arrow-next" id="next" ><i class="fas fa-chevron-right"></i></a>
                     <a class="arrow arrow-back" id="prev"><i class="fas fa-chevron-left"></i></a>
                     <div class="related-product-list">  
-                        <div class="related-product-cart-extended">
+                        <div class="related-product-cart-extended bottom-gal">
                             <div class="related-product-cart">
                                 <div class="related-product-img">
                                     <img src="ima/related/1.png" alt="" />
@@ -470,7 +512,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="related-product-cart-extended">
+
+                        <div class="related-product-cart-extended bottom-gal">
                             <div class="related-product-cart">
                                 <div class="related-product-img">
                                     <img src="ima/related/2.png" alt="" />
@@ -487,11 +530,11 @@
                                 <div class="info">
                                     <a href="#" class="product-title">Car Kit Hands Free Calling</a>
                                     <img class="rating" src="ima/star5.png" alt="" />
-                                    <p><span class="full-price">$84.00</span></p>
+                                    <p><span class="for-sale">$55.00</span>&nbsp;&nbsp;&nbsp;<span class="base-price">$84.00</span></p>
                                 </div>
                             </div>
                         </div>
-                        <div class="related-product-cart-extended">
+                        <div class="related-product-cart-extended bottom-gal">
                             <div class="related-product-cart">
                                 <div class="related-product-img">
                                     <img src="ima/related/3.png" alt="" />
@@ -512,7 +555,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="related-product-cart-extended">
+                        <div class="related-product-cart-extended bottom-gal">
                             <div class="cart related-product-cart">
                                 <div class="related-product-img">
                                     <img src="ima/related/4.png" alt="" />
@@ -529,11 +572,11 @@
                                 <div class="info">
                                     <a href="#" class="product-title">Car Kit Hands Free Calling</a>
                                     <img class="rating" src="ima/star5.png" alt="" />
-                                    <p><span class="for-sale">$55.00</span>&nbsp;<span class="base-price">$84.00</span></p>
+                                    <p><span class="full-price">$84.00</span></p>
                                 </div>
                             </div>
                         </div>
-                        <div class="related-product-cart-extended">
+                        <div class="related-product-cart-extended bottom-gal">
                             <div class="cart related-product-cart">
                                 <div class="related-product-img">
                                     <img src="ima/related/1.png" alt="" />
@@ -554,7 +597,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="related-product-cart-extended">
+                        <div class="related-product-cart-extended bottom-gal">
                             <div class="cart related-product-cart">
                                 <div class="related-product-img">
                                     <img src="ima/related/2.png" alt="" />
@@ -633,7 +676,14 @@
         </div>
         <div class="bottom-footer">
             <div class="wrapper bottom-wrap">
-                <img src="ima/footer/payment-footer%201.png" alt="" />
+                <ul>
+                    <li>&nbsp;</li>
+                    <li>&nbsp;</li>
+                    <li>&nbsp;</li>
+                    <li>&nbsp;</li>
+                    <li>&nbsp;</li>
+                    <li>&nbsp;</li>
+                </ul>
                 <span>SM Autostore © 2019 Demo Store. All Rights Reserved. Designed by MagenTech.Com</span>
             </div>
         </div>
