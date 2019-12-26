@@ -1,0 +1,151 @@
+.form-container_form{
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 0px;
+    transition: height .5s ease-in-out;
+}
+.footer_form-container > input[type="checkbox"]:checked + .form-container_form{
+    height: 470px;
+    transition: height .8s ease-in-out;
+}
+.mailing_form{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.form-container_form > input[type="text"]{
+    color: #d2d2d2;
+}
+.form-container_form > input[type="text"],
+.mailing_form > input[type="text"]{
+    width: 400px;
+    height: 69px;
+    border: none;
+    padding-left: 28px;
+    outline: 1px solid #d2d2d2;
+    font-size: 20px;
+    font-style: italic;
+    line-height: 24px;
+}
+.form-container_form > input[type="text"]:hover,
+.mailing_form > input[type="text"]:hover{
+    outline: 2px solid #64c29e;
+}
+.form-container_form > input[type="text"]{
+    background-color: #282f35;
+}
+.form-container_form > input[type="text"]:focus{
+    background-color: #ffffff;
+    color: black;
+}
+.form-container_form > label{
+    line-height: 50px;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 2.8px;
+    align-self: flex-start;
+    padding-top: 15px;
+}
+.form-container_form > div{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 15px 0;
+}
+.form-container_form > div input[type="radio"]{
+    display: none;
+}
+.form-container_form > div label{
+    position: relative;
+    padding: 0 0 0 36px;
+    cursor: pointer;
+    color: #ffffff;
+    letter-spacing: 2.8px;
+}
+.form-container_form  > div label::before{
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #d2d2d2 ;
+    border-radius: 50%;
+    background-color: #282f35;
+    left: 0;
+    top: -6px;
+    transition: all .4s ease-in;
+}
+.form-container_form > div label:after{
+    opacity: 0;
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #64c29e;
+    z-index: 10;
+    left: 6px;
+    top: 0;
+    transition: opacity .4s ease-in;
+}
+.form-container_form > div input:checked + label::after{
+    opacity: 1;
+}
+.form-container_form > div input:checked + label::before{
+    border: 1px solid #21bcc2;
+}
+.mailing_form > input[type="text"]{
+    margin-right: 8px;
+    background-color: #ffffff;
+}
+.form-container_form > button{
+    width: 220px;
+    height: 69px;
+    background-color: #64c29e;
+    border: none;
+    margin-top: 15px;
+}
+.mailing_form > div{
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    width: 126px;
+    height: 69px;
+    background-color: #64c29e;
+}
+.form-container_form > button:hover,
+.mailing_form > div:hover{
+    outline: 2px solid #21bcc2;
+}
+.form-container_form > button:hover,
+.mailing_form > div:hover p{
+    font-weight: bold;
+}
+.form-container_form > button,
+.mailing_form > div p{
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 24px;
+    text-transform: uppercase;
+    transition: font-weight .3s ease-in;
+}
+@media screen and (max-width: 767px) {
+    .mailing_form > input[type="text"]{
+        width: 70%;
+    }
+    .mailing_form > div{
+        width: 20%;
+    }
+}
+@media screen and (max-width: 500px){
+    .form-container_form{
+        width: 90%;
+    }
+    .form-container_form > input[type="text"]{
+        width: 90%;
+    }
+}
