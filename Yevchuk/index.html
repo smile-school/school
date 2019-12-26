@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="grunt/dist/css/style.css">
+    <script src="js/jquery-1.12.4.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/slider.js"></script>
 </head>
 <body>
 <header>
@@ -173,17 +176,27 @@
     <div class="content-container wrapper-container">
         <div class="content">
             <div class="open-good-container">
-                <div class="good-gallery">
-                    <div class="img-preview">
+                <div class="gallery good-gallery ">
+                    <div class="img img-preview">
                         <img src="img/turbine.png" alt="">
+                        <a href="#" class="arrow next"><i class="fa fa-chevron-right"></i></a>
+                        <a href="#" class="arrow prev"><i class="fa fa-chevron-left"></i></a>
                     </div>
-                    <ul class="img-gallery">
-                        <span class="next"><img src="img/svg/arrow-right-darck-gray.svg" alt=""></span>
-                        <li><img src="img/genrator.png" alt=""></li>
-                        <li class="active"><img src="img/turbine.png" alt=""></li>
-                        <li><img src="img/steering-wheel.png" alt=""></li>
-                        <li><img src="img/steering-wheel2.png" alt=""></li>
-                    </ul>
+                    <div class="preview">
+                        <div class="img img-gallery slider-wrapper">
+                            <div class="items"><img src="img/c1.png" alt=""></div>
+                            <div class="items"><img src="img/c2.png" alt=""></div>
+                            <div class="items"><img src="img/c3.png" alt=""></div>
+                            <div class="items"><img src="img/c4.png" alt=""></div>
+                            <div class="items"><img src="img/c1.png" alt=""></div>
+                            <div class="items"><img src="img/c2.png" alt=""></div>
+                            <div class="items"><img src="img/c3.png" alt=""></div>
+                            <div class="items"><img src="img/c4.png" alt=""></div>
+                        </div>
+                        <button class="left-prev"><i class="fa fa-chevron-left"></i></button>
+                        <button class="right-prev"><i class="fa fa-chevron-right"></i></button>
+                    </div>
+
                 </div>
                 <div class="good-specification-container">
                     <h2>CARBON FIBER STEERING WHEEL</h2>
@@ -543,5 +556,6 @@
         </div>
     </div>
 </footer>
+<script src="js/main.js"></script>
 </body>
 </html>

@@ -107,15 +107,63 @@
     border: 1px solid @gray;
     margin-bottom: 10px;
     position: relative;
+    &:hover a{
+      opacity: 1;
+    }
     img{
       width: 100%;
     }
-  }
-  .img-gallery{
-    display: flex;
-    position: relative;
-
+    .next,
+    .prev{
+      opacity: 0;
+      position: absolute;
+      height: 100%;
+      width: 50px;
+      color: @gray;
+      top: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      i{
+        font-size: 35px;
+      }
+    }
+    .prev{
+      left: 0;
+    }
     .next{
+      right: 0;
+    }
+  }
+  .overlay{
+    position: absolute;
+    border: 1px solid @rad;
+    width: 98px;
+    height: 99px;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+  }
+  .scarousel_wrapper{
+   overflow: hidden;
+  }
+  .scarousel_item_wrapper{
+   display: flex;
+  }
+  .items{
+    padding: 0 3px 3px 0;
+    box-sizing: border-box;
+  }
+  .items>img{
+    width: 100%;
+    border: 1px solid @gray;
+  }
+  .preview{
+    position: relative;
+    overflow: hidden;
+    width: 410px;
+    .right-prev,
+    .left-prev{
       position: absolute;
       height: 50px;
       width: 27px;
@@ -124,9 +172,18 @@
       top: 23px;
       display: flex;
       justify-content: center;
-      text-align: center;
+      align-items: center;
       background-color: @white;
     }
+    .left-prev{
+      left: 20px;
+    }
+  }
+  .img-gallery{
+    display: flex;
+    position: relative;
+
+
     li{
       width: 95px;
       border: 1px solid @gray;

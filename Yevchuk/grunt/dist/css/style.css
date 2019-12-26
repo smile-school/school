@@ -569,6 +569,7 @@ a {
 .navbar-bottom .navbar-bottom-container .navbar-menu > li:first-of-type:hover .home-popup {
   opacity: 1;
   pointer-events: auto;
+  z-index: 9;
 }
 .navbar-bottom .navbar-bottom-container .navbar-menu > li:hover {
   background-color: #FF2D37;
@@ -732,14 +733,64 @@ a {
   margin-bottom: 10px;
   position: relative;
 }
+.open-good-container .img-preview:hover a {
+  opacity: 1;
+}
 .open-good-container .img-preview img {
   width: 100%;
 }
-.open-good-container .img-gallery {
+.open-good-container .img-preview .next,
+.open-good-container .img-preview .prev {
+  opacity: 0;
+  position: absolute;
+  height: 100%;
+  width: 50px;
+  color: #CCCCCC;
+  top: 0;
   display: flex;
-  position: relative;
+  align-items: center;
+  justify-content: center;
 }
-.open-good-container .img-gallery .next {
+.open-good-container .img-preview .next i,
+.open-good-container .img-preview .prev i {
+  font-size: 35px;
+}
+.open-good-container .img-preview .prev {
+  left: 0;
+}
+.open-good-container .img-preview .next {
+  right: 0;
+}
+.open-good-container .overlay {
+  position: absolute;
+  border: 1px solid #FF2D37;
+  width: 98px;
+  height: 99px;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+}
+.open-good-container .scarousel_wrapper {
+  overflow: hidden;
+}
+.open-good-container .scarousel_item_wrapper {
+  display: flex;
+}
+.open-good-container .items {
+  padding: 0 3px 3px 0;
+  box-sizing: border-box;
+}
+.open-good-container .items > img {
+  width: 100%;
+  border: 1px solid #CCCCCC;
+}
+.open-good-container .preview {
+  position: relative;
+  overflow: hidden;
+  width: 410px;
+}
+.open-good-container .preview .right-prev,
+.open-good-container .preview .left-prev {
   position: absolute;
   height: 50px;
   width: 27px;
@@ -748,8 +799,15 @@ a {
   top: 23px;
   display: flex;
   justify-content: center;
-  text-align: center;
+  align-items: center;
   background-color: white;
+}
+.open-good-container .preview .left-prev {
+  left: 20px;
+}
+.open-good-container .img-gallery {
+  display: flex;
+  position: relative;
 }
 .open-good-container .img-gallery li {
   width: 95px;
