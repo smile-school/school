@@ -13,7 +13,6 @@
         exidForm.forEach(elem =>{
             elem.addEventListener('click',function () {
                 actForm.classList.remove(acForm);
-                // clearForm(comentForm);
             })
         });
 
@@ -22,11 +21,9 @@
     Form();
 
 
-
     function setCount(spn) {
         spn.innerHTML = this.counts + ++spn.textContent;
     }
-
     function Counter(elem, count) {
         this.targetElem = elem;
         this.counts = count;

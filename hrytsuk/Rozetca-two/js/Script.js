@@ -10,11 +10,9 @@
             starInp:document.querySelector('.star-bloc'),
             comentCou : document.querySelector('.number-ret'),
         };
-
         this.parament.myForm.addEventListener('submit', parsForm);
 
         this.parament.starInp.addEventListener('click', ratingCounter) ;
-
 
 
         function parsForm(e) {
@@ -32,7 +30,6 @@
                 for (var key in attr){
                     el.setAttribute(key,attr[key]);
                 }
-
             }
             if (text){
                 el.innerHTML += text;
@@ -44,10 +41,14 @@
         function ratingCounter(event) {
             if (event.target.tagName === 'LABEL'){
                 self.parament.elements = +(event.target.dataset.ret) / 5;
-                // self.options.checkedStar = event.target;
                 return self.parament.elements;
-
             }
+            else if(event.target.tagName === 'use'){
+               var label =  event.target.closest('.rat');
+                self.parament.elements = +(label.dataset.ret) / 5;
+                return self.parament.elements;
+            }
+
         }
 
         function validForms(data) {
@@ -92,13 +93,11 @@
                  else if (key === 'coment') this.elemForm.coment = item;
                  else if (key === 'url-yotube') this.elemForm.urlYotube = item.split('v=')[1];
              });
-                 console.log(self.parament.elements);
              AddedComent(data);
 
          }
 
          function AddedComent(e) {
-
             var  date = new Date(),
                 curr_date = date.getDate(),
                 curr_month = date.getMonth() + 1,
@@ -197,20 +196,24 @@
                  '                                                <use xlink:href="#icon-thumb-up"\n' +
                  '                                                     xmlns:xlink="http://www.w3.org/1999/xlink"></use>\n' +
                  '                                            </svg>';
+
              var butonLice = createElem('button',{'class':'answer-bottom buton-lice'},svgLice);
 
 
-            var like1 = createElem('span',{'class':'like1'},1);
+            var like1 = createElem('span',{'class':'like1'},0);
 
             butonLice.appendChild(like1);
             comentLice.appendChild(butonLice);
+            butonLice.addEventListener('click',counterLike(butonLice));
 
              var butonDiz = createElem('button',{'class':'answer-bottom lice buton-diz'});
             butonDiz.innerHTML+=svgLice;
-             var like2 = createElem('span',{'class':'like2'},1);
+             var like2 = createElem('span',{'class':'like2'},0);
+
 
             butonDiz.appendChild(like2);
-            comentLice.appendChild(butonDiz);
+             butonDiz.addEventListener('click',counterLike(butonDiz));
+             comentLice.appendChild(butonDiz);
             comentFooter.appendChild(comentLice);
 
             topComent.appendChild(comentFooter);
@@ -236,6 +239,13 @@
         }
         function countComent() {
             +(self.parament.comentCou.innerHTML)++;
+        }
+        function counterLike(elem) {
+            var count = 0;
+            return function () {
+                count++;
+                elem.children[1].innerHTML = count;
+            }
         }
     }
 
