@@ -607,7 +607,7 @@
             respondToWidth = Math.min(windowWidth, sliderWidth);
         }
 
-        if ( _.options.responsive &&
+        if ( _.options &&
             _.options.responsive.length &&
             _.options.responsive !== null) {
 
