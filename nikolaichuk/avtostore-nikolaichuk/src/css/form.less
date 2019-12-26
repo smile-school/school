@@ -1,0 +1,89 @@
+.form-wrapper{
+    border: 1px solid @main-border-line-color;
+    border-radius: 8px;
+    margin: 0 auto;
+}
+.form-review{
+    &__stars-rating{
+        margin: 0 auto;
+        text-align: center;
+        .stars-rating{
+            &__wrapper{
+                display: inline-block;
+                transform: rotate(180deg);
+                input{
+                    display: none;
+                }
+                input[type=radio]:checked ~ .stars-rating__star > i{
+                    color: @form-review-rating-star-fill-hover;
+                }
+            }
+            &__star{
+                display: inline-block;
+                width: 95px;
+                float: left;
+                transform: rotate(180deg);
+                cursor: pointer;
+                i{
+                    color: @form-review-rating-star-fill;
+                    font-size: 24px;
+                }
+                &:hover{
+                    i{
+                        color: @form-review-rating-star-fill-hover;
+                    }
+                    .stars-rating__status{
+                        color: @form-review-rating-star-text-color-hover;
+                    }
+                    ~ .stars-rating__star > i{
+                        color: @form-review-rating-star-fill-hover;
+                    }
+                }
+                .stars-rating__status{
+                    font-size: 12px;
+                    padding-top: 5px;
+                    color: @main-breadcrambs-color;
+                    margin: 0;
+                }
+            }
+        }
+    }
+    &__content{
+        padding: 10px;
+    }
+    &__label{
+        display: inline-block;
+        margin-bottom: 6px;
+
+    }
+    &__input{
+        display: block;
+        margin-bottom: 15px;
+        width: 100%;
+        padding: 5px;
+        line-height: 20px;
+        border: 1px solid @main-border-line-color;
+        border-radius: 4px;
+        resize: none;
+        transition: border-color .2s ease;
+        box-sizing: border-box;
+        &:focus{
+            border-color: @form-review-rating-star-text-color-hover;
+        }
+    }
+    .textarea{
+        height: 100px;
+    }
+    &__submit{
+        float: right;
+        width: 40%;
+        padding: 10px 0;
+        margin-bottom: 10px;
+    }
+    &__cancel{
+        float: left;
+        width: 40%;
+        padding: 10px 0;
+        margin-bottom: 10px;
+    }
+}

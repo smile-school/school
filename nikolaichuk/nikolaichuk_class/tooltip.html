@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/tooltip.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-size: 14px;
+            font-family: sans-serif;
+            line-height: 1.2;
+        }
+        .wrapper{
+            max-width: 1220px;
+            padding: 15px;
+        }
+        .tooltip{
+            display: inline-block;
+            margin: 0 5px;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background-color: gray;
+        }
+        .tooltip-box{
+            border: 1px solid black;
+            padding: 10px;
+            border-radius: 5px;
+            position: absolute;
+            display: none;
+            max-width: 250px;
+            background-color: white;
+        }
+        .tooltip-box.active{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <a href="#" data-tooltip="text 1" class="tooltip tooltip-js"></a>
+        Aliquid, commodi consectetur deserunt dicta doloremque dolores eligendi enim ex excepturi harum iusto maiores
+        minima, molestias non odio placeat recusandae repellendus voluptatum.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, commodi consectetur deserunt dicta doloremque
+        dolores eligendi enim ex <a href="#" data-tooltip="text 2" class="tooltip tooltip-js"></a>excepturi harum iusto
+        maiores minima, molestias non odio placeat recusandae repellendus voluptatum.</p>
+    <p>Lorem ipsum dolor sit amet, <a href="#" data-tooltip="text 3" class="tooltip tooltip-js"></a>consectetur adipisicing
+        elit. Aliquid, commodi consectetur deserunt dicta doloremque dolores eligendi enim ex excepturi harum iusto maiores
+        minima, molestias non odio placeat recusandae repellendus voluptatum.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, commodi consectetur deserunt dicta doloremque
+        <a href="#" data-tooltip="text 4" class="tooltip tooltip-js"></a>dolores eligendi enim ex excepturi harum iusto
+        maiores minima, molestias non odio placeat recusandae repellendus voluptatum.</p>
+</div>
+<script>
+    var t = new Tooltip({
+        beforeTooltip: function (elem) {
+            console.log(elem);
+        }
+    })
+</script>
+</body>
+</html>
