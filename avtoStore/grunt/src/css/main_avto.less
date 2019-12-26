@@ -706,6 +706,9 @@ button.mod-cart {
         width: 100%;
         border: 1px solid @line-bloc;
     }
+    .erors{
+        border: 1px solid @bordo;
+    }
     .btn-bloc{
         display: flex;
         justify-content: space-between;
@@ -863,6 +866,102 @@ button.dzb2 {
     box-sizing: border-box;
     transition: left 500ms ease-out;
 }
+.list-product-coment{
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    li{
+            margin-top:20px;
+    }
+    .list-coment-bloc{
+        border: 1px solid @line-bloc;
+        padding: 5px;
+        background-color: #f7f7f7;
+    }
+}
+.top-coment-list{
+    padding: 8px 16px;
+    border-bottom: 1px solid @border;
+    p{
+        font-size: 16px;
+        color: #333;
+        font-weight: 700;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.coment-text{
+    padding: 16px;
+    & > p{
+        font-size: @font-size-h4;
+    }
+}
+.character-bloc{
+    margin-top: 16px;
+    dt{
+        font-weight: 700;
+        margin-bottom: 6px;
+    }
+}
+.video{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16px;
+    iframe{
+        width: 90%;
+    }
+}
+.title-form{
+    text-align: center;
+    font-size: @font-size-h3-bold;
+    margin-bottom: 20px;
+}
+.coment-footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 16px;
+    .answer-bottom{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        background-color: #f7f7f7;
+        outline: 0;
+        border: none;
+        font-size: 16px;
+        color: @defolt-color;
+        height: 40px;
+        transition: all 0.3s;
+        cursor: pointer;
+        &:last-of-type{
+            margin-left: 12px;
+        }
+        &:hover{
+            color: @bordo;
+        }
+        &.ot-btn{
+            width: 30%;
+            border-radius: 25px;
+            border: 1px solid @line-bloc;
+            font-weight: bold;
+            &:hover{
+                background-color:@bordo ;
+                color: @white-color;
+            }
+        }
+        & > span{
+            padding: 0 4px;
+        }
+    }
+    .coment-lice{
+        display: flex;
+    }
+}
+
 
 @media screen and (max-width: 1150px) {
     .sidedar-product {
@@ -1051,6 +1150,9 @@ button.dzb2 {
 }
 
 @media screen and (max-width: 480px) {
+    .form-bloc{
+        width: 100%;
+    }
     .overlay{
         width: 79px;
         height: 79px;
