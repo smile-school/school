@@ -1,0 +1,1247 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AutoStore</title>
+    <script src="https://kit.fontawesome.com/f97669e073.js" crossorigin="anonymous"></script>
+    <script src="dist/js/jquery-1.6.1.min.js"></script>
+    <script src="dist/js/jquery.ui-slider.js"></script>
+    <link rel="stylesheet" href="dist/css/style.css">
+</head>
+<body>
+<div class="header">
+    <div class="head">
+        <div class="wrapper top-head">
+            <div class="login">
+                <a href="#">Sign In</a> / <a href="#">Create an Account</a>
+            </div>
+            <div class="select-country dropdown">
+             <span class="selected"><svg width="20" height="13" viewBox="0 0 20 13" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+<path d="M20 0H13.3044V13H20V0Z" fill="#ED2939"/>
+<path d="M13.3913 0H6.69565V13H13.3913V0Z" fill="white"/>
+<path d="M6.69565 0H0V13H6.69565V0Z" fill="#002395"/>
+</svg>french</span>
+                <div class="hidden-select">
+                 <span class="selected"><svg width="20" height="13" viewBox="0 0 20 13" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+<path d="M20 0H0V13H20V0Z" fill="white"/>
+<path d="M0 0V1L5.1 4.3H6.7L0 0ZM8.8 0V5.2H0V7.8H8.8V13H11.2V7.8H20V5.2H11.2V0H8.8ZM18.4 0L12 4.2V4.3H13.3L20 0H18.4ZM6.6 8.7L0 13H1.6L8 8.8V8.7H6.6ZM13.3 8.7L20 13V12L14.9 8.7H13.3Z"
+      fill="#C8102E"/>
+<path d="M2.3 0L8 3.7V0H2.3ZM12 0V3.7L17.7 0H12ZM0 1.5V4.3H4.3L0 1.5ZM20 1.5L15.7 4.3H20V1.5ZM0 8.7V11.5L4.3 8.7H0ZM15.7 8.7L20 11.5V8.7H15.7ZM12 9.3V13H17.7L12 9.3ZM8 9.3L2.3 13H8V9.3Z"
+      fill="#012169"/>
+</svg>English</span>
+                    <span class="selected"><svg width="20" height="13" viewBox="0 0 20 13" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+<path d="M20 0H0V13H20V0Z" fill="black"/>
+<path d="M20 4.29999H0V13H20V4.29999Z" fill="#DD0000"/>
+<path d="M20 8.70001H0V13H20V8.70001Z" fill="#FFCE00"/>
+</svg>German</span>
+                    <span class="selected"><svg width="20" height="13" viewBox="0 0 20 13" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+<path d="M0 0H20V13H0V0Z" fill="#ED2939"/>
+<path d="M0 0H13.3V13H0V0Z" fill="#FAE042"/>
+<path d="M0 0H6.7V13H0V0Z" fill="black"/>
+</svg>
+Belgium</span>
+                    <span class="selected"><svg width="20" height="13" viewBox="0 0 20 13" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+<path d="M20 0H0V13H20V0Z" fill="#74ACDF"/>
+<path d="M20 4.29999H0V8.59999H20V4.29999Z" fill="white"/>
+</svg>
+Argentina</span>
+                </div>
+            </div>
+            <div class="select-currency dropdown">
+                <span class="selected">USD</span>
+                <div class="hidden-select">
+                    <span class="selected">EUR – Euro</span>
+                    <span class="selected">GBP – Pound</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper hat">
+        <div class="logo">
+            <img src="dist/ima/logo.png" alt="">
+        </div>
+
+        <form class="search" action="" method="get">
+            <input type="text" name="search" placeholder="Search products...">
+            <input type="submit" value="">
+        </form>
+
+        <div class="wishlist">
+            <i class="fas fa-heart"></i>
+        </div>
+
+        <div class="cart">
+            <i data-count="1" class="fas fa-shopping-basket"></i>
+            <span>
+                 My Cart&nbsp;<span class="count">$205.00</span>
+             </span>
+            <div class="hidden">
+                <div class="product">
+                    <div class="info">
+                        <div class="img">
+                            <img src="dist/ima/wheel.png" alt="">
+                        </div>
+                        <div class="details-prod">
+                            <div class="name">
+                                <span>Carbon Fiber Steering Wheel</span>
+                            </div>
+                            <div class="detalis">
+                                <input type="checkbox" id="check">
+                                <label for="check" class="dropdown">See Details</label>
+                                <div class="hidden-prop">
+                                    <span class="size">&nbsp;S</span>
+                                    <span class="color">&nbsp;Blue</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="counts">
+                        <div class="qty">
+                            <span>Qty:</span>
+                            <span>1</span>
+                            <button>Upgrade</button>
+                        </div>
+                        <span class="total">
+                            $205.00
+                        </span>
+                    </div>
+                </div>
+                <div class="product subtotal">
+                    <span>CART SUBTOTAL: </span>
+                    <span>205.00</span>
+                </div>
+                <div class="product checkout">
+                    <button>View cart</button>
+                    <button>Checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="nav">
+        <div class="wrapper">
+            <div class="all-category">
+                <span>All Categories</span>
+                <svg width="15" height="10" viewBox="0 0 15 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <line y1="9" x2="15" y2="9" stroke="white" stroke-width="2"/>
+                    <line y1="1" x2="15" y2="1" stroke="white" stroke-width="2"/>
+                    <line y1="5" x2="15" y2="5" stroke="white" stroke-width="2"/>
+                </svg>
+            </div>
+            <div class="navigation">
+                <ul>
+                    <li>
+                        <a href="#">home</a>
+                        <ul class="hidden">
+                            <li>
+                                <a href="#">layouts</a>
+                                <ul>
+                                    <li><a href="#">Homepage Style 1</a></li>
+                                    <li><a href="#">Homepage Style 2</a></li>
+                                    <li><a href="#">Homepage Style 3</a></li>
+                                    <li><a href="#">Homepage Style 4</a></li>
+                                    <li><a href="#">Homepage Style 5</a></li>
+                                    <li><a href="#">Homepage Style 6</a></li>
+                                    <li><a href="#">Homepage Style 7</a></li>
+                                    <li><a href="#">Homepage Style 8</a></li>
+                                    <li><a href="#">Boxed Layout</a></li>
+                                    <li><a href="#">Right To LeftHOT</a></li>
+                                    <li><a href="#">LISTING LAYOUTS</a></li>
+                                    <li><a href="#">Without Sidebar</a></li>
+                                    <li><a href="#">Left Sidebar</a></li>
+                                    <li><a href="#">Right Sidebar</a></li>
+                                    <li><a href="#">Left - Right Sidebar</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">listing layouts</a>
+                                <ul>
+                                    <li><a href="#">Without Sidebar</a></li>
+                                    <li><a href="#">Left Sidebar</a></li>
+                                    <li><a href="#">Right Sidebar</a></li>
+                                    <li><a href="#">Left - Right Sidebar</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">detail layouts</a>
+                                <ul>
+                                    <li><a href="#">Product Detail - Full</a></li>
+                                    <li><a href="#">Product Detail - Left Sidebar</a></li>
+                                    <li><a href="#">Product Detail - Right Sidebar</a></li>
+                                    <li><a href="#">Thumb Horizontal</a></li>
+                                    <li><a href="#">Thumb Vertical</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">tab types</a>
+                                <ul>
+                                    <li><a href="#">Vertical</a></li>
+                                    <li><a href="#">Horizontal</a></li>
+                                    <li><a href="#">Accordion</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#">deals</a></li>
+                    <li><a href="#">under $100</a></li>
+                    <li><a href="#">new arrivals</a></li>
+                    <li><a href="#">blog</a></li>
+                    <li><a href="#">about us</a></li>
+                    <li><a href="#">contact us</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="main">
+    <div class="wrapper">
+        <div class="bread-crumbs">
+            <span class="parent-category">Home</span>
+            <span>Carbon Fiber Steering Wheel</span>
+        </div>
+        <div class="all-product">
+            <div class="aside">
+                <div class="filter">
+                    <div class="title">Shop by</div>
+                    <div class="section">
+                        <div class="title-section">color</div>
+                        <div class="content-section">
+                            <div class="color" data-sku-kolor="black"></div>
+                            <div class="color" data-sku-kolor="brown"></div>
+                            <div class="color" data-sku-kolor="gary"></div>
+                            <div class="color" data-sku-kolor="green"></div>
+                            <div class="color" data-sku-kolor="orange"></div>
+                            <div class="color" data-sku-kolor="purple"></div>
+                            <div class="color" data-sku-kolor="red"></div>
+                            <div class="color" data-sku-kolor="white"></div>
+                            <div class="color" data-sku-kolor="yellow"></div>
+                        </div>
+                    </div>
+                    <div class="section">
+                        <div class="title-section">price</div>
+                        <div class="polzunok-container-5">
+                            <div class="polzunok-5"></div>
+                            <div class="inp">
+                                <span>$</span>
+                                <input type="text" class="polzunok-input-5-left"/>
+                                <span> - </span>
+                                <span>$</span>
+                                <input type="text" class="polzunok-input-5-right "/>
+                            </div>
+                        </div>
+                        <script>
+                            $(".polzunok-5").slider({
+                                min: 66,
+                                max: 291,
+                                values: [66.9, 290],
+                                range: true,
+                                animate: "fast",
+                                slide: function (event, ui) {
+                                    $(".polzunok-input-5-left").val(ui.values[0]);
+                                    $(".polzunok-input-5-right").val(ui.values[1]);
+                                }
+                            });
+                            $(".polzunok-input-5-left").val($(".polzunok-5").slider("values", 0));
+                            $(".polzunok-input-5-right").val($(".polzunok-5").slider("values", 1));
+                            $(document).focusout(function () {
+                                var input_left = $(".polzunok-input-5-left").val().replace(/[^0-9]/g, ''),
+                                    opt_left = $(".polzunok-5").slider("option", "min"),
+                                    where_right = $(".polzunok-5").slider("values", 1),
+                                    input_right = $(".polzunok-input-5-right").val().replace(/[^0-9]/g, ''),
+                                    opt_right = $(".polzunok-5").slider("option", "max"),
+                                    where_left = $(".polzunok-5").slider("values", 0);
+                                if (input_left > where_right) {
+                                    input_left = where_right;
+                                }
+                                if (input_left < opt_left) {
+                                    input_left = opt_left;
+                                }
+                                if (input_left == "") {
+                                    input_left = 0;
+                                }
+                                if (input_right < where_left) {
+                                    input_right = where_left;
+                                }
+                                if (input_right > opt_right) {
+                                    input_right = opt_right;
+                                }
+                                if (input_right == "") {
+                                    input_right = 0;
+                                }
+                                $(".polzunok-input-5-left").val(input_left);
+                                $(".polzunok-input-5-right").val(input_right);
+                                $(".polzunok-5").slider("values", [input_left, input_right]);
+                            });
+                        </script>
+                    </div>
+                    <div class="section">
+                        <div class="title-section">prise</div>
+                        <ul class="filter-list">
+                            <li>Toyota <span>(4)</span></li>
+                            <li>Mercedes <span>(4)</span></li>
+                            <li>Kia <span>(2)</span></li>
+                            <li>Audi <span>(4)</span></li>
+                        </ul>
+                    </div>
+                    <div class="section">
+                        <div class="title-section">Model</div>
+                        <ul class="filter-list-prop">
+                            <li>Camry</li>
+                            <li>Fortuner</li>
+                            <li>Vios</li>
+                            <li>C300</li>
+                            <li>E250</li>
+                            <li>S500</li>
+                            <li>Sorento</li>
+                            <li>Optima</li>
+                            <li>A4</li>
+                            <li>A8</li>
+                        </ul>
+                    </div>
+                    <div class="section">
+                        <div class="title-section">Year</div>
+                        <ul class="filter-list-prop">
+                            <li>2011</li>
+                            <li>2013</li>
+                            <li>2015</li>
+                            <li>2017</li>
+                            <li>2018</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="filter">
+                    <div class="title">Compare PRODUCTS</div>
+                    <ul class="compare-item">
+                        <li>
+                            <a href="#" class="compare-name">Radio Transmitter Adapter</a>
+                            <a href="#" class="close"><i class="fas fa-times"></i></a>
+                        </li>
+                        <li>
+                            <a href="#" class="compare-name">Radio Transmitter Adapter</a>
+                            <a href="#" class="close"><i class="fas fa-times"></i></a>
+                        </li>
+                    </ul>
+                    <div class="clear-compare">
+                        <a class="compared-item" href="#">compare</a>
+                        <a class="clear-item" href="#">Clear All</a>
+                    </div>
+                </div>
+                <div class="ads">
+                    <img src="dist/ima/item-sidebar%201.png" alt="">
+                </div>
+            </div>
+            <div class="content">
+                <h1>Baby Car Seats</h1>
+                <div class="sort">
+                    <div class="view">
+                        <a href="#">
+                            <img src="dist/ima/Group%2050.svg" alt="">
+                        </a>
+                        <a href="#">
+                            <img src="dist/ima/Group%2052.svg" alt="">
+                        </a>
+                        <span>Items 1-15 of 18</span>
+                    </div>
+                    <div class="type">
+                        <div class="section">
+                            <span>Show</span>
+                            <label for="show">
+                                <select name="show" id="show">
+                                    <option value="first">15</option>
+                                    <option value="red">16</option>
+                                </select>
+                            </label>
+                            <span>ptr page</span>
+                        </div>
+                        <div class="section">
+                            <span>Sort By</span>
+                            <label for="position">
+                                <select name="show" id="position">
+                                    <option value="first">Position</option>
+                                    <option value="red">16</option>
+                                </select>
+                            </label>
+                        </div>
+                        <i class="fas fa-long-arrow-alt-up"></i>
+                    </div>
+                </div>
+                <div class="cart-item">
+                    <div class="cart">
+                        <div class="hover">
+                            <div class="img">
+                                <img src="dist/ima/car_kit_hands_free_calling_2%201.png" alt="">
+                            </div>
+                            <div class="product-actions">
+                                <div class="buy">
+                                    <a class="wishlist" href="#">
+                                        <i class="fas fa-heart" aria-hidden="true"></i>
+                                    </a>
+                                    <a class="add-to-cart" href="#">
+                                        add to cart
+                                    </a>
+                                    <a class="compare" href="#">
+                                        <i class="fas fa-sync" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                                <div class="product-item-name">
+                                    <a href="#" class="product-item-link">
+                                        Car Kit Hands Free Calling
+                                    </a>
+                                </div>
+                                <div class="product-rating">
+                            <span class="rating">
+                                <div class="star">
+                                    <div class="overflow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                         viewBox="0 0 73 12" enable-background="new 0 0 73 12" xml:space="preserve">
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="6.5,0 8,5 13,5 9,7.7 10,12 6.5,9.2 3,12 4,7.7 0,5 5,5"/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="66.5,0 68,5 73,5 69,7.7 70,12 66.5,9.2 63,12 64,7.7 60,5 65,5 "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="21.5,0 23,5 28,5 24,7.7 25,12 21.5,9.2 18,12 19,7.7 15,5 20,5 "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="51.5,0 53,5 58,5 54,7.7 55,12 51.5,9.2 48,12 49,7.7 45,5 50,5 "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="36.5,0 38,5 43,5 39,7.7 40,12 36.5,9.2 33,12 34,7.7 30,5 35,5 "/>
+</svg>
+                                </div>
+                                </div>
+                            </span>
+                                </div>
+                                <div class="price">
+                                    <div data-type-currency="$" class="full-price">84.00</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart">
+                        <div class="hover">
+                            <span class="new">new</span>
+                            <span class="sale">sale</span>
+                            <div class="img">
+                                <img src="dist/ima/design_in-car_fm_radio_3%201.png" alt="">
+                            </div>
+                            <div class="product-actions">
+                                <div class="buy">
+                                    <a class="wishlist" href="#">
+                                        <i class="fas fa-heart" aria-hidden="true"></i>
+                                    </a>
+                                    <a class="add-to-cart" href="#">
+                                        add to cart
+                                    </a>
+                                    <a class="compare" href="#">
+                                        <i class="fas fa-sync" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                                <div class="product-item-name">
+                                    <a href="#" class="product-item-link">
+                                        Car Kit Hands Free Calling
+                                    </a>
+                                </div>
+                                <div class="product-rating">
+                            <span class="rating">
+                                <div class="star">
+                                    <div class="overflow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                         viewBox="0 0 73 12" enable-background="new 0 0 73 12" xml:space="preserve">
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="6.5,0 8,5 13,5 9,7.7 10,12 6.5,9.2 3,12 4,7.7 0,5 5,5"/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="66.5,0 68,5 73,5 69,7.7 70,12 66.5,9.2 63,12 64,7.7 60,5 65,5 "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="21.5,0 23,5 28,5 24,7.7 25,12 21.5,9.2 18,12 19,7.7 15,5 20,5 "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="51.5,0 53,5 58,5 54,7.7 55,12 51.5,9.2 48,12 49,7.7 45,5 50,5 "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="36.5,0 38,5 43,5 39,7.7 40,12 36.5,9.2 33,12 34,7.7 30,5 35,5 "/>
+</svg>
+                                </div>
+                                </div>
+                            </span>
+                                </div>
+                                <div class="price">
+                                    <div data-type-currency="$" class="sale-price">55.00</div>
+                                    <div data-type-currency="$" class="full-price">84.00</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart">
+                        <div class="hover">
+                            <span class="new">new</span>
+                            <div class="img">
+                                <img src="dist/ima/car_kit_hands_free_calling_2%201.png" alt="">
+                            </div>
+                            <div class="product-actions">
+                                <div class="buy">
+                                    <a class="wishlist" href="#">
+                                        <i class="fas fa-heart" aria-hidden="true"></i>
+                                    </a>
+                                    <a class="add-to-cart" href="#">
+                                        add to cart
+                                    </a>
+                                    <a class="compare" href="#">
+                                        <i class="fas fa-sync" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                                <div class="product-item-name">
+                                    <a href="#" class="product-item-link">
+                                        Car Kit Hands Free Calling
+                                    </a>
+                                </div>
+                                <div class="product-rating">
+                            <span class="rating">
+                                <div class="star">
+                                    <div class="overflow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                         viewBox="0 0 73 12" enable-background="new 0 0 73 12" xml:space="preserve">
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="6.5,0 8,5 13,5 9,7.7 10,12 6.5,9.2 3,12 4,7.7 0,5 5,5"/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="66.5,0 68,5 73,5 69,7.7 70,12 66.5,9.2 63,12 64,7.7 60,5 65,5 "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="21.5,0 23,5 28,5 24,7.7 25,12 21.5,9.2 18,12 19,7.7 15,5 20,5 "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="51.5,0 53,5 58,5 54,7.7 55,12 51.5,9.2 48,12 49,7.7 45,5 50,5 "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="36.5,0 38,5 43,5 39,7.7 40,12 36.5,9.2 33,12 34,7.7 30,5 35,5 "/>
+</svg>
+                                </div>
+                                </div>
+                            </span>
+                                </div>
+                                <div class="price">
+                                    <div data-type-currency="$" class="full-price">84.00</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart">
+                        <div class="hover">
+                            <div class="img">
+                                <img src="dist/ima/car_kit_hands_free_calling_2%201.png" alt="">
+                            </div>
+                            <div class="product-actions">
+                                <div class="buy">
+                                    <a class="wishlist" href="#">
+                                        <i class="fas fa-heart" aria-hidden="true"></i>
+                                    </a>
+                                    <a class="add-to-cart" href="#">
+                                        add to cart
+                                    </a>
+                                    <a class="compare" href="#">
+                                        <i class="fas fa-sync" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                                <div class="product-item-name">
+                                    <a href="#" class="product-item-link">
+                                        Car Kit Hands Free Calling
+                                    </a>
+                                </div>
+                                <div class="product-rating">
+                            <span class="rating">
+                                <div class="star">
+                                    <div class="overflow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                         viewBox="0 0 73 12" enable-background="new 0 0 73 12" xml:space="preserve">
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="6.5,0 8,5 13,5 9,7.7 10,12 6.5,9.2 3,12 4,7.7 0,5 5,5"/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="66.5,0 68,5 73,5 69,7.7 70,12 66.5,9.2 63,12 64,7.7 60,5 65,5 "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="21.5,0 23,5 28,5 24,7.7 25,12 21.5,9.2 18,12 19,7.7 15,5 20,5 "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="51.5,0 53,5 58,5 54,7.7 55,12 51.5,9.2 48,12 49,7.7 45,5 50,5 "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="36.5,0 38,5 43,5 39,7.7 40,12 36.5,9.2 33,12 34,7.7 30,5 35,5 "/>
+</svg>
+                                </div>
+                                </div>
+                            </span>
+                                </div>
+                                <div class="price">
+                                    <div data-type-currency="$" class="full-price">84.00</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart">
+                        <div class="hoer">
+                            <div class="img">
+                                <img src="dist/ima/car_kit_hands_free_calling_2%201.png" alt="">
+                            </div>
+                            <div class="product-actions">
+                                <div class="buy">
+                                    <a class="wishlist" href="#">
+                                        <i class="fas fa-heart" aria-hidden="true"></i>
+                                    </a>
+                                    <a class="add-to-cart" href="#">
+                                        add to cart
+                                    </a>
+                                    <a class="compare" href="#">
+                                        <i class="fas fa-sync" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                                <div class="product-item-name">
+                                    <a href="#" class="product-item-link">
+                                        Car Kit Hands Free Calling
+                                    </a>
+                                </div>
+                                <div class="product-rating">
+                            <span class="rating">
+                                <div class="star">
+                                    <div class="overflow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                         viewBox="0 0 73 12" enable-background="new 0 0 73 12" xml:space="preserve">
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="6.5,0 8,5 13,5 9,7.7 10,12 6.5,9.2 3,12 4,7.7 0,5 5,5"/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="66.5,0 68,5 73,5 69,7.7 70,12 66.5,9.2 63,12 64,7.7 60,5 65,5 "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="21.5,0 23,5 28,5 24,7.7 25,12 21.5,9.2 18,12 19,7.7 15,5 20,5 "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="51.5,0 53,5 58,5 54,7.7 55,12 51.5,9.2 48,12 49,7.7 45,5 50,5 "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="36.5,0 38,5 43,5 39,7.7 40,12 36.5,9.2 33,12 34,7.7 30,5 35,5 "/>
+</svg>
+                                </div>
+                                </div>
+                            </span>
+                                </div>
+                                <div class="price">
+                                    <div data-type-currency="$" class="full-price">84.00</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart">
+                        <div class="hover">
+                            <span class="new">new</span>
+                            <span class="sale">sale</span>
+                            <div class="img">
+                                <img src="dist/ima/design_in-car_fm_radio_3%201.png" alt="">
+                            </div>
+                            <div class="product-actions">
+                                <div class="buy">
+                                    <a class="wishlist" href="#">
+                                        <i class="fas fa-heart" aria-hidden="true"></i>
+                                    </a>
+                                    <a class="add-to-cart" href="#">
+                                        add to cart
+                                    </a>
+                                    <a class="compare" href="#">
+                                        <i class="fas fa-sync" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                                <div class="product-item-name">
+                                    <a href="#" class="product-item-link">
+                                        Car Kit Hands Free Calling
+                                    </a>
+                                </div>
+                                <div class="product-rating">
+                            <span class="rating">
+                                <div class="star">
+                                    <div class="overflow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                         viewBox="0 0 73 12" enable-background="new 0 0 73 12" xml:space="preserve">
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="6.5,0 8,5 13,5 9,7.7 10,12 6.5,9.2 3,12 4,7.7 0,5 5,5"/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="66.5,0 68,5 73,5 69,7.7 70,12 66.5,9.2 63,12 64,7.7 60,5 65,5 "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="21.5,0 23,5 28,5 24,7.7 25,12 21.5,9.2 18,12 19,7.7 15,5 20,5 "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="51.5,0 53,5 58,5 54,7.7 55,12 51.5,9.2 48,12 49,7.7 45,5 50,5 "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="36.5,0 38,5 43,5 39,7.7 40,12 36.5,9.2 33,12 34,7.7 30,5 35,5 "/>
+</svg>
+                                </div>
+                                </div>
+                            </span>
+                                </div>
+                                <div class="price">
+                                    <div data-type-currency="$" class="sale-price">55.00</div>
+                                    <div data-type-currency="$" class="full-price">84.00</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart">
+                        <div class="hover">
+                            <span class="new">new</span>
+                            <div class="img">
+                                <img src="dist/ima/car_kit_hands_free_calling_2%201.png" alt="">
+                            </div>
+                            <div class="product-actions">
+                                <div class="buy">
+                                    <a class="wishlist" href="#">
+                                        <i class="fas fa-heart" aria-hidden="true"></i>
+                                    </a>
+                                    <a class="add-to-cart" href="#">
+                                        add to cart
+                                    </a>
+                                    <a class="compare" href="#">
+                                        <i class="fas fa-sync" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                                <div class="product-item-name">
+                                    <a href="#" class="product-item-link">
+                                        Car Kit Hands Free Calling
+                                    </a>
+                                </div>
+                                <div class="product-rating">
+                            <span class="rating">
+                                <div class="star">
+                                    <div class="overflow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                         viewBox="0 0 73 12" enable-background="new 0 0 73 12" xml:space="preserve">
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="6.5,0 8,5 13,5 9,7.7 10,12 6.5,9.2 3,12 4,7.7 0,5 5,5"/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="66.5,0 68,5 73,5 69,7.7 70,12 66.5,9.2 63,12 64,7.7 60,5 65,5 "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="21.5,0 23,5 28,5 24,7.7 25,12 21.5,9.2 18,12 19,7.7 15,5 20,5 "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="51.5,0 53,5 58,5 54,7.7 55,12 51.5,9.2 48,12 49,7.7 45,5 50,5 "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="36.5,0 38,5 43,5 39,7.7 40,12 36.5,9.2 33,12 34,7.7 30,5 35,5 "/>
+</svg>
+                                </div>
+                                </div>
+                            </span>
+                                </div>
+                                <div class="price">
+                                    <div data-type-currency="$" class="full-price">84.00</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart">
+                        <div class="hover">
+                            <div class="img">
+                                <img src="dist/ima/car_kit_hands_free_calling_2%201.png" alt="">
+                            </div>
+                            <div class="product-actions">
+                                <div class="buy">
+                                    <a class="wishlist" href="#">
+                                        <i class="fas fa-heart" aria-hidden="true"></i>
+                                    </a>
+                                    <a class="add-to-cart" href="#">
+                                        add to cart
+                                    </a>
+                                    <a class="compare" href="#">
+                                        <i class="fas fa-sync" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                                <div class="product-item-name">
+                                    <a href="#" class="product-item-link">
+                                        Car Kit Hands Free Calling
+                                    </a>
+                                </div>
+                                <div class="product-rating">
+                            <span class="rating">
+                                <div class="star">
+                                    <div class="overflow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                         viewBox="0 0 73 12" enable-background="new 0 0 73 12" xml:space="preserve">
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="6.5,0 8,5 13,5 9,7.7 10,12 6.5,9.2 3,12 4,7.7 0,5 5,5"/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="66.5,0 68,5 73,5 69,7.7 70,12 66.5,9.2 63,12 64,7.7 60,5 65,5 "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="21.5,0 23,5 28,5 24,7.7 25,12 21.5,9.2 18,12 19,7.7 15,5 20,5 "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="51.5,0 53,5 58,5 54,7.7 55,12 51.5,9.2 48,12 49,7.7 45,5 50,5 "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="36.5,0 38,5 43,5 39,7.7 40,12 36.5,9.2 33,12 34,7.7 30,5 35,5 "/>
+</svg>
+                                </div>
+                                </div>
+                            </span>
+                                </div>
+                                <div class="price">
+                                    <div data-type-currency="$" class="full-price">84.00</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart">
+                        <div class="hoer">
+                            <div class="img">
+                                <img src="dist/ima/car_kit_hands_free_calling_2%201.png" alt="">
+                            </div>
+                            <div class="product-actions">
+                                <div class="buy">
+                                    <a class="wishlist" href="#">
+                                        <i class="fas fa-heart" aria-hidden="true"></i>
+                                    </a>
+                                    <a class="add-to-cart" href="#">
+                                        add to cart
+                                    </a>
+                                    <a class="compare" href="#">
+                                        <i class="fas fa-sync" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                                <div class="product-item-name">
+                                    <a href="#" class="product-item-link">
+                                        Car Kit Hands Free Calling
+                                    </a>
+                                </div>
+                                <div class="product-rating">
+                            <span class="rating">
+                                <div class="star">
+                                    <div class="overflow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                         viewBox="0 0 73 12" enable-background="new 0 0 73 12" xml:space="preserve">
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="6.5,0 8,5 13,5 9,7.7 10,12 6.5,9.2 3,12 4,7.7 0,5 5,5"/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="66.5,0 68,5 73,5 69,7.7 70,12 66.5,9.2 63,12 64,7.7 60,5 65,5 "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="21.5,0 23,5 28,5 24,7.7 25,12 21.5,9.2 18,12 19,7.7 15,5 20,5 "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="51.5,0 53,5 58,5 54,7.7 55,12 51.5,9.2 48,12 49,7.7 45,5 50,5 "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="36.5,0 38,5 43,5 39,7.7 40,12 36.5,9.2 33,12 34,7.7 30,5 35,5 "/>
+</svg>
+                                </div>
+                                </div>
+                            </span>
+                                </div>
+                                <div class="price">
+                                    <div data-type-currency="$" class="full-price">84.00</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart">
+                        <div class="hover">
+                            <span class="new">new</span>
+                            <span class="sale">sale</span>
+                            <div class="img">
+                                <img src="dist/ima/design_in-car_fm_radio_3%201.png" alt="">
+                            </div>
+                            <div class="product-actions">
+                                <div class="buy">
+                                    <a class="wishlist" href="#">
+                                        <i class="fas fa-heart" aria-hidden="true"></i>
+                                    </a>
+                                    <a class="add-to-cart" href="#">
+                                        add to cart
+                                    </a>
+                                    <a class="compare" href="#">
+                                        <i class="fas fa-sync" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                                <div class="product-item-name">
+                                    <a href="#" class="product-item-link">
+                                        Car Kit Hands Free Calling
+                                    </a>
+                                </div>
+                                <div class="product-rating">
+                            <span class="rating">
+                                <div class="star">
+                                    <div class="overflow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                         viewBox="0 0 73 12" enable-background="new 0 0 73 12" xml:space="preserve">
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="6.5,0 8,5 13,5 9,7.7 10,12 6.5,9.2 3,12 4,7.7 0,5 5,5"/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="66.5,0 68,5 73,5 69,7.7 70,12 66.5,9.2 63,12 64,7.7 60,5 65,5 "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="21.5,0 23,5 28,5 24,7.7 25,12 21.5,9.2 18,12 19,7.7 15,5 20,5 "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="51.5,0 53,5 58,5 54,7.7 55,12 51.5,9.2 48,12 49,7.7 45,5 50,5 "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="36.5,0 38,5 43,5 39,7.7 40,12 36.5,9.2 33,12 34,7.7 30,5 35,5 "/>
+</svg>
+                                </div>
+                                </div>
+                            </span>
+                                </div>
+                                <div class="price">
+                                    <div data-type-currency="$" class="sale-price">55.00</div>
+                                    <div data-type-currency="$" class="full-price">84.00</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart">
+                        <div class="hover">
+                            <span class="new">new</span>
+                            <div class="img">
+                                <img src="dist/ima/car_kit_hands_free_calling_2%201.png" alt="">
+                            </div>
+                            <div class="product-actions">
+                                <div class="buy">
+                                    <a class="wishlist" href="#">
+                                        <i class="fas fa-heart" aria-hidden="true"></i>
+                                    </a>
+                                    <a class="add-to-cart" href="#">
+                                        add to cart
+                                    </a>
+                                    <a class="compare" href="#">
+                                        <i class="fas fa-sync" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                                <div class="product-item-name">
+                                    <a href="#" class="product-item-link">
+                                        Car Kit Hands Free Calling
+                                    </a>
+                                </div>
+                                <div class="product-rating">
+                            <span class="rating">
+                                <div class="star">
+                                    <div class="overflow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                         viewBox="0 0 73 12" enable-background="new 0 0 73 12" xml:space="preserve">
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="6.5,0 8,5 13,5 9,7.7 10,12 6.5,9.2 3,12 4,7.7 0,5 5,5"/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="66.5,0 68,5 73,5 69,7.7 70,12 66.5,9.2 63,12 64,7.7 60,5 65,5 "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="21.5,0 23,5 28,5 24,7.7 25,12 21.5,9.2 18,12 19,7.7 15,5 20,5 "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="51.5,0 53,5 58,5 54,7.7 55,12 51.5,9.2 48,12 49,7.7 45,5 50,5 "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="36.5,0 38,5 43,5 39,7.7 40,12 36.5,9.2 33,12 34,7.7 30,5 35,5 "/>
+</svg>
+                                </div>
+                                </div>
+                            </span>
+                                </div>
+                                <div class="price">
+                                    <div data-type-currency="$" class="full-price">84.00</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart">
+                        <div class="hover">
+                            <div class="img">
+                                <img src="dist/ima/car_kit_hands_free_calling_2%201.png" alt="">
+                            </div>
+                            <div class="product-actions">
+                                <div class="buy">
+                                    <a class="wishlist" href="#">
+                                        <i class="fas fa-heart" aria-hidden="true"></i>
+                                    </a>
+                                    <a class="add-to-cart" href="#">
+                                        add to cart
+                                    </a>
+                                    <a class="compare" href="#">
+                                        <i class="fas fa-sync" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                                <div class="product-item-name">
+                                    <a href="#" class="product-item-link">
+                                        Car Kit Hands Free Calling
+                                    </a>
+                                </div>
+                                <div class="product-rating">
+                            <span class="rating">
+                                <div class="star">
+                                    <div class="overflow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                         viewBox="0 0 73 12" enable-background="new 0 0 73 12" xml:space="preserve">
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="6.5,0 8,5 13,5 9,7.7 10,12 6.5,9.2 3,12 4,7.7 0,5 5,5"/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="66.5,0 68,5 73,5 69,7.7 70,12 66.5,9.2 63,12 64,7.7 60,5 65,5 "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="21.5,0 23,5 28,5 24,7.7 25,12 21.5,9.2 18,12 19,7.7 15,5 20,5 "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="51.5,0 53,5 58,5 54,7.7 55,12 51.5,9.2 48,12 49,7.7 45,5 50,5 "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="36.5,0 38,5 43,5 39,7.7 40,12 36.5,9.2 33,12 34,7.7 30,5 35,5 "/>
+</svg>
+                                </div>
+                                </div>
+                            </span>
+                                </div>
+                                <div class="price">
+                                    <div data-type-currency="$" class="full-price">84.00</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart">
+                        <div class="hoer">
+                            <div class="img">
+                                <img src="dist/ima/car_kit_hands_free_calling_2%201.png" alt="">
+                            </div>
+                            <div class="product-actions">
+                                <div class="buy">
+                                    <a class="wishlist" href="#">
+                                        <i class="fas fa-heart" aria-hidden="true"></i>
+                                    </a>
+                                    <a class="add-to-cart" href="#">
+                                        add to cart
+                                    </a>
+                                    <a class="compare" href="#">
+                                        <i class="fas fa-sync" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                                <div class="product-item-name">
+                                    <a href="#" class="product-item-link">
+                                        Car Kit Hands Free Calling
+                                    </a>
+                                </div>
+                                <div class="product-rating">
+                            <span class="rating">
+                                <div class="star">
+                                    <div class="overflow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                         viewBox="0 0 73 12" enable-background="new 0 0 73 12" xml:space="preserve">
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="6.5,0 8,5 13,5 9,7.7 10,12 6.5,9.2 3,12 4,7.7 0,5 5,5"/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="66.5,0 68,5 73,5 69,7.7 70,12 66.5,9.2 63,12 64,7.7 60,5 65,5 "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="21.5,0 23,5 28,5 24,7.7 25,12 21.5,9.2 18,12 19,7.7 15,5 20,5 "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="51.5,0 53,5 58,5 54,7.7 55,12 51.5,9.2 48,12 49,7.7 45,5 50,5 "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="36.5,0 38,5 43,5 39,7.7 40,12 36.5,9.2 33,12 34,7.7 30,5 35,5 "/>
+</svg>
+                                </div>
+                                </div>
+                            </span>
+                                </div>
+                                <div class="price">
+                                    <div data-type-currency="$" class="full-price">84.00</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart">
+                        <div class="hover">
+                            <span class="new">new</span>
+                            <span class="sale">sale</span>
+                            <div class="img">
+                                <img src="dist/ima/design_in-car_fm_radio_3%201.png" alt="">
+                            </div>
+                            <div class="product-actions">
+                                <div class="buy">
+                                    <a class="wishlist" href="#">
+                                        <i class="fas fa-heart" aria-hidden="true"></i>
+                                    </a>
+                                    <a class="add-to-cart" href="#">
+                                        add to cart
+                                    </a>
+                                    <a class="compare" href="#">
+                                        <i class="fas fa-sync" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                                <div class="product-item-name">
+                                    <a href="#" class="product-item-link">
+                                        Car Kit Hands Free Calling
+                                    </a>
+                                </div>
+                                <div class="product-rating">
+                            <span class="rating">
+                                <div class="star">
+                                    <div class="overflow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                         viewBox="0 0 73 12" enable-background="new 0 0 73 12" xml:space="preserve">
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="6.5,0 8,5 13,5 9,7.7 10,12 6.5,9.2 3,12 4,7.7 0,5 5,5"/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="66.5,0 68,5 73,5 69,7.7 70,12 66.5,9.2 63,12 64,7.7 60,5 65,5 "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="21.5,0 23,5 28,5 24,7.7 25,12 21.5,9.2 18,12 19,7.7 15,5 20,5 "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="51.5,0 53,5 58,5 54,7.7 55,12 51.5,9.2 48,12 49,7.7 45,5 50,5 "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="36.5,0 38,5 43,5 39,7.7 40,12 36.5,9.2 33,12 34,7.7 30,5 35,5 "/>
+</svg>
+                                </div>
+                                </div>
+                            </span>
+                                </div>
+                                <div class="price">
+                                    <div data-type-currency="$" class="sale-price">55.00</div>
+                                    <div data-type-currency="$" class="full-price">84.00</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart">
+                        <div class="hover">
+                            <span class="new">new</span>
+                            <div class="img">
+                                <img src="dist/ima/car_kit_hands_free_calling_2%201.png" alt="">
+                            </div>
+                            <div class="product-actions">
+                                <div class="buy">
+                                    <a class="wishlist" href="#">
+                                        <i class="fas fa-heart" aria-hidden="true"></i>
+                                    </a>
+                                    <a class="add-to-cart" href="#">
+                                        add to cart
+                                    </a>
+                                    <a class="compare" href="#">
+                                        <i class="fas fa-sync" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                                <div class="product-item-name">
+                                    <a href="#" class="product-item-link">
+                                        Car Kit Hands Free Calling
+                                    </a>
+                                </div>
+                                <div class="product-rating">
+                            <span class="rating">
+                                <div class="star">
+                                    <div class="overflow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                         viewBox="0 0 73 12" enable-background="new 0 0 73 12" xml:space="preserve">
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="6.5,0 8,5 13,5 9,7.7 10,12 6.5,9.2 3,12 4,7.7 0,5 5,5"/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="66.5,0 68,5 73,5 69,7.7 70,12 66.5,9.2 63,12 64,7.7 60,5 65,5 "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="21.5,0 23,5 28,5 24,7.7 25,12 21.5,9.2 18,12 19,7.7 15,5 20,5 "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="51.5,0 53,5 58,5 54,7.7 55,12 51.5,9.2 48,12 49,7.7 45,5 50,5 "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="36.5,0 38,5 43,5 39,7.7 40,12 36.5,9.2 33,12 34,7.7 30,5 35,5 "/>
+</svg>
+                                </div>
+                                </div>
+                            </span>
+                                </div>
+                                <div class="price">
+                                    <div data-type-currency="$" class="full-price">84.00</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart">
+                        <div class="hover">
+                            <div class="img">
+                                <img src="dist/ima/car_kit_hands_free_calling_2%201.png" alt="">
+                            </div>
+                            <div class="product-actions">
+                                <div class="buy">
+                                    <a class="wishlist" href="#">
+                                        <i class="fas fa-heart" aria-hidden="true"></i>
+                                    </a>
+                                    <a class="add-to-cart" href="#">
+                                        add to cart
+                                    </a>
+                                    <a class="compare" href="#">
+                                        <i class="fas fa-sync" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                                <div class="product-item-name">
+                                    <a href="#" class="product-item-link">
+                                        Car Kit Hands Free Calling
+                                    </a>
+                                </div>
+                                <div class="product-rating">
+                            <span class="rating">
+                                <div class="star">
+                                    <div class="overflow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                         viewBox="0 0 73 12" enable-background="new 0 0 73 12" xml:space="preserve">
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="6.5,0 8,5 13,5 9,7.7 10,12 6.5,9.2 3,12 4,7.7 0,5 5,5"/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="66.5,0 68,5 73,5 69,7.7 70,12 66.5,9.2 63,12 64,7.7 60,5 65,5 "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="21.5,0 23,5 28,5 24,7.7 25,12 21.5,9.2 18,12 19,7.7 15,5 20,5 "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="51.5,0 53,5 58,5 54,7.7 55,12 51.5,9.2 48,12 49,7.7 45,5 50,5 "/>
+    <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FEC601"
+             points="36.5,0 38,5 43,5 39,7.7 40,12 36.5,9.2 33,12 34,7.7 30,5 35,5 "/>
+</svg>
+                                </div>
+                                </div>
+                            </span>
+                                </div>
+                                <div class="price">
+                                    <div data-type-currency="$" class="full-price">84.00</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <div class="wrapper">
+        <div class="content">
+            <div class="contact-us">
+                <ul class="title">Contact Us
+                    <li>
+                        5611 Wellington Road, Suite 115, Gainesville, VA 20155
+                    </li>
+                    <li>
+                        <a href="tel:88893446000">888 9344 6000</a>
+                        -
+                        <a href="tel:88812346789">888 1234 6789</a>
+                    </li>
+                    <li>
+                        <a href="mailto:autostore@magentech.com">autostore@magentech.com</a>
+                    </li>
+                    <li>7 Days a week from 10-00 am to 6-00 pm</li>
+                </ul>
+            </div>
+            <div class="nav">
+                <span class="title">STORE LOCATION</span>
+                <ul>
+                    <li><a href="#">Los Angeles - USA</a></li>
+                    <li><a href="#">New York - USA</a></li>
+                    <li><a href="#">California - USA</a></li>
+                    <li><a href="#">Bangkok - Thailand</a></li>
+                    <li><a href="#">Paris - France</a></li>
+                    <li><a href="#">London - England</a></li>
+                </ul>
+            </div>
+            <div class="nav">
+                <div class="title">CUSTOMER SERVICE</div>
+                <ul>
+                    <li><a href="#">Customer Service</a></li>
+                    <li><a href="#">Shipping & Returns</a></li>
+                    <li><a href="#">Track Your Order</a></li>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Store Location</a></li>
+                    <li><a href="#">Customer Feedback</a></li>
+                </ul>
+            </div>
+            <div class="nav">
+                <div class="title">INFORMATION</div>
+                <ul>
+                    <li><a href="#">Caps & Hats</a></li>
+                    <li><a href="#">Hoodies & Sweatshirts</a></li>
+                    <li><a href="#">Jacket & Coats</a></li>
+                    <li><a href="#">Jumpers & Cardigans</a></li>
+                    <li><a href="#">Shoes, Boots & Trainers</a></li>
+                    <li><a href="#">Underwear & Socks</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="payment">
+        <div class="wrapper">
+            <div>
+                <img src="dist/ima/payment-footer%201.png" alt="payment">
+            </div>
+            <span>SM Autostore © 2019 Demo Store. All Rights Reserved. Designed by MagenTech.Com</span>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
