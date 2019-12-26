@@ -251,7 +251,7 @@
         new Product('title', 'img/design_in-car.png', 40, 30, false, false, 4, 'red', 'bmw', 'x5', 2015),
     );
 
-    productList.addProduct(new Product('Audi', 'img/design_in-car.png', 40, 30, false, false, 4, 'red', 'bmw', 'a6', 2015));
+    productList.addProduct(new Product('Audi', 'img/design_in-car.png', 40, 30, false, false, 4, 'red', 'bmw', 'x5', 2015));
     productList.addProduct(new Product('BMW', 'img/design_in-car.png', 490, 399, false, false, 5, 'black', 'audi', '730d', 2019));
     productList.addProduct(new Product('Tesla', 'img/design_in-car.png', 400, 350, false, false, 5, 'black', 'audi', 'model-s', 2020));
 })();
