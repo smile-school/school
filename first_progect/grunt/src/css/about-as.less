@@ -1,0 +1,58 @@
+.wrapper {
+    .text-wrapper {
+        padding: 192px 10px 101px;
+        text-align: center;
+        background-color: @text-wrapper-background;
+        position: relative;
+        @media (max-width: @tablet) {
+            padding: 130px 10px 80px;
+        }
+        @media (max-width: @first-mobile) {
+            padding: 100px 10px 50px;
+        }
+        @media (max-width: @second-mobile) {
+            padding: 110px 10px 40px;
+        }
+
+        &::after {
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -53%);
+            display: block;
+            content: '';
+            width: 52px;
+            height: 43px;
+            background-image: url("@{image_url}Icon(1).png");
+            @media (max-width: @tablet) {
+                top: 20%;
+            }
+            @media (max-width: @first-mobile) {
+                top: 15%;
+            }
+        }
+
+        .title {
+            padding-bottom: 22px;
+            text-transform: uppercase;
+            letter-spacing: 3.6px;
+            @media (max-width: @second-mobile) {
+                line-height: 28px;
+            }
+        }
+
+        article.text {
+            line-height: 34px;
+            font-size: 18px;
+            margin: 0 auto;
+            max-width: 1080px;
+            @media (max-width: @tablet) {
+                font-size: 16px;
+            }
+            @media (max-width: @second-mobile) {
+                line-height: 25px;
+                text-align: justify;
+            }
+        }
+    }
+}
