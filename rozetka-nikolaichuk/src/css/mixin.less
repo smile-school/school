@@ -1,0 +1,33 @@
+.container-mixin(@width, @height) {
+    width: @width;
+    height: @height;
+}
+
+.flex-mixin(@direction: row, @justify: center, @align: center) {
+    display: flex;
+    flex-direction: @direction;
+    justify-content: @justify;
+    align-items: @align;
+}
+
+.background-sprite-mixin(@positionX, @positionY) {
+    background-image: url("@{image-url}sprite.svg");
+    background-position: @positionX @positionY;
+    background-repeat: no-repeat;
+}
+
+.middle-mixin {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.line-mixin(@width: 0px, @height: 0px, @left, @top, @color) {
+    content: "";
+    position: absolute;
+    background-color: @color;
+    .container-mixin(@width: @width, @height: @height);
+    top: @top;
+    left: @left;
+}
