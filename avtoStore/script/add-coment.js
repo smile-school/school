@@ -17,8 +17,6 @@
             validForms(data);
         }
 
-
-
         function createElem(elem, attr,text) {
             if (!elem) return false;
             var el = document.createElement(elem);

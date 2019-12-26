@@ -861,7 +861,7 @@ button.dzb2 {
     width: 95px;
     height: 95px;
     position: absolute;
-    border: 1px solid #FF2D37;
+    border: 1px solid @bordo;
     top: 0;
     left: 0;
     box-sizing: border-box;
@@ -978,25 +978,32 @@ button.dzb2 {
         }
     }
 }
-@media screen and (max-width: 1024px){
-    .item-hover-efect{
-        &:hover{
-            border-color: transparent;
-            &::after{
+@media screen and (max-width: 1024px) {
+    .wrap-element {
+        width: auto;
+    }
+
+    .item-hover-efect {
+        &:hover {
+            &::after {
                 box-shadow: none;
             }
-            .info-cart-towar{
+
+            .info-cart-towar {
                 transform: translateY(0);
             }
         }
-        .add-to-cart{
+
+        .add-to-cart {
             display: none;
         }
-        .content-cart{
+
+        .content-cart {
             position: relative;
             padding-bottom: 20px;
         }
     }
+
     .item {
         &:hover {
             .add-to-cart {
@@ -1004,9 +1011,8 @@ button.dzb2 {
             }
         }
     }
-}
 
-@media screen and (max-width: 860px) {
+
     .cart-towar {
         flex-direction: column;
     }
@@ -1014,8 +1020,12 @@ button.dzb2 {
     .check-img {
 
         img {
-            width: 100%;
+            width: 410px;
+            margin: 0 auto;
         }
+    }
+    .preview{
+        margin: 0 auto;
     }
 
     .search-input {
@@ -1151,12 +1161,17 @@ button.dzb2 {
 }
 
 @media screen and (max-width: 480px) {
+    .prevs{
+        top: 0;
+    }
+    .check-img {
+        img {
+            width: 100%;
+
+        }
+    }
     .form-bloc{
         width: 100%;
-    }
-    .overlay{
-        width: 79px;
-        height: 79px;
     }
     .preview{
         width: 100%;
@@ -1172,13 +1187,6 @@ button.dzb2 {
     .slider-wrap {
         position: relative;
         display: flex;
-
-        .items {
-            img {
-                width: 75px;
-                height: 75px;
-            }
-        }
     }
 
     .selection {
@@ -1203,20 +1211,5 @@ button.dzb2 {
     .bloc-btn-main {
         width: 100%;
         margin-top: 10px;
-    }
-}
-
-@media screen and (max-width: 370px) {
-    .slider-wrap {
-        .items {
-            img {
-                width: 55px;
-                height: 55px;
-            }
-        }
-        .overlay{
-            width: 55px;
-            height: 55px;
-        }
     }
 }

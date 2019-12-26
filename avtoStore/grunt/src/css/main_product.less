@@ -446,7 +446,11 @@ button.hover-btn {
 .select-sort {
     width: 120px;
 }
-
+.mod-bloc-img{
+    img{
+        width: 100%;
+    }
+}
 .ul-list-product {
     display: flex;
     flex-direction: row;
@@ -469,7 +473,7 @@ button.hover-btn {
                 position: absolute;
                 top: 0;
                 left: 0;
-                bottom: -34px;
+                bottom: 0;
                 right: 0;
                 z-index: -1;
             }
@@ -477,22 +481,31 @@ button.hover-btn {
                 z-index: 40;
                 position: relative;
                 background-color: white;
-                border: none;
+                border: transparent;
                 .info-cart-list {
-                    border-bottom: none;
+                    border-bottom: transparent;
                     .add-to-cart{
                         position: absolute;
                         width: 100%;
                     }
                 }
-
-                &::after{
+                &::after {
                     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.6);
+                    bottom: -34px;
+                    @media (max-width: 1024px) {
+                        box-shadow: none;
+                    }
                 }
                 .info-cart-towar{
                     transform: translateY(40px);
                     z-index: 40;
                     border-bottom: none;
+                    @media (max-width: 1024px){
+                        transform: translateY(0);
+                    }
+                }
+                @media (max-width: 1024px){
+                    border: 1px solid @line-bloc;
                 }
             }
 
@@ -712,10 +725,10 @@ button.hover-btn {
 }
 
 .mod-aside {
-    margin-top: 0;
+    margin-top: -1px;
 }
 
-@media screen and (max-width: 970px) {
+@media screen and (max-width: 1024px) {
     .paremener-playback {
         .sel-number {
             padding-bottom: 15px;
@@ -754,7 +767,7 @@ button.hover-btn {
     }
 }
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 787px) {
     .ul-list-product {
         li {
             width: 47%;

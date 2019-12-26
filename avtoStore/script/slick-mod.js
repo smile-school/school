@@ -15,14 +15,6 @@ $('.product-slick').slick({
             }
         },
         {
-            breakpoint: 520,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 1,
-                infinite: true,
-            }
-        },
-        {
             breakpoint: 321,
             settings: {
                 slidesToShow: 1,
