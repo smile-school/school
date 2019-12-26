@@ -32,7 +32,7 @@
             this.itemWrap = this.element.children();
             this.itemWrap.width(this.options.itemWrapperWidth);
             // console.log(items, this.itemWrap);
-            this.itemWrap.wrap('<div class="scarousel_wrapper" style="width: ' + this.options.sliderWidth + '"></div>');
+            this.itemWrap.wrap('<div class="scarousel_wrapper" style="width: ' + this.options.sliderWidth + 'px"></div>');
             this.itemWrap.append(this.options.arrowNext, this.options.arrowPrev);
 
             $.each(this.element.find('.arrow'), $.proxy(function (i, item) {

@@ -86,6 +86,7 @@
     var slider = $('.box').smilecarousel({
         delay: 2000,
         toShow: 3,
+        toSlide: 1,
         currentSlide: 2,
         afterSlide: function () {
             console.log(this, 'after');
@@ -101,6 +102,7 @@
     $('#prev').on('click', function () {
         slider.smilecarousel('toPrev');
     });
+    console.dir(slider.smilecarousel('option'));
 
 </script>
 </body>
