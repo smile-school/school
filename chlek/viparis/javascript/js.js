@@ -7,6 +7,7 @@
         this.filterBut = ['filters-button', 'filters-close'];
         this.filters = $('#filters');
         this.elemPositLeft = (-320 * 1.15);
+        this.tabletPoint = window.matchMedia("(min-width: 960px)");
 
         $('#' + self.pageUpId).click(function () {
             $('body, html').animate({scrollTop: 0}, 800);
@@ -39,8 +40,29 @@
         }
 
         function show(element) {
-            if (element.offset().left !== 0) element.animate({left: 0}, {duration: 500, queue: false});
-            else element.animate({left: (self.elemPositLeft)}, {duration: 500, queue: false})
+            if (element.offset().left !== 0){
+                element.toggleClass('active');
+                setTimeout(function () {
+                    element.animate({left: 0}, {duration: 500, queue: false});
+                }, 10)
+            }
+            else {
+                element.animate({left: (self.elemPositLeft)}, {duration: 500, queue: false});
+                setTimeout(function () {
+                    element.toggleClass('active');
+                }, 510)
+            }
+        }
+
+        window.addEventListener('resize', function () {
+            setTimeout(toggleClassResp, 0)
+        });
+        function toggleClassResp() {
+            if (!self.tabletPoint.matches){
+                self.hambmenuId.offset({left: (self.elemPositLeft)});
+            }else {
+                self.hambmenuId.offset({left: 0});
+            }
         }
 
         build();

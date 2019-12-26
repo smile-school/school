@@ -93,6 +93,10 @@
             display: flex;
             justify-content: space-between;
 
+            @media(max-width: 960px){
+                display: none;
+            }
+
             .logo-menu {
                 display: none;
                 @media (max-width: 960px) {
@@ -128,10 +132,6 @@
                 box-sizing: border-box;
                 padding: 70px 0 0;
                 width: 320px;
-
-                .logo-menu {
-
-                }
 
 
                 & > ul {
@@ -193,6 +193,10 @@
                     max-height: 100%;
                     flex-shrink: 0;
                     flex-grow: 0;
+                    @media(max-width: 1150px){
+                        flex-shrink: 1;
+                        max-width: 100%;
+                    }
 
                     &:hover {
                         color: #182d47;
