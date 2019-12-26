@@ -102,30 +102,136 @@
                 }
 
                 .card-height-wrap {
-                    max-height: 399px;
                     overflow: visible;
-                    margin-bottom: 45px;
+                    padding-bottom: 45px;
+                    position: relative;
+                    &:after {
+                        .pseudo-elements-mixin;
+                        top: 0;
+                        right: 0;
+                        left: 0;
+                        bottom: 0;
+                    }
                 }
-            }
-
-            .card {
-                position: relative;
-                z-index: 5;
-                box-sizing: border-box;
-                padding-bottom: 23px;
-
-                &:after {
-                    .pseudo-elements-mixin;
-                    top: 0;
-                    right: 0;
-                    left: 0;
-                    bottom: 0;
+                .card {
+                    position: relative;
+                    z-index: 5;
+                    box-sizing: border-box;
+                    padding-bottom: 23px;
                     border: 1px solid #E5E5E5;
+
+                    .image-wrap {
+                        border-bottom: 1px solid #E5E5E5;
+                        position: relative;
+
+                        & > img {
+                            display: block;
+                            width: 100%;
+                        }
+
+                        &:hover {
+                            &:before {
+                                display: block;
+                            }
+                        }
+
+                        &:before {
+                            .pseudo-elements-mixin(@display: none);
+                            .background-image-mixin(@image: "fl.png", @background-size: auto);
+                            width: 50px;
+                            height: 50px;
+                            border-radius: 50%;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            background-color: @buttons-background-color;
+                        }
+                    }
+
+                    .button-wrap {
+                        position: absolute;
+                        z-index: 5;
+                        display: none;
+                        left: 0;
+                        right: 0;
+
+                        & > button {
+                            height: 40px;
+                            border: none;
+                            background-color: @body-text-color;
+                            text-transform: uppercase;
+                            color: @buttons-text-color;
+                            padding-top: 2px;
+
+                            &:hover {
+                                background-color: @buttons-background-color;
+                            }
+
+                            &:first-child,
+                            &:last-child {
+                                width: 40px;
+                                padding: 0 13px;
+                            }
+
+                            &:nth-child(2) {
+                                flex-grow: 1;
+                                border-left: 1px solid #E5E5E5;
+                                border-right: 1px solid #E5E5E5;
+                            }
+                        }
+                    }
+                    .inform{
+                        & > p {
+                            padding: 24px 5px 10px;
+                            text-align: center;
+                            text-transform: uppercase;
+                        }
+
+                        .rating-wrap {
+                            padding: 3px 5px;
+                            margin-bottom: 10px;
+
+                            & > img {
+                                display: block;
+                                max-width: 100%;
+                                margin: 0 auto;
+                            }
+                        }
+
+
+                        & > h5 {
+                            text-align: center;
+                            padding: 5px 5px;
+                            font-weight: 500;
+
+                            & > span {
+                                &:first-child {
+                                    color: @buttons-background-color;
+                                    margin-right: 16px;
+                                    @media (max-width: @second-mobile-point) {
+                                        margin-right: 8px;
+                                    }
+                                }
+
+                                &:last-child {
+                                    color: @span-color;
+                                    text-decoration: line-through;
+                                }
+                            }
+                        }
+                    }
+
                 }
 
                 &:hover {
-                    &:after {
-                        box-shadow: 0 0 15px rgba(0, 0, 0, 0.35);
+                   .card-height-wrap{
+                       &:after {
+                           box-shadow: 0 0 15px rgba(0, 0, 0, 0.35);
+                       }
+                   }
+
+                    .card{
+                        border: transparent;
                     }
 
                     .image-wrap {
@@ -146,102 +252,8 @@
                     .button-wrap {
                         display: flex;
                     }
-                }
-
-                .image-wrap {
-                    border-bottom: 1px solid #E5E5E5;
-                    position: relative;
-
-                    & > img {
-                        display: block;
-                        width: 100%;
-                    }
-
-                    &:hover {
-                        &:before {
-                            display: block;
-                        }
-                    }
-
-                    &:before {
-                        .pseudo-elements-mixin(@display: none);
-                        .background-image-mixin(@image: "fl.png", @background-size: auto);
-                        width: 50px;
-                        height: 50px;
-                        border-radius: 50%;
-                        top: 50%;
-                        left: 50%;
-                        transform: translate(-50%, -50%);
-                        background-color: @buttons-background-color;
-                    }
-                }
-
-                .button-wrap {
-                    position: relative;
-                    z-index: 5;
-                    display: none;
-
-                    & > button {
-                        height: 40px;
-                        border: none;
-                        background-color: @body-text-color;
-                        text-transform: uppercase;
-                        color: @buttons-text-color;
-                        padding-top: 2px;
-
-                        &:hover {
-                            background-color: @buttons-background-color;
-                        }
-
-                        &:first-child,
-                        &:last-child {
-                            width: 40px;
-                            padding: 0 13px;
-                        }
-
-                        &:nth-child(2) {
-                            flex-grow: 1;
-                            border-left: 1px solid #E5E5E5;
-                            border-right: 1px solid #E5E5E5;
-                        }
-                    }
-                }
-
-                & > p {
-                    padding: 24px 5px 10px;
-                    text-align: center;
-                    text-transform: uppercase;
-                }
-
-                .rating-wrap {
-                    padding: 3px 5px;
-                    margin-bottom: 10px;
-
-                    & > img {
-                        display: block;
-                        max-width: 100%;
-                        margin: 0 auto;
-                    }
-                }
-
-                & > h5 {
-                    text-align: center;
-                    padding: 5px 5px;
-                    font-weight: 500;
-
-                    & > span {
-                        &:first-child {
-                            color: @buttons-background-color;
-                            margin-right: 16px;
-                            @media (max-width: @second-mobile-point) {
-                                margin-right: 8px;
-                            }
-                        }
-
-                        &:last-child {
-                            color: @span-color;
-                            text-decoration: line-through;
-                        }
+                    .inform{
+                        transform: translateY(40px);
                     }
                 }
             }

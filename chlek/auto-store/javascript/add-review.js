@@ -13,6 +13,7 @@
             },
             prodRating: 0,
             commentCount: document.querySelector('.comment-counter'),
+            addReviewLink: document.querySelector('.add-rev-link'),
         };
 
         function build(collection) {
@@ -30,6 +31,7 @@
                     }
                 }
             }
+            addEvent('click', self.options.addReviewLink, goToReview);
         }
 
         function addEvent(eventName, elem, func) {
@@ -224,6 +226,20 @@
                 count++;
                 elem.children[1].innerHTML = count;
             }
+        }
+
+        function goToReview(event) {
+            event.preventDefault();
+            var but = document.querySelector('#reviews'),
+                mediaMobile = window.matchMedia("(max-width: 776px)"),
+                SecondMediaMobile = window.matchMedia("(max-width: 500px)"),
+                toScroll = (mediaMobile.matches) ? (SecondMediaMobile.matches) ? '1500px' : '1700px' : '800px';
+
+            but.checked = true;
+            $('body,html').animate({scrollTop: toScroll}, 500);
+            setTimeout(function () {
+                self.options.eventElem.buttons.formWindow.classList.add('active');
+            }, 10);
         }
 
         build(self.options.eventElem);

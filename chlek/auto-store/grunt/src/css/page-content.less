@@ -146,6 +146,7 @@
                         }
                         @media(max-width: @second-mobile-point){
                             max-width: 302px;
+                            margin: 0 -1px;
                         }
                         & > button{
                             position: absolute;
@@ -284,6 +285,14 @@
                                     bottom: 0;
                                     border-right: 1px solid @main-cont-links-color;
                                 }
+                            }
+                        }
+
+                        & > a{
+                            color: inherit;
+                            text-decoration: none;
+                            &:hover{
+                                color: #FF2D37;
                             }
                         }
                     }
@@ -720,6 +729,11 @@
                                 padding: 25px 15px;
                                 background-color: @form-background-color;
                                 border-radius: 5px;
+                                @media(max-width: @second-mobile-point){
+                                    width: 315px;
+                                    padding: 15px 5px;
+                                    box-sizing: border-box;
+                                }
 
                                 form {
                                     display: block;
