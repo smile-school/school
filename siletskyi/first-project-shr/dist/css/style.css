@@ -282,6 +282,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 5;
 }
 .main .block_content .block_bg:nth-child(2) {
   background: url("../../ima/main_3.png") no-repeat;
@@ -338,6 +339,7 @@
 .main .block_content .block_img img {
   display: block;
   width: 100%;
+  transition: all 1s;
 }
 .main .block_content .block_img::before {
   content: "";
@@ -393,12 +395,18 @@
   text-align: center;
   padding: 25px 68px 64px;
   display: none;
+  position: absolute;
 }
 .main .block_content .block_text_img .block_none span {
   font-style: italic;
 }
 .main .block_content .block_text_img .block_img:hover {
   cursor: pointer;
+}
+.main .block_content .block_text_img .block_img:hover > img {
+  transform: translateY(100%);
+  z-index: 2;
+  opacity: 0;
 }
 .main .block_content .block_text_img .block_img:hover::before {
   background: red;
