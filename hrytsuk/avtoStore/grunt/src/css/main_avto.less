@@ -405,41 +405,80 @@ button.like-black{
     flex-direction: row;
     margin-top: 63px;
 }
-
-.li-defain {
-
-    & > span{
-        padding: 22px 0 18px 30px;
-        display: block;
-        text-transform: uppercase;
-        cursor: pointer;
-        font-weight: 900;
-        font-size: @social-font-size;
-        border: 1px solid @line-bloc;
-        border-right-color: transparent;
-        line-height: 21px;
-        position: relative;
-        &::after{
-            position: absolute;
-            content: "\21D3	";
-            top: 0;
-            right: 20px;
-            color: @border;
-            font-size: @font-size-unteres;
-            transition: all .3s;
-            display: none;
+input{
+    &.radioBtn{
+        display: none;
+        &.details:checked{
+            & ~ .content-tabs {
+                   height: auto;
+                .tab-1 {
+                    display: block;
+                }
+            }
         }
-        &:hover{
-            &::after{
+        &.moreInfo:checked{
+            & ~ .content-tabs {
+                height: auto;
+                .tab-2 {
+                    display: block;
+                }
+            }
+        }
+        &.revievs:checked{
+            & ~ .content-tabs {
+               height: auto;
+                .tab-3 {
+                    display: block;
+                }
+            }
+        }
+        &.custom:checked{
+            & ~ .content-tabs {
+                height: auto;
+                .tab-4 {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+label{
+&.checked-list {
+    padding: 22px 0 18px 30px;
+    display: block;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 900;
+    font-size: @social-font-size;
+    border: 1px solid @line-bloc;
+    border-right-color: transparent;
+    line-height: 21px;
+    position: relative;
+
+    &::after {
+        position: absolute;
+        content: "\21D3	";
+        top: 0;
+        right: 20px;
+        color: @border;
+        font-size: @font-size-unteres;
+        transition: all .3s;
+        display: none;
+    }
+
+        &:hover {
+            &::after {
                 color: @bordo;
                 top: 4px;
             }
         }
 
     }
-
-
-
+    &.mod-label {
+        display: none;
+    }
+}
+.li-defain {
     &:not(:first-of-type) {
         border-top: 0;
     }
@@ -503,10 +542,6 @@ button.like-black{
 
 .tab-content {
     display: none;
-}
-
-.tab-content.is-active {
-    display: block;
 }
 
 .custom-tabs {
@@ -964,7 +999,6 @@ button.dzb2 {
     }
 }
 
-
 @media screen and (max-width: 1150px) {
     .sidedar-product {
         flex-direction: column;
@@ -1049,12 +1083,21 @@ button.dzb2 {
 }
 
 @media screen  and (max-width: 768px) {
+    .content-tabs{
+        width: 100%;
+        padding: 10px;
+        border: none;
+    }
     .li-defain{
-       & >  span{
            &::after{
                display: block;
            }
-       }
+
+    }
+    .tab-content{
+        padding: 20px;
+        border: 1px solid #e5e5e5;
+        border-top: 0;
     }
     .white-li{
         border-left: none;
@@ -1062,15 +1105,15 @@ button.dzb2 {
     .des {
         width: 100%;
     }
+    label{
+        &.mod-label{
+            display: block;
+            border-right: 1px solid @line-bloc;
+        }
+    }
 
     .detailed-information {
         .menu-left-defailed{
-            width: 100%;
-        }
-        .detail-ul{
-            width: 100%;
-        }
-        .content-tabs{
             display: none;
         }
     }

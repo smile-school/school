@@ -1478,7 +1478,34 @@ button.like-black {
   flex-direction: row;
   margin-top: 63px;
 }
-.li-defain > span {
+input.radioBtn {
+  display: none;
+}
+input.radioBtn.details:checked ~ .content-tabs {
+  height: auto;
+}
+input.radioBtn.details:checked ~ .content-tabs .tab-1 {
+  display: block;
+}
+input.radioBtn.moreInfo:checked ~ .content-tabs {
+  height: auto;
+}
+input.radioBtn.moreInfo:checked ~ .content-tabs .tab-2 {
+  display: block;
+}
+input.radioBtn.revievs:checked ~ .content-tabs {
+  height: auto;
+}
+input.radioBtn.revievs:checked ~ .content-tabs .tab-3 {
+  display: block;
+}
+input.radioBtn.custom:checked ~ .content-tabs {
+  height: auto;
+}
+input.radioBtn.custom:checked ~ .content-tabs .tab-4 {
+  display: block;
+}
+label.checked-list {
   padding: 22px 0 18px 30px;
   display: block;
   text-transform: uppercase;
@@ -1490,7 +1517,7 @@ button.like-black {
   line-height: 21px;
   position: relative;
 }
-.li-defain > span::after {
+label.checked-list::after {
   position: absolute;
   content: "\21D3	";
   top: 0;
@@ -1500,9 +1527,12 @@ button.like-black {
   transition: all 0.3s;
   display: none;
 }
-.li-defain > span:hover::after {
+label.checked-list:hover::after {
   color: #FF2D37;
   top: 4px;
+}
+label.mod-label {
+  display: none;
 }
 .li-defain:not(:first-of-type) {
   border-top: 0;
@@ -1554,9 +1584,6 @@ button.like-black {
 }
 .tab-content {
   display: none;
-}
-.tab-content.is-active {
-  display: block;
 }
 .custom-tabs img {
   padding: 20px 0 10px 0;
@@ -2033,8 +2060,18 @@ button.dzb2:hover {
   }
 }
 @media screen and (max-width: 768px) {
-  .li-defain > span::after {
+  .content-tabs {
+    width: 100%;
+    padding: 10px;
+    border: none;
+  }
+  .li-defain::after {
     display: block;
+  }
+  .tab-content {
+    padding: 20px;
+    border: 1px solid #e5e5e5;
+    border-top: 0;
   }
   .white-li {
     border-left: none;
@@ -2042,13 +2079,11 @@ button.dzb2:hover {
   .des {
     width: 100%;
   }
+  label.mod-label {
+    display: block;
+    border-right: 1px solid #E5E5E5;
+  }
   .detailed-information .menu-left-defailed {
-    width: 100%;
-  }
-  .detailed-information .detail-ul {
-    width: 100%;
-  }
-  .detailed-information .content-tabs {
     display: none;
   }
   button.dzb {

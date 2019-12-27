@@ -8,7 +8,6 @@
             comentCou : document.querySelector('.number-ret'),
         };
         this.parament.myForm.addEventListener('submit', parsForm);
-        this.parament.myForm2.addEventListener('submit', parsForm);
 
 
         function parsForm(e) {
@@ -189,7 +188,13 @@
         $('.reviev-href').click(function (e) {
             e.preventDefault();
             var idHref = $(this).attr('href'),
+                blocRevie = $('#input3'),
+                blocRevie2 =$('#input1');
                  ofsetTtop = $(idHref).offset().top;
+                 $(blocRevie2).attr('checked',true);
+                $(blocRevie).attr('checked',true);
+
+
             $('body,html').animate({scrollTop: ofsetTtop - 200}, 1000);
 
         })
