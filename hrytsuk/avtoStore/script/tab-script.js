@@ -1,5 +1,6 @@
 (function () {
 
+
     function tab() {
         var tabNav = document.querySelectorAll('.tab'),
             tabContent = document.querySelectorAll('.tab-content'),
@@ -27,7 +28,6 @@
     }
 
     tab();
-
 
 
     function acordeon() {

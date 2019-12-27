@@ -14,7 +14,7 @@
         function parsForm(e) {
             e.preventDefault();
             var data = new FormData(this);
-            validForms(data);
+            validForms(data,e);
         }
 
         function createElem(elem, attr,text) {
@@ -31,7 +31,7 @@
             return el;
         }
 
-        function validForms(data) {
+        function validForms(data,e) {
             var validationEmail = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
 
             var  elementForm = {
@@ -56,35 +56,41 @@
                 elementForm.nameComent.value.length < 40 &&
                 elementForm.textComent.value.length > 10) {
                 remoteForm(elementForm);
-                Valid(data)
+                Valid(data,e)
             }
 
         }
 
-        function Valid(data) {
+        function Valid(data,e) {
             this.elemForm = {};
-
             data.forEach(function (item, key) {
                 if (key === 'name') this.elemForm.name = item;
                 else if (key === 'digniti') this.elemForm.digniti = item;
                 else if (key === 'disadvantages') this.elemForm.disadvantages = item;
                 else if (key === 'coment') this.elemForm.coment = item;
             });
-            AddedComent(data);
+            AddedComent(data,e);
 
         }
 
-        function AddedComent(e) {
+        function AddedComent(data,e) {
             var  date = new Date(),
                 curr_date = date.getDate(),
                 curr_month = date.getMonth() + 1,
                 curr_year = date.getFullYear(),
                 setDate = curr_year + "-" + curr_month + "-" + curr_date,
-
                 li = document.createElement('li'),
+                ul = document.querySelector(".coment-list"),
+                ul2= document.querySelector('.coment-list2');
 
-                ul = document.querySelector(".coment-list");
-            ul.prepend(li);
+            if(e.target.classList.contains('formComent')){
+                ul.prepend(li);
+            }
+            else if(e.target.classList.contains('formComent2')){
+                console.log('asd');
+            }
+
+
 
             var topComent = createElem('div',{'class':'list-coment-bloc'},undefined),
                 comentBloc = createElem('div',{'class':'top-coment-list top-coment'},undefined),
@@ -122,7 +128,6 @@
             topComent.appendChild(comentText);
 
             var characterBloc2 = characterBloc.cloneNode(false),
-
                 dt2 = createElem('dt',undefined,'Недостатки:'),
                 dd2 = createElem('dd',undefined,this.elemForm.disadvantages) ;
 
@@ -157,12 +162,9 @@
             butonDiz.addEventListener('click',counterLike(butonDiz));
             comentLice.appendChild(butonDiz);
             comentFooter.appendChild(comentLice);
-
             topComent.appendChild(comentFooter);
             li.appendChild(topComent);
 
-            var form = document.querySelector('.action-form-bloc');
-            form.classList.remove('acForm');
         }
 
         function remoteForm(data) {
@@ -182,6 +184,15 @@
                 elem.children[1].innerHTML = count;
             }
         }
+
+
+        $('.reviev-href').click(function (e) {
+            e.preventDefault();
+            var idHref = $(this).attr('href'),
+                 ofsetTtop = $(idHref).offset().top;
+            $('body,html').animate({scrollTop: ofsetTtop - 200}, 1000);
+
+        })
     }
 
 
