@@ -245,6 +245,7 @@ main {
         .main-top-text-left {
             span {
                 text-transform: uppercase;
+                letter-spacing: 1px;
             }
         }
         .maim-top-text-right {
@@ -295,6 +296,89 @@ main {
                 padding-bottom: 14px;
             }
             .sidebar-list {
+                .details {
+                    &:not(:first-of-type) {
+                        .details-btn {
+                            border-top: 1px solid @border-color;
+                        }
+                    }
+                    .check-none {
+                        display: none;
+                        &:checked {
+                            & ~ .details-none {
+                                display: block;
+                            }
+                            & + .details-btn {
+                                &::after {
+                                    transform: rotate(180deg);
+                                }
+                            }
+                        }
+                    }
+                    .details-btn {
+                        background-color: @btn-color;
+                        color: @white-color;
+                        text-transform: uppercase;
+                        font-weight: bold;
+                        padding: 16px 20px;
+                        display: block;
+                        position: relative;
+                        &:hover {
+                            cursor: pointer;
+                            background-color: @text-color;
+                        }
+                        &::after {
+                            content: url("../../ima/tab.png");
+                            position: absolute;
+                            right: 20px;
+                            transition: all .7s;
+                        }
+                    }
+                    .details-none {
+                        display: none;
+                        li {
+                            padding: 17px 13px 17px 50px;
+                            border-bottom: 1px solid @border-color;
+                        }
+                        input {
+                            display: none;
+                            &:checked {
+                                & ~ label {
+                                    &::before {
+                                        color: black;
+                                    }
+                                }
+                            }
+                        }
+                        label {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            position: relative;
+                            &:hover {
+                                cursor: pointer;
+                            }
+                            &::before {
+                                content: "\f00c";
+                                font-weight: 600;
+                                font-family: Font Awesome\ 5 Free;
+                                color: transparent;
+                                display: inline-block;
+                                border: 1px solid #E5E5E5;
+                                font-size: 13px;
+                                line-height: 20px;
+                                margin: -5px 8px 0 0;
+                                height: 18px;
+                                width: 18px;
+                                text-align: center;
+                                transition: color ease 0.3s;
+                                position: absolute;
+                                left: -32px;
+                                top: 30%;
+                            }
+                        }
+                    }
+                }
                 .sidebar-active-link {
                     font-size: 13px;
                     font-weight: bold;
@@ -306,85 +390,36 @@ main {
                         padding-bottom: 10px;
                     }
                 }
-                .sidebar-categories {
-                    background-color: @btn-color;
-                    color: @white-color;
-                    text-transform: uppercase;
-                    padding: 0 20px;
-                    .sidebar-cat-item {
-                        padding: 16px 0;
-                        &:not(:first-of-type) {
-                            border-top: 1px solid @border-color;
-                        }
-                        &:first-of-type {
-                            padding: 17px 0;
-                        }
-                    }
-                }
-                .sidebar-check-link {
-                    position: relative;
-                    padding: 16px 16px 16px 50px;
-                    border-bottom: 1px solid @border-color;
-                    label {
-                        position: relative;
-                        &:hover {
-                            cursor: pointer;
-                        }
-                        &::before {
-                            content: "\f00c";
-                            font-weight: 600;
-                            font-family: Font Awesome\ 5 Free;
-                            color: transparent;
-                            display: inline-block;
-                            border: 1px solid #E5E5E5;
-                            font-size: 13px;
-                            line-height: 20px;
-                            margin: -5px 8px 0 0;
-                            height: 18px;
-                            width: 18px;
-                            text-align: center;
-                            transition: color ease 0.3s;
-                            position: absolute;
-                            left: -32px;
-                            top: 30%;
-                        }
+            }
+            .sidebar-item {
+                margin-top: 17px;
+                padding: 38px 31px 50px 21px;
+                background-color: @devis-bg;
+                color: @white-color;
+                .sidebar-item-top {
+                    display: flex;
+                    align-items: center;
+                    img {
+                        padding-right: 18px;
                     }
                     span {
-                        position: absolute;
-                        right: -138px;
-                        top: 0;
-                    }
-                    input {
-                        display: none;
-                        &:checked {
-                            & + label {
-                                &::before {
-                                    color: black;
-                                }
-                            }
-                        }
+                        font-size: 16px;
+                        line-height: 22px;
+                        font-weight: bold;
                     }
                 }
-                .link-right-2 {
-                    label {
-                        span {
-                            right: -96px;
-                        }
-                    }
+                p {
+                    line-height: 20px;
+                    padding-top: 17px;
                 }
-                .link-right-3 {
-                    line-height: 21px;
-                    label {
-                        span {
-                            right: -127px;
-                            top: 10px;
-                        }
-                    }
-                }
-                .link-right-4 {
-                    label {
-                        span {
-                            right: -133px;
+                .sidebar-item-bottom {
+                    padding: 27px 0 0 20px;
+                    span {
+                        position: relative;
+                        &::before {
+                            content: url("../../ima/sidebar-arr.png");
+                            position: absolute;
+                            left: -21px;
                         }
                     }
                 }
