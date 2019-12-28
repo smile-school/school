@@ -301,6 +301,9 @@ button.like-black{
     width: 410px;
     overflow: hidden;
 }
+.scarousel_item_wrapper{
+    position: relative;
+}
 .prevs{
     border: 1px solid #CCCCCC;
     background-color: white;
@@ -410,7 +413,7 @@ input{
         display: none;
         &.details:checked{
             & ~ .content-tabs {
-                   height: auto;
+
                 .tab-1 {
                     display: block;
                 }
@@ -418,7 +421,7 @@ input{
         }
         &.moreInfo:checked{
             & ~ .content-tabs {
-                height: auto;
+
                 .tab-2 {
                     display: block;
                 }
@@ -426,7 +429,7 @@ input{
         }
         &.revievs:checked{
             & ~ .content-tabs {
-               height: auto;
+
                 .tab-3 {
                     display: block;
                 }
@@ -434,7 +437,6 @@ input{
         }
         &.custom:checked{
             & ~ .content-tabs {
-                height: auto;
                 .tab-4 {
                     display: block;
                 }
@@ -1083,6 +1085,11 @@ button.dzb2 {
 }
 
 @media screen  and (max-width: 768px) {
+    .items {
+        &.item-scarousel {
+        min-width: 95px;
+    }
+    }
     .content-tabs{
         width: 100%;
         padding: 10px;
@@ -1092,7 +1099,6 @@ button.dzb2 {
            &::after{
                display: block;
            }
-
     }
     .tab-content{
         padding: 20px;

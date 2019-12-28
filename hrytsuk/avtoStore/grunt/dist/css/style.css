@@ -1388,6 +1388,9 @@ button.like-black {
   width: 410px;
   overflow: hidden;
 }
+.scarousel_item_wrapper {
+  position: relative;
+}
 .prevs {
   border: 1px solid #CCCCCC;
   background-color: white;
@@ -1481,26 +1484,14 @@ button.like-black {
 input.radioBtn {
   display: none;
 }
-input.radioBtn.details:checked ~ .content-tabs {
-  height: auto;
-}
 input.radioBtn.details:checked ~ .content-tabs .tab-1 {
   display: block;
-}
-input.radioBtn.moreInfo:checked ~ .content-tabs {
-  height: auto;
 }
 input.radioBtn.moreInfo:checked ~ .content-tabs .tab-2 {
   display: block;
 }
-input.radioBtn.revievs:checked ~ .content-tabs {
-  height: auto;
-}
 input.radioBtn.revievs:checked ~ .content-tabs .tab-3 {
   display: block;
-}
-input.radioBtn.custom:checked ~ .content-tabs {
-  height: auto;
 }
 input.radioBtn.custom:checked ~ .content-tabs .tab-4 {
   display: block;
@@ -2060,6 +2051,9 @@ button.dzb2:hover {
   }
 }
 @media screen and (max-width: 768px) {
+  .items.item-scarousel {
+    min-width: 95px;
+  }
   .content-tabs {
     width: 100%;
     padding: 10px;

@@ -185,19 +185,7 @@
         }
 
 
-        $('.reviev-href').click(function (e) {
-            e.preventDefault();
-            var idHref = $(this).attr('href'),
-                blocRevie = $('#input3'),
-                blocRevie2 =$('#input1');
-                 ofsetTtop = $(idHref).offset().top;
-                 $(blocRevie2).attr('checked',true);
-                $(blocRevie).attr('checked',true);
 
-
-            $('body,html').animate({scrollTop: ofsetTtop - 200}, 1000);
-
-        })
     }
 
 
