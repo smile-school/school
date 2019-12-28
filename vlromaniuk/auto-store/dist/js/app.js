@@ -12,11 +12,6 @@
         })
 
     })
-    $( function() {
-        $( "#accordion" ).accordion({
-            heightStyle: "content"
-        });
-    } );
 })();
 (function () {
     // Product card gallery

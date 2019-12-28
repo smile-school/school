@@ -19,6 +19,7 @@ body {
   max-width: 1170px;
   display: block;
   margin: 0 auto;
+  padding: 0 15px;
 }
 .header .head {
   background-color: #282828;
@@ -420,6 +421,7 @@ body {
 }
 .header .nav .wrapper {
   display: flex;
+  position: relative;
 }
 .header .nav .wrapper .all-category {
   background-color: #FF2D37;
@@ -433,29 +435,70 @@ body {
   align-items: center;
   justify-content: space-between;
 }
-.header .nav .wrapper .all-category span {
+.header .nav .wrapper label {
+  pointer-events: none;
+}
+.header .nav .wrapper span {
   color: white;
   padding-left: 19px;
   font-size: 13px;
   letter-spacing: 1px;
 }
-.header .nav .wrapper .all-category svg {
+.header .nav .wrapper input[type='checkbox'] {
+  display: none;
+}
+.header .nav .wrapper .hidden-category {
+  position: absolute;
+  left: 0;
+  top: 51px;
+  right: 0;
+  background-color: white;
+  z-index: 8;
+  padding: 20px;
+  border: 1px solid #888;
+  border-top: 0;
+  display: none;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.header .nav .wrapper .hidden-category.active {
+  display: flex;
+}
+.header .nav .wrapper .hidden-category .item {
+  padding: 0 10px;
+}
+.header .nav .wrapper .hidden-category .item a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+}
+.header .nav .wrapper .hidden-category .item a img {
+  width: 100%;
+  max-width: 150px;
+}
+.header .nav .wrapper .hidden-category .item a span {
+  color: black;
+  text-decoration: none;
+  padding: 0;
+}
+.header .nav .wrapper svg {
   padding-right: 18px;
 }
-.header .nav .wrapper .navigation {
+.header .nav .navigation {
   align-items: center;
   display: flex;
 }
-.header .nav .wrapper .navigation input[type="checkbox"] {
+.header .nav .navigation input[type="checkbox"] {
   display: none;
 }
-.header .nav .wrapper .navigation > ul {
+.header .nav .navigation > ul {
   display: flex;
   text-transform: uppercase;
   list-style-type: none;
   margin-left: 31px;
 }
-.header .nav .wrapper .navigation > ul > li {
+.header .nav .navigation > ul > li {
   padding: 18px 21px 16px 20px;
   letter-spacing: 0.1px;
   margin-left: 1px;
@@ -465,41 +508,41 @@ body {
   text-transform: uppercase;
   border-radius: 5px 5px 0 0;
 }
-.header .nav .wrapper .navigation > ul > li:nth-child(5) {
+.header .nav .navigation > ul > li:nth-child(5) {
   padding-left: 21px;
 }
-.header .nav .wrapper .navigation > ul > li a {
+.header .nav .navigation > ul > li a {
   color: #282828;
   text-decoration: none;
 }
-.header .nav .wrapper .navigation > ul > li:first-child {
+.header .nav .navigation > ul > li:first-child {
   margin: 0;
   cursor: pointer;
 }
-.header .nav .wrapper .navigation > ul > li:first-child::after {
+.header .nav .navigation > ul > li:first-child::after {
   content: '\f078';
   font-family: "Font Awesome 5 Pro";
   font-weight: 900;
   margin-left: 3px;
   font-size: 11px;
 }
-.header .nav .wrapper .navigation > ul > li:hover {
+.header .nav .navigation > ul > li:hover {
   background-color: #FF2D37;
 }
-.header .nav .wrapper .navigation > ul > li:hover > a {
+.header .nav .navigation > ul > li:hover > a {
   color: white;
 }
-.header .nav .wrapper .navigation > ul > li:hover:first-child:hover {
+.header .nav .navigation > ul > li:hover:first-child:hover {
   color: white;
 }
-.header .nav .wrapper .navigation > ul > li:hover:first-child:hover::after {
+.header .nav .navigation > ul > li:hover:first-child:hover::after {
   content: '\f077';
 }
-.header .nav .wrapper .navigation > ul > li:hover .hidden {
+.header .nav .navigation > ul > li:hover .hidden {
   display: flex;
   z-index: 10;
 }
-.header .nav .wrapper .navigation > ul > li .hidden {
+.header .nav .navigation > ul > li .hidden {
   position: absolute;
   padding: 26px 20px;
   background: white;
@@ -511,29 +554,29 @@ body {
   border: 1px solid #E5E5E5;
   display: none;
 }
-.header .nav .wrapper .navigation > ul > li .hidden li {
+.header .nav .navigation > ul > li .hidden li {
   list-style-type: none;
   color: #282828;
   width: 50%;
 }
-.header .nav .wrapper .navigation > ul > li .hidden li a {
+.header .nav .navigation > ul > li .hidden li a {
   margin-bottom: 15px;
   font-size: 15px;
 }
-.header .nav .wrapper .navigation > ul > li .hidden li a:hover {
+.header .nav .navigation > ul > li .hidden li a:hover {
   color: #282828;
 }
-.header .nav .wrapper .navigation > ul > li .hidden li ul li {
+.header .nav .navigation > ul > li .hidden li ul li {
   padding-top: 10px;
 }
-.header .nav .wrapper .navigation > ul > li .hidden li ul li a {
+.header .nav .navigation > ul > li .hidden li ul li a {
   font-size: 12px;
   font-weight: normal;
 }
-.header .nav .wrapper .navigation > ul > li .hidden li ul li a:hover {
+.header .nav .navigation > ul > li .hidden li ul li a:hover {
   color: #FF2D37;
 }
-.header .nav .wrapper .navigation > ul > li .hidden li ul li:last-child {
+.header .nav .navigation > ul > li .hidden li ul li:last-child {
   padding-bottom: 20px;
 }
 .main .wrapper .bread-crumbs {
@@ -588,7 +631,7 @@ body {
   text-decoration: none;
 }
 .main .wrapper .all-product .aside .filter .compare-item li a:hover {
-  color: red;
+  color: #ff2d37;
 }
 .main .wrapper .all-product .aside .filter .compare-item li .compare-name {
   letter-spacing: 0.2px;
@@ -608,16 +651,16 @@ body {
 .main .wrapper .all-product .aside .filter .clear-compare a {
   text-decoration: none;
 }
-.main .wrapper .all-product .aside .filter .clear-compare a.compared-item {
+.main .wrapper .all-product .aside .filter .clear-compare a.compa#ff2d37-item {
   color: white;
-  background-color: red;
+  background-color: #ff2d37;
   border-radius: 5px;
   padding: 5px 18px;
   text-transform: uppercase;
   font-size: 14px;
   line-height: 17px;
 }
-.main .wrapper .all-product .aside .filter .clear-compare a.compared-item:hover {
+.main .wrapper .all-product .aside .filter .clear-compare a.compa#ff2d37-item:hover {
   background: #282828;
 }
 .main .wrapper .all-product .aside .filter .clear-compare a.clear-item {
@@ -815,7 +858,7 @@ body {
 }
 .main .wrapper .all-product .content .sort .view a:nth-child(1) img {
   padding: 10px 7px;
-  background: red;
+  background: #ff2d37;
 }
 .main .wrapper .all-product .content .sort .view a:nth-child(2) img {
   padding: 9px 5px;
@@ -1475,9 +1518,9 @@ body {
   width: 500px;
   background: white;
   padding: 30px;
-  border: 1px solid red;
+  border: 1px solid #ff2d37;
   border-radius: 10px;
-  height: 4s00px;
+  height: 400px;
   z-index: 10;
 }
 .main .wrapper .body .card .product-tabs .tabs .contents form input[type='text'],
@@ -1626,7 +1669,7 @@ body {
 .main .wrapper .gallery-bottom .product-wrapper .right {
   position: absolute;
   top: 216px;
-  color: red;
+  color: #ff2d37;
   font-size: 49px;
   display: none;
   z-index: 7;
@@ -2047,6 +2090,9 @@ body {
     cursor: pointer;
     z-index: 1;
   }
+  .menu__btn #burger {
+    padding-left: 0;
+  }
   .menu__btn > span,
   .menu__btn > span::before,
   .menu__btn > span::after {
@@ -2099,7 +2145,6 @@ body {
   .menu__box {
     padding: 0;
     box-shadow: 1px 0 6px rgba(0);
-    top: 29%;
     right: 0;
     background-color: white;
     z-index: 99;
@@ -2251,7 +2296,7 @@ body {
   .tabs h3 {
     padding: 10px 5px;
     margin: 1px 0;
-    background: red;
+    background: #ff2d37;
     color: white;
     border-radius: 5px;
   }
@@ -2275,6 +2320,65 @@ body {
     /* padding: 29px 31px; */
     /* font-size: 14px; */
     padding: 5px;
+  }
+  /* Элемент | file:///C:/Users/VladPC/Desktop/%D0%9D%D0%BE%D0%B2%D0%B0%D1%8F%20%D0%BF%D0%B0%D0%BF%D0%BA%D0%B0%20(6)/school/vlromaniuk/auto-store/category-page.html */
+  .all-product {
+    flex-direction: column;
+  }
+  /* style.css | file:///C:/Users/VladPC/Desktop/%D0%9D%D0%BE%D0%B2%D0%B0%D1%8F%20%D0%BF%D0%B0%D0%BF%D0%BA%D0%B0%20(6)/school/vlromaniuk/auto-store/dist/css/style.css */
+  .main .wrapper .all-product .aside {
+    max-width: 100%;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-around;
+  }
+  .main .wrapper .all-product .aside .filter {
+    overflow: visible;
+    position: relative;
+    height: 100%;
+    z-index: 9;
+    background: white;
+  }
+  /* Inline таблица стилей #4 | file:///C:/Users/VladPC/Desktop/%D0%9D%D0%BE%D0%B2%D0%B0%D1%8F%20%D0%BF%D0%B0%D0%BF%D0%BA%D0%B0%20(6)/school/vlromaniuk/auto-store/category-page.html */
+  .filter {
+    width: 49%;
+  }
+  .filter.hide .active {
+    display: block;
+  }
+  /* Элемент | file:///C:/Users/VladPC/Desktop/%D0%9D%D0%BE%D0%B2%D0%B0%D1%8F%20%D0%BF%D0%B0%D0%BF%D0%BA%D0%B0%20(6)/school/vlromaniuk/auto-store/category-page.html */
+  .ads {
+    display: none;
+  }
+  /* Элемент | file:///C:/Users/VladPC/Desktop/%D0%9D%D0%BE%D0%B2%D0%B0%D1%8F%20%D0%BF%D0%B0%D0%BF%D0%BA%D0%B0%20(6)/school/vlromaniuk/auto-store/category-page.html */
+  div.filter div.active {
+    position: absolute;
+    background: white;
+    display: none;
+    width: 100%;
+  }
+  /* style.css | file:///C:/Users/VladPC/Desktop/%D0%9D%D0%BE%D0%B2%D0%B0%D1%8F%20%D0%BF%D0%B0%D0%BF%D0%BA%D0%B0%20(6)/school/vlromaniuk/auto-store/dist/css/style.css */
+  .main .wrapper .all-product .content {
+    padding-left: 0;
+  }
+  .main .wrapper .all-product .content .cart-item .cart {
+    /* height: 402px; */
+    /* width: calc(100% / 3 - 30px); */
+    height: 404px;
+    width: calc(100% / 4 - 30px);
+  }
+  .main .wrapper .all-product .content .cart-item .cart .product-actions .buy a.add-to-cart {
+    /* padding: 10px 50px; */
+    padding: 11px 7px;
+    text-align: center;
+  }
+  .main .wrapper .all-product .content .cart-item .cart .product-actions .buy a {
+    /* padding: 10px 12px; */
+    padding: 12px 8px;
+  }
+  .main .wrapper .all-product .content .cart-item .cart:hover .product-actions .buy {
+    /* height: 40px; */
+    height: 37px;
   }
 }
 @media screen and (max-width: 767px) {
@@ -2424,5 +2528,37 @@ body {
     max-width: 410px;
     margin: 0 auto;
     width: 100%;
+  }
+  .main .wrapper .all-product .aside .filter .title {
+    padding: 13px 13px;
+    font-size: 11px;
+  }
+  .main .wrapper .all-product .aside .filter {
+    padding-bottom: 15px;
+  }
+  /* Элемент | file:///C:/Users/VladPC/Desktop/%D0%9D%D0%BE%D0%B2%D0%B0%D1%8F%20%D0%BF%D0%B0%D0%BF%D0%BA%D0%B0%20(6)/school/vlromaniuk/auto-store/category-page.html */
+  .sort {
+    flex-direction: column;
+  }
+  /* Элемент | file:///C:/Users/VladPC/Desktop/%D0%9D%D0%BE%D0%B2%D0%B0%D1%8F%20%D0%BF%D0%B0%D0%BF%D0%BA%D0%B0%20(6)/school/vlromaniuk/auto-store/category-page.html */
+  .main .wrapper .all-product .content .sort .type {
+    display: none;
+  }
+  /* style.css | file:///C:/Users/VladPC/Desktop/%D0%9D%D0%BE%D0%B2%D0%B0%D1%8F%20%D0%BF%D0%B0%D0%BF%D0%BA%D0%B0%20(6)/school/vlromaniuk/auto-store/dist/css/style.css */
+  .main .wrapper .all-product .content .cart-item .cart {
+    height: 400px;
+    width: 100%;
+    margin: 5px auto;
+  }
+  .main .wrapper .all-product .content .sort {
+    width: 100%;
+  }
+  .main .wrapper .all-product .content .cart-item {
+    /* margin: 0 -15px; */
+    margin: 0;
+  }
+  /* Элемент | file:///C:/Users/VladPC/Desktop/%D0%9D%D0%BE%D0%B2%D0%B0%D1%8F%20%D0%BF%D0%B0%D0%BF%D0%BA%D0%B0%20(6)/school/vlromaniuk/auto-store/category-page.html */
+  .cart-item {
+    margin: 0;
   }
 }

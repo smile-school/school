@@ -13,6 +13,7 @@ body {
   max-width: 1170px;
   display: block;
   margin: 0 auto;
+  padding: 0 15px;
 }
 
 .link() {
@@ -713,6 +714,7 @@ body {
 
     .wrapper {
       display: flex;
+      position: relative;
 
       .all-category {
         background-color: @hoverLinkColor;
@@ -722,12 +724,54 @@ body {
         padding: 11px 0;
         .button();
         justify-content: space-between;
-
+        }
+        label{
+          pointer-events: none;
+        }
         span {
           color: @white;
           padding-left: 19px;
           font-size: 13px;
           letter-spacing: 1px;
+        }
+
+      input[type='checkbox']{
+        display: none;
+      }
+      .hidden-category {
+          position: absolute;
+          left: 0;
+          top: 51px;
+          right: 0;
+          background-color: white;
+          z-index: 8;
+          padding: 20px;
+          border: 1px solid #888;
+          border-top: 0;
+          display: none;
+          flex-wrap: wrap;
+          justify-content: space-around;
+        &.active{
+          display: flex;
+        }
+          .item{
+            padding: 0 10px;
+            a{
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              text-decoration: none;
+              img{
+                width: 100%;
+                max-width: 150px;
+              }
+              span{
+                color: black;
+                text-decoration: none;
+                padding: 0;
+              }
+            }
+          }
         }
 
         svg {
@@ -853,7 +897,6 @@ body {
       }
     }
   }
-}
 
 .main {
   .wrapper {
@@ -914,7 +957,7 @@ body {
                color: #282828;
                 text-decoration: none;
                 &:hover{
-                  color: red;
+                  color: #ff2d37;
                 }
               }
               .compare-name{
@@ -935,9 +978,9 @@ body {
             justify-content: space-between;
             a{
               text-decoration: none;
-              &.compared-item{
+              &.compa#ff2d37-item{
                 color: white;
-                background-color: red;
+                background-color: #ff2d37;
                 border-radius: 5px;
                 padding: 5px 18px;
                 text-transform: uppercase;
@@ -1189,7 +1232,7 @@ body {
             &:nth-child(1){
               img{
                 padding: 10px 7px;
-                background: red;
+                background: #ff2d37;
               }
             }
             &:nth-child(2){
@@ -1680,9 +1723,9 @@ body {
                 width: 500px;
                 background: white;
                 padding: 30px;
-                border: 1px solid red;
+                border: 1px solid #ff2d37;
                 border-radius: 10px;
-                height: 4s00px;
+                height: 400px;
                 z-index: 10;
                 input[type='text'],
                 input[type='email'],
@@ -1823,7 +1866,7 @@ body {
         .left, .right{
           position: absolute;
           top: 216px;
-          color: red;
+          color: #ff2d37;
           font-size: 49px;
           display: none;
           z-index: 7;
@@ -2088,22 +2131,22 @@ body {
 
 @media screen and (max-width: 1024px){
 
-  #menu__toggle {
+  #menu__toggle{
     opacity: 0;
   }
 
-  #menu__toggle:checked ~ .menu__btn > span {
+  #menu__toggle:checked ~ .menu__btn > span{
     transform: rotate(45deg);
   }
-  #menu__toggle:checked ~ .menu__btn > span::before {
+  #menu__toggle:checked ~ .menu__btn > span::before{
     top: 0;
     transform: rotate(0);
   }
-  #menu__toggle:checked ~ .menu__btn > span::after {
+  #menu__toggle:checked ~ .menu__btn > span::after{
     top: 0;
     transform: rotate(90deg);
   }
-  #menu__toggle:checked ~ .menu__box {
+  #menu__toggle:checked ~ .menu__box{
     visibility: visible;
     left: 0;
   }
@@ -2118,6 +2161,9 @@ body {
 
     cursor: pointer;
     z-index: 1;
+    #burger{
+      padding-left: 0;
+    }
   }
 
   .menu__btn > span,
@@ -2188,7 +2234,6 @@ body {
   .menu__box {
     padding: 0;
     box-shadow: 1px 0  6px rgba(0);
-    top: 29%;
     right: 0;
     background-color: white;
     z-index: 99;
@@ -2376,7 +2421,7 @@ body {
   .tabs h3 {
     padding: 10px 5px;
     margin: 1px 0;
-    background: red;
+    background: #ff2d37;
     color: white;
     border-radius: 5px;
   }
@@ -2407,6 +2452,83 @@ body {
     /* font-size: 14px; */
     padding: 5px;
   }
+
+  /* Элемент | file:///C:/Users/VladPC/Desktop/%D0%9D%D0%BE%D0%B2%D0%B0%D1%8F%20%D0%BF%D0%B0%D0%BF%D0%BA%D0%B0%20(6)/school/vlromaniuk/auto-store/category-page.html */
+
+  .all-product {
+    flex-direction: column;
+  }
+
+  /* style.css | file:///C:/Users/VladPC/Desktop/%D0%9D%D0%BE%D0%B2%D0%B0%D1%8F%20%D0%BF%D0%B0%D0%BF%D0%BA%D0%B0%20(6)/school/vlromaniuk/auto-store/dist/css/style.css */
+
+  .main .wrapper .all-product .aside {
+    max-width: 100%;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .main .wrapper .all-product .aside .filter {
+    overflow: visible;
+    position: relative;
+    height: 100%;
+    z-index: 9;
+    background: white;
+  }
+
+  /* Inline таблица стилей #4 | file:///C:/Users/VladPC/Desktop/%D0%9D%D0%BE%D0%B2%D0%B0%D1%8F%20%D0%BF%D0%B0%D0%BF%D0%BA%D0%B0%20(6)/school/vlromaniuk/auto-store/category-page.html */
+
+  .filter {
+    width: 49%;
+    &.hide .active{
+      display: block;
+    }
+  }
+
+  /* Элемент | file:///C:/Users/VladPC/Desktop/%D0%9D%D0%BE%D0%B2%D0%B0%D1%8F%20%D0%BF%D0%B0%D0%BF%D0%BA%D0%B0%20(6)/school/vlromaniuk/auto-store/category-page.html */
+
+  .ads {
+    display: none;
+  }
+
+  /* Элемент | file:///C:/Users/VladPC/Desktop/%D0%9D%D0%BE%D0%B2%D0%B0%D1%8F%20%D0%BF%D0%B0%D0%BF%D0%BA%D0%B0%20(6)/school/vlromaniuk/auto-store/category-page.html */
+
+  div.filter div.active {
+    position: absolute;
+    background: white;
+    display: none;
+    width: 100%;
+  }
+
+  /* style.css | file:///C:/Users/VladPC/Desktop/%D0%9D%D0%BE%D0%B2%D0%B0%D1%8F%20%D0%BF%D0%B0%D0%BF%D0%BA%D0%B0%20(6)/school/vlromaniuk/auto-store/dist/css/style.css */
+
+  .main .wrapper .all-product .content {
+    padding-left: 0;
+  }
+
+  .main .wrapper .all-product .content .cart-item .cart {
+    /* height: 402px; */
+    /* width: calc(100% / 3 - 30px); */
+    height: 404px;
+    width: calc(100% / 4 - 30px);
+  }
+
+  .main .wrapper .all-product .content .cart-item .cart .product-actions .buy a.add-to-cart {
+    /* padding: 10px 50px; */
+    padding: 11px 7px;
+    text-align: center;
+  }
+
+  .main .wrapper .all-product .content .cart-item .cart .product-actions .buy a {
+    /* padding: 10px 12px; */
+    padding: 12px 8px;
+  }
+
+  .main .wrapper .all-product .content .cart-item .cart:hover .product-actions .buy {
+    /* height: 40px; */
+    height: 37px;
+  }
+
 
 }
 
@@ -2597,6 +2719,48 @@ body {
     max-width: 410px;
     margin: 0 auto;
     width: 100%;
+  }
+  .main .wrapper .all-product .aside .filter .title{
+    padding: 13px 13px;
+    font-size: 11px;
+  }
+  .main .wrapper .all-product .aside .filter{
+    padding-bottom: 15px
+  }
+
+  /* Элемент | file:///C:/Users/VladPC/Desktop/%D0%9D%D0%BE%D0%B2%D0%B0%D1%8F%20%D0%BF%D0%B0%D0%BF%D0%BA%D0%B0%20(6)/school/vlromaniuk/auto-store/category-page.html */
+
+  .sort {
+    flex-direction: column;
+  }
+
+  /* Элемент | file:///C:/Users/VladPC/Desktop/%D0%9D%D0%BE%D0%B2%D0%B0%D1%8F%20%D0%BF%D0%B0%D0%BF%D0%BA%D0%B0%20(6)/school/vlromaniuk/auto-store/category-page.html */
+
+  .main .wrapper .all-product .content .sort .type {
+    display: none;
+  }
+
+  /* style.css | file:///C:/Users/VladPC/Desktop/%D0%9D%D0%BE%D0%B2%D0%B0%D1%8F%20%D0%BF%D0%B0%D0%BF%D0%BA%D0%B0%20(6)/school/vlromaniuk/auto-store/dist/css/style.css */
+
+    .main .wrapper .all-product .content .cart-item .cart {
+      height: 400px;
+      width: 100%;
+      margin: 5px auto;
+    }
+
+  .main .wrapper .all-product .content .sort {
+    width: 100%;
+  }
+
+  .main .wrapper .all-product .content .cart-item {
+    /* margin: 0 -15px; */
+    margin: 0;
+  }
+
+  /* Элемент | file:///C:/Users/VladPC/Desktop/%D0%9D%D0%BE%D0%B2%D0%B0%D1%8F%20%D0%BF%D0%B0%D0%BF%D0%BA%D0%B0%20(6)/school/vlromaniuk/auto-store/category-page.html */
+
+  .cart-item {
+    margin: 0;
   }
 
 }
