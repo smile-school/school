@@ -98,8 +98,6 @@
             <?php endfor; ?>
         </ul>
     </div>
-
-
     <script>
         (function () {
                 // function rating(ratingElem) {
@@ -130,7 +128,6 @@
                 // for (var i = 0; i < ratings.length; i++){
                 //     ratings[i].addEventListener('click', rating(ratings[i]));
                 // }
-
                 function Rating (ratingElem) {
                     this.count = 0;
                     this.sum = 0;
@@ -141,14 +138,11 @@
                 Rating.prototype.setRating = setRating;
                 Rating.prototype.counter = counter;
                 Rating.prototype.setRatingValue = setRatingValue;
-
-
                 function setRating(e) {
                     this.setSum(e);
                     this.counter();
                     this.setRatingValue();
                 }
-
                 function setSum (e) {
                     for (var i = 0 ; i < this.ratingElem.children.length; i++){
                         if (e.target.parentNode === this.ratingElem.children[i]){
@@ -157,12 +151,10 @@
                         }
                     }
                 }
-
                 function counter() {
                     this.count++;
                     this.rating = +(this.sum / this.count).toFixed(2);
                 }
-
                 function setRatingValue() {
                     for (var i = 0; i < this.ratingElem.children.length; i++){
                         if (this.rating !==0){
@@ -180,8 +172,6 @@
                     tmp = new Rating(ratings[i]);
                     ratings[i].addEventListener('click', tmp.setRating.bind(tmp));
                 }
-
-
             }
         )();
     </script>

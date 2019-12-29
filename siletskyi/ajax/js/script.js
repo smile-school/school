@@ -18,7 +18,6 @@
             }
         });
     });
-    
     function getMyIp(url, callback) {
         if (!url && !callback) return;
         var xhr = new XMLHttpRequest();
@@ -33,9 +32,6 @@
         xhr.open('GET', url);
         xhr.send();
     }
-
-
-
     myForm.addEventListener('submit', function (e) {
         e.preventDefault();
         var data = new FormData(this);
@@ -52,7 +48,6 @@
             },10);
         })
     });
-
     function sendForm(url, data, callback) {
         var xhr = new XMLHttpRequest();
 
