@@ -890,14 +890,6 @@ aside.left-aside {
 .filtr:not(:last-of-type) {
   border-bottom: 1px solid #ffffff;
 }
-.filtr::after {
-  content: url("../../../img/caret.svg");
-  position: absolute;
-  right: 0;
-  width: 10px;
-  height: 7px;
-  fill: #ffffff;
-}
 .filtr.categor {
   padding-top: 8px;
 }
@@ -923,6 +915,17 @@ aside.left-aside {
   width: 100%;
   display: block;
   cursor: pointer;
+  position: relative;
+}
+.filtr-lb > label::after {
+  content: "";
+  background: url("../../../img/caret.svg") no-repeat;
+  position: absolute;
+  right: 0;
+  width: 10px;
+  height: 15px;
+  fill: #ffffff;
+  transition: all 0.3s;
 }
 .filtr-lb .checkbox-filter {
   display: none;
@@ -951,6 +954,9 @@ input.checkbox-filter:checked ~ .content-filter {
   height: auto;
   overflow: visible;
   opacity: 1;
+}
+input.checkbox-filter:checked ~ label::after {
+  transform: rotate(180deg);
 }
 .filter-checked {
   margin-bottom: 20px;
