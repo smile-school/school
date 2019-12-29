@@ -1,0 +1,423 @@
+main {
+  max-width: @max-width;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  margin: 0 auto;
+
+  & .topDescription {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: @top-description-color;
+    min-height: 53vh;
+
+    & img {
+      margin-bottom: 25px;
+    }
+
+    & > p {
+      font-size: @f-sizeh;
+      padding: 20px 240px;
+      text-align: @text-center;
+      line-height: 1.85;
+      max-width: @nav-width;
+    }
+  }
+}
+
+.gallRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: @text-center;
+  align-items: normal;
+
+  & .bicucleBlock {
+    display: flex;
+    justify-content: @text-center;
+    align-items: @text-center;
+    width: 66.66%;
+  }
+
+  & .bicucleTextBlock {
+    width: 33.33%;
+    align-self: @text-center;
+    display: flex;
+    flex-direction: column;
+
+    & .descriptContaier {
+      display: flex;
+      flex-direction: column;
+      justify-content: @text-center;
+      align-items: @text-center;
+      align-self: flex-start;
+      width: 100%;
+      position: relative;
+
+      & p {
+        padding: 30px;
+        width: 80%;
+      }
+
+      &:after {
+        content: "";
+        width: 50px;
+        border-top: 1px solid @color-h;
+        margin-bottom: 60px;
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        left: calc(50% - 10px);
+        bottom: -20px;
+        border: 10px solid transparent;
+        border-top: 10px solid @label_color;
+        z-index: 5;
+      }
+
+      & > img {
+        padding: 50px 0 30px;
+      }
+    }
+
+    & .descBottomImg {
+      display: flex;
+      position: relative;
+      min-height: 200px;
+      overflow: hidden;
+
+      & > div {
+        position: absolute;
+        left: 100%;
+        top: 0;
+        transition: left .5s ease;
+        transition-delay: .1s;
+        padding: 20px 35px;
+        width: 90%;
+      }
+
+      &:hover > div {
+        left: 0;
+      }
+
+      & img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 3;
+        transition: top .5s ease-in-out;
+      }
+
+      &:hover img {
+        top: 100%;
+      }
+    }
+
+  }
+
+  &:first-of-type .bicucleBlock {
+    background: url("../../../sourses/images/galleryBg1.png") no-repeat;
+    background-position: @text-center;
+    background-size: cover;
+  }
+
+  &:nth-of-type(2) {
+    flex-direction: row-reverse;
+  }
+
+  &:nth-of-type(2) .bicucleBlock {
+    background: url("../../../sourses/images/gallaryBg2.png") no-repeat;
+    background-position: @text-center;
+    background-size: cover;
+  }
+
+  &:last-of-type {
+    & .bicucleBlock:first-of-type {
+      background: url("../../../sourses/images/gallImgMd1.png") no-repeat;
+      background-position: @text-center;
+      background-size: cover;
+    }
+
+    & .bicucleBlock:last-of-type {
+      background: url("../../../sourses/images/gallImgMd2.png") no-repeat;
+      background-position: @text-center;
+      background-size: cover;
+    }
+
+    & > div {
+      width: 33.33%;
+    }
+  }
+}
+footer{
+  margin: 0 auto;
+}
+.sliderWrapper {
+  background-color: @top-description-color;
+
+  & > input {
+    display: none;
+  }
+}
+
+.labelContainer label:hover,
+#check1:checked ~ .labelContainer > label:first-of-type,
+#check2:checked ~ .labelContainer > label:nth-of-type(2),
+#check3:checked ~ .labelContainer > label:last-of-type {
+  background-color: @input-bottom-color;
+}
+
+.sliderContainer {
+  position: relative;
+  overflow: hidden;
+
+  & > .list {
+    display: none;
+    animation: move .8s ease;
+  }
+}
+
+.sliderWrapper .labelContainer label {
+  display: block;
+  height: 11px;
+  width: 11px;
+  border: 1px solid @input-bottom-color;
+  cursor: pointer;
+  border-radius: 50%;
+  margin-bottom: 70px;
+  margin-top: 100px;
+  margin-right: 10px;
+}
+
+#check1:checked ~ .sliderContainer > .list:first-of-type,
+#check2:checked ~ .sliderContainer > .list:nth-of-type(2),
+#check3:checked ~ .sliderContainer > .list:last-of-type {
+  display: flex;
+  flex-direction: column;
+  align-items: @text-center;
+  transform: translate(0);
+  transition: transform 1s;
+}
+
+.list {
+  i {
+    font-size: 30px;
+    margin-top: 124px;
+    margin-bottom: 37px;
+  }
+
+  &:first-of-type i {
+    color: @twitter-color;
+  }
+
+  &:nth-of-type(2) i {
+    color: @insta-color;
+  }
+
+  &:last-of-type i {
+    color: @facebook-color;
+  }
+
+  & > span {
+    font-size: 18px;
+    font-weight: 700;
+    color: @color-h;
+    letter-spacing: 1.8px;
+
+    & > span {
+      color: @color-p;
+      font-weight: 300;
+    }
+  }
+
+  & > p {
+    font-style: italic;
+    font-size: 24px;
+    text-align: @text-center;
+    padding: 0 15%;
+    margin-top: 30px;
+  }
+}
+
+.labelContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: @text-center;
+}
+
+@keyframes move {
+  0% {
+    transform: translate(100%);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+.bottomGallery {
+  display: flex;
+  min-height: 80vh;
+
+  & .section {
+    display: flex;
+    flex-direction: column;
+    width: 33.33%;
+    min-height: 100%;
+
+    &:first-child .subSection {
+      width: 100%;
+      height: 50%;
+
+      &:first-child {
+        display: flex;
+        flex-direction: row;
+
+        & div {
+          width: 50%;
+          height: 100%;
+        }
+      }
+
+      &:last-child div {
+        width: 100%;
+        height: 100%;
+      }
+
+      &:first-child > div {
+
+        &:first-child {
+          background: url("../../../sourses/images/bottomMd1.png") no-repeat center;
+          background-size: 100% 100%;
+        }
+
+        &:last-child {
+          background: url("../../../sourses/images/bottomMd2.png") no-repeat center;
+          background-size: 100% 100%;
+        }
+      }
+
+      &:last-child {
+        background: url("../../../sourses/images/bottomGorizontal.png") no-repeat center;
+        background-size: 100% 100%;
+      }
+    }
+
+    &:nth-child(2) {
+      flex-direction: row;
+
+      & > div {
+        width: 50%;
+        height: 100%;
+
+        &:first-child {
+          background: url("../../../sourses/images/bottomVertical.png") no-repeat center;
+          background-size: 100% 100%;
+        }
+
+        &:last-child {
+          background: url("../../../sourses/images/bottomVertical2.png") no-repeat center;
+          background-size: 100% 100%;
+        }
+      }
+    }
+
+    &:last-child {
+
+      .subSection {
+
+        &:first-child {
+          height: 50%;
+          width: 100%;
+          background: url("../../../sourses/images/bottomGorizontal2.png") no-repeat center;
+          background-size: 100% 100%;
+        }
+
+        &:last-child {
+          display: flex;
+          flex-direction: row;
+          width: 100%;
+          height: 50%;
+
+          & > div {
+            height: 100%;
+            width: 50%;
+
+            &:first-child {
+              background: url("../../../sourses/images/bottomMd3.png") no-repeat center;
+              background-size: 100% 100%;
+            }
+
+            &:last-child {
+              background: url("../../../sourses/images/bottomMd4.png") no-repeat center;
+              background-size: 100% 100%;
+            }
+          }
+        }
+      }
+    }
+
+    & div {
+      display: flex;
+      justify-content: @text-center;
+      align-items: @text-center;
+    }
+
+    & .logoContainer {
+      min-width: 100%;
+      height: 100%;
+      background-color: @logo-contain-color;
+      opacity: 0;
+      transition: all .5s ease-in-out;
+    }
+
+    & .subSection div:hover .logoContainer,
+    &:nth-of-type(2) div:hover .logoContainer,
+    &:last-of-type .subSection:first-of-type:hover .logoContainer {
+      opacity: 1;
+    }
+  }
+}
+
+.phoneLabel {
+  width: 70px;
+  height: 70px;
+  background: @bg-phone-block;
+  position: fixed;
+  right: 10px;
+  top: 60%;
+  z-index: 55;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: @phone-box-shadow;
+  animation: phone 3s linear infinite;
+
+  & > i {
+    color: @label_color;
+    font-size: 28px;
+  }
+}
+
+@keyframes phone {
+  0% {
+    transform: scale(1) rotate(0);
+
+  }
+  25% {
+    transform: scale(1.1) rotate(15deg);
+  }
+  50% {
+    transform: scale(1.2) rotate(30deg);
+  }
+  75% {
+    transform: scale(1.1) rotate(15deg);
+  }
+  100% {
+    transform: scale(1) rotate(0);
+  }
+}

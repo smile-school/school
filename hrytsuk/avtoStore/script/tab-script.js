@@ -15,8 +15,6 @@
                 item.classList.remove('white-li');
             });
             this.classList.add('white-li');
-            tabName = this.getAttribute('data-tab-name');
-            selectTabContent(tabName);
         }
 
 
@@ -39,17 +37,6 @@
 
     tab();
 
-
-    function acordeon() {
-        var acord = document.querySelectorAll('.acordeon-active');
-            for (var i=0;i<acord.length; i++){
-                acord[i].addEventListener('click', function (e) {
-                    this.nextElementSibling.classList.toggle('show');
-                })
-            }
-
-    }
-    acordeon();
 
 
 })();
