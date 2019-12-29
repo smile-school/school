@@ -11,9 +11,21 @@
     <link rel="stylesheet" href="dist/css/style.css">
 </head>
 <body>
-    <header>
+    <header class="header">
         <div class="wrapper">
             <div class="top-header">
+                <input type="checkbox" id="burger-menu">
+                <label for="burger-menu" class="burger-menu"></label>
+                <div class="header-menu-none">
+                    <ul>
+                        <li><a href="index.html">Présentation</a></li>
+                        <li><a href="#">Accéder au site</a></li>
+                        <li><a href="#">Brancher mon stand</a></li>
+                        <li><a href="#">Aménager  mon stand</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Autour de ma manifestation</a></li>
+                    </ul>
+                </div>
                 <div class="logo">
                     <img src="ima/logo.svg" alt="">
                 </div>
@@ -26,6 +38,8 @@
                     <a href="#" class="top-btn-flag top-btn-flag-right">
                         <img src="ima/uk.png" alt="">
                     </a>
+                    <a href="#" class="top-btn-like"></a>
+                    <a href="#" class="top-btn-search"></a>
                     <a href="#" class="top-btn-cart"><span>10</span></a>
                 </div>
             </div>
@@ -72,58 +86,71 @@
                         <div class="sidebar-title">
                             <span>votre Sélection</span>
                         </div>
-                        <div class="sidebar-list">
-                            <div class="sidebar-active-link"><span>Vendeur n°1</span></div>
-                            <div class="sidebar-active-link"><span>Vendeur numéro trois <br>sur 2 deux lignes</span></div>
-                            <div class="details">
-                                <input type="checkbox" id="details-btn" class="check-none">
-                                <label for="details-btn" class="details-btn">Catégories</label>
-                                <ul class="details-none">
-                                    <li>
-                                        <input type="checkbox" id="check1">
-                                        <label for="check1" class="parameter"><span>Vendeur n°1</span><span>(12)</span></label>
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" id="check2" checked>
-                                        <label for="check2" class="parameter"><span>Vendeur numéro 2</span><span>(28)</span></label>
-                                    </li>
-                                </ul>
+                        <div class="sidebar-item-none">
+                            <div class="sidebar-item-none-img">
+                                <img src="ima/sidebar-item.png" alt="">
                             </div>
-                            <div class="details">
-                                <input type="checkbox" id="details-btn-2" class="check-none">
-                                <label for="details-btn-2" class="details-btn">prix</label>
-                                <ul class="details-none">
-                                    <li>
-                                        <input type="checkbox" id="check3" checked>
-                                        <label for="check3" class="parameter"><span>Vendeur n°1</span><span>(12)</span></label>
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" id="check4">
-                                        <label for="check4" class="parameter"><span>Vendeur numéro 2</span><span>(28)</span></label>
-                                    </li>
-                                </ul>
+                            <div class="sidebar-item-none-text">
+                                <span>Réalisez le plan de vote stand</span>
+                                <span class="bef-img">Télécharger le gabarit du plan</span>
                             </div>
-                            <div class="details">
-                                <input type="checkbox" id="details-btn-3" class="check-none" checked>
-                                <label for="details-btn-3" class="details-btn">Vendeur</label>
-                                <ul class="details-none">
-                                    <li>
-                                        <input type="checkbox" id="check5">
-                                        <label for="check5" class="parameter"><span>Vendeur n°1</span><span>(12)</span></label>
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" id="check6" checked>
-                                        <label for="check6" class="parameter"><span>Vendeur numéro 2</span><span>(28)</span></label>
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" id="check7" checked>
-                                        <label for="check7" class="parameter"><span>Vendeur numéro trois sur<br>2 deux lignes</span><span>(17)</span></label>
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" id="check8">
-                                        <label for="check8" class="parameter"><span>Vendeur n°4</span><span>(53)</span></label>
-                                    </li>
-                                </ul>
+                        </div>
+                        <div class="sidebar-list-wrap">
+                            <input type="checkbox" id="sidebar-list-btn">
+                            <label for="sidebar-list-btn" class="sidebar-list-btn">Filtrer par</label>
+                            <div class="sidebar-list">
+                                <div class="sidebar-active-link"><span>Vendeur n°1</span></div>
+                                <div class="sidebar-active-link"><span>Vendeur numéro trois <br>sur 2 deux lignes</span></div>
+                                <div class="details">
+                                    <input type="checkbox" id="details-btn" class="check-none">
+                                    <label for="details-btn" class="details-btn">Catégories</label>
+                                    <ul class="details-none">
+                                        <li>
+                                            <input type="checkbox" id="check1">
+                                            <label for="check1" class="parameter"><span>Vendeur n°1</span><span>(12)</span></label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="check2" checked>
+                                            <label for="check2" class="parameter"><span>Vendeur numéro 2</span><span>(28)</span></label>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="details">
+                                    <input type="checkbox" id="details-btn-2" class="check-none">
+                                    <label for="details-btn-2" class="details-btn">prix</label>
+                                    <ul class="details-none">
+                                        <li>
+                                            <input type="checkbox" id="check3" checked>
+                                            <label for="check3" class="parameter"><span>Vendeur n°1</span><span>(12)</span></label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="check4">
+                                            <label for="check4" class="parameter"><span>Vendeur numéro 2</span><span>(28)</span></label>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="details">
+                                    <input type="checkbox" id="details-btn-3" class="check-none" checked>
+                                    <label for="details-btn-3" class="details-btn">Vendeur</label>
+                                    <ul class="details-none">
+                                        <li>
+                                            <input type="checkbox" id="check5">
+                                            <label for="check5" class="parameter"><span>Vendeur n°1</span><span>(12)</span></label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="check6" checked>
+                                            <label for="check6" class="parameter"><span>Vendeur numéro 2</span><span>(28)</span></label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="check7" checked>
+                                            <label for="check7" class="parameter"><span>Vendeur numéro trois sur<br>2 deux lignes</span><span>(17)</span></label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="check8">
+                                            <label for="check8" class="parameter"><span>Vendeur n°4</span><span>(53)</span></label>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                         <div class="sidebar-item">
@@ -133,7 +160,7 @@
                             </div>
                             <p>Les produits électriques nécessitent que vous complétiez le plan à transmettre lors de la commande pour réaliser l'installation.</p>
                             <div class="sidebar-item-bottom">
-                                <span>Télécharger le gabarit du plan</span>
+                                <span class="bef-img">Télécharger le gabarit du plan</span>
                             </div>
                         </div>
                     </div>
@@ -172,7 +199,8 @@
                                     </div>
                                     <div class="text-block">
                                         <a href="#">Branchement intermittent 240 V</a>
-                                        <span>En stock</span>
+                                        <span class="text-block-stock">En stock</span>
+                                        <p class="price-mobile">A partir de <br> <span>00,00 € HT / m2</span></p>
                                     </div>
                                 </div>
                                 <div class="product-price">
@@ -187,7 +215,8 @@
                                     </div>
                                     <div class="text-block">
                                         <a href="#">Branchement intermittent 240 V</a>
-                                        <span class="stock-red">En rupture de stock</span>
+                                        <span class="stock-red text-block-stock">En rupture de stock</span>
+                                        <p class="price-mobile">A partir de <br> <span>00,00 € HT</span></p>
                                     </div>
                                 </div>
                                 <div class="product-price">
@@ -202,7 +231,8 @@
                                     </div>
                                     <div class="text-block">
                                         <a href="#">Transformateur électrique</a>
-                                        <span>En stock</span>
+                                        <span class="text-block-stock">En stock</span>
+                                        <p class="price-mobile">A partir de <br> <span>00,00 € HT</span></p>
                                     </div>
                                 </div>
                                 <div class="product-price">
@@ -217,7 +247,8 @@
                                     </div>
                                     <div class="text-block">
                                         <a href="#">Transformateur électrique</a>
-                                        <span>En stock</span>
+                                        <span class="text-block-stock">En stock</span>
+                                        <p class="price-mobile">A partir de <br> <span>00,00 € HT</span></p>
                                     </div>
                                 </div>
                                 <div class="product-price">
@@ -232,7 +263,8 @@
                                     </div>
                                     <div class="text-block">
                                         <a href="#">Transformateur électrique</a>
-                                        <span>En stock</span>
+                                        <span class="text-block-stock">En stock</span>
+                                        <p class="price-mobile">A partir de <br> <span>00,00 € HT</span></p>
                                     </div>
                                 </div>
                                 <div class="product-price">
@@ -244,8 +276,9 @@
                         <div class="page-nav">
                             <a class="arrow prev-btn" href="#"></a>
                             <a class="active-num" href="#">1</a>
-                            <a href="#">2</a>
-                            <a href="#">3</a>
+                            <span class="d-b-mob">/</span>
+                            <a href="#" class="d-none-mob">2</a>
+                            <a href="#" class="d-none-mob">3</a>
                             <a href="#">4</a>
                             <a class="arrow next-btn" href="#"></a>
                         </div>
