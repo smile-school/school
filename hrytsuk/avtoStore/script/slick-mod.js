@@ -23,5 +23,4 @@ $('.product-slick').slick({
             }
         },
     ]
-
 });
