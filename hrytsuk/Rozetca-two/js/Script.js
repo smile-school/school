@@ -227,6 +227,7 @@
                 if (data[key].classList.contains('erors')) {
                     data[key].classList.remove('erors');
                 }
+
             }
             countComent();
 

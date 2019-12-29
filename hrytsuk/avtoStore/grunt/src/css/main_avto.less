@@ -67,9 +67,7 @@ main {
 }
 .selection {
     margin-top: 45px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+   .flex-spase-mixin();
 }
 
 .select {
@@ -82,17 +80,13 @@ main {
     }
 
     select {
-        -moz-appearance: none;
-        -webkit-appearance: none;
-        appearance: none;
+        .mixin-slect-defoult();
         line-height: 15px;
         background-color: @white-color;
         border: 1px solid @line-bloc;
-        box-sizing: border-box;
         border-radius: 5px;
         height: 30px;
         color: @color-size;
-        cursor: pointer;
     }
 
     .select-twoo {
@@ -111,9 +105,7 @@ main {
 }
 
 .cart-add {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+   .flex-spase-mixin();
     align-items: center;
     margin:20px 6px 0 0;
     line-height: 17px;
@@ -195,7 +187,6 @@ button.like-black{
 
 .slider-wrap {
     display: flex;
-    flex-direction: row;
     position: relative;
     .items{
         &:not(:last-of-type){
@@ -214,8 +205,7 @@ button.like-black{
 }
 
 .sku-towar {
-    display: flex;
-    justify-content: space-between;
+  .flex-spase-mixin();
     padding-bottom: 20px;
     font-size: @font-size-menu;
 }
@@ -964,10 +954,7 @@ button.dzb2 {
     justify-content: space-between;
     padding: 0 16px;
     .answer-bottom{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
+        .flex-center-mixin();
         background-color: #f7f7f7;
         outline: 0;
         border: none;
