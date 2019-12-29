@@ -686,7 +686,7 @@ ul.compte li.flag > a:last-child img {
   flex-direction: column;
 }
 .way-top {
-  padding: 10px 0 7px ;
+  padding: 10px 0 7px;
 }
 .way-ul {
   display: flex;
@@ -774,7 +774,7 @@ ul.caption li:first-of-type a span {
 ul.caption li:first-of-type a::after {
   content: "";
   background: url("../../../img/Forme_8.svg") no-repeat;
-  width: 18px ;
+  width: 18px;
   height: 20px;
   position: absolute;
   left: 0;
@@ -790,7 +790,7 @@ ul.caption li:last-of-type a {
 ul.caption li:last-of-type a::after {
   content: "";
   background: url("../../../img/Forme_9.svg") no-repeat;
-  width: 26px ;
+  width: 26px;
   height: 18px;
   position: absolute;
   left: 0;
@@ -914,6 +914,43 @@ aside.left-aside {
 .filtr.vendeur::after {
   transform: rotate(180deg);
   top: 32px;
+}
+.filtr-lb {
+  display: flex;
+  flex-direction: column;
+}
+.filtr-lb > label {
+  width: 100%;
+  display: block;
+  cursor: pointer;
+}
+.filtr-lb .checkbox-filter {
+  display: none;
+}
+.content-filter {
+  border-top: 1px solid #e6e6e6;
+  font-size: 13px;
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.4s;
+}
+.content-filter ul {
+  list-style-type: inherit;
+  padding-left: 30px;
+}
+.content-filter ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  transition: color 0.3s;
+}
+.content-filter ul li a:hover {
+  color: #c90a28;
+}
+input.checkbox-filter:checked ~ .content-filter {
+  height: auto;
+  overflow: visible;
+  opacity: 1;
 }
 .filter-checked {
   margin-bottom: 20px;
