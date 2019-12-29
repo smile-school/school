@@ -128,6 +128,28 @@ li.language2 {
     padding: 29px 0 20px 13px;
     flex-flow: column;
     display: none;
+    position: relative;
+    &.active{
+        padding: 40px 0 0 13px;
+        transition: .2s linear;
+        span:nth-of-type(1){
+            transform: rotate(90deg);
+            width: 25px;
+            transition: .2s linear;
+        }
+        span:nth-of-type(2){
+            transform: rotate(-40deg);
+            width: 15px;
+            margin-left: 10px;
+            transition: .2s linear;
+        }
+        span:nth-of-type(3){
+            transform: rotate(40deg);
+            width: 15px;
+            margin: -5px 0 0 0;
+            transition: .2s linear;
+        }
+    }
 }
 .burger span{
     width: 25px;
@@ -135,6 +157,26 @@ li.language2 {
     background-color: @base2-color;
     &:nth-of-type(2) {
         margin: 4px 0;
+    }
+}
+.burger-nav{
+    display: none;
+    position: absolute;
+    top: 71px;
+    width: 320px;
+    left: 0;
+    z-index: 10;
+    background-color: @base-color;
+    border: 1px solid @base2-color;
+    padding: 10px;
+    font-size: 16px;
+    line-height: 24px;
+    &.visibility{
+        display: block;
+        a:hover{
+            padding-left: 10px;
+            color: @hover;
+        }
     }
 }
 .header-nav{
@@ -325,7 +367,9 @@ li.language2 {
     .header{
         height: 145px;
         p{
-            font-size: 18px;
+            text-align: center;
+            font-size: 22px;
+            min-width: 320px;
         }
     }
     .header-logo {

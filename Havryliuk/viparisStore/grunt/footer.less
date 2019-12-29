@@ -1,3 +1,16 @@
+.home{
+    background-color: #709ed3;
+    border-radius: 50%;
+    padding: 17px 21px;
+    right: 50px;
+    height: 50px;
+    bottom: 5px;
+    color: white;
+    position: absolute;
+    &:hover{
+        color: @base-color;
+    }
+}
 .footer-contact{
     background-color: @hover;
     display: flex;
@@ -40,15 +53,6 @@
     display: flex;
     flex-flow: row;
     position: relative;
-    .home{
-        position: absolute;
-        background-color: #709ed3;
-        border-radius: 50%;
-        padding: 16px 21px;
-        right: 50px;
-        bottom: -4px;
-        color: white;
-    }
     .left-infos{
         display: flex;
         flex-wrap: wrap;
@@ -347,7 +351,7 @@
         }
     }
     .bottom-footer{
-        padding-top: 2px;
+        padding: 2px 0 100px 0;
         .wrapper{
             margin: 0 11px;
             padding: 20px 5px 19px 0;
@@ -360,6 +364,9 @@
     }
 }
 @media only screen and (max-width: 767px) {
+    body{
+        background-color: @banner;
+    }
     .footer-contact{
         display: flex;
         flex-flow: column;
@@ -391,6 +398,10 @@
     }
     .footer-info{
         padding-top: 31px;
+        .home{
+            bottom: -170px;
+            right: calc(50% - 25px);
+        }
         .left-infos{
             display: flex;
             flex-flow: column;
@@ -445,9 +456,20 @@
                 flex-wrap: wrap;
                 text-align: center;
                 li{
-                    padding: 0px 3px;
+                    padding: 0px 20px;
                     width: 50%;
                     font-size: 12px;
+                    &:nth-of-type(1) a,
+                    &:nth-of-type(3) a{
+                        float: right;
+                        padding: 5px 0;
+                    }
+                    &:nth-of-type(2) a,
+                    &:nth-of-type(4) a{
+                        float: left;
+                        padding: 5px 0;
+                    }
+
                 }
             }
         }

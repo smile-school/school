@@ -308,6 +308,7 @@ header{
                     z-index: 3;
                     background-color: @basebg-color;
                     width: max-content;
+                    max-width: 353px;
                     right: 0;
                     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.6);
                     .btn-wrapper{
@@ -338,6 +339,9 @@ header{
                                 flex-flow: column;
                                 color: @txt1-color;
                                 padding-left:15px;
+                                .cart-title{
+                                    line-height: 23px;
+                                }
                                 .cart-details{
                                     height: 25%;
                                     &[open] summary::after{
@@ -646,6 +650,7 @@ header{
                                 width: 50%;
                             }
                         }
+
                         &:nth-of-type(3) a{
                             padding-left: 13px;
                         }                 
@@ -707,10 +712,10 @@ header{
                                 font-weight: normal;
                             }
                             &:hover {
-                                background-color: white;
+                                background-color: @base-color;
 
                                 a {
-                                    color: red;
+                                    color: @button;
                                 }
                             }
                         }

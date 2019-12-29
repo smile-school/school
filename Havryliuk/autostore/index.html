@@ -40,7 +40,7 @@
         <div class="main-header">
             <div class="wrapper">
                 <div class="header-logo">
-                    <img src="ima/image%201.png" alt="header-logo-car"/>
+                    <img src="ima/image201.png" alt="header-logo-car"/>
                 </div>
                 <div class="search-pole">
                     <input type="text" name="text" id="text" class="search-input-pole" placeholder="Search products...">
@@ -60,11 +60,11 @@
                             <div class="btn-wrapper">
                                 <div class="description">
                                     <div class="description-img">
-                                        <img src="ima/gal/aosake_leather_steering_wheels_3%201.png" style="height: 113px; width: 113px; border: 1px solid lightgrey" alt="">
+                                        <img src="ima/gal/aosake_leather_steering_wheels_3.png" style="height: 113px; width: 113px; border: 1px solid lightgrey" alt="">
                                     </div>
                                     <div class="description-txt">
                                         <div class="cart-title">
-                                            <a href="#"><span>Carbon Fiber Steering Wheel</span></a>
+                                            <a href="#">Carbon Fiber Steering Wheel</a>
                                         </div>
                                         <details class="cart-details">
                                             <summary>See Details</summary>
@@ -197,29 +197,29 @@
             <div class="product-cart">
                 <div class="product-cart-item">
                         <div class="img image-perform">
-                            <img src="./ima/gal/acdelco_335_professional_3%201.png" alt="" data-img="0" >
+                            <img src="./ima/gal/acdelco_335_professional_3.png" alt="" data-img="0" >
                             <a class="arrow next" href="#"><i class="fas fa-chevron-right arrow-pos"></i></a>
                             <a class="arrow prev" href="#"><i class="fas fa-chevron-left arrow-pos"></i></a>
                         </div>
                         <div class="image-gallery">
                             <div class="img">
                                 <div class="item img-gal-prod">
-                                    <img itemprop="image" src="./ima/gal/acdelco_335_professional_3%201.png" alt="">
+                                    <img itemprop="image" src="./ima/gal/acdelco_335_professional_3.png" alt="">
                                 </div>
                                 <div class="item img-gal-prod">
-                                    <img itemprop="image" src="./ima/gal/acura_z38-1092_alternator_3%202.png" alt="">
+                                    <img itemprop="image" src="./ima/gal/acura_z38-1092_alternator_3.png" alt="">
                                 </div>
                                 <div class="item img-gal-prod">
-                                    <img itemprop="image" src="./ima/gal/aosake_leather_steering_wheels_3%201.png" alt="">
+                                    <img itemprop="image" src="./ima/gal/aosake_leather_steering_wheels_3.png" alt="">
                                 </div>
                                 <div class="item img-gal-prod">
-                                    <img itemprop="image" src="./ima/gal/carbon_fiber_steering_wheel_3%201.png" alt="">
+                                    <img itemprop="image" src="./ima/gal/carbon_fiber_steering_wheel_3.png" alt="">
                                 </div>
                                 <div class="item img-gal-prod">
-                                    <img itemprop="image" src="./ima/gal/acdelco_335_professional_3%201.png" alt="">
+                                    <img itemprop="image" src="./ima/gal/acdelco_335_professional_3.png" alt="">
                                 </div>
                                 <div class="item img-gal-prod">
-                                    <img itemprop="image" src="./ima/gal/acura_z38-1092_alternator_3%202.png" alt="">
+                                    <img itemprop="image" src="./ima/gal/acura_z38-1092_alternator_3.png" alt="">
                                 </div>
                             </div>
                             <button class="right-prev"><i class="fas fa-chevron-right"></i></button>
@@ -231,9 +231,9 @@
                     <p class="product-review-in-stock"><span>sku: mt-7485102</span>In stock</p>
                     <div class="rating">
                         <img src="ima/staraside.png" alt="rating"/>
-                        <a href="#"><span>&nbsp;1&nbsp;&nbsp;Review</span></a>
+                        <a href="#"><span data-bind="text:messagesList().length">&nbsp;0&nbsp;</span><span>&nbsp;Review</span></a>
                         <span>&nbsp;|&nbsp;&nbsp;</span>
-                        <a href="#coment"><span>Add Your Review</span></a>
+                        <a href="#" class="goToRev" id="theElement"><span>Add Your Review</span></a>
                     </div>
                     <div class="product-price">
                         <span>$53.00</span>
@@ -286,9 +286,9 @@
                 </div>
             </div>
             <div class="information-block">
-                <input type="radio" id="radio1" name="content" >
+                <input type="radio" id="radio1" name="content" checked>
                 <input type="radio" id="radio2" name="content">
-                <input type="radio" id="radio3" name="content" checked>
+                <input type="radio" id="radio3" name="content" value="reviews">
                 <input type="radio" id="radio4" name="content">
                 <div class="left-action-info-btn">
                     <label for="radio1" class="main-info-menu">details</label>
@@ -324,81 +324,49 @@
                             <label for="radio3" class="main-info-menu" name="reviews">reviews</label>
                         </div>
                         <div class="reviews">
-                                <div class="leave-feedback">
-                                    <h3>Let people know what you think about or shop and products</h3>
-                                    <button class="feedback-btn">Leave&nbsp;feedback</button>
-                                </div>
-                                <div class="overlay"></div>
-                            <form id="formFeedback" action="" method="get" class="" data-bind="submit:submitForm">
-                                <div class="close">X</div>
-                                <label for="name">Name</label>
-                                <input type="text" id="name" name="name" data-bind="value:name">
-                                <label for="advantages">Advantages</label>
-                                <input type="text" id="advantages">
-                                <label for="disadvantages">Disadvantages</label>
-                                <input type="text" id="disadvantages">
-                                <label for="text">Message</label>
-                                <textarea name="message" id="comment" cols="30" rows="10"
-                                          data-bind="value:comment"></textarea>
-                                <button id="submitForm" value="send" data-bind="click: addMessage">Send</button>
+                            <h3>Let people know what you think about our shop and products, leave your feedback.</h3>
+                            <form method="post" action="" data-bind="submit: submitForm" class="leave-feedback">
+                                    <p data-bind="css: {required:required() && !fullName()}">
+                                        <label>Your Full Name
+                                            <input data-bind="value:fullName" type="text">
+                                        </label>
+                                    </p>
+                                    <p data-bind="css: {required:required() && !message()}">
+                                        <label>Message
+                                            <textarea data-bind="value:message" rows="10"></textarea>
+                                        </label>
+                                    </p>
+                                    <p data-bind="css: {required:required() && !advantages()}">
+                                        <label>Advantages
+                                            <input data-bind="value:advantages" type="text">
+                                        </label>
+                                    </p>
+                                    <p data-bind="css: {required:required() && !disAdvantages()}">
+                                        <label>Disavantages
+                                            <input data-bind="value:disAdvantages" type="text">
+                                        </label>
+                                    </p>
+                                <button data-bind="click: addMessage" class="feedback-btn">Add Message</button>
                             </form>
-                                <ul class="feedbacks-wrapper">
-                                    <li data-bind="foreach:messagesList">
-                                        <div class="feedback-header">
-                                            <h4 data-bind="text: name">Dean Winchester</h4>
-                                            <span class="tt-dd">today</span>
-                                        </div>
-                                        <div class="feedback-content">
-                                            <p data-bind="text: comment">Lorem ipsum dolor sit amet consectetur
-                                                adipisicing elit. Expedita ea dolorum
-                                                porro dolore vero ad in, quam, deserunt,
-                                                aliquid obcaecati fugit pariatur error
-                                                totam accusantium repudiandae ratione
-                                                molestias ut illum.
-                                            </p>
-                                            <p class="bold">Advantage:</p>
-                                            <p data-bind="text: advantages">Lorem ipsum dolor sit amet</p>
-                                            <p class="bold">Disadvantages:</p>
-                                            <p data-bind="text: disadvantages">Lorem ipsum dolor sit amet</p>
-                                        </div>
-                                        <div class="react">
-                                            <button class="like">
-                                                <i class="far fa-thumbs-up"></i>
-                                                <span>&nbsp;</span>
-                                            </button>
-                                            <button class="dislike">
-                                                <i class="far fa-thumbs-down"></i>
-                                                <span>&nbsp;</span>
-                                            </button>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="feedback-header">
-                                            <h4>John Sallivan</h4>
-                                            <span class="tt-dd">yesterday</span>
-                                        </div>
-                                        <div class="feedback-content">
-                                            <p>Lorem ipsum dolor sit amet consectetur
-                                                adipisicing elit. Expedita ea dolorum
-                                                porro dolore vero ad in, quam, deserunt,
-                                                aliquid obcaecati fugit pariatur error
-                                                totam accusantium repudiandae ratione
-                                                molestias ut illum.
-                                            </p>
-                                            <p class="bold">Advantage:</p>
-                                            <p>Lorem ipsum dolor sit amet</p>
-                                            <p class="bold">Disadvantages:</p>
-                                            <p>Lorem ipsum dolor sit amet</p>
-                                        </div>
-                                        <div class="react">
-                                            <button class="like">
-                                                <i class="far fa-thumbs-up"></i>
-                                                <span>&nbsp;</span>
-                                            </button>
-                                            <button class="dislike">
-                                                <i class="far fa-thumbs-down"></i>
-                                                <span>&nbsp;</span>
-                                            </button>
+                                <ul  data-bind="foreach: messagesList" class="messages">
+                                    <li class="feedbacks-wrapper">
+                                        <div class="message">
+                                            <div class="feedback-header new-feedback">
+                                                <h4 data-bind="text: fullName"></h4>
+                                                <span class="tt-dd new-date"></span>
+                                            </div>
+                                            <div class="feedback-content">
+                                                <p data-bind="text: message"></p>
+                                                <p class="bold">Advantages:</p>
+                                                <p data-bind="text: advantages"></p>
+                                                <p class="bold">Disadvantages:</pclass="bold">
+                                                </p>
+                                                <p data-bind="text: disAdvantages"></p>
+                                            </div>
+                                            <div class="react">
+                                                <button class="like" data-bind="click: plusRate, text: votefor"></button>
+                                                <button class="dislike" data-bind="click: minusRate, text: voteagainst"></button>
+                                            </div>
                                         </div>
                                     </li>
                                 </ul>
@@ -702,6 +670,7 @@
             slider.smilecarousel('toPrev')
         });
     </script>
+    <script src="js/forma.js"></script>
     <script src="js/topgallery.js"></script>
     <script src="js/bottomgallery.js"></script>
 </body>

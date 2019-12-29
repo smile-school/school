@@ -4620,8 +4620,8 @@
 }
 .type-of-view .view-type {
   margin-left: 6px;
-  width: 36px;
-  height: 36px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
   border: 1px solid #E5E5E5;
   position: relative;
@@ -4630,8 +4630,8 @@
 .type-of-view .view-type.table:before {
   position: absolute;
   content: "";
-  left: 9px;
-  top: 11px;
+  left: 10px;
+  top: 10px;
   width: 15px;
   height: 15px;
 }
@@ -4662,6 +4662,7 @@
 .type-of-view select {
   background: none;
   border: 0;
+  outline: 0;
 }
 .products-sum .summ {
   color: #eb2645;
@@ -4763,6 +4764,9 @@
   display: flex;
   align-items: center;
   width: 300px;
+}
+.product .page-navigation span {
+  display: none;
 }
 .product .page-navigation a {
   padding: 0 12px 0 11px;
@@ -4959,12 +4963,9 @@
     padding-top: 0;
     border-top: 0;
   }
-  .products .page-navigation {
+  .product .page-navigation {
     margin-top: 4px;
     width: 324px;
-  }
-  .products .page-navigation span {
-    display: none;
   }
   .demands {
     margin: 51px 52px 50px;
@@ -5106,6 +5107,19 @@
     left: 115px;
   }
 }
+.home {
+  background-color: #709ed3;
+  border-radius: 50%;
+  padding: 17px 21px;
+  right: 50px;
+  height: 50px;
+  bottom: 5px;
+  color: white;
+  position: absolute;
+}
+.home:hover {
+  color: #FFF;
+}
 .footer-contact {
   background-color: #eb2645;
   display: flex;
@@ -5148,15 +5162,6 @@
   display: flex;
   flex-flow: row;
   position: relative;
-}
-.footer-info .home {
-  position: absolute;
-  background-color: #709ed3;
-  border-radius: 50%;
-  padding: 16px 21px;
-  right: 50px;
-  bottom: -4px;
-  color: white;
 }
 .footer-info .left-infos {
   display: flex;
@@ -5461,7 +5466,7 @@
     bottom: -19px;
   }
   .bottom-footer {
-    padding-top: 2px;
+    padding: 2px 0 100px 0;
   }
   .bottom-footer .wrapper {
     margin: 0 11px;
@@ -5474,6 +5479,9 @@
   }
 }
 @media only screen and (max-width: 767px) {
+  body {
+    background-color: #1a3456;
+  }
   .footer-contact {
     display: flex;
     flex-flow: column;
@@ -5505,6 +5513,10 @@
   }
   .footer-info {
     padding-top: 31px;
+  }
+  .footer-info .home {
+    bottom: -170px;
+    right: calc(50% - 25px);
   }
   .footer-info .left-infos {
     display: flex;
@@ -5561,9 +5573,19 @@
     text-align: center;
   }
   .bottom-footer .wrapper ul li {
-    padding: 0px 3px;
+    padding: 0px 20px;
     width: 50%;
     font-size: 12px;
+  }
+  .bottom-footer .wrapper ul li:nth-of-type(1) a,
+  .bottom-footer .wrapper ul li:nth-of-type(3) a {
+    float: right;
+    padding: 5px 0;
+  }
+  .bottom-footer .wrapper ul li:nth-of-type(2) a,
+  .bottom-footer .wrapper ul li:nth-of-type(4) a {
+    float: left;
+    padding: 5px 0;
   }
 }
 .top-header {
@@ -5696,6 +5718,28 @@ li.language2 {
   padding: 29px 0 20px 13px;
   flex-flow: column;
   display: none;
+  position: relative;
+}
+.burger.active {
+  padding: 40px 0 0 13px;
+  transition: 0.2s linear;
+}
+.burger.active span:nth-of-type(1) {
+  transform: rotate(90deg);
+  width: 25px;
+  transition: 0.2s linear;
+}
+.burger.active span:nth-of-type(2) {
+  transform: rotate(-40deg);
+  width: 15px;
+  margin-left: 10px;
+  transition: 0.2s linear;
+}
+.burger.active span:nth-of-type(3) {
+  transform: rotate(40deg);
+  width: 15px;
+  margin: -5px 0 0 0;
+  transition: 0.2s linear;
 }
 .burger span {
   width: 25px;
@@ -5704,6 +5748,26 @@ li.language2 {
 }
 .burger span:nth-of-type(2) {
   margin: 4px 0;
+}
+.burger-nav {
+  display: none;
+  position: absolute;
+  top: 71px;
+  width: 320px;
+  left: 0;
+  z-index: 10;
+  background-color: #FFF;
+  border: 1px solid black;
+  padding: 10px;
+  font-size: 16px;
+  line-height: 24px;
+}
+.burger-nav.visibility {
+  display: block;
+}
+.burger-nav.visibility a:hover {
+  padding-left: 10px;
+  color: #eb2645;
 }
 .header-nav {
   padding: 3px 0 0 47px;
@@ -5893,7 +5957,9 @@ li.language2 {
     height: 145px;
   }
   .header p {
-    font-size: 18px;
+    text-align: center;
+    font-size: 22px;
+    min-width: 320px;
   }
   .header-logo {
     background: url(../ima/logo.png) 16% 18% no-repeat;
@@ -6186,7 +6252,6 @@ li {
   list-style-type: none;
 }
 body {
-  background-color: lightgrey;
   font-family: 'Pontano Sans';
   font-style: normal;
   font-weight: 400;

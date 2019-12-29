@@ -124,7 +124,7 @@ main {
                         background-color: @button;
                         border-color: @button;
                         i {
-                            color: white;
+                            color: @base-color;
                         }
                     }
                 }
@@ -216,7 +216,7 @@ main {
                                 .size,
                                 .color {
                                     font-size: 13px;
-                                    padding: 7px 0;
+                                    padding: 7px 5px;
                                     text-align: center;
                                 }
                                 label {
@@ -403,6 +403,8 @@ main {
                     label{
                         display: block;
                         padding: 20px 30px;
+                        background-color: @base2-color;
+                        color: @base-color;
                     }
                 }
                 p {
@@ -413,15 +415,36 @@ main {
                 .reviews {
                     overflow: auto;
                     height: 100%;
+                    padding: 10px 0;
+                    h3{
+                        color:@base2-color;
+                    }
                 }
                 .leave-feedback {
-                    padding: 25px 5px;
-                    margin: 0 5px 25px 0;
-                    border: 1px solid @border-color;
+                    margin: 25px 0;
+                    .required{
+                        color:@hover;
+                    }
+                    input[type="text"]{
+                        width: 100%;
+                        padding: 10px;
+                        border-radius: 5px;
+                        border-color: @border-color;
+                    }
+                    textarea{
+                        width: 100%;
+                        padding: 10px;
+                        border-radius:5px;
+                        resize: none;
+                    }
                     h3 {
                         padding-bottom: 25px;
                         color: @base2-color;
                         font-weight: 500;
+                    }
+                    p > label{
+                        font-size: 16px;
+                        font-weight: 700;
                     }
                     .feedback-btn {
                         border: 0;
@@ -438,22 +461,28 @@ main {
                         }
                     }
                 }
+                .messages{
+                    display:flex;
+                    flex-flow: column-reverse;
+                }
                 .feedbacks-wrapper {
-                    padding-right: 10px;
-                    li{
+                    display: flex;
+                    flex-flow: column;
+                    &:not(:first-of-type){
                         margin-bottom: 20px;
-                        padding: 10px 0;
-                        border-bottom: 1px solid lightgrey;
+                        padding: 10px 0 15px;
+                        border-bottom: 1px solid @border-color;
                     }
                     .feedback-header {
                         display: flex;
                         flex-wrap: wrap;
                         justify-content: space-between;
-                        h5 {
-                            font-weight: 700;
+                        h4 {
+                            text-transform: capitalize;
                         }
                         .tt-dd {
                             font-size: 12px;
+                            color:@txt2-color;
                         }
                     }
                     .feedback-content {
@@ -469,8 +498,30 @@ main {
                         justify-content: flex-end;
                         button{
                             background: none;
+                            outline: 0;
                             border: 0;
                             padding: 0 5px;
+                            width: 50px;
+                            height: 20px;
+                            position: relative;
+                            &::before{
+                                position: absolute;
+                                left: -10px;
+                                top:0;
+                                font-family: Font Awesome\ 5 Free;
+                                width: 18px;
+                                height: 18px;
+                                font-weight: 900;
+                                font-size: 17px;
+                            }
+                            &.like::before{
+                                content:"\f164";
+                                color: @like;
+                            }
+                            &.dislike::before{
+                                content:"\f165";
+                                color: @dislike;
+                            }
                         }
                     }
                 }
@@ -830,9 +881,13 @@ main {
                 .left-action-info-btn{
                     display: none;
                 }
-                .right-action-info-block .info-head{
+                .right-action-info-block{
+                    width: 100%;
+                    padding: 12px 12px 0;
+                    .info-head{
                     display: block;
-                }
+                    }
+                } 
             }
         }
     }
@@ -841,6 +896,13 @@ main {
     main .wrapper-main-content {
         .information-block {
             display: block;
+            padding: 0 0 0 0;
+            .right-action-info-block{
+                padding: 0 5px;
+                .details-extended{
+                    padding-top: 12px;
+                }
+            }
         }
         .product-cart-item .image-collection {
             .image-perform {
