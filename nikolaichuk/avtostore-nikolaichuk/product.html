@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AutoStore</title>
+    <link rel="stylesheet" href="dist/css/jquery-ui.css">
+    <link rel="stylesheet" href="dist/css/style.css">
+    <script src="scripts/jquery-3.4.1.js"></script>
+    <script src="scripts/jquery-ui.js"></script>
+    <script src="scripts/jquery-range-slider.js"></script>
+</head>
+<body>
+<header>
+    <div class="header__stretch">
+        <div class="page-wrapper">
+            <div class="header__top-menu action-menu">
+                <div class="action-menu__signIn">
+                    <i class="fas fa-lock"></i>
+                    <a href="#" class="link" title="Sign In">
+                        Sign In <span>/</span> Create an Account
+                    </a>
+                </div>
+                <div class="action-menu__lang-chooser">
+                    <span class="current">french</span>
+                    <i class="fas fa-angle-down"></i>
+                    <div class="dropdown-list">
+                        <ul>
+                            <li class="dropdown-list__item">
+                                <img src="./dist/ima/UK.svg" alt="Eng">
+                                <span>English</span>
+                            </li>
+                            <li class="dropdown-list__item">
+                                <img src="./dist/ima/Ger.svg" alt="Ger">
+                                <span>German</span>
+                            </li>
+                            <li class="dropdown-list__item">
+                                <img src="./dist/ima/Belg.svg" alt="Bel">
+                                <span>Belgium</span>
+                            </li>
+                            <li class="dropdown-list__item">
+                                <img src="./dist/ima/Arg.svg" alt="Arg">
+                                <span>Argentina</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="action-menu__currency-chooser">
+                    <span class="current">usd</span>
+                    <i class="fas fa-angle-down"></i>
+                    <div class="dropdown-list">
+                        <ul>
+                            <li class="dropdown-list__item">EUR – Euro</li>
+                            <li class="dropdown-list__item">GBP – Pound</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header__wrapper">
+        <div class="page-wrapper">
+            <div class="header__main">
+                <div class="logo-wrapper">
+                    <a href="#" class="link logo-link" title="Auto Store">
+                    </a>
+                </div>
+                <div class="search__container">
+                    <input type="text" class="search__input" placeholder="Search products...">
+                    <a href="#" class="search__button">
+                        <i class="fas fa-search"></i>
+                    </a>
+                </div>
+                <div class="cart-block clearfix-block">
+                    <div class="wish-list">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="cart">
+                        <i class="fas fa-shopping-basket"></i>
+                        <span class="cart__total">My Cart
+                        <span>$205.00</span>
+                    </span>
+                        <span class="cart__counter">1</span>
+                    </div>
+                    <div class="mini-cart">
+                        <div class="mini-cart__details clearfix-block">
+                            <a href="#" class="link mini-cart__image">
+                                <img src="./dist/ima/aosake_leather_steering_wheels.png"
+                                     alt="aosake leather steering wheels">
+                            </a>
+                            <i class="fas fa-times-circle"></i>
+                            <div class="mini-cart__params">
+                                <a href="#" class="link mini-cart__title">Carbon Fiber Steering Wheel</a>
+                                <div class="mini-cart__details-toggle">
+                                    <span>See Details</span>
+                                    <i class="fas fa-angle-down"></i>
+                                </div>
+                                <div class="mini-cart__details-block">
+                                    <span class="mini-cart__details-name">Size</span><span>S</span>
+                                    <span class="mini-cart__details-name">Color</span><span>Blue</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mini-cart__counter">
+                            <label for="cart-counter">Qty:</label>
+                            <input type="text" value="1" id="cart-counter">
+                            <span class="mini-cart__update-btn">Update</span>
+                            <span class="mini-cart__counter__sum">$205.00</span>
+                        </div>
+                        <div class="mini-cart__total clearfix-block">
+                            <span>cart subtotal:</span>
+                            <span>205.00</span>
+                        </div>
+                        <div class="mini-cart__buttons clearfix-block">
+                            <div class="mini-cart__view-btn">view cart</div>
+                            <div class="mini-cart__checkout-btn">checkout</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header__navigation clearfix-block">
+                <div class="categories__menu">
+                    <input type="checkbox" id="burger-toggle">
+                    <label for="burger-toggle" class="categories__menu__toggle">
+                        <span class="categories__menu__burger"></span>
+                    </label>
+                    <div class="categories__menu__block">
+                        <span class="categories__menu__item">
+                            All Categories
+                        </span>
+                        <span class="categories__menu__burger"></span>
+                    </div>
+                    <ul class="categories__menu__list">
+                        <li class="categories__menu__category-title">
+                            Category group
+                        </li>
+                        <li class="categories__menu__category">
+                            <a href="./index.html" class="link">INDEX PAGE</a>
+                        </li>
+                        <li class="categories__menu__category">
+                            <a href="./product.html" class="link">PRODUCT PAGE</a>
+                        </li>
+                        <li class="categories__menu__category">
+                            <a href="#" class="link">Category name</a>
+                        </li>
+                        <li class="categories__menu__category">
+                            <a href="#" class="link">Category name</a>
+                        </li>
+                        <li class="categories__menu__category">
+                            <a href="#" class="link">Category name</a>
+                        </li>
+                        <li class="categories__menu__category-title">
+                            Category group
+                        </li>
+                        <li class="categories__menu__category">
+                            <a href="#" class="link">Category name</a>
+                        </li>
+                        <li class="categories__menu__category">
+                            <a href="#" class="link">Category name</a>
+                        </li>
+                        <li class="categories__menu__category-title">
+                            Category group
+                        </li>
+                        <li class="categories__menu__category">
+                            <a href="#" class="link">Category name</a>
+                        </li>
+                        <li class="categories__menu__category">
+                            <a href="#" class="link">Category name</a>
+                        </li>
+                        <li class="categories__menu__category">
+                            <a href="#" class="link">Category name</a>
+                        </li>
+                        <li class="categories__menu__category">
+                            <a href="#" class="link">Category name</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="nav-menu">
+                    <ul>
+                        <li class="nav-menu__item">
+                            Home
+                            <i class="fas fa-angle-down"></i>
+                            <div class="submenu-container">
+                                <ul class="nav-links-menu">
+                                    <li class="nav-links-menu__heading">
+                                        layouts
+                                    </li>
+                                    <li class="nav-links-menu__item"><a href="#" class="link">Homepage Style 1</a></li>
+                                    <li class="nav-links-menu__item"><a href="#" class="link nav-links-menu__item">Homepage
+                                        Style 2</a></li>
+                                    <li class="nav-links-menu__item"><a href="#" class="link nav-links-menu__item">Homepage
+                                        Style 3</a></li>
+                                    <li class="nav-links-menu__item"><a href="#" class="link nav-links-menu__item">Homepage
+                                        Style 4</a></li>
+                                    <li class="nav-links-menu__item"><a href="#" class="link nav-links-menu__item">Homepage
+                                        Style 5</a></li>
+                                    <li class="nav-links-menu__item"><a href="#" class="link nav-links-menu__item">Homepage
+                                        Style 6</a></li>
+                                    <li class="nav-links-menu__item"><a href="#" class="link nav-links-menu__item">Homepage
+                                        Style 7</a></li>
+                                    <li class="nav-links-menu__item"><a href="#" class="link nav-links-menu__item">Homepage
+                                        Style 8</a></li>
+                                    <li class="nav-links-menu__item"><a href="#" class="link nav-links-menu__item">Boxed
+                                        Layout</a></li>
+                                    <li class="nav-links-menu__item"><a href="#" class="link nav-links-menu__item">Right To
+                                        Left</a></li>
+                                    <li class="nav-links-menu__item"><a href="#" class="link nav-links-menu__item">HOT
+                                        LISTING
+                                        LAYOUTS</a></li>
+                                    <li class="nav-links-menu__item"><a href="#" class="link nav-links-menu__item">Without
+                                        Sidebar</a></li>
+                                    <li class="nav-links-menu__item"><a href="#" class="link nav-links-menu__item">Left
+                                        Sidebar</a></li>
+                                    <li class="nav-links-menu__item"><a href="#" class="link nav-links-menu__item">Right
+                                        Sidebar</a></li>
+                                    <li class="nav-links-menu__item"><a href="#" class="link nav-links-menu__item">Left -
+                                        Right
+                                        Sidebar</a></li>
+                                </ul>
+                                <ul class="nav-links-menu">
+                                    <li class="nav-links-menu__heading">
+                                        listing layouts
+                                    </li>
+                                    <li class="nav-links-menu__item"><a href="#" class="link">Without Sidebar</a></li>
+                                    <li class="nav-links-menu__item"><a href="#" class="link">Left Sidebar</a></li>
+                                    <li class="nav-links-menu__item"><a href="#" class="link">Right Sidebar</a></li>
+                                    <li class="nav-links-menu__item"><a href="#" class="link">Left - Right Sidebar</a></li>
+                                </ul>
+                                <ul class="nav-links-menu">
+                                    <li class="nav-links-menu__heading">
+                                        detail layouts
+                                    </li>
+                                    <li class="nav-links-menu__item"><a href="#" class="link">Product Detail - Full</a></li>
+                                    <li class="nav-links-menu__item"><a href="#" class="link">Product Detail - Left
+                                        Sidebar</a>
+                                    </li>
+                                    <li class="nav-links-menu__item"><a href="#" class="link">Product Detail - Right
+                                        Sidebar</a>
+                                    </li>
+                                    <li class="nav-links-menu__item"><a href="#" class="link">Thumb Horizontal</a></li>
+                                    <li class="nav-links-menu__item"><a href="#" class="link">Thumb Vertical</a></li>
+                                </ul>
+                                <ul class="nav-links-menu">
+                                    <li class="nav-links-menu__heading">
+                                        tab types
+                                    </li>
+                                    <li class="nav-links-menu__item"><a href="#" class="link">Vertical</a></li>
+                                    <li class="nav-links-menu__item"><a href="#" class="link">Horizontal</a></li>
+                                    <li class="nav-links-menu__item"><a href="#" class="link">Accordion</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-menu__item">
+                            <a href="#" class="link" title="Deals">Deals</a>
+                        </li>
+                        <li class="nav-menu__item">
+                            <a href="#" class="link" title="Under $100">Under $100</a>
+                        </li>
+                        <li class="nav-menu__item">
+                            <a href="#" class="link" title="New Arrivals">New Arrivals</a>
+                        </li>
+                        <li class="nav-menu__item">
+                            <a href="#" class="link" title="Blog">Blog</a>
+                        </li>
+                        <li class="nav-menu__item">
+                            <a href="#" class="link" title="About Us">About Us</a>
+                        </li>
+                        <li class="nav-menu__item">
+                            <a href="#" class="link" title="Contact Us">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<main>
+    <div class="page-wrapper products__content clearfix-block">
+        <div class="breadcrambs">
+            <a href="#" class="link" title="home">Home</a>
+            <i class="fas fa-angle-right"></i>
+            <a href="#" class="link" title="Carbon Fiber">Carbon Fiber Steering Wheel</a>
+        </div>
+
+        <div class="search-result__wrapper search-block-js">
+            <h1 class="search-result__heading">Baby Car Seats</h1>
+            <div class="search-result__controls">
+                <div class="view__control">
+                    <div class="view__control_btn gridView-toggle-js active-js">
+                        <a href="#" class="view__control_icon">
+                            <svg width="19" height="14">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     xlink:href="#table-view"></use>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="view__control_btn rowsView-toggle-js">
+                        <a href="#" class="view__control_icon">
+                            <svg width="19" height="14">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     xlink:href="#list-view"></use>
+                            </svg>
+                        </a>
+                    </div>
+                    <span>Items 1-15 of 18</span>
+                </div>
+                <div class="qty__control">
+                    <label for="quantity">Show</label>
+                    <div class="select-container">
+                        <select id="quantity">
+                            <option value="15">15</option>
+                            <option value="10">10</option>
+                        </select>
+                        <i class="fas fa-angle-down"></i>
+                    </div>
+                    <span>ptr page</span>
+                </div>
+                <div class="sort__control">
+                    <label for="sort">Sort By</label>
+                    <div class="select-container">
+                        <select id="sort">
+                            <option value="position">Position</option>
+                            <option value="rating">Rating</option>
+                            <option value="price">Price</option>
+                        </select>
+                        <i class="fas fa-angle-down"></i>
+                    </div>
+                    <a href="#" class="link"><i class="fas fa-long-arrow-alt-up"></i></a>
+                </div>
+            </div>
+            <div class="search-result__products products-list-js">
+                <div class="search-item product-item">
+                    <a href="#" class="link product-item__image">
+                        <img src="./dist/ima/car_kit_hands_free_calling.png" alt="car kit hands free calling">
+                        <span class="product-item__image__search"><i class="fas fa-search"></i></span>
+                    </a>
+                    <div class="product-item__content">
+                        <div class="product-item__control-buttons">
+                            <a href="#" class="product-item__wish-list-btn">
+                                <i class="fas fa-heart"></i>
+                            </a>
+                            <a href="#" class="product-item__add-cart-btn">add to cart</a>
+                            <a href="#" class="product-item__compare-btn">
+                                <img src="./dist/ima/compare.svg" alt="">
+                            </a>
+                        </div>
+                        <div class="product-item__text-content">
+                            <a href="#" class="link product-item__text-content__title">Car Kit Hands Free Calling</a>
+                            <div class="product-item__text-content__rating">
+                                <img src="./dist/ima/star5.png" alt="">
+                            </div>
+                            <div class="product-item__text-content__prices">$84.00</div>
+                            <div class="product-item__text-content__description">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium adipisci commodi
+                                earum in magni minima minus quasi? Culpa delectus dolor ex excepturi impedit incidunt
+                                maiores reprehenderit vero voluptatibus! Enim.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-action product-sale">
+                        <span>sale</span>
+                    </div>
+                    <div class="product-action product-new">
+                        <span>new</span>
+                    </div>
+                </div>
+                <div class="search-item product-item new sale">
+                    <a href="#" class="link product-item__image">
+                        <img src="./dist/ima/design_in-car_fm_radio.png" alt="design in car fm radio">
+                        <span class="product-item__image__search"><i class="fas fa-search"></i></span>
+                    </a>
+                    <div class="product-item__content">
+                        <div class="product-item__control-buttons">
+                            <a href="#" class="product-item__wish-list-btn">
+                                <i class="fas fa-heart"></i>
+                            </a>
+                            <a href="#" class="product-item__add-cart-btn">add to cart</a>
+                            <a href="#" class="product-item__compare-btn">
+                                <img src="./dist/ima/compare.svg" alt="">
+                            </a>
+                        </div>
+                        <div class="product-item__text-content">
+                            <a href="#" class="link product-item__text-content__title">Car Kit Hands Free Calling</a>
+                            <div class="product-item__text-content__rating">
+                                <img src="./dist/ima/star5.png" alt="">
+                            </div>
+                            <div class="product-item__text-content__prices">
+                                <span class="sale-price">$55.00</span>
+                                <span class="old-price">$84.00</span>
+                            </div>
+                            <div class="product-item__text-content__description">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium adipisci commodi
+                                earum in magni minima minus quasi? Culpa delectus dolor ex excepturi impedit incidunt
+                                maiores reprehenderit vero voluptatibus! Enim.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-action product-sale">
+                        <span>sale</span>
+                    </div>
+                    <div class="product-action product-new">
+                        <span>new</span>
+                    </div>
+                </div>
+                <div class="search-item product-item new">
+                    <a href="#" class="link product-item__image">
+                        <img src="./dist/ima/radio_transmitter_adapter.png" alt="radio transmitter adapter">
+                        <span class="product-item__image__search"><i class="fas fa-search"></i></span>
+                    </a>
+                    <div class="product-item__content">
+                        <div class="product-item__control-buttons">
+                            <a href="#" class="product-item__wish-list-btn">
+                                <i class="fas fa-heart"></i>
+                            </a>
+                            <a href="#" class="product-item__add-cart-btn">add to cart</a>
+                            <a href="#" class="product-item__compare-btn">
+                                <img src="./dist/ima/compare.svg" alt="">
+                            </a>
+                        </div>
+                        <div class="product-item__text-content">
+                            <a href="#" class="link product-item__text-content__title">Car Kit Hands Free Calling</a>
+                            <div class="product-item__text-content__rating">
+                                <img src="./dist/ima/star5.png" alt="">
+                            </div>
+                            <div class="product-item__text-content__prices">$84.00</div>
+                            <div class="product-item__text-content__description">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium adipisci commodi
+                                earum in magni minima minus quasi? Culpa delectus dolor ex excepturi impedit incidunt
+                                maiores reprehenderit vero voluptatibus! Enim.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-action product-sale">
+                        <span>sale</span>
+                    </div>
+                    <div class="product-action product-new">
+                        <span>new</span>
+                    </div>
+                </div>
+                <div class="search-item product-item">
+                    <a href="#" class="link product-item__image">
+                        <img src="./dist/ima/car_kit_hands_free_calling.png" alt="car kit hands free calling">
+                        <span class="product-item__image__search"><i class="fas fa-search"></i></span>
+                    </a>
+                    <div class="product-item__content">
+                        <div class="product-item__control-buttons">
+                            <a href="#" class="product-item__wish-list-btn">
+                                <i class="fas fa-heart"></i>
+                            </a>
+                            <a href="#" class="product-item__add-cart-btn">add to cart</a>
+                            <a href="#" class="product-item__compare-btn">
+                                <img src="./dist/ima/compare.svg" alt="">
+                            </a>
+                        </div>
+                        <div class="product-item__text-content">
+                            <a href="#" class="link product-item__text-content__title">Car Kit Hands Free Calling</a>
+                            <div class="product-item__text-content__rating">
+                                <img src="./dist/ima/star5.png" alt="">
+                            </div>
+                            <div class="product-item__text-content__prices">$84.00</div>
+                            <div class="product-item__text-content__description">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium adipisci commodi
+                                earum in magni minima minus quasi? Culpa delectus dolor ex excepturi impedit incidunt
+                                maiores reprehenderit vero voluptatibus! Enim.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-action product-sale">
+                        <span>sale</span>
+                    </div>
+                    <div class="product-action product-new">
+                        <span>new</span>
+                    </div>
+                </div>
+                <div class="search-item product-item new sale">
+                    <a href="#" class="link product-item__image">
+                        <img src="./dist/ima/design_in-car_fm_radio.png" alt="design in car fm radio">
+                        <span class="product-item__image__search"><i class="fas fa-search"></i></span>
+                    </a>
+                    <div class="product-item__content">
+                        <div class="product-item__control-buttons">
+                            <a href="#" class="product-item__wish-list-btn">
+                                <i class="fas fa-heart"></i>
+                            </a>
+                            <a href="#" class="product-item__add-cart-btn">add to cart</a>
+                            <a href="#" class="product-item__compare-btn">
+                                <img src="./dist/ima/compare.svg" alt="">
+                            </a>
+                        </div>
+                        <div class="product-item__text-content">
+                            <a href="#" class="link product-item__text-content__title">Car Kit Hands Free Calling</a>
+                            <div class="product-item__text-content__rating">
+                                <img src="./dist/ima/star5.png" alt="">
+                            </div>
+                            <div class="product-item__text-content__prices">
+                                <span class="sale-price">$55.00</span>
+                                <span class="old-price">$84.00</span>
+                            </div>
+                            <div class="product-item__text-content__description">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium adipisci commodi
+                                earum in magni minima minus quasi? Culpa delectus dolor ex excepturi impedit incidunt
+                                maiores reprehenderit vero voluptatibus! Enim.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-action product-sale">
+                        <span>sale</span>
+                    </div>
+                    <div class="product-action product-new">
+                        <span>new</span>
+                    </div>
+                </div>
+                <div class="search-item product-item new">
+                    <a href="#" class="link product-item__image">
+                        <img src="./dist/ima/radio_transmitter_adapter.png" alt="radio transmitter adapter">
+                        <span class="product-item__image__search"><i class="fas fa-search"></i></span>
+                    </a>
+                    <div class="product-item__content">
+                        <div class="product-item__control-buttons">
+                            <a href="#" class="product-item__wish-list-btn">
+                                <i class="fas fa-heart"></i>
+                            </a>
+                            <a href="#" class="product-item__add-cart-btn">add to cart</a>
+                            <a href="#" class="product-item__compare-btn">
+                                <img src="./dist/ima/compare.svg" alt="">
+                            </a>
+                        </div>
+                        <div class="product-item__text-content">
+                            <a href="#" class="link product-item__text-content__title">Car Kit Hands Free Calling</a>
+                            <div class="product-item__text-content__rating">
+                                <img src="./dist/ima/star5.png" alt="">
+                            </div>
+                            <div class="product-item__text-content__prices">$84.00</div>
+                            <div class="product-item__text-content__description">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium adipisci commodi
+                                earum in magni minima minus quasi? Culpa delectus dolor ex excepturi impedit incidunt
+                                maiores reprehenderit vero voluptatibus! Enim.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-action product-sale">
+                        <span>sale</span>
+                    </div>
+                    <div class="product-action product-new">
+                        <span>new</span>
+                    </div>
+                </div>
+                <div class="search-item product-item">
+                    <a href="#" class="link product-item__image">
+                        <img src="./dist/ima/car_kit_hands_free_calling.png" alt="car kit hands free calling">
+                        <span class="product-item__image__search"><i class="fas fa-search"></i></span>
+                    </a>
+                    <div class="product-item__content">
+                        <div class="product-item__control-buttons">
+                            <a href="#" class="product-item__wish-list-btn">
+                                <i class="fas fa-heart"></i>
+                            </a>
+                            <a href="#" class="product-item__add-cart-btn">add to cart</a>
+                            <a href="#" class="product-item__compare-btn">
+                                <img src="./dist/ima/compare.svg" alt="">
+                            </a>
+                        </div>
+                        <div class="product-item__text-content">
+                            <a href="#" class="link product-item__text-content__title">Car Kit Hands Free Calling</a>
+                            <div class="product-item__text-content__rating">
+                                <img src="./dist/ima/star5.png" alt="">
+                            </div>
+                            <div class="product-item__text-content__prices">$84.00</div>
+                            <div class="product-item__text-content__description">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium adipisci commodi
+                                earum in magni minima minus quasi? Culpa delectus dolor ex excepturi impedit incidunt
+                                maiores reprehenderit vero voluptatibus! Enim.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-action product-sale">
+                        <span>sale</span>
+                    </div>
+                    <div class="product-action product-new">
+                        <span>new</span>
+                    </div>
+                </div>
+                <div class="search-item product-item new sale">
+                    <a href="#" class="link product-item__image">
+                        <img src="./dist/ima/design_in-car_fm_radio.png" alt="design in car fm radio">
+                        <span class="product-item__image__search"><i class="fas fa-search"></i></span>
+                    </a>
+                    <div class="product-item__content">
+                        <div class="product-item__control-buttons">
+                            <a href="#" class="product-item__wish-list-btn">
+                                <i class="fas fa-heart"></i>
+                            </a>
+                            <a href="#" class="product-item__add-cart-btn">add to cart</a>
+                            <a href="#" class="product-item__compare-btn">
+                                <img src="./dist/ima/compare.svg" alt="">
+                            </a>
+                        </div>
+                        <div class="product-item__text-content">
+                            <a href="#" class="link product-item__text-content__title">Car Kit Hands Free Calling</a>
+                            <div class="product-item__text-content__rating">
+                                <img src="./dist/ima/star5.png" alt="">
+                            </div>
+                            <div class="product-item__text-content__prices">
+                                <span class="sale-price">$55.00</span>
+                                <span class="old-price">$84.00</span>
+                            </div>
+                            <div class="product-item__text-content__description">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium adipisci commodi
+                                earum in magni minima minus quasi? Culpa delectus dolor ex excepturi impedit incidunt
+                                maiores reprehenderit vero voluptatibus! Enim.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-action product-sale">
+                        <span>sale</span>
+                    </div>
+                    <div class="product-action product-new">
+                        <span>new</span>
+                    </div>
+                </div>
+                <div class="search-item product-item new">
+                    <a href="#" class="link product-item__image">
+                        <img src="./dist/ima/radio_transmitter_adapter.png" alt="radio transmitter adapter">
+                        <span class="product-item__image__search"><i class="fas fa-search"></i></span>
+                    </a>
+                    <div class="product-item__content">
+                        <div class="product-item__control-buttons">
+                            <a href="#" class="product-item__wish-list-btn">
+                                <i class="fas fa-heart"></i>
+                            </a>
+                            <a href="#" class="product-item__add-cart-btn">add to cart</a>
+                            <a href="#" class="product-item__compare-btn">
+                                <img src="./dist/ima/compare.svg" alt="">
+                            </a>
+                        </div>
+                        <div class="product-item__text-content">
+                            <a href="#" class="link product-item__text-content__title">Car Kit Hands Free Calling</a>
+                            <div class="product-item__text-content__rating">
+                                <img src="./dist/ima/star5.png" alt="">
+                            </div>
+                            <div class="product-item__text-content__prices">$84.00</div>
+                            <div class="product-item__text-content__description">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium adipisci commodi
+                                earum in magni minima minus quasi? Culpa delectus dolor ex excepturi impedit incidunt
+                                maiores reprehenderit vero voluptatibus! Enim.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-action product-sale">
+                        <span>sale</span>
+                    </div>
+                    <div class="product-action product-new">
+                        <span>new</span>
+                    </div>
+                </div>
+                <div class="search-item product-item">
+                    <a href="#" class="link product-item__image">
+                        <img src="./dist/ima/car_kit_hands_free_calling.png" alt="car kit hands free calling">
+                        <span class="product-item__image__search"><i class="fas fa-search"></i></span>
+                    </a>
+                    <div class="product-item__content">
+                        <div class="product-item__control-buttons">
+                            <a href="#" class="product-item__wish-list-btn">
+                                <i class="fas fa-heart"></i>
+                            </a>
+                            <a href="#" class="product-item__add-cart-btn">add to cart</a>
+                            <a href="#" class="product-item__compare-btn">
+                                <img src="./dist/ima/compare.svg" alt="">
+                            </a>
+                        </div>
+                        <div class="product-item__text-content">
+                            <a href="#" class="link product-item__text-content__title">Car Kit Hands Free Calling</a>
+                            <div class="product-item__text-content__rating">
+                                <img src="./dist/ima/star5.png" alt="">
+                            </div>
+                            <div class="product-item__text-content__prices">$84.00</div>
+                            <div class="product-item__text-content__description">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium adipisci commodi
+                                earum in magni minima minus quasi? Culpa delectus dolor ex excepturi impedit incidunt
+                                maiores reprehenderit vero voluptatibus! Enim.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-action product-sale">
+                        <span>sale</span>
+                    </div>
+                    <div class="product-action product-new">
+                        <span>new</span>
+                    </div>
+                </div>
+                <div class="search-item product-item new sale">
+                    <a href="#" class="link product-item__image">
+                        <img src="./dist/ima/design_in-car_fm_radio.png" alt="design in car fm radio">
+                        <span class="product-item__image__search"><i class="fas fa-search"></i></span>
+                    </a>
+                    <div class="product-item__content">
+                        <div class="product-item__control-buttons">
+                            <a href="#" class="product-item__wish-list-btn">
+                                <i class="fas fa-heart"></i>
+                            </a>
+                            <a href="#" class="product-item__add-cart-btn">add to cart</a>
+                            <a href="#" class="product-item__compare-btn">
+                                <img src="./dist/ima/compare.svg" alt="">
+                            </a>
+                        </div>
+                        <div class="product-item__text-content">
+                            <a href="#" class="link product-item__text-content__title">Car Kit Hands Free Calling</a>
+                            <div class="product-item__text-content__rating">
+                                <img src="./dist/ima/star5.png" alt="">
+                            </div>
+                            <div class="product-item__text-content__prices">
+                                <span class="sale-price">$55.00</span>
+                                <span class="old-price">$84.00</span>
+                            </div>
+                            <div class="product-item__text-content__description">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium adipisci commodi
+                                earum in magni minima minus quasi? Culpa delectus dolor ex excepturi impedit incidunt
+                                maiores reprehenderit vero voluptatibus! Enim.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-action product-sale">
+                        <span>sale</span>
+                    </div>
+                    <div class="product-action product-new">
+                        <span>new</span>
+                    </div>
+                </div>
+                <div class="search-item product-item new">
+                    <a href="#" class="link product-item__image">
+                        <img src="./dist/ima/radio_transmitter_adapter.png" alt="radio transmitter adapter">
+                        <span class="product-item__image__search"><i class="fas fa-search"></i></span>
+                    </a>
+                    <div class="product-item__content">
+                        <div class="product-item__control-buttons">
+                            <a href="#" class="product-item__wish-list-btn">
+                                <i class="fas fa-heart"></i>
+                            </a>
+                            <a href="#" class="product-item__add-cart-btn">add to cart</a>
+                            <a href="#" class="product-item__compare-btn">
+                                <img src="./dist/ima/compare.svg" alt="">
+                            </a>
+                        </div>
+                        <div class="product-item__text-content">
+                            <a href="#" class="link product-item__text-content__title">Car Kit Hands Free Calling</a>
+                            <div class="product-item__text-content__rating">
+                                <img src="./dist/ima/star5.png" alt="">
+                            </div>
+                            <div class="product-item__text-content__prices">$84.00</div>
+                            <div class="product-item__text-content__description">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium adipisci commodi
+                                earum in magni minima minus quasi? Culpa delectus dolor ex excepturi impedit incidunt
+                                maiores reprehenderit vero voluptatibus! Enim.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-action product-sale">
+                        <span>sale</span>
+                    </div>
+                    <div class="product-action product-new">
+                        <span>new</span>
+                    </div>
+                </div>
+                <div class="search-item product-item">
+                    <a href="#" class="link product-item__image">
+                        <img src="./dist/ima/car_kit_hands_free_calling.png" alt="car kit hands free calling">
+                        <span class="product-item__image__search"><i class="fas fa-search"></i></span>
+                    </a>
+                    <div class="product-item__content">
+                        <div class="product-item__control-buttons">
+                            <a href="#" class="product-item__wish-list-btn">
+                                <i class="fas fa-heart"></i>
+                            </a>
+                            <a href="#" class="product-item__add-cart-btn">add to cart</a>
+                            <a href="#" class="product-item__compare-btn">
+                                <img src="./dist/ima/compare.svg" alt="">
+                            </a>
+                        </div>
+                        <div class="product-item__text-content">
+                            <a href="#" class="link product-item__text-content__title">Car Kit Hands Free Calling</a>
+                            <div class="product-item__text-content__rating">
+                                <img src="./dist/ima/star5.png" alt="">
+                            </div>
+                            <div class="product-item__text-content__prices">$84.00</div>
+                            <div class="product-item__text-content__description">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium adipisci commodi
+                                earum in magni minima minus quasi? Culpa delectus dolor ex excepturi impedit incidunt
+                                maiores reprehenderit vero voluptatibus! Enim.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-action product-sale">
+                        <span>sale</span>
+                    </div>
+                    <div class="product-action product-new">
+                        <span>new</span>
+                    </div>
+                </div>
+                <div class="search-item product-item new sale">
+                    <a href="#" class="link product-item__image">
+                        <img src="./dist/ima/design_in-car_fm_radio.png" alt="design in car fm radio">
+                        <span class="product-item__image__search"><i class="fas fa-search"></i></span>
+                    </a>
+                    <div class="product-item__content">
+                        <div class="product-item__control-buttons">
+                            <a href="#" class="product-item__wish-list-btn">
+                                <i class="fas fa-heart"></i>
+                            </a>
+                            <a href="#" class="product-item__add-cart-btn">add to cart</a>
+                            <a href="#" class="product-item__compare-btn">
+                                <img src="./dist/ima/compare.svg" alt="">
+                            </a>
+                        </div>
+                        <div class="product-item__text-content">
+                            <a href="#" class="link product-item__text-content__title">Car Kit Hands Free Calling</a>
+                            <div class="product-item__text-content__rating">
+                                <img src="./dist/ima/star5.png" alt="">
+                            </div>
+                            <div class="product-item__text-content__prices">
+                                <span class="sale-price">$55.00</span>
+                                <span class="old-price">$84.00</span>
+                            </div>
+                            <div class="product-item__text-content__description">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium adipisci commodi
+                                earum in magni minima minus quasi? Culpa delectus dolor ex excepturi impedit incidunt
+                                maiores reprehenderit vero voluptatibus! Enim.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-action product-sale">
+                        <span>sale</span>
+                    </div>
+                    <div class="product-action product-new">
+                        <span>new</span>
+                    </div>
+                </div>
+                <div class="search-item product-item new">
+                    <a href="#" class="link product-item__image">
+                        <img src="./dist/ima/radio_transmitter_adapter.png" alt="radio transmitter adapter">
+                        <span class="product-item__image__search"><i class="fas fa-search"></i></span>
+                    </a>
+                    <div class="product-item__content">
+                        <div class="product-item__control-buttons">
+                            <a href="#" class="product-item__wish-list-btn">
+                                <i class="fas fa-heart"></i>
+                            </a>
+                            <a href="#" class="product-item__add-cart-btn">add to cart</a>
+                            <a href="#" class="product-item__compare-btn">
+                                <img src="./dist/ima/compare.svg" alt="">
+                            </a>
+                        </div>
+                        <div class="product-item__text-content">
+                            <a href="#" class="link product-item__text-content__title">Car Kit Hands Free Calling</a>
+                            <div class="product-item__text-content__rating">
+                                <img src="./dist/ima/star5.png" alt="">
+                            </div>
+                            <div class="product-item__text-content__prices">$84.00</div>
+                            <div class="product-item__text-content__description">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium adipisci commodi
+                                earum in magni minima minus quasi? Culpa delectus dolor ex excepturi impedit incidunt
+                                maiores reprehenderit vero voluptatibus! Enim.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-action product-sale">
+                        <span>sale</span>
+                    </div>
+                    <div class="product-action product-new">
+                        <span>new</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="aside float_left">
+            <input type="checkbox" name="filters-toggle" id="filters-toggle">
+
+            <div class="filters-block">
+                <label for="filters-toggle" class="filters-toggle_btn">
+                    <i class="fas fa-filter filter"></i>
+                    <i class="fas fa-arrow-left arrow"></i>
+                </label>
+                <h2 class="filters-block__title">Shop By</h2>
+                <div class="filters-block__filter-group">
+                    <div class="filter-group__name">color</div>
+                    <div class="filter-group__filter-items">
+                        <ul class="colors-filter__wrapper">
+                            <li class="color-filter">
+                                <a href="#" style="background-color:#000000">&nbsp;</a>
+                            </li>
+                            <li class="color-filter">
+                                <a href="#" style="background-color:#945454">&nbsp;</a>
+                            </li>
+                            <li class="color-filter">
+                                <a href="#" style="background-color:#8F8F8F">&nbsp;</a>
+                            </li>
+                            <li class="color-filter">
+                                <a href="#" style="background-color:#53A828">&nbsp;</a>
+                            </li>
+                            <li class="color-filter">
+                                <a href="#" style="background-color:#EB6703">&nbsp;</a>
+                            </li>
+                            <li class="color-filter">
+                                <a href="#" style="background-color:#EF3DFF">&nbsp;</a>
+                            </li>
+                            <li class="color-filter">
+                                <a href="#" style="background-color:#FF0000">&nbsp;</a>
+                            </li>
+                            <li class="color-filter">
+                                <a href="#" style="background-color:#FFFFFF">&nbsp;</a>
+                            </li>
+                            <li class="color-filter">
+                                <a href="#" style="background-color:#FFD500">&nbsp;</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="filters-block__filter-group">
+                    <div class="filter-group__name">price</div>
+                    <div class="filter-group__filter-items price-slider__wrapper">
+                        <div class="price-slider__slider">
+                            <div id="slider-range"></div>
+                        </div>
+                        <div class="price-slider__controls">
+                            <span>$</span>
+                            <input type="text" id="price-min" class="price-slider__controls__input price-min"/>
+                            <span>-$</span>
+                            <input type="text" id="price-max" class="price-slider__controls__input price-max"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="filters-block__filter-group">
+                    <div class="filter-group__name">brand</div>
+                    <div class="filter-group__filter-items">
+                        <ul class="brands-filter__wrapper">
+                            <li class="brand-filter">
+                                <a href="" class="link">
+                                    <span class="brand-filter__title">Toyota (4)</span>
+                                </a>
+                            </li>
+                            <li class="brand-filter">
+                                <a href="#" class="link">
+                                    <span class="brand-filter__title">Mercedes (4)</span>
+                                </a>
+                            </li>
+                            <li class="brand-filter">
+                                <a href="#" class="link">
+                                    <span class="brand-filter__title">Kia (2)</span>
+                                </a>
+                            </li>
+                            <li class="brand-filter">
+                                <a href="#" class="link">
+                                    <span class="brand-filter__title">Audi (4)</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="filters-block__filter-group">
+                    <div class="filter-group__name">model</div>
+                    <div class="filter-group__filter-items">
+                        <ul class="models-filter__wrapper">
+                            <li class="model-filter">
+                                <a href="#">Camry</a>
+                            </li>
+                            <li class="model-filter">
+                                <a href="#">Fortuner</a>
+                            </li>
+                            <li class="model-filter">
+                                <a href="#">Vios</a>
+                            </li>
+                            <li class="model-filter">
+                                <a href="#">C300</a>
+                            </li>
+                            <li class="model-filter">
+                                <a href="#">E250</a>
+                            </li>
+                            <li class="model-filter">
+                                <a href="#">S500</a>
+                            </li>
+                            <li class="model-filter">
+                                <a href="#">Sorento</a>
+                            </li>
+                            <li class="model-filter">
+                                <a href="#">Optima</a>
+                            </li>
+                            <li class="model-filter">
+                                <a href="#">A4</a>
+                            </li>
+                            <li class="model-filter">
+                                <a href="#">A8</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="filters-block__filter-group">
+                    <div class="filter-group__name">year</div>
+                    <div class="filter-group__filter-items">
+                        <ul class="year-filter__wrapper">
+                            <li class="year-filter">
+                                <a href="#">2011</a>
+                            </li>
+                            <li class="year-filter">
+                                <a href="#">2013</a>
+                            </li>
+                            <li class="year-filter">
+                                <a href="#">2015</a>
+                            </li>
+                            <li class="year-filter">
+                                <a href="#">2017</a>
+                            </li>
+                            <li class="year-filter">
+                                <a href="#">2018</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="compare-block">
+                <h2 class="compare-block__title">compare products</h2>
+                <ul class="compare-block__product-list">
+                    <li class="compare-product__item clearfix-block">
+                        <a href="#" class="link product__title"><span class="compare-product__item__title">Radio Transmitter Adapter</span></a>
+                        <a href="#" class="link product__button-remove"><i class="fas fa-times"></i></a>
+                    </li>
+                    <li class="compare-product__item clearfix-block">
+                        <a href="#" class="link product__title"><span class="compare-product__item__title">Radio Transmitter Adapter</span></a>
+                        <a href="#" class="link product__button-remove"><i class="fas fa-times"></i></a>
+                    </li>
+                </ul>
+                <div class="compare-block__controls clearfix-block">
+                    <a href="#" class="compare-block__controls__compare-btn">compare</a>
+                    <a href="#" class="link compare-block__controls__clear">Clear All</a>
+                </div>
+            </div>
+            <div class="sidebar-item">
+                <a href="#" class="link">
+                    <img class="sidebar-item__image" src="./dist/ima/item-sidebar.jpg" alt="">
+                </a>
+            </div>
+        </div>
+    </div>
+</main>
+<footer>
+    <div class="footer__content">
+        <div class="page-wrapper footer__content-wrapper clearfix-block">
+            <div class="footer__content__contact-block">
+                <h2 class="contact-block__title">contact us</h2>
+                <ul class="contact-block__list">
+                    <li class="contact-block__list__item">
+                        <span>5611 Wellington Road, Suite 115, Gainesville, VA 20155</span>
+                    </li>
+                    <li class="contact-block__list__item">
+                        <span>888 9344 6000 - 888 1234 6789</span>
+                    </li>
+                    <li class="contact-block__list__item">
+                        <span>autostore@magentech.com</span>
+                    </li>
+                    <li class="contact-block__list__item">
+                        <span>7 Days a week from 10-00 am to 6-00 pm</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__content__links-block">
+                <div class="footer__content__links-block-col">
+                    <h2 class="links-block__title">store location</h2>
+                    <ul class="links-block__list">
+                        <li class="links-block__list__item">
+                            <a href="#" class="link">Los Angeles - USA</a>
+                        </li>
+                        <li class="links-block__list__item">
+                            <a href="#" class="link">New York - USA</a>
+                        </li>
+                        <li class="links-block__list__item">
+                            <a href="#" class="link">California - USA</a>
+                        </li>
+                        <li class="links-block__list__item">
+                            <a href="#" class="link">Bangkok - Thailand</a>
+                        </li>
+                        <li class="links-block__list__item">
+                            <a href="#" class="link">Paris - France</a>
+                        </li>
+                        <li class="links-block__list__item">
+                            <a href="#" class="link">London - England</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer__content__links-block-col">
+                    <h2 class="links-block__title">customer service</h2>
+                    <ul class="links-block__list">
+                        <li class="links-block__list__item">
+                            <a href="#" class="link">Customer Service</a>
+                        </li>
+                        <li class="links-block__list__item">
+                            <a href="#" class="link">Shipping & Returns</a>
+                        </li>
+                        <li class="links-block__list__item">
+                            <a href="#" class="link">Track Your Order</a>
+                        </li>
+                        <li class="links-block__list__item">
+                            <a href="#" class="link">Help Center</a>
+                        </li>
+                        <li class="links-block__list__item">
+                            <a href="#" class="link">Store Location</a>
+                        </li>
+                        <li class="links-block__list__item">
+                            <a href="#" class="link">Customer Feedback</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer__content__links-block-col">
+                    <h2 class="links-block__title">information</h2>
+                    <ul class="links-block__list">
+                        <li class="links-block__list__item">
+                            <a href="#" class="link">Caps & Hats</a>
+                        </li>
+                        <li class="links-block__list__item">
+                            <a href="#" class="link">Hoodies & Sweatshirts</a>
+                        </li>
+                        <li class="links-block__list__item">
+                            <a href="#" class="link">Jacket & Coats</a>
+                        </li>
+                        <li class="links-block__list__item">
+                            <a href="#" class="link">Jumpers & Cardigans</a>
+                        </li>
+                        <li class="links-block__list__item">
+                            <a href="#" class="link">Shoes, Boots & Trainers</a>
+                        </li>
+                        <li class="links-block__list__item">
+                            <a href="#" class="link">Underwear & Socks</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer__copyright clearfix-block">
+        <div class="page-wrapper">
+            <a href="#" class="link footer__copyright__pay-system">
+                <img src="./dist/ima/payment.png" alt="">
+            </a>
+            <div class="footer__copyright__content">
+                <span>SM Autostore © 2019 Demo Store.</span>
+                <span>All Rights Reserved.</span>
+                <a href="#" class="link">Designed by MagenTech.Com</a>
+            </div>
+        </div>
+    </div>
+</footer>
+<svg style="display: none">
+    <defs id="symbols">
+        <symbol viewBox="0 0 19 14" id="table-view">
+            <rect width="5" height="3" fill="currentColor"></rect>
+            <rect x="7" width="5" height="3" fill="currentColor"></rect>
+            <rect x="14" width="5" height="3" fill="currentColor"></rect>
+            <rect y="5" width="5" height="3" fill="currentColor"></rect>
+            <rect x="7" y="5" width="5" height="3" fill="currentColor"></rect>
+            <rect x="14" y="5" width="5" height="3" fill="currentColor"></rect>
+            <rect y="10" width="5" height="3" fill="currentColor"></rect>
+            <rect x="7" y="10" width="5" height="3" fill="currentColor"></rect>
+            <rect x="14" y="10" width="5" height="3" fill="currentColor"></rect>
+        </symbol>
+        <symbol viewBox="0 0 19 14" id="list-view">
+            <rect width="5" height="3" fill="currentColor"></rect>
+            <rect x="7" width="12" height="3" fill="currentColor"></rect>
+            <rect y="5" width="5" height="3" fill="currentColor"></rect>
+            <rect x="7" y="5" width="12" height="3" fill="currentColor"></rect>
+            <rect y="10" width="5" height="3" fill="currentColor"></rect>
+            <rect x="7" y="10" width="12" height="3" fill="currentColor"></rect>
+        </symbol>
+    </defs>`
+</svg>
+<script src="./scripts/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+.products-list{
+    margin: 10px auto;
+    display: flex;
+    width: 1200px;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.product-item{
+    position: relative;
+    width: 19%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    transition: box-shadow .3s ease-in;
+}
+.product-item:nth-child(-n + 5){
+    margin-bottom: 30px;
+}
+.product-item:hover{
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+.product-item h2{
+    color: darkslategray;
+    padding: 0 10px;
+    min-height: 110px;
+}
+.product-image{
+    width: 100%;
+    overflow: hidden;
+}
+.product-image img{
+    width: 100%;
+}
+.product-prices div:first-child{
+    color: green;
+    font-weight: bold;
+}
+.product-prices div:not(:first-child):not(:last-child){
+    text-decoration: line-through;
+    padding: 12px 0;
+}
+.product-prices div + div:last-child{
+    color: red;
+    text-decoration: underline;
+    padding-bottom: 100px;
+}
+.product-action img{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+.product-rating{
+    position: relative;
+    padding: 15px 0;
+    width: 150px;
+    height: 30px;
+    background-image: url("../ima/product/Star.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.product-rating::before{
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 0;
+    width: 150px;
+    height: 30px;
+    background-image: url("../ima/product/Star-fill.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    clip-path: polygon(0 0, calc(var(--width)*1%) 0, calc(var(--width)*1%) 100%, 0 100%);
+}
+.button{
+    position: absolute;
+    outline: 1px solid grey;
+    background-color: beige;
+    width: 70%;
+    padding: 10px 0;
+    font-weight: bold;
+    cursor: pointer;
+    bottom: 20px;
+    transition: background-color .5s linear;
+}
+.button:hover{
+    outline: 2px solid dimgray;
+    background-color: #fabba4;
+}
