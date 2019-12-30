@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/knockout-3.5.1.js"></script>
+    <script src="js/lib.js"></script>
+    <link rel="stylesheet" href="style/css.css">
+
+</head>
+<body>
+<div class="wrap">
+    <button class="add-course" data-bind="click: addCourse">Add course</button>
+</div>
+<div class="container">
+    <table>
+        <thead>
+        <tr>
+            <th>№</th>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Training</th>
+            <th>Remove</th>
+        </tr>
+        </thead>
+        <tbody data-bind="foreach: courseList">
+        <tr>
+            <td data-bind="text: $index() + 1"></td>
+            <td data-bind="text:title"></td>
+            <td>
+                <p data-bind="text: new Intl.NumberFormat('ru-Ru').format(price()), style:{fontWeight: ((discount > 40) ? 'bold':'normal')}"></p>
+                <div data-bind="if: discount, css: sale()">
+                    <p data-bind="html:discountText"></p>
+                </div>
+            </td>
+            <td>
+                <ul data-bind="foreach: reqs">
+                    <li data-bind="text: $data"></li>
+                </ul>
+            </td>
+            <td>
+                <button data-bind="click: $root.removeCourse">Remove</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <table class="rem-table">
+        <thead>
+        <tr>
+            <th>№</th>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Training</th>
+            <th>Remove</th>
+            <th>Restore</th>
+        </tr>
+        </thead>
+        <tbody data-bind="foreach: wasDellCourse">
+        <tr>
+            <td data-bind="text: $index() + 1"></td>
+            <td data-bind="text:title"></td>
+            <td>
+                <p data-bind="text: new Intl.NumberFormat('ru-Ru').format(price()), style:{fontWeight: ((discount > 40) ? 'bold':'normal')}"></p>
+                <div data-bind="if: discount, css: sale()">
+                    <p data-bind="html:discountText"></p>
+                </div>
+            </td>
+            <td>
+                <ul data-bind="foreach: reqs">
+                    <li data-bind="text: $data"></li>
+                </ul>
+            </td>
+            <td>
+                <button data-bind="click: $root.delCourse">Remove</button>
+            </td>
+            <td>
+                <button data-bind="click: $root.restoreCourse">Restore</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<script src="js/js.js"></script>
+</body>
+</html>

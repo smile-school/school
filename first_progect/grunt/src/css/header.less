@@ -1,0 +1,178 @@
+header.header {
+    padding: 30px 0 685px;
+    width: 100%;
+    background-image: url("@{image_url}Layer_7.png");
+    position: relative;
+    z-index: 0;
+
+    .menu {
+        padding: 0 15px;
+    }
+
+    .menu-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 500ms all ease-out;
+        @media (max-width: @first-mobile) {
+            transform: scale(0);
+            position: fixed;
+            top: 85px;
+            left: 0;
+            right: 0;
+            flex-direction: column;
+            background-color: #f7f7f7;
+            border-top: 2px solid #64c29e
+        }
+
+        .button {
+            display: inline-block;
+            list-style-type: none;
+            text-align: center;
+            @media (max-width: @first-mobile) {
+                width: 100%;
+                text-align: center;
+                padding: 10px;
+                border-bottom: 2px solid #64c29e;
+            }
+
+            &.home {
+                display: none;
+                @media (max-width: @first-mobile) {
+                    display: block;
+                }
+            }
+
+            &.logo {
+                @media (max-width: @first-mobile) {
+                    display: none;
+                }
+            }
+
+            .link {
+                text-decoration: none;
+                display: block;
+                text-transform: uppercase;
+                margin: 0 32px;
+                color: #4d4959;
+
+                &.logo {
+                    height: 85px;
+                    width: 94px;
+                    background-image: url("@{image_url}Logo.png");
+                    animation: rotate 8s cubic-bezier(.70, .15, .15, .70) infinite;
+                }
+            }
+        }
+    }
+
+    .hamburger-wrap {
+        .label {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: translate(50%, 50%);
+            width: 45px;
+            height: 45px;
+            background-image: url("@{image_url}Logo.png");
+            background-size: 95%;
+            background-position: center;
+            background-repeat: no-repeat;
+            @media (max-width: @first-mobile) {
+                display: block;
+            }
+        }
+
+        input {
+            &.menu {
+                display: none;
+            }
+
+            &.open {
+                &:checked ~ ul.menu-wrapper {
+                    transform: scale(1);
+                }
+
+                &:checked ~ .menu-label .row:first-child {
+                    transform: translateY(420%) rotate(405deg);
+                }
+
+                &:checked ~ .menu-label .row:nth-child(2) {
+                    opacity: 0;
+                }
+
+                &:checked ~ .menu-label .row:last-child {
+                    transform: translateY(-420%) rotate(-405deg);
+                }
+            }
+        }
+
+        .menu-label {
+            display: none;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            width: 35px;
+            height: 35px;
+            border: solid 2px #64c29e;
+            border-radius: 5px;
+            padding: 3px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            transform: translate(-50%, 50%);
+            z-index: 1;
+            @media (max-width: @first-mobile) {
+                display: flex;
+            }
+
+            .row {
+                display: block;
+                width: 25px;
+                height: 2px;
+                background-color: #64c29e;
+                transition: all 500ms ease-out;
+            }
+        }
+
+        .hamburger-menu {
+            display: none;
+            text-transform: uppercase;
+            text-align: center;
+            position: fixed;
+            background-color: @hamburger-background;
+            top: 90px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            transform: scale(0);
+            transition: all 500ms ease-out;
+            @media (max-width: @first-mobile) {
+                display: block;
+            }
+
+            .button {
+                padding: 10px;
+                border-bottom: solid 1px #64c29e;
+
+                .link {
+                    color: @hamburger-link;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotateY(0);
+    }
+    50% {
+        transform: rotateY(180deg);
+    }
+    100% {
+        transform: rotateY(360deg);
+    }
+}

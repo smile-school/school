@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="school/knockout-3.5.1.js"></script>
+</head>
+<body>
+
+<h1 data-bind="text: firstName"></h1>
+<h1 data-bind="text: secondName"></h1>
+<h1 data-bind="text: secondName"></h1>
+
+<button id="set-name" data-bind="click: info">What is your name?</button>
+<script>
+    function Custer() {
+
+        this.firstName = ko.observable();
+        this.secondName = ko.observable();
+        this.info = function () {
+            var ansver = prompt('What is your name?');
+            ansver = ansver.split(' ');
+            this.firstName(ansver[0]);
+            this.secondName(ansver[1]);
+            console.log(this.fullName(), this.firstName(), this.secondName());
+        };
+    }
+    ko.applyBindings(new Custer);
+</script>
+</body>
+</html>

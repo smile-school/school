@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8">
+    <title>Page 3</title>
+    <script src="javascript/knockout-3.5.1.js"></script>
+    <script src="javascript/jquery-3.4.1.js"></script>
+    <script src="javascript/jquery-ui.js"></script>
+    <link rel="stylesheet" href="grunt/dist/css/style.css">
+    <link rel="stylesheet" href="style/all.min.css">
+    <!--<script src="javascript/ko-page.js"></script>-->
+</head>
+<body>
+<header class="header">
+    <div class="top-section">
+        <div class="wrapper">
+            <ul>
+                <li class="account-action section">
+                    <a href="#" class="button">
+                        <img src="img/lock.png" class="icon" alt="lock">
+                        <span class="small">Sign&nbsp;In</span>
+                    </a>
+                    <a href="#" class="button">
+                        <span class="small">Create&nbsp;an&nbsp;Account</span>
+                    </a>
+                </li>
+                <li class="language section">
+                    <div class="language-choice">
+                        <img class="country-flag" src="img/fran.png" alt="flag">
+                        <span class="lang small">French</span>
+                    </div>
+
+                    <ul class="all-languages">
+                        <li class="your-lang">
+                            <img class="country-flag" src="img/gb.svg" alt="flag">
+                            <span class="lang small">English</span>
+                        </li>
+                        <li class="your-lang">
+                            <img class="country-flag" src="img/germ.svg" alt="flag">
+                            <span class="lang small">German</span>
+                        </li>
+                        <li class="your-lang">
+                            <img class="country-flag" src="img/belg.png" alt="flag">
+                            <span class="lang small">Belgium</span>
+                        </li>
+                        <li class="your-lang">
+                            <img class="country-flag" src="img/arg.png" alt="flag">
+                            <span class="lang small">Argentina</span>
+                        </li>
+                    </ul>
+                </li>
+                <li class="currency">
+                    <div class="currency-choice">
+                        <span class="your-currency small" data-curency="usd">USD</span>
+                    </div>
+                    <ul class="all-currency">
+                        <li>
+                            <span class="curr small" data-curency="eur">EUR - Euro</span>
+                        </li>
+                        <li>
+                            <span class="curr small" data-curency="gbp">GBP - Pound</span>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="bottom-section">
+        <div class="wrapper">
+            <div class="container">
+                <div class="logo-wrap">
+                    <img src="img/logo.png" alt="logotype" class="logo">
+                </div>
+                <div class="form-wrap">
+                    <div class="input-wrap">
+                        <input type="text" id="search" placeholder="Search products...">
+                        <button class="search">
+                            <img src="img/search.png" alt="search">
+                        </button>
+                    </div>
+                </div>
+                <div class="buttons-wrap">
+                    <button class="favour" id="favour" data-bind="css:{active: favList().length > 0}">
+                        <span class="cart__counter" data-bind="text:favList().length">0</span>
+                        <img src="img/favour.png" alt="favour">
+                    </button>
+                    <button class="my-card">
+                        <span class="left-section">
+                            <img src="img/basket.png" alt="basket">
+                        </span>
+                        <span class="right-section small">
+                            My&nbsp;Card&nbsp;<span class="red-color" data-bind="text: totalCart">&nbsp;</span>
+                        </span>
+                        <span class="total" data-bind="text: totalCart"></span>
+                    </button>
+                    <div class="shopping" id="shopping-cart" data-bind="visible: cartList().length > 0">
+                        <ul>
+                            <li data-bind="foreach:cartList">
+                                <div class="about-shopping">
+                                    <div class="image-wrap">
+                                        <img data-bind="attr:{src: img, alt: title}" class="prod-photo">
+                                        <span data-bind="click: $root.removeCart">x</span>
+                                    </div>
+                                    <div class="prod-about">
+                                        <p data-bind="text:title"></p>
+                                        <input type="checkbox" id="show-details" class="show-details">
+                                        <label for="show-details" class="details">See Details</label>
+                                        <div class="prod-details">
+                                    <span class="mini-cart_details-name"
+                                          data-bind="if:color() != ''">Color</span><span
+                                                data-bind="text:color"></span>
+                                            <span class="mini-cart_details-name"
+                                                  data-bind="if:brand() != ''">Brand</span><span
+                                                data-bind="text:brand"></span>
+                                            <span class="mini-cart_details-name"
+                                                  data-bind="if:model() != ''">Model</span><span
+                                                data-bind="text:model"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="about-prod-bottoms">
+                                    <div class="top section">
+                                        <span>Qty:</span>
+                                        <label for="qty">
+                                            <input type="text" class="qty" id="qty" value="1" data-bind="value:qty">
+                                        </label>
+                                        <button class="update" data-bind="click:function() {qty(qty() + 1)}">+</button>
+                                        <button class="update" data-bind="click:function(product) {qty() > 1 ? qty(qty() - 1) : $root.removeCart(product)}">+</button>
+                                        <span data-bind="text:$data.sale() ? salePrice() * qty() : price() * qty()"></span>
+                                    </div>
+                                    <div class="section bottom">
+                                        <span class="subtotal">Cardsubtotal:</span>
+                                        <span class="subtotal" data-bind="text: totalCart"></span>
+                                    </div>
+                                    <div class="but-wrap">
+                                        <button>View&nbsp;cart</button>
+                                        <button>Checkout</button>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <nav class="menu">
+        <div class="wrapper">
+            <div class="container-tab">
+                <div class="all-cats menu-tab"><span>all&nbsp;categories</span><span class="row">&nbsp;</span>
+                    <label for="all-cat-open">&nbsp;</label>
+                    <input type="checkbox" id="all-cat-open">
+                    <ul class="tab-points all-cate">
+                        <li><a href="index.html">Index</a></li>
+                        <li><a href="page-2.html">Page-2</a></li>
+                        <li><a href="page-3.html">Page-3</a></li>
+                        <li><a href="#">Lorem ipsum dolor</a></li>
+                        <li><a href="#">Lorem ipsum dolor</a></li>
+                        <li><a href="#">Lorem ipsum dolor</a></li>
+                        <li><a href="#">Lorem ipsum dolor</a></li>
+                        <li><a href="#">Lorem ipsum dolor</a></li>
+                        <li><a href="#">Lorem ipsum dolor</a></li>
+                        <li><a href="#">Lorem ipsum dolor</a></li>
+                        <li><a href="#">Lorem ipsum dolor</a></li>
+
+                    </ul>
+                </div>
+
+                <div class="hamburger">
+                    <span class="row"></span>
+                    <span class="text">menu</span>
+                    <label for="hamb"></label>
+                    <input type="checkbox" id="hamb">
+                    <div class="hamb-wrap">
+                        <div class="menu-tab home"><a href="#">home</a></div>
+                        <ul class="tab-points home">
+                            <li class="point">
+                                <ul>
+                                    <li><p>Home</p></li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                </ul>
+                            </li>
+                            <li class="point">
+                                <ul>
+                                    <li><p>Home</p></li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                </ul>
+                            </li>
+                            <li class="point">
+                                <ul>
+                                    <li><p>Home</p></li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+
+                                </ul>
+                            </li>
+                            <li class="point">
+                                <ul>
+                                    <li><p>Home</p></li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                </ul>
+                            </li>
+
+                        </ul>
+
+                        <div class="menu-tab deals"><a href="#">Deals</a></div>
+                        <ul class="tab-points deals">
+                            <li class="point">
+                                <ul>
+                                    <li class="point"><p>Deals</p></li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                </ul>
+                            </li>
+                            <li class="point">
+                                <ul>
+                                    <li><p>Home</p></li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                </ul>
+                            </li>
+                            <li class="point">
+                                <ul>
+                                    <li><p>Deals</p></li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                </ul>
+                            </li>
+                            <li class="point">
+                                <ul>
+                                    <li><p>Deals</p></li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                </ul>
+                            </li>
+
+                        </ul>
+
+                        <div class="menu-tab under"><a href="#">under $100</a></div>
+                        <ul class="tab-points under">
+                            <li class="point">
+                                <ul>
+                                    <li><p>Under 100$</p></li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+
+                                </ul>
+                            </li>
+                            <li class="point">
+                                <ul>
+                                    <li><p>Under 150$</p></li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                </ul>
+                            </li>
+                            <li class="point">
+                                <ul>
+                                    <li><p>Under 200$</p></li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+
+                                </ul>
+                            </li>
+                            <li class="point">
+                                <ul>
+                                    <li><p>Under 250$</p></li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                </ul>
+                            </li>
+
+                        </ul>
+
+                        <div class="menu-tab arrivals"><a href="#">new arrivals</a></div>
+                        <ul class="tab-points arrivals">
+                            <li class="point">
+                                <ul>
+                                    <li><p>Arrival</p></li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+
+                                </ul>
+                            </li>
+                            <li class="point">
+                                <ul>
+                                    <li><p>Arrival</p></li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                </ul>
+                            </li>
+                            <li class="point">
+                                <ul>
+                                    <li><p>Arrival</p></li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+
+                                </ul>
+                            </li>
+                            <li class="point">
+                                <ul>
+                                    <li><p>Arrival</p></li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                </ul>
+                            </li>
+
+                        </ul>
+
+                        <div class="menu-tab blog"><a href="#">blog</a></div>
+                        <ul class="tab-points blog">
+                            <li class="point">
+                                <ul>
+                                    <li><p>Blog</p></li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                </ul>
+                            </li>
+                            <li class="point">
+                                <ul>
+                                    <li><p>Blog</p></li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                </ul>
+                            </li>
+                            <li class="point">
+                                <ul>
+                                    <li><p>Blog</p></li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                </ul>
+                            </li>
+                            <li class="point">
+                                <ul>
+                                    <li><p>Blog</p></li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                </ul>
+                            </li>
+
+                        </ul>
+
+                        <div class="menu-tab about-us"><a href="#">about us</a></div>
+                        <ul class="tab-points about-us">
+                            <li class="point">
+                                <ul>
+                                    <li><p>About us</p></li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                </ul>
+                            </li>
+                            <li class="point">
+                                <ul>
+                                    <li><p>About us</p></li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                </ul>
+                            </li>
+                            <li class="point">
+                                <ul>
+                                    <li><p>About us</p></li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                </ul>
+                            </li>
+                            <li class="point">
+                                <ul>
+                                    <li><p>About us</p></li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                    <li>Lorem ipsum dolor</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <div class="menu-tab contacts"><a href="#">contact us</a></div>
+                        <ul class="tab-points contacts">
+                            <li>
+                                <img src="img/icon1.png" alt="">
+                                <span class="small">5611 Wellington Road, Suite 115, Gainesville, VA 20155</span>
+                            </li>
+                            <li>
+                                <img src="img/icon2.png" alt="">
+                                <span class="small">
+                        888 9344 6000 - 888 1234 6789
+                    </span>
+                            </li>
+                            <li>
+                                <img src="img/icon3.png" alt="">
+                                <span class="small">
+                        autostore@magentech.com
+                    </span>
+                            </li>
+                            <li>
+                                <img src="img/icon4.png" alt="">
+                                <span class="small">
+                        7 Days a week from 10-00 am to 6-00 pm
+                    </span>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </nav>
+</header>
+
+<div class="wrapper">
+    <div class="main-container page">
+        <div class="links">
+            <a href="#" class="home">Home</a>
+            <a href="#" class="home">Carbon Fiber Steering Wheel</a>
+        </div>
+        <div class="container container-js">
+            <div class="aside-container" id="filters-wrap">
+                <div class="title">
+                    <h5>Shop By</h5>
+                </div>
+                <div class="aside-content-wrap" id="filter">
+                    <div class="color-choice">
+                        <p>color</p>
+                        <div>
+                            <ul data-bind="foreach: color">
+                                <li>
+                                    <a class="color" href="#"
+                                       data-bind="attr: {style: &#39;background-color:&#39; + $data}">&nbsp;</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="price-choice">
+                        <p>price</p>
+                        <div class="select-wrap">
+                            <div id="select-wrap">&nbsp;</div>
+                            <label class="price-wrap">
+                                <span>
+                                    $<input id="priceProd" type="text">
+                                </span>
+                                <span>&nbsp;-&nbsp;</span>
+                                <span>
+                                    $<input id="priceProd2" type="text" value="290">
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="brand-choice">
+                        <p>brand</p>
+                        <div data-bind="foreach: brand">
+                            <a class="inp brand" href="#">Toyota&nbsp;<span>(4)</span></a>
+                            <a class="inp brand" href="#" data-bind="text: $data"></a>
+                        </div>
+                    </div>
+                    <div class="model-choice">
+                        <p>model</p>
+                        <div data-bind="foreach: model">
+                            <a data-bind="text: $data" class="inp model" href="#">camry</a>
+                        </div>
+                    </div>
+                    <div class="year-choice">
+                        <p>year</p>
+                        <div data-bind="foreach: year">
+                            <a class="inp year" data-bind="text: $data" href="#">2012</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="aside-content-wrap" id="compareProd">
+                    <div class="title">
+                        <h5>Compare PRODUCTS</h5>
+                    </div>
+                    <div class="section" data-bind="foreach: compareList">
+                        <span class="small" data-bind="text:title">Radio Transmitter Adapter</span>
+                        <button class="cancel" data-bind="click: $root.removeCompare">
+                            <svg width="11" height="11" viewBox="0 0 11 11" fill="#282828"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.04688 5.75L9.78125 8.48438C9.94531 8.64844 10.0273 8.84896 10.0273 9.08594C10.0273 9.32292 9.94531 9.53255 9.78125 9.71484L9.17969 10.3164C8.9974 10.4805 8.78776 10.5625 8.55078 10.5625C8.3138 10.5625 8.11328 10.4805 7.94922 10.3164L5.21484 7.58203L2.48047 10.3164C2.31641 10.4805 2.11589 10.5625 1.87891 10.5625C1.64193 10.5625 1.43229 10.4805 1.25 10.3164L0.648438 9.71484C0.484375 9.53255 0.402344 9.32292 0.402344 9.08594C0.402344 8.84896 0.484375 8.64844 0.648438 8.48438L3.38281 5.75L0.648438 3.01562C0.484375 2.85156 0.402344 2.65104 0.402344 2.41406C0.402344 2.17708 0.484375 1.96745 0.648438 1.78516L1.25 1.18359C1.43229 1.01953 1.64193 0.9375 1.87891 0.9375C2.11589 0.9375 2.31641 1.01953 2.48047 1.18359L5.21484 3.91797L7.94922 1.18359C8.11328 1.01953 8.3138 0.9375 8.55078 0.9375C8.78776 0.9375 8.9974 1.01953 9.17969 1.18359L9.78125 1.78516C9.94531 1.96745 10.0273 2.17708 10.0273 2.41406C10.0273 2.65104 9.94531 2.85156 9.78125 3.01562L7.04688 5.75Z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="section">
+                        <span class="small">Radio Transmitter Adapter</span>
+                        <button class="cancel">
+                            <svg width="11" height="11" viewBox="0 0 11 11" fill="#282828"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.04688 5.75L9.78125 8.48438C9.94531 8.64844 10.0273 8.84896 10.0273 9.08594C10.0273 9.32292 9.94531 9.53255 9.78125 9.71484L9.17969 10.3164C8.9974 10.4805 8.78776 10.5625 8.55078 10.5625C8.3138 10.5625 8.11328 10.4805 7.94922 10.3164L5.21484 7.58203L2.48047 10.3164C2.31641 10.4805 2.11589 10.5625 1.87891 10.5625C1.64193 10.5625 1.43229 10.4805 1.25 10.3164L0.648438 9.71484C0.484375 9.53255 0.402344 9.32292 0.402344 9.08594C0.402344 8.84896 0.484375 8.64844 0.648438 8.48438L3.38281 5.75L0.648438 3.01562C0.484375 2.85156 0.402344 2.65104 0.402344 2.41406C0.402344 2.17708 0.484375 1.96745 0.648438 1.78516L1.25 1.18359C1.43229 1.01953 1.64193 0.9375 1.87891 0.9375C2.11589 0.9375 2.31641 1.01953 2.48047 1.18359L5.21484 3.91797L7.94922 1.18359C8.11328 1.01953 8.3138 0.9375 8.55078 0.9375C8.78776 0.9375 8.9974 1.01953 9.17969 1.18359L9.78125 1.78516C9.94531 1.96745 10.0273 2.17708 10.0273 2.41406C10.0273 2.65104 9.94531 2.85156 9.78125 3.01562L7.04688 5.75Z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="section" data-bind="visible: compareList().length > 0">
+                        <button class="button compare">Compare</button>
+                        <button class="button" data-bind="click: removeAll">Clear All</button>
+                    </div>
+
+                </div>
+
+                <div class="banner-wrap">
+                    <img src="img/item-sidebar.png" alt="sidebar">
+                </div>
+            </div>
+            <div class="content-wrap">
+                <h3>Baby Car Seats</h3>
+
+                <input type="radio" checked id="show-cards-1" name="show-cards">
+                <input type="radio" id="show-cards-2" name="show-cards">
+                <div class="filter">
+                    <div class="filter-group left">
+                        <label for="show-cards-1" class="show-cards-1">
+                            <svg width="19" height="13" viewBox="0 0 19 13" fill="#484848"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <rect width="5" height="3"/>
+                                <rect x="7" width="5" height="3"/>
+                                <rect x="14" width="5" height="3"/>
+                                <rect y="5" width="5" height="3"/>
+                                <rect x="7" y="5" width="5" height="3"/>
+                                <rect x="14" y="5" width="5" height="3"/>
+                                <rect y="10" width="5" height="3"/>
+                                <rect x="7" y="10" width="5" height="3"/>
+                                <rect x="14" y="10" width="5" height="3"/>
+                            </svg>
+                        </label>
+                        <label for="show-cards-2" class="show-cards-2">
+                            <svg width="19" height="13" viewBox="0 0 19 13" fill="#484848"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <rect width="5" height="3"/>
+                                <rect x="7" width="12" height="3"/>
+                                <rect y="5" width="5" height="3"/>
+                                <rect x="7" y="5" width="12" height="3"/>
+                                <rect y="10" width="5" height="3"/>
+                                <rect x="7" y="10" width="12" height="3"/>
+                            </svg>
+                        </label>
+                        <span class="small">Items 1-15 of 18</span>
+                    </div>
+                    <div class="filter-group right">
+                        <label>
+                            <span>Show</span>
+                            <select name="select" id="select-page">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                            </select>
+                            <span>ptr page</span>
+                        </label>
+                        <label>
+                            <span>Sort By</span>
+                            <select name="select" id="select-sort">
+                                <option value="1">Position</option>
+                                <option value="2">Price</option>
+                                <option value="3">Rating</option>
+                            </select>
+                        </label>
+                    </div>
+                </div>
+                <div class="product-cards-wrap" data-bind="foreach: productList()" id="products">
+                    <div class="card-wrap" data-bind="css:{sale: sale, new: newAction}">
+                        <div class="card-height-wrap">
+                            <div class="card"><!--Add new or sale-->
+                                <span class="sale-labe">sale<span>&nbsp;</span></span>
+                                <span class="new-labe">new<span>&nbsp;</span></span>
+                                <div class="image-wrap">
+                                    <img data-bind="attr:{src:img, alt:title}" alt="img">
+                                </div>
+                                <div class="button-wrap">
+                                    <button data-bind="click: $root.addFavorite, css:{wish: favorite}"><img src="img/hart.png" alt=""></button>
+                                    <button data-bind="click: $root.addCart">
+                                        Add to Cart
+                                    <span data-bind="text:qty"></span>
+                                    </button>
+                                    <button data-bind="click: $root.addCompare, css:{active: compaired}">
+                                        <img src="img/update.png" alt="">
+                                    </button>
+                                </div>
+                                <p data-bind="text: title"><a href="#"></a></p>
+                                <div class="product-rating" data-bind="text: rating"></div>
+                                <div class="product-prices" data-bind="html: prices"></div>
+                                <div class="product-info">
+                                    Brand: <span data-bind="text: brand"></span>;
+                                    Model: <span data-bind="text: model"></span>;
+                                    Color: <span data-bind="text: color"></span>;
+                                    Year: <span data-bind="text: year"></span>;
+                                </div>
+                                <div class="rating-wrap">
+                                    <!--<img src="img/star1.png" alt="image">-->
+                                </div>
+                                <h5 data-bind="html: prices"></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-wrap" id="add-product">
+                <h3>Add product</h3>
+                <div class="form">
+                    <label data-bind="css:{required: title() === '' && required}">
+                        <p>Enter image url</p>
+                        <input id="image" type="text" name="image" data-bind="value:img">
+                    </label>
+                    <label data-bind="css:{required: title() === '' && required}">
+                        <p>Enter product name</p>
+                        <input id="title" data-bind="value: title" type="text" name="prod-name">
+                    </label>
+                    <div>
+                        <p>Enter rating</p>
+                        <input data-bind="checked: rating" type="radio" id="rating-1" value="1" name="rating">
+                        <label for="rating-1">1</label>
+                        <input data-bind="checked: rating" type="radio" id="rating-2" value="2" name="rating">
+                        <label for="rating-2">2</label>
+                        <input data-bind="checked: rating" type="radio" id="rating-3" value="3" name="rating">
+                        <label for="rating-3">3</label>
+                        <input data-bind="checked: rating" type="radio" id="rating-4" value="4" name="rating">
+                        <label for="rating-4">4</label>
+                        <input data-bind="checked: rating" type="radio" id="rating-5" value="5" name="rating">
+                        <label for="rating-5">5</label>
+                    </div>
+                    <div class="action">
+                        <label for="new">
+                            <p>New</p>
+                            <input data-bind="checked: newAction" type="checkbox" id="new" value="newAction">
+                        </label>
+
+                        <label for="sale">
+                            <p>Sale</p>
+                            <input data-bind="checked: sale" type="checkbox" id="sale" value="salePrice">
+                        </label>
+                    </div>
+                    <label for="price" data-bind="css:{required: price() === '' && required}">
+                        <p>Price</p>
+                        <input data-bind="value:price" type="text" id="price">
+                    </label>
+
+                    <label for="new-price">
+                        <p>Sale price</p>
+                        <input data-bind="value: salePrice" type="text" id="new-price">
+                    </label>
+
+                    <label data-bind="css:{required: color() === undefined && required}">
+                        <p>Color</p>
+                        <select data-bind="options: colorOptions, optionsCaption: 'Choose color', value: color" name="color"
+                                id="color"></select>
+                        <button data-bind="click: function(){addAttribute('color');}">+</button>
+                    </label>
+                    <label data-bind="css:{required: brand() === undefined && required}">
+                        <p>Brand</p>
+                        <select data-bind="options: brandOptions, optionsCaption: 'Choose brand', value: brand"
+                                id="brand"></select>
+                        <button data-bind="click: function(){addAttribute('brand');}">+</button>
+                    </label>
+                    <label data-bind="css:{required: model() === undefined && required}">
+                        <p>Model</p>
+                        <select data-bind="options: modelOptions, optionsCaption: 'Choose model', value: model" name="brand"
+                                id="model"></select>
+                        <button data-bind="click: function(){addAttribute('model');}">+</button>
+                    </label>
+                    <label data-bind="css:{required: year() === undefined && required}">
+                        <p>Year</p>
+                        <select data-bind="options: yearOptions, optionsCaption: 'Choose year', value: year"
+                                id="year"></select>
+                        <button data-bind="click: function(){addAttribute('year');}">+</button>
+                    </label>
+                    <button data-bind="click: addProduct">Add product</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="top-section">
+        <div class="wrapper">
+            <ul class="container">
+                <li class="footer-section first">
+                    <ul>
+                        <li>
+                            <h5>Contact us</h5>
+                        </li>
+                        <li class="address"><a href="#">5611 Wellington Road, Suite 115, Gainesville, VA 20155</a></li>
+                        <li class="telephone"><a href="#">888 9344 6000 - 888 1234 6789 </a></li>
+                        <li class="email"><a href="#">autostore@magentech.com</a></li>
+                        <li class="work-schedule"><a href="#">7 Days a week from 10-00 am to 6-00 pm</a></li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <h5>STORE LOCATION</h5>
+                        </li>
+                        <li><a href="#">Los Angeles - USA</a></li>
+                        <li><a href="#">New York - USA</a></li>
+                        <li><a href="#">California - USA</a></li>
+                        <li><a href="#">Bangkok - Thailand</a></li>
+                        <li><a href="#">Paris - France</a></li>
+                        <li><a href="#">London - England</a></li>
+                    </ul>
+                </li>
+
+                <li class="footer-section">
+                    <ul>
+                        <li>
+                            <h5>CUSTOMER SERVICE</h5>
+                        </li>
+                        <li><a href="#">Customer Service</a></li>
+                        <li><a href="#">Shipping & Returns</a></li>
+                        <li><a href="#">Track Your Order</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Store Location</a></li>
+                        <li><a href="#">Customer Feedback</a></li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <h5>Information</h5>
+                        </li>
+                        <li><a href="#">Caps & Hats</a></li>
+                        <li><a href="#">Hoodies & Sweatshirts</a></li>
+                        <li><a href="#">Jacket & Coats</a></li>
+                        <li><a href="#">Jumpers & Cardigans</a></li>
+                        <li><a href="#">Shoes, Boots & Trainers</a></li>
+                        <li><a href="#">Underwear & Socks</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="bottom-section">
+        <div class="wrapper">
+            <div class="container">
+                <div class="pay-cards">
+                    <img src="img/payment-footer.png" alt="payment">
+                </div>
+                <div class="copyright">
+                    <span>SM Autostore © 2019 Demo Store. All Rights Reserved. Designed by MagenTech.Com</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="javascript/ko-page.js"></script>
+<script src="javascript/jquery-ui.js"></script>
+</body>
+</html>

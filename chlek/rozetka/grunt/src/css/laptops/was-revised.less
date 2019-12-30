@@ -1,0 +1,378 @@
+.wrapper {
+    .revised-prod {
+        & > p {
+            font-size: 20px;
+
+            margin: 4px 0 16px;
+        }
+
+        .revised {
+            display: flex;
+            @media (max-width: @desktop-break-point) {
+                flex-wrap: wrap;
+                height: 327px;
+                overflow: hidden;
+            }
+
+            .product {
+                width: 12.5%;
+                border-right: 1px solid #d2d2d2;
+                border-bottom: 1px solid #d2d2d2;
+                box-sizing: border-box;
+                position: relative;
+                @media (max-width: @desktop-break-point) {
+                    width: 20%;
+                }
+                @media (max-width: @second-desktop-break-point) {
+                    width: 25%;
+                }
+                @media (max-width: @first-mobile-break-point) {
+                    width: 50%;
+                }
+
+                .icon {
+                    position: absolute;
+                    top: 8px;
+                    right: 8px;
+
+                    & > svg {
+                        stroke: #fcc10a;
+                        stroke-width: 2px;
+                        fill: #ffffff;
+                        z-index: 5;
+                    }
+                }
+
+                .product-content {
+                    padding: 16px;
+                    background-color: #ffffff;
+                }
+
+                .product-image {
+                    display: block;
+                    margin: 16px 0 16px;
+                    position: relative;
+                    height: 170px;
+
+                    & > img {
+                        max-width: 100%;
+                        max-height: 100%;
+                        display: block;
+                        margin: 0 auto;
+                    }
+
+                    & > img:last-child {
+                        opacity: 0;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                    }
+
+                    &:hover {
+                        & > img:first-child {
+                            opacity: 0;
+                        }
+
+                        & > img:last-child {
+                            opacity: 1;
+                        }
+                    }
+                }
+
+                .article-text {
+                    font-size: 14px;
+                    line-height: 16px;
+                    margin-bottom: 8px;
+                    height: 32px;
+                    overflow: hidden;
+                }
+
+                .rating-wrap {
+                    margin-bottom: 8px;
+
+                    span {
+                        &.rating {
+                            margin-right: 4px;
+                        }
+
+                        &.reviews {
+                            color: @reviews;
+                            font-size: 12px;
+                            cursor: pointer;
+
+                            &:hover {
+
+                                color: @reviews-hover;
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                }
+
+                .price {
+                    & > span {
+                        color: @price-color;
+                        font-size: 24px;
+                    }
+                }
+            }
+        }
+
+        .content-filter {
+            display: flex;
+            box-sizing: border-box;
+            padding: 60px 0;
+
+            &.laptop-page {
+                padding: 48px 0 0;
+            }
+
+            @media (max-width: @desktop-break-point) {
+                flex-wrap: wrap;
+            }
+
+            & > li {
+                box-sizing: border-box;
+                padding: 2px 8px;
+                margin-right: 4px;
+                background-color: @li-background-color;
+                border-radius: 3px;
+                @media (max-width: @desktop-break-point) {
+                    margin-bottom: 8px;
+                }
+
+                & > a {
+                    text-decoration: none;
+                    color: @reviews;
+                    font-size: 12px;
+                }
+
+                &:hover {
+                    & > a {
+                        color: @reviews-hover;
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+
+    .article-wrap {
+        input {
+            display: none;
+
+            &:checked {
+                & ~ article.about-laptops {
+                    max-height: 100%;
+
+                    &::after {
+                        display: none;
+                    }
+                }
+
+                & ~ label {
+                    display: none;
+                }
+            }
+        }
+
+        & > article.about-laptops {
+            font-size: 13px;
+            line-height: 19px;
+            color: #999999;
+            max-height: 150px;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+
+            &::after {
+                display: block;
+                content: '';
+                background: @about-laptops-after;
+                width: 100%;
+                height: 50px;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                position: absolute;
+            }
+
+            & > p {
+                font-size: 13px;
+                line-height: 19px;
+
+                & > span {
+                    font-weight: bold;
+                    display: block;
+                    padding-top: 8px;
+                }
+            }
+
+            & > h2 {
+                font-size: 17px;
+                margin-bottom: 8px;
+                line-height: 19px;
+                font-weight: normal;
+            }
+
+            ul {
+                margin: 12px 0;
+
+                li {
+                    margin-top: 4px;
+
+                    &:before {
+                        display: inline-block;
+                        content: '-';
+                        margin: 0 24px;
+                    }
+
+                    & > span {
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+
+        & > label {
+            color: @reviews;
+            border-bottom: 1px dotted;
+
+            &:hover {
+                color: @reviews-hover;
+                cursor: pointer;
+            }
+        }
+    }
+
+    &.stores {
+        max-width: 100%;
+        padding: 0 120px;
+        background-color: @stores;
+        margin: 0;
+        @media (max-width: @first-mobile-break-point) {
+            padding: 0 16px;
+        }
+        @media (max-width: @second-mobile-break-point) {
+            padding: 0 5px;
+        }
+
+        &.aps {
+            .content {
+                margin-top: 100px;
+            }
+        }
+
+        .content {
+            width: 100%;
+            margin-top: 100px;
+            height: 72px;
+            box-sizing: border-box;
+            display: flex;
+            @media (max-width: @second-desktop-break-point) {
+                height: 124px;
+                justify-content: space-between;
+            }
+            @media (max-width: @first-mobile-break-point) {
+                flex-direction: column;
+                height: 248px;
+                justify-content: flex-end;
+                padding: 24px 20px 0;
+            }
+        }
+
+        .image-store {
+            width: 33.33%;
+            align-self: flex-end;
+            @media (max-width: @second-desktop-break-point) {
+                width: 50%;
+            }
+            @media (max-width: @first-mobile-break-point) {
+                width: 100%;
+            }
+
+            img {
+                width: 248px;
+                display: block;
+                @media (max-width: @second-desktop-break-point) {
+                    width: 320px;
+                }
+                @media (max-width: @first-mobile-break-point) {
+                    width: 248px;
+                    margin: 0 auto;
+                }
+            }
+        }
+
+        .apps-wrapper {
+            display: flex;
+            justify-content: space-between;
+            width: 66.66%;
+            @media (max-width: @second-desktop-break-point) {
+                flex-direction: column;
+                justify-content: center;
+                width: 50%;
+            }
+            @media (max-width: @first-mobile-break-point) {
+                width: 100%;
+                order: -1;
+                margin-bottom: 16px;
+            }
+
+            & > h3 {
+                color: @product-content;
+                font-weight: normal;
+                max-height: 450px;
+                padding-right: 16px;
+                line-height: 24px;
+                text-align: center;
+                align-self: center;
+                @media (max-width: @second-desktop-break-point) {
+                    text-align: left;
+                    width: 100%;
+                    padding-right: 0;
+                    font-size: 20px;
+                    margin-bottom: 16px;
+                }
+                @media (max-width: @first-mobile-break-point) {
+                    text-align: center;
+                }
+            }
+
+            & > ul {
+                display: flex;
+                max-width: 260px;
+                height: 100%;
+                @media (max-width: @second-desktop-break-point) {
+                    height: 40px;
+                }
+                @media (max-width: @first-mobile-break-point) {
+                    margin: 0 auto;
+                }
+
+                li {
+                    display: block;
+                    min-width: 128px;
+                    align-self: center;
+
+                    &:first-child {
+                        margin-right: 8px;
+                    }
+
+
+                    & > a {
+                        display: block;
+
+                        img {
+                            display: block;
+                            width: 100%;
+                            height: 40px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

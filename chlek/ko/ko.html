@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="school/knockout-3.5.1.js"></script>
+</head>
+<body>
+<div class="wrapper">
+   <!-- <h1 data-bind="text: info"></h1>
+    <button id="set-name" data-bind="click:setName">What is your name?</button>
+    <button id="set-location" data-bind="click:setLocation">From where you are?</button>-->
+</div>
+<script>
+    /*var custer = {
+        name: ko.observable('Vasya'),
+        location: ko.observable('Rivne'),
+    };
+    document.querySelector('#set-name').addEventListener('click', function () {
+        custer.name(prompt("What is your name", custer.name()));
+    });
+    document.querySelector('#set-location').addEventListener('click', function () {
+        custer.location(prompt("From where you are?", custer.location()));
+    });
+
+    ko.applyBindings(custer);
+    console.log(custer.name('Kolua'));*/
+
+    function Custer() {
+        this.name = ko.observable('Vasya');
+        this.location = ko.observable('Rivne');
+        this.info = ko.computed(function () {
+            return 'Hello ' + this.name() + ' from ' + this.location();
+        }, this);
+        this.setName = function () {
+            this.name(prompt('What is your name', this.name()));
+        };
+        this.setLocation = function () {
+            this.location(prompt('From where you are?', this.location()));
+        }
+    }
+    /*document.querySelector('#set-name').addEventListener('click', function () {
+        custer.name(prompt("What is your name", custer.name()));
+    });*/
+
+    ko.applyBindings(new Custer);
+
+</script>
+</body>
+</html>

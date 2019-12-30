@@ -1,0 +1,219 @@
+.work-wrapper {
+    .row-wrapper {
+        display: flex;
+        flex-wrap: nowrap;
+        @media (max-width: @first-mobile) {
+            flex-direction: column;
+        }
+
+        .banner {
+            width: 66.7%;
+            position: relative;
+            align-self: stretch;
+            background-image: url("@{image_url}Layer_10.png");
+            @media (max-width: @first-mobile) {
+                width: 100%;
+                padding: 200px 0;
+            }
+
+            &::after {
+                display: block;
+                content: '';
+                width: 113px;
+                height: 118px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-image: url("@{image_url}LogoB.png");
+            }
+        }
+
+        .about-bicycle {
+            position: relative;
+            padding-top: 120px;
+            background-color: #ffffff;
+            width: 33.3%;
+            @media (max-width: @tablet) {
+                padding-top: 100px;
+            }
+            @media (max-width: @first-mobile) {
+                padding-top: 85px;
+                width: 100%;
+            }
+
+            &::before,
+            &::after {
+                display: block;
+                content: '';
+                position: absolute;
+                left: 50%;
+            }
+
+            &::before {
+                width: 41px;
+                height: 30px;
+                top: 10%;
+                background-image: url("@{image_url}Icon.png");
+                transform: translateX(-50%);
+                @media (max-width: @tablet) {
+                    top: 6%;
+                }
+            }
+
+            &::after {
+                width: 50px;
+                height: 1px;
+                background-color: #353738;
+                bottom: 43%;
+                transform: translate(-50%, -200%);
+                @media (max-width: @first-desktop) {
+                    bottom: 33%;
+                }
+                @media (max-width: @tablet) {
+                    bottom: 27%;
+                }
+                @media (max-width: @first-mobile) {
+                    bottom: 51%;
+                }
+            }
+
+            .title {
+                text-align: center;
+                text-transform: uppercase;
+                letter-spacing: 3.6px;
+                padding-bottom: 13px;
+            }
+
+            article.about {
+                padding: 0 10px 69px;
+                @media (max-width: @tablet) {
+                    padding: 0 10px 60px;
+                }
+            }
+
+            article.about,
+            .decorate-wrapper article.additional {
+                max-width: 398px;
+                margin: 0 auto;
+                line-height: 30px;
+                text-align: justify;
+                letter-spacing: .5px;
+                @media (max-width: @first-mobile) {
+                    line-height: 23px;
+                }
+            }
+
+            .decorate-wrapper {
+                position: relative;
+                overflow: hidden;
+
+                .additional-wrapper {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    left: 0;
+                    bottom: 0;
+                    padding: 30px 60px;
+                    text-align: justify;
+                    z-index: 5;
+                    opacity: 0;
+                    transition-delay: 250ms;
+                    transition: all 350ms ease-out;
+                }
+            }
+
+            .decorate-blind {
+                transition: all 500ms ease-out;
+                display: block;
+                width: 100%;
+            }
+
+            .decorate-wrapper {
+                .additional-wrapper {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    left: 0;
+                    bottom: 0;
+                    padding: 30px 60px;
+                    text-align: justify;
+                    z-index: 5;
+                    opacity: 0;
+                    transition-delay: 250ms;
+                    transition: all 350ms ease-out;
+
+                    &:hover {
+                        opacity: 1;
+
+                        & ~ img.decorate-blind {
+                            transform: translateY(105%);
+                        }
+                    }
+                }
+
+                .triangle {
+                    position: absolute;
+                    top: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    z-index: 3;
+                }
+            }
+        }
+
+        &.second {
+            .banner {
+                background-image: url("@{image_url}Layer_12.png");
+
+                &::after {
+                    background-image: url("@{image_url}LogoS.png");
+                    width: 177px;
+                    height: 152px;
+                }
+
+                &::before {
+                    background-image: url("@{image_url}Icon(1.1).png");
+                    width: 32px;
+                    height: 32px;
+                }
+            }
+        }
+
+        &.third {
+            .banner {
+                width: 33.33%;
+                background-image: url("@{image_url}Layer_15.png");
+                @media (max-width: @first-mobile) {
+                    width: 100%;
+                    padding: 200px 0;
+                }
+
+                &::after {
+                    background-image: url("@{image_url}LogoT.png");
+                    width: 208px;
+                    height: 67px;
+                }
+            }
+
+            .about-bicycle {
+                flex-grow: 0;
+                width: 33.33%;
+                @media (max-width: @first-mobile) {
+                    width: 100%;
+                }
+
+                &::before {
+                    background-image: url("@{image_url}Icon(2).png");
+                    width: 23px;
+                    height: 41px;
+                }
+            }
+
+            .banner-simple {
+                width: 33.33%;
+                background-image: url("@{image_url}Layer_14.png");
+            }
+        }
+    }
+}
