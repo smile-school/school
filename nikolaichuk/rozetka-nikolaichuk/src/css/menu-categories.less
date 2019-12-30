@@ -1,0 +1,123 @@
+.menu-categories {
+    padding: 25px 0;
+    position: relative;
+
+    &__item {
+        padding: 5px 8px;
+
+        &__submenu {
+           display: none;
+            position: absolute;
+            left: -1px;
+            top: -1px;
+            width: 1441px;
+            height: calc(100% + 4px);
+            padding: 8px 8px 8px 300px;
+            border: 1px solid @menu-categories-border-color;
+            border-bottom: 3px solid @menu-categories-border-bottom-color;
+            border-top-left-radius: 3px;
+            border-bottom-left-radius: 3px;
+            background: @page-background-color;
+            box-shadow: 3px 3px 7px 0 rgba(200, 200, 200, .5);
+            z-index: -10;
+        }
+
+        &:hover > &__submenu {
+            .flex-mixin(@justify: space-between, @align: stretch);
+        }
+
+        &:last-child {
+            //padding-bottom: 80px;
+        }
+    }
+
+    &__link {
+        display: inline-block;
+        position: relative;
+        width: 100%;
+
+        &-icon {
+            fill: @menu-categories-icon-color;
+        }
+
+        &-text {
+            font-size: 13px;
+        }
+
+        &-arrow {
+            fill: @page-link-color;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+        }
+
+        &:hover > &-arrow {
+            fill: @page-hover-color;
+        }
+
+        &:hover > &-text {
+            text-decoration: underline;
+        }
+
+        svg {
+            vertical-align: middle;
+        }
+    }
+}
+
+.submenu {
+    &__column {
+        width: 20%;
+        overflow: hidden;
+        padding: 8px 0;
+
+        &_popular {
+            background-color: @menu-categories-popular-submenu-background;
+
+            &__title {
+                color: @menu-categories-popular-submenu-title-color;
+                font-size: 16px;
+                padding: 0 12px;
+                margin: 5px 0;
+            }
+        }
+
+        .submenu-link {
+            display: block;
+            position: relative;
+            padding: 3px 12px;
+            overflow: hidden;
+            font-size: 14px;
+            white-space: nowrap;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                display: block;
+                width: 20px;
+                height: 19px;
+                background: linear-gradient(to right, rgba(255, 255, 255, .4) 0, @page-background-color 55%);
+            }
+        }
+
+        .link-backgrd_gray::after {
+            background: linear-gradient(to right, rgba(248, 248, 248, .4) 0, @menu-categories-popular-submenu-background 55%);
+        }
+
+        .categorie-link {
+            display: block;
+            font-size: 16px;
+            margin: 5px 0;
+            padding: 0 12px;
+        }
+
+        &__baner {
+            width: 100%;
+            height: auto;
+            margin-top: -8px;
+        }
+    }
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./script/knockout-3.5.1.js"></script>
+    <script src="./script/lib.js"></script>
+    <style>
+        body {
+            font-family: sans-serif;
+            font-size: 16px;
+            line-height: 1.2;
+        }
+        .table-wrapper{
+            margin: 20px auto;
+            width: 60%;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        table {
+            display: inline-block;
+            margin: 20px 50px;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+    </style>
+
+</head>
+<body>
+<h1 data-bind="text: info"></h1>
+<div>
+    <button id="setName" data-bind="click: setName">What is your name?</button>
+    <button id="setLocation" data-bind="click: setLocation">Where are you from?</button>
+    <button data-bind="click: addDish">Add dish</button>
+</div>
+<div class="table-wrapper">
+    <table>
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Dish</th>
+            <th>Price</th>
+            <th>Remove</th>
+        </tr>
+        </thead>
+        <tbody data-bind="foreach: orderList">
+        <tr>
+            <td data-bind="text: $index() + 1"></td>
+            <td data-bind="text:title"></td>
+            <td data-bind="text:price"></td>
+            <td>
+                <button data-bind="click: $root.removeDish">Remove</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<script>
+    var menu = [
+        {
+            "title": "pizza",
+            "price": 120,
+        },
+        {
+            "title": "sushi",
+            "price": 220,
+        }
+        ];
+    function Dish(title, price) {
+        this.title = ko.observable(title);
+        this.price = ko.observable(price);
+    }
+
+    function Customer() {
+        this.name = ko.observable('Vasya');
+        this.location = ko.observable("Rivne");
+        this.info = ko.computed(function () {
+            return 'Hello ' + this.name() + ' from ' + this.location();
+        }, this);
+        this.orderList = ko.observableArray([]);
+
+        this.setName = function () {
+            this.name(prompt("What is your name?", this.name()));
+        };
+        this.setLocation = function () {
+            this.location(prompt("Where are you from?", this.location()));
+        };
+        this.addDish = function () {
+            var order = (prompt("Your order"));
+            order = order.split("/");
+            var menu = getCourse();
+            var newDish = getCourse();
+            ('title' in newDish) && this.courseList.push(new Course(newCourse.title, newCourse.price));
+        };
+        this.removeDish = function (dish) {
+            this.orderList.remove(dish);
+        }.bind(this);
+    }
+
+    ko.applyBindings(new Customer());
+</script>
+</body>
+</html>
