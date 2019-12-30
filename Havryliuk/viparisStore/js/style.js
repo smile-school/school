@@ -1,8 +1,7 @@
 (function () {
-    var self = this;
-    this.pageToTop = 'page-up';
-    $('.home' + self.pageToTop).click(function () {
-        $('body, html').animate({scrollTop: 0}, 1000);
+    $('.home').on('click', function(e) {
+        e.preventDefault();
+        $('html, body').animate({scrollTop:0}, '1000');
     });
     var el = document.querySelector('.burger-nav'),
         trigger = document.querySelector('#burger');
