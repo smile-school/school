@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/knockout-3.5.1.js"></script>
+    <script src="js/lib.js"></script>
+    <style>
+        body{
+            font-family: sans-serif;
+            font-size: 16px;
+            line-height: 1.2;
+        }
+        table{
+            margin: 20px auto;
+        }
+        th,
+        td{
+            border: 1px solid black;
+            padding: 10px;
+        }
+        .wrapper{
+            display: flex;
+        }
+        li{
+            list-style-type: none;
+        }
+        ul{
+            padding: 0;
+        }
+        .sale{
+            color: red;
+        }
+        .small-sale{
+            color: green;
+        }
+    </style>
+</head>
+<body>
+<h1 data-bind="text: info"></h1>
+<button id="setName" data-bind="click: setName">What is your name!</button>
+<button id="setLocation" data-bind="click: setLocation">What is you living?</button>
+<button id="addCource" data-bind="click: addCource">AddCource</button>
+<div class="wrapper">
+    <table>
+        <thead>
+        <tr>
+            <th>№</th>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Training</th>
+            <th>Remove</th>
+        </tr>
+        </thead>
+        <tbody data-bind="foreach: courseList">
+        <tr>
+            <td data-bind="text: $index() + 1"></td>
+            <td data-bind="text: title"></td>
+            <td>
+                <p data-bind="text: new Intl.NumberFormat('ru-RU').format(price()), style: {textDecoration: (discount() ? 'line-through' : 'none')}"></p>
+                <div data-bind="if: discount(), css: sale() " >
+                    <p data-bind="html: discounted"></p>
+                </div>
+            </td>
+            <td>
+                <ul data-bind="foreach: reqs">
+                    <li data-bind="text: $data"></li>
+                </ul>
+            </td>
+            <td data-bind="click: $root.removeCourse">
+                <button>x</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <table>
+        <thead>
+        <tr>
+            <th>№</th>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Training</th>
+            <th>Recovery</th>
+            <th>remove Recovery</th>
+        </tr>
+        </thead>
+        <tbody data-bind="foreach: preRemoveCourse">
+        <tr>
+            <td data-bind="text: $index() + 1"></td>
+            <td data-bind="text: title"></td>
+            <td>
+                <p data-bind="text: price"></p>
+                <div data-bind="if: discount(), css: sale() ">
+                    <p data-bind="html: discounted"></p>
+                </div>
+            </td>
+            <td>
+                <ul data-bind="foreach: reqs">
+                    <li data-bind="text: $data"></li>
+                </ul>
+            </td>
+            <td data-bind="click: $root.recoveryCourse">
+                <button>add</button>
+            </td>
+            <td data-bind="click: $root.removeRecoveryCourse">
+                <button>X</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    
+</div>
+<p data-bind="with: anonser">
+    new Course <strong data-bind="text: title"></strong>
+    price <strong data-bind="text: price"></strong>
+    <br><a data-bind="attr:{href: link, target: '_blank'}">Read more</a>
+</p>
+
+<script>
+    var anonser = ko.observable(new Course('html level 2', 40058));
+    anonser().link = 'https://www.smile.eu/fr'
+    function Course(title, price, reqs, discount) {
+        this.title = ko.observable(title);
+        this.price = ko.observable(price);
+        this.reqs = (reqs) ? reqs : [];
+        this.discount = ko.observable((discount) ? discount : 0);
+        this.discounted = ko.computed(function () {
+            return ' Discount ' + this.discount() + ' % <br> New price ' + (this.price() - (this.discount() / 100 * this.price()))
+        },this)
+        this.sale = function () {
+            return (this.discount()>40) ? 'sale' : 'small-sale';
+        }
+    }
+    function Customer() {
+        this.name = ko.observable('vasya');
+        this.location = ko.observable('Rivne');
+        this.info = ko.computed(function () {
+            return ' Hello ' + this.name() + ' from ' + this.location();
+        }, this);
+
+        this.courseList = ko.observableArray([
+            new Course('HTML/CSS', 9150),
+            new Course('WebMastering', 13450, ['HTML/CSS'], 50),
+            new Course('JavaScript-ECMA', 15550, ['WebMastering']),
+            new Course('PHP', 28009),
+        ]);
+
+        this.setName = function () {
+            this.name(prompt('What is your name' , this.name()))
+        };
+
+        this.setLocation = function () {
+            this.location(prompt('What is your living' , this.location()))
+        };
+
+        this.removeCourse = function (course) {
+            this.courseList.remove(course);
+            this.preRemoveCourse.push(course)
+        }.bind(this);
+
+        this.recoveryCourse = function (course) {
+            this.preRemoveCourse.remove(course)
+            this.courseList.push(course)
+        }.bind(this);
+
+        this.removeRecoveryCourse = function (course) {
+            this.preRemoveCourse.remove(course)
+        }.bind(this);
+        
+        
+        this.preRemoveCourse = ko.observableArray([]);
+        this.addCource = function () {
+            var newCource = getCourse();
+            ('title' in newCource)
+            && this.courseList.push(new Course(newCource.title, newCource.price, newCource.reqs, newCource.discount))
+        }
+    }
+    ko.applyBindings(new Customer());
+</script>
+</body>
+</html>

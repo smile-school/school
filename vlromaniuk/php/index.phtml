@@ -1,0 +1,65 @@
+<?php
+include_once "Product.php";
+$block = new Product();
+$name = 'Product_list';
+?>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/phtml.css">
+</head>
+<body>
+<div class="product_list">
+    <?php if ($name): ?>
+        <h2><?= $name; ?></h2>
+    <?php endif;?>
+    <div class="product_wrapper">
+        <?php for ($i = 0; $i < $block->getCountProduct(); $i++):  ?>
+            <div class="product_item">
+                <img src="<?php echo $block->getData()[$i]->{'img'}?>" alt="">
+                <div class="action-wrapper">
+                    <?php if ($block->getData()[$i]->{'actions'}->{'bestsellers'} == true): ?>
+                        <p class="action">bestsellers</p>
+                    <?php endif; ?>
+                    <?php if ($block->getData()[$i]->{'actions'}->{'eco'} == true): ?>
+                        <p class="action">eco</p>
+                    <?php endif; ?>
+                    <?php if ($block->getData()[$i]->{'actions'}->{'new'} == true): ?>
+                        <p class="action">new</p>
+                    <?php endif; ?>
+                </div>
+                <h3><?php echo $block->getData()[$i]->{'title'} ?></h3>
+                <?php
+                //$block->postRating($products['rating']);
+                for ($j = 0; $j < $block->getData()[$i]->{'rating'}; $j++ ){
+                    echo '<i class="fas fa-star"></i>';
+                }
+                var_dump($block->getData()[$i]->{'rating'});
+                ?>
+                <div class="cart-info">
+                <div class="price_wrapper">
+                    <?php if ($block->getData()[$i]->{'price'}->{'finalPrice'} == $block->getData()[$i]->{'price'}->{'oldPrice'}):?>
+                        <p class="price">Price: <?= $block->getData()[$i]->{'price'}->{'finalPrice'}?> UAH</p>
+                    <?php else:?>
+                        <?php
+                        $sale = ($block->getData()[$i]->{'price'}->{'oldPrice'} - $block->getData()[$i]->{'price'}->{'finalPrice'}) / ($block->getData()[$i]->{'price'}->{'oldPrice'} / 100) ;
+                        ?>
+                        <span class="old-prce"><?= $block->getData()[$i]->{'price'}->{'oldPrice'} ?> uah</span><br>
+                        <span class="final-price"><?= $block->getData()[$i]->{'price'}->{'finalPrice'} ?> uah</span>
+                    <?php endif; ?>
+                </div>
+                <div class="buy">
+                    <a href="<?=$block->getData()[$i]->{'url'};?>">Перейти</a>
+                </div>
+                </div>
+            </div>
+        <?php endfor; ?>
+    </div>
+</div>
+</body>
+</html>
