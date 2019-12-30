@@ -1,10 +1,362 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Viparis-Store</title>
+    <link rel="stylesheet" href="dist/fonts/stylesheet.css">
+    <link rel="stylesheet" href="dist/css/style.css">
 </head>
 <body>
+<header>
+    <div class="header-top">
+        <div class="header__logo">
+            <a href="#" class="link"></a>
+        </div>
+        <div class="header__actions-list">
+            <div class="header__actions-list__item sign-in">
+                <a href="#" class="link">
+                    <i class="fas fa-user-alt"></i>
+                    <span>Mon compte</span>
+                </a>
+            </div>
+            <div class="header__actions-list__item wish-list">
+                <a href="#" class="link">
+                    <i class="fas fa-heart"></i>
+                    <span>Liste d'achats</span>
+                </a>
+            </div>
+            <div class="header__actions-list__item lang-toggle">
+                <input type="radio" name="lang" id="fr" checked>
+                <label for="fr" class="lang-toggle__fr">&nbsp;</label>
+                <input type="radio" name="lang" id="uk">
+                <label for="uk" class="lang-toggle__uk">&nbsp;</label>
+            </div>
+        </div>
+        <div class="header__cart">
+            <a href="#" class="link button-link">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="header__cart__counter">10</span>
+            </a>
+        </div>
+    </div>
+    <div class="header-bottom">
+        <div class="header__heading">
+            <h2>Mondial de l’automobile</h2>
+        </div>
+        <div class="header__content">
+            <ul class="header__nav-menu">
+                <li class="header__nav-menu__item">
+                    <a href="#" class="link">Présentation</a>
+                </li>
+                <li class="header__nav-menu__item">
+                    <a href="#" class="link">Accéder au site</a>
+                </li>
+                <li class="header__nav-menu__item">
+                    <a href="#" class="link">Brancher mon stand</a>
+                </li>
+                <li class="header__nav-menu__item">
+                    <a href="#" class="link">Aménager mon stand</a>
+                </li>
+                <li class="header__nav-menu__item">
+                    <a href="#" class="link">Services</a>
+                </li>
+                <li class="header__nav-menu__item">
+                    <a href="#" class="link">Autour de ma manifestation</a>
+                </li>
+            </ul>
+            <div class="header__search">
+                <input type="text" placeholder="Recherche">
+                <i class="fas fa-search"></i>
+            </div>
+        </div>
+    </div>
+</header>
+<main>
+    <div class="page-wrapper">
+        <div class="breadcrumbs">
+            <a href="#" class="link">Accueil</a>
+            <span>></span>
+            <a href="#" class="link">Présentation</a>
+            <span>></span>
+            <a href="#" class="link">BRANCHER MON STAND</a>
+            <span>></span>
+            <a href="#" class="link">éléctricité</a>
+        </div>
+        <div class="dates-wrapper clearfix-block">
+            <div class="event">
+                <span class="event-place">Palais des Congrès de Paris</span>
+                <span class="event-dates">du 01/10/2016 au 16/11/2016</span>
+            </div>
+            <div class="fermeture">
+                <span>Fermeture catalogue jj/mm/aaaa</span>
+            </div>
+            <div class="majoration">
+                <span>Date de majoration jj/mm/aaaa</span>
+            </div>
+        </div>
+        <h3 class="product-name">éléctricité</h3>
+        <div class="search-product-wrapper clearfix-block">
+            <div class="aside">
+                <div class="product-filters">
+                    <h4>votre Sélection</h4>
+                    <ul class="product-filters_active__list">
+                        <li class="filter_active">
+                            <a href="#" class="link filter-name">
+                                Vendeur n°1
+                            </a>
+                            <a href="#" class="link delete-link">
+                                <i class="fas fa-times"></i>
+                            </a>
+                        </li>
+                        <li class="filter_active">
+                            <a href="#" class="link filter-name">
+                                Vendeur numéro trois sur 2 deux lignes
+                            </a>
+                            <a href="#" class="link delete-link">
+                                <i class="fas fa-times"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="product-filters__accordion">
+                        <input type="checkbox" name="filters" id="group1">
+                        <label for="group1" class="product-filters__accordion__heading">
+                            <span>Catégories</span>
+                            <i class="fas fa-sort-up icon-up"></i>
+                            <i class="fas fa-sort-down icon-down"></i>
+                        </label>
+                        <ul class="product-filters__accordion__group categories-group">
+                            <li class="product-filter">
+                                <input type="checkbox" name="categories" id="cat1">
+                                <label for="cat1">
+                                    <span class="product-filter__name">Catégory 1</span>
+                                    <span class="product-filter__qty">(5)</span>
+                                </label>
+                            </li>
+                            <li class="product-filter">
+                                <input type="checkbox" name="categories" id="cat2">
+                                <label for="cat2">
+                                    <span class="product-filter__name">Catégory 2</span>
+                                    <span class="product-filter__qty">(10)</span>
+                                </label>
+                            </li>
+                        </ul>
+                        <input type="checkbox" name="filters" id="group2">
+                        <label for="group2" class="product-filters__accordion__heading">
+                            <span>prix</span>
+                            <i class="fas fa-sort-up icon-up"></i>
+                            <i class="fas fa-sort-down icon-down"></i>
+                        </label>
+                        <ul class="product-filters__accordion__group price-group">
+                            <li class="product-filter">
+                                <input type="checkbox" name="prices" id="pr1">
+                                <label for="pr1">
+                                    <span class="product-filter__name">Prix1</span>
+                                    <span class="product-filter__qty">(5)</span>
+                                </label>
+                            </li>
+                            <li class="product-filter">
+                                <input type="checkbox" name="prices" id="pr2">
+                                <label for="pr2">
+                                    <span class="product-filter__name">Prix2</span>
+                                    <span class="product-filter__qty">(8)</span>
+                                </label>
+                            </li>
+                        </ul>
+                        <input type="checkbox" name="filters" id="group3" checked>
+                        <label for="group3" class="product-filters__accordion__heading">
+                            <span>Vendeur</span>
+                            <i class="fas fa-sort-up icon-up"></i>
+                            <i class="fas fa-sort-down icon-down"></i>
+                        </label>
+                        <ul class="product-filters__accordion__group vendor-group">
+                            <li class="product-filter">
+                                <input type="checkbox" name="vendors" id="vd1">
+                                <label for="vd1">
+                                    <span class="product-filter__name">Vendeur n°1</span>
+                                    <span class="product-filter__qty">(12)</span>
+                                </label>
+                            </li>
+                            <li class="product-filter">
+                                <input type="checkbox" name="vendors" id="vd2" checked>
+                                <label for="vd2">
+                                    <span class="product-filter__name">Vendeur numéro 2</span>
+                                    <span class="product-filter__qty">(28)</span>
+                                </label>
+                            </li>
+                            <li class="product-filter">
+                                <input type="checkbox" name="vendors" id="vd3" checked>
+                                <label for="vd3">
+                                    <span class="product-filter__name">Vendeur numéro trois sur 2 deux lignes</span>
+                                    <span class="product-filter__qty">(17)</span>
+                                </label>
+                            </li>
+                            <li class="product-filter">
+                                <input type="checkbox" name="vendors" id="vd4">
+                                <label for="vd4">
+                                    <span class="product-filter__name">Vendeur n°4</span>
+                                    <span class="product-filter__qty">(53)</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="aside__plan-block">
+                    <span class="aside__plan-block__icon"></span>
+                    <span class="aside__plan-block__heading">Réalisez le plan de vote stand</span>
+                    <div class="aside__plan-block__description">Les produits électriques nécessitent que vous complétiez le plan à transmettre lors de la commande pour réaliser l'installation.</div>
+                    <a href="#" class="link aside__plan-block__link">
+                        <span class="aside__plan-block__icon"></span>
+                        <span class="aside__plan-block__description">Télécharger le gabarit du plan</span>
+                    </a>
+                </div>
+            </div>
+            <div class="search-product__results">
+                <div class="product-results__controls">
+                    <div class="product-results__qty">
+                        <span><span>137</span>Produits</span>
+                    </div>
+                    <div class="select-container">
+                        <select id="quantity">
+                            <option value="15">15 par page</option>
+                            <option value="10">10 par page</option>
+                            <option value="5">5 par page</option>
+                        </select>
+                        <i class="fas fa-sort-down"></i>
+                    </div>
+                    <div class="select-container">
+                        <select id="price">
+                            <option value="Le plus cher">Le plus cher</option>
+                            <option value="Le moins cher">Le moins cher</option>
+                        </select>
+                        <i class="fas fa-sort-down"></i>
+                    </div>
+                </div>
+                <div class="product-results__list">
+                    <div class="product-results__item product-card">
+                        <div class="product-card__image">
+                            <a href="#" class="link">
+                                <img src="./dist/ima/Calque_1.png" alt="Calque_1">
+                            </a>
+                        </div>
+                        <div class="product-card__content">
+                            <div class="product-card__heading">
+                                <a href="#" class="link product-card__heading__title">
+                                    Branchement intermittent 240 V
+                                </a>
+                                <span class="product-card__heading__status status_in-stock">En stock</span>
+                                <span class="product-card__heading__status status_not-available">En rupture de stock</span>
+                            </div>
+                            <div class="product-card__sale">
+                                <div class="product-card__sale__price">
+                                    <span>A partir de </span>
+                                    <span class="price">00,00 € HT</span>
+                                </div>
+                                <a href="#" class="link button-link product-card__sale-btn">voir le produit</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-results__item product-card not-available">
+                        <div class="product-card__image">
+                            <a href="#" class="link">
+                                <img src="./dist/ima/Calque_2.png" alt="Calque_1">
+                            </a>
+                        </div>
+                        <div class="product-card__content">
+                            <div class="product-card__heading">
+                                <a href="#" class="link product-card__heading__title">
+                                    Branchement intermittent 240 V
+                                </a>
+                                <span class="product-card__heading__status status_in-stock">En stock</span>
+                                <span class="product-card__heading__status status_not-available">En rupture de stock</span>
+                            </div>
+                            <div class="product-card__sale">
+                                <div class="product-card__sale__price">
+                                    <span>A partir de </span>
+                                    <span class="price">00,00 € HT</span>
+                                </div>
+                                <a href="#" class="link button-link product-card__sale-btn">voir le produit</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-results__item product-card">
+                        <div class="product-card__image">
+                            <a href="#" class="link">
+                                <img src="./dist/ima/Calque_3.png" alt="Calque_1">
+                            </a>
+                        </div>
+                        <div class="product-card__content">
+                            <div class="product-card__heading">
+                                <a href="#" class="link product-card__heading__title">
+                                    Transformateur électrique
+                                </a>
+                                <span class="product-card__heading__status status_in-stock">En stock</span>
+                                <span class="product-card__heading__status status_not-available">En rupture de stock</span>
+                            </div>
+                            <div class="product-card__sale">
+                                <div class="product-card__sale__price">
+                                    <span>A partir de </span>
+                                    <span class="price">00,00 € HT</span>
+                                </div>
+                                <a href="#" class="link button-link product-card__sale-btn">voir le produit</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-results__item product-card">
+                        <div class="product-card__image">
+                            <a href="#" class="link">
+                                <img src="./dist/ima/Calque_3.png" alt="Calque_1">
+                            </a>
+                        </div>
+                        <div class="product-card__content">
+                            <div class="product-card__heading">
+                                <a href="#" class="link product-card__heading__title">
+                                    Transformateur électrique
+                                </a>
+                                <span class="product-card__heading__status status_in-stock">En stock</span>
+                                <span class="product-card__heading__status status_not-available">En rupture de stock</span>
+                            </div>
+                            <div class="product-card__sale">
+                                <div class="product-card__sale__price">
+                                    <span>A partir de </span>
+                                    <span class="price">00,00 € HT</span>
+                                </div>
+                                <a href="#" class="link button-link product-card__sale-btn">voir le produit</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-results__item product-card">
+                        <div class="product-card__image">
+                            <a href="#" class="link">
+                                <img src="./dist/ima/Calque_3.png" alt="Calque_1">
+                            </a>
+                        </div>
+                        <div class="product-card__content">
+                            <div class="product-card__heading">
+                                <a href="#" class="link product-card__heading__title">
+                                    Transformateur électrique
+                                </a>
+                                <span class="product-card__heading__status status_in-stock">En stock</span>
+                                <span class="product-card__heading__status status_not-available">En rupture de stock</span>
+                            </div>
+                            <div class="product-card__sale">
+                                <div class="product-card__sale__price">
+                                    <span>A partir de </span>
+                                    <span class="price">00,00 € HT</span>
+                                </div>
+                                <a href="#" class="link button-link product-card__sale-btn">voir le produit</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<footer>
 
+</footer>
 </body>
 </html>

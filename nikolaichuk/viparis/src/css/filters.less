@@ -1,0 +1,148 @@
+.product-filters {
+    padding-bottom: 20px;
+
+    h4 {
+        padding: 16px 0 8px;
+    }
+
+    &_active__list {
+        .filter_active {
+            padding: 15px 19px 13px;
+            border: 1px solid @page-line-color;
+            background-color: @active-filter-background;
+            margin-bottom: 10px;
+            position: relative;
+
+            .link.filter-name {
+                font-size: 13px;
+                font-weight: 700;
+                letter-spacing: 0.13px;
+                line-height: 16px;
+                max-width: 131px;
+                display: inline-block;
+            }
+
+            .link.delete-link {
+                .absolute-position-mixin(@top: 56%, @left: calc(100% - 24px));
+                .hover-text-mixin();
+            }
+        }
+    }
+
+    &__accordion {
+        input[type="checkbox"] {
+            display: none;
+
+            &:checked {
+                & + .product-filters__accordion__heading {
+                    & > .icon-up {
+                        opacity: 0;
+                        visibility: hidden;
+                        transition: opacity .5s ease-in;
+                    }
+
+                    & > .icon-down {
+                        opacity: 1;
+                        visibility: visible;
+                        transition: opacity .5s ease-out;
+                    }
+
+                    &::after {
+                        display: none;
+                    }
+
+                    & + .product-filters__accordion__group {
+                        max-height: 50em;
+                        transition: max-height .4s ease-in-out;
+                    }
+                }
+            }
+        }
+
+        &__heading {
+            display: block;
+            padding: 9px 20px 15px 19px;
+            background-color: @page-element-background-red;
+            color: @page-button-text-color;
+            cursor: pointer;
+            position: relative;
+
+            &::after {
+                content: '';
+                .absolute-position-mixin(@top: calc(100% - 1px), @left: 0, @translateX: 20px);
+                .geometric-mixin(@width: calc(100% - 40px), @height: 1px);
+                background-color: @page-background-color;
+            }
+
+            &:last-of-type::after {
+                display: none;
+            }
+
+            span {
+                font-weight: 700;
+                line-height: 27px;
+                text-transform: uppercase;
+                letter-spacing: 0.14px;
+            }
+
+            .icon-up {
+                .absolute-position-mixin(@top: 50%, @left: calc(100% - 25px));
+                transition: opacity .5s ease-in;
+            }
+
+            .icon-down {
+                opacity: 0;
+                visibility: hidden;
+                .absolute-position-mixin(@top: 50%, @left: calc(100% - 25px), @translateY: -100%);
+                transition: opacity .5s ease-out;
+            }
+        }
+
+        &__group {
+            overflow: hidden;
+            max-height: 0;
+            position: relative;
+            transition: max-height .4s ease-in-out;
+        }
+    }
+
+    .product-filter {
+        padding: 14px 20px 14px 48px;
+        border-bottom: 1px solid @page-line-color;
+        color: @filter-color;
+        letter-spacing: 0.14px;
+        line-height: 22px;
+
+        input[type="checkbox"] {
+            display: none;
+
+            &:checked {
+                & ~ label::before {
+                    background-size: auto;
+                }
+            }
+        }
+
+        label {
+            .flex-mixin();
+            position: relative;
+            cursor: pointer;
+
+            &::before {
+                content: '';
+                .absolute-position-mixin(@left: -9px, @top: 50%, @translateX: -100%);
+                .geometric-mixin(@width: 20px, @height: 20px);
+                border: 1px solid @filter-checkbox-border-color;
+                .background-image-mixin('check.png', @widthImg: 20px, @heightImg: 20px, @size: 0);
+            }
+        }
+
+        &__name {
+            max-width: 160px;
+        }
+
+        &__qty {
+            margin-left: auto;
+        }
+    }
+}
