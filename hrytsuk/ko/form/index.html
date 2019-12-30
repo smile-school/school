@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="knockout-3.5.1.js"></script>
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            font-family: sans-serif;
+            font-size: 18px;
+            line-height: 1.2;
+        }
+        .wrap{
+            width: 350px;
+            margin: 20px auto;
+        }
+        input,
+        textarea{
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        p   {
+            margin-bottom: 15px;
+        }
+        .radio input{
+            display: none;
+            width: auto;
+        }
+        .radio input:checked +label{
+            background-color: gray;
+            color: white;
+        }
+        .radio label{
+            margin-right: 20px;
+            cursor: pointer;
+            padding: 10px;
+        }
+        .required{
+            color: red;
+        }
+    </style>
+</head>
+<body><div class="wrap">
+    <form action="" method="post" data-bind="submit: submitForm">
+        <p data-bind="css: {required: required() && !firstName()}">
+            <label >First Name
+                <input data-bind="value: firstName">
+            </label>
+        </p>
+        <p data-bind="css: {required: required() && !lastName()}">
+            <label >Last Name
+                <input data-bind="value: lastName">
+            </label>
+        </p>
+        <p data-bind="css: {required: required() && !email()}">
+            <label >email
+                <input type="email" data-bind="value: email">
+            </label>
+        </p>
+        <p class="radio">
+            <input data-bind="checked: rating" type='radio' name="rating" value="1" id="rating-1">
+            <label for="rating-1">1</label>
+            <input data-bind="checked: rating" type='radio' name="rating" value="2" id="rating-2">
+            <label for="rating-2">2</label>
+            <input data-bind="checked: rating" type='radio' name="rating" value="3" id="rating-3">
+            <label for="rating-3">3</label>
+            <input data-bind="checked: rating" type='radio' name="rating" value="4" id="rating-4">
+            <label for="rating-4">4</label>
+            <input data-bind="checked: rating" type='radio' name="rating" value="5" id="rating-5">
+            <label for="rating-5">5</label>
+        </p>
+        <p data-bind="css: {required: required() && !messages()}">
+            <label >Message
+                <textarea name="message" id="" cols="30" rows="10" data-bind="value:messages"></textarea>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                Show Preview Message
+                <input type="checkbox" data-bind="checked: showPrevMessage">
+            </label>
+        </p>
+        <button data-bind="click: addMessage">Add Message</button>
+
+    </form>
+    <div data-bind="visible: showPrevMessage">
+        <h2>Preview Message</h2>
+        <div data-bind="html: messagePrev"></div>
+    </div>
+    <div data-bind="foreach: messagesList">
+        <p data-bind="text: firstName()"></p>
+        <p data-bind="text: lastName()"></p>
+        <p data-bind="text: email()"></p>
+        <p data-bind="text: rating()"></p>
+        <p data-bind="text: messages()"></p>
+        <button data-bind="click: plusR, text: plusText"></button>
+        <button data-bind="click: minusR, text: minusText"></button>
+        <p>total rating: <span data-bind="text: percentRating"></span></p>
+    </div>
+</div>
+
+<script>
+    function Message(firstName, lastName, email, rating, messages) {
+
+        this.firstName = ko.observable(firstName);
+        this.lastName = ko.observable(lastName);
+        this.email = ko.observable(email);
+        this.messages = ko.observable(messages);
+        this.rating = ko.observable(rating);
+        this.plusText = ko.observable(0);
+        this.minusText = ko.observable(0);
+
+        this.plusR = function () {
+            this.plusText(this.plusText() + 1);
+        };
+        this.minusR = function () {
+            this.minusText(this.minusText() + 1);
+        };
+        this.percentRating = ko.computed(function () {
+            return  this.plusText() / (this.plusText() + this.minusText()) * 100 + '%';
+        },this)
+    }
+
+    function Messages() {
+
+        this.firstName = ko.observable('');
+        this.lastName = ko.observable('');
+        this.email = ko.observable('');
+        this.messages = ko.observable('');
+        this.rating = ko.observable('');
+        this.required = ko.observable(true);
+        this.messagesList = ko.observableArray([]);
+
+        this.submitForm = function () {
+
+        };
+        this.clearForm = function () {
+            this.firstName('');
+            this.lastName('');
+            this.email('');
+            this.messages('');
+            this.rating('');
+            this.required(false);
+        }
+
+        this.addMessage = function () {
+            if (this.firstName() && this.lastName && this.email && this.messages){
+                this.messagesList.push(new Message(this.firstName(), this.lastName, this.email, this.rating, this.messages));
+                this.clearForm();
+            }
+            else {
+                this.required(true);
+            }
+        };
+        this.showPrevMessage = ko.observable(false);
+        this.messagePrev = ko.computed(function () {
+
+            var html = this.firstName() ? '<p>firstName ' + this.firstName() + '</p>' : '';
+            html += this.lastName() ? '<p>lastName ' + this.lastName() + '</p>' : '';
+            html += this.email() ? '<p>email: ' + this.email() + '</p>' : '';
+            html += this.rating() ? '<p> Your rating: ' + this.rating() + '</p>' : '';
+            html += this.messages() ? '<p>message ' + this.messages() + '</p><br>' : '';
+            return html;
+        }, this);
+    }
+    ko.applyBindings(new Messages());
+</script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="knockout-3.5.1.js"></script>
+    <script src="lib.js"></script>
+</head>
+<style>
+    body{
+        font-family: sans-serif;
+        font-size: 16px;
+        line-height: 1.2;
+    }
+    table{
+        margin: 20px auto;
+    }
+    th,
+    td{
+        border: 1px solid gray;
+        padding: 10px;
+    }
+    li{
+        list-style-type: none;
+    }
+    .sale{
+        color: red;
+    }
+    .smal-sale{
+        color: green;
+    }
+</style>
+<script src="knockout-3.5.1.js"></script>
+<body>
+<h1 data-bind = 'text: info'></h1>
+    <button id="setName" data-bind="click: setName">What is your name</button>
+    <button id="setName2" data-bind="click: setLocation">What is your name</button>
+    <button data-bind="click: addCourse">add Course</button>
+<table>
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Title</th>
+        <th>Price</th>
+        <th>Remove</th>
+        <th>Primetive</th>
+    </tr>
+    </thead>
+    <tbody data-bind="foreach:courseList">
+    <tr>
+        <td data-bind="text: $index() + 1"></td>
+        <td data-bind="text:title"></td>    <!--  можна виконувати перевірку або if або visible-->
+        <td>
+            <p data-bind="text: new Intl.NumberFormat('ru-RU').format(price()), style:{fontWeight: (discount)() > 40 ? 'bold' : 'normal'}"></p>
+            <div data-bind="visible:discount,css:sale()">
+                <p data-bind="html:discountNext"></p>
+            </div>
+
+        </td>
+        <td><button data-bind="click: $root.removeCourse">Remove</button></td>  //foot. - приязує курс
+        <td>
+            <ul data-bind="foreach: reqs">
+                <li data-bind="text: $data">
+
+                </li>
+            </ul>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<p data-bind="with: anonser">
+    New Course <strong data-bind="text : title"></strong>
+    Price <strong data-bind="text : price"></strong>
+    <br><a data-bind="attr:{href:link, target: '_blank'}">Read</a>
+</p>
+
+
+<script>
+    var anonser = ko.observable(new Course('HTML/CSS Level 2',15000));
+    anonser().link = 'https://www.smile.eu/fr';
+    function Course(title,price,reqs,discount) {
+        this.title = ko.observable(title);
+        this.price = ko.observable(price);
+        this.reqs = (reqs) ? reqs : [];
+        this.discount = ko.observable((discount) ? discount : 0);
+        this.discountNext = ko.computed(function () {
+            return "Discount " + this.discount() + "% <br> New Price" + (this.price() - (this.discount() / 100 * this.price()));
+        }, this);
+        this.sale = function () {
+            return (this.discount() < 40) ? 'sale' : 'smal-sale';
+        }
+    }
+
+    function Customer() {
+        this.name = ko.observable('Vasya');
+        this.customer = ko.observable('Rivne');
+        this.info = ko.computed(function () {
+            return 'Helo ' + this.name() + ' from ' + this.customer();    // вивод зміненого мені
+        }, this);
+        this.courseList = ko.observableArray([
+            new Course('HTML/CSS', 9150),
+            new Course('WebMAster', 14900, ['HTML and CSS'], 50),
+            new Course('JavaScript-ECMA',15900, ['HTML and CSS']),
+        ]);
+        this.setName = function () {
+            this.name(prompt('what is your location?', this.name()));
+        };
+        this.setLocation = function () {
+            this.customer(prompt('what is your location?', this.customer()));
+        };
+
+        this.addCourse = function () {
+            var newCourse = getCourse();
+            ('title' in newCourse)
+            && this.courseList.push(new Course(newCourse.title,newCourse.price,newCourse.reqs, newCourse.discount));
+        }
+        this.removeCourse = function (course) {
+            this.courseList.remove(course);            //удалить валюту
+            console.log(arguments);
+        }.bind(this);
+
+    }
+
+    ko.applyBindings(new Customer());
+</script>
+</body>
+</html>

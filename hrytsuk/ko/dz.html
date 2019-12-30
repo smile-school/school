@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="knockout-3.5.1.js"></script>
+    <script src="lib.js"></script>
+</head>
+<style>
+    body{
+        font-family: sans-serif;
+        font-size: 16px;
+        line-height: 1.2;
+    }
+    table{
+        margin: 20px auto;
+    }
+    th,
+    td{
+        border: 1px solid gray;
+        padding: 10px;
+    }
+</style>
+<script src="knockout-3.5.1.js"></script>
+<body>
+<h1 data-bind = 'text: info'></h1>
+<button id="setName" data-bind="click: setName">What is your name</button>
+<button id="setName2" data-bind="click: setLocation">What is your name</button>
+<button data-bind="click: addCourse">add Course</button>
+<table>
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Title</th>
+        <th>Price</th>
+        <th>Remove</th>
+    </tr>
+    </thead>
+    <tbody data-bind="foreach:courseList">
+    <tr>
+        <td data-bind="text: $index() + 1"></td>
+        <td data-bind="text:title"></td>
+        <td data-bind="text:price"></td>
+        <td><button data-bind="click: $root.removeCourse">Remove</button></td>  //root. - приязує курс
+    </tr>
+    </tbody>
+</table>
+
+<table>
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Title remove</th>
+        <th>Price remove</th>
+        <th>Change</th>
+        <th>Remove over</th>
+    </tr>
+    </thead>
+    <tbody data-bind="foreach:removeList">
+    <tr>
+        <td data-bind="text: $index() + 1"></td>
+        <td data-bind="text:title"></td>
+        <td data-bind="text:price"></td>
+        <td><button data-bind="click: $root.chanceCurse">Change Added</button></td>  <!--root. - викликає функцію додавання-->
+        <td><button data-bind="click: $root.removeOverCourse">Remove over</button></td>   <!--root. - остаточно видаляє-->
+    </tr>
+    </tbody>
+</table>
+
+
+<script>
+    function Course(title,price) {
+        this.title = ko.observable(title);
+        this.price = ko.observable(price);
+    }
+    function RemoveCourse(title,price) {
+        this.title = ko.observable(title);
+        this.price = ko.observable(price);
+    }
+
+    function Customer() {
+        var self =this;
+        this.name = ko.observable('Vasya');
+        this.customer = ko.observable('Rivne');
+        this.info = ko.computed(function () {
+            return 'Helo ' + this.name() + ' from ' + this.customer();    // вивод зміненого мені
+        }, this);
+        this.courseList = ko.observableArray([
+            new Course('HTML/CSS', 9150),
+            new Course('WebMAster', 14900),
+            new Course('JavaScript-ECMA',15900),
+        ]);
+        this.removeList = ko.observableArray([
+            new RemoveCourse('Штото',222),
+
+        ]);
+        this.setName = function () {
+            this.name(prompt('what is your location?', this.name()));
+        };
+        this.setLocation = function () {
+            this.customer(prompt('what is your location?', this.customer()));
+        };
+
+        this.addCourse = function () {
+            var newCourse = getCourse();
+            ('title' in newCourse)
+            && this.courseList.push(new Course(newCourse.title,newCourse.price));
+        };
+        this.removeCourse = function (course) {
+            var elem = this.courseList.remove(course);            // удалить валюту
+            // this.removeList.push(new RemoveCourse(elem[0].title(),elem[0].price()));
+            this.removeList.push(course);
+        }.bind(this);
+
+        this.removeOverCourse = function (delCours) {      //остаточно видаляєм з масива
+          this.removeList.remove(delCours);
+        }.bind(this);
+
+        this.chanceCurse = function (delCourse) {
+            var overDelCourse =  this.removeList.remove(delCourse);
+            this.courseList.push(delCourse);    //повертаємо назад в головний масив з видалених!
+        }.bind(this);
+
+    }
+
+    ko.applyBindings(new Customer());
+</script>
+</body>
+</html>
