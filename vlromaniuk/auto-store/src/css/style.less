@@ -2124,7 +2124,15 @@ body {
     width: 12px;
   }
 
-
+  .header .nav .wrapper .navigation > ul > li {
+    padding: 10px 20px;
+  }
+  .header .nav .navigation > ul > li:hover {
+     background-color: @white;
+  }
+  .header .nav .wrapper .navigation > ul > li .hidden {
+     display: none;
+  }
 
 }
 
@@ -2147,7 +2155,6 @@ body {
     transform: rotate(90deg);
   }
   #menu__toggle:checked ~ .menu__box{
-    visibility: visible;
     left: 0;
   }
 
@@ -2155,12 +2162,10 @@ body {
     display: flex;
     align-items: center;
     position: fixed;
-
     width: 26px;
     height: 26px;
-
     cursor: pointer;
-    z-index: 1;
+    z-index: 100;
     #burger{
       padding-left: 0;
     }
@@ -2171,12 +2176,9 @@ body {
   .menu__btn > span::after {
     display: block;
     position: absolute;
-
     width: 100%;
     height: 2px;
-
     background-color: #616161;
-
     transition-duration: .25s;
   }
   .menu__btn > span::before {
@@ -2188,23 +2190,23 @@ body {
     top: 8px;
   }
 
-  .menu__box {
+  .header .nav .navigation > ul.menu__box.active{
     display: block;
+  }
+
+  .header .nav .navigation > ul.menu__box{
+    display: none;
+  }
+  .menu__box {
     position: fixed;
-    visibility: hidden;
     top: 0;
     left: -100%;
-
     height: 100%;
-
     margin: 0;
     padding: 80px 0;
-
     list-style: none;
-
     background-color: #ECEFF1;
     box-shadow: 1px 0  6px rgba(0, 0, 0, .2);
-
     transition-duration: .25s;
   }
 
@@ -2251,10 +2253,6 @@ body {
   }
 
   .header .nav .wrapper .navigation > ul > li .hidden {
-
-
-
-    /* box-shadow: 0  0  10px rgba(0, 0, 0, 0.25); */
     border: 1px solid #E5E5E5;
     padding: 11px 14px;
     top: 0;
@@ -2326,10 +2324,6 @@ body {
 
   }
 
-  .menu__btn {
-    /* position: fixed; */
-    position: absolute;
-  }
 
   .main .wrapper .body .aside .feature-card {
     display: flex;

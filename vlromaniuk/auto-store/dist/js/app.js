@@ -17,6 +17,11 @@
             heightStyle: "content"
         })
     })
+    $('.menu__btn').on('click', function (e) {
+            e.preventDefault()
+            $('.menu__box').toggleClass('active')
+            $('.menu__btn').css('top', '20px')
+        })
 })();
 (function () {
     // Product card gallery
