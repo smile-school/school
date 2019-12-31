@@ -1,5 +1,5 @@
 .breadcrumbs{
-    padding: 10px 0;
+    padding: 9px 0;
     .link{
         color: @breadcrumbs-text-color;
         font-size: 12px;
@@ -7,7 +7,7 @@
         text-transform: uppercase;
         letter-spacing: 0;
         .hover-text-mixin();
-        padding: 20px 0 13px;
+        //padding: 20px 0 13px;
     }
     span{
         margin: 0 5px;
@@ -28,10 +28,27 @@
     .majoration{
         float: right;
         font-size: 15px;
-        letter-spacing: 0.38px;
+        letter-spacing: 0.15px;
+        padding-left: 90px;
+        span{
+            position: relative;
+            &::before{
+                content: '';
+                .absolute-position-mixin(@left: 0, @translateX: -30px);
+            }
+        }
+    }
+    .fermeture{
+        span::before{
+            .background-image-mixin('calendar.png', @widthImg: 18px, @heightImg: 20px);
+        }
     }
     .majoration{
-        float: right;
+        span::before{
+            //content: '';
+            .background-image-mixin('label.png', @widthImg: 26px, @heightImg: 18px);
+            //.absolute-position-mixin(@left: 0, @translateX: -30px);
+        }
     }
 }
 .product-name{
@@ -92,7 +109,7 @@
         .product-results{
             &__controls{
                 .flex-mixin();
-                padding: 25px 0 18px 0;
+                padding: 19px 0 9px 0;
                 .product-results__qty{
                     color: @product-results-controls-qty-color;
                     font-size: 16px;

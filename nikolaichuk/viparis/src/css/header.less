@@ -51,7 +51,7 @@
             }
             &__cart{
                 font-size: 22px;
-                .geometric-mixin(@width: 106px, @height: 87px);
+                .geometric-mixin(@width: 104px, @height: 85px);
                 line-height: 87px;
                 a{
                     position: relative;
@@ -84,10 +84,9 @@
                 letter-spacing: 3.5px;
             }
             &__content{
-                position: absolute;
-                bottom: 0;
-                left: 0;
+                .absolute-position-mixin(@top: 100%, @left: 0, @translateX: 0, @translateY: -71px);
                 width: 100%;
+                height: 71px;
                 box-sizing: border-box;
                 padding: 4px 10px;
                 background-color: @header-bottom-background-color;
@@ -96,23 +95,23 @@
                     &__nav-menu{
                         font-size: 0;
                         .flex-mixin();
+                        padding-left: 36px;
                         &__item{
                             display: inline-block;
                             border-right: 1px solid @header-nav-menu-line-color;
-                            padding: 16px 23px;
                             box-sizing: border-box;
-                            max-width: 152px;
                             position: relative;
                             height: 100%;
                             a{
                                 display: block;
-                                //padding: 22px 0 21px;
+                                width: 65%;
                                 font-size: 13px;
                                 font-weight: 700;
                                 line-height: 15px;
                                 text-transform: uppercase;
                                 letter-spacing: 0.33px;
                                 text-align: center;
+                                .middle-mixin();
                             }
                             &:hover{
                                 background-color: @page-background-color;
@@ -123,14 +122,38 @@
                                     background-color: @page-element-background-red;
                                     .absolute-position-mixin(@top: 100%, @left: 0, @translateX: -1px, @translateY: 0);
                                 }
+                                &::after{
+                                    content: '';
+                                    .absolute-position-mixin(@top: calc(100% - 12px));
+                                    .background-image-mixin('down_red.png', @widthImg: 9px, @heightImg: 5px);
+                                }
+                            }
+                            &:first-child{
+                                width: 157px;
+                                &:hover::before{
+                                    .geometric-mixin(@width: calc(100% + 1px), @height: 4px);
+                                    .absolute-position-mixin(@top: 100%, @left: 0, @translateX: 0, @translateY: 0);
+                                }
                             }
                             &:nth-child(2){
-                                padding: 16px 26px;
-                                max-width: 121px;
+                                width: 123px;
                             }
-                            &:nth-child(1),
+                            &:nth-child(3),
+                            &:nth-child(4){
+                                width: 144px;
+                            }
                             &:nth-child(5){
-                                padding: 23px;
+                                width: 123px;
+                            }
+                            &:last-child{
+                                width: 164px;
+                                border-right: none;
+                                &:hover{
+                                    &::before{
+                                        .geometric-mixin(@width: calc(100% + 1px), @height: 4px);
+                                        .absolute-position-mixin(@top: 100%, @left: 0, @translateX: -1px, @translateY: 0);
+                                    }
+                                }
                             }
                         }
                     }
@@ -146,7 +169,7 @@
                             box-sizing: border-box;
                         }
                         i{
-                            .absolute-position-mixin(@top: 50%, @left: 15px, @translateX: 0, @translateY: -50%);
+                            .absolute-position-mixin(@top: 50%, @left: 20px, @translateX: 0, @translateY: -50%);
                             color: @page-element-background-red;
                             font-size: 21px;
                         }
