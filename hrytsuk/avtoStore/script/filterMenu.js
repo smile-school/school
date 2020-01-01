@@ -15,11 +15,11 @@
         function butonFilterClick() {
             self.classs.parentBloc.addEventListener('click', function (elem) {
                 if (elem.target.classList.contains(self.classs.filtrAction)) {
-                    self.classs.blocFilter.classList.contains(self.classs.clasMod) ? self.classs.mainAside.classList.remove(self.classs.clasMod) : self.classs.mainAside.classList.add(self.classs.clasMod);
-                } else if (elem.target.classList.contains(self.classs.ehidFiltr)) {
-                    self.classs.blocFilter.classList.remove(self.classs.clasMod);
+                    this.classs.blocFilter.classList.contains(this.classs.clasMod) ? this.classs.mainAside.classList.remove(this.classs.clasMod) : this.classs.mainAside.classList.add(t.classs.clasMod);
+                } else if (elem.target.classList.contains(this.classs.ehidFiltr)) {
+                    this.classs.blocFilter.classList.remove(this.classs.clasMod);
                 }
-            })
+            },this)
         }
 
         butonFilterClick();

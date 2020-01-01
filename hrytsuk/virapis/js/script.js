@@ -1,74 +1,57 @@
 (function () {
     function scrolTop() {
-        this.battonTo = $('.scroll-to');
+       var battonTo = $('.scroll-to');
 
         $(window).on('scroll', () => {
             if ($(this).scrollTop() >= 100){
-                this.battonTo.fadeIn();
+                battonTo.fadeIn();
             }
             else {
-                this.battonTo.fadeOut();
+                battonTo.fadeOut();
             }
         });
-        this.battonTo.on('click', () =>{
+       battonTo.on('click', () =>{
             $('html').animate({scrollTop:0},1000);
         })
     }
     scrolTop();
 
     function menuChecked() {
-        var self = this;
-        this.openMenu =  document.querySelector('.btn-drop-down');
-        this.closeMenu = document.querySelector('.close-menu-btn');
-        this.openFiltr = document.querySelector('.action-filtr');
-        this.cloFiltr = document.querySelector('.exit-filtr');
-        this.filtr = $('.filter-aside');
-        this.menuTop = $('.top-menu');
-        this.closeFiltr = '';
-        this.hidenFiltr = 'close-filtr';
-        this.close = 'close';
-        this.open = 'open';
-        this.openFil = 'open-filtr';
+       var openMenu =  $('.btn-drop-down'),
+            closeMenu = $('.close-menu-btn'),
+            openFiltr = $('.action-filtr'),
+            cloFiltr = $('.exit-filtr'),
+            filtr = $('.filter-aside'),
+            menuTop = $('.top-menu'),
+            hidenFiltr = 'close-filtr',
+            close = 'close',
+            open = 'open',
+            openFil = 'open-filtr';
 
-        this.openMenu.addEventListener('click', function f(e) {
-            if (self.menuTop.hasClass( self.close)){
-                self.menuTop.removeClass('close');
-                self.menuTop.addClass('open');
-            }
+        openMenu.on('click', function () {
+            menuTop.toggleClass("close open");
         });
-        this.closeMenu.addEventListener('click', function f(e) {
-            if (self.menuTop.hasClass(self.open)){
-                self.menuTop.removeClass('open');
-                self.menuTop.addClass('close');
-            }
+       closeMenu.on('click', function () {
+           menuTop.toggleClass("close open");
         });
-        this.openFiltr.addEventListener('click', function (e) {
+        openFiltr.on('click', function (e) {
             e.preventDefault();
-           if (self.filtr.hasClass(self.hidenFiltr)){
-               self.filtr.removeClass(self.hidenFiltr);
-               self.filtr.addClass(self.openFil);
-           }
+            filtr.toggleClass('close-filtr open-filtr')
         });
-        this.cloFiltr.addEventListener('click',function () {
-            if (self.filtr.hasClass(self.openFil)){
-                self.filtr.removeClass(self.openFil);
-                self.filtr.addClass(self.hidenFiltr);
-            }
+        cloFiltr.on('click',function () {
+            filtr.toggleClass('open-filtr close-filtr')
         });
 
 
         $(document).mouseup(function (e) {
-            if ($('.top-menu').hasClass(self.open)){
-                if (!$('.top-menu').is(e.target) && $('.top-menu').has(e.target).length === 0){
-                    $('.top-menu').removeClass('open');
-                    $('.top-menu').addClass('close');
-                    console.log('as');
+            if (menuTop.hasClass(open)){
+                if (!menuTop.is(e.target) && menuTop.has(e.target).length === 0){
+                    menuTop.toggleClass("close open");
                 }
             }
-            if ($('.filter-aside').hasClass(self.openFil)){
-                if (!$('.filter-aside').is(e.target) && $('.filter-aside').has(e.target).length ===0){
-                    $('.filter-aside').removeClass(self.openFil);
-                    self.filtr.addClass(self.hidenFiltr);
+            if (filtr.hasClass(openFil)){
+                if (!filtr.is(e.target) && filtr.has(e.target).length ===0){
+                    filtr.toggleClass('open-filtr close-filtr')
                 }
             }
 

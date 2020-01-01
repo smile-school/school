@@ -1,6 +1,5 @@
 (function () {
-    function formValid(a) {
-        var self = this;
+    function FormValid(a) {
         this.parament = {
             myForm:document.querySelector('#comentForm'),
             myForm2:document.querySelector('#comentForm2'),
@@ -55,46 +54,41 @@
                 elementForm.nameComent.value.length < 40 &&
                 elementForm.textComent.value.length > 10) {
                 remoteForm(elementForm);
-                Valid(data,e)
+                valid(data,e)
             }
 
         }
 
-        function Valid(data,e) {
-            this.elemForm = {};
+        function valid(data,e) {
+            var elemForm = {};
             data.forEach(function (item, key) {
-                if (key === 'name') this.elemForm.name = item;
-                else if (key === 'digniti') this.elemForm.digniti = item;
-                else if (key === 'disadvantages') this.elemForm.disadvantages = item;
-                else if (key === 'coment') this.elemForm.coment = item;
+                if (key === 'name') elemForm.name = item;
+                else if (key === 'digniti') elemForm.digniti = item;
+                else if (key === 'disadvantages') elemForm.disadvantages = item;
+                else if (key === 'coment') elemForm.coment = item;
             });
-            AddedComent(data,e);
+            addedComent(elemForm,e);
 
         }
 
-        function AddedComent(data,e) {
+        function addedComent(elemForm,e) {
             var  date = new Date(),
                 curr_date = date.getDate(),
                 curr_month = date.getMonth() + 1,
                 curr_year = date.getFullYear(),
                 setDate = curr_year + "-" + curr_month + "-" + curr_date,
                 li = document.createElement('li'),
-                ul = document.querySelector(".coment-list"),
-                ul2= document.querySelector('.coment-list2');
+                ul = document.querySelector(".coment-list");
 
             if(e.target.classList.contains('formComent')){
                 ul.prepend(li);
             }
-            else if(e.target.classList.contains('formComent2')){
-                console.log('asd');
-            }
-
 
 
             var topComent = createElem('div',{'class':'list-coment-bloc'},undefined),
                 comentBloc = createElem('div',{'class':'top-coment-list top-coment'},undefined),
                 pTop = createElem('p',undefined,undefined),
-                nameList =createElem('span',{'class':'name-list'},this.elemForm.name),
+                nameList =createElem('span',{'class':'name-list'},elemForm.name),
                 todauList = createElem('span',{'class':'todau-list'},undefined),
                 time = createElem('time',undefined,setDate);
 
@@ -111,14 +105,14 @@
             topComent.appendChild(interest);
 
             var comentText = createElem('div',{'class':'coment-text'},undefined),
-                coments = createElem('p',{'class':'coment'},this.elemForm.coment) ;
+                coments = createElem('p',{'class':'coment'},elemForm.coment) ;
             comentText.appendChild(coments);
 
             var characterBloc = createElem('dl',{'class':'character-bloc'}),
                 dt1 = createElem('dt',{'class':'character-bloc'},'Достоинства:'),
-                dd1 = createElem('dd',undefined,this.elemForm.digniti);
+                dd1 = createElem('dd',undefined,elemForm.digniti);
 
-            if (this.elemForm.digniti){
+            if (elemForm.digniti){
                 characterBloc.appendChild(dt1);
                 characterBloc.appendChild(dd1);
             }
@@ -128,9 +122,9 @@
 
             var characterBloc2 = characterBloc.cloneNode(false),
                 dt2 = createElem('dt',undefined,'Недостатки:'),
-                dd2 = createElem('dd',undefined,this.elemForm.disadvantages) ;
+                dd2 = createElem('dd',undefined,elemForm.disadvantages);
 
-            if (this.elemForm.disadvantages){
+            if (elemForm.disadvantages){
                 characterBloc2.appendChild(dt2);
                 characterBloc2.appendChild(dd2);
             }
@@ -183,8 +177,6 @@
                 elem.children[1].innerHTML = count;
             }
         }
-
     }
-
-    formValid();
+    FormValid();
 })();
