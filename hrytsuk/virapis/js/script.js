@@ -2,17 +2,25 @@
     function scrolTop() {
        var battonTo = $('.scroll-to');
 
-        $(window).on('scroll', () => {
-            if ($(this).scrollTop() >= 100){
-                battonTo.fadeIn();
-            }
-            else {
-                battonTo.fadeOut();
-            }
-        });
-       battonTo.on('click', () =>{
+        $(window).on('scroll', btnScroll);
+
+        function btnScroll() {
+          setTimeout(function () {
+              if ($(this).scrollTop() >= 200){
+                  battonTo.fadeIn();
+              }
+              else {
+                  battonTo.fadeOut();
+              }
+          },10)
+        }
+
+        battonTo.on('click', () =>{
             $('html').animate({scrollTop:0},1000);
-        })
+        });
+
+
+
     }
     scrolTop();
 
@@ -23,35 +31,35 @@
             cloFiltr = $('.exit-filtr'),
             filtr = $('.filter-aside'),
             menuTop = $('.top-menu'),
-            hidenFiltr = 'close-filtr',
-            close = 'close',
+           openClos = ['close','open'],
             open = 'open',
-            openFil = 'open-filtr';
+            openFil = 'open-filtr',
+            filtrStn = ['open-filtr','close-filtr'];
 
         openMenu.on('click', function () {
-            menuTop.toggleClass("close open");
+            menuTop.toggleClass(openClos);
         });
        closeMenu.on('click', function () {
-           menuTop.toggleClass("close open");
+           menuTop.toggleClass(openClos);
         });
         openFiltr.on('click', function (e) {
             e.preventDefault();
-            filtr.toggleClass('close-filtr open-filtr')
+            filtr.toggleClass(filtrStn)
         });
         cloFiltr.on('click',function () {
-            filtr.toggleClass('open-filtr close-filtr')
+            filtr.toggleClass(filtrStn)
         });
 
 
         $(document).mouseup(function (e) {
             if (menuTop.hasClass(open)){
                 if (!menuTop.is(e.target) && menuTop.has(e.target).length === 0){
-                    menuTop.toggleClass("close open");
+                    menuTop.toggleClass(openClos);
                 }
             }
             if (filtr.hasClass(openFil)){
                 if (!filtr.is(e.target) && filtr.has(e.target).length ===0){
-                    filtr.toggleClass('open-filtr close-filtr')
+                    filtr.toggleClass(filtrStn)
                 }
             }
 

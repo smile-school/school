@@ -1,8 +1,5 @@
 (function () {
-
-
-
-    function formValid(a) {
+    function FormValid(a) {
         var self = this;
         this.parament = {
             ratings : 0,
@@ -245,5 +242,5 @@
     }
 
 
-    formValid();
+    FormValid();
 })();
