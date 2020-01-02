@@ -19,6 +19,10 @@
                     @media(max-width: @tablet){
                         background-size: 85%;
                     }
+                    @media(max-width: @mobile-small){
+                        background-size: 95%;
+                        width: 145px;
+                    }
                 }
 
             }
@@ -50,6 +54,9 @@
                         margin-right: 0;
                         border-left: 1px solid @page-line-color;
                         font-size: 20px;
+                    }
+                    @media(max-width: @mobile){
+                        display: none;
                     }
                     .link > span{
                         @media(max-width: @tablet){
@@ -102,6 +109,9 @@
                     @media(max-width: @tablet){
                         margin-left: 0;
                     }
+                    @media(max-width: @mobile){
+                        border: none;
+                    }
                     i{
                         line-height: 83px;
                         @media(max-width: @tablet){
@@ -116,6 +126,9 @@
                 line-height: 87px;
                 @media(max-width: @tablet){
                     .geometric-mixin(@width: 60px, @height: 70px);
+                }
+                @media(max-width: @mobile-small){
+                    .geometric-mixin(@width: 50px, @height: 70px);
                 }
                 a{
                     position: relative;
@@ -145,6 +158,11 @@
             height: 188px;
             background-size: 180%;
             background-position: top left;
+        }
+        @media(max-width: @mobile-small){
+            height: 170px;
+            background-size: 275%;
+            background-position: -88px top;
         }
         &::before{
             content: '';
@@ -258,6 +276,9 @@
                 letter-spacing: 3.5px;
                 width: 100%;
                 text-align: center;
+                @media(max-width: @mobile-small){
+                    top: 30%;
+                }
             }
             &__content{
                 .absolute-position-mixin(@top: 100%, @left: 0, @translateX: 0, @translateY: -71px);

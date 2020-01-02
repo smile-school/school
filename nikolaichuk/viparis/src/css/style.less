@@ -31,6 +31,15 @@
         &-place{
             font-weight: 700;
             text-transform: uppercase;
+            @media(max-width: @mobile){
+                display: block;
+                margin-bottom: 10px;
+            }
+        }
+        &-dates{
+            @media(max-width: @mobile){
+                display: block;
+            }
         }
     }
     .dates{
@@ -49,6 +58,10 @@
             float: none;
             padding-left: 33px;
             display: inline-block;
+        }
+        @media(max-width: @mobile){
+            display: block;
+            margin-bottom: 12px;
         }
         span{
             position: relative;
@@ -69,6 +82,9 @@
         }
         @media(max-width: @tablet){
             padding-left: 80px;
+        }
+        @media(max-width: @mobile){
+            padding-left: 33px;
         }
     }
 }
@@ -92,6 +108,9 @@
             margin-right: 0;
             .flex-mixin();
         }
+        @media(max-width: @tablet-small){
+            flex-direction: column;
+        }
         &__plan-block{
             padding: 38px 20px 48px 19px;
             background-color: @page-element-background-blue;
@@ -106,6 +125,14 @@
                 padding: 15px 16px;
                 order: 1;
             }
+            @media(max-width: @tablet-small){
+                margin: 0 0 10px 0;
+                display: block;
+                padding: 16px 22px;
+            }
+            @media(max-width: @mobile){
+                width: 100%;
+            }
 
             &__heading{
                 display: inline-block;
@@ -116,12 +143,18 @@
                 width: 60%;
                 padding-left: 67px;
                 position: relative;
+                @media(max-width: @tablet-small){
+                    padding: 0;
+                }
                 &::before{
                     content: '';
                     .background-image-mixin(@image: 'plan.png', @widthImg: 48px, @heightImg: 34px);
                     .absolute-position-mixin(@left: 0, @translateX: 0);
                     @media(max-width: @laptop-small){
                         .absolute-position-mixin(@left: 0, @translateX: 0, @translateY: -6px);
+                    }
+                    @media(max-width: @tablet-small){
+                        display: none;
                     }
                 }
                 @media(max-width: @laptop-small){
@@ -141,6 +174,9 @@
             &__link{
                 @media(max-width: @laptop-small){
                     padding-left: 67px;
+                }
+                @media(max-width: @tablet-small){
+                    padding: 0;
                 }
 
                 .aside__plan-block__text{
@@ -209,8 +245,16 @@
                         pointer-events: none;
                     }
                 }
+                .select-price{
+                    @media(max-width: @mobile){
+                        display: none;
+                    }
+                }
                 .product-results__view-toggle{
                     margin-left: 21px;
+                    @media(max-width: @mobile){
+                        display: none;
+                    }
                     .view-toggle{
                         &_btn{
                             display: inline-block;
@@ -250,9 +294,23 @@
                 box-sizing: border-box;
                 .flex-mixin(@justify: space-between);
                 padding: 28px 339px 28px 362px;
+                position: relative;
+                &::before{
+                    @media(max-width: @mobile){
+                        content: '';
+                        .absolute-position-mixin();
+                        .geometric-mixin(@width: 1px, @height: 16px);
+                        background-color: @page-main-color;
+                        transform: translate(-50%, -50%)  rotate(15deg);
+                    }
+                }
                 @media(max-width: @page-wrapper-width){
                     padding: 28px 0;
                     justify-content: center;
+                }
+                @media(max-width: @mobile){
+                    justify-content: space-between;
+                    padding: 28px 19px;
                 }
 
                 .arrow-prev_link,
@@ -285,6 +343,12 @@
                         line-height: 16px;
                         text-transform: uppercase;
                         letter-spacing: 22.4px;
+                        &:nth-child(2),
+                        &:nth-child(3){
+                            @media(max-width: @mobile){
+                                display: none;
+                            }
+                        }
                     }
                     .current_link{
                         color: @page-element-background-red;
@@ -305,6 +369,12 @@
                 @media(max-width: @tablet){
                     margin: 50px 52px 50px 50px ;
                 }
+                @media(max-width: @mobile){
+                    margin: 50px 0 0;
+                    padding: 26px 20px 20px;
+                    display: block;
+                    text-align: center;
+                }
                 .devis{
                     &__calc{
                         .absolute-position-mixin(@left: 24px, @top: 0, @translateX: 0);
@@ -314,6 +384,9 @@
                         background-color: @page-element-background-blue;
                         z-index: 1;
                         border-radius: 50%;
+                        @media(max-width: @mobile){
+                            .absolute-position-mixin(@top:0);
+                        }
                         span{
                             .middle-mixin();
                             .background-image-mixin('calc.png', @widthImg: 18px, @heightImg: 21px);
@@ -333,6 +406,9 @@
                         width: 128px;
                         float: right;
                         margin-left: 15px;
+                        @media(max-width: @tablet-small){
+                            display: none;
+                        }
                         .button-link{
                             padding: 33px 15px 48px;
                             span{
