@@ -261,14 +261,17 @@ aside.left-aside {
         }
     }
 }
-.filtr-lb{
+
+.filtr-lb {
     display: flex;
     flex-direction: column;
-    & > label{
+
+    & > label {
         width: 100%;
         display: block;
         cursor: pointer;
         position: relative;
+
         &::after {
             content: "";
             background: url("../../../img/caret.svg") no-repeat;
@@ -280,41 +283,48 @@ aside.left-aside {
             transition: all .3s;
         }
     }
-    .checkbox-filter{
+
+    .checkbox-filter {
         display: none;
     }
 }
-.content-filter{
+
+.content-filter {
     border-top: 1px solid @border-color;
-    font-size:@f-size-menu ;
+    font-size: @f-size-menu;
     height: 0;
     overflow: hidden;
     opacity: 0;
     transition: all .4s;
-    ul{
+
+    ul {
         list-style-type: inherit;
         padding-left: 30px;
-        li{
-            a{
+
+        li {
+            a {
                 text-decoration: none;
                 color: @color-white;
                 transition: color .3s;
-                &:hover{
+
+                &:hover {
                     color: @shade-red;
                 }
             }
         }
     }
 }
-input.checkbox-filter{
-    &:checked{
-        & ~ .content-filter{
+
+input.checkbox-filter {
+    &:checked {
+        & ~ .content-filter {
             height: auto;
             overflow: visible;
             opacity: 1;
         }
-        & ~ label{
-            &::after{
+
+        & ~ label {
+            &::after {
                 transform: rotate(180deg);
             }
         }

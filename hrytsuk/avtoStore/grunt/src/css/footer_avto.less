@@ -13,15 +13,18 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-    & > li{
-        &:first-of-type{
+
+    & > li {
+        &:first-of-type {
             width: 32%;
         }
-        &:last-of-type{
+
+        &:last-of-type {
             box-sizing: border-box;
             padding-left: 99px;
         }
-        &.free-bloc-footer{
+
+        &.free-bloc-footer {
             padding-left: 110px;
         }
     }
@@ -42,28 +45,31 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-       &:not(.mod-footer){
-           li {
-               &:not(:first-of-type) {
-                   padding-top: 12px;
-               }
-           }
+
+        &:not(.mod-footer) {
+            li {
+                &:not(:first-of-type) {
+                    padding-top: 12px;
+                }
+            }
         }
     }
-    .opacini-none{
+
+    .opacini-none {
         position: relative;
         width: 170px;
     }
-    .mod-footer{
-        li{
-            &:not(:first-of-type){
+
+    .mod-footer {
+        li {
+            &:not(:first-of-type) {
                 padding-top: 18px;
             }
         }
     }
 
 
-    a{
+    a {
         color: @gray-shade2;
         display: flex;
         flex-direction: row;
@@ -95,34 +101,41 @@
     a {
         transition: all .3s;
         position: relative;
-        &::after{
+
+        &::after {
             content: "\2013	";
             position: absolute;
             left: 0;
             transform: scale(0);
         }
+
         &:hover {
             color: @bordo;
             padding-left: 10px;
-            &::after{
+
+            &::after {
                 transform: scale(1);
             }
         }
     }
 }
-@media screen  and (max-width: 1150px){
-.ul-footer-bloc{
-   & >  li{
-        padding: 0;
-       &.free-bloc-footer{
-           padding: 0;
-       }
-       &:last-of-type{
-           padding-left: 0;
-       }
+
+@media screen  and (max-width: 1150px) {
+    .ul-footer-bloc {
+        & > li {
+            padding: 0;
+
+            &.free-bloc-footer {
+                padding: 0;
+            }
+
+            &:last-of-type {
+                padding-left: 0;
+            }
+        }
     }
 }
-}
+
 @media screen and (max-width: 960px) {
     .ul-footer-bloc {
         flex-wrap: wrap;
@@ -135,8 +148,9 @@
                 width: 100%;
             }
         }
-        a{
-            &::after{
+
+        a {
+            &::after {
                 display: none;
             }
         }
@@ -158,6 +172,7 @@
     .ul-footer-bloc {
         margin: 0 auto;
         width: 100%;
+
         & > li {
             width: 100%;
 

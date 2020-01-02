@@ -7,58 +7,70 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
 
         }
-        body{
-            font-family: Arial,sans-serif;
+
+        body {
+            font-family: Arial, sans-serif;
         }
-        .wrap{
+
+        .wrap {
             width: 300px;
             padding: 15px;
             margin: 0 auto;
 
         }
-        select{
+
+        select {
             display: block;
             width: 100%;
             box-sizing: border-box;
         }
-        .mySelect{
+
+        .mySelect {
             width: 100%;
         }
-        .tittle{
+
+        .tittle {
             border: 1px solid;
             padding: 10px;
             cursor: pointer;
 
         }
-        .options{
+
+        .options {
             border: 1px solid;
             border-top: none;
             display: none;
         }
-        li{
+
+        li {
             list-style-type: none;
             padding: 10px 30px;
             border-bottom: 1px solid;
         }
-        li:hover{
+
+        li:hover {
             background-color: lightgray;
             cursor: pointer;
         }
-        li:last-of-type{
+
+        li:last-of-type {
             border: none;
         }
-        .active{
+
+        .active {
             display: block;
         }
-        li[data-selected-option]{
+
+        li[data-selected-option] {
             position: relative;
         }
-        li[data-selected-option]::before{
+
+        li[data-selected-option]::before {
             content: '+';
             display: block;
             width: 15px;
@@ -89,7 +101,7 @@
     <select class="select" name="name">
         <option value="1">1</option>
         <option value="2" selected>2</option>
-        <option value="3" >3</option>
+        <option value="3">3</option>
         <option value="4">4</option>
     </select>
 </div>
@@ -101,68 +113,70 @@
 
         this.optionsList = this.options.select.children;
 
-        this.optionBox = this.createElem('div', {'class':'options'});
+        this.optionBox = this.createElem('div', {'class': 'options'});
         this.status = false;
         this.title = undefined;
         this.init = function () {
-            var firstOption =  this.getOptionContent(this.getSelected());
+            var firstOption = this.getOptionContent(this.getSelected());
             this.selector.appendChild(this.title);
             this.selector.appendChild(this.createElem('div', setAttr(firstOption.attr, 'tittle', true), firstOption.text));
             this.selector.appendChild(this.optionBox);
             this.optionBox.appendChild(this.buildOption.call(this, this.createElem('ul')));
             this.selector.addEventListener('click', function (e) {
-                if (!this.status){
+                if (!this.status) {
                     this.optionBox.classList.add('active');
                     this.status = true;
-                }
-                else {
+                } else {
                     this.optionBox.classList.remove('active');
                     this.status = false;
                 }
                 var optionValue = e.target.dataset.option;
-             if (optionValue){
-                 selectOption.call(this,optionValue);
-                 this.title.dataset.selected = optionValue;
-                 this.title.textContent = optionValue;
-             }
+                if (optionValue) {
+                    selectOption.call(this, optionValue);
+                    this.title.dataset.selected = optionValue;
+                    this.title.textContent = optionValue;
+                }
 
             }.bind(this));
             this.options.select.parentElement.insertBefore(this.selector, this.options.select);
         };
-        function selectOption(value) {
-            for (var i=0; i<this.optionsList.length;i++){
 
-                if (this.optionsList[i] ==value){
+        function selectOption(value) {
+            for (var i = 0; i < this.optionsList.length; i++) {
+
+                if (this.optionsList[i] == value) {
                     this.optionsList[i].selected = true;
                 }
             }
         }
+
         function closeSelect(e) {
 
             this.optionBox.classList.remove('active');
         }
+
         function setAttr(attr, classElem, flag, text) {
             var data = {};
-            for (var i = 0; i < attr.length; i++){
-                if(flag && !data['data-selected']){
+            for (var i = 0; i < attr.length; i++) {
+                if (flag && !data['data-selected']) {
 
                     data['data-selected'] = attr.value.value;
-                }
-                else if(!flag && !data['data-selected']){
+                } else if (!flag && !data['data-selected']) {
                     data['data-selected'] = attr.value.value;
                 }
-                if (attr.selected && !flag){
+                if (attr.selected && !flag) {
                     data['data-selected-option'] = '';
                 }
             }
-            if (classElem){
+            if (classElem) {
                 data['class'] = classElem;
             }
             return data;
         }
+
         this.getSelected = function () {
-            for (var i = 0; i < this.optionsList.length; i++){
-                if(this.optionsList[i].selected) return i;
+            for (var i = 0; i < this.optionsList.length; i++) {
+                if (this.optionsList[i].selected) return i;
 
             }
             return 0;
@@ -175,7 +189,7 @@
 
         }
         this.buildOption = function (ul) {
-            for (var i = 0; i < this.optionsList.length; i++){
+            for (var i = 0; i < this.optionsList.length; i++) {
                 var option = this.getOptionContent(i);
                 ul.appendChild(createElement('li', setAttr(option.attr, undefined, false), option.text));
             }
@@ -183,6 +197,7 @@
         };
         this.init()
     }
+
     CustomSelect.prototype.createElem = createElement;
 
     var mySelect = new CustomSelect({
@@ -194,17 +209,18 @@
         if (!elem) return false;
 
         var el = document.createElement(elem);
-        if (attr){
-            for (var key in attr){
+        if (attr) {
+            for (var key in attr) {
                 el.setAttribute(key, attr[key])
             }
         }
-        if (text){
+        if (text) {
             el.textContent = text;
         }
         return el;
     }
-    var myElem = createElement('div', {'data-bind': 'text:rrr', 'class': 'wrap'},'text');
+
+    var myElem = createElement('div', {'data-bind': 'text:rrr', 'class': 'wrap'}, 'text');
     myElem.addEventListener('click', function () {
         alert('sdsd')
     })

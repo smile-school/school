@@ -30,7 +30,7 @@
             }
         };
         this.closeTooltipBody = function (e) {
-            if (self.tooltipWrapper === e.target || e.target.classList.contains('active')){
+            if (self.tooltipWrapper === e.target || e.target.classList.contains('active')) {
                 return false;
             }
             self.closeTooltip();
@@ -57,7 +57,7 @@
                 this.tooltips = document.querySelectorAll('.tooltip-js');
                 this.tooltipWrapper.classList.add('tooltip-box');
                 document.querySelector('body').appendChild(this.tooltipWrapper);
-                for (var i = 0; i < this.tooltips.length; i++){
+                for (var i = 0; i < this.tooltips.length; i++) {
                     this.tooltips[i].addEventListener('click', function (e) {
                         e.preventDefault();
                         self.tooltip(this);
@@ -67,5 +67,6 @@
         };
         this.init();
     }
+
     window.Tooltip = Tooltip;
 })();

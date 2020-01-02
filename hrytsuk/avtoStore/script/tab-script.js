@@ -19,8 +19,8 @@
 
 
         $('.reviev-href').click(function (e) {
-            tabNav.forEach(item =>{
-               item.classList.remove('white-li');
+            tabNav.forEach(item => {
+                item.classList.remove('white-li');
             });
             var activeRevie = document.querySelector('.active-revie');
             activeRevie.classList.add('white-li');
