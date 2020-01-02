@@ -1,12 +1,8 @@
 (function () {
-    function FormValid(a) {
-        this.parament = {
-            myForm:document.querySelector('#comentForm'),
-            myForm2:document.querySelector('#comentForm2'),
-            starInp:document.querySelector('.star-bloc'),
-            comentCou : document.querySelector('.number-ret'),
-        };
-        this.parament.myForm.addEventListener('submit', parsForm);
+    function formValid(a) {
+           var myForm = document.querySelector('#comentForm');
+
+            myForm.addEventListener('submit', parsForm);
 
 
         function parsForm(e) {
@@ -178,5 +174,5 @@
             }
         }
     }
-    FormValid();
+    formValid();
 })();
