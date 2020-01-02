@@ -2,12 +2,13 @@
     &-top{
         background-color: @header-top-background-color;
         .flex-mixin();
+
         .header{
             &__logo{
                 flex-grow: 1;
                 padding-left: 28px;
                 @media(max-width: @laptop){
-                    padding-left: 38px;
+                    padding-left: 50px;
                 }
                 a{
                     display: block;
@@ -152,6 +153,102 @@
             right: 0;
             background-color: rgba(64, 64, 64, 0.5);
         }
+        #burger-toggle{
+            display: none;
+        }
+        .menu-burger{
+            &__toggle{
+                display: none;
+                .geometric-mixin(@width: 25px, @height: 26px);
+                .absolute-position-mixin(@top: -40px, @left: 13px, @translateX: 0);
+                cursor: pointer;
+                @media(max-width: @laptop){
+                    display: inline-block;
+                }
+                @media(max-width: @tablet){
+                    top: -35px;
+                }
+            }
+            &__icon{
+                display: inline-block;
+                .geometric-mixin(@width: 25px, @height: 2px);
+                background-color: @page-element-background-blue;
+                .absolute-position-mixin(@left: 0, @translateX: 0);
+                transition: transform .4s ease-in;
+                &::before,
+                &::after{
+                    content: '';
+                    .geometric-mixin(@width: 100%, @height: 2px);
+                    background-color: @page-element-background-blue;
+                    transition: transform .4s ease-in;
+                }
+                &::before{
+                    .absolute-position-mixin(@top: -7px, @left: 0, @translateX: 0);
+                }
+                &::after{
+                    .absolute-position-mixin(@top: 8px, @left: 0, @translateX: 0);
+                }
+            }
+        }
+        #burger-toggle:checked{
+            & ~ .menu-burger__toggle{
+                position: fixed;
+                z-index: 4;
+                top: 40px;
+                @media(max-width: @tablet){
+                    top: 35px;
+                }
+                & > .menu-burger__icon{
+                    transform: rotate(45deg);
+                    left: 9%;
+                    background-color: @page-button-text-color;
+                    &::before{
+                        top: 0;
+                        transform: rotate(0);
+                        transition: transform .4s ease-in;
+                        background-color: @page-button-text-color;
+                    }
+                    &::after{
+                        top: 0;
+                        transform: rotate(90deg);
+                        transition: transform .4s ease-in;
+                        background-color: @page-button-text-color;
+                    }
+                }
+            }
+            & ~ .header__content{
+                display: block;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                padding: 70px 0 0;
+                opacity: .95;
+                z-index: 3;
+                transform: translateY(0);
+                .geometric-mixin(@width: 100vw, @height: 100%);
+                & > .header{
+                    &__nav-menu{
+                        flex-direction: column;
+                        padding: 0;
+                        & > .header__nav-menu__item{
+                            display: block;
+                            width: 100%;
+                            border: none;
+                            padding: 15px 0;
+                            &::before,
+                            &::after{
+                                display: none;
+                            }
+                        }
+                    }
+                    &__search{
+                        display: none;
+                    }
+                }
+            }
+        }
         .header{
             &__heading{
                 .absolute-position-mixin(@top: 34%, @left: 50%, @translateX: -50%, @translateY: 0);
@@ -173,16 +270,7 @@
                 @media(max-width: @laptop){
                     display: none;
                 }
-                .menu-burger{
-                    &__toggle{
-                        .absolute-position-mixin(@top: 0, @left: 0, @translateX: 0, @translateY: 0);
 
-                    }
-                    &__icon{
-                        .geometric-mixin(@width: 25px, @height: 1px);
-                        background-color: @page-element-background-blue;
-                    }
-                }
                 .header{
                     &__nav-menu{
                         font-size: 0;
