@@ -1,15 +1,14 @@
 (function () {
-    function FormValid(a) {
-        var self = this;
-        this.parament = {
+    function formValid(a) {
+     var parament = {
             ratings : 0,
             myForm:document.querySelector('#comentForm'),
             starInp:document.querySelector('.star-bloc'),
             comentCou : document.querySelector('.number-ret'),
         };
-        this.parament.myForm.addEventListener('submit', parsForm);
+        parament.myForm.addEventListener('submit', parsForm);
 
-        this.parament.starInp.addEventListener('click', ratingCounter) ;
+        parament.starInp.addEventListener('click', ratingCounter) ;
 
 
         function parsForm(e) {
@@ -37,13 +36,13 @@
 
         function ratingCounter(event) {
             if (event.target.tagName === 'LABEL'){
-                self.parament.elements = +(event.target.dataset.ret) / 5;
-                return self.parament.elements;
+                parament.elements = +(event.target.dataset.ret) / 5;
+                return parament.elements;
             }
             else if(event.target.tagName === 'use'){
                var label =  event.target.closest('.rat');
-                self.parament.elements = +(label.dataset.ret) / 5;
-                return self.parament.elements;
+                parament.elements = +(label.dataset.ret) / 5;
+                return parament.elements;
             }
 
         }
@@ -74,27 +73,27 @@
                 elementForm.nameComent.value.length < 40 &&
                 elementForm.textComent.value.length > 10) {
                 remoteForm(elementForm);
-                Valid(data)
+                valid(data)
             }
 
         }
 
-         function Valid(data) {
+         function valid(data) {
              this.elemForm = {};
 
              data.forEach(function (item, key) {
                  if (key === 'name') this.elemForm.name = item;
-                 else if (key === 'rating') this.elemForm.rating = self.parament.elements;
+                 else if (key === 'rating') this.elemForm.rating = parament.elements;
                  else if (key === 'digniti') this.elemForm.digniti = item;
                  else if (key === 'disadvantages') this.elemForm.disadvantages = item;
                  else if (key === 'coment') this.elemForm.coment = item;
                  else if (key === 'url-yotube') this.elemForm.urlYotube = item.split('v=')[1];
              });
-             AddedComent(data);
+             addedComent(data);
 
          }
 
-         function AddedComent(e) {
+         function addedComent(e) {
             var  date = new Date(),
                 curr_date = date.getDate(),
                 curr_month = date.getMonth() + 1,
@@ -230,7 +229,7 @@
 
         }
         function countComent() {
-            +(self.parament.comentCou.innerHTML)++;
+            +(parament.comentCou.innerHTML)++;
         }
         function counterLike(elem) {
             var count = 0;
@@ -242,5 +241,5 @@
     }
 
 
-    FormValid();
+    formValid();
 })();
