@@ -6,6 +6,8 @@
     });
 
     window.addEventListener('scroll', function () {
-        scrollBtn.hidden = ( pageYOffset < document.documentElement.clientHeight );
+        setTimeout(function () {
+            scrollBtn.hidden = ( pageYOffset < document.documentElement.clientHeight );
+        }, 100);
     });
 })();
