@@ -1,7 +1,8 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
+
 body {
     font-family: 'Proxima Nova Rg', sans-serif;
     font-size: @page-font-size;
@@ -9,22 +10,25 @@ body {
     color: @page-main-color;
     font-weight: 400;
 }
+
 header,
 main,
-footer{
+footer {
     max-width: @page-max-width;
     margin: 0 auto;
-    @media(max-width: @page-wrapper-width){
+    @media (max-width: @page-wrapper-width) {
         max-width: 100%;
     }
 }
-h2{
+
+h2 {
     font-size: @h2-font-size;
     text-transform: uppercase;
-    @media(max-width: @mobile-small){
+    @media (max-width: @mobile-small) {
         font-size: 35px;
     }
 }
+
 h3 {
     font-size: @h3-font-size;
     font-weight: 400;
@@ -32,34 +36,36 @@ h3 {
     letter-spacing: 0.35px;
     text-transform: capitalize;
 }
-h4{
+
+h4 {
     font-size: @page-font-size;
     font-weight: 700;
     line-height: 27px;
     text-transform: uppercase;
     letter-spacing: 0.14px;
 }
+
 .page-wrapper {
     max-width: @page-wrapper-width;
     margin: 0 auto;
-    @media(max-width: @page-wrapper-width){
+    @media (max-width: @page-wrapper-width) {
         max-width: 100%;
         padding: 0 12px 0 13px;
     }
 }
-.clearfix-block::after{
+
+.clearfix-block::after {
     content: "";
     display: table;
     clear: both;
 }
-a.link{
-    color:inherit;
+
+a.link {
+    color: inherit;
     text-decoration: none;
-    &:hover{
-        //color: @page-hover-color;
-    }
 }
-a.button-link{
+
+a.button-link {
     .button-mixin();
     .hover-mixin();
 
