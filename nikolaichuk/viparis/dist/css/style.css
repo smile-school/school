@@ -860,7 +860,7 @@ form .form__input-container button {
 }
 .header-bottom #burger-toggle:checked ~ .menu-burger__toggle {
   position: fixed;
-  z-index: 4;
+  z-index: 6;
   top: 40px;
 }
 @media (max-width: 768px) {
@@ -894,7 +894,7 @@ form .form__input-container button {
   bottom: 0;
   padding: 70px 0 0;
   opacity: 0.95;
-  z-index: 3;
+  z-index: 5;
   transform: translateY(0);
   width: 100vw;
   height: 100%;
@@ -1659,6 +1659,43 @@ form .form__input-container button {
   left: 50%;
   transform: translate(-2px, 11px);
 }
+.scrollTop {
+  width: 48px;
+  height: 48px;
+  background-color: #709ed3;
+  position: fixed;
+  right: 50px;
+  bottom: 80px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 4;
+}
+@media (max-width: 1024px) {
+  .scrollTop {
+    right: 15px;
+    bottom: 45px;
+  }
+}
+@media (max-width: 599px) {
+  .scrollTop {
+    left: 50%;
+    bottom: 15px;
+    transform: translate(-50%, 0);
+  }
+}
+.scrollTop span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 12px;
+  background-image: url('../../dist/ima/arrow_up.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: inherit;
+}
 .footer__communication {
   background-color: #e31d3c;
   color: #ffffff;
@@ -2029,6 +2066,11 @@ form .form__input-container button {
 @media (max-width: 669px) {
   .footer__copyright .copyright-wrapper {
     flex-wrap: wrap;
+  }
+}
+@media (max-width: 599px) {
+  .footer__copyright .copyright-wrapper {
+    padding-bottom: 80px;
   }
 }
 .footer__copyright_left {
