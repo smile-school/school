@@ -3,12 +3,12 @@
         if (this.children) {
             this.children.forEach((item) => new Tree(item, this.elementNode));
         }
-    }
+    };
 
     function getTreeHTML() {
         console.log(this.elementNode);
         return this.elementNode;
-    }
+    };
 
     function Tree(nodeTree, parent = null) {
         this.parent = parent;
@@ -20,7 +20,7 @@
         }
         this.children = nodeTree.children;
         this.buildChildren();
-    }
+    };
 
     Tree.prototype.buildChildren = buildChildren;
     Tree.prototype.getTreeHTML = getTreeHTML;

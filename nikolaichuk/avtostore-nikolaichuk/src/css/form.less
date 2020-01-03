@@ -4,42 +4,45 @@
     margin: 0 auto;
 }
 .form-review{
-    &__stars-rating{
-        margin: 0 auto;
-        text-align: center;
-        .stars-rating{
-            &__wrapper{
-                display: inline-block;
-                transform: rotate(180deg);
-                input{
-                    display: none;
-                }
-                input[type=radio]:checked ~ .stars-rating__star > i{
-                    color: @form-review-rating-star-fill-hover;
-                }
-            }
-            &__star{
-                display: inline-block;
-                width: 95px;
-                float: left;
+    &__stars-rating__wrapper {
+        .flex-mixin(@justify: space-around);
+        transform: rotate(180deg);
+        padding: 15px 0;
+
+        input {
+            display: none;
+        }
+
+        input[type=radio]:checked ~ .stars-rating__star > i {
+            color: @form-review-rating-star-fill-hover;
+        }
+
+        .stars-rating {
+            &__star {
                 transform: rotate(180deg);
                 cursor: pointer;
-                i{
+                text-align: center;
+
+                i {
                     color: @form-review-rating-star-fill;
                     font-size: 24px;
                 }
-                &:hover{
-                    i{
+
+                &:hover {
+                    i {
                         color: @form-review-rating-star-fill-hover;
                     }
-                    .stars-rating__status{
+
+                    .stars-rating__status {
                         color: @form-review-rating-star-text-color-hover;
                     }
-                    ~ .stars-rating__star > i{
+
+                    ~ .stars-rating__star > i {
                         color: @form-review-rating-star-fill-hover;
                     }
                 }
-                .stars-rating__status{
+
+                .stars-rating__status {
                     font-size: 12px;
                     padding-top: 5px;
                     color: @main-breadcrambs-color;
@@ -48,6 +51,7 @@
             }
         }
     }
+
     &__content{
         padding: 10px;
     }
