@@ -6,20 +6,19 @@
 
     function validateForm(e) {
         e.preventDefault();
-        if (true) addReview();
-        else{
+        var validator = new Validator(formReview);
+        validator.removeErrorMessage();
+        if (validator.isAllRequired('required-js')
+            && validator.isValidEmail(formReview.querySelector('.userEmail-js'))) addReview();
+        else {
             alert("error");
         }
-    };
-
-    function isEmptyField(field) {
-        return field.value.trim();
-    };
+    }
 
     function addReview() {
         var container = document.querySelector(".reviews-wrapper-js"),
             firstReview = container.querySelector(".review-js"),
-            treeObject = new elementTree(getTreeObject()),
+            treeObject = new ElementTree(getTreeObject()),
             review = treeObject.getTreeHTML();
             voteCounters.push(getCounter(review));
         if (firstReview) {
@@ -29,7 +28,7 @@
         }
         getReviewsCount();
         clearFormReview();
-    };
+    }
 
     function getTreeObject() {
         var comment =
@@ -87,6 +86,6 @@
             respondText.children.push(container);
         }
         return root;
-    };
-    window.elementNode = Node;
+    }
+    //window.elementNode = Node;
 })();

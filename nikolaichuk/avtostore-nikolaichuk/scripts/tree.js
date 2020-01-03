@@ -24,5 +24,5 @@
 
     Tree.prototype.buildChildren = buildChildren;
     Tree.prototype.getTreeHTML = getTreeHTML;
-    window.elementTree = Tree;
+    window.ElementTree = Tree;
 })();
