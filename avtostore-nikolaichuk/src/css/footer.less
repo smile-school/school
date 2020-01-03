@@ -1,0 +1,137 @@
+.footer{
+    &__content{
+        width: 100%;
+        margin-top: 118px;
+        background-color: @footer-background;
+
+        &-wrapper{
+            padding-top: 76px;
+            padding-bottom: 76px;
+            @media(max-width: @laptop-large){
+                padding: 30px @page-content-padding;
+                text-align: center;
+            }
+        }
+        &__contact-block{
+            float: left;
+            display: inline-block;
+            width: 385px;
+            margin-right: 15px;
+            @media(max-width: @laptop-large){
+                float: none;
+                margin: 0;
+                .col-4-width();
+            }
+            .contact-block{
+                &__title{
+                    color: @footer-heading-color;
+                    font-weight: 500;
+                    padding-bottom: 23px;
+                }
+                &__list__item{
+                    width: 100%;
+                    display: inline-block;
+                    padding: 10px 0;
+                    span{
+                        display: inline-block;
+                        position: relative;
+                        color: @footer-item-color;
+                        margin-left: 41px;
+                        line-height: 23px;
+                        &::before{
+                            content: '';
+                            .absolute-position-mixin(@top: 50%, @left: -41px, @translateX: 0, @translateY: -50%);
+                        }
+                    }
+                    &:first-child span::before{
+                        .background-image-mixin(@image: 'icon-geo-pointer.png', @widthImg: 36px, @heightImg: 36px);
+                    }
+                    &:nth-child(2) span::before{
+                        .background-image-mixin(@image: 'icon-phone.png', @widthImg: 36px, @heightImg: 36px);
+                    }
+                    &:nth-child(3) span::before{
+                        .background-image-mixin(@image: 'icon-latter.png', @widthImg: 36px, @heightImg: 36px);
+                    }
+                    &:last-child span::before{
+                        .background-image-mixin(@image: 'icon-clock.png', @widthImg: 36px, @heightImg: 36px);
+                    }
+                }
+            }
+        }
+        &__links-block{
+            float: right;
+            .flex-mixin(@justify: space-between, @align: stretch);
+            width: calc(100% - 400px);
+            @media(max-width: @laptop-large){
+                float: none;
+                width: 100%;
+                padding-top: 20px;
+            }
+            @media(max-width: @mobile){
+                flex-direction: column;
+            }
+            .links-block {
+                &__title {
+                    color: @footer-heading-color;
+                    font-weight: 500;
+                    padding-bottom: 23px;
+                }
+                &__list__item{
+                    width: 100%;
+                    padding: 10px 0;
+                    color: @footer-item-color;
+                    position: relative;
+                    a.link{
+                        transition: transform .2s ease-in-out;
+                        display: inline-block;
+                        &:hover{
+                            transition: transform .2s ease-in-out;
+                            transform: translateX(12px);
+                            &::before{
+                                content: '';
+                                .absolute-position-mixin(@left: -6px);
+                                .geometric-mixin(@width: 6px, @height: 1px);
+                                background-color: @page-hover-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &__copyright{
+        padding: 25px 0;
+        background-color: @footer-copyright-background;
+        @media(max-width: @laptop-large){
+            padding-left: @page-content-padding;
+            padding-right: @page-content-padding;
+        }
+        @media(max-width: @laptop-small){
+            text-align: center;
+        }
+        &__pay-system{
+            float: left;
+            img{
+                @media(max-width: @mobile){
+                    width: 70%;
+                }
+            }
+            @media(max-width: @laptop-small){
+                float: none;
+                //width: 50%;
+            }
+        }
+        &__content{
+            float: right;
+            color: @footer-copyright-color;
+            font-size: 13px;
+            line-height: 35px;
+            @media(max-width: @laptop-small){
+                float: none;
+                .col-4-width();
+                padding-top: 8px;
+            }
+        }
+    }
+}
+

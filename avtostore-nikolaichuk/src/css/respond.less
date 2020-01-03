@@ -1,0 +1,108 @@
+.responds-content {
+    margin-top: 20px;
+    padding: 5px;
+}
+
+.product-responds {
+    &__respond {
+        border-bottom: 1px solid @main-border-line-color;
+        padding: 15px 0;
+
+        .respond {
+            &__heading {
+                margin-bottom: 10px;
+                .flex-mixin(@justify: space-between, @align: baseline);
+
+                &__author {
+                    display: inline-block;
+                    font-weight: bold;
+                    font-size: larger;
+                    padding-right: 10px;
+                }
+
+                &__likes,
+                &__date{
+                    font-size: smaller;
+                }
+                &__likes{
+                    .flex-mixin(@align: flex-end);
+                    &__percent{
+                        display: inline-block;
+                        margin-left: 15px;
+                    }
+                    i{
+                        font-size: 12px;
+                        color: @form-review-rating-star-fill;
+                    }
+                    .active-star{
+                        color: @form-review-rating-star-fill-hover;
+                    }
+                    span{
+                        font-size: smaller;
+                    }
+                }
+
+                &__date{
+                    margin-left: auto;
+                }
+            }
+
+            &__text {
+                margin-bottom: 7px;
+                line-height: 1.25;
+                word-break: break-word;
+
+                div {
+                    padding-bottom: 7px;
+                }
+
+                div > span:first-child {
+                    font-weight: bold;
+                }
+            }
+
+            &__action-links {
+
+                &__vote-links{
+                    float: right;
+                }
+
+                &__vote-links {
+                    .vote-link_positive,
+                    .vote-link_negative {
+                        display: inline-block;
+                        padding: 4px 8px;
+                        cursor: pointer;
+                    }
+
+                    .vote-link_positive__counter,
+                    .vote-link_negative__counter {
+                        font-size: 12px;
+                        margin: 0 5px;
+                    }
+
+                    .vote-link_negative {
+                        position: relative;
+                        float: right;
+
+                        &:hover {
+                            i {
+                                color: @page-hover-color;
+                            }
+                        }
+                    }
+
+                    .vote-link_positive {
+                        float: left;
+
+                        &:hover {
+                            i {
+                                color: @page-hover-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
