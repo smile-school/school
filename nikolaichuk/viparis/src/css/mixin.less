@@ -1,0 +1,57 @@
+.geometric-mixin(@width: 0, @height: 0) {
+    width: @width;
+    height: @height;
+}
+
+.flex-mixin(@direction: row, @justify: space-between, @align: center) {
+    display: flex;
+    flex-direction: @direction;
+    justify-content: @justify;
+    align-items: @align;
+}
+
+.middle-mixin() {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.absolute-position-mixin(@top: 50%; @left: 50%; @translateX: -50%; @translateY: -50%) {
+    position: absolute;
+    top: @top;
+    left: @left;
+    transform: translate(@translateX, @translateY);
+}
+
+.background-image-mixin(@image; @widthImg: 0; @heightImg: 0; @position: center; @size: cover) {
+    .geometric-mixin(@width: @widthImg, @height: @heightImg);
+    background-image: url('@{image-url}@{image}');
+    background-repeat: no-repeat;
+    background-position: @position;
+    background-size: @size;
+    background-color: inherit;
+}
+
+.hover-text-mixin() {
+    &:hover {
+        color: @page-element-background-red;
+    }
+}
+.hover-mixin(){
+    &:hover{
+        background-color: @page-hover-color;
+    }
+}
+
+.button-mixin() {
+    display: block;
+    height: 100%;
+    color: @page-button-text-color;
+    background-color: @page-element-background-red;
+    transition: background-color .2s ease-in-out;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.14px;
+}
