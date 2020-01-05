@@ -6,7 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>AutoStore</title>
-    <link rel="stylesheet" href="dist/css/style.css">
+    <link rel="stylesheet" href="./dist/css/style.css">
 </head>
 <body>
 <header>
@@ -200,7 +200,8 @@
                                         Style 8</a></li>
                                     <li class="nav-links-menu__item"><a href="#" class="link nav-links-menu__item">Boxed
                                         Layout</a></li>
-                                    <li class="nav-links-menu__item"><a href="#" class="link nav-links-menu__item">Right To
+                                    <li class="nav-links-menu__item"><a href="#" class="link nav-links-menu__item">Right
+                                        To
                                         Left</a></li>
                                     <li class="nav-links-menu__item"><a href="#" class="link nav-links-menu__item">HOT
                                         LISTING
@@ -211,7 +212,8 @@
                                         Sidebar</a></li>
                                     <li class="nav-links-menu__item"><a href="#" class="link nav-links-menu__item">Right
                                         Sidebar</a></li>
-                                    <li class="nav-links-menu__item"><a href="#" class="link nav-links-menu__item">Left -
+                                    <li class="nav-links-menu__item"><a href="#" class="link nav-links-menu__item">Left
+                                        -
                                         Right
                                         Sidebar</a></li>
                                 </ul>
@@ -222,13 +224,15 @@
                                     <li class="nav-links-menu__item"><a href="#" class="link">Without Sidebar</a></li>
                                     <li class="nav-links-menu__item"><a href="#" class="link">Left Sidebar</a></li>
                                     <li class="nav-links-menu__item"><a href="#" class="link">Right Sidebar</a></li>
-                                    <li class="nav-links-menu__item"><a href="#" class="link">Left - Right Sidebar</a></li>
+                                    <li class="nav-links-menu__item"><a href="#" class="link">Left - Right Sidebar</a>
+                                    </li>
                                 </ul>
                                 <ul class="nav-links-menu">
                                     <li class="nav-links-menu__heading">
                                         detail layouts
                                     </li>
-                                    <li class="nav-links-menu__item"><a href="#" class="link">Product Detail - Full</a></li>
+                                    <li class="nav-links-menu__item"><a href="#" class="link">Product Detail - Full</a>
+                                    </li>
                                     <li class="nav-links-menu__item"><a href="#" class="link">Product Detail - Left
                                         Sidebar</a>
                                     </li>
@@ -313,8 +317,10 @@
                         </div>
                         <div class="product-card__rating">
                             <span class="rating__stars"></span>
-                            <a href="#" class="link review-link">1 Review</a>
-                            <a href="#" class="link add-review-link">Add Your Review</a>
+                            <a href="#reviews" class="link review-link showReview-js">
+                                <span class="reviewCounter-js"></span> Review
+                            </a>
+                            <a href="#tabs" class="link add-review-link addReviewBtn-js">Add Your Review</a>
                         </div>
                         <p class="product-card__price">$53.00</p>
                         <div class="product-card__description">
@@ -363,11 +369,11 @@
                     </div>
                 </div>
             </div>
-            <div class="product-info__details-tabs clearfix-block">
-                <input type="radio" id="tab1" name="tabs">
-                <input type="radio" id="tab2" name="tabs">
-                <input type="radio" id="tab3" name="tabs" checked>
-                <input type="radio" id="tab4" name="tabs">
+            <div class="product-info__details-tabs clearfix-block" id="tabs">
+                <input type="radio" id="tab1" name="tabs" class="activeTab-js" checked="checked">
+                <input type="radio" id="tab2" name="tabs" class="activeTab-js">
+                <input type="radio" id="tab3" name="tabs" class="activeTab-js">
+                <input type="radio" id="tab4" name="tabs" class="activeTab-js">
                 <div class="details-tabs__text">
                     <div class="details-tab__content tab1-content">
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
@@ -426,98 +432,100 @@
                             esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
                         </p>
                     </div>
-                    <div class="details-tab__content tab3-content">
+                    <div class="details-tab__content tab3-content tab-reviews-js">
                         <div class="form-wrapper clearfix-block">
                             <form action="#" method="post" class="form-review" id="form-review">
                                 <div class="form-review__content">
-                                    <div class="form-review__stars-rating">
-                                        <div class="stars-rating__wrapper clearfix-block">
-                                            <input type="radio" name="ratingStar" id="rating_5" value="5">
-                                            <label class="stars-rating__star" for="rating_5">
-                                                <i class="fas fa-star"></i>
-                                                <p class="stars-rating__status">A great</p>
-                                            </label>
-                                            <input type="radio" name="ratingStar" id="rating_4" value="4">
-                                            <label for="rating_4" class="stars-rating__star">
-                                                <i class="fas fa-star"></i>
-                                                <p class="stars-rating__status">Good</p>
-                                            </label>
-                                            <input type="radio" name="ratingStar" id="rating_3" value="3">
-                                            <label for="rating_3" class="stars-rating__star">
-                                                <i class="fas fa-star"></i>
-                                                <p class="stars-rating__status">Normal</p>
-                                            </label>
-                                            <input type="radio" name="ratingStar" id="rating_2" value="2">
-                                            <label for="rating_2" class="stars-rating__star">
-                                                <i class="fas fa-star"></i>
-                                                <p class="stars-rating__status">So-so</p>
-                                            </label>
-                                            <input type="radio" name="ratingStar" id="rating_1" value="1">
-                                            <label for="rating_1" class="stars-rating__star">
-                                                <i class="fas fa-star"></i>
-                                                <p class="stars-rating__status">Bad</p>
-                                            </label>
-                                        </div>
+                                    <div class="form-review__stars-rating__wrapper">
+                                        <input type="radio" name="ratingStar" id="rating_5" value="5">
+                                        <label class="stars-rating__star" for="rating_5">
+                                            <i class="fas fa-star"></i>
+                                            <p class="stars-rating__status">A great</p>
+                                        </label>
+                                        <input type="radio" name="ratingStar" id="rating_4" value="4">
+                                        <label for="rating_4" class="stars-rating__star">
+                                            <i class="fas fa-star"></i>
+                                            <p class="stars-rating__status">Good</p>
+                                        </label>
+                                        <input type="radio" name="ratingStar" id="rating_3" value="3">
+                                        <label for="rating_3" class="stars-rating__star">
+                                            <i class="fas fa-star"></i>
+                                            <p class="stars-rating__status">Normal</p>
+                                        </label>
+                                        <input type="radio" name="ratingStar" id="rating_2" value="2">
+                                        <label for="rating_2" class="stars-rating__star">
+                                            <i class="fas fa-star"></i>
+                                            <p class="stars-rating__status">So-so</p>
+                                        </label>
+                                        <input type="radio" name="ratingStar" id="rating_1" value="1">
+                                        <label for="rating_1" class="stars-rating__star">
+                                            <i class="fas fa-star"></i>
+                                            <p class="stars-rating__status">Bad</p>
+                                        </label>
                                     </div>
                                     <label class="form-review__label" for="advantages">Advantages</label>
                                     <input class="form-review__input" type="text" name="advantages" id="advantages">
                                     <label class="form-review__label" for="disadvantages">Disadvantages</label>
-                                    <input class="form-review__input" type="text" name="disadvantages" id="disadvantages">
+                                    <input class="form-review__input" type="text" name="disadvantages"
+                                           id="disadvantages">
                                     <label class="form-review__label" for="comment">Comment</label>
-                                    <textarea class="form-review__input textarea comment-js" name="comment" id="comment"
+                                    <span class="status_required">*</span>
+                                    <textarea class="form-review__input textarea comment-js required-js" name="comment" id="comment"
                                               required></textarea>
-                                    <label class="form-review__label userName-js" for="user-name">User name</label>
-                                    <input class="form-review__input" type="text" name="user" id="user-name" required>
-                                    <label class="form-review__label userEmail-js" for="contact">User email</label>
-                                    <input class="form-review__input" type="text" name="contact" id="contact" required>
+                                    <label class="form-review__label" for="user-name">User name</label>
+                                    <span class="status_required">*</span>
+                                    <input class="form-review__input userName-js required-js" type="text" name="user" id="user-name" required>
+                                    <label class="form-review__label" for="contact">User email</label>
+                                    <span class="status_required">*</span>
+                                    <input class="form-review__input userEmail-js required-js" type="text" name="contact" id="contact" required>
                                     <button type="submit" class="form-review__submit submitReviewBtn-js">Leave feedback
                                     </button>
                                     <button type="button" class="form-review__cancel cancelReviewBtn-js">Cancel</button>
                                 </div>
                             </form>
                         </div>
-                        <div class="responds-content responds-wrapper-js">
-                            <div class="product-responds__respond respond-js">
+                        <div class="responds-content reviews-wrapper-js" id="reviews">
+                            <div class="product-responds__respond review-js">
                                 <div class="respond__heading">
                                     <span class="respond__heading__author">User</span>
                                     <span class="respond__heading__likes">
-                                        <span class="star-js"><i class="fas fa-star active-star"></i></span>
-                                        <span class="star-js"><i class="fas fa-star active-star"></i></span>
-                                        <span class="star-js"><i class="fas fa-star active-star"></i></span>
+                                        <span class="star-js active-star"><i class="fas fa-star"></i></span>
+                                        <span class="star-js active-star"><i class="fas fa-star"></i></span>
+                                        <span class="star-js active-star"><i class="fas fa-star"></i></span>
                                         <span class="star-js"><i class="fas fa-star"></i></span>
                                         <span class="star-js"><i class="fas fa-star"></i></span>
                                         <span class="respond__heading__likes__percent percentVotes-js"></span>
                                     </span>
-                                    <span class="respond__heading__date">15 ноября 2019</span>
+                                    <span class="respond__heading__date">15 October 2019</span>
                                 </div>
                                 <div class="respond__text">
-                                    <div>
+                                    <p>
                                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam aspernatur
                                         commodi deserunt enim error eum illum nemo officia placeat possimus, praesentium
                                         quae
                                         reprehenderit sed, soluta tempora, temporibus ullam vitae.
-                                    </div>
-                                    <div>
+                                    </p>
+                                    <p>
                                         <span>Advantages: </span>
                                         <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam aspernatur</span>
-                                    </div>
-                                    <div>
+                                    </p>
+                                    <p>
                                         <span>Disadvantages: </span>
                                         <span>reprehenderit sed, soluta tempora, temporibus ullam vitae.</span>
+                                    </p>
+                                </div>
+
+                                <div class="respond__vote-links">
+                                    <div class="vote-link_positive positiveBtn-js">
+                                        <i class="far fa-thumbs-up"></i>
+                                        <span class="vote-link_positive__counter positiveVote-js">&nbsp;</span>
+                                    </div>
+                                    <div class="vote-link_negative negativeBtn-js">
+                                        <i class="far fa-thumbs-down"></i>
+                                        <span class="vote-link_negative__counter negativeVote-js">&nbsp;</span>
                                     </div>
                                 </div>
-                                <div class="respond__action-links clearfix-block">
-                                    <div class="respond__action-links__vote-links clearfix-block">
-                                        <div class="vote-link_positive positiveBtn-js">
-                                            <i class="far fa-thumbs-up"></i>
-                                            <span class="vote-link_positive__counter positiveVote-js">&nbsp;</span>
-                                        </div>
-                                        <div class="vote-link_negative negativeBtn-js">
-                                            <i class="far fa-thumbs-down"></i>
-                                            <span class="vote-link_negative__counter negativeVote-js">&nbsp;</span>
-                                        </div>
-                                    </div>
-                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -541,7 +549,7 @@
                     <span class="heading__icon"><i class="fas fa-info"></i></span>
                 </label>
                 <label for="tab3" class="details-tab__heading tab3-title">
-                    <span class="heading__text">Reviews(<span class="respondCounter-js"></span>)</span>
+                    <span class="heading__text">Reviews(<span class="reviewCounter-js"></span>)</span>
                     <span class="heading__icon"><i class="far fa-comment-alt"></i></span>
                 </label>
                 <label for="tab4" class="details-tab__heading tab4-title">
@@ -625,8 +633,115 @@
                 <p>you may like this products</p>
                 <div class="products-related__heading__title">related products</div>
             </div>
-            <div class="products-related__gallery">
-                <div class="products-related__gallery__item product-item">
+            <div class="products-related__gallery slider-js">
+                <div class="products-related__gallery__item">
+                    <div class="product-item">
+                        <a href="#" class="link product-item__image">
+                            <img src="./dist/ima/car_kit_hands_free_calling.png" alt="car kit hands free calling">
+                            <span class="product-item__image__search"><i class="fas fa-search"></i></span>
+                        </a>
+                        <div class="product-item__content">
+                            <div class="product-item__control-buttons">
+                                <a href="#" class="product-item__wish-list-btn">
+                                    <i class="fas fa-heart"></i>
+                                </a>
+                                <a href="#" class="product-item__add-cart-btn">add to cart</a>
+                                <a href="#" class="product-item__compare-btn">
+                                    <img src="./dist/ima/compare.svg" alt="">
+                                </a>
+                            </div>
+                            <div class="product-item__text-content">
+                                <a href="#" class="link product-item__text-content__title">Car Kit Hands Free Calling</a>
+                                <div class="product-item__text-content__rating">
+                                    <img src="./dist/ima/star5.png" alt="">
+                                </div>
+                                <div class="product-item__text-content__prices">$84.00</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="products-related__gallery__item">
+                    <div class="product-item">
+                        <a href="#" class="link product-item__image">
+                            <img src="./dist/ima/design_in-car_fm_radio.png" alt="car kit hands free calling">
+                            <span class="product-item__image__search"><i class="fas fa-search"></i></span>
+                        </a>
+                        <div class="product-item__content">
+                            <div class="product-item__control-buttons">
+                                <a href="#" class="product-item__wish-list-btn">
+                                    <i class="fas fa-heart"></i>
+                                </a>
+                                <a href="#" class="product-item__add-cart-btn">add to cart</a>
+                                <a href="#" class="product-item__compare-btn">
+                                    <img src="./dist/ima/compare.svg" alt="">
+                                </a>
+                            </div>
+                            <div class="product-item__text-content">
+                                <a href="#" class="link product-item__text-content__title">Car Kit Hands Free Calling</a>
+                                <div class="product-item__text-content__rating">
+                                    <img src="./dist/ima/star5.png" alt="">
+                                </div>
+                                <div class="product-item__text-content__prices">
+                                    <span class="sale-price">$55.00</span>
+                                    <span class="old-price">$84.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="products-related__gallery__item">
+                    <div class="product-item">
+                        <a href="#" class="link product-item__image">
+                            <img src="./dist/ima/fm_radio_adapter_car_hands-free.png" alt="car kit hands free calling">
+                            <span class="product-item__image__search"><i class="fas fa-search"></i></span>
+                        </a>
+                        <div class="product-item__content">
+                            <div class="product-item__control-buttons">
+                                <a href="#" class="product-item__wish-list-btn">
+                                    <i class="fas fa-heart"></i>
+                                </a>
+                                <a href="#" class="product-item__add-cart-btn">add to cart</a>
+                                <a href="#" class="product-item__compare-btn">
+                                    <img src="./dist/ima/compare.svg" alt="">
+                                </a>
+                            </div>
+                            <div class="product-item__text-content">
+                                <a href="#" class="link product-item__text-content__title">Car Kit Hands Free Calling</a>
+                                <div class="product-item__text-content__rating">
+                                    <img src="./dist/ima/star5.png" alt="">
+                                </div>
+                                <div class="product-item__text-content__prices">$84.00</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="products-related__gallery__item">
+                    <div class="product-item">
+                        <a href="#" class="link product-item__image">
+                            <img src="./dist/ima/radio_transmitter_adapter.png" alt="car kit hands free calling">
+                            <span class="product-item__image__search"><i class="fas fa-search"></i></span>
+                        </a>
+                        <div class="product-item__content">
+                            <div class="product-item__control-buttons">
+                                <a href="#" class="product-item__wish-list-btn">
+                                    <i class="fas fa-heart"></i>
+                                </a>
+                                <a href="#" class="product-item__add-cart-btn">add to cart</a>
+                                <a href="#" class="product-item__compare-btn">
+                                    <img src="./dist/ima/compare.svg" alt="">
+                                </a>
+                            </div>
+                            <div class="product-item__text-content">
+                                <a href="#" class="link product-item__text-content__title">Car Kit Hands Free Calling</a>
+                                <div class="product-item__text-content__rating">
+                                    <img src="./dist/ima/star5.png" alt="">
+                                </div>
+                                <div class="product-item__text-content__prices">$84.00</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="products-related__gallery__item product-item">
                     <a href="#" class="link product-item__image">
                         <img src="./dist/ima/car_kit_hands_free_calling.png" alt="car kit hands free calling">
                         <span class="product-item__image__search"><i class="fas fa-search"></i></span>
@@ -724,7 +839,7 @@
                             <div class="product-item__text-content__prices">$84.00</div>
                         </div>
                     </div>
-                </div>
+                </div>-->
             </div>
         </div>
     </div>
@@ -835,11 +950,14 @@
         </div>
     </div>
 </footer>
+<script src="./scripts/jquery-3.4.1.js"></script>
 <script src="./scripts/service.js"></script>
 <script src="./scripts/votesCounter.js"></script>
 <script src="./scripts/elementNode.js"></script>
 <script src="./scripts/tree.js"></script>
+<script src="./scripts/validator.js"></script>
 <script src="./scripts/respondsCounter.js"></script>
 <script src="./scripts/respondCreator.js"></script>
+<script src="./scripts/script.js"></script>
 </body>
 </html>

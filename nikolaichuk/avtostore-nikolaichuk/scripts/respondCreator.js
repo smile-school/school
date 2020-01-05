@@ -1,42 +1,44 @@
 (function () {
-    var formRespond = document.querySelector("#form-respond"),
-        buttonSubmit = formRespond.querySelector(".submitRespondBtn-js");
+    var formReview = document.querySelector("#form-review"),
+        buttonSubmit = formReview.querySelector(".submitReviewBtn-js"),
+        cancelReviewBtn = formReview.querySelector(".cancelReviewBtn-js"),
+        validator = new Validator(formReview);
 
     buttonSubmit.addEventListener("click", validateForm);
-    //formRespond.addEventListener("submit", addRespond);
+    cancelReviewBtn.addEventListener("click", clearForm);
+
+    function clearForm() {
+        service.clearFormFields(formReview);
+        validator.removeErrorMessage();
+    };
 
     function validateForm(e) {
         e.preventDefault();
-        if (true) addRespond();
-        else{
-            alert("error");
-        }
-    }
+        validator.removeErrorMessage();
+        if (validator.isAllRequired('required-js')
+            && validator.isValidEmail(formReview.querySelector('.userEmail-js'))) addReview();
+    };
 
-    function isEmptyField(field) {
-        return field.value.trim();
-    }
-
-    function addRespond() {
-        var container = document.querySelector(".responds-wrapper-js"),
-            firstRespond = container.querySelector(".respond-js"),
-            treeObject = new elementTree(getTreeObject()),
-            respond = treeObject.getTreeHTML();
-            voteCounters.push(getCounter(respond));
-        if (firstRespond) {
-            container.insertBefore(respond, firstRespond);
+    function addReview() {
+        var container = document.querySelector(".reviews-wrapper-js"),
+            firstReview = container.querySelector(".review-js"),
+            treeObject = new ElementTree(getTreeObject()),
+            review = treeObject.getTreeHTML();
+            voteCounters.push(getCounter(review));
+        if (firstReview) {
+            container.insertBefore(review, firstReview);
         } else {
-            container.appendChild(respond);
+            container.appendChild(review);
         }
-        getRespondsCount();
-        closeFormRespond();
-    }
+        getReviewsCount();
+        clearForm();
+    };
 
     function getTreeObject() {
         var comment =
-                service.createElement("p", undefined, undefined, formRespond.comment.value.trim()),
+                service.createElement("p", undefined, undefined, formReview.comment.value.trim()),
             userName =
-                service.createElement("span", "respond__heading__author", undefined, formRespond.user.value.trim()),
+                service.createElement("span", "respond__heading__author", undefined, formReview.user.value.trim()),
             percentCounter =
                 service.createElement("span", "respond__heading__likes__percent, percentVotes-js"),
             likes =
@@ -47,60 +49,46 @@
                 service.createElement("div", "respond__heading", [userName, likes, currentDate]),
             respondText =
                 service.createElement("div", "respond__text", [comment]),
-            complaintSVG =
-                service.createSVG("#review-complaint", 17, 17),
-            complaintLink =
-                service.createElement("div", "respond__action-links__complaint-link", [complaintSVG]),
-            replySVG =
-                service.createSVG("#review-reply-add", 12, 12),
-            linkText =
-                service.createElement("span", undefined,undefined, "Ответить"),
-            replyLink =
-                service.createElement("a", "respond__action-links__reply-link, link",[replySVG, linkText],undefined,{"href": "#"}),
-            likeSVG =
-                service.createSVG("#positive-vote", "16","16"),
+            like =
+                service.createElement("i", "far, fa-thumbs-up"),
             likeCounter =
                 service.createElement("span", "vote-link_positive__counter, positiveVote-js", undefined, "&nbsp;"),
-            dislikeSVG =
-                service.createSVG("#negative-vote", "16","16"),
+            dislike =
+                service.createElement("i", "far, fa-thumbs-down"),
             dislikeCounter =
                 service.createElement("span", "vote-link_negative__counter, negativeVote-js",undefined,"&nbsp;"),
             positiveVote =
-                service.createElement("div", "vote-link_positive, positiveBtn-js",[likeSVG, likeCounter]),
+                service.createElement("div", "vote-link_positive, positiveBtn-js",[like, likeCounter]),
             negativeVote =
-                service.createElement("div", "vote-link_negative, negativeBtn-js", [dislikeSVG, dislikeCounter]),
+                service.createElement("div", "vote-link_negative, negativeBtn-js", [dislike, dislikeCounter]),
             voteLinksBlock =
-                service.createElement("div", "respond__action-links__vote-links, clearfix-block", [positiveVote, negativeVote]),
-            respondFooter =
-                service.createElement("div", "respond__action-links, clearfix-block", [replyLink, complaintLink, voteLinksBlock]),
+                service.createElement("div", "respond__vote-links", [positiveVote, negativeVote]),
             root =
-                service.createElement("div", "product-responds__respond, respond-js", [respondHeader, respondText, respondFooter]),
+                service.createElement("div", "product-responds__respond, review-js", [respondHeader, respondText, voteLinksBlock]),
             advantages,
             disadvantages;
 
-        if (formRespond.ratingStar.value){
-            likes.children = service.createRatingStars(+formRespond.ratingStar.value).concat(percentCounter);
-                //createRatingStars(+formRespond.ratingStar.value).concat(percentCounter);
+        if (formReview.ratingStar.value){
+            likes.children = service.createRatingStars(+formReview.ratingStar.value).concat(percentCounter);
         }
-        if (formRespond.advantages.value.trim()) {
+        if (formReview.advantages.value.trim()) {
             var textElement =
-                    service.createElement("span", undefined, undefined, "Достоинства: "),
+                    service.createElement("span", undefined, undefined, "Advantages: "),
                 container = service.createElement("p");
             advantages =
-                service.createElement("span", undefined, undefined, formRespond.advantages.value.trim());
+                service.createElement("span", undefined, undefined, formReview.advantages.value.trim());
             container.children = [textElement, advantages];
             respondText.children.push(container);
         }
-        if (formRespond.disadvantages.value.trim()) {
+        if (formReview.disadvantages.value.trim()) {
             var textElement =
-                    service.createElement("span", undefined, undefined, "Недостатки: "),
+                    service.createElement("span", undefined, undefined, "Disadvantages: "),
                 container = service.createElement("p");
             disadvantages =
-                service.createElement("span", undefined, undefined, formRespond.disadvantages.value.trim());
+                service.createElement("span", undefined, undefined, formReview.disadvantages.value.trim());
             container.children = [textElement, disadvantages];
             respondText.children.push(container);
         }
         return root;
-    }
-    window.elementNode = Node;
+    };
 })();

@@ -1,50 +1,34 @@
 (function () {
-    var openFormBtn = document.querySelector(".openFormBtn-js"),
-        pageOverlay = document.querySelector(".page-overlay"),
-        tabContainer = document.querySelector(".product__tabs-container"),
-        respondsCounters = tabContainer.querySelectorAll(".respondCounter-js"),
-        formRespond = pageOverlay.querySelector("#form-respond"),
-        cancelRespond = formRespond.querySelector(".cancelRespondBtn-js"),
-        responds = tabContainer.querySelectorAll(".respond-js");
+    var tabReview = document.querySelector(".tab-reviews-js"),
+        reviewCounters = document.querySelectorAll(".reviewCounter-js"),
+        reviews = tabReview.querySelectorAll(".review-js");
 
-    openFormBtn.addEventListener('click', function () {
-        pageOverlay.classList.add("show");
-    });
-
-    cancelRespond.addEventListener("click", closeForm);
-
-    function closeForm() {
-        pageOverlay.classList.remove("show");
-        service.clearFormFields(formRespond);
-    }
-
-    function getRespondsCount() {
-        for (var i = 0; i < respondsCounters.length; i++) {
-            respondsCounters[i].innerHTML = document.querySelectorAll(".respond-js").length;
+    function getReviewsCount() {
+        for (var i = 0; i < reviewCounters.length; i++) {
+            reviewCounters[i].innerHTML = document.querySelectorAll(".review-js").length;
         }
-    }
+    };
 
     var counters = [];
-    for (var i = 0; i < responds.length; i++) {
-        counters[i] = getCounter(responds[i]);
-    }
+    for (var i = 0; i < reviews.length; i++) {
+        counters[i] = getCounter(reviews[i]);
+    };
 
-    function getCounter(respond) {
+    function getCounter(review) {
         var counter = new VoteCounter(
-            respond.querySelector(".positiveVote-js"), 0,
-            respond.querySelector(".negativeVote-js"), 0,
-            respond.querySelector(".percentVotes-js")
+            review.querySelector(".positiveVote-js"), 0,
+            review.querySelector(".negativeVote-js"), 0,
+            review.querySelector(".percentVotes-js")
         );
-        var positiveVoteBtn = respond.querySelector(".positiveBtn-js"),
-            negativeVoteBtn = respond.querySelector(".negativeBtn-js");
+        var positiveVoteBtn = review.querySelector(".positiveBtn-js"),
+            negativeVoteBtn = review.querySelector(".negativeBtn-js");
         positiveVoteBtn.addEventListener("click", counter.setPositiveVote.bind(counter));
         negativeVoteBtn.addEventListener("click", counter.setNegativeVote.bind(counter));
         return counter;
-    }
+    };
 
-    getRespondsCount();
-    window.getRespondsCount = getRespondsCount;
-    window.closeFormRespond = closeForm;
+    getReviewsCount();
+    window.getReviewsCount = getReviewsCount;
     window.voteCounters = counters;
     window.getCounter = getCounter;
 })();

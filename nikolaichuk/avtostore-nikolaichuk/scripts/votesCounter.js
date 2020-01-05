@@ -14,7 +14,7 @@
         if (Math.round(percent) === 0) {
             this.percent.innerHTML = "";
         } else {
-            this.percent.innerHTML = Math.round(percent) + " % пользователей считают этот отзыв полезным";
+            this.percent.innerHTML = Math.round(percent) + " % users found this review helpful";
         }
     }
 
