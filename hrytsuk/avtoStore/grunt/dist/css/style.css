@@ -1646,6 +1646,16 @@ button.mod-cart {
   width: 25%;
   max-width: 298px;
 }
+@media (max-width: 1210px) {
+  .wrap-element {
+    padding: 0;
+  }
+}
+@media (max-width: 420px) {
+  .wrap-element {
+    max-width: 100%;
+  }
+}
 .item-hover-efect {
   position: relative;
   box-sizing: border-box;
@@ -2008,6 +2018,9 @@ button.dzb2:hover {
   }
 }
 @media screen and (max-width: 1024px) {
+  .related-products {
+    padding: 0 10px;
+  }
   .wrap-element {
     width: auto;
   }
@@ -2051,6 +2064,12 @@ button.dzb2:hover {
   }
 }
 @media screen and (max-width: 768px) {
+  .main-stor .wrapper {
+    padding: 0 10px;
+  }
+  .product {
+    margin-right: 0;
+  }
   .items.item-scarousel {
     min-width: 95px;
   }
@@ -2124,9 +2143,6 @@ button.dzb2:hover {
   .slider-product .price-rod span:first-of-type {
     padding-right: 5px;
   }
-  .slider-product:hover .arrows {
-    opacity: 0;
-  }
   .slider-product .item:hover {
     box-shadow: none;
   }
@@ -2153,7 +2169,10 @@ button.dzb2:hover {
     width: 100%;
   }
   .my-cart:hover .hover-cart-bloc {
-    display: none;
+    width: 280px;
+  }
+  .my-cart:hover .hover-cart-bloc .pading-hov-bloc {
+    padding: 18px 3px;
   }
   .slider-wrap {
     position: relative;
@@ -2391,7 +2410,7 @@ button.dzb2:hover {
   color: #FF2D37;
 }
 .btn-transmit.mod-transmit {
-  padding: 20px  20px 20px;
+  padding: 20px 20px 20px;
 }
 button.hover-btn:hover {
   background-color: #282828;
@@ -2561,25 +2580,10 @@ button.hover-btn:hover {
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.6);
   bottom: -34px;
 }
-@media (max-width: 1024px) {
-  .ul-list-product li .item:hover::after {
-    box-shadow: none;
-  }
-}
 .ul-list-product li .item:hover .info-cart-towar {
   transform: translateY(40px);
   z-index: 40;
   border-bottom: none;
-}
-@media (max-width: 1024px) {
-  .ul-list-product li .item:hover .info-cart-towar {
-    transform: translateY(0);
-  }
-}
-@media (max-width: 1024px) {
-  .ul-list-product li .item:hover {
-    border: 1px solid #E5E5E5;
-  }
 }
 .ul-list-product li .item .name-towar {
   padding: 25px 0 15px;

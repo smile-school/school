@@ -13,7 +13,7 @@ var sliderPrev = $('.preview > .img').smilecarousel({
         var src = e.target.getAttribute('src'),
             index = e.currentTarget.getAttribute('data-item');
         if (src) {
-            imageProduct.attr({ 'src': src, 'data-img': index });
+            imageProduct.attr({'src': src, 'data-img': index});
             imageProduct.data('img', index);
             overlay.css('left', e.target.parentElement.offsetLeft)
         }
@@ -24,6 +24,7 @@ var sliderPrevOption = sliderPrev.smilecarousel('option'),
     sliderWidth = sliderPrevOption.sliderWidth,
     sliderItem = sliderPrevOption.itemWidth,
     sliderCount = sliderPrevOption.countSlide;
+
 function galleryGo() {
     var slide = '';
     if ($(this).hasClass('next')) {
@@ -44,11 +45,13 @@ function galleryGo() {
             sliderPrev.smilecarousel('toPrev');
         }
     }
+
     function go() {
-        imageProduct.attr({ 'src': slide.find('img').attr('src'), 'data-img': slide.data('item') });
+        imageProduct.attr({'src': slide.find('img').attr('src'), 'data-img': slide.data('item')});
         imageProduct.data('img', slide.data('item'));
         overlay.css('left', slide[0].offsetLeft);
     }
+
     return false;
 }
 
