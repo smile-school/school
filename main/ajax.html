@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .wrapper{
+            max-width: 300px;
+            margin: 0 auto;
+            padding: 10px;
+            background-color: grey;
+            color: white;
+            font-family: sans-serif;
+        }
+        .wrapper input,
+        .wrapper button,
+        .wrapper textarea{
+            display: block;
+            margin: 10px 0;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 15px;
+        }
+        .anim{
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background-color: red;
+            transition: background-color 5s ease-in-out;
+        }
+        .anim.active {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+<input type="button" id="ip" value="getIp" />
+<div id="myIp">
+
+</div>
+
+<div class="wrapper">
+    <form id="myForm" action="" method="post">
+        <input type="text" name="name" placeholder="Name" />
+        <input type="email" name="email" placeholder="Email" />
+        <p>Your massage</p>
+        <textarea name="description"></textarea>
+        <button type="submit">Отпарвить</button>
+    </form>
+</div>
+<script src="js/ajax.js"></script>
+<script src="js/a.js"></script>
+</body>
+</html>

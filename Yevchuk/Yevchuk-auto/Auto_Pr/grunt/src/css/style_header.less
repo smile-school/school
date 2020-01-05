@@ -1,0 +1,253 @@
+header {
+    display: flex;
+    flex-direction: column;
+    min-height: 130vh;
+    background: url("../../../sourses/images/bugatty-bg.png") no-repeat center;
+    background-size: cover;
+    max-width: 100%;
+
+    .top-nav {
+        min-height: 25vh;
+        background-color: @top-header-bg-color;
+        padding: 0 15%;
+
+        .admin-panel {
+            display: flex;
+
+            ul {
+                display: flex;
+                color: @red-color;
+                min-width: 100%;
+                justify-content: flex-end;
+                align-items: center;
+                padding: 10px 0;
+
+                li {
+                    display: flex;
+                    margin-right: 5%;
+
+                    i {
+                        margin-right: 5px;
+                    }
+
+                    &:last-of-type {
+                        font-size: 25px;
+                        color: @white-color;
+                        border-left: 2px solid @footer-gray-color;
+                        padding-left: 15px;
+                    }
+                }
+            }
+        }
+
+        .logo-panel {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            min-height: 15vh;
+
+            .logo {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                min-width: 25%;
+
+                & > span {
+                    &:first-of-type {
+                        font-size: 45px;
+                        font-weight: 700;
+
+                        & > span {
+                            color: @red-color;
+                        }
+                    }
+
+                    &:last-of-type {
+                        font-size: 15px;
+                        font-weight: 400;
+                        letter-spacing: 4px;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+
+            .icon-container {
+                width: 75%;
+                min-height: 100%;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                text-align: right;
+
+                & > span {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-end;
+                    padding-right: 30px;
+
+                    span:first-of-type {
+                        font-size: 20px;
+                        margin-bottom: 10px;
+
+                        i {
+                            color: @red-color;
+                            font-size: 30px;
+                            margin: auto 15px;
+                        }
+                    }
+
+                    span:last-of-type {
+                        color: @nav-gray-color;
+                        text-transform: uppercase;
+                    }
+                }
+
+                ul {
+                    display: flex;
+
+                    li {
+                        display: flex;
+                        flex-direction: column;
+                        text-align: center;
+                        border-left: 2px solid @footer-gray-color;
+                        font-size: 15px;
+                        text-transform: uppercase;
+                        padding: 5px 15px;
+                        width: 100px;
+
+                        i {
+                            font-size: 25px;
+                            margin: 5px auto;
+                            color: @red-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .bottom-nav {
+        min-height: 10vh;
+        background-color: @bottom-header-bg-color;
+        padding: 0 15%;
+
+        .bottom-nav-menu {
+            min-height: 10vh;
+            display: flex;
+            align-items: center;
+
+            li {
+                margin-left: 5%;
+                text-transform: uppercase;
+
+                a {
+                    text-decoration: none;
+                    color: @white-color;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    header .top-nav .logo-panel .icon-container * {
+        font-size: calc(100% - 5px);
+    }
+
+    header .top-nav .logo-panel .icon-container > span span:last-of-type {
+        font-size: 11px;
+    }
+}
+
+@media screen and (max-width: 922px) {
+    header .top-nav {
+        padding: 0 10%;
+    }
+
+    header .admin-panel {
+        font-size: .95em;
+    }
+
+    header .top-nav .logo-panel .logo {
+        & > span {
+            &:first-of-type {
+                font-size: 2em;
+            }
+
+            &:last-of-type {
+                font-size: 10px;
+                letter-spacing: 2px;
+            }
+        }
+    }
+
+    header .top-nav .logo-panel .icon-container {
+        & > span {
+            padding-right: 10px;
+
+            span:first-of-type {
+                font-size: 10px;
+
+                i {
+                    font-size: 20px;
+                }
+            }
+
+            span:last-of-type {
+                font-size: 8px;
+            }
+        }
+
+        ul li {
+            font-size: 8px;
+
+            i {
+                font-size: 15px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    header {
+        .top-nav {
+            padding: 20px;
+
+            .logo-panel {
+                flex-direction: column;
+                justify-content: space-around;
+                align-items: center;
+
+                .logo {
+                    margin: 25px;
+                    text-align: center;
+                }
+
+                .icon-container {
+                    margin: 10px;
+                    width: 100%;
+                    flex-direction: column;
+
+                    & > span {
+                        margin: 0 auto 20px auto;
+                        width: 100%;
+
+                        span {
+                            margin: auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    .bottom-nav-menu {
+        width: 100%;
+        flex-direction: column;
+
+        li {
+            margin: 25px 0;
+        }
+    }
+}

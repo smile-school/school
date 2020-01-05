@@ -1,0 +1,128 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: darkgray;
+}
+
+.wrapper {
+    margin: 40px auto;
+    width: 80%;
+}
+
+.wrapper > input[type="radio"] {
+    display: none;
+    margin: 0;
+}
+
+.wrapper input:checked + label {
+    background: darkslategray;
+    border: 2px solid darkslategray;
+}
+
+.wrapper > label {
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    line-height: 1.2;
+    padding: 15px 30px;
+    width: 100px;
+    border: 2px solid cadetblue;
+    background: cadetblue;
+    color: white;
+    font-weight: bolder;
+    border-radius: 15px 15px 0 0;
+    margin-bottom: 0;
+}
+
+.wrapper label:hover {
+    color: white;
+}
+
+.container {
+    width: 70%;
+    min-height: 100px;
+    position: relative;
+}
+
+.container > p {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    border: 3px solid cadetblue;
+    border-radius: 0 10px 10px 10px;
+    transition: opacity .5s ease-in-out;
+}
+
+.wrapper input:first-child:checked ~ .container > p:first-child,
+.wrapper input:nth-of-type(2):checked ~ .container > p:nth-child(2),
+.wrapper input:last-of-type:checked ~ .container > p:last-child {
+    border: 3px solid darkslategray;
+    opacity: 100;
+}
+
+.accordion {
+    width: 80%;
+    margin: 60px auto;
+}
+
+.accordion > input[type="checkbox"] {
+    display: none;
+}
+
+.accordion > label {
+    display: block;
+    cursor: pointer;
+    width: 250px;
+    height: 40px;
+    background: ghostwhite;
+    border-radius: 15px;
+    text-align: center;
+    padding: 10px;
+    border: 2px solid silver;
+}
+
+.accordion > label:hover {
+    color: saddlebrown;
+}
+
+.accordion > ul {
+    display: none;
+    width: 250px;
+    list-style-type: none;
+}
+
+.accordion > ul > li {
+    text-align: center;
+    width: 90%;
+    height: 40px;
+    border-top: 1px solid silver;
+    margin: 0 auto;
+    background: cadetblue;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.accordion > ul > li:hover {
+    color: saddlebrown;
+}
+
+.accordion > ul > li:last-of-type {
+    border-radius: 0 0 10px 10px;
+    border-bottom: 1px solid silver;
+}
+
+.accordion > input:first-of-type:checked ~ ul:first-of-type,
+.accordion > input:nth-of-type(2):checked ~ ul:nth-of-type(2),
+.accordion > input:last-of-type:checked ~ ul:last-of-type {
+    display: block;
+}

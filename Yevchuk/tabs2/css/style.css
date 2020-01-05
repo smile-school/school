@@ -1,0 +1,107 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #2E5150;
+}
+
+.accordion {
+    width: 40%;
+    margin: 60px auto;
+}
+
+.accordion > input[type="radio"] {
+    display: none;
+}
+
+.accordion > label {
+    display: block;
+    cursor: pointer;
+    width: 100%;
+    height: 45px;
+    background: chocolate;
+    border-radius: 15px;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #679466;
+    color: wheat;
+    font-weight: bolder;
+    font-size: 18px;
+}
+
+.accordion > label:hover {
+    text-shadow: 0 0 1px darkolivegreen;
+    background: #B1602F;
+}
+
+.accordion > form {
+    height: 0;
+    background: wheat;
+    width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+    max-height: 100%;
+    transition: height .4s ease-in-out;
+}
+
+.accordion > form > label {
+    display: block;
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+    color: saddlebrown;
+    padding: 10px;
+}
+
+.accordion > form > label:not(:last-of-type) {
+    border-bottom: 1px solid;
+}
+
+.accordion > form > label span,
+.accordion > form > label input {
+    display: block;
+    margin: 10px auto;
+}
+
+.accordion > form > label input {
+    height: 30px;
+    width: 75%;
+    text-align: center;
+    border: 2px solid chocolate;
+    border-radius: 10px;
+    outline: none;
+}
+
+.accordion > form > label input:focus {
+    box-shadow: 0 0 2px 1px dodgerblue;
+    border: none;
+}
+
+.accordion form > input {
+    display: block;
+    margin: 20px auto;
+    cursor: pointer;
+    width: 80px;
+    height: 30px;
+    border-radius: 30px;
+    outline: none;
+    border: none;
+    background: chocolate;
+    color: wheat;
+    font-weight: 700;
+}
+
+.accordion > form > input:hover {
+    background: #B1602F;
+}
+
+.accordion > input:first-of-type:checked ~ form:first-of-type {
+    height: 270px;
+}
+
+.accordion > input:last-of-type:checked ~ form:last-of-type {
+    height: 650px;
+}

@@ -1,0 +1,179 @@
+.form_site{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid #64c29e;
+}
+.form_site input{
+    height: 30px;
+}
+.form_site input, .form_site textarea{
+    outline: none;
+    border-bottom: 1px solid #64c29e;
+    font-size: 13px;
+}
+.form_site textarea{
+    overflow: auto;
+    resize: none;
+    min-height: 80px;
+    border-radius: 8px;
+}
+.form_site textarea:focus{
+    background-color: #efffea;
+}
+.form_site select{
+    width: 50%;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid #64c29e;
+    outline: none;
+    background-color: #d0e2d7;
+    color: #4a6b50;
+    font-size: 16px;
+    display: inline-block;
+}
+.form_site select option{
+    color: #4a6b50;
+    font-size: 16px;
+}
+
+.form_site .input_check input[type=checkbox],
+.form_site .input_radio input[type=radio]{
+    display: none;
+}
+.form_site .label_checbox span{
+    content: "";
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    display: block;
+    border: 1px solid #4a6b50;
+    top: 2px;
+    left: 80px;
+}
+.form_site .label_checbox span::after {
+    content: "\2714";
+    color: #64c29e;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    font-size: 22px;
+    transition: .3s ease-in-out 0s;
+}
+.form_site input[type=checkbox]:checked ~ span::after{
+    transform: translate(-50%, -50%) scale(1);
+}
+.form_site label{
+    text-transform: capitalize;
+    vertical-align: middle;
+    position: relative;
+    cursor: pointer;
+    color: #4a6b50;
+    font-size: 18px;
+    font-weight: 600;
+}
+.form_site .label_radio span{
+    height: 13px;
+    width: 13px;
+    border-radius: 50%;
+    border: 3px solid #4a6b50;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 60px;
+}
+.form_site .label_radio span::after{
+    content: "";
+    height: 8px;
+    width: 8px;
+    background-color: #64c29e;
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    border-radius: 50%;
+    transition: .3s ease-in-out 0s;
+}
+.form_site input[type=radio]:checked ~ span::after{
+    transform: translate(-50%,-50%) scale(1);
+}
+.form_site input[type=submit],input[type=reset]{
+    width: 130px;
+    height: 50px;
+    background-color: #64c29e;
+    color: white;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: all 0.7s;
+    transform: scale(0.9);
+    font-size: 24px;
+}
+.form_site input[type=submit]:hover{
+    opacity: 1;
+    transform: scale(1);
+}
+.form_site input[type=reset]:hover{
+    opacity: 1;
+    transform: scale(1);
+}
+.input_check {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin: 20px 0;
+}
+.input_check span {
+    margin-left: 180px;
+}
+.email-form > input {
+    box-sizing: border-box;
+    outline: none;
+    height: 69px;
+}
+.form_site h3 {
+    color: #64c29e;
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.form_site .bootom {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+ .input_radio > label:first-of-type {
+    margin-right: 120px;
+}
+.input_radio label:first-of-type span {
+    margin-left: 24px;
+}
+.email-form > input[type=email] {
+    width: 400px;
+    border: 1px solid #d3d7d9;
+}
+
+.email-form > input[placeholder] {
+    font-style: italic;
+    color: #929292;
+    font-size: 20px;
+    opacity: 0.7;
+    padding-left: 28px;
+}
+
+.email-form > input[type=submit] {
+    width: 126px;
+    margin-left: 8px;
+    background-color: #64c29e;
+    color: #ffffff;
+    font-size: 24px;
+    text-transform: uppercase;
+}
+.input_foorm {
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    margin-top: 10px;
+}

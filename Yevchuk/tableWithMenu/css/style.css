@@ -1,0 +1,176 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar {
+    width: 100%;
+    min-height: 50px;
+    background: darkslategray;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #ffffff;
+    width: 100%;
+    height: 100%;
+    display: block;
+    line-height: 50px;
+}
+
+.navbar a:hover {
+    color: bisque;
+}
+
+.navbar ul {
+    list-style-type: none;
+}
+
+.navbar .list {
+    display: block;
+    position: relative;
+    height: 50px;
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.list > li {
+    display: block;
+    float: left;
+    width: calc(33.333%);
+    height: 100%;
+    margin: auto;
+    line-height: 100%;
+}
+
+.list::after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.list ul {
+    display: none;
+    position: absolute;
+    width: inherit;
+    margin: 0 auto;
+    box-shadow: 0 0 3px 1px black;
+}
+
+
+.list > li > ul,
+.list li > ul > li > ul {
+    background: cadetblue;
+}
+
+.list ul ul {
+    width: 100%;
+}
+
+.list > li:hover > ul,
+.list li > ul > li:hover ul {
+    display: block;
+}
+
+.list > li > ul > li:hover,
+.list li > ul > li ul li:hover {
+    border-top: 1px solid silver;
+    border-bottom: 1px solid silver;
+}
+
+.list ul li:hover ul {
+    left: 100%;
+    top: 0;
+}
+
+.section1 > ul li:nth-last-child(2) ul {
+    top: 60%;
+    color: aqua;
+}
+
+.section1 > ul li:nth-last-child(2) ul li:first-child a {
+    color: aqua;
+}
+
+.section1 > ul li:nth-last-child(2) ul li:last-child a::before {
+    content: "\2693 ";
+}
+
+.section2 > ul li:nth-child(3) ul {
+    top: 40%;
+}
+
+.section2 > ul li:nth-child(3) ul li:not(:nth-child(3)) a {
+    background: gray;
+}
+
+.section1 > ul > li:nth-child(2n+1) > a {
+    color: coral;
+}
+
+.section3 > ul li:last-child ul {
+    top: 80%;
+}
+
+.list > li:first-child > a::after {
+    content: "\2776";
+}
+
+.list > li:nth-child(2) > a::after {
+    content: "\2777";
+}
+
+.list > li:last-child > a::after {
+    content: "\2778";
+}
+
+.section1 > ul > li:first-child > a::after,
+.section1 > ul > li:nth-child(4) > a::after,
+.section2 > ul > li:nth-child(3) > a::after,
+.section3 > ul > li:nth-child(5) > a::after {
+    content: " \00BB";
+}
+
+table {
+    margin: 15px auto;
+}
+
+table fieldset legend {
+    margin-left: 50px;
+}
+
+table form fieldset *:not([type="radio"]):not([type="checkbox"]) {
+    margin: 10px 20px;
+}
+
+table form fieldset input[type="radio"],
+table form fieldset input[type="checkbox"] {
+    margin-bottom: 15px;
+    margin-left: 15px;
+}
+
+table form table tbody tr:last-child {
+    height: 75px;
+}
+
+table form table tbody tr:last-child td {
+    vertical-align: center;
+    text-align: center;
+}
+
+table form table tbody tr:last-child td input {
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+}
+
+input[required]:invalid {
+    outline: 1px solid red;
+}
+
+input[required]:valid {
+    outline: 1px solid green;
+}
