@@ -1226,6 +1226,63 @@ a.link:hover {
   border-radius: 5px 5px 0 0;
   text-transform: uppercase;
 }
+.header__navigation .categories__menu__toggle,
+.header__navigation .nav-menu__toggle {
+  cursor: pointer;
+  position: relative;
+  display: none;
+}
+@media (max-width: 599px) {
+  .header__navigation .categories__menu__toggle,
+  .header__navigation .nav-menu__toggle {
+    display: inline-block;
+    border-radius: 0 0 5px 5px;
+    background-color: #FF2D37;
+    padding: 22px 26px;
+  }
+}
+.header__navigation .categories__menu__burger,
+.header__navigation .nav-menu__burger {
+  position: absolute;
+  top: 50%;
+  left: calc(100% - 20px);
+  transform: translate(-100%, -50%);
+  width: 15px;
+  height: 2px;
+  background-color: #FFFFFF;
+}
+@media (max-width: 599px) {
+  .header__navigation .categories__menu__burger,
+  .header__navigation .nav-menu__burger {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+.header__navigation .categories__menu__burger::before,
+.header__navigation .nav-menu__burger::before,
+.header__navigation .categories__menu__burger::after,
+.header__navigation .nav-menu__burger::after {
+  content: '';
+  width: 100%;
+  height: 2px;
+  background-color: #FFFFFF;
+}
+.header__navigation .categories__menu__burger::before,
+.header__navigation .nav-menu__burger::before {
+  position: absolute;
+  top: -3px;
+  left: 0;
+  transform: translate(0, -50%);
+}
+.header__navigation .categories__menu__burger::after,
+.header__navigation .nav-menu__burger::after {
+  position: absolute;
+  top: 5px;
+  left: 0;
+  transform: translate(0, -50%);
+}
 .header__navigation .categories__menu {
   float: left;
   position: relative;
@@ -1243,19 +1300,6 @@ a.link:hover {
     position: absolute;
     top: 0;
     left: 0;
-  }
-}
-.header__navigation .categories__menu__toggle {
-  cursor: pointer;
-  position: relative;
-  display: none;
-}
-@media (max-width: 599px) {
-  .header__navigation .categories__menu__toggle {
-    display: inline-block;
-    border-radius: 0 0 5px 5px;
-    background-color: #FF2D37;
-    padding: 22px 26px;
   }
 }
 .header__navigation .categories__menu__block {
@@ -1313,42 +1357,6 @@ a.link:hover {
   width: 100%;
   color: #FFFFFF;
   background-color: #FF2D37;
-}
-.header__navigation .categories__menu__burger {
-  position: absolute;
-  top: 50%;
-  left: calc(100% - 20px);
-  transform: translate(-100%, -50%);
-  width: 15px;
-  height: 2px;
-  background-color: #FFFFFF;
-}
-@media (max-width: 599px) {
-  .header__navigation .categories__menu__burger {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-}
-.header__navigation .categories__menu__burger::before,
-.header__navigation .categories__menu__burger::after {
-  content: '';
-  width: 100%;
-  height: 2px;
-  background-color: #FFFFFF;
-}
-.header__navigation .categories__menu__burger::before {
-  position: absolute;
-  top: -3px;
-  left: 0;
-  transform: translate(0, -50%);
-}
-.header__navigation .categories__menu__burger::after {
-  position: absolute;
-  top: 5px;
-  left: 0;
-  transform: translate(0, -50%);
 }
 .header__navigation .categories__menu__list {
   display: none;
@@ -1434,22 +1442,31 @@ a.link:hover {
     position: absolute;
     top: 0;
     right: 0;
+    text-align: right;
   }
 }
 .header__navigation .nav-menu input[type="checkbox"] {
   display: none;
 }
-.header__navigation .nav-menu .nav-menu__toggle {
-  cursor: pointer;
-  position: relative;
-  display: none;
+.header__navigation .nav-menu input[type="checkbox"]:checked ~ .nav-menu__list {
+  display: block;
 }
 @media (max-width: 599px) {
-  .header__navigation .nav-menu .nav-menu__toggle {
+  .header__navigation .nav-menu input[type="checkbox"]:checked ~ label .nav-menu__burger {
+    z-index: 20;
     display: inline-block;
-    border-radius: 0 0 5px 5px;
-    background-color: #FF2D37;
-    padding: 22px 26px;
+    position: fixed;
+    left: calc(100% - 30px);
+    top: 20px;
+    transform: rotate(45deg);
+  }
+  .header__navigation .nav-menu input[type="checkbox"]:checked ~ label .nav-menu__burger::before {
+    top: 0;
+    transform: rotate(0);
+  }
+  .header__navigation .nav-menu input[type="checkbox"]:checked ~ label .nav-menu__burger::after {
+    top: 0;
+    transform: rotate(90deg);
   }
 }
 .header__navigation .nav-menu__block {
@@ -1482,32 +1499,6 @@ a.link:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /*.nav-menu__item{
-                        font-size: 15px;
-                        font-weight: 500;
-                        line-height: 18px;
-                        text-transform: uppercase;
-                        width: 100%;
-                        margin: 0;
-                        padding: 5px 10px;
-                        text-align: center;
-                        &:first-child {
-                            position: relative;
-                            &:hover{
-                                & > .submenu-container{
-                                    display: none;
-                                    //position: absolute;
-                                    //flex-direction: column;
-                                }
-                            }
-                        }
-                        &:hover{
-                            background-color: @main-background;
-                            & > a.link{
-                                color: @page-hover-color;
-                            }
-                        }
-                    }*/
 }
 .header__navigation .nav-menu__list {
   font-size: 0;
@@ -1559,6 +1550,21 @@ a.link:hover {
     transform: none;
   }
 }
+@media (max-width: 599px) {
+  .header__navigation .nav-menu__list {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    padding-top: 50px;
+    text-align: center;
+    border: none;
+    background-color: #030303;
+    opacity: 0.9;
+    color: #FFFFFF;
+  }
+}
 .header__navigation .nav-menu__item {
   font-size: 14px;
   margin-right: 1px;
@@ -1572,6 +1578,11 @@ a.link:hover {
   color: #FFFFFF;
   background-color: #FF2D37;
   transition: background-color 0.2s ease-in-out;
+}
+@media (max-width: 599px) {
+  .header__navigation .nav-menu__item {
+    border-radius: 0;
+  }
 }
 .header__navigation .nav-menu__item:hover > a {
   color: #FFFFFF;
