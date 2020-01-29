@@ -1,0 +1,147 @@
+body{
+    background-color: darkslategray;
+    font-family: sans-serif;
+}
+.wraper{
+    width: 80%;
+    margin: 150px auto ;
+    min-height: 300px;
+}
+.wraper::after{
+    content: "";
+    display: block;
+    width: 80%;
+    height: 3px;
+    background-color: brown;
+}
+input{
+    display: none;
+}
+input[id=tabs-1]:checked ~ .content .tabs-1,
+input[id=tabs-2]:checked ~ .content .tabs-2{
+    display: block;
+}
+.wraper input:checked + label{
+    background-color: brown;
+}
+.wraper label{
+    cursor: pointer;
+    display: inline-block;
+    padding: 5px 40px ;
+    background-color: #298e8e;
+    border-radius: 20px 20px 0 0;
+    transition: all .5s;
+    position: relative;
+    border-bottom: 2px solid brown;
+}
+.wraper label::before{
+    content: "\2B07";
+    position: absolute;
+    top: calc(50% - 9px);
+    left: 20px;
+}
+.wraper label:hover::before{
+    color: white;
+}
+.wraper label:hover{
+    background-color: #216363;
+}
+.wraper label{
+    font-size: 16px;
+}
+.content article{
+    position: absolute;
+    display: none;
+    width: 80%;
+    min-height: 200px;
+    background-color: white;
+    padding: 40px 60px;
+    border-radius: 0 5px 5px 5px;
+    border-top: 5px solid brown;
+}
+.tabs-1 h2{
+    color: brown;
+    border-bottom: 1px solid brown;
+}
+.tabs-1 ul{
+    height: 0;
+}
+.tabs-1 ul li{
+    list-style-type: none;
+}
+.tabs-1 ul li a{
+    color:brown;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    transition: all .3s;
+}
+.tabs-1 ul li:not(:first-child){
+    margin-top: 10px;
+}
+.tabs-1 ul li a::before{
+    content: "\2611";
+    padding-right: 8px;
+    color: black;
+}
+.tabs-1 ul li a:hover{
+    color: white;
+    background-color: brown;
+    transform: rotate(0.5deg);
+}
+.tabs-1 ul li a:hover::before{
+    color: aliceblue;
+}
+.tabs-2 h2{
+    color: darkslategray;
+    border-bottom: 2px solid darkolivegreen;
+}
+.tabs-2 p {
+    letter-spacing: 1px;
+}
+/*Acordeon*/
+.twoo-wraper{
+    color: white;
+    min-height: 400px;
+}
+.twoo-wraper ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.twoo-wraper ul li {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    padding-bottom: 5px;
+    padding-top: 20px;
+    border-bottom: 1px solid gray;
+}
+.twoo-wraper input + label {
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 5px 20px;
+    height: 30px;
+    line-height: 33px;
+    font-size: 18px;
+    box-shadow: 1px 1px 1px 1px white;
+    transition: all .5s;
+}
+.twoo-wraper input + label:hover {
+    background-color: #298e8e;
+    color: black;
+}
+.twoo-wraper .parag {
+    margin-top: 0;
+    height: 0;
+    opacity: 0;
+    padding: 0;
+    overflow: hidden;
+    transition: all 1s;
+}
+.twoo-wraper input[type=checkbox]:checked ~ .parag{
+    padding-bottom: 10px;
+    opacity: 1;
+    height: 100px;
+}

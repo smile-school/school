@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="knockout-3.5.1.js"></script>
+    <script src="lib.js"></script>
+</head>
+<style>
+    body {
+        font-family: sans-serif;
+        font-size: 16px;
+        line-height: 1.2;
+    }
+
+    table {
+        margin: 20px auto;
+    }
+
+    th,
+    td {
+        border: 1px solid gray;
+        padding: 10px;
+    }
+</style>
+<script src="knockout-3.5.1.js"></script>
+<body>
+<h1 data-bind='text: info'></h1>
+<button id="setName" data-bind="click: setMenu">Added Menu</button>
+<!--<button data-bind="click: addCourse">add Course</button>-->
+<table>
+    <h3 style="text-align: center">Ваше замовлення</h3>
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Назва страви</th>
+        <th>Ціна</th>
+        <th>Видалити страву</th>
+    </tr>
+    </thead>
+    <tbody data-bind="foreach:courseList">
+    <tr>
+        <td data-bind="text: $index() + 1"></td>
+        <td data-bind="text:title"></td>
+        <td data-bind="text:price"></td>
+        <td>
+            <button data-bind="click: $root.removeCourse">Remove Menu</button>
+        </td>
+    </tr>
+    </tbody>
+    <div>
+        <p data-bind="text :rezult"></p>
+    </div>
+</table>
+<div class="menu-bloc">
+    <h3>Введіть щось з меню</h3>
+    <ul class="list-menu">
+        <li>Борщ - 80грн</li>
+        <li>Суп - 50грн</li>
+        <li>Салат-цезар - 40грн</li>
+        <li>Салат-Мрія -25грн</li>
+        <li>Салат-Мрія - 90грн</li>
+        <li>Пивна-нарізка - 159грн</li>
+        <li>Горілка - 130грн</li>
+        <li>Горілка - 30грн</li>
+        <li>Картопля-тушена - 60грн</li>
+    </ul>
+</div>
+
+
+<script>
+    function Course(title, price) {
+        this.title = ko.observable(title);
+        this.price = ko.observable(price);
+    }
+
+
+    function Customer() {
+        var self = this;
+        this.order = ko.observable('');
+        this.customer = ko.observable('Rivne');
+        this.suma = ko.observable('');
+        this.info = ko.computed(function () {
+            return 'Helo ' + this.order()+ ',' + ' from ' + this.customer();    // вивод зміненого мені
+        }, this);
+        this.rezult = ko.computed(function () {
+            return "Ви замовили " + this.order() + ' сума вашого замовлення склала ' +  this.suma() + 'грн';
+        },this);
+        this.courseList = ko.observableArray([]);
+
+        this.setMenu = function () {
+            this.order(prompt('Що замовите?', this.order()));
+            var orders = this.order();
+            var arr = orders.split(' ');
+
+            var arr2 = list;
+            var sum =0;
+            // function counts(sum) {
+            //
+            // }
+
+            function rezult(arr, arr2,sum) {
+                    for (var elem in arr2) {
+                        for (var elem2 in arr) {
+                            if (arr[elem2] === arr2[elem].title) {
+                                 self.courseList.push(new Course(arr[elem2], arr2[elem].price));
+                                 // return sum += arr2[elem].price;
+                               return sum += arr2[elem].price;
+                                // counts(sum);
+                            }
+                        }
+
+                    }
+                // console.log(sum);
+            }
+            rezult(arr, arr2,sum);
+        };
+        this.removeCourse = function (course) {
+            var elem = this.courseList.remove(course);
+
+        }.bind(this);
+
+
+        // this.addCourse = function () {
+        //     var newCourse = getCourse();
+        //     ('title' in newCourse)
+        //     && this.courseList.push(new Course(newCourse.title, newCourse.price));
+        // };
+
+        //
+        // this.removeOverCourse = function (delCours) {      //остаточно видаляєм з масива
+        //   this.removeList.remove(delCours);
+        // }.bind(this);
+
+        this.chanceCurse = function (delCourse) {
+            var overDelCourse = this.removeList.remove(delCourse);
+            this.courseList.push(new Course(overDelCourse[0].title(), overDelCourse[0].price()));    //повертаємо назад в головний масив з видалених!
+        }.bind(this);
+
+    }
+
+    ko.applyBindings(new Customer());
+</script>
+</body>
+</html>

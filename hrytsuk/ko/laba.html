@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="knockout-3.5.1.js"></script>
+<body>
+<div class="wrap">
+    <p>Name <span data-bind="text: names"></span></p>
+   <p>LastName  <span data-bind="text: fulname"></span></p>
+    <p>Full name <span data-bind="text: lastname"></span></p>
+<!--    <p data-bind="text: info3"></p>-->
+    <button id="setName" data-bind="click: setName">What is your name</button>
+</div>
+
+<script>
+    function Customer() {
+        this.names = ko.observable();
+        this.fulname = ko.observable();
+        this.lastname = ko.computed(function () {
+
+            return(this.names() && this.fulname()) ? this.names() + '' + this.fulname() : '';
+        }, this);
+
+        this.setName = function () {
+            var nam = prompt('what is your location?');
+
+            var arr =  nam.split(' ');
+            this.names(arr[0]);
+            this.fulname(arr[1]);
+        };
+    }
+
+    ko.applyBindings(new Customer());
+</script>
+</body>
+</html>
