@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    font-size: @body-font-size;
+    letter-spacing: 1.2px;
+    color: @body-color;
+    font-weight: normal;
+}
+
+h2 {
+    font-size: @h2-font-size;
+}
+
+h3 {
+    font-size: @h3-font-size;
+    color: @h3-color;
+}
+
+article {
+    font-size: 16px;
+}
+
+div.wrapper {
+    max-width: 1630px;
+    padding: 0 15px;
+    margin: 0 auto;
+    @media (max-width: @first-desktop) {
+        padding: 0;
+    }
+}
+
+span.triangle {
+    border: 10px solid transparent;
+    border-top: 10px solid @triangle-color;
+
+}
+
+header.header,
+.header .menu-wrapper .link.logo,
+.wrapper .text-wrapper::after,
+.work-wrapper .row-wrapper .banner::after,
+.work-wrapper .row-wrapper .about-bicycle:before,
+.work-wrapper .row-wrapper .banner,
+.social-wrapper .content .news,
+.read-bottoms .image-container .image {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}

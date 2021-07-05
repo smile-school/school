@@ -1,0 +1,1 @@
+var AddReview = new AddReview({});

@@ -1,0 +1,275 @@
+footer.footer {
+    background-color: @prod_background;
+    padding: 10px 0;
+
+    .footer-section {
+        display: flex;
+        max-width: 1345px;
+        margin: 0 auto;
+        position: relative;
+        padding: 86px 10px 66px;
+        @media (max-width: @second-desktop-width) {
+            padding: 70px 10px 55px;
+        }
+        @media (max-width: @mobile-width) {
+            flex-direction: column;
+        }
+
+        &::after {
+            display: block;
+            content: '';
+            position: absolute;
+            height: 2px;
+            bottom: 0;
+            right: 5px;
+            left: 5px;
+            background-color: gray;
+        }
+
+        .information-wrap {
+            padding: 5px;
+            width: 23%;
+            @media (max-width: @mobile-width) {
+                width: 100%;
+            }
+
+            .title {
+                text-transform: uppercase;
+                position: relative;
+                padding: 12px 0 23px;
+                letter-spacing: 1.25px;
+                font-weight: bold;
+
+                &::after {
+                    display: block;
+                    content: '';
+                    position: absolute;
+                    width: 89px;
+                    height: 6px;
+                    background-color: @decor_retangle-color;
+                    bottom: 0;
+                    left: 1%;
+                    transform: translateY(-50%);
+                }
+            }
+
+            .link {
+                font-weight: bold;
+                text-decoration: none;
+                color: @link_color;
+                display: block;
+                padding: 21px 5px 0;
+                letter-spacing: 0.75px;
+
+                &.contact {
+                    @media (max-width: @mobile-width) {
+                        width: 100%;
+                    }
+                }
+
+                @media (max-width: @mobile-width) {
+                    display: inline-block;
+                    min-width: 24%;
+                }
+                @media (max-width: @second-mobile-width) {
+                    display: inline-block;
+                    width: 32%;
+                }
+                @media (max-width: @third-mobile-width) {
+                    display: inline-block;
+                    width: 49%;
+                }
+            }
+
+            .news-form {
+                max-width: 360px;
+                text-align: justify;
+                padding: 0 4px;
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 85px;
+                @media (max-width: @mobile-width) {
+                    margin-bottom: 30px;
+                }
+
+                label {
+                    display: block;
+                    letter-spacing: 0.75px;
+                    color: @label-color;
+                    padding: 21px 0;
+                    text-align: left;
+                }
+
+                input {
+                    display: block;
+                    background-color: @input-color;
+                    border: none;
+                    padding: 9px 5px;
+                    margin-bottom: 34px;
+                    max-width: 342px;
+                }
+            }
+
+            .news-button {
+                display: block;
+                max-width: 140px;
+                color: #ffffff;
+                font-size: 20px;
+                font-weight: bold;
+                text-transform: uppercase;
+                background-color: @news-button-background;
+                border: none;
+                border-radius: 19px;
+                padding: 8px 5px;
+            }
+
+            &.form {
+                width: 31%;
+                padding-left: 20px;
+                @media (max-width: 767px) {
+                    width: 100%;
+                    padding-left: 5px;
+                }
+
+                .social-wrap {
+                    padding: 10px 20px;
+                    @media (max-width: 992px) {
+                        padding: 10px 5px;
+                    }
+
+                    .social-link {
+                        display: inline-block;
+                        margin-right: 25px;
+                        color: white;
+                        text-decoration: none;
+                        font-size: 23px;
+                        @media (max-width: @tablet-width) {
+                            margin-right: 15px;
+                            font-size: 18px;
+                        }
+                    }
+                }
+            }
+        }
+
+        &:nth-child(2) {
+            padding: 63px 5px 95px;
+            @media (max-width: @mobile-width) {
+                padding: 40px 5px;
+            }
+
+            .information-wrap {
+                &:not(:last-child) {
+                    width: 36%;
+                    @media (max-width: @mobile-width) {
+                        width: 100%;
+                    }
+                }
+
+                &:last-child {
+                    width: 28%;
+                    padding-left: 30px;
+                    @media (max-width: @mobile-width) {
+                        width: 100%;
+                        padding-left: 5px;
+                    }
+
+                    .linc-wrapper {
+                        padding-top: 22px;
+
+                        .link {
+                            color: #887979;
+                            line-height: 14px;
+                            letter-spacing: 0.75px;
+                            font-weight: normal;
+                            padding: 7px 5px;
+
+                            span {
+                                display: inline-block;
+                                background-position: center;
+                                background-size: cover;
+                                background-repeat: no-repeat;
+                                margin-right: 10px;
+                            }
+
+                            &:first-child span {
+                                width: 9px;
+                                height: 13px;
+                                background-image: url("@{image_url}f1.png");
+                            }
+
+                            &:nth-child(2) span {
+                                width: 12px;
+                                height: 12px;
+                                background-image: url("@{image_url}f2.png");
+                            }
+
+                            &:nth-child(3) span {
+                                width: 13px;
+                                height: 14px;
+                                background-image: url("@{image_url}f3.png");
+                            }
+
+                            &:last-child span {
+                                width: 14px;
+                                height: 11px;
+                                background-image: url("@{image_url}f4.png");
+                            }
+                        }
+                    }
+                }
+
+                .info-text {
+                    max-width: 385px;
+                    padding-top: 31px;
+                    color: @info-text-color;
+                    letter-spacing: 0.75px;
+                    line-height: 1.2;
+                    @media (max-width: 767px) {
+                        max-width: 100%;
+                    }
+                }
+            }
+        }
+
+        &:last-child {
+            padding: 45px 0 56px;
+            display: flex;
+            justify-content: space-between;
+            @media (max-width: @second-desktop-width) {
+              padding: 45px 10px 56px;
+            }
+            @media (max-width: @mobile-width) {
+                justify-content: center;
+                align-items: center;
+            }
+
+            &::after {
+                display: none;
+            }
+
+            .car-store {
+                padding: 0 13px;
+                letter-spacing: 0.75px;
+
+                span:first-child {
+                    font-weight: bold;
+                    color: @carstore-color-first;
+                }
+
+                span:last-child {
+                    color: @carstore-color-first;
+                }
+            }
+
+            .cards {
+                @media (max-width: @mobile-width) {
+                    max-width: 327px;
+                    display: block;
+                    padding: 15px 13px;
+                    order: -1;
+                }
+            }
+        }
+    }
+}

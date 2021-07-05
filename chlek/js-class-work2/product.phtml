@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            font-size: 14px;
+            font-family: sans-serif;
+            line-height: 1.2;
+        }
+
+        .wrapper {
+            max-width: 1200px;
+            padding: 15px;
+            margin: 0 auto;
+        }
+
+        .wrapper .product-list {
+            list-style-type: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .wrapper .product-list .product-item {
+            padding: 15px;
+            width: 20%;
+            box-sizing: border-box;
+            border-bottom: 1px solid lightgray;
+            border-right: 1px solid lightgray;
+        }
+
+        .wrapper .product-list .product-item .img {
+            background-color: grey;
+            padding-top: 60%;
+            margin-bottom: 10px;
+        }
+
+
+        .wrapper .product-list .product-item .price {
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .wrapper .product-list .product-item .rating {
+            display: flex;
+        }
+
+        .wrapper .product-list .product-item .rating > li {
+            width: 20px;
+            height: 20px;
+            list-style-type: none;
+            position: relative;
+            cursor: pointer;
+
+        }
+
+        .wrapper .product-list .product-item .rating > li > span {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            top: 0;
+            left: 0;
+            background-repeat: no-repeat;
+            background-size: 20px;
+            background-position: left;
+        }
+
+        .wrapper .product-list .product-item .rating > li > span:first-child {
+            background-image: url("./img/star1.svg");
+        }
+
+        .wrapper .product-list .product-item .rating > li > span:last-child {
+            background-image: url("./img/star2.svg");
+            width: 0;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="wrapper">
+    <ul class="product-list">
+        <?php for ($i = 0; $i < 20; $i++): ?>
+            <li class="product-item">
+                <div class="img">
+                </div>
+                <h3>Product-title</h3>
+                <ul class="rating">
+                    <li><span></span><span></span></li>
+                    <li><span></span><span></span></li>
+                    <li><span></span><span></span></li>
+                    <li><span></span><span></span></li>
+                    <li><span></span><span></span></li>
+                </ul>
+                <p class="price">1200 UA</p>
+            </li>
+        <?php endfor; ?>
+    </ul>
+</div>
+<script>
+    (function () {
+            /* function rating(ratingElem) {
+                 if(!ratingElem) return;
+                 var count = 0,
+                     sum = 0,
+                     rating = 0;
+                 return function (e) {
+                     /!* console.log(e.target.parentNode);*!/
+                     for (var i = 0; i < ratingElem.children.length; i++) {
+                         if (e.target.parentNode === ratingElem.children[i]) {
+                             sum += i + 1;
+                             break;
+                         }
+                     }
+                     count++;
+                     rating = +(sum / count).toFixed(2);
+                     for (var i = 0; i < ratingElem.children.length; i++) {
+                         if (rating !== 0) {
+                             if (Math.ceil(rating) > i) {
+                                 ratingElem.children[i].lastElementChild.style.width = (~~rating > i) ? "100%" : Math.floor(rating % 1 * 100) + "%";
+                             } else {
+                                 ratingElem.children[i].lastElementChild.style.width = '0';
+                             }
+                         }
+                     }
+                 }
+             }*/
+
+            /*var ratings = document.querySelectorAll('.rating');
+            for (var i = 0; i < ratings.length; i++) {
+                ratings[i].addEventListener('click', rating(ratings[i]));
+            }*/
+
+            function Rating(ratingElem) {
+                this.count = 0;
+                this.sum = 0;
+                this.rating = 0;
+                this.ratingElem = ratingElem;
+            }
+
+            Rating.prototype.setSumm = setSum;
+            Rating.prototype.counter = counter;
+            Rating.prototype.setRatingValue = setRatingValue;
+            Rating.prototype.setRating = setRating;
+
+            function setRating(e) {
+                this.setSumm(e);
+                this.counter();
+                this.setRatingValue();
+            }
+
+            function setSum(e) {
+                for (var i = 0; i < this.ratingElem.children.length; i++) {
+                    if (e.target.parentNode === this.ratingElem.children[i]) {
+                        this.sum += i + 1;
+                        break;
+                    }
+                }
+            }
+
+            function counter() {
+                this.count++;
+                this.rating = +(this.sum / this.count).toFixed(2);
+            }
+
+            function setRatingValue() {
+                for (var i = 0; i < this.ratingElem.children.length; i++) {
+                    if (this.rating !== 0) {
+                        if (Math.ceil(this.rating) > i) {
+                            this.ratingElem.children[i].lastElementChild.style.width = (~~this.rating > i) ? "100%" : Math.floor(this.rating % 1 * 100) + "%";
+                        } else {
+                            this.ratingElem.children[i].lastElementChild.style.width = '0';
+                        }
+                    }
+                }
+            }
+
+            var ratings = document.querySelectorAll('.rating'), tmp;
+            for (var i = 0; i < ratings.length; i++) {
+                tmp = new Rating(ratings[i]);
+                ratings[i].addEventListener('click', tmp.setRating.bind(tmp));
+            }
+        }
+    )();
+
+</script>
+</body>
+</html>
